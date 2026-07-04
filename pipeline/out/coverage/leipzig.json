@@ -1,0 +1,16 @@
+{
+  "city": "Leipzig",
+  "slug": "leipzig",
+  "generated": "2026-07-02T22:25:25.996Z",
+  "total": 1473,
+  "perBranch": {
+    "Gesundheit": 289,
+    "Sonstige": 249,
+    "Beauty & Wellness": 205,
+    "Gastronomie & Hotel": 463,
+    "Recht & Beratung": 75,
+    "Immobilien": 28,
+    "Automobil": 107,
+    "Fitness & Sport": 57
+  }
+}

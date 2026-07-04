@@ -1,0 +1,17 @@
+{
+  "city": "Köln",
+  "slug": "koeln",
+  "generated": "2026-07-02T21:31:39.864Z",
+  "total": 1644,
+  "perBranch": {
+    "Gesundheit": 292,
+    "Sonstige": 308,
+    "Handwerk & Bau": 1,
+    "Fitness & Sport": 89,
+    "Automobil": 103,
+    "Recht & Beratung": 50,
+    "Immobilien": 67,
+    "Beauty & Wellness": 210,
+    "Gastronomie & Hotel": 524
+  }
+}

@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 820, height: 900 } });
+await p.goto('file://' + new URL('../dashboard/index.html', import.meta.url).pathname);
+await p.waitForTimeout(700);
+await p.click('.place');
+await p.waitForTimeout(700);
+await p.screenshot({ path: new URL('../dashboard/preview_modal.png', import.meta.url).pathname });
+await b.close();
+console.log('modal shot saved');

@@ -1,0 +1,18 @@
+{
+  "city": "Düsseldorf",
+  "slug": "duesseldorf",
+  "generated": "2026-07-02T22:07:36.307Z",
+  "total": 1386,
+  "perBranch": {
+    "Gesundheit": 166,
+    "Sonstige": 290,
+    "Automobil": 109,
+    "Fitness & Sport": 58,
+    "Gastronomie & Hotel": 527,
+    "Einzelhandel": 2,
+    "Recht & Beratung": 31,
+    "Immobilien": 34,
+    "Beauty & Wellness": 168,
+    "Handwerk & Bau": 1
+  }
+}

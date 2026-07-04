@@ -1,0 +1,17 @@
+{
+  "city": "Stuttgart",
+  "slug": "stuttgart",
+  "generated": "2026-07-02T21:50:38.717Z",
+  "total": 1320,
+  "perBranch": {
+    "Gesundheit": 198,
+    "Sonstige": 280,
+    "Automobil": 67,
+    "Recht & Beratung": 27,
+    "Immobilien": 36,
+    "Beauty & Wellness": 158,
+    "Gastronomie & Hotel": 493,
+    "Einzelhandel": 1,
+    "Fitness & Sport": 60
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "city": "Dresden",
+  "slug": "dresden",
+  "generated": "2026-07-02T23:07:54.877Z",
+  "total": 1511,
+  "perBranch": {
+    "Gesundheit": 288,
+    "Sonstige": 249,
+    "Automobil": 120,
+    "Fitness & Sport": 55,
+    "Recht & Beratung": 48,
+    "Immobilien": 51,
+    "Beauty & Wellness": 212,
+    "Gastronomie & Hotel": 488
+  }
+}

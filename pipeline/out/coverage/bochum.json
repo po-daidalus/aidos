@@ -1,0 +1,18 @@
+{
+  "city": "Bochum",
+  "slug": "bochum",
+  "generated": "2026-07-02T23:59:43.107Z",
+  "total": 1289,
+  "perBranch": {
+    "Gesundheit": 211,
+    "Sonstige": 329,
+    "Automobil": 89,
+    "Handwerk & Bau": 2,
+    "Recht & Beratung": 46,
+    "Immobilien": 40,
+    "Beauty & Wellness": 156,
+    "Gastronomie & Hotel": 392,
+    "Einzelhandel": 1,
+    "Fitness & Sport": 23
+  }
+}

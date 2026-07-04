@@ -1,0 +1,16 @@
+{
+  "city": "Essen",
+  "slug": "essen",
+  "generated": "2026-07-02T22:41:25.957Z",
+  "total": 1190,
+  "perBranch": {
+    "Gesundheit": 185,
+    "Sonstige": 276,
+    "Automobil": 88,
+    "Fitness & Sport": 26,
+    "Beauty & Wellness": 111,
+    "Recht & Beratung": 22,
+    "Immobilien": 38,
+    "Gastronomie & Hotel": 444
+  }
+}

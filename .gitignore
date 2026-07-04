@@ -1,0 +1,20 @@
+# secrets
+.env
+*.local
+
+# os / editor
+.DS_Store
+*.swp
+*.log
+
+# node
+node_modules/
+
+# scratch / spike artifacts
+spike/out/
+scratch/
+*.tmp
+
+# NOTE: pipeline/out/ IS tracked on purpose — db.json + history.jsonl are the
+# irreplaceable panel (Google's rolling-window banner cannot be backfilled).
+# Committed as the project's backup + provenance trail.

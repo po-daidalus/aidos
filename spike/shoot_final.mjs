@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1160, height: 1500 } });
+const url = 'file://' + new URL('../dashboard/index.html', import.meta.url).pathname;
+await p.goto(url); await p.waitForTimeout(700);
+await p.screenshot({ path: new URL('../dashboard/preview.png', import.meta.url).pathname, fullPage: true });
+await p.hover('.brand-head'); await p.waitForTimeout(1100);
+await p.screenshot({ path: new URL('../dashboard/preview_hover.png', import.meta.url).pathname, clip:{x:20,y:560,width:1120,height:340} });
+await p.click('.brand-head .p-name'); await p.waitForTimeout(500);
+await p.screenshot({ path: new URL('../dashboard/preview_modal.png', import.meta.url).pathname });
+await b.close(); console.log('shots saved');

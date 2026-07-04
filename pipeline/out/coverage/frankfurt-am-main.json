@@ -1,0 +1,17 @@
+{
+  "city": "Frankfurt am Main",
+  "slug": "frankfurt-am-main",
+  "generated": "2026-07-02T21:42:55.917Z",
+  "total": 1434,
+  "perBranch": {
+    "Gesundheit": 222,
+    "Sonstige": 272,
+    "Fitness & Sport": 61,
+    "Automobil": 86,
+    "Recht & Beratung": 31,
+    "Immobilien": 27,
+    "Beauty & Wellness": 211,
+    "Gastronomie & Hotel": 523,
+    "Handwerk & Bau": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "city": "Dortmund",
+  "slug": "dortmund",
+  "generated": "2026-07-02T22:35:51.023Z",
+  "total": 1186,
+  "perBranch": {
+    "Gesundheit": 217,
+    "Sonstige": 236,
+    "Fitness & Sport": 36,
+    "Automobil": 73,
+    "Recht & Beratung": 40,
+    "Beauty & Wellness": 137,
+    "Immobilien": 29,
+    "Gastronomie & Hotel": 418
+  }
+}

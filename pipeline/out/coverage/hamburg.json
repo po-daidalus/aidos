@@ -1,0 +1,18 @@
+{
+  "city": "Hamburg",
+  "slug": "hamburg",
+  "generated": "2026-07-02T20:56:16.924Z",
+  "total": 1866,
+  "perBranch": {
+    "Gesundheit": 304,
+    "Sonstige": 375,
+    "Gastronomie & Hotel": 517,
+    "Einzelhandel": 2,
+    "Automobil": 161,
+    "Fitness & Sport": 133,
+    "Recht & Beratung": 72,
+    "Immobilien": 94,
+    "Beauty & Wellness": 207,
+    "Handwerk & Bau": 1
+  }
+}

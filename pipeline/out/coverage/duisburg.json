@@ -1,0 +1,17 @@
+{
+  "city": "Duisburg",
+  "slug": "duisburg",
+  "generated": "2026-07-02T23:45:24.309Z",
+  "total": 837,
+  "perBranch": {
+    "Gesundheit": 119,
+    "Sonstige": 148,
+    "Beauty & Wellness": 85,
+    "Automobil": 35,
+    "Recht & Beratung": 21,
+    "Immobilien": 12,
+    "Gastronomie & Hotel": 394,
+    "Einzelhandel": 2,
+    "Fitness & Sport": 21
+  }
+}

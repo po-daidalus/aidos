@@ -1,0 +1,17 @@
+{
+  "city": "Berlin",
+  "slug": "berlin",
+  "generated": "2026-07-02T20:46:30.679Z",
+  "total": 2127,
+  "perBranch": {
+    "Gesundheit": 372,
+    "Sonstige": 403,
+    "Fitness & Sport": 121,
+    "Beauty & Wellness": 225,
+    "Automobil": 178,
+    "Einzelhandel": 1,
+    "Recht & Beratung": 152,
+    "Immobilien": 155,
+    "Gastronomie & Hotel": 520
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "city": "München",
+  "slug": "muenchen",
+  "generated": "2026-07-02T21:14:01.981Z",
+  "total": 1859,
+  "perBranch": {
+    "Gesundheit": 288,
+    "Sonstige": 380,
+    "Fitness & Sport": 134,
+    "Automobil": 151,
+    "Recht & Beratung": 84,
+    "Immobilien": 94,
+    "Gastronomie & Hotel": 508,
+    "Beauty & Wellness": 219,
+    "Einzelhandel": 1
+  }
+}

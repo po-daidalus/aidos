@@ -1,0 +1,17 @@
+{
+  "city": "Nürnberg",
+  "slug": "nuernberg",
+  "generated": "2026-07-02T23:35:08.983Z",
+  "total": 1299,
+  "perBranch": {
+    "Gesundheit": 170,
+    "Sonstige": 258,
+    "Automobil": 104,
+    "Recht & Beratung": 26,
+    "Immobilien": 25,
+    "Fitness & Sport": 51,
+    "Beauty & Wellness": 175,
+    "Einzelhandel": 1,
+    "Gastronomie & Hotel": 489
+  }
+}
