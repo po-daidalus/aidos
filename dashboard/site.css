@@ -10,8 +10,8 @@
 :root {
   /* — palette (cleaner, cooler than newsprint — reads "analysis", not "broadsheet") — */
   --ink:      #171719;   /* primary text */
-  --ink-2:    #45464b;   /* secondary text */
-  --ink-3:    #797a82;   /* muted / captions */
+  --ink-2:    #43444a;   /* secondary text (AA on paper) */
+  --ink-3:    #676972;   /* muted / captions (AA ≥4.5:1 on paper) */
   --paper:    #fcfcfd;   /* page background */
   --surface:  #ffffff;   /* cards, raised areas */
   --fill:     #f3f4f6;   /* subtle fill (bands, zebra, bars track) */
@@ -81,9 +81,13 @@ section:first-of-type { border-top: 0; }
 .hint { font: 400 13px var(--sans); color: var(--ink-3); }
 .sec-intro { font-size: 16px; color: var(--ink-2); max-width: 70ch; margin: 8px 0 22px; }
 
-/* — the Δ / lead figure — */
-.lead-figure { font-family: var(--serif); font-weight: 600; font-size: clamp(44px, 8vw, 82px); line-height: 1; color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
-.lead-figure .unit { font-family: var(--sans); font-size: 0.28em; color: var(--ink-3); font-weight: 500; margin-left: 10px; letter-spacing: 0; }
+/* — the Δ / lead figure (moderate; only for a real Δ value, never giant placeholder text) — */
+.lead-figure { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 4.5vw, 52px); line-height: 1.05; color: var(--accent); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.lead-figure .unit { font-family: var(--sans); font-size: 15px; color: var(--ink-3); font-weight: 400; margin-left: 10px; letter-spacing: 0; }
+/* baseline state (no Δ yet): a calm framed note, not a wall of red */
+.baseline-note { border: 1px solid var(--rule); border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+.baseline-note .big { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--ink); }
+.baseline-note .small { font-size: 14px; color: var(--ink-2); }
 
 /* — stat band — */
 .band { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 6px 0; }
@@ -112,10 +116,13 @@ table.rank a:hover { color: var(--accent); }
 .bar { height: 6px; background: var(--fill); border-radius: 4px; overflow: hidden; }
 .bar > i { display: block; height: 100%; background: var(--accent); border-radius: 4px; width: 0; transition: width 1s var(--ease); }
 
-/* — inline data bar (animated fill) — */
-.dbar { position: relative; background: var(--fill); height: 24px; border-radius: var(--radius-sm); overflow: hidden; }
-.dbar > i { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, var(--accent), #d1434a); width: 0; transition: width 1s var(--ease); }
-.dbar > span { position: relative; padding: 0 9px; line-height: 24px; font: 500 12.5px var(--sans); color: var(--ink); font-variant-numeric: tabular-nums; }
+/* — inline data bar (animated fill). Value sits BESIDE the bar, never over the red
+   (WCAG: dark text over a red fill fails contrast). Bar is purely visual. — */
+.barwrap { display: flex; align-items: center; gap: 10px; }
+.barwrap .dbar { flex: 1; }
+.barwrap .barval { flex: 0 0 auto; font: 500 12.5px var(--sans); color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dbar { position: relative; background: var(--fill); height: 10px; border-radius: 5px; overflow: hidden; }
+.dbar > i { position: absolute; inset: 0 auto 0 0; background: var(--accent); width: 0; border-radius: 5px; transition: width 1s var(--ease); }
 
 /* — cards — border + soft hover lift (modern, restrained) — */
 .card { border: 1px solid var(--rule); background: var(--surface); border-radius: var(--radius); padding: 20px 22px; transition: box-shadow .2s var(--ease), transform .2s var(--ease); }
@@ -148,14 +155,32 @@ table.rank a:hover { color: var(--accent); }
 .crumbs { font: 400 13px var(--sans); color: var(--ink-3); margin-bottom: 16px; }
 .crumbs a { color: var(--ink-2); }
 
-/* — footer — */
-.site-foot { border-top: 1px solid var(--rule); margin-top: 44px; background: var(--fill); }
-.site-foot-inner { max-width: var(--wrap); margin: 0 auto; padding: 30px 24px 44px; }
+/* — footer (dark / ink — the look you liked) — */
+.site-foot { margin-top: 48px; background: var(--ink); color: #d9dade; }
+.site-foot-inner { max-width: var(--wrap); margin: 0 auto; padding: 34px 24px 46px; }
+.site-foot .wordmark { color: #fff; margin-bottom: 14px; }
+.site-foot .wordmark .tld { color: #e88a8f; } /* light accent — readable on dark */
+.site-foot .wordmark .glyph rect:first-child { fill: #fff; }
 .foot-nav { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
-.foot-nav a { font: 500 13.5px var(--sans); color: var(--ink-2); }
-.foot-nav a:hover { color: var(--accent); }
-.foot-legal { font-size: 12.5px; color: var(--ink-3); line-height: 1.6; max-width: 90ch; }
-.foot-meta { font-size: 12px; color: var(--ink-3); margin-top: 12px; }
+.foot-nav a { font: 500 13.5px var(--sans); color: #d9dade; }
+.foot-nav a:hover { color: #fff; }
+.foot-legal { font-size: 12.5px; color: #9a9ba3; line-height: 1.6; max-width: 90ch; }
+.foot-legal b { color: #d9dade; }
+.foot-meta { font-size: 12px; color: #83848c; margin-top: 12px; }
+
+/* — article tiles with auto data-viz covers (no photos → no rights issues) — */
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.tile { border: 1px solid var(--rule); background: var(--surface); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s var(--ease), transform .2s var(--ease); }
+.tile:hover { box-shadow: var(--shadow-h); transform: translateY(-2px); }
+.tile .cover { height: 132px; background: linear-gradient(160deg, #201c1d, #17181a); position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 16px; }
+.tile .cover .cbars { display: flex; align-items: flex-end; gap: 7px; height: 72px; width: 100%; }
+.tile .cover .cbars > i { flex: 1; background: linear-gradient(180deg, #d1434a, var(--accent)); border-radius: 3px 3px 0 0; min-height: 6px; opacity: .92; }
+.tile .cover .tag { position: absolute; top: 14px; left: 16px; background: rgba(255,255,255,.14); color: #fff; }
+.tile .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.tile .body h3 { font-size: 17px; }
+.tile .body p { font-size: 13.5px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+.tile .body .more { margin-top: auto; padding-top: 10px; font: 500 13px var(--sans); color: var(--accent); }
+@media (max-width: 760px) { .tiles { grid-template-columns: 1fr; } }
 
 /* — long-form prose — */
 .prose { font-size: 18px; line-height: 1.72; color: var(--ink); }
