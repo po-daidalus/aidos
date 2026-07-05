@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>aidos — Styleguide-Vorschau</title>
+  <link href="fonts/fonts.css" rel="stylesheet" />
+  <link href="site.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="wordmark" href="index.html">
+        <svg class="glyph" viewBox="0 0 26 26" aria-hidden="true">
+          <rect x="3" y="8" width="20" height="2.6" rx="1" fill="#1a1a1a" />
+          <rect x="3" y="15" width="12" height="2.6" rx="1" fill="#a61e22" />
+        </svg>
+        aidos<span class="tld">.tech</span>
+      </a>
+      <span class="tagline">Datenjournalismus zur Bewertungs-Ökonomie</span>
+      <nav class="nav">
+        <a class="on" href="#">Übersicht</a>
+        <a href="#">Unternehmen &amp; Ketten</a>
+        <a href="#">Branchen &amp; Städte</a>
+        <a href="#">Methodik</a>
+        <a href="#">Presse</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <p class="crumbs"><a href="#">Interne Vorschau</a> › Styleguide — keine öffentliche Seite</p>
+
+    <!-- LEAD -->
+    <section>
+      <div class="kicker">Transparenz in der Bewertungs-Ökonomie</div>
+      <h1>Bei wie vielen Unternehmen hat Google Bewertungen wegen Diffamierung entfernt?</h1>
+      <p class="deck">aidos wertet die offiziellen Transparenz-Hinweise von Google&nbsp;Maps – eingeführt im Zuge des EU Digital Services Act – systematisch und fortlaufend aus. Wir bewahren, was Googles rollierender 365-Tage-Hinweis wieder unsichtbar macht.</p>
+      <div class="byline">Ein Projekt von <b>Markus Meixner</b> · <span class="asof">Stand der Erhebung: 5. Juli 2026</span></div>
+    </section>
+
+    <!-- Δ LEAD FIGURE (baseline fallback state, since only 1 snapshot yet) -->
+    <section>
+      <div class="sec-head"><h2>Das Momentum</h2><span class="hint">der einzigartige Wert — nur aus unserer Zeitreihe ableitbar</span></div>
+      <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen berechnen wir die <em>Veränderung</em> — einen Fluss-Wert, den Google selbst nie anzeigt. Bis der zweite Messpunkt vorliegt, steht hier die Basismessung.</p>
+      <div class="lead-figure">Basismessung<span class="unit">· Δ-Momentum ab August 2026</span></div>
+    </section>
+
+    <!-- STAT BAND -->
+    <section>
+      <div class="band">
+        <div class="stat"><div class="v">180</div><div class="l">erfasste Profile mit aktivem Lösch-Hinweis</div><div class="sub">Berlin &amp; Hamburg · Basismessung</div></div>
+        <div class="stat"><div class="v accent">11.085</div><div class="l">geschätzt entfernte Rezensionen (letzte 365 Tage)</div><div class="sub">konservative Untergrenze — Google zeigt nur Spannen</div></div>
+        <div class="stat"><div class="v">3,5&nbsp;%</div><div class="l">der geprüften Profile tragen den Hinweis</div><div class="sub">gemessene Prävalenz, kein geschätzter Nenner</div></div>
+      </div>
+    </section>
+
+    <!-- RANKING -->
+    <section>
+      <div class="sec-head"><h2>In welchen Branchen entfernt Google die meisten Bewertungen?</h2><span class="hint">Basismessung · Juli 2026</span></div>
+      <div class="table-scroll">
+      <table class="rank">
+        <thead><tr><th></th><th>Branche</th><th class="num">Betroffene Profile</th><th>relative Stärke</th><th class="num">Index</th></tr></thead>
+        <tbody>
+          <tr><td class="rank-num">1</td><td><a href="#">Gastronomie &amp; Hotel</a></td><td class="num mono-num">41</td><td><div class="dbar"><i style="width:100%"></i><span>~62 je Standort</span></div></td><td class="num"><span class="score" title="Rang 1 von 7 erfassten Branchen"><span class="val">100</span><span class="of">/100</span></span></td></tr>
+          <tr><td class="rank-num">2</td><td><a href="#">Fitness &amp; Sport</a></td><td class="num mono-num">14</td><td><div class="dbar"><i style="width:71%"></i><span>~44 je Standort</span></div></td><td class="num"><span class="score" title="Rang 2 von 7 erfassten Branchen"><span class="val">71</span><span class="of">/100</span></span></td></tr>
+          <tr><td class="rank-num">3</td><td><a href="#">Automobil</a></td><td class="num mono-num">18</td><td><div class="dbar"><i style="width:52%"></i><span>~32 je Standort</span></div></td><td class="num"><span class="score" title="Rang 3 von 7 erfassten Branchen"><span class="val">52</span><span class="of">/100</span></span></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="asof" style="margin-top:12px">Der Index misst neutral die Zahl entfernter Bewertungen je Standort im Branchenvergleich (100 = auffälligste Branche im erfassten Datensatz von 68 benannten Betrieben). Beschreibung der Datenlage, kein Werturteil.</p>
+    </section>
+
+    <!-- CITY / INSIGHT CARDS -->
+    <section>
+      <div class="sec-head"><h2>Regionale Schwerpunkte</h2></div>
+      <div class="grid-3">
+        <div class="card"><span class="tag">Stadt</span><h3 style="margin:10px 0 4px">Berlin</h3><p class="muted" style="font-size:14px;margin:0">115 Profile · ~7.400 entfernte Bewertungen</p><div class="bar" style="margin-top:14px"><i style="width:100%"></i></div></div>
+        <div class="card"><span class="tag">Stadt</span><h3 style="margin:10px 0 4px">Hamburg</h3><p class="muted" style="font-size:14px;margin:0">65 Profile · ~3.700 entfernte Bewertungen</p><div class="bar" style="margin-top:14px"><i style="width:64%"></i></div></div>
+        <div class="card"><span class="tag">Methodik</span><h3 style="margin:10px 0 4px">Dunkelziffer „über 250"</h3><p class="muted" style="font-size:14px;margin:0">Bei den auffälligsten Profilen deckelt Google die Anzeige.</p><p style="margin:12px 0 0"><a href="#">Zur Methodik →</a></p></div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS SHOWCASE -->
+    <section>
+      <div class="sec-head"><h2>Bausteine</h2><span class="hint">Buttons · Lookup · Hinweis</span></div>
+      <p><a class="btn btn-primary" href="#">Unternehmen &amp; Ketten ansehen</a> &nbsp; <a class="btn btn-ghost" href="#">Datensatz (CSV) für Redaktionen</a></p>
+      <div class="lookup-box" style="margin:18px 0">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg>
+        <input placeholder="Firmenname eingeben" />
+      </div>
+      <div class="notice"><b>Hinweis:</b> Die Zahl entfernter Bewertungen stammt von Google&nbsp;LLC (öffentliches Google-Maps-Profil, rollierende 365 Tage). Sie bedeutet <b>nicht</b>, dass das Unternehmen rechtswidrig gehandelt hat — Unternehmen sind häufig Ziel unberechtigter Fake-Bewertungskampagnen.</div>
+    </section>
+
+    <!-- PROSE -->
+    <section>
+      <div class="sec-head"><h2>Lesetext (Reports, Rechtslage, Methodik)</h2></div>
+      <div class="prose" style="max-width:720px">
+        <p>Seit Inkrafttreten des Digital Services Act blenden Plattformen wie Google einen Hinweis ein, wenn Bewertungen nach einer Diffamierungs-Beschwerde entfernt wurden. Dieser Hinweis ist öffentlich — aber flüchtig: Er zeigt nur die letzten zwölf Monate und verschwindet danach.</p>
+        <p>aidos hält diese Momentaufnahmen fest und macht daraus eine fortlaufende Zeitreihe. So lässt sich erstmals nachvollziehen, <em>wie sich</em> die Entfernungen über die Zeit entwickeln — nicht nur, dass es sie gibt.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-foot">
+    <div class="site-foot-inner">
+      <div class="foot-nav">
+        <a href="#">Übersicht</a><a href="#">Unternehmen &amp; Ketten</a><a href="#">Branchen &amp; Städte</a><a href="#">Methodik</a><a href="#">Presse</a><a href="#">Rechtslage</a><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Daten melden</a>
+      </div>
+      <div class="foot-legal">aidos ist ein journalistisches Transparenzprojekt. Angaben zu entfernten Bewertungen stammen von Google&nbsp;LLC (öffentliche Google-Maps-Profile). Werte inklusive entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. Keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
+      <div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
+    </div>
+  </footer>
+</body>
+</html>
