@@ -189,6 +189,11 @@ table.rank a:hover { color: var(--accent); }
 .prose h3 { margin: 26px 0 8px; }
 .prose ul { padding-left: 22px; } .prose li { margin: 7px 0; }
 
+/* — line motif (echoes the logo glyph: one ink + one short accent line) — */
+.motif { display: block; width: 46px; margin: 14px 0; }
+.motif b { display: block; height: 3px; background: var(--ink); border-radius: 2px; }
+.motif i { display: block; height: 3px; width: 60%; background: var(--accent); border-radius: 2px; margin-top: 4px; }
+
 /* — utilities — */
 .mono-num { font-variant-numeric: tabular-nums; }
 .accent { color: var(--accent); }

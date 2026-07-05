@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>aidos — Listing-Vorschau</title>
+  <link href="fonts/fonts.css" rel="stylesheet" />
+  <link href="site.css" rel="stylesheet" />
+  <style>
+    /* preview-only: listing components */
+    .filterbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 14px 0; border-bottom: 1px solid var(--rule); position: sticky; top: 55px; background: var(--paper); z-index: 10; }
+    .chip { font: 500 13px var(--sans); padding: 6px 13px; border: 1px solid var(--rule-2); border-radius: 20px; color: var(--ink-2); cursor: pointer; background: var(--surface); }
+    .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .filterbar select { font: 500 13px var(--sans); padding: 7px 10px; border: 1px solid var(--rule-2); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); }
+    .spacer { flex: 1; }
+    .row { display: grid; grid-template-columns: 34px 52px 1fr auto; gap: 16px; align-items: center; padding: 18px 4px; border-bottom: 1px solid var(--rule); transition: background .12s var(--ease); }
+    .row:hover { background: var(--surface); }
+    .row .rk { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--ink-3); text-align: center; }
+    .row .av { width: 52px; height: 52px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 600; font-size: 22px; color: #fff; }
+    .row .nm { font-weight: 600; font-size: 17px; color: var(--ink); }
+    .row .nm a { color: var(--ink); }
+    .row .nm a:hover { color: var(--accent); }
+    .meta { display: flex; gap: 8px; align-items: center; margin-top: 4px; flex-wrap: wrap; }
+    .pill { font: 500 11.5px var(--sans); color: var(--ink-2); background: var(--fill); padding: 2px 9px; border-radius: 12px; }
+    .right { text-align: right; display: flex; flex-direction: column; gap: 3px; align-items: flex-end; }
+    .removed { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--accent); font-variant-numeric: tabular-nums; }
+    .removed .lbl { font-family: var(--sans); font-size: 11px; color: var(--ink-3); font-weight: 400; display: block; }
+    .whisk { width: 150px; margin-top: 6px; }
+    .whisk .tr { position: relative; height: 6px; background: var(--fill); border-radius: 3px; }
+    .whisk .band { position: absolute; top: 0; bottom: 0; background: rgba(179,30,38,.2); border-radius: 3px; }
+    .whisk .disp { position: absolute; top: -2px; width: 10px; height: 10px; border-radius: 50%; background: #fff; border: 2px solid var(--ink); transform: translateX(-50%); }
+    .whisk .est { position: absolute; top: -2px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); transform: translateX(-50%); }
+    .whisk .cap { font-size: 11px; color: var(--ink-3); margin-top: 5px; display: flex; justify-content: space-between; }
+    @media (max-width: 760px){ .row{ grid-template-columns: 26px 44px 1fr; } .row .right{ grid-column: 2/-1; align-items:flex-start; text-align:left; } .whisk{ width:100%; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#171719"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+      <span class="tagline">Datenjournalismus zur Bewertungs-Ökonomie</span>
+      <nav class="nav"><a href="index.html">Übersicht</a><a class="on" href="#">Unternehmen &amp; Ketten</a><a href="#">Branchen &amp; Städte</a><a href="#">Methodik</a><a href="#">Presse</a></nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="kicker">Unternehmen &amp; Ketten</div>
+    <h1>Bei welchen Unternehmen hat Google die meisten Bewertungen entfernt?</h1>
+    <span class="motif"><b></b><i></i></span>
+    <p class="deck" style="max-width:70ch">Nur juristische Personen und größere Ketten — keine Einzelpersonen. Jede Zahl stammt aus dem öffentlichen Google-Transparenz-Hinweis (rollierende 365 Tage).</p>
+    <div class="byline"><span class="asof">Stand der Erhebung: 5. Juli 2026 · 89 gelistete Betriebe · Berlin, Hamburg, München</span></div>
+
+    <div class="lookup-box" style="margin:22px 0 4px"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z"/></svg><input placeholder="Unternehmen oder Stadt suchen"/></div>
+
+    <div class="filterbar">
+      <span class="chip on">Alle Branchen</span><span class="chip">Gastronomie</span><span class="chip">Fitness</span><span class="chip">Automobil</span><span class="chip">Gesundheit</span>
+      <span class="spacer"></span>
+      <select><option>Meiste Entfernungen</option><option>Größter Rating-Effekt</option><option>Meiste Bewertungen</option></select>
+      <select><option>Alle Städte</option><option>Berlin</option><option>Hamburg</option><option>München</option></select>
+    </div>
+
+    <!-- rows -->
+    <div id="rows">
+      <div class="row"><div class="rk">1</div><div class="av" style="background:#5a6b52">A</div>
+        <div><div class="nm"><a href="_preview-profile.html">Autohaus Royal GmbH</a></div><div class="meta"><span class="pill">Automobil</span><span class="pill">Berlin</span><span class="muted" style="font-size:13px">★ 4,9 · 2.692 Bewertungen</span></div></div>
+        <div class="right"><div class="removed">über 250<span class="lbl">entfernte Bewertungen</span></div>
+          <div class="whisk"><div class="tr"><div class="band" style="left:57%;right:20%"></div><div class="disp" style="left:80%" title="angezeigt 4,9"></div><div class="est" style="left:61%" title="geschätzt 4,6"></div></div><div class="cap"><span>geschätzt 4,6★</span><span>angezeigt 4,9★</span></div></div>
+        </div></div>
+
+      <div class="row"><div class="rk">2</div><div class="av" style="background:#8a5a3c">C</div>
+        <div><div class="nm"><a href="_preview-profile.html">Carambar</a></div><div class="meta"><span class="pill">Gastronomie &amp; Hotel</span><span class="pill">Berlin</span><span class="muted" style="font-size:13px">★ 4,6 · 7.980 Bewertungen</span></div></div>
+        <div class="right"><div class="removed">über 250<span class="lbl">entfernte Bewertungen</span></div>
+          <div class="whisk"><div class="tr"><div class="band" style="left:64%;right:22%"></div><div class="disp" style="left:78%"></div><div class="est" style="left:66%"></div></div><div class="cap"><span>geschätzt 4,5★</span><span>angezeigt 4,6★</span></div></div>
+        </div></div>
+
+      <div class="row"><div class="rk">3</div><div class="av" style="background:#3a5f6b">I</div>
+        <div><div class="nm"><a href="_preview-profile.html">ibis budget Berlin Ost</a></div><div class="meta"><span class="pill">Gastronomie &amp; Hotel</span><span class="pill">Berlin</span><span class="muted" style="font-size:13px">★ 3,4 · 1.006 Bewertungen</span></div></div>
+        <div class="right"><div class="removed">über 250<span class="lbl">entfernte Bewertungen</span></div>
+          <div class="whisk"><div class="tr"><div class="band" style="left:38%;right:32%"></div><div class="disp" style="left:68%"></div><div class="est" style="left:42%"></div></div><div class="cap"><span>geschätzt 3,0★</span><span>angezeigt 3,4★</span></div></div>
+        </div></div>
+
+      <div class="row"><div class="rk">4</div><div class="av" style="background:#6b4a52">H</div>
+        <div><div class="nm"><a href="_preview-profile.html">Holmes Place Fitness</a> <span class="pill" style="background:var(--accent-w);color:var(--accent)">3 Standorte</span></div><div class="meta"><span class="pill">Fitness &amp; Sport</span><span class="pill">Berlin</span><span class="muted" style="font-size:13px">★ 4,5 · Kette</span></div></div>
+        <div class="right"><div class="removed">323–450<span class="lbl">Summe aller Standorte</span></div>
+          <div class="whisk"><div class="tr"><div class="band" style="left:60%;right:24%"></div><div class="disp" style="left:76%"></div><div class="est" style="left:62%"></div></div><div class="cap"><span>geschätzt 4,0★</span><span>angezeigt 4,5★</span></div></div>
+        </div></div>
+    </div>
+
+    <div class="notice" style="margin-top:26px"><b>Zur Einordnung:</b> Eine hohe Zahl entfernter Bewertungen ist <b>kein</b> Beweis für Fehlverhalten. Google entfernt Bewertungen aus vielen legitimen Gründen (Fake-Kampagnen, Spam, Richtlinienverstöße). Die „geschätzt"-Werte sind rechnerische Schätzungen, keine Tatsachenbehauptungen.</div>
+  </div>
+
+  <footer class="site-foot">
+    <div class="site-foot-inner">
+      <a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#fff"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+      <div class="foot-nav"><a href="#">Übersicht</a><a href="#">Unternehmen &amp; Ketten</a><a href="#">Branchen &amp; Städte</a><a href="#">Methodik</a><a href="#">Presse</a><a href="#">Rechtslage</a><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Daten melden</a></div>
+      <div class="foot-legal">aidos ist ein journalistisches Transparenzprojekt. Angaben stammen von Google&nbsp;LLC. Keine Tatsachenbehauptungen, keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
+      <div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
+    </div>
+  </footer>
+</body>
+</html>

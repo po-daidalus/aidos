@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>aidos — Profil-Vorschau</title>
+  <link href="fonts/fonts.css" rel="stylesheet" />
+  <link href="site.css" rel="stylesheet" />
+  <style>
+    /* preview-only: profile layout */
+    .phead { display: grid; grid-template-columns: 64px 1fr; gap: 18px; align-items: center; }
+    .phead .av { width: 64px; height: 64px; border-radius: var(--radius); background: #6b4a52; color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 600; font-size: 28px; }
+    .switch { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 4px; }
+    .switch .s { font: 500 13px var(--sans); padding: 7px 14px; border: 1px solid var(--rule-2); border-radius: 20px; color: var(--ink-2); background: var(--surface); cursor: pointer; }
+    .switch .s.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .keyfig { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0; }
+    .kf { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); padding: 20px 22px; }
+    .kf .big { font-family: var(--serif); font-weight: 600; font-size: 40px; color: var(--accent); line-height: 1; }
+    .kf .big.ink { color: var(--ink); }
+    .kf .l { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; }
+    /* range strip echoing the logo lines */
+    .rangeviz { margin-top: 14px; }
+    .rangeviz .full { height: 4px; background: var(--ink); border-radius: 2px; }
+    .rangeviz .part { height: 4px; width: 78%; background: var(--accent); border-radius: 2px; margin-top: 5px; }
+    .rangeviz .cap { font-size: 12px; color: var(--ink-3); margin-top: 6px; }
+    /* estimate whisker */
+    .estimate { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); padding: 20px 22px; }
+    .estimate .scale { position: relative; height: 40px; margin: 20px 0 6px; }
+    .estimate .axis { position: absolute; left: 0; right: 0; top: 20px; height: 2px; background: var(--fill); }
+    .estimate .band { position: absolute; top: 14px; height: 12px; background: rgba(179,30,38,.18); border-radius: 6px; }
+    .estimate .pt { position: absolute; top: 12px; width: 16px; height: 16px; border-radius: 50%; transform: translateX(-50%); }
+    .estimate .pt.disp { background: #fff; border: 3px solid var(--ink); }
+    .estimate .pt.est { background: var(--accent); }
+    .estimate .pt .tip { position: absolute; top: -26px; left: 50%; transform: translateX(-50%); font: 600 12px var(--sans); white-space: nowrap; }
+    .estimate .ticks { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); }
+    /* chart */
+    .chart { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); padding: 20px 22px; }
+    .chart svg { width: 100%; height: 200px; display: block; }
+    .srcnote { font-size: 13px; color: var(--ink-2); }
+    @media (max-width: 760px){ .keyfig{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#171719"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+      <span class="tagline">Datenjournalismus zur Bewertungs-Ökonomie</span>
+      <nav class="nav"><a href="index.html">Übersicht</a><a class="on" href="_preview-listing.html">Unternehmen &amp; Ketten</a><a href="#">Branchen &amp; Städte</a><a href="#">Methodik</a><a href="#">Presse</a></nav>
+    </div>
+  </header>
+
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="index.html">aidos</a> › <a href="#">Fitness &amp; Sport</a> › Holmes Place Fitness</p>
+
+    <div class="phead">
+      <div class="av">H</div>
+      <div>
+        <div class="kicker" style="margin-bottom:6px">Fitness &amp; Sport · Berlin</div>
+        <h1 style="font-size:clamp(26px,4vw,38px)">Holmes Place Fitness</h1>
+      </div>
+    </div>
+    <div class="byline"><span class="asof">Kette · 3 erfasste Standorte · <b>Stand der Erhebung: 5. Juli 2026</b>, Quelle zuletzt geprüft am 5. Juli 2026</span></div>
+
+    <div class="switch">
+      <span class="s on">Alle Standorte</span><span class="s">Neukölln</span><span class="s">Gendarmenmarkt</span><span class="s">Potsdamer Platz</span>
+    </div>
+
+    <div class="keyfig">
+      <div class="kf">
+        <div class="big">323–450</div>
+        <div class="l">entfernte Bewertungen in den letzten 365 Tagen (Summe aller Standorte)</div>
+        <div class="rangeviz"><div class="full"></div><div class="part"></div><div class="cap">Google zeigt nur Spannen je Standort (z. B. „151 bis 200") — hier summiert.</div></div>
+      </div>
+      <div class="kf">
+        <div class="big ink">4,5<span style="font-size:20px;color:var(--ink-3)"> ★</span></div>
+        <div class="l">aktuell auf Google angezeigte Durchschnittsnote (gewichtet über die Standorte)</div>
+        <div class="rangeviz"><div class="cap" style="margin-top:14px">Ohne die entfernten Rezensionen läge die Note rechnerisch bei ~4,0★ — siehe unten.</div></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="sec-head"><h2>Was wäre die Note ohne die entfernten Bewertungen?</h2></div>
+      <div class="estimate">
+        <div class="scale">
+          <div class="axis"></div>
+          <div class="band" style="left:60%;right:20%"></div>
+          <div class="pt est" style="left:62%"><span class="tip accent">~4,0★ geschätzt</span></div>
+          <div class="pt disp" style="left:80%"><span class="tip">4,5★ angezeigt</span></div>
+        </div>
+        <div class="ticks"><span>3,0</span><span>3,5</span><span>4,0</span><span>4,5</span><span>5,0</span></div>
+        <p class="srcnote" style="margin:16px 0 0">Nur eine <b>Schätzung</b>, keine exakten Werte: Wir nehmen an, dass entfernte Bewertungen im Schnitt 1–2★ vergeben hätten. Waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die angezeigte Note die zutreffendere.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Entfernungen im Zeitverlauf</h2><span class="hint">rollierende 3-Monats-Summe</span></div>
+      <div class="chart">
+        <svg viewBox="0 0 640 200" preserveAspectRatio="none" id="chart" aria-label="Zeitreihe entfernter Bewertungen"></svg>
+      </div>
+      <p class="asof" style="margin-top:10px">Vertikale Linie: Beginn des DSA-Meldeverfahrens (02/2024). Die rote Fläche zeigt den Bereich, in dem entfernte Bewertungen die öffentliche Note beeinflusst haben könnten.</p>
+    </section>
+
+    <div class="notice"><b>Hinweis:</b> Die Zahl entfernter Bewertungen stammt von Google&nbsp;LLC (öffentliches Google-Maps-Profil, rollierende 365 Tage). Sie bedeutet <b>nicht</b>, dass Holmes Place rechtswidrig oder unlauter gehandelt hat — Unternehmen sind häufig Ziel unberechtigter Fake-Bewertungskampagnen. <a href="#">Daten melden / korrigieren</a>.</div>
+  </div>
+
+  <footer class="site-foot">
+    <div class="site-foot-inner">
+      <a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#fff"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+      <div class="foot-nav"><a href="#">Übersicht</a><a href="#">Unternehmen &amp; Ketten</a><a href="#">Branchen &amp; Städte</a><a href="#">Methodik</a><a href="#">Presse</a><a href="#">Rechtslage</a><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Daten melden</a></div>
+      <div class="foot-legal">aidos ist ein journalistisches Transparenzprojekt. Angaben stammen von Google&nbsp;LLC. Werte inkl. entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. Keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
+      <div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
+    </div>
+  </footer>
+
+  <script>
+    // animated area+line time-series (representative Holmes Place shape)
+    const data = [34,108,46,86,52,70,23,26,47,120,65,81,54,60,44,58];
+    const W = 640, H = 200, P = { t: 14, r: 8, b: 20, l: 8 };
+    const iw = W - P.l - P.r, ih = H - P.t - P.b;
+    const max = Math.max(...data) * 1.15;
+    const xf = (i) => P.l + (i / (data.length - 1)) * iw;
+    const yf = (v) => P.t + ih - (v / max) * ih;
+    let line = '', area = `M ${xf(0)} ${yf(data[0])}`;
+    data.forEach((v, i) => { const x = xf(i), y = yf(v); line += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1) + ' '; if (i) area += ' L ' + x.toFixed(1) + ' ' + y.toFixed(1); });
+    area += ` L ${xf(data.length - 1)} ${P.t + ih} L ${xf(0)} ${P.t + ih} Z`;
+    const markX = xf(3); // DSA marker
+    const svg = document.getElementById('chart');
+    svg.innerHTML =
+      `<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b31e26" stop-opacity="0.16"/><stop offset="1" stop-color="#b31e26" stop-opacity="0"/></linearGradient></defs>` +
+      `<line x1="${markX}" y1="${P.t}" x2="${markX}" y2="${P.t + ih}" stroke="#cfcabb" stroke-width="1" stroke-dasharray="3 3"/>` +
+      `<text x="${markX + 5}" y="${P.t + 11}" font-size="10" fill="#676972" font-family="Roboto,sans-serif">DSA 02/24</text>` +
+      `<path d="${area}" fill="url(#g)"/>` +
+      `<path d="${line}" fill="none" stroke="#b31e26" stroke-width="2.2" stroke-linejoin="round" stroke-dasharray="2000" stroke-dashoffset="2000"><animate attributeName="stroke-dashoffset" from="2000" to="0" dur="1.3s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" values="2000;0"/></path>`;
+  </script>
+</body>
+</html>
