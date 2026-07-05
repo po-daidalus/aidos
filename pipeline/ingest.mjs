@@ -4,9 +4,9 @@
 // the estimate is computed from rating×count. Then run build.mjs to refresh the dashboard.
 // Usage: node pipeline/ingest.mjs "<extension export .json or .csv>"
 import fs from 'node:fs';
-import crypto from 'node:crypto';
 import { classify } from './entity-filter.mjs';
 import { branchOf, cityOf } from './classify-branch.mjs';
+import { anonId } from './salt.mjs';
 
 const ROOT = new URL('..', import.meta.url);
 const DB_PATH = new URL('pipeline/out/db.json', ROOT);
@@ -97,8 +97,14 @@ function effectiveRating(r, sanRating, sanReviews) {
 }
 
 for (const r of recs) {
-  const id = r.key;
-  const prev = db.businesses[id] || {};
+  const rawId = r.key;
+  // Classify first — the storage key depends on it. Legal persons keep their public place_id;
+  // natural persons are stored under a salted, non-reversible hash (no raw place_id anywhere).
+  const nameRaw = r.name || null;
+  const catRaw = r.category || osmCat.get(normName(nameRaw)) || null;
+  const nameableFirst = classify(nameRaw, catRaw).keep;
+  const key = nameableFirst ? rawId : anonId(rawId);
+  const prev = db.businesses[key] || {};
   const rsan = sanitizeRating(r.rating);
   const eff = effectiveRating(r, rsan.rating, intv(r.reviews) || rsan.reviewsFromRating);
   // Never overwrite previously-captured good data with a null from a later (enrichment-less) scan.
@@ -109,8 +115,8 @@ for (const r of recs) {
   const nameable = classify(name, category).keep;
   const branch = branchOf(name, category), city = cityOf(name, r.city || prev.city, r.address || prev.address) || defCity || prev.city || null;
   if (nameable) {
-    db.businesses[id] = {
-      place_id: id, name, category, nameable: true, branch, city,
+    db.businesses[key] = {
+      place_id: rawId, name, category, nameable: true, branch, city,
       postal_code: r.postal_code || prev.postal_code || null, address: r.address || prev.address || null,
       website: r.website || prev.website || null, image: cleanImg(r.image) || prev.image || null,
       rating, reviews, dist: eff.dist.some((x) => x) ? eff.dist : (prev.dist || null),
@@ -121,29 +127,31 @@ for (const r of recs) {
       url: r.url || prev.url || null, first_seen: prev.first_seen || today, last_seen: today,
     };
   } else {
-    // PSEUDONYMIZED: named individuals count in aggregates but keep NO name/address/contact/coords in
-    // the DB — only the branch/city/range/rating needed for statistics. DSGVO data-minimization.
-    db.businesses[id] = {
-      place_id: id, nameable: false, branch, city,
+    // PSEUDONYMIZED: named individuals count in aggregates but keep NO name/address/contact/coords
+    // AND no raw place_id — only the salted `aid` + branch/city/range/rating needed for statistics.
+    // DSGVO data-minimization: the row can no longer be resolved back to a person.
+    db.businesses[key] = {
+      aid: key, nameable: false, branch, city,
       rating, reviews, range_min: rmin, range_max: rmax,
       est_low: est.est_low, est_mid: est.est_mid, est_high: est.est_high,
       first_seen: prev.first_seen || today, last_seen: today,
     };
   }
-  prev.place_id ? updated++ : added++;
-  snaps.push({ date: month, place_id: id, rating, reviews, range_min: rmin, range_max: rmax });
+  (prev.place_id || prev.aid) ? updated++ : added++;
+  // History (the panel): nameable → public place_id; natural persons → salted hash only.
+  snaps.push({ date: month, id: key, nameable, rating, reviews, range_min: rmin, range_max: rmax });
 }
 fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
 
 let hist = fs.existsSync(HIST_PATH) ? fs.readFileSync(HIST_PATH, 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
-const kof = (s) => s.place_id + '|' + s.date, idx = new Map(hist.map((h, i) => [kof(h), i]));
+// Back-compat: older rows used `place_id`; key on `id` with a fallback so a mixed file dedups.
+const kof = (s) => (s.id || s.place_id) + '|' + s.date, idx = new Map(hist.map((h, i) => [kof(h), i]));
 for (const s of snaps) { if (idx.has(kof(s))) hist[idx.get(kof(s))] = s; else { idx.set(kof(s), hist.length); hist.push(s); } }
 fs.writeFileSync(HIST_PATH, hist.map((h) => JSON.stringify(h)).join('\n') + '\n');
 
 // Anonymized aggregate feed — ALL rows (incl. excluded individuals/small businesses), NO personal
-// identifiers stored (name/address/place_id dropped; a one-way hash is the only per-entity key).
-// Powers the Germany-wide homepage insights without ever naming a natural person. DSGVO-safe.
-const anon = (s) => crypto.createHash('sha256').update(String(s)).digest('hex').slice(0, 12);
+// identifiers stored (name/address/place_id dropped; a salted one-way hash is the only per-entity
+// key). Powers the Germany-wide homepage insights without ever naming a natural person. DSGVO-safe.
 let aggRows = fs.existsSync(AGG_PATH) ? fs.readFileSync(AGG_PATH, 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
 const akof = (a) => a.aid + '|' + a.date, aidx = new Map(aggRows.map((a, i) => [akof(a), i]));
 for (const r of allRecs) {
@@ -152,7 +160,7 @@ for (const r of allRecs) {
   const name = r.name || '', category = r.category || osmCat.get(normName(name)) || '';
   const est = estimate(rating, reviews, rmin, rmax);
   const row = {
-    aid: anon(r.key), date: month, branch: branchOf(name, category) || 'Unbekannt',
+    aid: anonId(r.key), date: month, branch: branchOf(name, category) || 'Unbekannt',
     city: cityOf(name, r.city, r.address) || defCity || 'Unbekannt',
     nameable: classify(name, category).keep, // whether this entity may be named on listing pages
     range_min: rmin, range_max: rmax, rating,

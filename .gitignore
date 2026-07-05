@@ -18,3 +18,4 @@ scratch/
 # NOTE: pipeline/out/ IS tracked on purpose — db.json + history.jsonl are the
 # irreplaceable panel (Google's rolling-window banner cannot be backfilled).
 # Committed as the project's backup + provenance trail.
+pipeline/.salt

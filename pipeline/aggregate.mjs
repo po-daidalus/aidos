@@ -19,10 +19,19 @@ const r1 = (x) => Math.round(x * 10) / 10;
 const de = (x) => r0(x).toLocaleString('de-DE');
 const de1 = (x) => r1(x).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
-// --- latest-month cross-section (the "Basismessung") ---
+// --- cross-section (the "Basismessung") = latest observation PER entity ---
+// NOT rows.filter(date === latest): that would drop every city scraped in an earlier month the
+// moment a new month's sweep begins (Berlin ingested July would vanish once Köln lands in August),
+// conflating coverage growth with real change. Instead take each aid's most recent snapshot, and
+// drop observations older than STALE_MONTHS so a city we stopped re-scraping doesn't linger forever.
 const months = [...new Set(rows.map((r) => r.date))].sort();
 const latest = months[months.length - 1] || nowYM;
-const cur = rows.filter((r) => r.date === latest);
+const STALE_MONTHS = 4;
+const monthIdx = (ym) => { const [y, m] = ym.split('-').map(Number); return y * 12 + (m - 1); };
+const latestIdx = monthIdx(latest);
+const latestByAid = new Map();
+for (const r of rows) { const p = latestByAid.get(r.aid); if (!p || r.date > p.date) latestByAid.set(r.aid, r); }
+const cur = [...latestByAid.values()].filter((r) => latestIdx - monthIdx(r.date) <= STALE_MONTHS);
 
 function group(list, key) {
   const m = {};
@@ -139,14 +148,22 @@ if (cities.length) {
 // --- trend module (Method D): activates with ≥2 months ---
 let trend = { available: false, months, note: `Basismessung ${latest}. Monatliche Snapshots ab sofort — Trends (z. B. „+40 % seit Jahresbeginn") erscheinen automatisch, sobald ≥2 Messpunkte vorliegen.` };
 if (months.length >= 2) {
-  const prev = months[months.length - 2];
-  const sumBy = (ym) => rows.filter((r) => r.date === ym).reduce((s, r) => s + mid(r), 0);
-  const a = sumBy(prev), b = sumBy(latest), pct = a ? ((b - a) / a) * 100 : 0;
-  trend = { available: true, months, prev, latest, prevRemoved: r0(a), latestRemoved: r0(b), changePct: r1(pct) };
-  add(90, 'Trend',
-    `Entfernte Bewertungen ${pct >= 0 ? 'stiegen' : 'sanken'} gegenüber ${prev} um ${de1(Math.abs(pct))} %`,
-    `Von geschätzt ${de(a)} auf ${de(b)} entfernte Bewertungen im erfassten Bestand.`,
-    `${pct >= 0 ? '+' : '−'}${de1(Math.abs(pct))} %`);
+  // SAME-PANEL comparison only: sum removals over entities present in BOTH months, so the delta
+  // reflects real change - never the arrival of a new city. The unique, defensible datapoint
+  // (a flow value Google itself never displays).
+  const prevM = months[months.length - 2];
+  const byMonth = (ym) => new Map(rows.filter((r) => r.date === ym).map((r) => [r.aid, r]));
+  const A = byMonth(prevM), B = byMonth(latest);
+  const panel = [...B.keys()].filter((aid) => A.has(aid));
+  const a = panel.reduce((s, aid) => s + mid(A.get(aid)), 0);
+  const b = panel.reduce((s, aid) => s + mid(B.get(aid)), 0);
+  const delta = b - a, pct = a ? (delta / a) * 100 : 0;
+  const sign = delta >= 0 ? "+" : "−";
+  trend = { available: true, months, prev: prevM, latest, panelSize: panel.length, prevRemoved: r0(a), latestRemoved: r0(b), delta: r0(delta), changePct: r1(pct) };
+  add(95, "Momentum",
+    `Bei ${de(panel.length)} durchgehend erfassten Betrieben entfernte Google ${sign}${de(Math.abs(delta))} Bewertungen gegenüber ${prevM}`,
+    `Vergleich derselben ${de(panel.length)} Betriebe in beiden Monaten (${de(a)} → ${de(b)}). Neu hinzugekommene Städte fließen bewusst nicht ein - so misst der Wert echte Veränderung, nicht wachsende Abdeckung.`,
+    `${sign}${de(Math.abs(delta))}`);
 }
 
 insights.sort((a, b) => b.score - a.score);

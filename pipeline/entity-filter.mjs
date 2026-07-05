@@ -10,7 +10,16 @@
 // person and is kept — otherwise we'd lose many legitimate GmbH/MVZ/chain listings.
 
 // German/EU legal-form tokens → clearly a legal person, always KEEP.
-const LEGAL_FORM = /(\bg?GmbH\b|\bmbH\b|\bUG\b|\bAG\b|\bKGaA\b|\bKG\b|\bOHG\b|\b&\s*Co\.?\s*KG\b|\bSE\b|\be\.?\s?K\.?(?:fr)?\b|\be\.?\s?G\.?\b|\bLtd\.?\b|\bLimited\b|\bInc\.?\b|\bPLC\b|\bPartG(?:mbB)?\b)/i;
+// NOTE: deliberately EXCLUDES e.K. and PartG(mbB) — see PERSON_FORM below.
+const LEGAL_FORM = /(\bg?GmbH\b|\bmbH\b|\bUG\b|\bAG\b|\bKGaA\b|\bKG\b|\bOHG\b|\b&\s*Co\.?\s*KG\b|\bSE\b|\be\.?\s?G\.?\b|\bLtd\.?\b|\bLimited\b|\bInc\.?\b|\bPLC\b)/i;
+
+// Legal-form tokens that legally denote / must contain a NATURAL PERSON's name → EXCLUDE.
+//  • e.K. (eingetragener Kaufmann) = a single natural-person merchant.
+//  • PartG / PartGmbB = partnership whose name must (§ 2 PartGG) contain a partner's surname.
+// Naming these publicly names an individual, contrary to our stated policy. They still count
+// in the anonymized aggregates. (A large PartGmbB wrongly excluded merely loses a listing —
+// far cheaper than a personality-rights claim.)
+const PERSON_FORM = /(\be\.?\s?K\.?(?:fr)?\b|\bPartG(?:mbB)?\b)/i;
 
 // Known chains / brands that carry no legal form in their Maps name but are legal persons.
 // Extend this list as you encounter more chains. Matched case-insensitively as a substring.
@@ -104,6 +113,9 @@ function hasNamePlusProfession(name) {
 export function classify(name, category = '') {
   const n = norm(name);
   if (!name || !n.trim()) return { keep: false, reason: 'no name', type: 'person' };
+  // Person-denoting legal forms (e.K., PartG) take precedence over the keep-signals below,
+  // so an "Autohaus Schmidt e.K." is excluded even though it has no other person marker.
+  if (PERSON_FORM.test(name)) return { keep: false, reason: 'person-denoting legal form (e.K./PartG)', type: 'person' };
   if (LEGAL_FORM.test(name)) return { keep: true, reason: 'legal form', type: 'legal' };
   if (CHAINS.some((c) => n.includes(c))) return { keep: true, reason: 'known chain', type: 'chain' };
   if (TITLE.test(name)) return { keep: false, reason: 'academic title + name (Privatperson)', type: 'person' };

@@ -327,9 +327,10 @@
       const SERIES = window.AIDOS_SERIES || {};
       const $ = (id) => document.getElementById(id);
       const ROLL = 3;
-      // Legal context: EU DSA Art.16 (in force 2024-02-17) + LG Düsseldorf 2025-01-15 (platform "Störer" liability)
-      // made mass review removals routine in Germany. Default view starts ~3 months before that ruling.
-      const LEGAL_MARK = '2025-01';
+      // Legal context: the EU Digital Services Act (Art. 16 notice-and-action, in force 2024-02-17)
+      // established the formal removal process the Google banner reflects. Marker kept generic — no
+      // specific unverified court citation. Default view starts a few months before this reference.
+      const LEGAL_MARK = '2024-02';
       const monthsSince = (ym) => { const [y, m] = ym.split('-').map(Number); const n = new Date(); return (n.getFullYear() - y) * 12 + (n.getMonth() + 1 - m); };
       const DEFAULT_MB = monthsSince('2024-10');
       let selBranch = '', curPid = null, curMonths = DEFAULT_MB, lastGroups = [], curEntryIdx = -1, showAllBranches = false;
@@ -621,7 +622,7 @@
         for (let i = n - 1; i >= 0; i--) if (cfLow[i] != null) bot += xOf(i).toFixed(1) + ',' + yOf(cfLow[i]).toFixed(1) + ' ';
         const wi = months.indexOf(s.windowStart), winX = wi >= 0 ? xOf(wi) : null;
         const mi = months.indexOf(LEGAL_MARK), markX = mi >= 0 ? xOf(mi) : null;
-        const marker = markX != null ? '<line x1="' + markX.toFixed(1) + '" y1="' + P.t + '" x2="' + markX.toFixed(1) + '" y2="' + (P.t + ih) + '" stroke="#9aa0a6" stroke-width="1" stroke-dasharray="3 3"/><text x="' + markX.toFixed(1) + '" y="' + (P.t + 9) + '" text-anchor="middle" font-size="9" fill="#5f6368">Rechtslage 01/25</text>' : '';
+        const marker = markX != null ? '<line x1="' + markX.toFixed(1) + '" y1="' + P.t + '" x2="' + markX.toFixed(1) + '" y2="' + (P.t + ih) + '" stroke="#9aa0a6" stroke-width="1" stroke-dasharray="3 3"/><text x="' + markX.toFixed(1) + '" y="' + (P.t + 9) + '" text-anchor="middle" font-size="9" fill="#5f6368">DSA 02/24</text>' : '';
         let grid = ''; for (let v = 0; v <= 5; v++) { const y = yOf(v).toFixed(1); grid += '<line x1="' + P.l + '" y1="' + y + '" x2="' + (W - P.r) + '" y2="' + y + '" stroke="#e8eaed"/><text x="' + (P.l - 6) + '" y="' + (+y + 3).toFixed(1) + '" text-anchor="end" font-size="10" fill="#80868b">' + v + '</text>'; }
         let xlab = '', ly = null; months.forEach((m, i) => { const yr = m.slice(0, 4); if (yr !== ly) { ly = yr; xlab += '<text x="' + xOf(i).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle" font-size="10" fill="#80868b">' + yr + '</text>'; } });
         const vmax = Math.max(1, ...vol), bw = Math.max(1, (iw / n) * 0.6); let bars2 = '';
@@ -692,7 +693,7 @@
           '<p>Bitte beachten Sie: Die Anzahl der entfernten Bewertungen besagt <b>nicht</b>, dass das Unternehmen rechtswidrig gehandelt hat. In vielen Fällen sind Unternehmen Opfer von unberechtigten Fake-Bewertungskampagnen (z.&nbsp;B. durch Mitbewerber oder Bots) und nutzen rechtliche Mittel, um ihr geschäftliches Ansehen zu schützen. Google hat die betroffenen Bewertungen nach eigener Prüfung einer Beschwerde entfernt.</p></div>';
         if (series) {
           html += '<div class="legend"><span><span class="k" style="border-color:#1a73e8"></span>sichtbare Bewertungen (gleitend Ø 3 Mon.)</span><span><span class="k" style="border-color:#c5221f;border-top-style:dashed"></span>geschätzt inkl. entfernter Bewertungen</span></div>' +
-            '<div class="period"><button data-m="' + DEFAULT_MB + '" title="Seit ~3 Monate vor der DSA-Rechtsprechung (LG Düsseldorf, 01/2025)">Standard</button><button data-m="6">6 Mon.</button><button data-m="12">12 Mon.</button><button data-m="24">2 Jahre</button><button data-m="60">5 Jahre</button><button data-m="0">Max</button></div>' +
+            '<div class="period"><button data-m="' + DEFAULT_MB + '" title="Seit Beginn des DSA-Meldeverfahrens (02/2024)">Standard</button><button data-m="6">6 Mon.</button><button data-m="12">12 Mon.</button><button data-m="24">2 Jahre</button><button data-m="60">5 Jahre</button><button data-m="0">Max</button></div>' +
             '<div id="chartBox"></div>' +
             '<div class="m-note">Letzte 12 Monate: sichtbar Ø ' + recent + '★ → geschätzt ~' + recentCf + '★. Gleitender 3-Monats-Durchschnitt der noch sichtbaren Bewertungen (blau) vs. Schätzung inkl. der entfernten Bewertungen (rot, gelb markiertes Fenster). Schätzung, keine exakten Zahlen. ' + series.reviews_fetched + ' von ' + (series.reviews_total || '?') + ' Bewertungen ausgewertet.</div>';
         }

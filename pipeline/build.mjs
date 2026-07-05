@@ -22,10 +22,21 @@ allBusinesses.forEach((b) => (b.aidos_score = pctRank(remMid(b))));
 // individuals stay in the internal DB and feed the anonymized aggregates, but their name/address
 // never ship in data.js. (nameable === undefined = legacy record → default to visible.)
 const sset = suppressSet(); // applies the 5-day auto-removal rule, then hides removed/auto-removed entries
-const businesses = allBusinesses.filter((b) => b.nameable !== false && !isSuppressed(b, sset));
+
+// STALENESS GUARD (legal): a business's removal count is a claim about the *current* rolling
+// 365-day window. If we have not re-verified a listing within STALE_DAYS, we stop publishing its
+// number rather than assert a possibly-outdated factual claim about a named company. The entity
+// drops to internal/aggregate only until the next sweep refreshes last_seen.
+const STALE_DAYS = 120;
+const dayNum = (d) => Math.floor(new Date(d + 'T00:00:00Z').getTime() / 864e5);
+const todayNum = dayNum(new Date().toISOString().slice(0, 10));
+const isStale = (b) => !b.last_seen || (todayNum - dayNum(b.last_seen)) > STALE_DAYS;
+
+const businesses = allBusinesses.filter((b) => b.nameable !== false && !isSuppressed(b, sset) && !isStale(b));
 const suppressed = allBusinesses.filter((b) => b.nameable !== false && isSuppressed(b, sset)).length;
+const stale = allBusinesses.filter((b) => b.nameable !== false && !isSuppressed(b, sset) && isStale(b)).length;
 fs.writeFileSync(new URL('dashboard/data.js', ROOT), 'window.AIDOS_DATA = ' + JSON.stringify(businesses) + ';\n');
-console.log(`data.js: shipped ${businesses.length} nameable / ${allBusinesses.length - businesses.length - suppressed} individuals internal-only${suppressed ? ` / ${suppressed} hidden by takedown` : ''}`);
+console.log(`data.js: shipped ${businesses.length} nameable${suppressed ? ` / ${suppressed} hidden by takedown` : ''}${stale ? ` / ${stale} hidden (stale >${STALE_DAYS}d, needs re-verification)` : ''}`);
 
 // existing real (non-placeholder) series
 const seriesPath = new URL('pipeline/out/series.json', ROOT);
