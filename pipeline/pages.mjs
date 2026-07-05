@@ -108,21 +108,42 @@ function seriesChart(locs) {
   // union + align month axis across (possibly several) locations
   const months = [...new Set(parts.flatMap((s) => s.months))].sort();
   const idx = Object.fromEntries(months.map((m, i) => [m, i]));
-  const cnt = months.map(() => 0), sum = months.map(() => 0);
-  for (const s of parts) s.months.forEach((m, i) => { const j = idx[m]; cnt[j] += s.monthCount[i] || 0; sum[j] += s.monthSum[i] || 0; });
+  // RAW monthly counts drive the volume bars (only measured reviews, never extrapolated). For the
+  // rating line, the dated series is a subset (pull capped per location, older reviews undated), so
+  // each location contributes a pre-window SEED derived from its real all-time figures (banner
+  // capture: reviews_total × displayed rating minus the dated subset). The cumulative line then
+  // ends exactly at the note Google displays, and the counterfactual — injLow/injHigh are already
+  // full-population removal counts — ends exactly at the pooled estimate (Σ r·N + s*·Σ R)/(Σ N + Σ R),
+  // consistent with the est figures on the page. No number invented; all inputs are captured data.
+  const cnt = months.map(() => 0), sum = months.map(() => 0), iL = months.map(() => 0), iH = months.map(() => 0);
+  let seedC = 0, seedS = 0;
+  for (const s of parts) {
+    const nP = s.monthCount.reduce((x, v) => x + v, 0), sumP = s.monthSum.reduce((x, v) => x + v, 0);
+    const NP = Math.max(s.reviews_total || nP, nP), rP = s.rating || (nP ? sumP / nP : 0);
+    seedC += NP - nP; seedS += Math.max(0, rP * NP - sumP);
+    s.months.forEach((m, i) => { const j = idx[m]; cnt[j] += s.monthCount[i] || 0; sum[j] += s.monthSum[i] || 0; iL[j] += (s.injLow || [])[i] || 0; iH[j] += (s.injHigh || [])[i] || 0; });
+  }
   let a = 0; while (a < months.length && cnt[a] === 0) a++;          // trim empty lead
   let b = months.length - 1; while (b > a && cnt[b] === 0) b--;       // trim empty tail
   const M = months.slice(a, b + 1), C = cnt.slice(a, b + 1), Sm = sum.slice(a, b + 1);
+  const IL = iL.slice(a, b + 1), IH = iH.slice(a, b + 1);
   const totalRev = C.reduce((s, v) => s + v, 0);
   if (M.length < 4 || totalRev < 12) return tsPlaceholder();         // too sparse to be meaningful
-  let cc = 0, cs = 0; const rate = M.map((m, i) => { cc += C[i]; cs += Sm[i]; return cs / cc; }); // cumulative displayed rating
+  let cc = seedC, cs = seedS; const rate = M.map((m, i) => { cc += C[i]; cs += Sm[i]; return cs / cc; }); // cumulative displayed rating
+  // Counterfactual "ohne Entfernungen": Google's removed-review range re-injected over the rolling
+  // 365-day window — worst case range_max reviews at 1★ (rLow), best case range_min at 2★ (rHigh).
+  // Same estimate model as the est_low/est_high figures on the page (Method B). Clearly a Schätzung.
+  let cL = seedC, sL = seedS, cH = seedC, sH = seedS;
+  const rLow = M.map((m, i) => { cL += C[i] + IL[i]; sL += Sm[i] + IL[i] * 1; return sL / cL; });
+  const rHigh = M.map((m, i) => { cH += C[i] + IH[i]; sH += Sm[i] + IH[i] * 2; return sH / cH; });
+  const hasCf = IL.some((v) => v > 0) && rLow[M.length - 1] < rate[M.length - 1] - 0.01;
 
   const W = 660, H = 220, pad = { t: 16, r: 16, b: 30, l: 40 };
   const iw = W - pad.l - pad.r, ih = H - pad.t - pad.b, n = M.length;
   const xf = (i) => pad.l + (n > 1 ? (i / (n - 1)) * iw : iw / 2);
   const step = n > 1 ? iw / (n - 1) : iw;
   const maxC = Math.max(...C, 1);
-  const rMin = Math.min(...rate), lo = Math.max(1, Math.floor((rMin - 0.25) * 2) / 2), hi = 5;
+  const rMin = Math.min(...rate, ...(hasCf ? rLow : rate)), lo = Math.max(1, Math.floor((rMin - 0.25) * 2) / 2), hi = 5;
   const yBar = (v) => pad.t + ih - (v / maxC) * (ih * 0.9);
   const yR = (r) => pad.t + ih - ((r - lo) / (hi - lo)) * ih;
   // last-365-day window (rightmost ≤12 months) — where Google's removal total applies
@@ -134,6 +155,18 @@ function seriesChart(locs) {
   const bw = Math.max(2, Math.min(16, step * 0.6));
   const bars = C.map((v, i) => v > 0 ? `<rect x="${(xf(i) - bw / 2).toFixed(1)}" y="${yBar(v).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pad.t + ih - yBar(v)).toFixed(1)}" fill="#7fa8e0" opacity="0.5" rx="1"/>` : '').join('');
   let line = ''; rate.forEach((r, i) => { line += (i ? 'L' : 'M') + xf(i).toFixed(1) + ' ' + yR(r).toFixed(1) + ' '; });
+  // counterfactual band (best-case rHigh top edge → worst-case rLow bottom edge) + dashed edges
+  let cfBand = '', cfEnd = '';
+  if (hasCf) {
+    let top = '', bot = '';
+    rHigh.forEach((r, i) => { top += (i ? 'L' : 'M') + xf(i).toFixed(1) + ' ' + yR(r).toFixed(1) + ' '; });
+    for (let i = M.length - 1; i >= 0; i--) bot += 'L' + xf(i).toFixed(1) + ' ' + yR(rLow[i]).toFixed(1) + ' ';
+    cfBand = `<path d="${top}${bot}Z" fill="#b31e26" opacity="0.10"/>`
+      + `<path d="${top}" fill="none" stroke="#b31e26" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.75"/>`
+      + `<path d="M ${rLow.map((r, i) => xf(i).toFixed(1) + ' ' + yR(r).toFixed(1)).join(' L ')}" fill="none" stroke="#b31e26" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.75"/>`;
+    const cfMid = (rLow[M.length - 1] + rHigh[M.length - 1]) / 2;
+    cfEnd = `<text x="${(xf(n - 1) - 6).toFixed(1)}" y="${(yR(cfMid) + 16).toFixed(1)}" text-anchor="end" font-size="12" font-weight="600" fill="#b31e26" font-family="Roboto,sans-serif">~${de1(cfMid)}★ geschätzt</text>`;
+  }
   const rTicks = [lo, (lo + hi) / 2, hi].map((t) => `<line x1="${pad.l}" y1="${yR(t).toFixed(1)}" x2="${W - pad.r}" y2="${yR(t).toFixed(1)}" stroke="#eceef2"/><text x="${pad.l - 6}" y="${(yR(t) + 4).toFixed(1)}" text-anchor="end" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${de1(t)}★</text>`).join('');
   const endX = xf(n - 1), endY = yR(rate[n - 1]);
   const firstM = new Date(M[0] + '-01T00:00:00Z').toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
@@ -144,16 +177,18 @@ function seriesChart(locs) {
     + rTicks
     + bars
     + (dsaI > 0 ? `<line x1="${xf(dsaI).toFixed(1)}" y1="${pad.t}" x2="${xf(dsaI).toFixed(1)}" y2="${pad.t + ih}" stroke="#b9bcc4" stroke-width="1" stroke-dasharray="3 3"/><text x="${(xf(dsaI) + 4).toFixed(1)}" y="${pad.t + ih - 4}" font-size="10" fill="#676972" font-family="Roboto,sans-serif">DSA 02/24</text>` : '')
+    + cfBand
     + `<path d="${line}" fill="none" stroke="#2456a6" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2600" stroke-dashoffset="2600"><animate attributeName="stroke-dashoffset" from="2600" to="0" dur="1.3s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" values="2600;0"/></path>`
     + `<circle cx="${endX.toFixed(1)}" cy="${endY.toFixed(1)}" r="4" fill="#2456a6"/>`
     + `<text x="${(endX - 6).toFixed(1)}" y="${(endY - 8).toFixed(1)}" text-anchor="end" font-size="12" font-weight="600" fill="#2456a6" font-family="Roboto,sans-serif">${de1(rate[n - 1])}★</text>`
+    + cfEnd
     + `<text x="${pad.l}" y="${H - 8}" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${firstM}</text>`
     + `<text x="${W - pad.r}" y="${H - 8}" text-anchor="end" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${lastM}</text>`
     + `</svg>`;
   return `<section class="tschart"><h2>Historische Entwicklung</h2>`
-    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: auf Google angezeigte Durchschnittsnote im Zeitverlauf · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen — beides aus den öffentlichen Rezensionsdaten (${de(totalRev)} Bewertungen).</p>`
+    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: auf Google angezeigte Durchschnittsnote im Zeitverlauf · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen — beides aus den öffentlichen Rezensionsdaten (${de(totalRev)} Bewertungen).${hasCf ? ` <b style="color:#b31e26">Rotes Band</b>: geschätzter Notenverlauf, <i>wenn die entfernten Bewertungen noch zählten</i>.` : ''}</p>`
     + svg
-    + `<p class="cap">Rot hinterlegt sind die letzten 365 Tage, für die Google die entfernten Bewertungen zählt. <b>Wann</b> Bewertungen entfernt wurden, veröffentlicht Google nicht — deshalb zeigen wir keine Entfernungs-Kurve, sondern nur den belegbaren Noten- und Aufkommensverlauf. Werte sind Momentaufnahmen der öffentlichen Google-Daten.</p>`
+    + `<p class="cap">Rot hinterlegt sind die letzten 365 Tage, für die Google die entfernten Bewertungen zählt.${hasCf ? ` Das rote Band ist eine <b>Schätzung</b>: die von Google ausgewiesene Spanne entfernter Bewertungen, rechnerisch mit 1–2★ über die letzten 365 Tage zurückgerechnet (Bandbreite = Best-/Worst-Case der Spanne). Waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die blaue Linie die zutreffendere.` : ''} <b>Wann</b> Bewertungen entfernt wurden, veröffentlicht Google nicht — die zeitliche Verteilung im Band ist eine Modellannahme, keine Messung. Werte sind Momentaufnahmen der öffentlichen Google-Daten.</p>`
     + `</section>`;
 }
 
