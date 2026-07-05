@@ -5,58 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="fonts/fonts.css" rel="stylesheet" />
     <title>Rechtslage &amp; Hintergrund — Warum Unternehmen Google-Bewertungen entfernen lassen können</title>
-    <style>
-      :root {
-        --blue: #1a73e8; --blue-700: #1967d2; --blue-050: #e8f0fe; --red-700: #c5221f; --red-050: #fce8e6; --green: #34a853; --green-050: #e6f4ea;
-        --g900: #202124; --g700: #5f6368; --g500: #80868b; --g300: #dadce0; --g200: #e8eaed; --g100: #f1f3f4;
-        --surface: #fff; --font: 'Roboto', Arial, sans-serif; --display: 'Google Sans', 'Roboto', Arial, sans-serif;
-        --md-primary-container: #d3e3fd; --md-on-primary-container: #0842a0; --md-surface-1: #f7f9fc; --md-outline-variant: #c4c7c5;
-        --md-elev-1: 0 1px 2px rgba(0,0,0,.3), 0 1px 3px 1px rgba(0,0,0,.15);
-        --shape-sm: 8px; --shape-md: 12px; --shape-lg: 16px; --shape-full: 9999px; --ease: cubic-bezier(.2,0,0,1);
-      }
-      * { box-sizing: border-box; }
-      body { margin: 0; background: var(--g100); color: var(--g900); font-family: var(--font); font-size: 15px; line-height: 1.6; }
-      a { color: var(--blue-700); }
-      .appbar { background: var(--surface); border-bottom: 1px solid var(--md-outline-variant); position: sticky; top: 0; z-index: 20; }
-      .appbar-inner { max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-      .logo { font-family: var(--display); font-size: 30px; font-weight: 500; letter-spacing: -.5px; text-decoration: none; }
-      .logo .b { color: #4285F4; } .logo .i { color: #EA4335; } .logo .d { color: #FBBC05; } .logo .o { color: #4285F4; } .logo .s { color: #34A853; }
-      .claim { color: var(--g700); font-size: 13.5px; }
-      .nav { display: flex; gap: 6px; margin-left: auto; }
-      .nav a { padding: 8px 14px; border-radius: var(--shape-full); font: 500 13.5px var(--font); color: var(--g700); text-decoration: none; transition: background-color .15s var(--ease); }
-      .nav a:hover { background: rgba(26,115,232,.08); }
-      .nav a.on { background: var(--md-primary-container); color: var(--md-on-primary-container); }
-      .wrap { max-width: 820px; margin: 0 auto; padding: 30px 20px 50px; }
-      h1 { font-family: var(--display); font-weight: 500; font-size: 34px; margin: 6px 0 6px; }
-      .lead { font-size: 17px; color: var(--g700); margin: 0 0 20px; }
-      h2 { font-family: var(--display); font-weight: 500; font-size: 22px; margin: 34px 0 10px; }
-      h3 { font-family: var(--display); font-weight: 500; font-size: 16px; margin: 0 0 6px; }
-      .card { background: var(--surface); border-radius: var(--shape-lg); box-shadow: var(--md-elev-1); padding: 20px 24px; margin: 16px 0; }
-      .pill { display: inline-block; background: var(--md-primary-container); color: var(--md-on-primary-container); border-radius: var(--shape-sm); padding: 2px 9px; font-size: 12px; font-weight: 500; }
-      ul, ol { padding-left: 20px; } li { margin: 6px 0; }
-      .steps { counter-reset: s; list-style: none; padding: 0; }
-      .steps li { position: relative; padding: 4px 0 4px 42px; margin: 10px 0; }
-      .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 0; top: 2px; width: 28px; height: 28px; border-radius: 50%; background: var(--md-primary-container); color: var(--md-on-primary-container); font: 500 14px var(--display); display: flex; align-items: center; justify-content: center; }
-      .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-      .two .card { margin: 0; }
-      .pro { border-top: 3px solid var(--green); } .con { border-top: 3px solid var(--red-700); }
-      .pro h3 { color: var(--green); } .con h3 { color: var(--red-700); }
-      .callout { border-left: 3px solid var(--blue); background: var(--md-surface-1); border-radius: var(--shape-md); padding: 14px 18px; margin: 18px 0; }
-      .disclaimer { background: #fff8e1; border: 1px solid #f6e2a8; border-radius: var(--shape-md); padding: 14px 18px; margin: 22px 0; font-size: 13.5px; color: #7a5b00; }
-      .src a { display: block; margin: 6px 0; }
-      footer { border-top: 1px solid var(--g300); margin-top: 40px; padding: 22px 0 0; color: var(--g500); font-size: 12.5px; }
-      footer a { color: var(--blue-700); text-decoration: none; margin-right: 16px; }
-      footer a:hover { text-decoration: underline; }
-      @media (max-width: 640px) { .two { grid-template-columns: 1fr; } h1 { font-size: 27px; } }
-    </style>
+    <link href="site.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="appbar">
-      <div class="appbar-inner">
-        <a class="logo" href="index.html"><span class="b">a</span><span class="i">i</span><span class="d">d</span><span class="o">o</span><span class="s">s</span></a>
-        <nav class="nav"><a href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a href="ueber-aidos.html">Über aidos</a><a class="on" href="rechtslage.html">Rechtslage</a></nav>
-      </div>
-    </div>
+    <header class="masthead"><div class="masthead-inner">
+<a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<span class="tagline">Datenjournalismus zur Bewertungs-Ökonomie</span>
+<nav class="nav"><a href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a href="ueber-aidos.html">Über aidos</a><a class="on" href="rechtslage.html">Rechtslage</a></nav>
+</div></header>
 
     <div class="wrap">
       <span class="pill">Rechtslage &amp; Hintergrund</span>
@@ -136,12 +92,12 @@
         <p style="color:var(--g500); font-size:12.5px; margin-top:10px">Weiterführende Berichterstattung zum Thema findet sich u. a. bei etablierten Medien- und Fach­portalen (z. B. Tagesschau, Legal Tribune Online, heise online). Die genannten Links sind Einstiegs­punkte, keine Empfehlung im Einzelfall.</p>
       </div>
 
-      <footer>
-        <div style="margin-bottom:10px">
-          <a href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a href="ueber-aidos.html">Über aidos</a><a href="rechtslage.html">Rechtslage</a><a href="impressum.html">Impressum</a><a href="impressum.html#datenschutz">Datenschutz</a><a href="daten-melden.html">Daten melden</a>
-        </div>
-        aidos ist ein journalistisches Transparenzprojekt. Angaben zu entfernten Bewertungen stammen von Google&nbsp;LLC. Keine Rechtsberatung. © 2026 aidos
-      </footer>
+      <footer class="site-foot"><div class="site-foot-inner">
+<a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<div class="foot-nav"><a href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a href="ueber-aidos.html">Über aidos</a><a href="rechtslage.html">Rechtslage</a><a href="impressum.html">Impressum</a><a href="impressum.html#datenschutz">Datenschutz</a><a href="daten-melden.html">Daten melden</a></div>
+<div class="foot-legal">aidos ist ein journalistisches Transparenzprojekt. Angaben zu entfernten Bewertungen stammen von Google&nbsp;LLC. Werte inkl. entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. Keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
+<div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
+</div></footer>
     </div>
   </body>
 </html>

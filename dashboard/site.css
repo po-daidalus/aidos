@@ -190,6 +190,24 @@ table.rank a:hover { color: var(--accent); }
 .prose h3 { margin: 26px 0 8px; }
 .prose ul { padding-left: 22px; } .prose li { margin: 7px 0; }
 
+/* — static/legal page supplement (ueber-aidos, rechtslage, impressum, daten-melden) — */
+.lead { font-family: var(--serif); font-size: clamp(18px, 2.2vw, 21px); line-height: 1.55; color: var(--ink-2); margin: 12px 0 24px; }
+.card h2 { font-family: var(--sans); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; margin: 0 0 12px; }
+.card h3 { margin: 0 0 8px; }
+.card p { margin: 0 0 12px; } .card p:last-child { margin-bottom: 0; }
+.card { margin: 16px 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.two .card { margin: 0; }
+.pill { display: inline-block; font: 600 11px var(--sans); letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); background: var(--accent-w); padding: 3px 10px; border-radius: 20px; }
+.callout { border-left: 3px solid var(--data-blue); background: var(--surface); border: 1px solid var(--rule); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 18px 0; }
+.steps { counter-reset: step; list-style: none; padding: 0; } .steps li { counter-increment: step; padding: 8px 0 8px 40px; position: relative; }
+.steps li::before { content: counter(step); position: absolute; left: 0; top: 6px; width: 26px; height: 26px; background: var(--ink); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: 600 13px var(--sans); }
+.yes { color: #1a7f4b; font-weight: 700; } .no { color: var(--accent); font-weight: 700; }
+.scorebox { display: flex; gap: 16px; align-items: center; }
+.ring { flex: 0 0 auto; width: 60px; height: 60px; border-radius: 50%; border: 4px solid var(--data-blue); color: var(--data-blue); display: flex; align-items: center; justify-content: center; font: 600 22px var(--serif); }
+.note, .disclaimer { font-size: 13px; color: var(--ink-3); line-height: 1.55; }
+@media (max-width: 640px) { .two { grid-template-columns: 1fr; } }
+
 /* — line motif (echoes the logo glyph: one ink + one short accent line) — */
 .motif { display: block; width: 46px; margin: 14px 0; }
 .motif b { display: block; height: 3px; background: var(--data-blue); border-radius: 2px; } /* original rating */
