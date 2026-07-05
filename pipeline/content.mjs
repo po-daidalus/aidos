@@ -39,7 +39,7 @@ if (T.capCount >= 1) sections.push(`<div class="card"><h2>Die Dunkelziffer</h2><
 if (topCity) sections.push(`<div class="card"><h2>Regionaler Schwerpunkt: ${esc(topCity.key)}</h2><p>Der aktuelle Erhebungsschwerpunkt liegt auf <b>${esc(topCity.key)}</b> (${topCity.n} Profile, Auffälligkeits-Score ${de1(topCity.score)}/10). Die Erhebung wird auf weitere Städte ausgeweitet. <a href="../stadt/${slug(topCity.key)}.html">Zur Stadtseite →</a></p></div>`);
 
 sections.push(`<table class="rank"><thead><tr><th>Branche</th><th>Entfernt (geschätzt)</th><th>aidos-Index</th></tr></thead><tbody>` +
-  branches.map((b) => `<tr><td><a href="../branche/${slug(b.key)}.html">${EMO[b.key] || ''} ${esc(b.key)}</a></td><td>${de(Math.round(b.removed))}</td><td>${b.aidos_index}</td></tr>`).join('') + `</tbody></table>`);
+  branches.map((b) => `<tr><td><a href="../branche/${slug(b.key)}.html">${esc(b.key)}</a></td><td class="num">${de(Math.round(b.removed))}</td><td class="num">${b.aidos_index}</td></tr>`).join('') + `</tbody></table>`);
 
 const title = `DSA-Report ${monthLabel}: ${de(T.removed)} entfernte Google-Bewertungen | aidos`;
 const desc = `DSA-Report ${monthLabel}: Google entfernte bei ${de(T.businesses)} Profilen geschätzt ${de(T.removed)} Bewertungen wegen Diffamierung. Auffälligste Branche: ${topByIdx ? topByIdx.key : '–'}.`;
@@ -51,22 +51,31 @@ const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"/>
 <meta property="og:type" content="article"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(desc)}"/><meta name="twitter:card" content="summary_large_image"/>
 <link href="../fonts/fonts.css" rel="stylesheet"/><link href="../pages.css" rel="stylesheet"/>
 <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'NewsArticle', headline: title, datePublished: month + '-01', author: { '@type': 'Organization', name: 'aidos' }, publisher: { '@type': 'Organization', name: 'aidos' } })}</script></head>
-<body><div class="appbar"><div class="appbar-inner"><a class="logo" href="../index.html"><span class="b">a</span><span class="i">i</span><span class="d">d</span><span class="o">o</span><span class="s">s</span></a>
-<nav class="nav"><a href="../index.html">Übersicht</a><a href="../listing.html">Unternehmen &amp; Ketten</a><a href="../ueber-aidos.html">Über aidos</a><a href="../rechtslage.html">Rechtslage</a></nav></div></div>
+<body><header class="masthead"><div class="masthead-inner">
+<a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#171719"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<nav class="nav"><a href="../index.html">Übersicht</a><a href="../listing.html">Unternehmen &amp; Ketten</a><a href="../ueber-aidos.html">Über aidos</a><a href="../rechtslage.html">Rechtslage</a></nav></div></header>
 <div class="wrap"><div class="crumbs"><a href="../index.html">aidos</a> › DSA-Report › ${monthLabel}</div>
 <div class="kicker">DSA-Report · automatisch aus den Daten erstellt, redaktionell verantwortet</div>
-<h1>DSA-Report ${monthLabel}</h1>
+<h1>DSA-Report ${monthLabel}</h1><span class="motif"><b></b><i></i></span>
 ${sections.join('\n')}
 <div class="notice"><b>Methodik &amp; Hinweis:</b> Dieser Report wird automatisch aus den erfassten Aggregatdaten erzeugt; alle Zahlen stammen aus den öffentlichen Google-Maps-Transparenz-Bannern (rollierende 365 Tage). Eine hohe Zahl entfernter Bewertungen ist <b>kein</b> Beweis für unlauteres Verhalten – Unternehmen sind häufig Ziel unberechtigter Fake-Bewertungskampagnen. Es werden keine Namen von Einzelpersonen genannt.</div>
-<footer><a href="../index.html">Übersicht</a><a href="../listing.html">Unternehmen &amp; Ketten</a><a href="../ueber-aidos.html">Über aidos</a><a href="../rechtslage.html">Rechtslage</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Datenschutz</a><a href="../daten-melden.html">Daten melden</a><br/><br/>© 2026 aidos · keine Rechtsberatung</footer>
-</div></body></html>`;
+</div>
+<footer class="site-foot"><div class="site-foot-inner">
+<a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#fff"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<div class="foot-nav"><a href="../index.html">Übersicht</a><a href="../listing.html">Unternehmen &amp; Ketten</a><a href="../ueber-aidos.html">Über aidos</a><a href="../rechtslage.html">Rechtslage</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Datenschutz</a><a href="../daten-melden.html">Daten melden</a></div>
+<div class="foot-meta">Automatisch generiert aus den Aggregatdaten · keine Rechtsberatung · © 2026 aidos</div>
+</div></footer>
+</body></html>`;
 
 fs.mkdirSync(new URL('report/', OUT), { recursive: true });
 fs.writeFileSync(new URL(rel, OUT), html);
 
 // homepage article index: the fresh monthly report first, then the evergreen explainers
+// data-viz cover: bar heights from the real branch distribution (no photos, no stock)
+const maxRem = Math.max(1, ...branches.map((b) => b.removed || 0));
+const bars = branches.slice(0, 7).map((b) => Math.max(12, Math.round((100 * (b.removed || 0)) / maxRem)));
 const articles = [
-  { title: `DSA-Report ${monthLabel}`, teaser: `Google entfernte bei ${de(T.businesses)} Profilen geschätzt ${de(T.removed)} Bewertungen. Auffälligste Branche: ${topByIdx ? topByIdx.key : '–'}.`, url: rel, tag: 'Report', grad: 'linear-gradient(135deg,#1a73e8,#0842a0)' },
+  { title: `DSA-Report ${monthLabel}`, teaser: `Google entfernte bei ${de(T.businesses)} Profilen geschätzt ${de(T.removed)} Bewertungen. Auffälligste Branche: ${topByIdx ? topByIdx.key : '–'}.`, url: rel, tag: 'Report', bars },
 ];
 fs.writeFileSync(new URL('articles.js', OUT), 'window.AIDOS_ARTICLES = ' + JSON.stringify(articles) + ';\n');
 
