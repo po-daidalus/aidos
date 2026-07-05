@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Methodik — Wie aidos erhebt, rechnet und veröffentlicht</title>
+    <meta name="description" content="Transparent erklärt: Datenquelle, monatliche Erhebung, Schätzverfahren, aidos-Score, Namensnennungs-Regeln und Grenzen der aidos-Auswertung." />
+    <link href="fonts/fonts.css" rel="stylesheet" />
+    <link href="site.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="masthead"><div class="masthead-inner">
+<a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<span class="tagline">Datenjournalismus zur Bewertungs-Ökonomie</span>
+<nav class="nav"><a href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a class="on" href="methodik.html">Methodik</a><a href="presse.html">Presse</a><a href="ueber-aidos.html">Über aidos</a><a href="rechtslage.html">Rechtslage</a></nav>
+</div></header>
+
+    <div class="wrap">
+      <span class="pill">Methodik</span>
+      <h1>Wie aidos erhebt, rechnet und veröffentlicht</h1>
+      <span class="motif"><b></b><i></i></span>
+      <p class="lead">Jede Zahl auf dieser Seite muss sich auf eine öffentlich einsehbare Angabe zurückführen lassen. Hier steht, woher die Daten kommen, was wir daraus berechnen — und was wir bewusst <b>nicht</b> tun.</p>
+
+      <h2>1. Die Datenquelle</h2>
+      <div class="card static">
+        <p>Grundlage ist der <b>Transparenz-Hinweis von Google&nbsp;Maps</b>: Seit 2026 weist Google auf öffentlichen Unternehmensprofilen aus, wie viele Bewertungen in den letzten 365 Tagen „aufgrund von Beschwerden wegen Diffamierung entfernt" wurden. aidos erfasst ausschließlich, was dort <b>für jeden sichtbar</b> steht:</p>
+        <ul>
+          <li>den Entfernungs-Hinweis mit seiner <b>Spanne</b> (z.&nbsp;B. „51 bis 100", maximal „über 250"),</li>
+          <li>die aktuell <b>angezeigte Durchschnittsnote</b> und die Sternverteilung,</li>
+          <li>die Anzahl sichtbarer Bewertungen, Branche und Ort.</li>
+        </ul>
+        <p><b>Nicht erfasst</b> werden Inhalte oder Verfasser:innen einzelner Bewertungen — weder sichtbarer noch entfernter.</p>
+      </div>
+
+      <h2>2. Die Erhebung</h2>
+      <div class="card static">
+        <ol class="steps">
+          <li><b>Kandidaten:</b> Unternehmensprofile werden systematisch aus offenen Quellen (u.&nbsp;a. OpenStreetMap) zusammengestellt — Stadt für Stadt, branchenübergreifend.</li>
+          <li><b>Prüfung:</b> Jedes Profil wird auf den Transparenz-Hinweis geprüft. Auch <b>Profile ohne Hinweis</b> werden gezählt — nur so lässt sich seriös sagen, wie verbreitet Entfernungen wirklich sind (gemessener Nenner statt Anekdote).</li>
+          <li><b>Monatliche Wiederholung:</b> Die Erhebung läuft monatlich neu. Jeder Eintrag trägt ein <b>Stand-Datum</b>; Einträge, die nicht erneut bestätigt wurden, verschwinden aus der öffentlichen Ansicht.</li>
+        </ol>
+        <p class="asof" style="margin-top:8px">Zur Reichweite: Der Hinweis ist selten — in den bisher erhobenen Städten tragen ihn nur rund 4&nbsp;% der geprüften Profile.</p>
+      </div>
+
+      <h2>3. Was wir berechnen</h2>
+      <div class="card static">
+        <h3>Spannen, nie Scheingenauigkeit</h3>
+        <p>Google nennt keine exakten Zahlen, sondern Spannen. Wir rechnen mit diesen Spannen weiter und weisen sie auch so aus. Bei „über 250" ist die wahre Zahl unbekannt — wir deckeln konservativ und kennzeichnen die <b>Dunkelziffer</b>.</p>
+        <h3>Die Schätzung „Note ohne Entfernungen"</h3>
+        <p>Für Profile mit ausreichender Datenlage schätzen wir, wo die Note läge, <i>wenn die entfernten Bewertungen noch zählten</i>: Die von Google ausgewiesene Spanne wird rechnerisch mit 1–2★ in die echte Sternverteilung zurückgelegt (Best-/Worst-Case ergibt die Bandbreite). Das ist ausdrücklich eine <b>Schätzung</b> — waren die Entfernungen berechtigt (etwa bei Fake-Kampagnen), ist die angezeigte Note die zutreffendere.</p>
+        <h3>Der aidos-Score</h3>
+        <p>Der Score (0–100) ist ein <b>Perzentil</b>: Er ordnet ein Profil nach der Zahl entfernter Bewertungen in den erfassten Datensatz ein. Ein Score von 90 heißt „mehr Entfernungen als 90&nbsp;% der erfassten Profile" — eine neutrale statistische Einordnung, <b>kein Werturteil</b> und kein Beweis für Fehlverhalten.</p>
+      </div>
+
+      <h2>4. Wen wir nennen — und wen nicht</h2>
+      <div class="callout"><b>Namensnennung nur bei juristischen Personen und Ketten.</b> Öffentlich namentlich erscheinen ausschließlich Kapitalgesellschaften (GmbH, AG&nbsp;…), größere Ketten und umsatzstarke Betriebe. Einzelunternehmer:innen und Kleinstbetriebe fließen nur <b>anonymisiert in Aggregate</b> ein (Branche, Stadt, Anzahl) und werden intern pseudonymisiert gespeichert. Details in der <a href="impressum.html#datenschutz">Datenschutzerklärung</a>.</div>
+
+      <h2>5. Grenzen der Daten</h2>
+      <div class="card static">
+        <ul>
+          <li>Der Entfernungs-Hinweis ist eine <b>rollierende 365-Tage-Summe</b>. <b>Wann</b> einzelne Bewertungen entfernt wurden, veröffentlicht Google nicht — deshalb zeigen wir keine Entfernungs-Kurven, sondern nur belegbare Verläufe und klar gekennzeichnete Modellrechnungen.</li>
+          <li>Alle Werte sind <b>Momentaufnahmen</b> der öffentlichen Google-Daten zum jeweiligen Stand-Datum.</li>
+          <li><b>Wer</b> eine Entfernung beantragt hat, ist öffentlich nicht ersichtlich. Wir schreiben deshalb „Google entfernte nach Diffamierungs-Beschwerden" — nie, ein Unternehmen habe „löschen lassen".</li>
+          <li>Eine hohe Zahl entfernter Bewertungen ist <b>kein Beleg für unlauteres Verhalten</b>: Unternehmen sind häufig Ziel unberechtigter Fake-Kampagnen; Entfernungen können vollständig berechtigt sein.</li>
+        </ul>
+      </div>
+
+      <h2>6. Korrekturen</h2>
+      <div class="card static">
+        <p>Fehler passieren — und werden korrigiert. Betroffene Unternehmen können ihre Daten über <a href="daten-melden.html">Daten melden / korrigieren</a> beanstanden. Ist eine Prüfung nicht innerhalb von 5 Tagen abgeschlossen, nehmen wir den Eintrag vorsorglich aus der öffentlichen Ansicht. Inhaltliche Korrekturen vermerken wir auf der betroffenen Seite.</p>
+      </div>
+
+      <footer class="site-foot"><div class="site-foot-inner">
+<a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<div class="foot-nav"><a href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a href="methodik.html">Methodik</a><a href="presse.html">Presse</a><a href="ueber-aidos.html">Über aidos</a><a href="rechtslage.html">Rechtslage</a><a href="impressum.html">Impressum</a><a href="impressum.html#datenschutz">Datenschutz</a><a href="daten-melden.html">Daten melden</a></div>
+<div class="foot-legal">aidos ist ein journalistisches Transparenzprojekt. Angaben zu entfernten Bewertungen stammen von Google&nbsp;LLC. Werte inkl. entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. Keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
+<div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
+</div></footer>
+    </div>
+  </body>
+</html>
