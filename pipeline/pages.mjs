@@ -47,13 +47,17 @@ function shell({ title, desc, canonical, jsonld, body, active = 'listing' }) {
 <meta property="og:site_name" content="aidos"/><meta name="twitter:card" content="summary_large_image"/>
 <link href="../fonts/fonts.css" rel="stylesheet"/><link href="../pages.css" rel="stylesheet"/>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}</head>
-<body><div class="appbar"><div class="appbar-inner">
-<a class="logo" href="../index.html"><span class="b">a</span><span class="i">i</span><span class="d">d</span><span class="o">o</span><span class="s">s</span></a>
+<body><header class="masthead"><div class="masthead-inner">
+<a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#171719"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
 <nav class="nav"><a${on('index')} href="../index.html">Übersicht</a><a${on('listing')} href="../listing.html">Unternehmen &amp; Ketten</a><a${on('ueber')} href="../ueber-aidos.html">Über aidos</a><a${on('recht')} href="../rechtslage.html">Rechtslage</a></nav>
-</div></div><div class="wrap">${body}
-<footer><a href="../index.html">Übersicht</a><a href="../listing.html">Unternehmen &amp; Ketten</a><a href="../ueber-aidos.html">Über aidos</a><a href="../rechtslage.html">Rechtslage</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Datenschutz</a><a href="../daten-melden.html">Daten melden</a><br/><br/>
-Quelle: öffentliche Google-Maps-Profile (Hinweis „… Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt"). Eine hohe Zahl entfernter Bewertungen ist <b>kein</b> Beweis für unlauteres Verhalten. Keine Rechtsberatung. © 2026 aidos</footer>
-</div></body></html>`;
+</div></header><div class="wrap">${body}</div>
+<footer class="site-foot"><div class="site-foot-inner">
+<a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#fff"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<div class="foot-nav"><a href="../index.html">Übersicht</a><a href="../listing.html">Unternehmen &amp; Ketten</a><a href="../ueber-aidos.html">Über aidos</a><a href="../rechtslage.html">Rechtslage</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Datenschutz</a><a href="../daten-melden.html">Daten melden</a></div>
+<div class="foot-legal">Quelle: öffentliche Google-Maps-Profile (Hinweis „… Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt"). Eine hohe Zahl entfernter Bewertungen ist <b>kein</b> Beweis für unlauteres Verhalten. Werte inkl. entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. Keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
+<div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
+</div></footer>
+</body></html>`;
 }
 const crumbs = (items) => `<div class="crumbs">${items.map((i, n) => (i.href ? `<a href="${i.href}">${esc(i.t)}</a>` : esc(i.t)) + (n < items.length - 1 ? ' › ' : '')).join('')}</div>`;
 const breadcrumbLd = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.t, item: BASE + '/' + (i.abs || '') })) });
@@ -112,27 +116,27 @@ for (const [bkey, locs] of brands) {
   const rel = 'unternehmen/' + sg + '.html'; companyLinks[name] = rel;
   const canonical = BASE + '/' + rel;
   const title = `${name}: ${ar.label} entfernte Google-Bewertungen | aidos`;
-  const desc = `Laut dem Transparenz-Hinweis von Google Maps wurden bei ${name}${cities.length ? ' (' + cities.join(', ') + ')' : ''} im vergangenen Jahr ${ar.label} Bewertungen wegen Diffamierung entfernt${sumNote}. Branche: ${branch}. aidos-Score ${score}/100.`;
+  const desc = `Laut dem öffentlichen Transparenz-Hinweis von Google Maps wurden bei ${name}${cities.length ? ' (' + cities.join(', ') + ')' : ''} in den letzten 365 Tagen ${ar.label} Bewertungen nach Diffamierungs-Beschwerden entfernt${sumNote}. Branche: ${branch}.`;
   const hasEst = est != null && rating != null && est <= rating;
-  const locList = locs.length > 1 ? `<div class="card"><h2>${locs.length} Standorte</h2><div class="loc-list">${locs.slice().sort((a, b) => (b.range_min || 0) - (a.range_min || 0)).map((d) => `<span class="chip">${esc((d.name || '').split(/ [-–] /).slice(1).join(' – ') || d.city || 'Standort')}: ${rangeLabel(d.range_min, d.range_max)}</span>`).join('')}</div></div>` : '';
-  const primary = locs.length === 1 && locs[0].lat && locs[0].lng ? locs[0] : null;
+  const lastSeen = locs.map((d) => d.last_seen).filter(Boolean).sort().pop();
+  const stand = lastSeen ? new Date(lastSeen + 'T00:00:00Z').toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }) : null;
+  const locList = locs.length > 1 ? `<div class="card"><h2>${locs.length} erfasste Standorte</h2><div class="loc-list">${locs.slice().sort((a, b) => (b.range_min || 0) - (a.range_min || 0)).map((d) => `<span class="chip">${esc((d.name || '').split(/ [-–] /).slice(1).join(' – ') || d.city || 'Standort')}: ${rangeLabel(d.range_min, d.range_max)}</span>`).join('')}</div></div>` : '';
   const mapsUrl = (locs[0].url) || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(name + ' ' + (cities[0] || ''));
   const body = crumbs([{ t: 'aidos', href: '../index.html', abs: '' }, { t: branch, href: '../branche/' + slug(branch) + '.html', abs: 'branche/' + slug(branch) + '.html' }, { t: name }]) +
-    `<div class="kicker">${EMO[branch] || ''} ${esc(branch)}${cities.length ? ' · ' + esc(cities.join(', ')) : ''}</div>` +
-    `<h1>${esc(name)}</h1>` +
-    `<p class="sub">Google hat bei ${locs.length > 1 ? 'diesen Standorten' : 'diesem Unternehmen'} im vergangenen Jahr <b>${rangeLabel(remMin, remMax)}</b> Bewertungen wegen Diffamierung entfernt.</p>` +
-    `<a class="maps-link" href="${esc(mapsUrl)}" target="_blank" rel="noopener">Auf Google Maps ansehen ↗</a>` +
+    `<div class="kicker">${esc(branch)}${cities.length ? ' · ' + esc(cities.join(', ')) : ''}</div>` +
+    `<h1>${esc(name)}</h1><span class="motif"><b></b><i></i></span>` +
+    `<p class="sub">Laut dem öffentlichen Google-Maps-Hinweis wurden bei ${locs.length > 1 ? 'diesen Standorten' : 'diesem Unternehmen'} in den letzten 365 Tagen <b>${rangeLabel(remMin, remMax)}</b> Bewertungen nach Diffamierungs-Beschwerden entfernt.</p>` +
+    (stand ? `<p class="asof">Stand der Erhebung: ${stand} · Quelle: öffentliches Google-Maps-Profil · <a href="${esc(mapsUrl)}" target="_blank" rel="noopener">auf Google Maps ansehen ↗</a></p>` : '') +
     `<div class="grid">` +
     `<div class="stat"><div class="v red">${rangeLabel(remMin, remMax)}</div><div class="l">entfernte Bewertungen (letzte 365 Tage)</div></div>` +
     `<div class="stat"><div class="v">${rating != null ? de1(rating) + '★' : '–'}</div><div class="l">aktuell angezeigte Bewertung</div></div>` +
     `<div class="stat"><div class="v">${de(locs.reduce((s, d) => s + (d.reviews || 0), 0))}</div><div class="l">sichtbare Bewertungen</div></div>` +
-    `<div class="stat"><div class="v" style="color:${scoreCol(score)}">${score}</div><div class="l">aidos-Score (0–100, Perzentil im Datensatz)</div></div>` +
+    `<div class="stat"><div class="v" style="color:${scoreCol(score)}">${score}<span style="font-size:16px;color:var(--ink-3)"> / 100</span></div><div class="l">Statistik-Index (Perzentil nach entfernten Bewertungen im erfassten Datensatz)</div></div>` +
     `</div>` +
-    (hasEst ? `<div class="card"><h2>Was-wäre-wenn: Bewertung inkl. der entfernten Rezensionen</h2><p class="est-line">Wenn man annimmt, dass die entfernten Rezensionen 1–2★ hatten, läge die Bewertung rechnerisch bei <b>~${de1(est)}★</b> statt der angezeigten <b>${de1(rating)}★</b>. Nur eine Schätzung – keine exakten Werte.</p></div>` : '') +
+    (hasEst ? `<div class="card"><h2>Was wäre die Bewertung ohne die entfernten Rezensionen?</h2><p class="est-line">Nimmt man an, dass die entfernten Rezensionen im Schnitt 1–2★ vergeben hätten, läge die Note rechnerisch bei <b>~${de1(est)}★</b> statt der angezeigten <b>${de1(rating)}★</b>. Nur eine Schätzung, keine exakten Werte — waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die angezeigte Note die zutreffendere.</p></div>` : '') +
     locList +
-    (primary ? `<a class="map-snip" href="${esc(mapsUrl)}" target="_blank" rel="noopener"><img src="https://staticmap.openstreetmap.de/staticmap.php?center=${primary.lat},${primary.lng}&zoom=15&size=900x150&markers=${primary.lat},${primary.lng},red-pushpin" alt="Kartenausschnitt" loading="lazy"/><span class="map-attr">© OpenStreetMap-Mitwirkende</span></a>` : '') +
     disclaimer +
-    `<p style="font-size:13px;color:var(--g700)">Mehr: <a href="../branche/${slug(branch)}.html">alle ${esc(branch)}-Einträge</a>${cities[0] ? ` · <a href="../stadt/${slug(cities[0])}.html">${esc(cities[0])}</a>` : ''} · <a href="../rechtslage.html">Warum werden Bewertungen entfernt?</a></p>`;
+    `<p style="font-size:13.5px;color:var(--ink-3)">Mehr: <a href="../branche/${slug(branch)}.html">alle ${esc(branch)}-Einträge</a>${cities[0] ? ` · <a href="../stadt/${slug(cities[0])}.html">${esc(cities[0])}</a>` : ''} · <a href="../rechtslage.html">Warum werden Bewertungen entfernt?</a></p>`;
   const jsonld = breadcrumbLd([{ t: 'aidos', abs: '' }, { t: branch, abs: 'branche/' + slug(branch) + '.html' }, { t: name, abs: rel }]);
   fs.writeFileSync(new URL(rel, OUT), shell({ title, desc, canonical, jsonld, body }));
   urls.push({ loc: canonical, removed: (remMin + remMax) / 2 });
@@ -157,14 +161,14 @@ for (const br of agg.branches) {
   const title = `${br.key}: entfernte Google-Bewertungen im Vergleich | aidos`;
   const desc = `${br.key} in der Auswertung: geschätzt ${de(Math.round(br.removed))} entfernte Bewertungen, aidos-Index ${br.aidos_index}/100. ${list.length} gelistete Unternehmen & Ketten.`;
   const body = crumbs([{ t: 'aidos', href: '../index.html', abs: '' }, { t: 'Branchen' }, { t: br.key }]) +
-    `<div class="kicker">${EMO[br.key] || ''} Branche</div><h1>${esc(br.key)}</h1>` +
+    `<div class="kicker">Branche</div><h1>${esc(br.key)}</h1><span class="motif"><b></b><i></i></span>` +
     `<p class="sub">Geschätzt <b>${de(Math.round(br.removed))}</b> entfernte Bewertungen über ${br.n} erfasste Profile. aidos-Index <b>${br.aidos_index}/100</b>.</p>` +
     `<div class="grid"><div class="stat"><div class="v red">${de(Math.round(br.removed))}</div><div class="l">geschätzt entfernte Bewertungen</div></div>` +
     `<div class="stat"><div class="v">${br.n}</div><div class="l">erfasste Profile</div></div>` +
     `<div class="stat"><div class="v" style="color:${scoreCol(br.aidos_index)}">${br.aidos_index}</div><div class="l">aidos-Index (Auffälligkeit der Branche)</div></div>` +
     `<div class="stat"><div class="v">${br.share} %</div><div class="l">Anteil an allen Entfernungen</div></div></div>` +
     (list.length ? `<div class="card"><h2>Gelistete Unternehmen &amp; Ketten (${list.length})</h2>${brandTable(list)}</div>` : '') +
-    disclaimer + `<p style="font-size:13px;color:var(--g700)"><a href="../index.html">← Alle Branchen &amp; Städte</a></p>`;
+    disclaimer + `<p style="font-size:13px;color:var(--ink-3)"><a href="../index.html">← Alle Branchen &amp; Städte</a></p>`;
   fs.writeFileSync(new URL(rel, OUT), shell({ title, desc, canonical, jsonld: breadcrumbLd([{ t: 'aidos', abs: '' }, { t: br.key, abs: rel }]), body }));
   urls.push({ loc: canonical, removed: br.removed });
 }
@@ -176,10 +180,10 @@ for (const c of agg.cities.filter((c) => c.n >= 3)) {
   const title = `Entfernte Google-Bewertungen in ${c.key} | aidos`;
   const desc = `${c.key}: geschätzt ${de(Math.round(c.removed))} entfernte Bewertungen über ${c.n} erfasste Profile. Auffälligkeits-Score ${de1(c.score)}/10. Hotspot: ${(c.hotspot || []).join(', ')}.`;
   const body = crumbs([{ t: 'aidos', href: '../index.html', abs: '' }, { t: 'Städte' }, { t: c.key }]) +
-    `<div class="kicker">📍 Stadt</div><h1>Entfernte Bewertungen in ${esc(c.key)}</h1>` +
+    `<div class="kicker">Stadt</div><h1>Entfernte Bewertungen in ${esc(c.key)}</h1><span class="motif"><b></b><i></i></span>` +
     `<p class="sub">Geschätzt <b>${de(Math.round(c.removed))}</b> entfernte Bewertungen über ${c.n} erfasste Profile. Auffälligkeits-Score <b>${de1(c.score)}/10</b>${c.hotspot && c.hotspot.length ? `, Schwerpunkt <b>${esc(c.hotspot.join(' & '))}</b>` : ''}.</p>` +
     (list.length ? `<div class="card"><h2>Gelistete Unternehmen &amp; Ketten (${list.length})</h2>${brandTable(list)}</div>` : '') +
-    disclaimer + `<p style="font-size:13px;color:var(--g700)"><a href="../index.html">← Übersicht</a></p>`;
+    disclaimer + `<p style="font-size:13px;color:var(--ink-3)"><a href="../index.html">← Übersicht</a></p>`;
   fs.writeFileSync(new URL(rel, OUT), shell({ title, desc, canonical, jsonld: breadcrumbLd([{ t: 'aidos', abs: '' }, { t: c.key, abs: rel }]), body }));
   urls.push({ loc: canonical, removed: c.removed });
 }
