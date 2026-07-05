@@ -12,6 +12,9 @@ const OUT = new URL('dashboard/', ROOT);
 // Read the SAME data the site ships: data.js is already nameable-only, suppressed, and scored.
 const nameableAll = JSON.parse(fs.readFileSync(new URL('dashboard/data.js', ROOT), 'utf8').replace('window.AIDOS_DATA = ', '').replace(/;\s*$/, ''));
 const agg = JSON.parse(fs.readFileSync(new URL('dashboard/aggregates.js', ROOT), 'utf8').replace('window.AIDOS_AGG = ', '').replace(/;\s*$/, ''));
+// Real per-business review history (dates + stars, via the review pull) for the subset we fetched.
+// Only ever holds genuine review-date histograms — never removal dates (Google doesn't publish those).
+const SERIES = JSON.parse(fs.readFileSync(new URL('dashboard/series.js', ROOT), 'utf8').replace('window.AIDOS_SERIES = ', '').replace(/;\s*$/, ''));
 
 const slug = (s) => (s || '').toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/&/g, ' und ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -90,6 +93,70 @@ const skipped = brandsAll.size - brands.size;
 
 const wavg = (locs, f) => { const r = locs.filter((d) => f(d) != null); const w = r.reduce((s, d) => s + (d.reviews || 0), 0); return w ? r.reduce((s, d) => s + f(d) * (d.reviews || 0), 0) / w : (r.length ? r.reduce((s, d) => s + f(d), 0) / r.length : null); };
 
+// ---------- historical development chart (REAL review dates only) ----------
+// Honesty rule: Google publishes removals ONLY as a rolling 365-day total and never dates them, so
+// we never draw a "removals per month" curve — that would be invented. What we truthfully have for
+// the businesses whose reviews we pulled is the real review history: monthly review VOLUME and the
+// resulting displayed-RATING trajectory (cumulative survivor average). That is the genuine
+// "historische Entwicklung". Businesses without a fetched history get an honest placeholder, no fake
+// chart. The last-365-day window (where Google's removal count applies) is only marked, not invented.
+const tsPlaceholder = () => `<section class="tsempty"><h2>Historische Entwicklung</h2><p class="asof">Für dieses Profil liegt noch keine Bewertungs-Zeitreihe vor. aidos erhebt monatlich neu — eine eigene Verlaufsreihe entsteht ab der zweiten Erhebung. Entfernte Bewertungen werden von Google nur als rollierende 365-Tage-Summe ausgewiesen und nicht datiert; eine Entfernungs-Kurve zeigen wir daher bewusst nicht.</p></section>`;
+
+function seriesChart(locs) {
+  const parts = locs.map((d) => SERIES[d.place_id]).filter(Boolean);
+  if (!parts.length) return tsPlaceholder();
+  // union + align month axis across (possibly several) locations
+  const months = [...new Set(parts.flatMap((s) => s.months))].sort();
+  const idx = Object.fromEntries(months.map((m, i) => [m, i]));
+  const cnt = months.map(() => 0), sum = months.map(() => 0);
+  for (const s of parts) s.months.forEach((m, i) => { const j = idx[m]; cnt[j] += s.monthCount[i] || 0; sum[j] += s.monthSum[i] || 0; });
+  let a = 0; while (a < months.length && cnt[a] === 0) a++;          // trim empty lead
+  let b = months.length - 1; while (b > a && cnt[b] === 0) b--;       // trim empty tail
+  const M = months.slice(a, b + 1), C = cnt.slice(a, b + 1), Sm = sum.slice(a, b + 1);
+  const totalRev = C.reduce((s, v) => s + v, 0);
+  if (M.length < 4 || totalRev < 12) return tsPlaceholder();         // too sparse to be meaningful
+  let cc = 0, cs = 0; const rate = M.map((m, i) => { cc += C[i]; cs += Sm[i]; return cs / cc; }); // cumulative displayed rating
+
+  const W = 660, H = 220, pad = { t: 16, r: 16, b: 30, l: 40 };
+  const iw = W - pad.l - pad.r, ih = H - pad.t - pad.b, n = M.length;
+  const xf = (i) => pad.l + (n > 1 ? (i / (n - 1)) * iw : iw / 2);
+  const step = n > 1 ? iw / (n - 1) : iw;
+  const maxC = Math.max(...C, 1);
+  const rMin = Math.min(...rate), lo = Math.max(1, Math.floor((rMin - 0.25) * 2) / 2), hi = 5;
+  const yBar = (v) => pad.t + ih - (v / maxC) * (ih * 0.9);
+  const yR = (r) => pad.t + ih - ((r - lo) / (hi - lo)) * ih;
+  // last-365-day window (rightmost ≤12 months) — where Google's removal total applies
+  const bandI = Math.max(0, n - 12);
+  const bandX = xf(bandI) - step / 2, bandW = W - pad.r - bandX;
+  // DSA notice-and-action start (02/2024), only if inside the axis
+  const dsaI = M.findIndex((m) => m >= '2024-02');
+  // build bars + rating path
+  const bw = Math.max(2, Math.min(16, step * 0.6));
+  const bars = C.map((v, i) => v > 0 ? `<rect x="${(xf(i) - bw / 2).toFixed(1)}" y="${yBar(v).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pad.t + ih - yBar(v)).toFixed(1)}" fill="#7fa8e0" opacity="0.5" rx="1"/>` : '').join('');
+  let line = ''; rate.forEach((r, i) => { line += (i ? 'L' : 'M') + xf(i).toFixed(1) + ' ' + yR(r).toFixed(1) + ' '; });
+  const rTicks = [lo, (lo + hi) / 2, hi].map((t) => `<line x1="${pad.l}" y1="${yR(t).toFixed(1)}" x2="${W - pad.r}" y2="${yR(t).toFixed(1)}" stroke="#eceef2"/><text x="${pad.l - 6}" y="${(yR(t) + 4).toFixed(1)}" text-anchor="end" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${de1(t)}★</text>`).join('');
+  const endX = xf(n - 1), endY = yR(rate[n - 1]);
+  const firstM = new Date(M[0] + '-01T00:00:00Z').toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
+  const lastM = new Date(M[n - 1] + '-01T00:00:00Z').toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
+  const svg = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Notenverlauf: von ${de1(rate[0])} Sterne (${firstM}) auf ${de1(rate[n - 1])} Sterne (${lastM}) über ${de(totalRev)} sichtbare Bewertungen">`
+    + `<rect x="${bandX.toFixed(1)}" y="${pad.t}" width="${bandW.toFixed(1)}" height="${ih}" fill="#fbecec"/>`
+    + `<text x="${(bandX + bandW - 5).toFixed(1)}" y="${pad.t + 13}" text-anchor="end" font-size="10.5" fill="#8c161d" font-family="Roboto,sans-serif">letzte 365 Tage (Entfernungs-Zeitraum)</text>`
+    + rTicks
+    + bars
+    + (dsaI > 0 ? `<line x1="${xf(dsaI).toFixed(1)}" y1="${pad.t}" x2="${xf(dsaI).toFixed(1)}" y2="${pad.t + ih}" stroke="#b9bcc4" stroke-width="1" stroke-dasharray="3 3"/><text x="${(xf(dsaI) + 4).toFixed(1)}" y="${pad.t + ih - 4}" font-size="10" fill="#676972" font-family="Roboto,sans-serif">DSA 02/24</text>` : '')
+    + `<path d="${line}" fill="none" stroke="#2456a6" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2600" stroke-dashoffset="2600"><animate attributeName="stroke-dashoffset" from="2600" to="0" dur="1.3s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" values="2600;0"/></path>`
+    + `<circle cx="${endX.toFixed(1)}" cy="${endY.toFixed(1)}" r="4" fill="#2456a6"/>`
+    + `<text x="${(endX - 6).toFixed(1)}" y="${(endY - 8).toFixed(1)}" text-anchor="end" font-size="12" font-weight="600" fill="#2456a6" font-family="Roboto,sans-serif">${de1(rate[n - 1])}★</text>`
+    + `<text x="${pad.l}" y="${H - 8}" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${firstM}</text>`
+    + `<text x="${W - pad.r}" y="${H - 8}" text-anchor="end" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${lastM}</text>`
+    + `</svg>`;
+  return `<section class="tschart"><h2>Historische Entwicklung</h2>`
+    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: auf Google angezeigte Durchschnittsnote im Zeitverlauf · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen — beides aus den öffentlichen Rezensionsdaten (${de(totalRev)} Bewertungen).</p>`
+    + svg
+    + `<p class="cap">Rot hinterlegt sind die letzten 365 Tage, für die Google die entfernten Bewertungen zählt. <b>Wann</b> Bewertungen entfernt wurden, veröffentlicht Google nicht — deshalb zeigen wir keine Entfernungs-Kurve, sondern nur den belegbaren Noten- und Aufkommensverlauf. Werte sind Momentaufnahmen der öffentlichen Google-Daten.</p>`
+    + `</section>`;
+}
+
 // Clean output dirs first: entities can drop out (naming policy, takedowns) and
 // their stale pages must not survive a rebuild.
 for (const dir of ['unternehmen/', 'branche/', 'stadt/']) {
@@ -135,6 +202,7 @@ for (const [bkey, locs] of brands) {
     `</div>` +
     (hasEst ? `<div class="card"><h2>Was wäre die Bewertung ohne die entfernten Rezensionen?</h2><p class="est-line">Nimmt man an, dass die entfernten Rezensionen im Schnitt 1–2★ vergeben hätten, läge die Note rechnerisch bei <b>~${de1(est)}★</b> statt der angezeigten <b>${de1(rating)}★</b>. Nur eine Schätzung, keine exakten Werte — waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die angezeigte Note die zutreffendere.</p></div>` : '') +
     locList +
+    seriesChart(locs) +
     disclaimer +
     `<p style="font-size:13.5px;color:var(--ink-3)">Mehr: <a href="../branche/${slug(branch)}.html">alle ${esc(branch)}-Einträge</a>${cities[0] ? ` · <a href="../stadt/${slug(cities[0])}.html">${esc(cities[0])}</a>` : ''} · <a href="../rechtslage.html">Warum werden Bewertungen entfernt?</a></p>`;
   const jsonld = breadcrumbLd([{ t: 'aidos', abs: '' }, { t: branch, abs: 'branche/' + slug(branch) + '.html' }, { t: name, abs: rel }]);

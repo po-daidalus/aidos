@@ -65,6 +65,15 @@ table.rank tr:hover{background:var(--surface);}
 
 /* estimate + notice */
 .est-line{font-size:15.5px;color:var(--ink-2);} .est-line b{color:var(--ink);}
+
+/* historical development chart */
+.tschart{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:20px 24px;margin:18px 0;}
+.tschart h2{font-family:var(--sans);font-weight:700;font-size:20px;letter-spacing:-.01em;margin:0 0 4px;}
+.tschart .lead{color:var(--ink-2);font-size:13.5px;line-height:1.5;margin:0 0 14px;}
+.tschart svg{width:100%;height:auto;display:block;}
+.tschart .cap{font:400 12.5px/1.55 var(--sans);color:var(--ink-3);margin-top:12px;} .tschart .cap b{color:var(--ink-2);}
+.tsempty{background:var(--surface);border:1px dashed var(--rule-2);border-radius:var(--radius);padding:20px 24px;margin:18px 0;}
+.tsempty h2{font-family:var(--sans);font-weight:700;font-size:20px;letter-spacing:-.01em;margin:0 0 8px;}
 .notice{border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;background:var(--accent-w);padding:13px 16px;font-size:13.5px;color:var(--ink-2);line-height:1.55;margin:18px 0;}
 .notice b{color:var(--ink);}
 
