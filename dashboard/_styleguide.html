@@ -4,18 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex" />
-  <title>aidos — Styleguide-Vorschau</title>
+  <title>aidos — Design-Vorschau (modern data)</title>
   <link href="fonts/fonts.css" rel="stylesheet" />
   <link href="site.css" rel="stylesheet" />
+  <style>
+    /* preview-only: hero split + mini chart */
+    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+    .chartcard { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
+    .chartcard h4 { color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 16px; }
+    .cbar { display: grid; grid-template-columns: 130px 1fr 52px; align-items: center; gap: 12px; margin: 11px 0; font-size: 13.5px; }
+    .cbar .track { height: 12px; background: var(--fill); border-radius: 6px; overflow: hidden; }
+    .cbar .track > i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), #d1434a); border-radius: 6px; transition: width 1.1s var(--ease); }
+    .cbar .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 500; }
+  </style>
 </head>
 <body>
-  <!-- MASTHEAD -->
   <header class="masthead">
     <div class="masthead-inner">
       <a class="wordmark" href="index.html">
         <svg class="glyph" viewBox="0 0 26 26" aria-hidden="true">
-          <rect x="3" y="8" width="20" height="2.6" rx="1" fill="#1a1a1a" />
-          <rect x="3" y="15" width="12" height="2.6" rx="1" fill="#a61e22" />
+          <rect x="3" y="8" width="20" height="2.6" rx="1" fill="#171719" />
+          <rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" />
         </svg>
         aidos<span class="tld">.tech</span>
       </a>
@@ -31,29 +41,41 @@
   </header>
 
   <div class="wrap">
-    <p class="crumbs"><a href="#">Interne Vorschau</a> › Styleguide — keine öffentliche Seite</p>
+    <p class="crumbs"><a href="#">Interne Design-Vorschau</a> · Richtung „modern data" — keine öffentliche Seite</p>
 
-    <!-- LEAD -->
+    <!-- HERO -->
     <section>
-      <div class="kicker">Transparenz in der Bewertungs-Ökonomie</div>
-      <h1>Bei wie vielen Unternehmen hat Google Bewertungen wegen Diffamierung entfernt?</h1>
-      <p class="deck">aidos wertet die offiziellen Transparenz-Hinweise von Google&nbsp;Maps – eingeführt im Zuge des EU Digital Services Act – systematisch und fortlaufend aus. Wir bewahren, was Googles rollierender 365-Tage-Hinweis wieder unsichtbar macht.</p>
-      <div class="byline">Ein Projekt von <b>Markus Meixner</b> · <span class="asof">Stand der Erhebung: 5. Juli 2026</span></div>
+      <div class="hero">
+        <div>
+          <div class="kicker">Transparenz in der Bewertungs-Ökonomie</div>
+          <h1>Bei wie vielen Unternehmen hat Google Bewertungen wegen Diffamierung entfernt?</h1>
+          <p class="deck">aidos wertet die offiziellen Transparenz-Hinweise von Google&nbsp;Maps – eingeführt im Zuge des EU&nbsp;Digital&nbsp;Services&nbsp;Act – systematisch und fortlaufend aus. Wir bewahren, was Googles rollierender 365-Tage-Hinweis wieder unsichtbar macht.</p>
+          <div class="byline">Ein Projekt von <b>Markus Meixner</b> · <span class="asof">Stand der Erhebung: 5. Juli 2026</span></div>
+        </div>
+        <div class="chartcard reveal">
+          <h4>Betroffene Profile nach Branche · Basismessung</h4>
+          <div class="cbar"><span>Gastronomie</span><div class="track"><i data-w="100"></i></div><span class="val" data-count="41">0</span></div>
+          <div class="cbar"><span>Automobil</span><div class="track"><i data-w="62"></i></div><span class="val" data-count="18">0</span></div>
+          <div class="cbar"><span>Fitness &amp; Sport</span><div class="track"><i data-w="48"></i></div><span class="val" data-count="14">0</span></div>
+          <div class="cbar"><span>Gesundheit</span><div class="track"><i data-w="34"></i></div><span class="val" data-count="9">0</span></div>
+          <div class="cbar"><span>Immobilien</span><div class="track"><i data-w="21"></i></div><span class="val" data-count="6">0</span></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Δ LEAD FIGURE (baseline fallback state, since only 1 snapshot yet) -->
+    <!-- Δ MOMENTUM -->
     <section>
       <div class="sec-head"><h2>Das Momentum</h2><span class="hint">der einzigartige Wert — nur aus unserer Zeitreihe ableitbar</span></div>
-      <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen berechnen wir die <em>Veränderung</em> — einen Fluss-Wert, den Google selbst nie anzeigt. Bis der zweite Messpunkt vorliegt, steht hier die Basismessung.</p>
-      <div class="lead-figure">Basismessung<span class="unit">· Δ-Momentum ab August 2026</span></div>
+      <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen berechnen wir die <em>Veränderung</em> derselben Betriebe — einen Fluss-Wert, den Google selbst nie anzeigt. Bis der zweite Messpunkt vorliegt, steht hier die Basismessung.</p>
+      <div class="lead-figure reveal">Basismessung<span class="unit">Δ-Momentum ab August 2026</span></div>
     </section>
 
-    <!-- STAT BAND -->
+    <!-- STAT BAND (count-up) -->
     <section>
       <div class="band">
-        <div class="stat"><div class="v">180</div><div class="l">erfasste Profile mit aktivem Lösch-Hinweis</div><div class="sub">Berlin &amp; Hamburg · Basismessung</div></div>
-        <div class="stat"><div class="v accent">11.085</div><div class="l">geschätzt entfernte Rezensionen (letzte 365 Tage)</div><div class="sub">konservative Untergrenze — Google zeigt nur Spannen</div></div>
-        <div class="stat"><div class="v">3,5&nbsp;%</div><div class="l">der geprüften Profile tragen den Hinweis</div><div class="sub">gemessene Prävalenz, kein geschätzter Nenner</div></div>
+        <div class="stat reveal"><div class="v" data-count="180">0</div><div class="l">erfasste Profile mit aktivem Lösch-Hinweis</div><div class="sub">Berlin &amp; Hamburg · Basismessung</div></div>
+        <div class="stat reveal"><div class="v accent" data-count="11085">0</div><div class="l">geschätzt entfernte Rezensionen (letzte 365 Tage)</div><div class="sub">konservative Untergrenze — Google zeigt nur Spannen</div></div>
+        <div class="stat reveal"><div class="v" data-count="3.5" data-suffix=" %">0</div><div class="l">der geprüften Profile tragen den Hinweis</div><div class="sub">gemessene Prävalenz, kein geschätzter Nenner</div></div>
       </div>
     </section>
 
@@ -62,28 +84,28 @@
       <div class="sec-head"><h2>In welchen Branchen entfernt Google die meisten Bewertungen?</h2><span class="hint">Basismessung · Juli 2026</span></div>
       <div class="table-scroll">
       <table class="rank">
-        <thead><tr><th></th><th>Branche</th><th class="num">Betroffene Profile</th><th>relative Stärke</th><th class="num">Index</th></tr></thead>
+        <thead><tr><th></th><th>Branche</th><th class="num">Betroffene Profile</th><th>relative Stärke je Standort</th><th class="num">Index</th></tr></thead>
         <tbody>
-          <tr><td class="rank-num">1</td><td><a href="#">Gastronomie &amp; Hotel</a></td><td class="num mono-num">41</td><td><div class="dbar"><i style="width:100%"></i><span>~62 je Standort</span></div></td><td class="num"><span class="score" title="Rang 1 von 7 erfassten Branchen"><span class="val">100</span><span class="of">/100</span></span></td></tr>
-          <tr><td class="rank-num">2</td><td><a href="#">Fitness &amp; Sport</a></td><td class="num mono-num">14</td><td><div class="dbar"><i style="width:71%"></i><span>~44 je Standort</span></div></td><td class="num"><span class="score" title="Rang 2 von 7 erfassten Branchen"><span class="val">71</span><span class="of">/100</span></span></td></tr>
-          <tr><td class="rank-num">3</td><td><a href="#">Automobil</a></td><td class="num mono-num">18</td><td><div class="dbar"><i style="width:52%"></i><span>~32 je Standort</span></div></td><td class="num"><span class="score" title="Rang 3 von 7 erfassten Branchen"><span class="val">52</span><span class="of">/100</span></span></td></tr>
+          <tr><td class="rank-num">1</td><td><a href="#">Gastronomie &amp; Hotel</a></td><td class="num mono-num">41</td><td><div class="dbar"><i data-w="100"></i><span>~62 je Standort</span></div></td><td class="num"><span class="score" title="Rang 1 von 7 erfassten Branchen"><span class="val">100</span><span class="of">/100</span></span></td></tr>
+          <tr><td class="rank-num">2</td><td><a href="#">Fitness &amp; Sport</a></td><td class="num mono-num">14</td><td><div class="dbar"><i data-w="71"></i><span>~44 je Standort</span></div></td><td class="num"><span class="score" title="Rang 2 von 7 erfassten Branchen"><span class="val">71</span><span class="of">/100</span></span></td></tr>
+          <tr><td class="rank-num">3</td><td><a href="#">Automobil</a></td><td class="num mono-num">18</td><td><div class="dbar"><i data-w="52"></i><span>~32 je Standort</span></div></td><td class="num"><span class="score" title="Rang 3 von 7 erfassten Branchen"><span class="val">52</span><span class="of">/100</span></span></td></tr>
         </tbody>
       </table>
       </div>
       <p class="asof" style="margin-top:12px">Der Index misst neutral die Zahl entfernter Bewertungen je Standort im Branchenvergleich (100 = auffälligste Branche im erfassten Datensatz von 68 benannten Betrieben). Beschreibung der Datenlage, kein Werturteil.</p>
     </section>
 
-    <!-- CITY / INSIGHT CARDS -->
+    <!-- CITY / METHOD CARDS -->
     <section>
       <div class="sec-head"><h2>Regionale Schwerpunkte</h2></div>
       <div class="grid-3">
-        <div class="card"><span class="tag">Stadt</span><h3 style="margin:10px 0 4px">Berlin</h3><p class="muted" style="font-size:14px;margin:0">115 Profile · ~7.400 entfernte Bewertungen</p><div class="bar" style="margin-top:14px"><i style="width:100%"></i></div></div>
-        <div class="card"><span class="tag">Stadt</span><h3 style="margin:10px 0 4px">Hamburg</h3><p class="muted" style="font-size:14px;margin:0">65 Profile · ~3.700 entfernte Bewertungen</p><div class="bar" style="margin-top:14px"><i style="width:64%"></i></div></div>
-        <div class="card"><span class="tag">Methodik</span><h3 style="margin:10px 0 4px">Dunkelziffer „über 250"</h3><p class="muted" style="font-size:14px;margin:0">Bei den auffälligsten Profilen deckelt Google die Anzeige.</p><p style="margin:12px 0 0"><a href="#">Zur Methodik →</a></p></div>
+        <div class="card reveal"><span class="tag">Stadt</span><h3 style="margin:12px 0 4px">Berlin</h3><p class="muted" style="font-size:14px;margin:0">115 Profile · ~7.400 entfernte Bewertungen</p><div class="bar" style="margin-top:14px"><i data-w="100"></i></div></div>
+        <div class="card reveal"><span class="tag">Stadt</span><h3 style="margin:12px 0 4px">Hamburg</h3><p class="muted" style="font-size:14px;margin:0">65 Profile · ~3.700 entfernte Bewertungen</p><div class="bar" style="margin-top:14px"><i data-w="64"></i></div></div>
+        <div class="card reveal"><span class="tag">Methodik</span><h3 style="margin:12px 0 4px">Dunkelziffer „über 250"</h3><p class="muted" style="font-size:14px;margin:0">Bei den auffälligsten Profilen deckelt Google die Anzeige — die wahre Zahl liegt darüber.</p><p style="margin:12px 0 0"><a href="#">Zur Methodik →</a></p></div>
       </div>
     </section>
 
-    <!-- COMPONENTS SHOWCASE -->
+    <!-- COMPONENTS -->
     <section>
       <div class="sec-head"><h2>Bausteine</h2><span class="hint">Buttons · Lookup · Hinweis</span></div>
       <p><a class="btn btn-primary" href="#">Unternehmen &amp; Ketten ansehen</a> &nbsp; <a class="btn btn-ghost" href="#">Datensatz (CSV) für Redaktionen</a></p>
@@ -94,17 +116,16 @@
       <div class="notice"><b>Hinweis:</b> Die Zahl entfernter Bewertungen stammt von Google&nbsp;LLC (öffentliches Google-Maps-Profil, rollierende 365 Tage). Sie bedeutet <b>nicht</b>, dass das Unternehmen rechtswidrig gehandelt hat — Unternehmen sind häufig Ziel unberechtigter Fake-Bewertungskampagnen.</div>
     </section>
 
-    <!-- PROSE -->
+    <!-- PROSE (DSA context) -->
     <section>
-      <div class="sec-head"><h2>Lesetext (Reports, Rechtslage, Methodik)</h2></div>
+      <div class="sec-head"><h2>Was der DSA-Hinweis bedeutet</h2></div>
       <div class="prose" style="max-width:720px">
-        <p>Seit Inkrafttreten des Digital Services Act blenden Plattformen wie Google einen Hinweis ein, wenn Bewertungen nach einer Diffamierungs-Beschwerde entfernt wurden. Dieser Hinweis ist öffentlich — aber flüchtig: Er zeigt nur die letzten zwölf Monate und verschwindet danach.</p>
+        <p>Seit dem EU&nbsp;Digital&nbsp;Services&nbsp;Act blenden Plattformen wie Google einen Hinweis ein, wenn Bewertungen nach einer Diffamierungs-Beschwerde entfernt wurden. Dieser Hinweis ist öffentlich — aber flüchtig: Er zeigt nur die letzten zwölf Monate und verschwindet danach.</p>
         <p>aidos hält diese Momentaufnahmen fest und macht daraus eine fortlaufende Zeitreihe. So lässt sich erstmals nachvollziehen, <em>wie sich</em> die Entfernungen über die Zeit entwickeln — nicht nur, dass es sie gibt.</p>
       </div>
     </section>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-foot">
     <div class="site-foot-inner">
       <div class="foot-nav">
@@ -114,5 +135,33 @@
       <div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
     </div>
   </footer>
+
+  <script>
+    // reveal-on-scroll + animated bar fills + count-up — the "modern data" motion layer
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        e.target.classList.add('in');
+        e.target.querySelectorAll('[data-w]').forEach((el) => (el.style.width = el.dataset.w + '%'));
+        e.target.querySelectorAll('[data-count]').forEach(countUp);
+        io.unobserve(e.target);
+      }
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.reveal, .chartcard, table.rank, .stat').forEach((el) => io.observe(el));
+    // bars outside .reveal (e.g. hero chart) fill when their card reveals; also catch standalone
+    document.querySelectorAll('[data-w]').forEach((el) => { if (!el.closest('.reveal')) io.observe(el.closest('section') || el); });
+
+    function countUp(el) {
+      const target = parseFloat(el.dataset.count), suffix = el.dataset.suffix || '';
+      const dec = (el.dataset.count.indexOf('.') >= 0) ? 1 : 0;
+      const dur = 900, t0 = performance.now();
+      const fmt = (n) => n.toLocaleString('de-DE', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+      (function tick(t) {
+        const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(target * e) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    }
+  </script>
 </body>
 </html>
