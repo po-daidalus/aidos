@@ -20,7 +20,8 @@
   --accent:   #b31e26;   /* Bordeaux-red — links, key figures, primary series */
   --accent-d: #8c161d;   /* darker accent for hover */
   --accent-w: #fbecec;   /* wash behind active nav / tags */
-  --accent-2: #2f6f7d;   /* secondary DATA-VIZ series only (muted teal) */
+  --data-blue:#2456a6;   /* the "original / unmanipulated rating" line — pairs with accent (removed) */
+  --data-blue-lt:#7fa8e0;/* same, readable on the dark footer */
   --ink-grad: linear-gradient(180deg, #232427, #17181a);
 
   /* — type — */
@@ -191,8 +192,8 @@ table.rank a:hover { color: var(--accent); }
 
 /* — line motif (echoes the logo glyph: one ink + one short accent line) — */
 .motif { display: block; width: 46px; margin: 14px 0; }
-.motif b { display: block; height: 3px; background: var(--ink); border-radius: 2px; }
-.motif i { display: block; height: 3px; width: 60%; background: var(--accent); border-radius: 2px; margin-top: 4px; }
+.motif b { display: block; height: 3px; background: var(--data-blue); border-radius: 2px; } /* original rating */
+.motif i { display: block; height: 3px; width: 60%; background: var(--accent); border-radius: 2px; margin-top: 4px; } /* removed part */
 
 /* — utilities — */
 .mono-num { font-variant-numeric: tabular-nums; }

@@ -48,11 +48,11 @@ function shell({ title, desc, canonical, jsonld, body, active = 'listing' }) {
 <link href="../fonts/fonts.css" rel="stylesheet"/><link href="../pages.css" rel="stylesheet"/>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}</head>
 <body><header class="masthead"><div class="masthead-inner">
-<a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#171719"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
 <nav class="nav"><a${on('index')} href="../index.html">Übersicht</a><a${on('listing')} href="../listing.html">Unternehmen &amp; Ketten</a><a${on('ueber')} href="../ueber-aidos.html">Über aidos</a><a${on('recht')} href="../rechtslage.html">Rechtslage</a></nav>
 </div></header><div class="wrap">${body}</div>
 <footer class="site-foot"><div class="site-foot-inner">
-<a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#fff"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
 <div class="foot-nav"><a href="../index.html">Übersicht</a><a href="../listing.html">Unternehmen &amp; Ketten</a><a href="../ueber-aidos.html">Über aidos</a><a href="../rechtslage.html">Rechtslage</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Datenschutz</a><a href="../daten-melden.html">Daten melden</a></div>
 <div class="foot-legal">Quelle: öffentliche Google-Maps-Profile (Hinweis „… Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt"). Eine hohe Zahl entfernter Bewertungen ist <b>kein</b> Beweis für unlauteres Verhalten. Werte inkl. entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. Keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
 <div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
