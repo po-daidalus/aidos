@@ -72,7 +72,32 @@ const isMapTile = (u) => !!u && /staticmap|streetview|\/maps\/api/i.test(u);
 const cleanImg = (u) => (isMapTile(u) ? null : u || null);
 
 const raw = fs.readFileSync(inPath, 'utf8');
-const allRecs = (inPath.endsWith('.json') ? JSON.parse(raw) : parseCsv(raw)).filter((r) => r.key && !String(r.key).startsWith('http'));
+// Export shape: legacy = array of hit records; v1.0 = { records:[...], checks:[...] } where checks
+// is the per-URL outcome log (hit/no_banner/no_place/blocked) that lets us compute a MEASURED
+// coverage denominator instead of assuming every candidate was checked.
+const parsed = inPath.endsWith('.json') ? JSON.parse(raw) : parseCsv(raw);
+const rawRecs = Array.isArray(parsed) ? parsed : (parsed.records || []);
+const rawChecks = Array.isArray(parsed) ? [] : (parsed.checks || []);
+const allRecs = rawRecs.filter((r) => r.key && !String(r.key).startsWith('http'));
+
+// Persist AGGREGATED coverage counts to pipeline/out/checks.jsonl — one row per (month, city):
+// { date, city, checked, hit, no_banner, no_place, blocked }. No per-place identifiers stored, so
+// there is no DSGVO exposure; this is all prevalence (= hits / (hit+no_banner)) needs.
+if (rawChecks.length) {
+  const CHK_PATH = new URL('pipeline/out/checks.jsonl', ROOT);
+  const monthNow = new Date().toISOString().slice(0, 7);
+  const city = defCity || 'Unbekannt';
+  const agg = { date: monthNow, city, checked: 0, hit: 0, no_banner: 0, no_place: 0, blocked: 0 };
+  for (const c of rawChecks) {
+    agg.checked++;
+    if (c.outcome in agg) agg[c.outcome]++;
+  }
+  let chk = fs.existsSync(CHK_PATH) ? fs.readFileSync(CHK_PATH, 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
+  const key = (r) => r.date + '|' + r.city, i = chk.findIndex((r) => key(r) === key(agg));
+  if (i >= 0) chk[i] = agg; else chk.push(agg); // replace this month+city's counts with the latest export
+  fs.writeFileSync(CHK_PATH, chk.map((r) => JSON.stringify(r)).join('\n') + '\n');
+  console.log(`checks: ${agg.checked} checked in ${city} (${agg.hit} hit / ${agg.no_banner} no-banner / ${agg.no_place} no-place / ${agg.blocked} blocked)`);
+}
 // Everyone (incl. named individuals) is stored in the DB and counted in aggregates. The `nameable`
 // flag decides only whether an entity may be shown INDIVIDUALLY on the listing page. Individuals
 // (nameable=false) still contribute anonymously to the Germany-wide statistics; build.mjs keeps

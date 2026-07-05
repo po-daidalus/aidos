@@ -48,11 +48,15 @@ document.getElementById('csv').onclick = () =>
     download('aidos-banners.csv', rows.join('\n'), 'text/csv');
   });
 
+// JSON export carries BOTH the hits and the per-URL check log, so the pipeline can compute a
+// MEASURED denominator (coverage = checked profiles), not an assumed one. Older array-only exports
+// still work; ingest detects the shape.
 document.getElementById('json').onclick = () =>
-  load((recs) => download('aidos-banners.json', JSON.stringify(recs, null, 2), 'application/json'));
+  chrome.storage.local.get({ records: {}, checks: {} }, (d) =>
+    download('aidos-banners.json', JSON.stringify({ records: Object.values(d.records), checks: Object.values(d.checks) }, null, 2), 'application/json'));
 
 document.getElementById('clear').onclick = () => {
-  if (confirm('Alle gesammelten Treffer löschen?')) chrome.storage.local.set({ records: {} }, render);
+  if (confirm('Alle gesammelten Treffer UND das Prüf-Protokoll löschen?')) chrome.storage.local.set({ records: {}, checks: {} }, render);
 };
 
 // ---------- auto-loader controls ----------
@@ -71,10 +75,12 @@ document.getElementById('start').onclick = () => {
 document.getElementById('stop').onclick = () => chrome.runtime.sendMessage({ type: 'aidos-stop' });
 
 function renderProg() {
-  chrome.storage.local.get({ loader: { queue: [], idx: 0, running: false } }, ({ loader }) => {
+  chrome.storage.local.get({ loader: { queue: [], idx: 0, running: false }, checks: {} }, ({ loader, checks }) => {
     const el = document.getElementById('prog');
-    if (!loader.queue.length) el.textContent = '';
-    else el.textContent = `${loader.running ? '▶' : '⏸'} ${loader.idx} / ${loader.queue.length} abgearbeitet`;
+    if (!loader.queue.length) { el.textContent = ''; return; }
+    const c = Object.values(checks), by = (o) => c.filter((x) => x.outcome === o).length;
+    el.textContent = `${loader.running ? '▶' : '⏸'} ${loader.idx} / ${loader.queue.length}` +
+      `  ·  ✓${by('hit')} –${by('no_banner')} ⌀${by('no_place')} ⛔${by('blocked')}`;
   });
 }
 

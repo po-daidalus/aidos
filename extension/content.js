@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v0.9';
+const AIDOS_VERSION = 'v1.0';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -234,6 +234,36 @@ function clickReviewsTab() {
   }
   return false;
 }
+// Did a real place panel render (name + rating/reviews block present)? Distinguishes a genuine
+// "no banner" from a search-results list or a blocked/restricted view — so coverage is MEASURED,
+// not assumed. A check with page_rendered=false must not count toward the denominator as "no banner".
+function pageRendered() {
+  return !!(document.querySelector('.F7nice') || document.querySelector('h1.DUwDvf') || getName());
+}
+function pageBlocked() {
+  const t = document.body.innerText.slice(0, 2000);
+  return /bevor sie fortfahren|before you continue|ich bin kein roboter|i'?m not a robot|recaptcha|die ansicht ist beschränkt|ungewöhnlicher datenverkehr|unusual traffic/i.test(t);
+}
+// Outcome of a loader visit → drives the measured denominator in the pipeline.
+//   hit       = banner found & recorded
+//   no_banner = place rendered, no defamation banner (a real negative — counts in denominator)
+//   no_place  = no place panel (search landed on a list / place gone) — excluded from denominator
+//   blocked   = consent wall / captcha / restricted view — excluded, signals throttling
+function classifyOutcome(bannerHit) {
+  if (bannerHit) return 'hit';
+  if (pageBlocked()) return 'blocked';
+  if (!pageRendered()) return 'no_place';
+  return 'no_banner';
+}
+function recordCheck(outcome) {
+  const entry = { key: placeKey(), url: location.href, outcome, page_rendered: pageRendered(), ts: new Date().toISOString(), aidos_version: AIDOS_VERSION };
+  chrome.storage.local.get({ checks: {} }, (data) => {
+    data.checks[entry.key || entry.url] = entry;
+    chrome.storage.local.set({ checks: data.checks });
+  });
+  return entry;
+}
+
 chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
   if (!loader.running) return;
   // read the overview a few times so slow-loading fields (website/photo/price) are captured
@@ -243,8 +273,13 @@ chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
     readOverview();      // final overview capture
     clickReviewsTab();   // then open reviews for the banner + histogram
     setTimeout(() => {
+      const before = seen.size;
       scan();
-      try { chrome.runtime.sendMessage({ type: 'aidos-scanned' }); } catch {}
+      const bannerHit = seen.size > before || BANNER_RE.test(document.body.innerText);
+      const outcome = classifyOutcome(bannerHit);
+      recordCheck(outcome);
+      // Tell the loader the real outcome so it can back off on 'blocked' (throttling signal).
+      try { chrome.runtime.sendMessage({ type: 'aidos-scanned', outcome }); } catch {}
     }, 4500);
   }, 3400);
 });
