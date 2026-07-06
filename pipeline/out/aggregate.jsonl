@@ -316,3 +316,75 @@
 {"aid":"145be7383f9c6bd6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.88}
 {"aid":"8a22cc5e1bdb6692","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":1.96}
 {"aid":"dc288bc3da1e4525","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.18}
+{"aid":"cdfd522c16a49e37","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":1.05}
+{"aid":"de4c016f55b3779e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.2}
+{"aid":"bb072d00f9b03cdf","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.48}
+{"aid":"1eec0b11976b29d1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt","nameable":true,"range_min":151,"range_max":200,"rating":4.7,"rating_drop":2.95}
+{"aid":"a845eb7378eddfbc","date":"2026-07","branch":"Sonstige","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.29}
+{"aid":"4e83460deaac6d71","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.14}
+{"aid":"1f99bcaa2567b8b3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.94}
+{"aid":"8c8ee985a9ba4b01","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":1.34}
+{"aid":"48e5223708cecd5c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":101,"range_max":150,"rating":4.2,"rating_drop":1.44}
+{"aid":"82d01cee5c90d170","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":2.75}
+{"aid":"61aca8b958785fe5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":3.5,"rating_drop":0.2}
+{"aid":"40d165f53b3f9f1f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.19}
+{"aid":"56e3e5f91188d3c9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.71}
+{"aid":"44490eea17aed12e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.7}
+{"aid":"4bd54297ec6d29fb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.63}
+{"aid":"bcc9f3cb79128548","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":2.46}
+{"aid":"16c9883f7c990404","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
+{"aid":"b4ed55e6092df435","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":0.65}
+{"aid":"d87d3cb92900f690","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"4e52244fef2c4593","date":"2026-07","branch":"Beauty & Wellness","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"a670c62356a6394f","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":false,"range_min":250,"range_max":null,"rating":4.4,"rating_drop":2.05}
+{"aid":"9205367013d57a68","date":"2026-07","branch":"Beauty & Wellness","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.15}
+{"aid":"517bd7d0e4457b09","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":1.47}
+{"aid":"8f9d3c61722913ca","date":"2026-07","branch":"Recht & Beratung","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.18}
+{"aid":"fd694a92bf464632","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"fd105a5cdd441ba3","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.2}
+{"aid":"653bcf2026f603c3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":201,"range_max":250,"rating":4.6,"rating_drop":2.7}
+{"aid":"366d48e87eb1c306","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.13}
+{"aid":"3717c1294e7aa994","date":"2026-07","branch":"Fitness & Sport","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":1.53}
+{"aid":"9f85ace465e684b2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.52}
+{"aid":"fce37906ea295383","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.39}
+{"aid":"e435b6e035297b6d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":151,"range_max":200,"rating":4.4,"rating_drop":0.81}
+{"aid":"da5948217cb7e287","date":"2026-07","branch":"Automobil","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.51}
+{"aid":"9b24d3a79376c5ac","date":"2026-07","branch":"Automobil","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.76}
+{"aid":"2fc36ed315bb8cdb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":0.23}
+{"aid":"c857ca960297bfdc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.87}
+{"aid":"25457b7b21f4fc7f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":3.08}
+{"aid":"550da3cf80b183d8","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.15}
+{"aid":"11f8c3d7bebbaa42","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":0.57}
+{"aid":"9b4ef79d286553a2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.06}
+{"aid":"049edc91cb4c84ff","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.64}
+{"aid":"d407a7e6f5519007","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.1,"rating_drop":0.15}
+{"aid":"3cfaf96cb3743aa9","date":"2026-07","branch":"Gesundheit","city":"Frankfurt","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":0.17}
+{"aid":"c621c77f37ac1651","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.74}
+{"aid":"814f2964ffa9ee3c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.44}
+{"aid":"c3aca2ae22b7d26e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt","nameable":true,"range_min":101,"range_max":150,"rating":4.2,"rating_drop":0.52}
+{"aid":"c0788ccacdb58d54","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":3.2,"rating_drop":1}
+{"aid":"e760f8f084fb6770","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.7}
+{"aid":"f166821149e040b0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.44}
+{"aid":"7ed9378387cb71b2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.02}
+{"aid":"737fe6e89a63b6d5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":151,"range_max":200,"rating":4.9,"rating_drop":2.54}
+{"aid":"105d67a5c2d772c5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":3.08}
+{"aid":"311e5fdf8af8a912","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":2.17}
+{"aid":"fa99cddaa748eba1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
+{"aid":"cf9a7f21080eaafd","date":"2026-07","branch":"Beauty & Wellness","city":"Frankfurt","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"2e9d150cec748459","date":"2026-07","branch":"Gesundheit","city":"Frankfurt","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.4}
+{"aid":"57bea06a89981851","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.48}
+{"aid":"e3c0f33f3debb7aa","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":101,"range_max":150,"rating":4.2,"rating_drop":2.5}
+{"aid":"fde43ae69b02946b","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":1.83}
+{"aid":"dfb5b975f92f98b6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.15}
+{"aid":"e1f3cdbd53eca2d2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.2,"rating_drop":0.94}
+{"aid":"4e107cadaab3a9e4","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":1}
+{"aid":"372cb4a7e32a7756","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.38}
+{"aid":"76c99d0c054afd1a","date":"2026-07","branch":"Gesundheit","city":"Frankfurt","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.53}
+{"aid":"f34ff3b1b9db9747","date":"2026-07","branch":"Automobil","city":"Frankfurt","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
+{"aid":"b3071bffa88d9e76","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.85}
+{"aid":"0ea04f9122003b80","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.39}
+{"aid":"7fafcef2d14ffdf3","date":"2026-07","branch":"Unbekannt","city":"Frankfurt","nameable":false,"range_min":21,"range_max":50,"rating":4,"rating_drop":1.4}
+{"aid":"2232e0e31a7282f8","date":"2026-07","branch":"Beauty & Wellness","city":"Frankfurt","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.68}
+{"aid":"721fc551e175e254","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.82}
+{"aid":"f66a12c97d371989","date":"2026-07","branch":"Gesundheit","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":5,"rating_drop":3.31}
+{"aid":"a9a47bcc48cb2b07","date":"2026-07","branch":"Recht & Beratung","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.97}
