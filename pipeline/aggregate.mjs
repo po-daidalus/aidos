@@ -168,6 +168,17 @@ if (months.length >= 2) {
 
 insights.sort((a, b) => b.score - a.score);
 
-const out = { totals, branches, cities, insights: insights.slice(0, 8), trend, generated: new Date().toISOString() };
+// MEASURED coverage from the extension's per-URL outcome log (checks.jsonl, aggregated per
+// month+city at ingest). This is the honest denominator: hits / actually-checked profiles —
+// only cities with a real v1.1 checks log appear here; earlier cities have none and claim none.
+let coverage = [];
+try {
+  const chk = fs.readFileSync(new URL('pipeline/out/checks.jsonl', ROOT), 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l));
+  coverage = chk.filter((c) => c.date === latest && c.checked >= 200).map((c) => ({
+    city: c.city, checked: c.checked, hit: c.hit, prevalencePct: r1((100 * c.hit) / Math.max(1, c.hit + c.no_banner)),
+  }));
+} catch { /* no checks yet */ }
+
+const out = { totals, branches, cities, coverage, insights: insights.slice(0, 8), trend, generated: new Date().toISOString() };
 fs.writeFileSync(new URL('dashboard/aggregates.js', ROOT), 'window.AIDOS_AGG = ' + JSON.stringify(out) + ';\n');
 console.log(`aggregates: ${cur.length} anon rows (${latest}) | ${branches.length} branches | ${cities.length} cities | ${out.insights.length} insights | trend ${trend.available ? 'ON' : 'baseline'}`);

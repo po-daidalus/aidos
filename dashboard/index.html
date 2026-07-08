@@ -203,7 +203,12 @@
     const gen = A.generated ? new Date(A.generated).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }) : null;
     document.getElementById('covBody').innerHTML = realCities.slice().sort((a, b) => b.n - a.n).map((c) =>
       `<tr><td><a href="stadt/${slug(c.key)}.html">${esc(c.key)}</a></td><td class="num">${de(c.n)}</td><td><a class="more" href="stadt/${slug(c.key)}.html">zur Stadtseite →</a></td></tr>`).join('');
-    document.getElementById('covNote').textContent = `${de(realCities.length)} Städte erhoben · ${de(T.businesses)} Profile mit aktivem Lösch-Hinweis im Datensatz` + (gen ? ` · Stand: ${gen}` : '') + '. Der Hinweis ist selten: nur rund 4 % der geprüften Profile tragen ihn — die große Mehrheit der geprüften Unternehmen taucht hier deshalb gar nicht auf.';
+    // measured prevalence (extension outcome log) where we have it; honest prose otherwise
+    const cov = A.coverage || [];
+    const covLine = cov.length
+      ? ' Gemessen: ' + cov.map((c) => `in ${c.city} trugen ${de(c.hit)} von ${de(c.checked)} geprüften Profilen den Hinweis (${de1(c.prevalencePct)} %)`).join('; ') + ' — die große Mehrheit der geprüften Unternehmen taucht hier also gar nicht auf.'
+      : ' Der Hinweis ist selten: nur rund 3–5 % der geprüften Profile tragen ihn — die große Mehrheit der geprüften Unternehmen taucht hier deshalb gar nicht auf.';
+    document.getElementById('covNote').textContent = `${de(realCities.length)} Städte erhoben · ${de(T.businesses)} Profile mit aktivem Lösch-Hinweis im Datensatz` + (gen ? ` · Stand: ${gen}` : '') + '.' + covLine;
 
     // DSA tiles — data-viz covers from real report bars
     const arts = window.AIDOS_ARTICLES || [];

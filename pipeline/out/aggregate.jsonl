@@ -427,27 +427,14 @@
 {"aid":"dded32b68e9040e4","date":"2026-07","branch":"Beauty & Wellness","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.48}
 {"aid":"be89062c045c960c","date":"2026-07","branch":"Beauty & Wellness","city":"Leipzig","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.87}
 {"aid":"876db1d6301455d1","date":"2026-07","branch":"Automobil","city":"Leipzig","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.57}
-{"aid":"7e0c0f586855bd3f","date":"2026-07","branch":"Gesundheit","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":0.27}
 {"aid":"5cf825df4cf41bef","date":"2026-07","branch":"Sonstige","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
-{"aid":"bbb5a9a5b6a41e40","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":1.56}
-{"aid":"d17931e24442d2ff","date":"2026-07","branch":"Automobil","city":"Leipzig","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.57}
-{"aid":"1fa2e44d5ebee4a3","date":"2026-07","branch":"Beauty & Wellness","city":"Leipzig","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.87}
-{"aid":"021c81c2be432aac","date":"2026-07","branch":"Beauty & Wellness","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.48}
-{"aid":"337ed573aa69428a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":250,"range_max":null,"rating":4.5,"rating_drop":2.02}
-{"aid":"4ee59dba9a847231","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.5}
-{"aid":"40a64eb09b275cc7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":3.03}
 {"aid":"c95a28a3488e6b2a","date":"2026-07","branch":"Unbekannt","city":"Leipzig","nameable":false,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":0.46}
 {"aid":"3d560677cf518e66","date":"2026-07","branch":"Sonstige","city":"Leipzig","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.62}
-{"aid":"2179568dcf87a67b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":2.48}
-{"aid":"c25ce235083d12d6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.53}
+{"aid":"e09caa8e4ef0c093","date":"2026-07","branch":"Sonstige","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
+{"aid":"1fa2e44d5ebee4a3","date":"2026-07","branch":"Beauty & Wellness","city":"Leipzig","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.87}
+{"aid":"40a64eb09b275cc7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":3.03}
+{"aid":"53a714d62e854366","date":"2026-07","branch":"Unbekannt","city":"Leipzig","nameable":false,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":0.46}
+{"aid":"a4bd4a7c96331549","date":"2026-07","branch":"Sonstige","city":"Leipzig","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.62}
 {"aid":"6fba5073182b206f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":false,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":3.08}
 {"aid":"5520716ba50d417e","date":"2026-07","branch":"Immobilien","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
-{"aid":"1b5ea4f0352f3098","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.54}
-{"aid":"3d2889c9612d4cbe","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":1.45}
-{"aid":"7f0f0e7afd4492db","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.4}
-{"aid":"ff7a5e7036d26323","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.18}
-{"aid":"2ec6d60f9d75e29f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":2.75}
 {"aid":"ed0b4df03af05a90","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.16}
-{"aid":"be9744905558641d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.68}
-{"aid":"1f247589ce46f4e5","date":"2026-07","branch":"Automobil","city":"Leipzig","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.77}
-{"aid":"c167975db87945b7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.66}
