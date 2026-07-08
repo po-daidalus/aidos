@@ -78,7 +78,15 @@ const raw = fs.readFileSync(inPath, 'utf8');
 const parsed = inPath.endsWith('.json') ? JSON.parse(raw) : parseCsv(raw);
 const rawRecs = Array.isArray(parsed) ? parsed : (parsed.records || []);
 const rawChecks = Array.isArray(parsed) ? [] : (parsed.checks || []);
-const allRecs = rawRecs.filter((r) => r.key && !String(r.key).startsWith('http'));
+// Rows whose key is still a search URL (place resolved in the side panel, hex id not found in the
+// page) are FULL-quality captures since extension v1.1 (name/category/address all present) — keep
+// them under a deterministic name+city key instead of dropping ~⅓ of real hits. If the same place
+// is later captured WITH its hex id, the q:-entry is migrated (see below). Nameless URL-keyed rows
+// remain useless and are dropped.
+const qKey = (r) => 'q:' + normName(r.name) + '|' + normName(cityOf(r.name, r.city, r.address) || defCity || '');
+const allRecs = rawRecs
+  .filter((r) => r.key && (!String(r.key).startsWith('http') || (r.name || '').trim()))
+  .map((r) => (String(r.key).startsWith('http') ? { ...r, key: qKey(r) } : r));
 
 // Persist AGGREGATED coverage counts to pipeline/out/checks.jsonl — one row per (month, city):
 // { date, city, checked, hit, no_banner, no_place, blocked }. No per-place identifiers stored, so
@@ -121,6 +129,7 @@ function effectiveRating(r, sanRating, sanReviews) {
   return { rating: sanRating, reviews: sanReviews, dist };
 }
 
+const migrations = []; // q:-key → hex-key renames (place captured again, this time with its real id)
 for (const r of recs) {
   const rawId = r.key;
   // Classify first — the storage key depends on it. Legal persons keep their public place_id;
@@ -129,7 +138,18 @@ for (const r of recs) {
   const catRaw = r.category || osmCat.get(normName(nameRaw)) || null;
   const nameableFirst = classify(nameRaw, catRaw).keep;
   const key = nameableFirst ? rawId : anonId(rawId);
-  const prev = db.businesses[key] || {};
+  let prev = db.businesses[key] || {};
+  // Migration: this place may exist under a q:-key from an earlier id-less capture — adopt its
+  // history (first_seen) and remove the duplicate so the same business never counts twice.
+  if (!String(rawId).startsWith('q:') && nameRaw) {
+    const qk = qKey(r), qkStored = nameableFirst ? qk : anonId(qk);
+    if (qkStored !== key && db.businesses[qkStored]) {
+      prev = { ...db.businesses[qkStored], ...prev, first_seen: db.businesses[qkStored].first_seen || prev.first_seen };
+      delete db.businesses[qkStored];
+      // aggregate.jsonl keys every row by anonId(raw record key) regardless of nameability
+      migrations.push({ from: qkStored, to: key, aggFrom: anonId(qk), aggTo: anonId(rawId) });
+    }
+  }
   const rsan = sanitizeRating(r.rating);
   const eff = effectiveRating(r, rsan.rating, intv(r.reviews) || rsan.reviewsFromRating);
   // Never overwrite previously-captured good data with a null from a later (enrichment-less) scan.
@@ -169,8 +189,16 @@ for (const r of recs) {
 fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
 
 let hist = fs.existsSync(HIST_PATH) ? fs.readFileSync(HIST_PATH, 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
+// Apply q:→hex key migrations to the panel too, so one business never appears as two ids.
 // Back-compat: older rows used `place_id`; key on `id` with a fallback so a mixed file dedups.
-const kof = (s) => (s.id || s.place_id) + '|' + s.date, idx = new Map(hist.map((h, i) => [kof(h), i]));
+const kof = (s) => (s.id || s.place_id) + '|' + s.date;
+if (migrations.length) {
+  const mig = new Map(migrations.map((m) => [m.from, m.to]));
+  for (const h of hist) { const to = mig.get(h.id || h.place_id); if (to) { h.id = to; delete h.place_id; } }
+  hist = [...new Map(hist.map((h) => [kof(h), h])).values()]; // renamed rows may collide with fresh ones — keep last
+  console.log(`migrated ${migrations.length} q:-keyed entr${migrations.length === 1 ? 'y' : 'ies'} to real place ids`);
+}
+const idx = new Map(hist.map((h, i) => [kof(h), i]));
 for (const s of snaps) { if (idx.has(kof(s))) hist[idx.get(kof(s))] = s; else { idx.set(kof(s), hist.length); hist.push(s); } }
 fs.writeFileSync(HIST_PATH, hist.map((h) => JSON.stringify(h)).join('\n') + '\n');
 
@@ -178,7 +206,15 @@ fs.writeFileSync(HIST_PATH, hist.map((h) => JSON.stringify(h)).join('\n') + '\n'
 // identifiers stored (name/address/place_id dropped; a salted one-way hash is the only per-entity
 // key). Powers the Germany-wide homepage insights without ever naming a natural person. DSGVO-safe.
 let aggRows = fs.existsSync(AGG_PATH) ? fs.readFileSync(AGG_PATH, 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
-const akof = (a) => a.aid + '|' + a.date, aidx = new Map(aggRows.map((a, i) => [akof(a), i]));
+const akof = (a) => a.aid + '|' + a.date;
+if (migrations.length) {
+  const amig = new Map(migrations.map((m) => [m.aggFrom, m.aggTo]));
+  for (const a of aggRows) { const to = amig.get(a.aid); if (to) a.aid = to; }
+  // a migrated row can collide with the fresh hex-keyed row of the same month — keep the last
+  const dedup = new Map(aggRows.map((a) => [akof(a), a]));
+  aggRows = [...dedup.values()];
+}
+const aidx = new Map(aggRows.map((a, i) => [akof(a), i]));
 for (const r of allRecs) {
   const rsan = sanitizeRating(r.rating);
   const rating = rsan.rating, reviews = intv(r.reviews) || rsan.reviewsFromRating, rmin = intv(r.range_min), rmax = intv(r.range_max);

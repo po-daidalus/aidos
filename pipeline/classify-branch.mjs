@@ -26,19 +26,24 @@ export function branchOf(name = '', category = '') {
 }
 
 // Canonicalize captured city strings: Google addresses mix district/short variants
-// ("Frankfurt", "Frankfurt am Main-Innenstadt I", "Wandsbek", "Ehrenfeld") — map them
+// ("Frankfurt", "Frankfurt am Main-Innenstadt I", "Leipzig-Ost", "Wandsbek") — map them
 // onto the survey city so aggregates/pages don't split one city into several.
-const CITY_CANON = [
-  [/^frankfurt(\s*am\s*main)?([\s-].*)?$/i, 'Frankfurt am Main'],
-  [/^(wandsbek|altona|eimsbüttel|harburg|bergedorf|hamburg([\s-].*)?)$/i, 'Hamburg'],
-  [/^(ehrenfeld|nippes|porz|kalk|lindenthal|köln([\s-].*)?)$/i, 'Köln'],
-  [/^münchen([\s-].*)?$/i, 'München'],
-  [/^berlin([\s-].*)?$/i, 'Berlin'],
+const CITY_DISTRICTS = [
+  [/^(wandsbek|altona|eimsbüttel|harburg|bergedorf)$/i, 'Hamburg'],
+  [/^(ehrenfeld|nippes|porz|kalk|lindenthal)$/i, 'Köln'],
 ];
 export function canonCity(c) {
   if (!c) return c;
   const t = c.trim();
-  for (const [re, canon] of CITY_CANON) if (re.test(t)) return canon;
+  for (const [re, canon] of CITY_DISTRICTS) if (re.test(t)) return canon;
+  // generic: a known city name, optionally followed by a district suffix ("Leipzig-Ost",
+  // "Frankfurt am Main-Innenstadt I", "München-Schwabing") → the city itself
+  for (const base of CITIES) {
+    if (t.toLowerCase() === base.toLowerCase() || new RegExp('^' + base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[\\s-]', 'i').test(t)) {
+      return base === 'Frankfurt' ? 'Frankfurt am Main' : base;
+    }
+  }
+  if (/^frankfurt\s*am\s*main/i.test(t)) return 'Frankfurt am Main';
   return t;
 }
 export function cityOf(name = '', city = '', address = '') {
