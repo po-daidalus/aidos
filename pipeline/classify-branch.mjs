@@ -25,10 +25,26 @@ export function branchOf(name = '', category = '') {
   return category ? 'Sonstige' : null;
 }
 
+// Canonicalize captured city strings: Google addresses mix district/short variants
+// ("Frankfurt", "Frankfurt am Main-Innenstadt I", "Wandsbek", "Ehrenfeld") — map them
+// onto the survey city so aggregates/pages don't split one city into several.
+const CITY_CANON = [
+  [/^frankfurt(\s*am\s*main)?([\s-].*)?$/i, 'Frankfurt am Main'],
+  [/^(wandsbek|altona|eimsbüttel|harburg|bergedorf|hamburg([\s-].*)?)$/i, 'Hamburg'],
+  [/^(ehrenfeld|nippes|porz|kalk|lindenthal|köln([\s-].*)?)$/i, 'Köln'],
+  [/^münchen([\s-].*)?$/i, 'München'],
+  [/^berlin([\s-].*)?$/i, 'Berlin'],
+];
+export function canonCity(c) {
+  if (!c) return c;
+  const t = c.trim();
+  for (const [re, canon] of CITY_CANON) if (re.test(t)) return canon;
+  return t;
+}
 export function cityOf(name = '', city = '', address = '') {
-  if (city && city.trim()) return city.trim();
+  if (city && city.trim()) return canonCity(city);
   const hay = ((address || '') + ' ' + (name || '')).toLowerCase();
-  for (const c of CITIES) if (hay.includes(c.toLowerCase())) return c;
+  for (const c of CITIES) if (hay.includes(c.toLowerCase())) return canonCity(c);
   if (BERLIN_HINTS.some((h) => hay.includes(h))) return 'Berlin';
   return null;
 }

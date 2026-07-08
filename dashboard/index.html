@@ -114,6 +114,17 @@
       <div class="cities" id="cityGrid"></div>
     </section>
 
+    <!-- COVERAGE / DATENBASIS -->
+    <section>
+      <div class="sec-head"><h2>Die Datenbasis</h2><span class="hint">was drin ist — und was noch nicht</span></div>
+      <p class="sec-intro">aidos erhebt Stadt für Stadt und wiederholt jede Stadt monatlich. Diese Übersicht zeigt ehrlich, welche Städte bereits im Datensatz sind — Zahlen aus noch nicht erhobenen Städten gibt es hier schlicht nicht.</p>
+      <div class="covbox">
+        <table class="rank" id="covTable"><thead><tr><th>Stadt</th><th class="num">Profile mit Lösch-Hinweis</th><th></th></tr></thead><tbody id="covBody"></tbody></table>
+        <p class="asof" id="covNote"></p>
+        <p class="asof">In Vorbereitung: Leipzig, Düsseldorf, Dresden, Stuttgart, Nürnberg, Hannover, Bremen und das Ruhrgebiet (Essen, Dortmund, Bochum, Duisburg). Wie erhoben wird, steht in der <a href="methodik.html">Methodik</a>.</p>
+      </div>
+    </section>
+
     <!-- DSA TILES -->
     <section>
       <div class="sec-head"><h2>DSA-Reports &amp; Analysen</h2><span class="hint">automatisch aus den Daten, redaktionell verantwortet</span></div>
@@ -187,6 +198,12 @@
     document.getElementById('cityGrid').innerHTML = realCities.map((c) =>
       `<a class="citycard reveal" href="stadt/${slug(c.key)}.html"><div class="cn">${esc(c.key)}</div><div class="ch">Schwerpunkt: ${esc((c.hotspot || []).join(' & ') || '–')}</div><div class="cs">${de(c.n)} erfasste Profile · Index ${de1(c.score)}/10</div><div class="bar"><i data-w="${Math.round(100 * (c.removed || c.n) / maxCity)}"></i></div></a>`).join('')
       || '<p class="muted">Noch keine Stadt mit ausreichender Datenbasis.</p>';
+
+    // coverage table (Datenbasis) — surveyed cities only, straight from the aggregates
+    const gen = A.generated ? new Date(A.generated).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }) : null;
+    document.getElementById('covBody').innerHTML = realCities.slice().sort((a, b) => b.n - a.n).map((c) =>
+      `<tr><td><a href="stadt/${slug(c.key)}.html">${esc(c.key)}</a></td><td class="num">${de(c.n)}</td><td><a class="more" href="stadt/${slug(c.key)}.html">zur Stadtseite →</a></td></tr>`).join('');
+    document.getElementById('covNote').textContent = `${de(realCities.length)} Städte erhoben · ${de(T.businesses)} Profile mit aktivem Lösch-Hinweis im Datensatz` + (gen ? ` · Stand: ${gen}` : '') + '. Der Hinweis ist selten: nur rund 4 % der geprüften Profile tragen ihn — die große Mehrheit der geprüften Unternehmen taucht hier deshalb gar nicht auf.';
 
     // DSA tiles — data-viz covers from real report bars
     const arts = window.AIDOS_ARTICLES || [];

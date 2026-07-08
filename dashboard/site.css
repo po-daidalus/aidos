@@ -101,6 +101,10 @@ section:first-of-type { border-top: 0; }
 
 /* — ranking table — */
 table.rank { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.rank .num { text-align: right; font-variant-numeric: tabular-nums; }
+/* coverage box (Datenbasis section) */
+.covbox { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); padding: 18px 22px; }
+.covbox .asof { margin: 12px 0 0; } .covbox .more { font: 500 13px var(--sans); color: var(--accent); white-space: nowrap; }
 table.rank th { text-align: left; font: 600 11.5px var(--sans); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); padding: 0 12px 10px; border-bottom: 2px solid var(--ink); }
 table.rank td { padding: 13px 12px; border-bottom: 1px solid var(--rule); vertical-align: middle; }
 table.rank tbody tr { transition: background .12s var(--ease); }

@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.0';
+const AIDOS_VERSION = 'v1.1';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -27,6 +27,13 @@ const dnum = (s) => { const n = parseInt(String(s).replace(/[^\d]/g, ''), 10); r
 function placeKey() {
   const m = location.href.match(/!1s(0x[0-9a-f]+:0x[0-9a-f]+)/i);
   if (m) return m[1];
+  // v1.1: when a search resolves in the side panel the URL keeps the search query — but the place's
+  // hex id still appears in link targets on the page (share/photos/reviews). Hunt it there before
+  // falling back to the URL, so these records get a REAL stable id instead of the search URL.
+  for (const el of document.querySelectorAll('a[href*="0x"], [data-url*="0x"]')) {
+    const h = ((el.getAttribute('href') || '') + ' ' + (el.getAttribute('data-url') || '')).match(/(0x[0-9a-f]+:0x[0-9a-f]+)/i);
+    if (h) return h[1];
+  }
   const s = location.href.match(/\/place\/([^/@]+)/);
   return s ? decodeURIComponent(s[1]) : location.href;
 }
@@ -47,6 +54,14 @@ function attrText(sel) {
 function getName() {
   const h = document.querySelector('h1.DUwDvf');
   if (h && h.textContent.trim().length > 1) return h.textContent.trim();
+  // v1.1 fallbacks — class- and language-independent. Fixes the ~19% nameless captures that occur
+  // when a search resolves in the side panel (URL keeps the query, h1 class rotated away):
+  // 1) the main place panel carries the name as its aria-label
+  const main = document.querySelector('div[role="main"][aria-label]');
+  if (main) { const al = (main.getAttribute('aria-label') || '').trim(); if (al.length > 1) return al; }
+  // 2) the tab title becomes "NAME - Google Maps" once a place panel is open
+  const t = (document.title || '').replace(/\s*[-–—]\s*Google\s*Maps.*$/i, '').trim();
+  if (t.length > 1 && !/^google\s*maps$/i.test(t)) return t;
   const slug = nameFromSlug();
   if (slug) return slug;
   for (const el of document.querySelectorAll('h1')) if (el.textContent.trim().length > 1) return el.textContent.trim();
@@ -63,9 +78,11 @@ function parseCity(addr) {
   return m ? { postal_code: m[1], city: m[2].trim() } : { postal_code: null, city: null };
 }
 function getCategory() {
+  // v1.1: the label-save button sometimes matches the selectors — never a real category.
+  const JUNK = /add a label|label hinzufügen|etikett|speichern|save/i;
   for (const s of ['button[jsaction*="category"]', 'button.DkEaL', '.DkEaL', 'button[jsaction*="pane.rating.category"]']) {
     const el = document.querySelector(s);
-    if (el && el.textContent.trim()) return el.textContent.trim();
+    if (el && el.textContent.trim() && !JUNK.test(el.textContent)) return el.textContent.trim();
   }
   return null;
 }
