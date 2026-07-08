@@ -1,7 +1,17 @@
 {
   "city": "Hannover",
   "slug": "hannover",
-  "generated": "2026-07-02T23:24:34.941Z",
-  "total": 0,
-  "perBranch": {}
+  "generated": "2026-07-08T14:45:43.186Z",
+  "total": 1479,
+  "perBranch": {
+    "Gesundheit": 247,
+    "Sonstige": 269,
+    "Automobil": 81,
+    "Gastronomie & Hotel": 462,
+    "Beauty & Wellness": 219,
+    "Einzelhandel": 1,
+    "Fitness & Sport": 51,
+    "Recht & Beratung": 89,
+    "Immobilien": 60
+  }
 }

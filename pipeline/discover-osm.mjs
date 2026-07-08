@@ -37,12 +37,16 @@ async function overpass(query) {
   return { elements: [] };
 }
 
+// Most big cities are kreisfrei (admin_level 6) or Stadtstaaten (4). Hannover sits inside the
+// "Region Hannover" and its city boundary is admin_level 8 — matching 4|6 there returns nothing.
+const ADMIN_LEVEL = ({ Hannover: '^8$' })[city] || '^(4|6)$';
+
 const seen = new Set(), cands = [];
 let individuals = 0;
-console.log(`discovering candidates in ${city} (per industry: ${PER}) …`);
+console.log(`discovering candidates in ${city} (per industry: ${PER}, admin_level ${ADMIN_LEVEL}) …`);
 for (const [k, v] of TAGS) {
   const query = `[out:json][timeout:80];
-area["name"="${city}"]["admin_level"~"^(4|6)$"]->.a;
+area["name"="${city}"]["admin_level"~"${ADMIN_LEVEL}"]->.a;
 nwr["${k}"="${v}"]["name"](area.a);
 out tags center ${PER};`;
   process.stdout.write(`  ${k}=${v} … `);
