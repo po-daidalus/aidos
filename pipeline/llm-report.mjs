@@ -13,10 +13,13 @@ export function buildFacts(agg) {
   const branches = (agg.branches || []).map((b) => ({ branche: b.key, betroffene_profile: b.n, entfernt_geschaetzt: Math.round(b.removed), anteil_prozent: b.share, index: b.aidos_index }));
   const cities = (agg.cities || []).filter((c) => c.n >= 3).map((c) => ({ stadt: c.key, profile: c.n, index_0_10: Math.round(c.score * 10) / 10, schwerpunkt: (c.hotspot || []).join(' & ') }));
   const top = [...(agg.branches || [])].sort((a, b) => b.aidos_index - a.aidos_index)[0];
+  // measured prevalence per city (extension outcome log) — real, citable figures
+  const messung = (agg.coverage || []).map((c) => ({ stadt: c.city, geprueft: c.checked, mit_hinweis: c.hit, quote_prozent: c.prevalencePct }));
   return {
     monat: T.month, erfasste_profile: T.businesses, entfernt_gesamt_geschaetzt: T.removed,
-    profile_ueber_250: T.capCount, auffaelligste_branche: top ? top.key : null, auffaelligster_index: top ? top.aidos_index : null,
-    branchen: branches, staedte: cities,
+    profile_ueber_250: T.capCount, anzeige_deckel: 250, // Google caps the public figure at "über 250"
+    auffaelligste_branche: top ? top.key : null, auffaelligster_index: top ? top.aidos_index : null,
+    branchen: branches, staedte: cities, messung_banner_quote: messung.length ? messung : null,
     momentum: (agg.trend && agg.trend.available) ? { delta: agg.trend.delta, vormonat: agg.trend.prev, panel: agg.trend.panelSize } : null,
   };
 }
@@ -52,7 +55,7 @@ const SYSTEM = `Du bist Datenjournalist:in bei aidos, einem neutralen Transparen
 Schreibe einen sachlichen, gut lesbaren monatlichen DSA-Report auf Deutsch — im Ton seriöser Datenjournalismus (NZZ/Zeit-Datenteam), nicht reißerisch.
 
 HARTE REGELN (nicht verhandelbar):
-- Verwende AUSSCHLIESSLICH die Zahlen aus dem gelieferten FACTS-Objekt. Erfinde NIEMALS eine Zahl, keinen Prozentwert, keinen Namen.
+- Verwende AUSSCHLIESSLICH die Zahlen aus dem gelieferten FACTS-Objekt — und zwar WÖRTLICH. Rechne NICHT selbst: keine Summen, keine Rundungen ("rund 47.000"), keine selbst abgeleiteten Prozente oder Verhältnisse. Jede Ziffernfolge in deinem Text muss exakt so im FACTS-Objekt stehen (nur deutsche Tausenderpunkte darfst du einfügen: 47204 → 47.204). Erfinde NIEMALS eine Zahl oder einen Namen.
 - Attribuiere Entfernungen immer an Google und den Meldeprozess: "Google entfernte", "nach Diffamierungs-Beschwerden". Schreibe NIE, ein Unternehmen habe "löschen lassen" (wer die Beschwerde einreichte, ist nicht bekannt).
 - Nenne KEINE einzelnen Unternehmen oder Personen — nur Branchen, Städte, Aggregate.
 - Kein Werturteil. Eine hohe Zahl ist kein Beweis für Fehlverhalten (Fake-Kampagnen sind häufig). Der Index ist eine neutrale Statistik.
