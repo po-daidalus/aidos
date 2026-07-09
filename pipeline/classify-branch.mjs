@@ -46,8 +46,43 @@ export function canonCity(c) {
   if (/^frankfurt\s*am\s*main/i.test(t)) return 'Frankfurt am Main';
   return t;
 }
+// PLZ → survey city (covers the swept cities; used when the captured city field is a bare
+// district name like "Neustadt"/"Feuerbach" that canonCity cannot safely map by name alone).
+export function plzCity(plz) {
+  const p = parseInt(plz, 10);
+  if (!p) return null;
+  if (p >= 10115 && p <= 14199) return 'Berlin';
+  if (p >= 20095 && p <= 22769) return 'Hamburg';
+  if (p >= 80331 && p <= 81929) return 'München';
+  if (p >= 50667 && p <= 51149) return 'Köln';
+  if ((p >= 60306 && p <= 60599) || (p >= 65929 && p <= 65936)) return 'Frankfurt am Main';
+  if (p >= 70173 && p <= 70629) return 'Stuttgart';
+  if (p >= 40210 && p <= 40629) return 'Düsseldorf';
+  if (p >= 4103 && p <= 4357) return 'Leipzig';
+  if (p >= 1067 && p <= 1328) return 'Dresden';
+  if (p >= 30159 && p <= 30669) return 'Hannover';
+  if (p >= 90402 && p <= 90491) return 'Nürnberg';
+  if (p >= 28195 && p <= 28779) return 'Bremen';
+  if (p >= 45127 && p <= 45359) return 'Essen';
+  if (p >= 44135 && p <= 44388) return 'Dortmund';
+  if (p >= 44787 && p <= 44894) return 'Bochum';
+  if (p >= 47051 && p <= 47279) return 'Duisburg';
+  return null;
+}
+const KNOWN = new Set(CITIES.concat('Frankfurt am Main').map((c) => c.toLowerCase()));
 export function cityOf(name = '', city = '', address = '') {
-  if (city && city.trim()) return canonCity(city);
+  if (city && city.trim()) {
+    const canon = canonCity(city);
+    if (KNOWN.has(canon.toLowerCase())) return canon;
+    // bare district name ("Neustadt", "Feuerbach") → resolve via the address PLZ if possible
+    const plz = (address || '').match(/\b(\d{5})\b/);
+    const byPlz = plz && plzCity(plz[1]);
+    if (byPlz) return byPlz;
+    return canon;
+  }
+  const plz = (address || '').match(/\b(\d{5})\b/);
+  const byPlz = plz && plzCity(plz[1]);
+  if (byPlz) return byPlz;
   const hay = ((address || '') + ' ' + (name || '')).toLowerCase();
   for (const c of CITIES) if (hay.includes(c.toLowerCase())) return canonCity(c);
   if (BERLIN_HINTS.some((h) => hay.includes(h))) return 'Berlin';
