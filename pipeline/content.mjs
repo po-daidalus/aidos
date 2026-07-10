@@ -71,7 +71,7 @@ const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}"/><link rel="canonical" href="${BASE}/${rel}"/>
 <meta property="og:type" content="article"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(desc)}"/><meta name="twitter:card" content="summary_large_image"/>
-<link href="../fonts/fonts.css" rel="stylesheet"/><link href="../pages.css" rel="stylesheet"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link href="../fonts/fonts.css" rel="stylesheet"/><link href="../pages.css" rel="stylesheet"/>
 <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'NewsArticle', headline: title, datePublished: month + '-01', author: { '@type': 'Organization', name: 'aidos' }, publisher: { '@type': 'Organization', name: 'aidos' } })}</script></head>
 <body><header class="masthead"><div class="masthead-inner">
 <a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
