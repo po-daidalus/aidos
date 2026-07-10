@@ -84,9 +84,16 @@ const rawChecks = Array.isArray(parsed) ? [] : (parsed.checks || []);
 // is later captured WITH its hex id, the q:-entry is migrated (see below). Nameless URL-keyed rows
 // remain useless and are dropped.
 const qKey = (r) => 'q:' + normName(r.name) + '|' + normName(cityOf(r.name, r.city, r.address) || defCity || '');
-const allRecs = rawRecs
+let allRecs = rawRecs
   .filter((r) => r.key && (!String(r.key).startsWith('http') || (r.name || '').trim()))
   .map((r) => (String(r.key).startsWith('http') ? { ...r, key: qKey(r) } : r));
+// The extension can capture the SAME visit twice: once while the panel resolves (no hex id yet →
+// q:-key) and once after the URL updates (hex key). Hex always wins — drop in-file q-twins here;
+// cross-export twins are handled after the DB loads (redirect + migration below).
+{
+  const hexQk = new Set(allRecs.filter((r) => !String(r.key).startsWith('q:') && r.name).map((r) => qKey(r)));
+  allRecs = allRecs.filter((r) => !(String(r.key).startsWith('q:') && hexQk.has(String(r.key))));
+}
 
 // Persist AGGREGATED coverage counts to pipeline/out/checks.jsonl — one row per (month, city):
 // { date, city, checked, hit, no_banner, no_place, blocked }. No per-place identifiers stored, so
@@ -110,10 +117,16 @@ if (rawChecks.length) {
 // flag decides only whether an entity may be shown INDIVIDUALLY on the listing page. Individuals
 // (nameable=false) still contribute anonymously to the Germany-wide statistics; build.mjs keeps
 // their names/addresses out of the browser-shipped data.js.
-const recs = allRecs; // ingest all
 const nameableN = allRecs.filter((r) => classify(r.name, r.category).keep).length;
 
 const db = fs.existsSync(DB_PATH) ? JSON.parse(fs.readFileSync(DB_PATH, 'utf8')) : { businesses: {} };
+// Cross-export twin (hex arrived in an EARLIER export): redirect incoming q:-records onto the
+// existing hex entry instead of inserting a duplicate. (q-then-hex is covered by the migration.)
+{
+  const hexIdx = new Map();
+  for (const [k, v] of Object.entries(db.businesses)) if (!String(k).startsWith('q:') && v.name) hexIdx.set('q:' + normName(v.name) + '|' + normName(v.city || ''), k);
+  allRecs = allRecs.map((r) => (String(r.key).startsWith('q:') && hexIdx.has(r.key) ? { ...r, key: hexIdx.get(r.key) } : r));
+}
 const today = new Date().toISOString().slice(0, 10), month = today.slice(0, 7);
 let added = 0, updated = 0; const snaps = [];
 
@@ -130,7 +143,7 @@ function effectiveRating(r, sanRating, sanReviews) {
 }
 
 const migrations = []; // q:-key → hex-key renames (place captured again, this time with its real id)
-for (const r of recs) {
+for (const r of allRecs) {
   const rawId = r.key;
   // Classify first — the storage key depends on it. Legal persons keep their public place_id;
   // natural persons are stored under a salted, non-reversible hash (no raw place_id anywhere).
