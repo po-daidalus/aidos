@@ -53,13 +53,37 @@ if (fs.existsSync(histPath)) {
 
 // HARD RULE: never synthesize/fabricate a time-series. We ship ONLY real captured history.
 // A business with no real series simply has no chart. Synthetic placeholders were removed 2026-07-03.
+// Two REAL sources, both from actual dated reviews:
+//   1) legacy per-review pulls (series.json, 12 businesses)
+//   2) extension v1.2 deep capture: monthly (month, stars) histograms harvested on banner hits
+//      (db field rev_hist = { "YYYY-MM": { n, sum } }) → converted to the same series shape.
+function seriesFromHist(d) {
+  const h = d.rev_hist || {};
+  const months = Object.keys(h).sort();
+  if (months.length < 4) return null; // too sparse for a meaningful trajectory
+  const monthCount = months.map((m) => h[m].n), monthSum = months.map((m) => h[m].sum);
+  // counterfactual injection over the rolling 365-day window (same model as the legacy series):
+  // worst case range_max reviews at 1★ (injLow), best case range_min at 2★ (injHigh), spread evenly
+  const last12 = months.slice(-12);
+  const injLow = months.map((m) => (last12.includes(m) ? (d.range_max || d.range_min || 0) / last12.length : 0));
+  const injHigh = months.map((m) => (last12.includes(m) ? (d.range_min || 0) / last12.length : 0));
+  const fetched = monthCount.reduce((s, v) => s + v, 0);
+  return {
+    name: d.name, months, monthCount, monthSum, injLow, injHigh,
+    windowStart: last12[0], rating: d.rating, range_min: d.range_min, range_max: d.range_max,
+    reviews_fetched: fetched, reviews_total: Math.max(d.reviews || fetched, fetched),
+    source: 'deep-capture', captured_at: (d.rev_hist_meta || {}).at || d.last_seen || null,
+  };
+}
 const SERIES = {};
-let real = 0;
+let real = 0, fromHist = 0;
 for (const d of businesses) {
   const id = d.place_id;
-  if (prev[id] && !prev[id].placeholder) { SERIES[id] = prev[id]; real++; } // keep only REAL captured history
+  if (prev[id] && !prev[id].placeholder && prev[id].source !== 'deep-capture') { SERIES[id] = prev[id]; real++; continue; }
+  const s = seriesFromHist(d);
+  if (s) { SERIES[id] = s; fromHist++; }
 }
 fs.writeFileSync(new URL('dashboard/series.js', ROOT), 'window.AIDOS_SERIES = ' + JSON.stringify(SERIES) + ';\n');
 fs.writeFileSync(seriesPath, JSON.stringify(SERIES));
 
-console.log(`built dashboard from ${businesses.length} businesses | series: ${real} real (0 synthetic — fabrication disabled)`);
+console.log(`built dashboard from ${businesses.length} businesses | series: ${real} legacy + ${fromHist} deep-capture (0 synthetic — fabrication disabled)`);

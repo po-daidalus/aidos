@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.1';
+const AIDOS_VERSION = 'v1.2';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -189,6 +189,73 @@ function readOverview() {
   return overview;
 }
 
+// ---------- v1.2 deep capture: monthly review histogram (banner hits only) ----------
+// Harvests ONLY (relative date, stars) per review — no text, no author, no avatar — and aggregates
+// client-side into { "YYYY-MM": { n, sum } }. Google's relative dates are month-accurate for the
+// last 11 months, exactly the window the profile chart needs. Runs only on the ~4% of profiles
+// that carry the banner, so the sweep stays fast.
+const REL_DATE_RE = /vor\s+(einem|einer|\d+)\s+(Tag|Tagen|Woche|Wochen|Monat|Monaten|Jahr|Jahren)|(?:an?|\d+)\s+(day|week|month|year)s?\s+ago/i;
+function monthsAgo(text) {
+  const m = (text || '').match(REL_DATE_RE);
+  if (!m) return null;
+  const num = m[1] || (text.match(/(\d+)/) || [])[1] || '1';
+  const n = /^ein/i.test(num) || /^an?$/i.test(num) ? 1 : parseInt(num, 10);
+  const unit = (m[2] || m[3] || '').toLowerCase();
+  if (/^tag|^day/.test(unit)) return 0;
+  if (/^woche|^week/.test(unit)) return Math.floor((n * 7) / 30);
+  if (/^monat|^month/.test(unit)) return n;
+  if (/^jahr|^year/.test(unit)) return n * 12;
+  return null;
+}
+const monthKey = (ago) => { const d = new Date(); d.setMonth(d.getMonth() - ago); return d.toISOString().slice(0, 7); };
+function reviewStars(el) {
+  for (const s of el.querySelectorAll('[role="img"][aria-label], [aria-label*="Stern"], [aria-label*="star"]')) {
+    const m = (s.getAttribute('aria-label') || '').match(/(\d)\s*(?:Stern|star|von 5|out of 5)/i) || (s.getAttribute('aria-label') || '').match(/^(\d)\s/);
+    if (m) { const v = +m[1]; if (v >= 1 && v <= 5) return v; }
+  }
+  return null;
+}
+function scrollableReviewPane() {
+  // the reviews list lives in a scrollable descendant of the main panel
+  const main = document.querySelector('div[role="main"]') || document.body;
+  let best = null;
+  for (const el of main.querySelectorAll('div')) {
+    if (el.scrollHeight > el.clientHeight + 200 && el.clientHeight > 200) { if (!best || el.scrollHeight > best.scrollHeight) best = el; }
+  }
+  return best;
+}
+async function harvestHistogram(maxRounds = 22) {
+  const hist = {}; const counted = new Set();
+  let oldestAgo = 0, stale = 0, matched = 0;
+  const collect = () => {
+    let fresh = 0;
+    for (const el of document.querySelectorAll('div[data-review-id]')) {
+      const id = el.getAttribute('data-review-id');
+      if (!id || counted.has(id)) continue;
+      const ago = monthsAgo(el.innerText.slice(0, 400));
+      const stars = reviewStars(el);
+      counted.add(id);
+      if (ago == null || stars == null) continue;
+      const k = monthKey(ago);
+      (hist[k] ||= { n: 0, sum: 0 }); hist[k].n++; hist[k].sum += stars;
+      if (ago > oldestAgo) oldestAgo = ago;
+      matched++; fresh++;
+    }
+    return fresh;
+  };
+  collect();
+  const pane = scrollableReviewPane();
+  for (let round = 0; pane && round < maxRounds; round++) {
+    pane.scrollTop = pane.scrollHeight;
+    await new Promise((r) => setTimeout(r, 900));
+    const fresh = collect();
+    stale = fresh === 0 ? stale + 1 : 0;
+    if (stale >= 2) break;          // list exhausted
+    if (oldestAgo >= 13) break;      // past the 12-month window — done
+  }
+  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, complete: oldestAgo >= 13 || stale >= 2 };
+}
+
 function toast(msg, ok = true) {
   let el = document.getElementById('aidos-toast');
   if (!el) {
@@ -289,12 +356,29 @@ chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
   setTimeout(() => {
     readOverview();      // final overview capture
     clickReviewsTab();   // then open reviews for the banner + histogram
-    setTimeout(() => {
+    setTimeout(async () => {
       const before = seen.size;
       scan();
       const bannerHit = seen.size > before || BANNER_RE.test(document.body.innerText);
       const outcome = classifyOutcome(bannerHit);
       recordCheck(outcome);
+      // v1.2: on a hit, harvest the monthly review histogram before advancing. Ask the loader to
+      // hold this page open (the default page timeout is far shorter than a scroll harvest).
+      if (outcome === 'hit') {
+        try { chrome.runtime.sendMessage({ type: 'aidos-hold', ms: 45000 }); } catch {}
+        try {
+          const h = await harvestHistogram();
+          const key = placeKey();
+          await new Promise((res) => chrome.storage.local.get({ records: {} }, (data) => {
+            if (data.records[key]) {
+              data.records[key].rev_hist = h.hist;
+              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, oldest_months: h.oldest_months, complete: h.complete, at: new Date().toISOString() };
+              chrome.storage.local.set({ records: data.records }, res);
+            } else res();
+          }));
+          toast(`📈 Verlauf: ${h.matched} Rezensionen datiert (${h.oldest_months} Mon. zurück)`);
+        } catch { /* harvest is best-effort — never block the sweep */ }
+      }
       // Tell the loader the real outcome so it can back off on 'blocked' (throttling signal).
       try { chrome.runtime.sendMessage({ type: 'aidos-scanned', outcome }); } catch {}
     }, 4500);
