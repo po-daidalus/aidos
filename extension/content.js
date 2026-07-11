@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.2.2';
+const AIDOS_VERSION = 'v1.2.3';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -252,7 +252,13 @@ async function sortByNewest() {
 }
 async function harvestHistogram(maxRounds = 22) {
   const hist = {}; const counted = new Set();
-  let oldestAgo = 0, stale = 0, matched = 0;
+  let oldestAgo = 0, stale = 0, matched = 0, tabRetry = false;
+  // heavy profiles render their tabs late — the initial reviews-tab click may have hit nothing
+  // (v1.2.2 pilot: 2 of 3 harvests saw 0 reviews for exactly this reason). Re-click until reviews exist.
+  if (!(await waitFor(reviewNodes, 4000))) {
+    tabRetry = true;
+    for (let i = 0; i < 3 && !reviewNodes(); i++) { clickReviewsTab(); await waitFor(reviewNodes, 4000); }
+  }
   const sorted = await sortByNewest();
   if (!reviewNodes()) await waitFor(reviewNodes, 6000); // reviews can lag even without sorting
   const collect = () => {
@@ -281,7 +287,7 @@ async function harvestHistogram(maxRounds = 22) {
     if (stale >= 3) break;                    // list exhausted (3 rounds: rendering can lag a scroll)
     if (sorted && oldestAgo >= 13) break;     // newest-first guaranteed → past the window means done
   }
-  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, sorted, complete: (sorted && oldestAgo >= 13) || stale >= 3 };
+  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, sorted, tab_retry: tabRetry, complete: (sorted && oldestAgo >= 13) || stale >= 3 };
 }
 
 function toast(msg, ok = true) {
@@ -393,14 +399,14 @@ chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
       // v1.2: on a hit, harvest the monthly review histogram before advancing. Ask the loader to
       // hold this page open (the default page timeout is far shorter than a scroll harvest).
       if (outcome === 'hit') {
-        try { chrome.runtime.sendMessage({ type: 'aidos-hold', ms: 60000 }); } catch {}
+        try { chrome.runtime.sendMessage({ type: 'aidos-hold', ms: 75000 }); } catch {}
         try {
           const h = await harvestHistogram();
           const key = placeKey();
           await new Promise((res) => chrome.storage.local.get({ records: {} }, (data) => {
             if (data.records[key]) {
               data.records[key].rev_hist = h.hist;
-              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, oldest_months: h.oldest_months, sorted: h.sorted, complete: h.complete, at: new Date().toISOString() };
+              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, oldest_months: h.oldest_months, sorted: h.sorted, tab_retry: h.tab_retry, complete: h.complete, at: new Date().toISOString() };
               chrome.storage.local.set({ records: data.records }, res);
             } else res();
           }));

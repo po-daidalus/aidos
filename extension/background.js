@@ -85,7 +85,7 @@ chrome.runtime.onMessage.addListener((msg) => {
   } else if (msg.type === 'aidos-hold') {
     // v1.2: content script is deep-capturing a banner hit — extend this page's deadline so the
     // timeout alarm doesn't advance mid-harvest. Only ~4% of pages are hits, so sweeps stay fast.
-    schedule('aidos-timeout', Math.min(msg.ms || 45000, 60000));
+    schedule('aidos-timeout', Math.min(msg.ms || 45000, 90000));
   }
 });
 
