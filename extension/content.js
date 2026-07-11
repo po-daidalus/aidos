@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.2';
+const AIDOS_VERSION = 'v1.2.1';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -194,13 +194,17 @@ function readOverview() {
 // client-side into { "YYYY-MM": { n, sum } }. Google's relative dates are month-accurate for the
 // last 11 months, exactly the window the profile chart needs. Runs only on the ~4% of profiles
 // that carry the banner, so the sweep stays fast.
-const REL_DATE_RE = /vor\s+(einem|einer|\d+)\s+(Tag|Tagen|Woche|Wochen|Monat|Monaten|Jahr|Jahren)|(?:an?|\d+)\s+(day|week|month|year)s?\s+ago/i;
+// The number must come from the matched date phrase itself — NEVER from elsewhere in the element
+// (review cards contain the reviewer's own counts like "Local Guide · 982 reviews", and a stray
+// fallback once turned those into "982 years ago" → phantom months in the year 1044).
+const REL_DATE_RE = /vor\s+(einem|einer|\d+)\s+(Tag|Tagen|Woche|Wochen|Monat|Monaten|Jahr|Jahren)|\b(an?|\d+)\s+(day|week|month|year)s?\s+ago/i;
 function monthsAgo(text) {
   const m = (text || '').match(REL_DATE_RE);
   if (!m) return null;
-  const num = m[1] || (text.match(/(\d+)/) || [])[1] || '1';
-  const n = /^ein/i.test(num) || /^an?$/i.test(num) ? 1 : parseInt(num, 10);
-  const unit = (m[2] || m[3] || '').toLowerCase();
+  const raw = m[1] || m[3] || '';
+  const n = /^ein/i.test(raw) || /^an?$/i.test(raw) ? 1 : parseInt(raw, 10);
+  if (!Number.isFinite(n) || n < 0 || n > 99) return null; // no real relative date exceeds this
+  const unit = (m[2] || m[4] || '').toLowerCase();
   if (/^tag|^day/.test(unit)) return 0;
   if (/^woche|^week/.test(unit)) return Math.floor((n * 7) / 30);
   if (/^monat|^month/.test(unit)) return n;
@@ -224,9 +228,24 @@ function scrollableReviewPane() {
   }
   return best;
 }
+// Maps sorts reviews by "relevance" by default — old reviews surface early and would trip the
+// 13-month stop long before the recent window is fully harvested. Switch to newest-first.
+async function sortByNewest() {
+  const btn = [...document.querySelectorAll('button')].find((b) =>
+    /sortieren|sort reviews|^sort$/i.test(((b.getAttribute('aria-label') || '') + ' ' + (b.textContent || '')).trim()));
+  if (!btn) return false;
+  btn.click();
+  await new Promise((r) => setTimeout(r, 700));
+  const item = [...document.querySelectorAll('[role="menuitemradio"], [role="menuitem"]')].find((el) => /neueste|newest/i.test(el.textContent || ''));
+  if (!item) return false;
+  item.click();
+  await new Promise((r) => setTimeout(r, 1100));
+  return true;
+}
 async function harvestHistogram(maxRounds = 22) {
   const hist = {}; const counted = new Set();
   let oldestAgo = 0, stale = 0, matched = 0;
+  const sorted = await sortByNewest();
   const collect = () => {
     let fresh = 0;
     for (const el of document.querySelectorAll('div[data-review-id]')) {
@@ -250,10 +269,10 @@ async function harvestHistogram(maxRounds = 22) {
     await new Promise((r) => setTimeout(r, 900));
     const fresh = collect();
     stale = fresh === 0 ? stale + 1 : 0;
-    if (stale >= 2) break;          // list exhausted
-    if (oldestAgo >= 13) break;      // past the 12-month window — done
+    if (stale >= 2) break;                    // list exhausted
+    if (sorted && oldestAgo >= 13) break;     // newest-first guaranteed → past the window means done
   }
-  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, complete: oldestAgo >= 13 || stale >= 2 };
+  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, sorted, complete: (sorted && oldestAgo >= 13) || stale >= 2 };
 }
 
 function toast(msg, ok = true) {
@@ -372,7 +391,7 @@ chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
           await new Promise((res) => chrome.storage.local.get({ records: {} }, (data) => {
             if (data.records[key]) {
               data.records[key].rev_hist = h.hist;
-              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, oldest_months: h.oldest_months, complete: h.complete, at: new Date().toISOString() };
+              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, oldest_months: h.oldest_months, sorted: h.sorted, complete: h.complete, at: new Date().toISOString() };
               chrome.storage.local.set({ records: data.records }, res);
             } else res();
           }));

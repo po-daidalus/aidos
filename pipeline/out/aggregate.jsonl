@@ -1,117 +1,117 @@
-{"aid":"16df70d380e12cda","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":0.54}
-{"aid":"c629c5a9275d75ba","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":0.18}
-{"aid":"d1252dab82a7d9de","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.65}
-{"aid":"75b92966549e1170","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.06}
+{"aid":"16df70d380e12cda","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":3.07}
+{"aid":"c629c5a9275d75ba","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.4}
+{"aid":"d1252dab82a7d9de","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.2}
+{"aid":"75b92966549e1170","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.88}
 {"aid":"ae9241c00af42a13","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.03}
 {"aid":"298fa3d067d36dcd","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.43}
-{"aid":"353a22c5cbecf601","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":null,"rating_drop":null}
-{"aid":"5e679cb6da0aa33f","date":"2026-07","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":0.21}
+{"aid":"353a22c5cbecf601","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.79}
+{"aid":"5e679cb6da0aa33f","date":"2026-07","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.68}
 {"aid":"c48b77bef69a3226","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":null,"rating_drop":null}
-{"aid":"e06efce34dd70999","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":0.25}
+{"aid":"e06efce34dd70999","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.82}
 {"aid":"5bebd376b23be4ed","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.1}
-{"aid":"a300ba85247c5819","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.5,"rating_drop":0.51}
+{"aid":"a300ba85247c5819","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.5,"rating_drop":1.71}
 {"aid":"ca19637d968a2043","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.36}
-{"aid":"6efa7f87bface131","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.9,"rating_drop":0.29}
-{"aid":"d6409fcee8b0d411","date":"2026-07","branch":"Fitness & Sport","city":"Potsdam","nameable":true,"range_min":21,"range_max":50,"rating":null,"rating_drop":null}
-{"aid":"b4c463d984eb9176","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.14}
+{"aid":"6efa7f87bface131","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.9,"rating_drop":3.02}
+{"aid":"d6409fcee8b0d411","date":"2026-07","branch":"Fitness & Sport","city":"Potsdam","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.79}
+{"aid":"b4c463d984eb9176","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
 {"aid":"3d09fab0a0cb17b5","date":"2026-07","branch":"Recht & Beratung","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.23}
-{"aid":"cbb8a80647d3bc4d","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":0.46}
+{"aid":"cbb8a80647d3bc4d","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.44}
 {"aid":"eda1f8532d5f25d4","date":"2026-07","branch":"Beauty & Wellness","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.17}
-{"aid":"98c1769a9d0d5e75","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":null,"rating_drop":null}
-{"aid":"2213b5f3b95deb29","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":0.44}
-{"aid":"0b8081f4b6b7b97a","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":0.51}
+{"aid":"98c1769a9d0d5e75","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.8,"rating_drop":2.7}
+{"aid":"2213b5f3b95deb29","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.71}
+{"aid":"0b8081f4b6b7b97a","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":3.04}
 {"aid":"b9f2806f41390329","date":"2026-07","branch":"Recht & Beratung","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":0.15}
-{"aid":"72219e03d7740b69","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":null,"rating_drop":null}
-{"aid":"63898edea8529c55","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.54}
-{"aid":"f1a1999be8bdab1b","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":1.41}
-{"aid":"4ea5a849a51e629b","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":null,"rating_drop":null}
+{"aid":"72219e03d7740b69","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":1.74}
+{"aid":"63898edea8529c55","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"f1a1999be8bdab1b","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.64}
+{"aid":"4ea5a849a51e629b","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.5,"rating_drop":1.43}
 {"aid":"9caa0c392b6014ba","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.17}
-{"aid":"f3b3c788bc76dbbd","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.5,"rating_drop":0.92}
+{"aid":"f3b3c788bc76dbbd","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":2.33}
 {"aid":"23357065493fa462","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.06}
-{"aid":"a689b5331f424c10","date":"2026-07","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.28}
-{"aid":"e05f4938fc614724","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.29}
-{"aid":"32ca87ab1d6c4c20","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":null,"rating_drop":null}
+{"aid":"a689b5331f424c10","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":5,"rating_drop":1.72}
+{"aid":"e05f4938fc614724","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
+{"aid":"32ca87ab1d6c4c20","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.11}
 {"aid":"4a1fa2b8c7149481","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.41}
 {"aid":"279a5d83cb0e2159","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.26}
 {"aid":"13c5ed2cb47a5023","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.22}
 {"aid":"cb83ebfb32677fd5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.2,"rating_drop":0.81}
-{"aid":"427cc25fce7369f2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.7,"rating_drop":1.14}
+{"aid":"427cc25fce7369f2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.9,"rating_drop":1.29}
 {"aid":"c661caf3f2093eaa","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.3}
-{"aid":"f61f47b2a927e599","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.07}
+{"aid":"f61f47b2a927e599","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.66}
 {"aid":"09bb0389c404a17a","date":"2026-07","branch":"Recht & Beratung","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":5,"rating_drop":0.61}
 {"aid":"503a39caad8a5d15","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":0.02}
-{"aid":"7dc1c07cfd228ba3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":0.09}
-{"aid":"8724fb2d1c554457","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":201,"range_max":250,"rating":4.8,"rating_drop":0.45}
-{"aid":"c2d11f71cad1cab9","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.62}
-{"aid":"8a90395a188b6d53","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.11}
-{"aid":"14624703e1ff7038","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":0.12}
+{"aid":"7dc1c07cfd228ba3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":0.77}
+{"aid":"8724fb2d1c554457","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":201,"range_max":250,"rating":4.8,"rating_drop":3.03}
+{"aid":"c2d11f71cad1cab9","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.89}
+{"aid":"8a90395a188b6d53","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
+{"aid":"14624703e1ff7038","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":1.1}
 {"aid":"7fe48474ee2353f0","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.5,"rating_drop":0.42}
-{"aid":"0def563d4449b1fb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.2}
-{"aid":"ec0f4449fc7e514f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.4,"rating_drop":0.38}
+{"aid":"0def563d4449b1fb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.76}
+{"aid":"ec0f4449fc7e514f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.5,"rating_drop":0.41}
 {"aid":"1113276c5fd9c68a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.4,"rating_drop":1.67}
 {"aid":"589ba3b27a2dd7b7","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.01}
-{"aid":"98a43d903bae0e7c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":0.13}
+{"aid":"98a43d903bae0e7c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.09}
 {"aid":"a08ad1f135c3e533","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":3.9,"rating_drop":0.17}
-{"aid":"b319fd5728af934d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":0.12}
+{"aid":"b319fd5728af934d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.9}
 {"aid":"a1e56b0126e24686","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":0.34}
 {"aid":"a5f4a86b296e880d","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.96}
-{"aid":"4407b7b948eb29f6","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":0.67}
-{"aid":"c0853ecd1167f3e4","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.27}
-{"aid":"02d5f0492b33bb8c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.19}
+{"aid":"4407b7b948eb29f6","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":3}
+{"aid":"c0853ecd1167f3e4","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":1.17}
+{"aid":"02d5f0492b33bb8c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.28}
 {"aid":"8700fbd7a4d520ab","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":0.45}
-{"aid":"0731f8aab76f71bf","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.18}
+{"aid":"0731f8aab76f71bf","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.85}
 {"aid":"2126e64dd4652a52","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":0.12}
-{"aid":"698349758a5d365d","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.72}
+{"aid":"698349758a5d365d","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.54}
 {"aid":"e8d098fbe3435d05","date":"2026-07","branch":"Beauty & Wellness","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.5}
-{"aid":"ef355cfd5a8b9f57","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.08}
+{"aid":"ef355cfd5a8b9f57","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.29}
 {"aid":"182c69ae9974f139","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.18}
-{"aid":"94d7147584e801ba","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.97}
-{"aid":"70032ce5381cdc15","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":0.36}
+{"aid":"94d7147584e801ba","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.74}
+{"aid":"70032ce5381cdc15","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.76}
 {"aid":"887a0e4baa196500","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.25}
 {"aid":"c89cb0ca3a02862d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.05}
-{"aid":"c960c9597089cfde","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":0.9}
-{"aid":"2950ffc4890eb686","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.12}
-{"aid":"7808728972ea11ae","date":"2026-07","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.32}
-{"aid":"6f9a6cacb0037a3d","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.27}
+{"aid":"c960c9597089cfde","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.6}
+{"aid":"2950ffc4890eb686","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.2}
+{"aid":"7808728972ea11ae","date":"2026-07","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
+{"aid":"6f9a6cacb0037a3d","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.91}
 {"aid":"a40ae12a5d153085","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":0.56}
-{"aid":"e1fd6f8f106f1f7d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.28}
+{"aid":"e1fd6f8f106f1f7d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.18}
 {"aid":"d22a9a07f37f95d7","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.33}
-{"aid":"11885806d4b936f6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.47}
-{"aid":"8b2fffa2c3d8b5a5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":0.14}
-{"aid":"d34e6d2c6c179749","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":3.9,"rating_drop":1.4}
+{"aid":"11885806d4b936f6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.91}
+{"aid":"8b2fffa2c3d8b5a5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.37}
+{"aid":"d34e6d2c6c179749","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":3.9,"rating_drop":2.34}
 {"aid":"900d2bf6e2324a2e","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.31}
 {"aid":"ac182023d5f9be19","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4,"rating_drop":1.16}
 {"aid":"7703e42e4bb1d3da","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.59}
-{"aid":"286182c76a271b1c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":0.51}
+{"aid":"286182c76a271b1c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":2.87}
 {"aid":"7e8bcc5cfbb631d2","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.95}
 {"aid":"1f75abad64455fc6","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":5,"rating_drop":0.05}
 {"aid":"3183a9bc9d8f356e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":0.32}
-{"aid":"77e81e29caa082bf","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.37}
-{"aid":"25499fbd8980873b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":0.13}
+{"aid":"77e81e29caa082bf","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.8}
+{"aid":"25499fbd8980873b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":2.9}
 {"aid":"32c3977214f19e36","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.04}
 {"aid":"f61334eb51e1c8d6","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":0.3}
 {"aid":"5cc1d5257c07e499","date":"2026-07","branch":"Recht & Beratung","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.23}
 {"aid":"52b37a03229aaa01","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.8,"rating_drop":0.44}
-{"aid":"230cc83204fbb959","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.13}
-{"aid":"0f67ba9a7e2bd0f7","date":"2026-07","branch":"Beauty & Wellness","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.24}
-{"aid":"764911a31189aecd","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.91}
+{"aid":"230cc83204fbb959","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.48}
+{"aid":"0f67ba9a7e2bd0f7","date":"2026-07","branch":"Beauty & Wellness","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"764911a31189aecd","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.55}
 {"aid":"46328b3729a10fbe","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.4}
 {"aid":"adb61cbfd6f06549","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":0.44}
-{"aid":"6716328c0f981012","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.62}
-{"aid":"b8b426e4b61bba5b","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.4}
+{"aid":"6716328c0f981012","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"b8b426e4b61bba5b","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
 {"aid":"2b8c9c429a4773e7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.21}
 {"aid":"55af55cec4f22189","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":0.51}
-{"aid":"a1bd4b60ca43cd58","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":0.7}
-{"aid":"a03e732c7c22e0d7","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.37}
+{"aid":"a1bd4b60ca43cd58","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.85}
+{"aid":"a03e732c7c22e0d7","date":"2026-07","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"f3d884cf50442728","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.21}
 {"aid":"66051ff91b7f825c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.13}
-{"aid":"f1cd8807178a85e5","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.31}
+{"aid":"f1cd8807178a85e5","date":"2026-07","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.71}
 {"aid":"13103e5e4f3f70d9","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":0.15}
 {"aid":"5f652484d8aa327c","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.24}
-{"aid":"130f022213d94ff9","date":"2026-07","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.04}
-{"aid":"9307420f64dd5bc5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.45}
-{"aid":"03efa4fc4d9c7dbe","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.63}
-{"aid":"4403606187290f3c","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":0.27}
+{"aid":"130f022213d94ff9","date":"2026-07","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":3.01}
+{"aid":"9307420f64dd5bc5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.44}
+{"aid":"03efa4fc4d9c7dbe","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.65}
+{"aid":"4403606187290f3c","date":"2026-07","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.08}
 {"aid":"84df8d4734558e6e","date":"2026-07","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.54}
 {"aid":"858ccf4dd2e1c817","date":"2026-07","branch":"Fitness & Sport","city":"Hamburg","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.07}
 {"aid":"c2614e6723726bd3","date":"2026-07","branch":"Gesundheit","city":"Hamburg","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.98}
@@ -129,13 +129,13 @@
 {"aid":"b035f6829895d4d3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
 {"aid":"97a130868602037e","date":"2026-07","branch":"Unbekannt","city":"Hamburg","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.7}
 {"aid":"cce451ec39b30bc8","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
-{"aid":"0c2261baef5474be","date":"2026-07","branch":"Automobil","city":"Hamburg","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
+{"aid":"0c2261baef5474be","date":"2026-07","branch":"Automobil","city":"Hamburg","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.53}
 {"aid":"597be15f5e4936a1","date":"2026-07","branch":"Automobil","city":"Hamburg","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"beca66c5f8742dd7","date":"2026-07","branch":"Automobil","city":"Hamburg","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.88}
 {"aid":"61ec9ada2d4f9a57","date":"2026-07","branch":"Automobil","city":"Hamburg","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.34}
 {"aid":"71fdbcd063ebb83f","date":"2026-07","branch":"Unbekannt","city":"Hamburg","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"b9ceccebeeb8460b","date":"2026-07","branch":"Fitness & Sport","city":"Hamburg","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.79}
-{"aid":"df10c81a016e0964","date":"2026-07","branch":"Automobil","city":"Hamburg","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":2.31}
+{"aid":"df10c81a016e0964","date":"2026-07","branch":"Automobil","city":"Hamburg","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":2.39}
 {"aid":"5771458dbd841a50","date":"2026-07","branch":"Fitness & Sport","city":"Hamburg","nameable":false,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":1.73}
 {"aid":"d7d08d0b82a15543","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":0.72}
 {"aid":"86f54ebf804db3cb","date":"2026-07","branch":"Gesundheit","city":"Hamburg","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
@@ -143,14 +143,14 @@
 {"aid":"bb4caed63ce3dd20","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":3.03}
 {"aid":"648e96ea58a5995a","date":"2026-07","branch":"Unbekannt","city":"Hamburg","nameable":false,"range_min":21,"range_max":50,"rating":3.5,"rating_drop":1.71}
 {"aid":"af1e8011ca1da86f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
-{"aid":"3e861f44cf2f8e3f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.48}
+{"aid":"3e861f44cf2f8e3f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":0.79}
 {"aid":"8e364a8ec71c3b53","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":false,"range_min":101,"range_max":150,"rating":4.4,"rating_drop":1.41}
 {"aid":"b5cd3356f92d4861","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":2.31}
-{"aid":"5e7c947165b03a96","date":"2026-07","branch":"Unbekannt","city":"Hamburg","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":1.47}
+{"aid":"5e7c947165b03a96","date":"2026-07","branch":"Unbekannt","city":"Hamburg","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":1.54}
 {"aid":"5a4ef14bb31e3668","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":0.65}
 {"aid":"e6a2ed431e93bb8a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.03}
 {"aid":"6648b649916786aa","date":"2026-07","branch":"Unbekannt","city":"Hamburg","nameable":true,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":0.14}
-{"aid":"b4a984b1a0a3ffdc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.77}
+{"aid":"b4a984b1a0a3ffdc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.92}
 {"aid":"3a8df74ac9db2e19","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.6}
 {"aid":"40d0377c5dd9e5b1","date":"2026-07","branch":"Gesundheit","city":"Hamburg","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.75}
 {"aid":"12bf4abd5dd2e3df","date":"2026-07","branch":"Fitness & Sport","city":"Hamburg","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.91}
@@ -177,7 +177,7 @@
 {"aid":"b21f8407b902b782","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":false,"range_min":21,"range_max":50,"rating":3,"rating_drop":0.18}
 {"aid":"45c4a01da51ba2d7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.12}
 {"aid":"da7499bd399d4a01","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":21,"range_max":50,"rating":4.1,"rating_drop":0.61}
-{"aid":"dac72171b6335436","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":1.26}
+{"aid":"dac72171b6335436","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hamburg","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":1.25}
 {"aid":"b29eea7427d862dc","date":"2026-07","branch":"Gastronomie & Hotel","city":"München","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.87}
 {"aid":"1ef431d9d54ac0ba","date":"2026-07","branch":"Gesundheit","city":"München","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.74}
 {"aid":"c25078d1e7da9b49","date":"2026-07","branch":"Gesundheit","city":"München","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.71}
@@ -241,7 +241,7 @@
 {"aid":"1e9c032f576213dd","date":"2026-07","branch":"Gastronomie & Hotel","city":"München","nameable":false,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":0.09}
 {"aid":"2d17ad620a3eaa23","date":"2026-07","branch":"Gastronomie & Hotel","city":"München","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":0.54}
 {"aid":"c916cbbf86332899","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.8}
-{"aid":"47866ed2804fc2b6","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":1.08}
+{"aid":"47866ed2804fc2b6","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":1.11}
 {"aid":"55408a141733fc21","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":151,"range_max":200,"rating":4.7,"rating_drop":2.98}
 {"aid":"3275ba4a4934d467","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.38}
 {"aid":"67d322f5a79e881f","date":"2026-07","branch":"Automobil","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.84}
@@ -249,14 +249,14 @@
 {"aid":"7205830a44827135","date":"2026-07","branch":"Immobilien","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.51}
 {"aid":"8038856aa89ee90b","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.67}
 {"aid":"5075aa6401d1f194","date":"2026-07","branch":"Automobil","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.93}
-{"aid":"c858c8b9671e95cc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":2.95}
+{"aid":"c858c8b9671e95cc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":2.6}
 {"aid":"2f83fe80f4b3a838","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":0.8}
 {"aid":"39f3327e668f40a4","date":"2026-07","branch":"Immobilien","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.63}
 {"aid":"8707d93497b8221a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.63}
 {"aid":"70a80c6a9db5c10a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":151,"range_max":200,"rating":4.5,"rating_drop":0.86}
 {"aid":"9d039de2374fd5c3","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":false,"range_min":250,"range_max":null,"rating":4,"rating_drop":2.25}
 {"aid":"727b26064e292f67","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":3.1}
-{"aid":"0697a1e0682a0233","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.85}
+{"aid":"0697a1e0682a0233","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.93}
 {"aid":"a0993b9425d82dc4","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.27}
 {"aid":"7e9932dec3d60e0f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.77}
 {"aid":"47819958bfa0908d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":2.92}
@@ -267,7 +267,7 @@
 {"aid":"e73f624ba09cd1fd","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.79}
 {"aid":"1b96cd8be97913eb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.14}
 {"aid":"6ca8194e241efdf4","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.16}
-{"aid":"e7ece03077c05d60","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.02}
+{"aid":"e7ece03077c05d60","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.92}
 {"aid":"4affd9cb71093d23","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":5,"rating_drop":1.01}
 {"aid":"6857138b81462a26","date":"2026-07","branch":"Sonstige","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.68}
 {"aid":"b2141a342adb0e55","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.57}
@@ -275,30 +275,30 @@
 {"aid":"589107179003bf86","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":51,"range_max":100,"rating":4.2,"rating_drop":2.63}
 {"aid":"a255bdaf9f9b904c","date":"2026-07","branch":"Beauty & Wellness","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"b7f2c0ece746a7a5","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.54}
-{"aid":"d30b41e336edf9d1","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":2.41}
-{"aid":"0b8be69fde83e7a0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.97}
+{"aid":"d30b41e336edf9d1","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":true,"range_min":101,"range_max":150,"rating":4.9,"rating_drop":2.73}
+{"aid":"0b8be69fde83e7a0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.69}
 {"aid":"4aa2914046618d76","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.42}
 {"aid":"dc496ec45fdbdc41","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.01}
 {"aid":"5847e8f88b81afad","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":3.4,"rating_drop":0.23}
-{"aid":"0fbfd1fa9714734d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":250,"range_max":null,"rating":4.3,"rating_drop":0.52}
-{"aid":"5e4384c1d1426111","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":2.25}
+{"aid":"0fbfd1fa9714734d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":250,"range_max":null,"rating":4.3,"rating_drop":0.51}
+{"aid":"5e4384c1d1426111","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":2.42}
 {"aid":"55f0b1b3b3b9aeb5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.67}
 {"aid":"b785d12c73de70b0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":3.03}
 {"aid":"5c6f1194b42e46b4","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":151,"range_max":200,"rating":4.7,"rating_drop":2.82}
 {"aid":"17d1204cad5d27f1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.61}
 {"aid":"aa0f824d7ab13a7d","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":true,"range_min":101,"range_max":150,"rating":4.3,"rating_drop":2.76}
-{"aid":"d45d610c481d4a10","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":2.45}
+{"aid":"d45d610c481d4a10","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":0.67}
 {"aid":"0a90495446ee9caa","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":1.07}
-{"aid":"97a1844417ea810b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":250,"range_max":null,"rating":4.5,"rating_drop":2.58}
+{"aid":"97a1844417ea810b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":250,"range_max":null,"rating":4.5,"rating_drop":2.59}
 {"aid":"2d0d059ae19a58a8","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":1.35}
-{"aid":"7615442f65c9d023","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":151,"range_max":200,"rating":4.3,"rating_drop":2.65}
+{"aid":"7615442f65c9d023","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":151,"range_max":200,"rating":4.3,"rating_drop":2.66}
 {"aid":"7dca9223b637619d","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.04}
 {"aid":"eaa28c14c8630ba5","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.76}
 {"aid":"699bf7240457678f","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"6dea6a0736e1be77","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.38}
 {"aid":"f372ae0f4b6ef987","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":101,"range_max":150,"rating":4.9,"rating_drop":2.4}
-{"aid":"bc70c068b136891a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":3.31}
-{"aid":"ff0ef64829985db3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":1.33}
+{"aid":"bc70c068b136891a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.21}
+{"aid":"ff0ef64829985db3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":1.34}
 {"aid":"d969ae4a6627af18","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.38}
 {"aid":"363b0e2805282446","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.1,"rating_drop":0.16}
 {"aid":"3de0c8c0646915b3","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.87}
@@ -307,10 +307,10 @@
 {"aid":"dcb251b51bb7bf75","date":"2026-07","branch":"Automobil","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"ee02d72047165a0f","date":"2026-07","branch":"Fitness & Sport","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.18}
 {"aid":"1466e0b3cffbb792","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.21}
-{"aid":"4188809a630842d1","date":"2026-07","branch":"Immobilien","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
+{"aid":"4188809a630842d1","date":"2026-07","branch":"Immobilien","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.38}
 {"aid":"d0087bdd6caa9537","date":"2026-07","branch":"Gesundheit","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
 {"aid":"231fa0cc3e9be5c4","date":"2026-07","branch":"Automobil","city":"Köln","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":2.62}
-{"aid":"d50f3ce4ab9c1eb6","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.27}
+{"aid":"d50f3ce4ab9c1eb6","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.76}
 {"aid":"eead03512f299a7a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.16}
 {"aid":"8866533fbd1a4493","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.43}
 {"aid":"145be7383f9c6bd6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.88}
@@ -330,11 +330,11 @@
 {"aid":"40d165f53b3f9f1f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.19}
 {"aid":"56e3e5f91188d3c9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.71}
 {"aid":"44490eea17aed12e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.7}
-{"aid":"4bd54297ec6d29fb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.63}
+{"aid":"4bd54297ec6d29fb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.42}
 {"aid":"bcc9f3cb79128548","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":2.46}
 {"aid":"16c9883f7c990404","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
 {"aid":"b4ed55e6092df435","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":0.65}
-{"aid":"d87d3cb92900f690","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"d87d3cb92900f690","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":3.01}
 {"aid":"4e52244fef2c4593","date":"2026-07","branch":"Beauty & Wellness","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"a670c62356a6394f","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":false,"range_min":250,"range_max":null,"rating":4.4,"rating_drop":2.05}
 {"aid":"9205367013d57a68","date":"2026-07","branch":"Beauty & Wellness","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.15}
@@ -342,40 +342,40 @@
 {"aid":"8f9d3c61722913ca","date":"2026-07","branch":"Recht & Beratung","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.18}
 {"aid":"fd694a92bf464632","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"fd105a5cdd441ba3","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.2}
-{"aid":"653bcf2026f603c3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":201,"range_max":250,"rating":4.6,"rating_drop":2.7}
+{"aid":"653bcf2026f603c3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":201,"range_max":250,"rating":4.6,"rating_drop":2.42}
 {"aid":"366d48e87eb1c306","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.13}
 {"aid":"3717c1294e7aa994","date":"2026-07","branch":"Fitness & Sport","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":1.53}
-{"aid":"9f85ace465e684b2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.52}
-{"aid":"fce37906ea295383","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.39}
+{"aid":"9f85ace465e684b2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":1.46}
+{"aid":"fce37906ea295383","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.46}
 {"aid":"e435b6e035297b6d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":151,"range_max":200,"rating":4.4,"rating_drop":0.81}
 {"aid":"da5948217cb7e287","date":"2026-07","branch":"Automobil","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.51}
 {"aid":"9b24d3a79376c5ac","date":"2026-07","branch":"Automobil","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.76}
-{"aid":"2fc36ed315bb8cdb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":0.23}
+{"aid":"2fc36ed315bb8cdb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":0.22}
 {"aid":"c857ca960297bfdc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.87}
 {"aid":"25457b7b21f4fc7f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":3.08}
 {"aid":"550da3cf80b183d8","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.15}
 {"aid":"11f8c3d7bebbaa42","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":0.57}
 {"aid":"9b4ef79d286553a2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.06}
 {"aid":"049edc91cb4c84ff","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.64}
-{"aid":"d407a7e6f5519007","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.1,"rating_drop":0.15}
-{"aid":"3cfaf96cb3743aa9","date":"2026-07","branch":"Gesundheit","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":0.17}
+{"aid":"d407a7e6f5519007","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.2,"rating_drop":0.16}
+{"aid":"3cfaf96cb3743aa9","date":"2026-07","branch":"Gesundheit","city":"Frankfurt am Main","nameable":true,"range_min":101,"range_max":150,"rating":4.9,"rating_drop":0.28}
 {"aid":"c621c77f37ac1651","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.74}
 {"aid":"814f2964ffa9ee3c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.44}
 {"aid":"c3aca2ae22b7d26e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":101,"range_max":150,"rating":4.2,"rating_drop":0.52}
 {"aid":"c0788ccacdb58d54","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":3.2,"rating_drop":1}
-{"aid":"e760f8f084fb6770","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.7}
-{"aid":"f166821149e040b0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.44}
+{"aid":"e760f8f084fb6770","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.84}
+{"aid":"f166821149e040b0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.74}
 {"aid":"7ed9378387cb71b2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.02}
 {"aid":"737fe6e89a63b6d5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":151,"range_max":200,"rating":4.9,"rating_drop":2.54}
-{"aid":"105d67a5c2d772c5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":3.08}
-{"aid":"311e5fdf8af8a912","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":2.17}
+{"aid":"105d67a5c2d772c5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.48}
+{"aid":"311e5fdf8af8a912","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":250,"range_max":null,"rating":4.8,"rating_drop":2.96}
 {"aid":"fa99cddaa748eba1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
 {"aid":"cf9a7f21080eaafd","date":"2026-07","branch":"Beauty & Wellness","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"2e9d150cec748459","date":"2026-07","branch":"Gesundheit","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.4}
 {"aid":"57bea06a89981851","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.48}
-{"aid":"e3c0f33f3debb7aa","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":101,"range_max":150,"rating":4.2,"rating_drop":2.5}
+{"aid":"e3c0f33f3debb7aa","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":101,"range_max":150,"rating":4.3,"rating_drop":2.57}
 {"aid":"fde43ae69b02946b","date":"2026-07","branch":"Unbekannt","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":1.83}
-{"aid":"dfb5b975f92f98b6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.15}
+{"aid":"dfb5b975f92f98b6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.14}
 {"aid":"e1f3cdbd53eca2d2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":true,"range_min":21,"range_max":50,"rating":4.2,"rating_drop":0.94}
 {"aid":"4e107cadaab3a9e4","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":1}
 {"aid":"372cb4a7e32a7756","date":"2026-07","branch":"Gastronomie & Hotel","city":"Frankfurt am Main","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.38}
@@ -399,7 +399,7 @@
 {"aid":"1ef4c11717d67000","date":"2026-07","branch":"Immobilien","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
 {"aid":"0d42ae2e42963e7b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.5}
 {"aid":"da11f03f36e8b3a3","date":"2026-07","branch":"Unbekannt","city":"Leipzig","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.91}
-{"aid":"80aa10c149699704","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":1.56}
+{"aid":"80aa10c149699704","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":1.55}
 {"aid":"8a89957cfc4d832e","date":"2026-07","branch":"Sonstige","city":"Leipzig","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.62}
 {"aid":"33adb32712946338","date":"2026-07","branch":"Unbekannt","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4,"rating_drop":0.1}
 {"aid":"696ecbd55f1d60b8","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":2.75}
@@ -408,7 +408,7 @@
 {"aid":"cfd4a31db04012dd","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":250,"range_max":null,"rating":4.5,"rating_drop":2.02}
 {"aid":"eef98796efe644bc","date":"2026-07","branch":"Unbekannt","city":"Leipzig","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.09}
 {"aid":"5005dea7597d1660","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":false,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":3.08}
-{"aid":"a00317c519dccd4b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":0.88}
+{"aid":"a00317c519dccd4b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.92}
 {"aid":"1041d25197df116f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":1.45}
 {"aid":"166e715d0826f49f","date":"2026-07","branch":"Beauty & Wellness","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.42}
 {"aid":"f0cb912c5f009c49","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.66}
@@ -416,9 +416,9 @@
 {"aid":"ca25ebd5b5378c64","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"d1f2e388bbbc8291","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.4}
 {"aid":"adfdd4db484c5e30","date":"2026-07","branch":"Unbekannt","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
-{"aid":"72f6b3d0146ad64e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":2.48}
+{"aid":"72f6b3d0146ad64e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":0.15}
 {"aid":"2ff3bce265784c44","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.18}
-{"aid":"4d88b65e5e54500b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.53}
+{"aid":"4d88b65e5e54500b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.56}
 {"aid":"719dfa4f1b8b5c73","date":"2026-07","branch":"Gesundheit","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":0.27}
 {"aid":"03d73c0621d47649","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":1.05}
 {"aid":"60ef1b2cbbf7639f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.54}
@@ -450,18 +450,18 @@
 {"aid":"10e999e1fd5924c0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":1.89}
 {"aid":"cfeb7993b5263257","date":"2026-07","branch":"Unbekannt","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":3.9,"rating_drop":0.66}
 {"aid":"538e5bfa3c5b8016","date":"2026-07","branch":"Unbekannt","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.62}
-{"aid":"fff8afaf90c70a28","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.27}
+{"aid":"fff8afaf90c70a28","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
 {"aid":"f0cb51615a3a85c3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":1.71}
 {"aid":"2f6e47b77eec539a","date":"2026-07","branch":"Beauty & Wellness","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.44}
 {"aid":"3ad8cef1aea4f488","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4,"rating_drop":0.47}
 {"aid":"67e6be1f94bb6091","date":"2026-07","branch":"Unbekannt","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.93}
-{"aid":"f2c1e3acf10e4713","date":"2026-07","branch":"Beauty & Wellness","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.33}
+{"aid":"f2c1e3acf10e4713","date":"2026-07","branch":"Beauty & Wellness","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.29}
 {"aid":"3de3e34f72c6c13a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.84}
 {"aid":"5fef2e2a8300f229","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":2.94}
 {"aid":"a15eb21f29c56930","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":3.03}
 {"aid":"1b2fcc91913869d1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.96}
 {"aid":"0900c60be8c61594","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":0.92}
-{"aid":"e63b8b18349f3046","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.35}
+{"aid":"e63b8b18349f3046","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.36}
 {"aid":"4282805871e9a8dc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.9,"rating_drop":0.86}
 {"aid":"59526996af508d64","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.95}
 {"aid":"608ab57728a3a9bc","date":"2026-07","branch":"Beauty & Wellness","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
@@ -473,7 +473,7 @@
 {"aid":"7fbfa2c096acef02","date":"2026-07","branch":"Recht & Beratung","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.8}
 {"aid":"99d7df952724b13d","date":"2026-07","branch":"Sonstige","city":"Düsseldorf","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.79}
 {"aid":"a7b5586c0de048cf","date":"2026-07","branch":"Beauty & Wellness","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.04}
-{"aid":"abf32e87551ff488","date":"2026-07","branch":"Automobil","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.04}
+{"aid":"abf32e87551ff488","date":"2026-07","branch":"Automobil","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.12}
 {"aid":"55e9e7c7b53e7dfe","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":101,"range_max":150,"rating":4.4,"rating_drop":0.79}
 {"aid":"57a094558384c365","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":3.03}
 {"aid":"f67dfa392a280238","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":1.38}
@@ -497,20 +497,20 @@
 {"aid":"84182b8acd79c175","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":3.02}
 {"aid":"421febb6eb42d852","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.1}
 {"aid":"8b450793ec58ce27","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.79}
-{"aid":"699faaddc92ac145","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.66}
+{"aid":"699faaddc92ac145","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":2.57}
 {"aid":"d7803bb00879bb8a","date":"2026-07","branch":"Unbekannt","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.7}
 {"aid":"7e69d566713f6939","date":"2026-07","branch":"Unbekannt","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":2.31}
 {"aid":"1b91bf0c34c56c17","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":201,"range_max":250,"rating":4.6,"rating_drop":2.91}
-{"aid":"270818b36d3bf8b4","date":"2026-07","branch":"Unbekannt","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":0.15}
+{"aid":"270818b36d3bf8b4","date":"2026-07","branch":"Unbekannt","city":"Düsseldorf","nameable":true,"range_min":51,"range_max":100,"rating":5,"rating_drop":0.31}
 {"aid":"4032bd508b64cfad","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":1.85}
 {"aid":"2e8a60832cd4a54e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.67}
 {"aid":"c052553aec03e3a0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.79}
 {"aid":"08987dc4535a57ef","date":"2026-07","branch":"Unbekannt","city":"Dresden","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.41}
 {"aid":"2a1788c3f34f4ed1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.95}
-{"aid":"638fe9669fb665ea","date":"2026-07","branch":"Automobil","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.37}
+{"aid":"638fe9669fb665ea","date":"2026-07","branch":"Automobil","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.32}
 {"aid":"24253b2084f47daf","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.9}
 {"aid":"66f585fffbea512a","date":"2026-07","branch":"Sonstige","city":"Dresden","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.27}
-{"aid":"7ae380a84d39f639","date":"2026-07","branch":"Unbekannt","city":"Dresden","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":2}
+{"aid":"7ae380a84d39f639","date":"2026-07","branch":"Unbekannt","city":"Dresden","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":1.99}
 {"aid":"286a8fc16a1bff01","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":false,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":1.69}
 {"aid":"952f6e4b4d57ae09","date":"2026-07","branch":"Unbekannt","city":"Dresden","nameable":false,"range_min":21,"range_max":50,"rating":3.6,"rating_drop":1.39}
 {"aid":"d3f25da2c6af0e3d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":1.82}
@@ -532,7 +532,7 @@
 {"aid":"b924e8c88e8880e2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":0.38}
 {"aid":"6b80445ceec69b84","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.65}
 {"aid":"52d62c07f27bec76","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":11,"range_max":20,"rating":4.1,"rating_drop":2.18}
-{"aid":"1dc6abf82fb0b8d3","date":"2026-07","branch":"Automobil","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.04}
+{"aid":"1dc6abf82fb0b8d3","date":"2026-07","branch":"Automobil","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2}
 {"aid":"c69986d5245bc3c7","date":"2026-07","branch":"Recht & Beratung","city":"Dresden","nameable":false,"range_min":11,"range_max":20,"rating":5,"rating_drop":0.16}
 {"aid":"25a21a48775ef6d2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":101,"range_max":150,"rating":4.5,"rating_drop":2.39}
 {"aid":"ef120908b6ccfc68","date":"2026-07","branch":"Fitness & Sport","city":"Dresden","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.07}
@@ -542,9 +542,9 @@
 {"aid":"a3e36f47b878fe42","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.62}
 {"aid":"5953ca4d4bc2b34b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.53}
 {"aid":"a6649f17c9076578","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":false,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":2.62}
-{"aid":"a57e304727779f33","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":0.56}
-{"aid":"081eb02fed53c82b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.57}
-{"aid":"1a15e42cd92ac3c2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":1.05}
+{"aid":"a57e304727779f33","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.58}
+{"aid":"081eb02fed53c82b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.62}
+{"aid":"1a15e42cd92ac3c2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":1.29}
 {"aid":"5e354aef77bf59e7","date":"2026-07","branch":"Beauty & Wellness","city":"Dresden","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
 {"aid":"c1187f06525c011d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":11,"range_max":20,"rating":4.1,"rating_drop":0.01}
 {"aid":"2f9a9984310f9871","date":"2026-07","branch":"Unbekannt","city":"Dresden","nameable":true,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":2.81}
@@ -571,7 +571,7 @@
 {"aid":"aaa60ecbe8eda613","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
 {"aid":"a96d2313a2887f29","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":false,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":2.12}
 {"aid":"eac97de0a3c4db2b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":0.09}
-{"aid":"a1d8cd59c3ce56ba","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.54}
+{"aid":"a1d8cd59c3ce56ba","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.49}
 {"aid":"6935eb098a335a28","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.95}
 {"aid":"9ea7c1a68225c7d8","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.27}
 {"aid":"d10b1e26f3c6c94f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.92}
@@ -585,23 +585,23 @@
 {"aid":"e8053a512eca28a1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":false,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":0.73}
 {"aid":"6b7e201e3faee5c5","date":"2026-07","branch":"Unbekannt","city":"Stuttgart","nameable":true,"range_min":151,"range_max":200,"rating":4.7,"rating_drop":0.33}
 {"aid":"6f91c7190e1a364f","date":"2026-07","branch":"Gesundheit","city":"Stuttgart","nameable":true,"range_min":101,"range_max":150,"rating":4.9,"rating_drop":0.2}
-{"aid":"79197c695ddb339f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":2.85}
+{"aid":"79197c695ddb339f","date":"2026-07","branch":"Unbekannt","city":"Stuttgart","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":2.85}
 {"aid":"cb2108bb0cfc3d1e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":false,"range_min":201,"range_max":250,"rating":4.6,"rating_drop":2.8}
 {"aid":"b096f2f36dc68a88","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.59}
 {"aid":"d9341b586134a6c8","date":"2026-07","branch":"Unbekannt","city":"Stuttgart","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.7}
 {"aid":"989382e1d8756a84","date":"2026-07","branch":"Gesundheit","city":"Stuttgart","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
-{"aid":"e2ab7a6cad2ac44c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.89}
+{"aid":"e2ab7a6cad2ac44c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.91}
 {"aid":"3efdb92b4eb26cac","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.68}
 {"aid":"2c0362cdc4771cda","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.45}
-{"aid":"e5c556422e9ac050","date":"2026-07","branch":"Unbekannt","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.49}
+{"aid":"e5c556422e9ac050","date":"2026-07","branch":"Unbekannt","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.03}
 {"aid":"0074bda631663350","date":"2026-07","branch":"Unbekannt","city":"Stuttgart","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.6}
 {"aid":"c238042d112cbe84","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.84}
 {"aid":"431ec2647563460a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":0.66}
 {"aid":"55a15c92114c15e1","date":"2026-07","branch":"Unbekannt","city":"Stuttgart","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.79}
 {"aid":"343e31e9006e58ae","date":"2026-07","branch":"Fitness & Sport","city":"Stuttgart","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.37}
 {"aid":"832c44dd3576ef8b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.8}
-{"aid":"2c1cef9b13cb62bb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.4}
-{"aid":"d477de19310ecf5b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.37}
+{"aid":"2c1cef9b13cb62bb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.41}
+{"aid":"d477de19310ecf5b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.37}
 {"aid":"40094f34b9e60d33","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.25}
 {"aid":"c9d195ab50a3df16","date":"2026-07","branch":"Gastronomie & Hotel","city":"Stuttgart","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.88}
 {"aid":"2f361dcb7bf132bb","date":"2026-07","branch":"Sonstige","city":"Stuttgart","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.47}
@@ -621,15 +621,15 @@
 {"aid":"987712e728072bf2","date":"2026-07","branch":"Automobil","city":"Nürnberg","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.38}
 {"aid":"c894d5000b7d747e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":false,"range_min":11,"range_max":20,"rating":3.6,"rating_drop":1.76}
 {"aid":"3533fb2de68cc403","date":"2026-07","branch":"Automobil","city":"Nürnberg","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.66}
-{"aid":"d7b037ac227e5e73","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.48}
+{"aid":"d7b037ac227e5e73","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.56}
 {"aid":"8cb62f0b7a4dfabb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":false,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":1.38}
 {"aid":"bc49ff1bf6356aa8","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.87}
 {"aid":"a9dcf062f31e135b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.02}
 {"aid":"c8004421b08732f2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":false,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":2.9}
 {"aid":"621016c4814f7e2e","date":"2026-07","branch":"Gesundheit","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.77}
-{"aid":"6c8d156e3cde371f","date":"2026-07","branch":"Gesundheit","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":3.7,"rating_drop":0.43}
+{"aid":"6c8d156e3cde371f","date":"2026-07","branch":"Gesundheit","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":3.7,"rating_drop":0.15}
 {"aid":"535ed5f9d9634ade","date":"2026-07","branch":"Gesundheit","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":5,"rating_drop":2.99}
-{"aid":"14e8d2fa7a725995","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.42}
+{"aid":"14e8d2fa7a725995","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.41}
 {"aid":"c2a1caa3bd0f6b4c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.65}
 {"aid":"f7542d6e83345509","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.53}
 {"aid":"bc826d8757d5e3ea","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.62}
@@ -645,10 +645,10 @@
 {"aid":"49d7642cfd7d99dd","date":"2026-07","branch":"Gesundheit","city":"Nürnberg","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.57}
 {"aid":"6a6e0ad2686d71f7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":151,"range_max":200,"rating":4.4,"rating_drop":2.84}
 {"aid":"d5f5fa71cd315f86","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.17}
-{"aid":"8213ee4f40bf2db4","date":"2026-07","branch":"Unbekannt","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
+{"aid":"8213ee4f40bf2db4","date":"2026-07","branch":"Unbekannt","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.83}
 {"aid":"72547924e71aa307","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.03}
 {"aid":"e4e674dd15af488b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":2.84}
-{"aid":"25e9e49d2c9b240f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.35}
+{"aid":"25e9e49d2c9b240f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.04}
 {"aid":"66ef2b43381a2c38","date":"2026-07","branch":"Unbekannt","city":"Nürnberg","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
 {"aid":"43f83c1dff150b74","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":false,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":3.08}
 {"aid":"72984dbdc64adc9d","date":"2026-07","branch":"Beauty & Wellness","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":5,"rating_drop":3.1}
@@ -657,9 +657,9 @@
 {"aid":"eefc877d2c6b2b53","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.52}
 {"aid":"1e72836e53ae7df5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.71}
 {"aid":"e26de1ffafe8a656","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
-{"aid":"8555f92b788d5179","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.07}
+{"aid":"8555f92b788d5179","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.06}
 {"aid":"80c7ae3ccbee06b1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":3.04}
-{"aid":"c33f76af1cbc5983","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.27}
+{"aid":"c33f76af1cbc5983","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.25}
 {"aid":"df3e3c73adf94f7f","date":"2026-07","branch":"Beauty & Wellness","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.91}
 {"aid":"1c51c0b202f6da09","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":0.58}
 {"aid":"090575b1e4fc9c4a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.95}
@@ -699,18 +699,18 @@
 {"aid":"0266269b2c728084","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.52}
 {"aid":"3042cde174db76f2","date":"2026-07","branch":"Beauty & Wellness","city":"Hannover","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.7}
 {"aid":"0918d456ed3d8a3c","date":"2026-07","branch":"Gesundheit","city":"Hannover","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.07}
-{"aid":"c71c1077ef7c4a3d","date":"2026-07","branch":"Automobil","city":"Hannover","nameable":true,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":0.72}
+{"aid":"c71c1077ef7c4a3d","date":"2026-07","branch":"Automobil","city":"Hannover","nameable":true,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":0.71}
 {"aid":"b39927502289235f","date":"2026-07","branch":"Beauty & Wellness","city":"Hannover","nameable":false,"range_min":21,"range_max":50,"rating":5,"rating_drop":3.31}
 {"aid":"f5beccdb1766c083","date":"2026-07","branch":"Gesundheit","city":"Hannover","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"969c19c359102a51","date":"2026-07","branch":"Immobilien","city":"Hannover","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.85}
 {"aid":"bbf359153b64e205","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.06}
-{"aid":"acd4b640e5eeb128","date":"2026-07","branch":"Automobil","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.43}
+{"aid":"acd4b640e5eeb128","date":"2026-07","branch":"Automobil","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.95}
 {"aid":"72322a19cea4bc54","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.98}
 {"aid":"7a22c9949b0f64db","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.44}
 {"aid":"85b0cc7bee276947","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.05}
 {"aid":"0023f392720fd5bf","date":"2026-07","branch":"Automobil","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.9}
 {"aid":"6717ce16fe86cb44","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.52}
-{"aid":"bf37b801bc489b82","date":"2026-07","branch":"Unbekannt","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":2.65}
+{"aid":"bf37b801bc489b82","date":"2026-07","branch":"Unbekannt","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":2.23}
 {"aid":"ae04f44c2e64f15d","date":"2026-07","branch":"Unbekannt","city":"Hannover","nameable":false,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":2.81}
 {"aid":"919397cc58d4bf8d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":2.69}
 {"aid":"bb26b7712dc0167c","date":"2026-07","branch":"Gesundheit","city":"Hannover","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.89}
@@ -729,7 +729,7 @@
 {"aid":"012cb732c7593afb","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
 {"aid":"f6b5ae7dd71cf17e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.1}
 {"aid":"3aabc99f3ca84aca","date":"2026-07","branch":"Recht & Beratung","city":"Hannover","nameable":false,"range_min":11,"range_max":20,"rating":5,"rating_drop":2.52}
-{"aid":"b1d7b021e25ebce1","date":"2026-07","branch":"Fitness & Sport","city":"Hannover","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":1.97}
+{"aid":"b1d7b021e25ebce1","date":"2026-07","branch":"Fitness & Sport","city":"Hannover","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":1.95}
 {"aid":"6bcae80c5b7c68b9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.85}
 {"aid":"347d330fed2fae1e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.01}
 {"aid":"02a4ba27f43c696a","date":"2026-07","branch":"Unbekannt","city":"Hannover","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.42}
@@ -737,13 +737,13 @@
 {"aid":"5f2ba7ae4e7a90d6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.02}
 {"aid":"7387947d3a7aab7c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
 {"aid":"6f7bfe24d4039483","date":"2026-07","branch":"Unbekannt","city":"Bremen","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.6}
-{"aid":"8b4c68156c69fe05","date":"2026-07","branch":"Automobil","city":"Bremen","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.1}
+{"aid":"8b4c68156c69fe05","date":"2026-07","branch":"Automobil","city":"Bremen","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.98}
 {"aid":"66382ba757686ee9","date":"2026-07","branch":"Automobil","city":"Bremen","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.02}
 {"aid":"df8767c9f65ee9a1","date":"2026-07","branch":"Gesundheit","city":"Bremen","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.76}
 {"aid":"74322f85cac4d78b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":true,"range_min":151,"range_max":200,"rating":4,"rating_drop":1.32}
 {"aid":"31e89531993ca1ed","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.88}
 {"aid":"bec7cd87a33bb78f","date":"2026-07","branch":"Unbekannt","city":"Bremen","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.5}
-{"aid":"d40d5ecb65b7cdc4","date":"2026-07","branch":"Gesundheit","city":"Bremen","nameable":true,"range_min":51,"range_max":100,"rating":3.8,"rating_drop":1.71}
+{"aid":"d40d5ecb65b7cdc4","date":"2026-07","branch":"Gesundheit","city":"Bremen","nameable":true,"range_min":51,"range_max":100,"rating":3.8,"rating_drop":1.69}
 {"aid":"3d74f4290708b07a","date":"2026-07","branch":"Beauty & Wellness","city":"Bremen","nameable":false,"range_min":11,"range_max":20,"rating":4.3,"rating_drop":2.48}
 {"aid":"56fd3aba21d0c21c","date":"2026-07","branch":"Gesundheit","city":"Bremen","nameable":false,"range_min":11,"range_max":20,"rating":4.1,"rating_drop":2.3}
 {"aid":"5bcfa30ae9b38408","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":true,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":2.37}
@@ -756,9 +756,9 @@
 {"aid":"8c5da6cddf21f864","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":1.43}
 {"aid":"877f3520475b2bb2","date":"2026-07","branch":"Unbekannt","city":"Bremen","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.53}
 {"aid":"48df783e02ec595d","date":"2026-07","branch":"Unbekannt","city":"Bremen","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
-{"aid":"9fc96be89fafc99b","date":"2026-07","branch":"Unbekannt","city":"Bremen","nameable":true,"range_min":21,"range_max":50,"rating":4.2,"rating_drop":2.49}
-{"aid":"8d37b73ff39e0c8e","date":"2026-07","branch":"Unbekannt","city":"Bremen","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.18}
-{"aid":"bc77691481ac7738","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.76}
+{"aid":"9fc96be89fafc99b","date":"2026-07","branch":"Unbekannt","city":"Bremen","nameable":true,"range_min":21,"range_max":50,"rating":4.1,"rating_drop":2.4}
+{"aid":"8d37b73ff39e0c8e","date":"2026-07","branch":"Unbekannt","city":"Bremen","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.13}
+{"aid":"bc77691481ac7738","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.62}
 {"aid":"f0030caea0a13af9","date":"2026-07","branch":"Gesundheit","city":"Bremen","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.85}
 {"aid":"f2ed01ff741ce619","date":"2026-07","branch":"Gesundheit","city":"Bremen","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":0.93}
 {"aid":"6b3e748521e355f6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bremen","nameable":true,"range_min":51,"range_max":100,"rating":4.1,"rating_drop":1.95}
@@ -784,7 +784,7 @@
 {"aid":"ddc3c62ced144308","date":"2026-07","branch":"Beauty & Wellness","city":"Dortmund","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.92}
 {"aid":"bc80cc5e58a8b7a2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dortmund","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.74}
 {"aid":"f2316026b1767189","date":"2026-07","branch":"Automobil","city":"Dortmund","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.26}
-{"aid":"da1be775d73bc64c","date":"2026-07","branch":"Unbekannt","city":"Dortmund","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":3.15}
+{"aid":"da1be775d73bc64c","date":"2026-07","branch":"Unbekannt","city":"Dortmund","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":3.31}
 {"aid":"14d869206f129c37","date":"2026-07","branch":"Fitness & Sport","city":"Dortmund","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.09}
 {"aid":"ffe113a6a01b6a2e","date":"2026-07","branch":"Gesundheit","city":"Dortmund","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.72}
 {"aid":"b825cd3d601757e9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Dortmund","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.04}
@@ -820,7 +820,7 @@
 {"aid":"1060b7c4e46295f4","date":"2026-07","branch":"Unbekannt","city":"Essen","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.18}
 {"aid":"df24a2dc3a25670b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Essen","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.37}
 {"aid":"5433970c7d6dd3c9","date":"2026-07","branch":"Beauty & Wellness","city":"Essen","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.69}
-{"aid":"96d5792d6ce25e74","date":"2026-07","branch":"Gastronomie & Hotel","city":"Essen","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.42}
+{"aid":"96d5792d6ce25e74","date":"2026-07","branch":"Gastronomie & Hotel","city":"Essen","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.53}
 {"aid":"501d641383f306ed","date":"2026-07","branch":"Gastronomie & Hotel","city":"Essen","nameable":false,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":2.39}
 {"aid":"2fcbefc302c456aa","date":"2026-07","branch":"Gastronomie & Hotel","city":"Essen","nameable":true,"range_min":250,"range_max":null,"rating":4,"rating_drop":1.6}
 {"aid":"4208512f31758868","date":"2026-07","branch":"Gesundheit","city":"Essen","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.16}
@@ -856,13 +856,13 @@
 {"aid":"a6375dc83dd20789","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.8,"rating_drop":2.6}
 {"aid":"2ded32ba3db97e82","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.75}
 {"aid":"0accfc6783d64fb5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.05}
-{"aid":"035db42eeaaa595b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.74}
-{"aid":"65acf117accb8601","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":101,"range_max":150,"rating":4.3,"rating_drop":1.65}
+{"aid":"035db42eeaaa595b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.09}
+{"aid":"65acf117accb8601","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":101,"range_max":150,"rating":4.3,"rating_drop":1.64}
 {"aid":"10c7afdbf4fe8c48","date":"2026-07","branch":"Gastronomie & Hotel","city":"Nürnberg","nameable":true,"range_min":101,"range_max":150,"rating":4.8,"rating_drop":2.6}
 {"aid":"deef658c23aff2dd","date":"2026-07","branch":"Gesundheit","city":"Bochum","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":1.55}
 {"aid":"c88eba48c4007193","date":"2026-07","branch":"Gesundheit","city":"Bochum","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":1.41}
 {"aid":"048c4b29ed735cb8","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bochum","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.23}
-{"aid":"cd1fe9b3baa7535f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Duisburg","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":1.33}
+{"aid":"cd1fe9b3baa7535f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Duisburg","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":1.32}
 {"aid":"030241a535228aac","date":"2026-07","branch":"Unbekannt","city":"Unbekannt","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
 {"aid":"d619cb9ca52fa868","date":"2026-07","branch":"Unbekannt","city":"Unbekannt","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.63}
 {"aid":"fcc6b031cfcd3267","date":"2026-07","branch":"Beauty & Wellness","city":"Unbekannt","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.77}
