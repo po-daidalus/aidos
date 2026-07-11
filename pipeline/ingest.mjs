@@ -248,5 +248,5 @@ for (const r of allRecs) {
 }
 fs.writeFileSync(AGG_PATH, aggRows.map((a) => JSON.stringify(a)).join('\n') + '\n');
 
-console.log(`ingested ${recs.length} (${nameableN} nameable / ${recs.length - nameableN} individuals) → +${added} new, ${updated} updated | DB: ${Object.keys(db.businesses).length} | history: ${hist.length} | aggregate feed: ${aggRows.length} anon rows (${month})`);
+console.log(`ingested ${allRecs.length} (${nameableN} nameable / ${allRecs.length - nameableN} individuals) → +${added} new, ${updated} updated | DB: ${Object.keys(db.businesses).length} | history: ${hist.length} | aggregate feed: ${aggRows.length} anon rows (${month})`);
 console.log('→ run: node pipeline/aggregate.mjs && node pipeline/build.mjs');

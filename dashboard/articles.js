@@ -1,1 +1,1 @@
-window.AIDOS_ARTICLES = [{"title":"DSA-Report Juli 2026","teaser":"Google entfernte bei 967 Profilen geschätzt 55.231 Bewertungen. Auffälligste Branche: Gastronomie & Hotel.","url":"report/2026-07.html","tag":"Report","bars":[100,12,12,12,12,12,12]}];
+window.AIDOS_ARTICLES = [{"title":"DSA-Report Juli 2026","teaser":"Google entfernte bei 955 Profilen geschätzt 55.225 Bewertungen. Auffälligste Branche: Gastronomie & Hotel.","url":"report/2026-07.html","tag":"Report","bars":[100,12,12,12,12,12,12]}];
