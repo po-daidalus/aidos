@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.2.3';
+const AIDOS_VERSION = 'v1.2.4';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -238,13 +238,15 @@ const reviewNodes = () => document.querySelectorAll('[data-review-id]').length;
 // 13-month stop long before the recent window is fully harvested. Switch to newest-first.
 // After the switch Maps REBUILDS the list (v1.2.1 pilot: harvest saw 0 reviews because it gave up
 // during that rebuild) — so wait for the button, the menu AND the repopulated list, never fixed delays.
-async function sortByNewest() {
+async function sortByNewest(dbg) {
   const btn = await waitFor(() => [...document.querySelectorAll('button')].find((b) =>
     /sortieren|sort reviews|^sort$/i.test(((b.getAttribute('aria-label') || '') + ' ' + (b.textContent || '')).trim())), 5000);
   if (!btn) return false;
+  dbg.btn = ((btn.getAttribute('aria-label') || '') + '|' + (btn.textContent || '')).slice(0, 60);
   btn.click();
   const item = await waitFor(() => [...document.querySelectorAll('[role="menuitemradio"], [role="menuitem"]')].find((el) => /neueste|newest/i.test(el.textContent || '')), 3000);
-  if (!item) return false;
+  if (!item) { dbg.item = null; return false; }
+  dbg.item = (item.textContent || '').slice(0, 40);
   item.click();
   await waitFor(reviewNodes, 9000);   // list rebuild after the sort switch
   await new Promise((r) => setTimeout(r, 600));
@@ -253,14 +255,14 @@ async function sortByNewest() {
 async function harvestHistogram(maxRounds = 22) {
   const hist = {}; const counted = new Set();
   let oldestAgo = 0, stale = 0, matched = 0, tabRetry = false;
+  const dbg = { n0: reviewNodes() };
   // heavy profiles render their tabs late — the initial reviews-tab click may have hit nothing
   // (v1.2.2 pilot: 2 of 3 harvests saw 0 reviews for exactly this reason). Re-click until reviews exist.
   if (!(await waitFor(reviewNodes, 4000))) {
     tabRetry = true;
     for (let i = 0; i < 3 && !reviewNodes(); i++) { clickReviewsTab(); await waitFor(reviewNodes, 4000); }
   }
-  const sorted = await sortByNewest();
-  if (!reviewNodes()) await waitFor(reviewNodes, 6000); // reviews can lag even without sorting
+  dbg.n_tab = reviewNodes();
   const collect = () => {
     let fresh = 0;
     for (const el of document.querySelectorAll('[data-review-id]')) {
@@ -277,6 +279,15 @@ async function harvestHistogram(maxRounds = 22) {
     }
     return fresh;
   };
+  // safety harvest BEFORE sorting: if the sort switch ever breaks the list on a profile, we still
+  // keep whatever was visible (correctly dated, relevance order) instead of ending with nothing
+  collect();
+  dbg.pre_matched = matched;
+  const sorted = await sortByNewest(dbg);
+  dbg.n_sort = reviewNodes();
+  if (!reviewNodes()) await waitFor(reviewNodes, 6000); // reviews can lag even without sorting
+  dbg.n_start = reviewNodes();
+  oldestAgo = 0; // pre-sort relevance order may contain ancient reviews — they must not trip the 13-month stop
   collect();
   const pane = scrollableReviewPane();
   for (let round = 0; pane && round < maxRounds; round++) {
@@ -287,7 +298,8 @@ async function harvestHistogram(maxRounds = 22) {
     if (stale >= 3) break;                    // list exhausted (3 rounds: rendering can lag a scroll)
     if (sorted && oldestAgo >= 13) break;     // newest-first guaranteed → past the window means done
   }
-  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, sorted, tab_retry: tabRetry, complete: (sorted && oldestAgo >= 13) || stale >= 3 };
+  dbg.n_end = reviewNodes(); dbg.pane = !!scrollableReviewPane();
+  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, sorted, tab_retry: tabRetry, dbg, complete: (sorted && oldestAgo >= 13) || stale >= 3 };
 }
 
 function toast(msg, ok = true) {
@@ -406,7 +418,7 @@ chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
           await new Promise((res) => chrome.storage.local.get({ records: {} }, (data) => {
             if (data.records[key]) {
               data.records[key].rev_hist = h.hist;
-              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, oldest_months: h.oldest_months, sorted: h.sorted, tab_retry: h.tab_retry, complete: h.complete, at: new Date().toISOString() };
+              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, oldest_months: h.oldest_months, sorted: h.sorted, tab_retry: h.tab_retry, dbg: h.dbg, complete: h.complete, at: new Date().toISOString() };
               chrome.storage.local.set({ records: data.records }, res);
             } else res();
           }));
