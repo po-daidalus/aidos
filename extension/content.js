@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.2.5';
+const AIDOS_VERSION = 'v1.2.6';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -259,6 +259,15 @@ const wheelNudge = () => {
   const el = document.querySelector('div[role="main"]') || document.body;
   el.dispatchEvent(new WheelEvent('wheel', { deltaY: 4000, bubbles: true, cancelable: true }));
 };
+// hard reset for a dead review list (v1.2.5 pilot: even reverting the sort leaves it empty):
+// leave the reviews tab and come back, forcing Maps to re-render the whole panel
+async function retoggleReviewsTab() {
+  const other = [...document.querySelectorAll('[role="tab"]')].find((el) =>
+    /übersicht|overview|about|info/i.test((el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')));
+  if (other) { other.click(); await new Promise((r) => setTimeout(r, 900)); }
+  clickReviewsTab();
+  return !!(await waitFor(reviewNodes, 6000));
+}
 async function harvestHistogram(maxRounds = 22) {
   const hist = {}; const counted = new Set();
   let oldestAgo = 0, stale = 0, matched = 0, tabRetry = false;
@@ -286,21 +295,32 @@ async function harvestHistogram(maxRounds = 22) {
     }
     return fresh;
   };
-  // safety harvest BEFORE sorting: if the sort switch ever breaks the list on a profile, we still
-  // keep whatever was visible (correctly dated, relevance order) instead of ending with nothing
+  // GUARANTEED FLOOR: harvest several scroll rounds in relevance order BEFORE the risky sort switch —
+  // dates are correct either way, so even if sorting kills the list this profile still yields data
   collect();
+  for (let i = 0; i < 5; i++) {
+    const pane = scrollableReviewPane();
+    if (pane) pane.scrollTop = pane.scrollHeight; else wheelNudge();
+    await new Promise((r) => setTimeout(r, 900));
+    collect();
+  }
   dbg.pre_matched = matched;
   let sorted = await sortByNewest(dbg);
   dbg.n_sort = reviewNodes();
   if (!reviewNodes()) {
     // list gone after the sort switch — poke lazy-load with scroll impulses
-    for (let i = 0; i < 4 && !reviewNodes(); i++) { wheelNudge(); await new Promise((r) => setTimeout(r, 1200)); }
-    if (!reviewNodes()) {
-      // still dead: revert to relevance sort and harvest in that order (no early stop then)
-      dbg.reverted = await pickSortOption(/relevant/i, dbg);
-      sorted = false;
-      await waitFor(reviewNodes, 5000);
-    }
+    for (let i = 0; i < 3 && !reviewNodes(); i++) { wheelNudge(); await new Promise((r) => setTimeout(r, 1100)); }
+  }
+  if (!reviewNodes()) {
+    // still dead: hard reset via tab retoggle, then ONE more sort attempt
+    dbg.retoggle = await retoggleReviewsTab();
+    if (dbg.retoggle) {
+      sorted = await sortByNewest(dbg);
+      if (!reviewNodes()) {
+        for (let i = 0; i < 2 && !reviewNodes(); i++) { wheelNudge(); await new Promise((r) => setTimeout(r, 1100)); }
+        if (!reviewNodes()) { dbg.retoggle2 = await retoggleReviewsTab(); sorted = false; } // harvest unsorted
+      }
+    } else sorted = false;
   }
   dbg.n_start = reviewNodes();
   oldestAgo = 0; // pre-sort relevance order may contain ancient reviews — they must not trip the 13-month stop
@@ -427,7 +447,7 @@ chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
       // v1.2: on a hit, harvest the monthly review histogram before advancing. Ask the loader to
       // hold this page open (the default page timeout is far shorter than a scroll harvest).
       if (outcome === 'hit') {
-        try { chrome.runtime.sendMessage({ type: 'aidos-hold', ms: 75000 }); } catch {}
+        try { chrome.runtime.sendMessage({ type: 'aidos-hold', ms: 90000 }); } catch {}
         try {
           const h = await harvestHistogram();
           const key = placeKey();
