@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.2.1';
+const AIDOS_VERSION = 'v1.2.2';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -228,27 +228,36 @@ function scrollableReviewPane() {
   }
   return best;
 }
+const waitFor = async (fn, ms, step = 400) => {
+  const t0 = Date.now();
+  while (Date.now() - t0 < ms) { const v = fn(); if (v) return v; await new Promise((r) => setTimeout(r, step)); }
+  return null;
+};
+const reviewNodes = () => document.querySelectorAll('[data-review-id]').length;
 // Maps sorts reviews by "relevance" by default — old reviews surface early and would trip the
 // 13-month stop long before the recent window is fully harvested. Switch to newest-first.
+// After the switch Maps REBUILDS the list (v1.2.1 pilot: harvest saw 0 reviews because it gave up
+// during that rebuild) — so wait for the button, the menu AND the repopulated list, never fixed delays.
 async function sortByNewest() {
-  const btn = [...document.querySelectorAll('button')].find((b) =>
-    /sortieren|sort reviews|^sort$/i.test(((b.getAttribute('aria-label') || '') + ' ' + (b.textContent || '')).trim()));
+  const btn = await waitFor(() => [...document.querySelectorAll('button')].find((b) =>
+    /sortieren|sort reviews|^sort$/i.test(((b.getAttribute('aria-label') || '') + ' ' + (b.textContent || '')).trim())), 5000);
   if (!btn) return false;
   btn.click();
-  await new Promise((r) => setTimeout(r, 700));
-  const item = [...document.querySelectorAll('[role="menuitemradio"], [role="menuitem"]')].find((el) => /neueste|newest/i.test(el.textContent || ''));
+  const item = await waitFor(() => [...document.querySelectorAll('[role="menuitemradio"], [role="menuitem"]')].find((el) => /neueste|newest/i.test(el.textContent || '')), 3000);
   if (!item) return false;
   item.click();
-  await new Promise((r) => setTimeout(r, 1100));
+  await waitFor(reviewNodes, 9000);   // list rebuild after the sort switch
+  await new Promise((r) => setTimeout(r, 600));
   return true;
 }
 async function harvestHistogram(maxRounds = 22) {
   const hist = {}; const counted = new Set();
   let oldestAgo = 0, stale = 0, matched = 0;
   const sorted = await sortByNewest();
+  if (!reviewNodes()) await waitFor(reviewNodes, 6000); // reviews can lag even without sorting
   const collect = () => {
     let fresh = 0;
-    for (const el of document.querySelectorAll('div[data-review-id]')) {
+    for (const el of document.querySelectorAll('[data-review-id]')) {
       const id = el.getAttribute('data-review-id');
       if (!id || counted.has(id)) continue;
       const ago = monthsAgo(el.innerText.slice(0, 400));
@@ -269,10 +278,10 @@ async function harvestHistogram(maxRounds = 22) {
     await new Promise((r) => setTimeout(r, 900));
     const fresh = collect();
     stale = fresh === 0 ? stale + 1 : 0;
-    if (stale >= 2) break;                    // list exhausted
+    if (stale >= 3) break;                    // list exhausted (3 rounds: rendering can lag a scroll)
     if (sorted && oldestAgo >= 13) break;     // newest-first guaranteed → past the window means done
   }
-  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, sorted, complete: (sorted && oldestAgo >= 13) || stale >= 2 };
+  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, sorted, complete: (sorted && oldestAgo >= 13) || stale >= 3 };
 }
 
 function toast(msg, ok = true) {
@@ -384,7 +393,7 @@ chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
       // v1.2: on a hit, harvest the monthly review histogram before advancing. Ask the loader to
       // hold this page open (the default page timeout is far shorter than a scroll harvest).
       if (outcome === 'hit') {
-        try { chrome.runtime.sendMessage({ type: 'aidos-hold', ms: 45000 }); } catch {}
+        try { chrome.runtime.sendMessage({ type: 'aidos-hold', ms: 60000 }); } catch {}
         try {
           const h = await harvestHistogram();
           const key = placeKey();
