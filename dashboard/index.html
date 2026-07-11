@@ -161,8 +161,8 @@
     const slug = (s) => (s || '').toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/&/g, ' und ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
     const cityCount = (A.cities || []).length;
 
-    // byline — a transparent one-person project, no fake "Data Desk"
-    document.getElementById('byline').innerHTML = 'Ein Projekt von <b>Markus Meixner</b> · <span class="asof">Basismessung ' + (T.month || '') + ' · ' + de(T.businesses || 0) + ' Profile</span>';
+    // byline — neutral; the responsible person is named only in the Impressum (legally required there)
+    document.getElementById('byline').innerHTML = 'Ein unabhängiges Datenprojekt · <span class="asof">Basismessung ' + (T.month || '') + ' · ' + de(T.businesses || 0) + ' Profile</span>';
 
     // stat band
     document.getElementById('s1').dataset.to = T.businesses || 0;
