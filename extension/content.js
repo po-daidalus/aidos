@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.2.4';
+const AIDOS_VERSION = 'v1.2.5';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -238,13 +238,13 @@ const reviewNodes = () => document.querySelectorAll('[data-review-id]').length;
 // 13-month stop long before the recent window is fully harvested. Switch to newest-first.
 // After the switch Maps REBUILDS the list (v1.2.1 pilot: harvest saw 0 reviews because it gave up
 // during that rebuild) — so wait for the button, the menu AND the repopulated list, never fixed delays.
-async function sortByNewest(dbg) {
+async function pickSortOption(itemRe, dbg) {
   const btn = await waitFor(() => [...document.querySelectorAll('button')].find((b) =>
     /sortieren|sort reviews|^sort$/i.test(((b.getAttribute('aria-label') || '') + ' ' + (b.textContent || '')).trim())), 5000);
   if (!btn) return false;
   dbg.btn = ((btn.getAttribute('aria-label') || '') + '|' + (btn.textContent || '')).slice(0, 60);
   btn.click();
-  const item = await waitFor(() => [...document.querySelectorAll('[role="menuitemradio"], [role="menuitem"]')].find((el) => /neueste|newest/i.test(el.textContent || '')), 3000);
+  const item = await waitFor(() => [...document.querySelectorAll('[role="menuitemradio"], [role="menuitem"]')].find((el) => itemRe.test(el.textContent || '')), 3000);
   if (!item) { dbg.item = null; return false; }
   dbg.item = (item.textContent || '').slice(0, 40);
   item.click();
@@ -252,6 +252,13 @@ async function sortByNewest(dbg) {
   await new Promise((r) => setTimeout(r, 600));
   return true;
 }
+const sortByNewest = (dbg) => pickSortOption(/neueste|newest/i, dbg);
+// on some profiles the list NEVER repopulates after switching to Newest (v1.2.4 pilot: nodes 88→0,
+// no scroll pane left) — lazy-load needs a scroll impulse, and if even that fails we revert the sort
+const wheelNudge = () => {
+  const el = document.querySelector('div[role="main"]') || document.body;
+  el.dispatchEvent(new WheelEvent('wheel', { deltaY: 4000, bubbles: true, cancelable: true }));
+};
 async function harvestHistogram(maxRounds = 22) {
   const hist = {}; const counted = new Set();
   let oldestAgo = 0, stale = 0, matched = 0, tabRetry = false;
@@ -283,15 +290,24 @@ async function harvestHistogram(maxRounds = 22) {
   // keep whatever was visible (correctly dated, relevance order) instead of ending with nothing
   collect();
   dbg.pre_matched = matched;
-  const sorted = await sortByNewest(dbg);
+  let sorted = await sortByNewest(dbg);
   dbg.n_sort = reviewNodes();
-  if (!reviewNodes()) await waitFor(reviewNodes, 6000); // reviews can lag even without sorting
+  if (!reviewNodes()) {
+    // list gone after the sort switch — poke lazy-load with scroll impulses
+    for (let i = 0; i < 4 && !reviewNodes(); i++) { wheelNudge(); await new Promise((r) => setTimeout(r, 1200)); }
+    if (!reviewNodes()) {
+      // still dead: revert to relevance sort and harvest in that order (no early stop then)
+      dbg.reverted = await pickSortOption(/relevant/i, dbg);
+      sorted = false;
+      await waitFor(reviewNodes, 5000);
+    }
+  }
   dbg.n_start = reviewNodes();
   oldestAgo = 0; // pre-sort relevance order may contain ancient reviews — they must not trip the 13-month stop
   collect();
-  const pane = scrollableReviewPane();
-  for (let round = 0; pane && round < maxRounds; round++) {
-    pane.scrollTop = pane.scrollHeight;
+  for (let round = 0; round < maxRounds; round++) {
+    const pane = scrollableReviewPane();    // re-query every round — sort re-renders replace the pane
+    if (pane) pane.scrollTop = pane.scrollHeight; else wheelNudge();
     await new Promise((r) => setTimeout(r, 900));
     const fresh = collect();
     stale = fresh === 0 ? stale + 1 : 0;
