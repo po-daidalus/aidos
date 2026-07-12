@@ -56,12 +56,16 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); margin: 0; f
 
 /* — masthead — */
 .masthead { border-bottom: 1px solid var(--rule); background: rgba(252,252,253,.85); backdrop-filter: saturate(1.4) blur(8px); position: sticky; top: 0; z-index: 30; }
-.masthead-inner { max-width: var(--wrap); margin: 0 auto; padding: 13px 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-.wordmark { font-family: var(--serif); font-weight: 600; font-size: 25px; letter-spacing: 0; color: var(--ink); display: inline-flex; align-items: center; gap: 9px; }
+.masthead-inner { max-width: var(--wrap); margin: 0 auto; padding: 11px 24px; display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'brand nav' 'tag nav'; align-items: center; column-gap: 24px; }
+.masthead-inner .wordmark { grid-area: brand; justify-self: start; }
+.masthead-inner .nav { grid-area: nav; }
+.wordmark { font-family: var(--serif); font-weight: 600; font-size: 25px; letter-spacing: 0; color: var(--ink); display: inline-flex; align-items: center; gap: 0; }
 .wordmark:hover { color: var(--ink); }
-.wordmark .glyph { width: 24px; height: 24px; }
-.wordmark .tld { color: var(--accent); }
-.tagline { font-family: var(--sans); font-size: 13px; color: var(--ink-3); margin-right: auto; align-self: center; }
+.wordmark .glyph { width: 24px; height: 24px; margin-right: 9px; }
+.wordmark .tld { color: var(--accent); font-size: 0.58em; align-self: flex-end; padding-bottom: 3px; letter-spacing: 0.02em; }
+.tagline { grid-area: tag; justify-self: start; font-family: var(--sans); font-size: 12.5px; color: var(--ink-3); margin-top: 1px; }
+.lang-switch { font: 500 12px var(--sans); color: var(--ink-3); margin-left: 10px; align-self: center; white-space: nowrap; }
+.lang-switch a { color: var(--ink-3); padding: 2px 4px; } .lang-switch a:hover { color: var(--ink); } .lang-switch .on { color: var(--ink); font-weight: 700; }
 .nav { display: flex; gap: 2px; align-self: center; flex-wrap: wrap; }
 .nav a { padding: 7px 12px; font: 500 14px var(--sans); color: var(--ink-2); border-radius: var(--radius-sm); white-space: nowrap; transition: background .15s var(--ease), color .15s var(--ease); }
 .nav a:hover { color: var(--ink); background: var(--fill); }
@@ -78,8 +82,8 @@ section:first-of-type { border-top: 0; }
 .deck { font-family: var(--serif); font-size: clamp(18px, 2.2vw, 22px); line-height: 1.5; color: var(--ink-2); margin: 15px 0 0; }
 .byline { font: 400 13px var(--sans); color: var(--ink-3); margin-top: 18px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .byline b { color: var(--ink-2); font-weight: 500; }
-.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
-.hint { font: 400 13px var(--sans); color: var(--ink-3); }
+.sec-head { display: block; margin-bottom: 10px; }
+.hint { display: block; font: 400 13px var(--sans); color: var(--ink-3); margin-top: 3px; }
 .sec-intro { font-size: 16px; color: var(--ink-2); max-width: 70ch; margin: 8px 0 22px; }
 
 /* — the Δ / lead figure (moderate; only for a real Δ value, never giant placeholder text) — */

@@ -7,7 +7,7 @@
   <meta name="description" content="aidos wertet die offiziellen DSA-Transparenz-Hinweise von Google Maps systematisch aus: bei welchen Unternehmen und in welchen Branchen wurden Bewertungen wegen Diffamierung entfernt. Neutral, datenbasiert, fortlaufend." />
   <link rel="canonical" href="https://aidos.tech/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="aidos — Datenjournalismus zur Bewertungs-Ökonomie" />
+  <meta property="og:title" content="aidos — Transparenz bei Google-Bewertungen" />
   <meta property="og:description" content="Die einzige fortlaufende Auswertung von Googles DSA-Löschhinweisen in Deutschland." />
   <meta property="og:url" content="https://aidos.tech/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -49,8 +49,8 @@
   <header class="masthead">
     <div class="masthead-inner">
       <a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
-      <span class="tagline">Datenjournalismus zur Bewertungs-Ökonomie</span>
-      <nav class="nav"><a class="on" href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a href="methodik.html">Methodik</a><a href="presse.html">Presse</a><a href="ueber-aidos.html">Über aidos</a><a href="rechtslage.html">Rechtslage</a></nav>
+      <span class="tagline">Transparenz bei Google-Bewertungen</span>
+      <nav class="nav"><a class="on" href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a href="methodik.html">Methodik</a><span class="lang-switch"><a class="on" href="#">DE</a>·<a href="en/">EN</a></span></nav>
     </div>
   </header>
 
@@ -74,7 +74,7 @@
 
     <!-- MOMENTUM -->
     <section>
-      <div class="sec-head"><h2>Das Momentum</h2><span class="hint">der einzigartige Wert — nur aus unserer Zeitreihe ableitbar</span></div>
+      <div class="sec-head"><h2>Was sich verändert hat</h2><span class="hint">Vergleich der monatlichen Basismessungen — öffentliche Angaben, jeweils zum Stand-Datum</span></div>
       <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen berechnen wir die <em>Veränderung</em> derselben Betriebe — einen Fluss-Wert, den Google selbst nie anzeigt.</p>
       <div id="momentum"></div>
     </section>
@@ -180,7 +180,7 @@
     const tr = A.trend || {};
     document.getElementById('momentum').innerHTML = tr.available
       ? `<div class="lead-figure reveal">${tr.delta >= 0 ? '+' : '−'}${de(Math.abs(tr.delta))}<span class="unit">Bewertungen ggü. ${tr.prev} · ${de(tr.panelSize)} durchgehend erfasste Betriebe</span></div>`
-      : `<div class="baseline-note reveal"><span class="big">Basismessung ${T.month || ''}</span><span class="small">Das Δ-Momentum („+180 Entfernungen ggü. Vormonat") erscheint automatisch mit dem zweiten Messpunkt — nie geschätzt.</span></div>`;
+      : `<div class="baseline-note reveal"><span class="big">Basismessung ${T.month || ''}</span><span class="small">Der Monatsvergleich erscheint automatisch mit der zweiten Basismessung — nie geschätzt.</span></div>`;
 
     // ranking table
     document.getElementById('rankHint').textContent = 'Basismessung · ' + (T.month || '');

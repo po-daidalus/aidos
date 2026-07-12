@@ -52,7 +52,7 @@ function shell({ title, desc, canonical, jsonld, body, active = 'listing' }) {
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}</head>
 <body><header class="masthead"><div class="masthead-inner">
 <a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
-<nav class="nav"><a${on('index')} href="../index.html">Übersicht</a><a${on('listing')} href="../listing.html">Unternehmen &amp; Ketten</a><a${on('methodik')} href="../methodik.html">Methodik</a><a${on('presse')} href="../presse.html">Presse</a><a${on('ueber')} href="../ueber-aidos.html">Über aidos</a><a${on('recht')} href="../rechtslage.html">Rechtslage</a></nav>
+<nav class="nav"><a${on('index')} href="../index.html">Übersicht</a><a${on('listing')} href="../listing.html">Unternehmen &amp; Ketten</a><a${on('methodik')} href="../methodik.html">Methodik</a><span class="lang-switch"><a class="on" href="#">DE</a>·<a href="../en/">EN</a></span></nav>
 </div></header><div class="wrap">${body}</div>
 <footer class="site-foot"><div class="site-foot-inner">
 <a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
