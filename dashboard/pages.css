@@ -22,8 +22,8 @@ a{color:var(--accent);text-decoration:none;} a:hover{color:var(--accent-d);}
 .lang-switch a{font:600 11.5px var(--sans);letter-spacing:.04em;color:var(--ink-3);padding:5px 9px;line-height:1;border-radius:0;}
 .lang-switch a:hover{color:var(--ink);background:#f3f3f5;}
 .lang-switch .on,.lang-switch .on:hover{background:var(--ink);color:#fff;}
-.wordmark{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink);display:inline-flex;align-items:center;gap:0;text-decoration:none;}
-.wordmark:hover{color:var(--ink);} .wordmark .glyph{width:23px;height:23px;margin-right:9px;} .wordmark .tld{color:var(--accent);font-size:.58em;align-self:center;}
+.wordmark{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink);display:inline-flex;align-items:baseline;gap:0;text-decoration:none;}
+.wordmark:hover{color:var(--ink);} .wordmark .glyph{width:23px;height:23px;margin-right:9px;align-self:center;} .wordmark .tld{color:var(--accent);font-size:.58em;}
 .nav{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap;}
 .nav a{padding:7px 12px;border-radius:var(--radius-sm);font:500 14px var(--sans);color:var(--ink-2);text-decoration:none;}
 .nav a:hover{background:var(--fill);color:var(--ink);} .nav a.on{background:var(--accent-w);color:var(--accent);}
