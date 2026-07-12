@@ -52,7 +52,7 @@ function shell({ title, desc, canonical, jsonld, body, active = 'listing' }) {
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}</head>
 <body><header class="masthead"><div class="masthead-inner">
 <a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
-<nav class="nav"><a${on('index')} href="../index.html">Übersicht</a><a${on('listing')} href="../listing.html">Unternehmen &amp; Ketten</a><a${on('methodik')} href="../methodik.html">Methodik</a><span class="lang-switch"><a class="on" href="#">DE</a>·<a href="../en/">EN</a></span></nav>
+<nav class="nav"><a${on('index')} href="../index.html">Übersicht</a><a${on('listing')} href="../listing.html">Unternehmen &amp; Ketten</a><a${on('methodik')} href="../methodik.html">Methodik</a><span class="lang-switch"><a class="on" href="#">DE</a><a href="../en/">EN</a></span></nav>
 </div></header><div class="wrap">${body}</div>
 <footer class="site-foot"><div class="site-foot-inner">
 <a class="wordmark" href="../index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
@@ -143,7 +143,7 @@ function seriesChart(locs) {
   const xf = (i) => pad.l + (n > 1 ? (i / (n - 1)) * iw : iw / 2);
   const step = n > 1 ? iw / (n - 1) : iw;
   const maxC = Math.max(...C, 1);
-  const rMin = Math.min(...rate, ...(hasCf ? rLow : rate)), lo = Math.max(1, Math.floor((rMin - 0.25) * 2) / 2), hi = 5;
+  const rMin = Math.min(...rate, ...(hasCf ? [rLow[rLow.length - 1]] : rate)), lo = Math.max(1, Math.floor((rMin - 0.25) * 2) / 2), hi = 5;
   const yBar = (v) => pad.t + ih - (v / maxC) * (ih * 0.9);
   const yR = (r) => pad.t + ih - ((r - lo) / (hi - lo)) * ih;
   // last-365-day window (rightmost ≤12 months) — where Google's removal total applies
@@ -155,17 +155,23 @@ function seriesChart(locs) {
   const bw = Math.max(2, Math.min(16, step * 0.6));
   const bars = C.map((v, i) => v > 0 ? `<rect x="${(xf(i) - bw / 2).toFixed(1)}" y="${yBar(v).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pad.t + ih - yBar(v)).toFixed(1)}" fill="#7fa8e0" opacity="0.5" rx="1"/>` : '').join('');
   let line = ''; rate.forEach((r, i) => { line += (i ? 'L' : 'M') + xf(i).toFixed(1) + ' ' + yR(r).toFixed(1) + ' '; });
-  // counterfactual band (best-case rHigh top edge → worst-case rLow bottom edge) + dashed edges
+  // Counterfactual as TODAY-endpoint whisker, NOT a curve: Google never publishes WHEN reviews were
+  // removed, so any counterfactual time path would be invented (the old declining band read as
+  // "more and more removed over time" — wrong message). Honest claim: today's note vs. today's
+  // note if the removed reviews still counted.
   let cfBand = '', cfEnd = '';
   if (hasCf) {
-    let top = '', bot = '';
-    rHigh.forEach((r, i) => { top += (i ? 'L' : 'M') + xf(i).toFixed(1) + ' ' + yR(r).toFixed(1) + ' '; });
-    for (let i = M.length - 1; i >= 0; i--) bot += 'L' + xf(i).toFixed(1) + ' ' + yR(rLow[i]).toFixed(1) + ' ';
-    cfBand = `<path d="${top}${bot}Z" fill="#b31e26" opacity="0.10"/>`
-      + `<path d="${top}" fill="none" stroke="#b31e26" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.75"/>`
-      + `<path d="M ${rLow.map((r, i) => xf(i).toFixed(1) + ' ' + yR(r).toFixed(1)).join(' L ')}" fill="none" stroke="#b31e26" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.75"/>`;
-    const cfMid = (rLow[M.length - 1] + rHigh[M.length - 1]) / 2;
-    cfEnd = `<text x="${(xf(n - 1) - 6).toFixed(1)}" y="${(yR(cfMid) + 16).toFixed(1)}" text-anchor="end" font-size="12" font-weight="600" fill="#b31e26" font-family="Roboto,sans-serif">~${de1(cfMid)}★ geschätzt</text>`;
+    const cfLo = rLow[M.length - 1], cfHi = rHigh[M.length - 1];
+    const yl = yR(cfLo), yh = yR(cfHi), wx = xf(n - 1);
+    const cfMid = (cfLo + cfHi) / 2;
+    const delta = rate[n - 1] - cfMid;
+    // whisker (range) at the right edge + caps
+    cfBand = `<line x1="${wx.toFixed(1)}" y1="${yl.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2.4" stroke-linecap="round"/>`
+      + `<line x1="${(wx - 5).toFixed(1)}" y1="${yl.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yl.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`
+      + `<line x1="${(wx - 5).toFixed(1)}" y1="${yh.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`
+      + `<line x1="${wx.toFixed(1)}" y1="${((yl + yh) / 2).toFixed(1)}" x2="${wx.toFixed(1)}" y2="${(yR(rate[n - 1]) + 7).toFixed(1)}" stroke="#b9bcc4" stroke-width="1" stroke-dasharray="2 3"/>`;
+    cfEnd = `<text x="${(wx - 8).toFixed(1)}" y="${(yl + 14).toFixed(1)}" text-anchor="end" font-size="12" font-weight="600" fill="#b31e26" font-family="Roboto,sans-serif">mit Entfernungen: ~${de1(cfLo)}–${de1(cfHi)}★</text>`
+      + `<text x="${(wx - 8).toFixed(1)}" y="${(yl + 28).toFixed(1)}" text-anchor="end" font-size="11" fill="#8c161d" font-family="Roboto,sans-serif">Effekt der Entfernungen: +${de1(delta)}★ (Schätzung)</text>`;
   }
   const rTicks = [lo, (lo + hi) / 2, hi].map((t) => `<line x1="${pad.l}" y1="${yR(t).toFixed(1)}" x2="${W - pad.r}" y2="${yR(t).toFixed(1)}" stroke="#eceef2"/><text x="${pad.l - 6}" y="${(yR(t) + 4).toFixed(1)}" text-anchor="end" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${de1(t)}★</text>`).join('');
   const endX = xf(n - 1), endY = yR(rate[n - 1]);
@@ -186,9 +192,9 @@ function seriesChart(locs) {
     + `<text x="${W - pad.r}" y="${H - 8}" text-anchor="end" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${lastM}</text>`
     + `</svg>`;
   return `<section class="tschart"><h2>Historische Entwicklung</h2>`
-    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: Notenverlauf <b>ohne</b> die entfernten Bewertungen — endet bei der heute angezeigten Note · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen (${de(totalRev)} datierte Bewertungen).${hasCf ? ` <b style="color:#b31e26">Rotes Band</b>: geschätzter Verlauf <b>mit</b> den entfernten Bewertungen (als 1–2★ gerechnet) — <i>vor</i> deren Entfernung lag die tatsächlich angezeigte Note vermutlich näher an diesem Band.` : ''}</p>`
+    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: Verlauf der angezeigten Note (ohne die entfernten Bewertungen — endet bei der heute angezeigten Note) · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen (${de(totalRev)} datierte Bewertungen).${hasCf ? ` <b style="color:#b31e26">Rote Spanne (rechts)</b>: wo die Note <b>heute</b> läge, wenn die entfernten Bewertungen (als 1–2★ gerechnet) noch zählten — die Entfernungen haben die angezeigte Note also um den markierten Effekt <b>angehoben</b>.` : ''}</p>`
     + svg
-    + `<p class="cap">Rot hinterlegt sind die letzten 365 Tage, für die Google die entfernten Bewertungen zählt.${hasCf ? ` Die echte Anzeige ist durch die Entfernungen irgendwann in diesem Fenster vom roten Band zur blauen Linie <b>gesprungen</b> — <b>wann</b>, veröffentlicht Google nicht, deshalb zeigen wir den Korridor statt eines erfundenen Sprungzeitpunkts. Das Band ist eine <b>Schätzung</b> (Best-/Worst-Case der Google-Spanne); waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die blaue Linie die zutreffendere.` : ''} Werte sind Momentaufnahmen der öffentlichen Google-Daten.</p>`
+    + `<p class="cap">Rot hinterlegt sind die letzten 365 Tage, für die Google die Zahl entfernter Bewertungen ausweist. <b>Wann</b> im Fenster entfernt wurde, veröffentlicht Google nicht — deshalb zeigen wir den Effekt bewusst als heutige Spanne und nicht als Verlaufskurve.${hasCf ? ` Die Spanne ist eine <b>Schätzung</b> (Best-/Worst-Case der Google-Spanne); waren die Entfernungen berechtigt (z. B. bei Fake-Kampagnen), ist die angezeigte Note die zutreffendere.` : ''} Werte sind Momentaufnahmen der öffentlichen Google-Daten.</p>`
     + `</section>`;
 }
 
