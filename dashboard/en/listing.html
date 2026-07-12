@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Unternehmen &amp; Ketten mit entfernten Google-Bewertungen | aidos</title>
-  <meta name="description" content="Durchsuchbare Liste deutscher Unternehmen und Ketten, bei denen Google Bewertungen wegen Diffamierung entfernt hat – mit Statistik-Index und geschätzter Bewertung. Neutral, datenbasiert, nur juristische Personen." />
-  <link rel="canonical" href="https://aidos.tech/listing.html" />
+  <title>Companies &amp; chains with removed Google reviews | aidos</title>
+  <meta name="description" content="Searchable list of German companies and chains where Google removed reviews for defamation — with statistical index and estimated rating. Neutral, data-driven, legal entities only." />
+  <link rel="canonical" href="https://aidos.tech/en/listing.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Unternehmen &amp; Ketten mit entfernten Google-Bewertungen | aidos" />
-  <meta property="og:url" content="https://aidos.tech/listing.html" />
+  <meta property="og:title" content="Companies &amp; chains with removed Google reviews | aidos" />
+  <meta property="og:url" content="https://aidos.tech/en/listing.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link href="fonts/fonts.css" rel="stylesheet" />
-  <link href="site.css" rel="stylesheet" />
+  <link href="../fonts/fonts.css" rel="stylesheet" />
+  <link href="../site.css" rel="stylesheet" />
   <style>
     .filterbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 14px 0; border-bottom: 1px solid var(--rule); position: sticky; top: 55px; background: var(--paper); z-index: 10; }
     .chip { font: 500 13px var(--sans); padding: 6px 13px; border: 1px solid var(--rule-2); border-radius: 20px; color: var(--ink-2); cursor: pointer; background: var(--surface); user-select: none; }
@@ -29,7 +29,7 @@
     .row .nm a { color: var(--ink); font-weight: 600; font-size: 16.5px; }
     .row .nm a:hover { color: var(--accent); }
     .meta { display: flex; gap: 7px; align-items: center; margin-top: 4px; flex-wrap: wrap; }
-    .pill { font: 500 11.5px var(--sans); color: var(--ink-2); background: var(--fill); padding: 2px 9px; border-radius: 12px; }
+    .pill { font: 500 11.5px var(--sans); color: var(--ink-2); background: var(--fill); padding: 2px 9px; border-radius: 12px; display: inline-block; letter-spacing: 0; text-transform: none; margin-bottom: 0; }
     .pill.chain { background: var(--accent-w); color: var(--accent); }
     .right { text-align: right; display: flex; flex-direction: column; gap: 4px; align-items: flex-end; min-width: 170px; }
     .removed { font-family: var(--serif); font-weight: 600; font-size: 19px; color: var(--accent); font-variant-numeric: tabular-nums; }
@@ -48,54 +48,56 @@
 <body>
   <header class="masthead">
     <div class="masthead-inner">
-      <a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
-      <span class="tagline">Transparenz bei Google-Bewertungen</span>
-      <nav class="nav"><a href="index.html">Übersicht</a><a class="on" href="listing.html">Unternehmen &amp; Ketten</a><a href="methodik.html">Methodik</a><span class="lang-switch"><a class="on" href="#">DE</a><a href="en/listing.html">EN</a></span></nav>
+      <a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
+      <span class="tagline">Transparency on Google reviews</span>
+      <nav class="nav"><a href="./">Overview</a><a class="on" href="listing.html">Companies &amp; chains</a><a href="methodology.html">Methodology</a><span class="lang-switch"><a href="../listing.html">DE</a><a class="on" href="#">EN</a></span></nav>
     </div>
   </header>
 
   <div class="wrap">
-    <div class="kicker">Unternehmen &amp; Ketten</div>
-    <h1>Bei welchen Unternehmen hat Google die meisten Bewertungen entfernt?</h1>
+    <div class="kicker">Companies &amp; chains</div>
+    <h1>Which companies had the most Google reviews removed?</h1>
     <span class="motif"><b></b><i></i></span>
-    <p class="deck" style="max-width:72ch">Nur juristische Personen und größere Ketten — keine Einzelpersonen. Jede Zahl stammt aus dem öffentlichen Google-Transparenz-Hinweis (rollierende 365 Tage).</p>
+    <p class="deck" style="max-width:72ch">Legal entities and larger chains only — no private individuals. Every figure comes from the public Google transparency notice (rolling 365 days). Company detail pages are currently in German.</p>
     <div class="byline"><span class="asof" id="asof"></span></div>
 
-    <div class="lookup-box" style="margin:22px 0 4px"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="q" placeholder="Unternehmen oder Stadt suchen" autocomplete="off" /></div>
+    <div class="lookup-box" style="margin:22px 0 4px"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="q" placeholder="Search company or city" autocomplete="off" /></div>
 
     <div class="filterbar">
       <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
       <span class="spacer"></span>
-      <select id="sort"><option value="range">Meiste Entfernungen</option><option value="drop">Größter Rating-Effekt</option><option value="reviews">Meiste Bewertungen</option></select>
-      <select id="city"><option value="">Alle Städte</option></select>
+      <select id="sort"><option value="range">Most removals</option><option value="drop">Largest rating effect</option><option value="reviews">Most reviews</option></select>
+      <select id="city"><option value="">All cities</option></select>
     </div>
 
     <div class="summary" id="summary"></div>
     <div id="rows"></div>
-    <div class="empty" id="empty" style="display:none">Keine Treffer für diese Filter.</div>
+    <div class="empty" id="empty" style="display:none">No matches for these filters.</div>
 
-    <div class="notice" style="margin-top:26px"><b>Zur Einordnung:</b> Eine hohe Zahl entfernter Bewertungen ist <b>kein</b> Beweis für Fehlverhalten. Google entfernt Bewertungen aus vielen legitimen Gründen (Fake-Kampagnen, Spam, Richtlinienverstöße). Die „geschätzt"-Werte sind rechnerische Schätzungen, keine Tatsachenbehauptungen. <a href="daten-melden.html">Daten melden / korrigieren</a>.</div>
+    <div class="notice" style="margin-top:26px"><b>Context:</b> A high number of removed reviews is <b>no</b> proof of misconduct. Google removes reviews for many legitimate reasons (fake campaigns, spam, policy violations). “Estimated” values are computed estimates, not statements of fact. <a href="../daten-melden.html">Report / correct data (DE)</a>.</div>
   </div>
 
   <footer class="site-foot">
     <div class="site-foot-inner">
-      <a class="wordmark" href="index.html"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
-      <div class="foot-nav"><a href="index.html">Übersicht</a><a href="listing.html">Unternehmen &amp; Ketten</a><a href="methodik.html">Methodik</a><a href="presse.html">Presse</a><a href="ueber-aidos.html">Über aidos</a><a href="rechtslage.html">Rechtslage</a><a href="impressum.html">Impressum</a><a href="impressum.html#datenschutz">Datenschutz</a><a href="daten-melden.html">Daten melden</a></div>
-      <div class="foot-legal">aidos ist ein journalistisches Transparenzprojekt. Angaben zu entfernten Bewertungen stammen von Google&nbsp;LLC (öffentliche Google-Maps-Profile). Werte inklusive entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. Keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
-      <div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>
+      <a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
+      <div class="foot-nav"><a href="./">Overview</a><a href="listing.html">Companies &amp; chains</a><a href="methodology.html">Methodology</a><a href="../presse.html">Press (DE)</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Privacy (DE)</a></div>
+      <div class="foot-legal">aidos is an independent journalistic transparency project. Removal figures originate from Google&nbsp;LLC (public Google Maps profiles). Values including removed reviews are computed estimates, not statements of fact. Not legal advice. “Google” and “Google Maps” are trademarks of Google LLC; no affiliation exists.</div>
+      <div class="foot-meta">No trackers, no cookies · self-hosted fonts · © 2026 aidos</div>
     </div>
   </footer>
 
-  <script src="data.js"></script>
-  <script src="pagemap.js"></script>
+  <script src="../data.js"></script>
+  <script src="../pagemap.js"></script>
   <script>
     const DATA = (window.AIDOS_DATA || []).filter((b) => b.name);
     const PAGES = window.AIDOS_PAGES || {};
-    const de = (n) => (n == null ? '–' : Number(n).toLocaleString('de-DE'));
-    const de1 = (n) => (n == null ? '–' : Number(n).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
+    const en = (n) => (n == null ? '–' : Number(n).toLocaleString('en-US'));
+    const en1 = (n) => (n == null ? '–' : Number(n).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
     const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const BR_EN = { 'Gastronomie & Hotel': 'Hospitality', 'Automobil': 'Automotive', 'Fitness & Sport': 'Fitness & sports', 'Gesundheit': 'Healthcare', 'Recht & Beratung': 'Legal & consulting', 'Beauty & Wellness': 'Beauty & wellness', 'Immobilien': 'Real estate', 'Einzelhandel': 'Retail', 'Handwerk & Bau': 'Trades & construction', 'Sonstige': 'Other', 'Unbekannt': 'Unknown' };
+    const CITY_EN = { 'München': 'Munich', 'Köln': 'Cologne', 'Nürnberg': 'Nuremberg', 'Frankfurt am Main': 'Frankfurt' };
+    const tB = (k) => BR_EN[k] || k, tC = (k) => CITY_EN[k] || k;
 
-    // brand grouping (mirrors pages.mjs so links match the generated /unternehmen pages)
     const normName = (n) => (n || '').split(/ [-–] /)[0].trim();
     const rootDomain = (u) => { try { const h = new URL(u).hostname.replace(/^www\./, ''); const p = h.split('.'); return p.length > 2 ? p.slice(-2).join('.') : h; } catch { return null; } };
     const brandKey = (b) => (b.website && rootDomain(b.website)) || normName(b.name).toLowerCase() || b.place_id;
@@ -113,7 +115,7 @@
       return locs.reduce((s, x) => s + (x.reviews || 0), 0) >= 400;
     }
     const wavg = (locs, f) => { const r = locs.filter((d) => f(d) != null); const w = r.reduce((s, d) => s + (d.reviews || 0), 0); return w ? r.reduce((s, d) => s + f(d) * (d.reviews || 0), 0) / w : (r.length ? r.reduce((s, d) => s + f(d), 0) / r.length : null); };
-    function aggRange(locs) { const min = locs.reduce((s, d) => s + (d.range_min || 0), 0); const anyCap = locs.some((d) => d.range_min != null && d.range_max == null); const max = locs.reduce((s, d) => s + (d.range_max || d.range_min || 0), 0); return { label: anyCap ? 'über ' + min : (min === max ? String(min) : min + '–' + max), min, max: anyCap ? null : max }; }
+    function aggRange(locs) { const min = locs.reduce((s, d) => s + (d.range_min || 0), 0); const anyCap = locs.some((d) => d.range_min != null && d.range_max == null); const max = locs.reduce((s, d) => s + (d.range_max || d.range_min || 0), 0); return { label: anyCap ? 'over ' + min : (min === max ? String(min) : min + '–' + max), min, max: anyCap ? null : max }; }
 
     const GROUPS = [...brands.entries()].filter(([, l]) => isListable(l)).map(([k, locs]) => {
       const name = normName(locs[0].name) || locs[0].name;
@@ -127,37 +129,37 @@
     });
 
     const allCities = [...new Set(GROUPS.flatMap((g) => g.cities))].sort();
-    document.getElementById('city').innerHTML = '<option value="">Alle Städte</option>' + allCities.map((c) => `<option>${esc(c)}</option>`).join('');
+    document.getElementById('city').innerHTML = '<option value="">All cities</option>' + allCities.map((c) => `<option value="${esc(c)}">${esc(tC(c))}</option>`).join('');
     const branchesByVol = [...new Set(GROUPS.map((g) => g.branch))].sort((a, b) => GROUPS.filter((g) => g.branch === b).length - GROUPS.filter((g) => g.branch === a).length);
-    document.getElementById('chips').innerHTML = `<span class="chip on" data-b="">Alle Branchen</span>` + branchesByVol.map((b) => `<span class="chip" data-b="${esc(b)}">${esc(b)}</span>`).join('');
-    document.getElementById('asof').textContent = `${GROUPS.length} gelistete Betriebe · ${allCities.join(', ')}`;
+    document.getElementById('chips').innerHTML = `<span class="chip on" data-b="">All industries</span>` + branchesByVol.map((b) => `<span class="chip" data-b="${esc(b)}">${esc(tB(b))}</span>`).join('');
+    document.getElementById('asof').textContent = `${GROUPS.length} listed businesses · ${allCities.map(tC).join(', ')}`;
 
     let fBranch = '', fCity = '', fSort = 'range', fQ = '';
-    const scale = (v) => Math.max(0, Math.min(100, ((v - 3) / 2) * 100)); // rating 3–5 → 0–100%
+    const scale = (v) => Math.max(0, Math.min(100, ((v - 3) / 2) * 100));
 
     function render() {
       let g = GROUPS.slice();
       if (fBranch) g = g.filter((x) => x.branch === fBranch);
       if (fCity) g = g.filter((x) => x.cities.includes(fCity));
-      if (fQ) g = g.filter((x) => x.name.toLowerCase().includes(fQ) || x.cities.join(' ').toLowerCase().includes(fQ));
+      if (fQ) g = g.filter((x) => x.name.toLowerCase().includes(fQ) || x.cities.join(' ').toLowerCase().includes(fQ) || x.cities.map(tC).join(' ').toLowerCase().includes(fQ));
       g.sort((a, b) => fSort === 'reviews' ? b.reviews - a.reviews : fSort === 'drop' ? b.drop - a.drop : (b.remMax || b.remMin || 0) - (a.remMax || a.remMin || 0));
 
       const sumMin = g.reduce((s, x) => s + (x.remMin || 0), 0);
       const withDrop = g.filter((x) => x.drop > 0);
       const meanDrop = withDrop.length ? withDrop.reduce((s, x) => s + x.drop, 0) / withDrop.length : 0;
-      document.getElementById('summary').innerHTML = `Bei <b>${g.length}</b> ${fBranch ? esc(fBranch) + '-' : 'gelisteten '}Betrieben wurden mindestens <b>${de(sumMin)}</b> Bewertungen entfernt. Rechnerisch liegt die angezeigte Note dadurch im Schnitt <b>${de1(meanDrop)}★</b> höher, als sie ohne die Entfernungen wäre.`;
+      document.getElementById('summary').innerHTML = `Across <b>${g.length}</b> ${fBranch ? esc(tB(fBranch)) + ' ' : 'listed '}businesses, at least <b>${en(sumMin)}</b> reviews were removed. Arithmetically, the displayed rating is on average <b>${en1(meanDrop)}★</b> higher than it would be without the removals.`;
 
       document.getElementById('empty').style.display = g.length ? 'none' : 'block';
       document.getElementById('rows').innerHTML = g.map((x, i) => {
         const letter = (x.name.match(/[A-Za-zÄÖÜ]/) || ['·'])[0].toUpperCase();
-        const nameCell = x.url ? `<a href="${x.url}">${esc(x.name)}</a>` : `<span style="font-weight:600;color:var(--ink)">${esc(x.name)}</span>`;
-        const chainPill = x.n > 1 ? `<span class="pill chain">${x.n} Standorte</span>` : '';
+        const nameCell = x.url ? `<a href="../${x.url}">${esc(x.name)}</a>` : `<span style="font-weight:600;color:var(--ink)">${esc(x.name)}</span>`;
+        const chainPill = x.n > 1 ? `<span class="pill chain">${x.n} locations</span>` : '';
         const whisk = (x.rating != null && x.est != null && x.est <= x.rating)
-          ? `<div class="whisk"><div class="tr"><div class="band" style="left:${scale(x.est).toFixed(0)}%;right:${(100 - scale(x.rating)).toFixed(0)}%"></div><div class="est" style="left:${scale(x.est).toFixed(0)}%"></div><div class="disp" style="left:${scale(x.rating).toFixed(0)}%"></div></div><div class="cap"><span class="r">geschätzt ${de1(x.est)}★</span><span class="b">angezeigt ${de1(x.rating)}★</span></div></div>`
-          : (x.rating != null ? `<div class="whisk"><div class="cap"><span class="b" style="margin-left:auto">angezeigt ${de1(x.rating)}★</span></div></div>` : '');
+          ? `<div class="whisk"><div class="tr"><div class="band" style="left:${scale(x.est).toFixed(0)}%;right:${(100 - scale(x.rating)).toFixed(0)}%"></div><div class="est" style="left:${scale(x.est).toFixed(0)}%"></div><div class="disp" style="left:${scale(x.rating).toFixed(0)}%"></div></div><div class="cap"><span class="r">estimated ${en1(x.est)}★</span><span class="b">displayed ${en1(x.rating)}★</span></div></div>`
+          : (x.rating != null ? `<div class="whisk"><div class="cap"><span class="b" style="margin-left:auto">displayed ${en1(x.rating)}★</span></div></div>` : '');
         return `<div class="row"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.branch] || '#5a5a5a'}">${letter}</div>` +
-          `<div><div class="nm">${nameCell} ${chainPill}</div><div class="meta"><span class="pill">${esc(x.branch)}</span>${x.cities.slice(0, 2).map((c) => `<span class="pill">${esc(c)}</span>`).join('')}${x.rating != null ? `<span class="muted" style="font-size:12.5px">★ ${de1(x.rating)} · ${de(x.reviews)} Bewertungen</span>` : ''}</div></div>` +
-          `<div class="right"><div class="removed">${x.label}<span class="lbl">entfernte Bewertungen${x.n > 1 ? ' (Summe)' : ''}</span></div>${whisk}</div></div>`;
+          `<div><div class="nm">${nameCell} ${chainPill}</div><div class="meta"><span class="pill">${esc(tB(x.branch))}</span>${x.cities.slice(0, 2).map((c) => `<span class="pill">${esc(tC(c))}</span>`).join('')}${x.rating != null ? `<span class="muted" style="font-size:12.5px">★ ${en1(x.rating)} · ${en(x.reviews)} reviews</span>` : ''}</div></div>` +
+          `<div class="right"><div class="removed">${x.label}<span class="lbl">removed reviews${x.n > 1 ? ' (total)' : ''}</span></div>${whisk}</div></div>`;
       }).join('');
     }
 

@@ -1,54 +1,225 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>aidos — Transparency on Google review removals in Germany</title>
-    <meta name="description" content="aidos systematically evaluates Google Maps' official transparency notices about reviews removed for defamation — neutral, source-linked, updated monthly." />
-    <link rel="canonical" href="https://aidos.tech/en/" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link href="../fonts/fonts.css" rel="stylesheet" />
-    <link href="../site.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header class="masthead"><div class="masthead-inner">
-<a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
-<span class="tagline">Transparency on Google reviews</span>
-<nav class="nav"><a class="on" href="./">Overview</a><a href="../listing.html">Companies (DE)</a><a href="../methodik.html">Methodology (DE)</a><span class="lang-switch"><a href="../index.html">DE</a><a class="on" href="#">EN</a></span></nav>
-</div></header>
-
-    <div class="wrap">
-      <span class="pill">English overview</span>
-      <h1>How many businesses had Google reviews removed for defamation?</h1>
-      <span class="motif"><b></b><i></i></span>
-      <p class="lead">Since the EU Digital Services Act, Google Maps displays a public transparency notice on business profiles stating how many reviews were removed in the past 365 days following defamation complaints. <b>aidos</b> systematically collects and evaluates these public notices for Germany — neutral, source-linked, and updated monthly.</p>
-
-      <h2>What we publish</h2>
-      <div class="card static">
-        <ul>
-          <li><b>A ranked, searchable dataset</b> of affected businesses and chains across 16 major German cities — currently around 950 profiles that carry the removal notice.</li>
-          <li><b>Measured prevalence:</b> we also count the profiles <i>without</i> a notice. Across the cities surveyed so far, only roughly 3–5&nbsp;% of checked profiles carry it.</li>
-          <li><b>Estimates, clearly labelled:</b> for sufficiently documented profiles we model where the rating would stand <i>if the removed reviews still counted</i> — always as a range, never as false precision.</li>
-        </ul>
-      </div>
-
-      <h2>What the data can and cannot say</h2>
-      <div class="card static">
-        <p>A high number of removed reviews is <b>not evidence of wrongdoing</b> — businesses are frequently targeted by unjustified fake-review campaigns, and removals can be entirely legitimate. Google does not disclose who requested a removal or when individual reviews were removed. We publish company names only for legal entities and chains, never for private individuals.</p>
-      </div>
-
-      <h2>Data access &amp; press</h2>
-      <div class="card static">
-        <p>The full interactive dataset, methodology and monthly reports are currently available in German. Citation format: <b>“aidos.tech, data as of [month year]”</b>. CSV extracts for journalistic use are available on request.</p>
-        <p>Contact: <a href="mailto:contact@aidos.tech?subject=%5BPress%5D%20Inquiry">contact@aidos.tech</a> — subject “[Press]” speeds up the reply.</p>
-      </div>
-
-      <footer class="site-foot"><div class="site-foot-inner">
-<a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
-<div class="foot-nav"><a href="../index.html">Übersicht (DE)</a><a href="../methodik.html">Methodik (DE)</a><a href="../presse.html">Presse</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Privacy</a></div>
-<div class="foot-legal">aidos is an independent journalistic transparency project. Removal figures originate from public Google&nbsp;LLC transparency notices. Values including removed reviews are computed estimates, not statements of fact. “Google” and “Google Maps” are trademarks of Google LLC; no affiliation exists.</div>
-<div class="foot-meta">No trackers, no cookies · self-hosted fonts · © 2026 aidos</div>
-</div></footer>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>aidos — Removed Google reviews in Germany, evaluated as data journalism</title>
+  <meta name="description" content="aidos systematically evaluates Google Maps' official DSA transparency notices: which businesses and industries had reviews removed for defamation. Neutral, data-driven, ongoing." />
+  <link rel="canonical" href="https://aidos.tech/en/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="aidos — Transparency on Google reviews" />
+  <meta property="og:description" content="The only ongoing evaluation of Google's DSA removal notices in Germany." />
+  <meta property="og:url" content="https://aidos.tech/en/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link href="../fonts/fonts.css" rel="stylesheet" />
+  <link href="../site.css" rel="stylesheet" />
+  <style>
+    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+    .chartcard { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
+    .chartcard h4 { color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 16px; }
+    .cbar { display: grid; grid-template-columns: 118px 1fr 46px; align-items: center; gap: 12px; margin: 10px 0; font-size: 13.5px; }
+    .cbar .track { height: 12px; background: var(--fill); border-radius: 6px; overflow: hidden; }
+    .cbar .track > i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), #d1434a); border-radius: 6px; transition: width 1.1s var(--ease); }
+    .cbar .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 500; }
+    .lkres { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; max-width: 620px; }
+    .lk-hit { display: flex; justify-content: space-between; gap: 12px; align-items: center; border: 1px solid var(--rule); border-radius: var(--radius-sm); padding: 11px 14px; background: var(--surface); }
+    .lk-hit:hover { border-color: var(--accent); text-decoration: none; }
+    .lk-hit b { color: var(--ink); font-weight: 600; } .lk-hit span { display: block; font-size: 12.5px; color: var(--ink-3); }
+    .lk-hit .r { font-size: 13px; color: var(--accent); font-weight: 500; white-space: nowrap; }
+    .lk-none { border: 1px solid var(--rule); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; color: var(--ink-2); background: var(--surface); }
+    .idxbar { display: flex; align-items: center; gap: 10px; }
+    .idxbar .t { flex: 1; height: 8px; background: var(--fill); border-radius: 4px; overflow: hidden; max-width: 160px; }
+    .idxbar .t > i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 4px; transition: width 1s var(--ease); }
+    .idxbar b { font-variant-numeric: tabular-nums; color: var(--ink); }
+    .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .citycard { display: block; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); padding: 18px 20px; transition: box-shadow .2s var(--ease), transform .2s var(--ease); }
+    .citycard:hover { box-shadow: var(--shadow-h); transform: translateY(-2px); text-decoration: none; }
+    .citycard .cn { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--ink); }
+    .citycard .ch { font-size: 13px; color: var(--ink-2); margin-top: 3px; }
+    .citycard .cs { font-size: 12.5px; color: var(--ink-3); margin-top: 10px; }
+    .citycard .bar { margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
+      <span class="tagline">Transparency on Google reviews</span>
+      <nav class="nav"><a class="on" href="./">Overview</a><a href="listing.html">Companies &amp; chains</a><a href="methodology.html">Methodology</a><span class="lang-switch"><a href="../index.html">DE</a><a class="on" href="#">EN</a></span></nav>
     </div>
-  </body>
+  </header>
+
+  <div class="wrap">
+    <!-- HERO -->
+    <section>
+      <div class="hero">
+        <div>
+          <div class="kicker">Transparency in the review economy</div>
+          <h1>How many businesses had Google reviews removed for defamation?</h1>
+          <span class="motif"><b></b><i></i></span>
+          <p class="deck">aidos systematically and continuously evaluates the official transparency notices on Google&nbsp;Maps — introduced under the EU&nbsp;Digital&nbsp;Services&nbsp;Act. We preserve what Google's rolling 365-day notice makes invisible again.</p>
+          <div class="byline" id="byline"></div>
+        </div>
+        <div class="chartcard reveal">
+          <h4>Affected profiles by industry · baseline survey</h4>
+          <div id="heroViz"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENTUM -->
+    <section>
+      <div class="sec-head"><h2>What has changed</h2><span class="hint">comparison of the monthly baseline surveys — public figures, each at its survey date</span></div>
+      <p class="sec-intro">Google shows only a rolling 365-day range per place. From monthly surveys we compute the <em>change</em> for the same businesses — a flow figure Google itself never displays.</p>
+      <div id="momentum"></div>
+    </section>
+
+    <!-- LOOKUP -->
+    <section>
+      <div class="sec-head"><h2>Check a company</h2><span class="hint">searches the collected dataset</span></div>
+      <div class="lookup-box"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="lk" placeholder="Enter company name" autocomplete="off" /></div>
+      <div class="lkres" id="lkres"></div>
+    </section>
+
+    <!-- STAT BAND -->
+    <section>
+      <div class="band">
+        <div class="stat reveal"><div class="v" data-count id="s1">0</div><div class="l">profiles with an active removal notice</div><div class="sub" id="s1s"></div></div>
+        <div class="stat reveal"><div class="v accent" data-count id="s2">0</div><div class="l">reviews removed (estimate, last 365 days)</div><div class="sub">conservative lower bound — Google only shows ranges</div></div>
+        <div class="stat reveal"><div class="v" id="s3">–</div><div class="l">most conspicuous industry by statistical index</div><div class="sub" id="s3s"></div></div>
+      </div>
+    </section>
+
+    <!-- BRANCH RANKING -->
+    <section>
+      <div class="sec-head"><h2>In which industries does Google remove the most reviews?</h2><span class="hint" id="rankHint"></span></div>
+      <p class="sec-intro">Affected profiles and statistical index (removed reviews per location) by industry. Changes over time will appear once several monthly surveys exist — never estimated.</p>
+      <div class="table-scroll">
+        <table class="rank">
+          <thead><tr><th></th><th>Industry</th><th class="num">Affected profiles</th><th>relative weight</th><th class="num">Index</th></tr></thead>
+          <tbody id="rankBody"></tbody>
+        </table>
+      </div>
+      <p class="asof" id="rankNote" style="margin-top:12px"></p>
+    </section>
+
+    <!-- CITIES -->
+    <section>
+      <div class="sec-head"><h2>Regional focus</h2><span class="hint">weighted by removals per profile</span></div>
+      <p class="sec-intro">Where are reviews most frequently removed after defamation complaints? The survey is continuously being extended to more cities.</p>
+      <div class="cities" id="cityGrid"></div>
+    </section>
+
+    <!-- COVERAGE -->
+    <section>
+      <div class="sec-head"><h2>The data basis</h2><span class="hint">what is included — and what is not yet</span></div>
+      <p class="sec-intro">aidos surveys city by city and repeats each city monthly. This overview honestly shows which cities are already in the dataset — there simply are no figures from cities not yet surveyed.</p>
+      <div class="covbox">
+        <table class="rank" id="covTable"><thead><tr><th>City</th><th class="num">Profiles with removal notice</th><th></th></tr></thead><tbody id="covBody"></tbody></table>
+        <p class="asof" id="covNote"></p>
+        <p class="asof">How the survey works is documented in the <a href="methodology.html">methodology</a>. Detailed city and company pages are currently available in German.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="sec-head"><h2>Which companies &amp; chains are affected?</h2></div>
+      <p class="sec-intro">To the searchable, filterable list — legal entities and larger chains only, no private individuals.</p>
+      <a class="btn btn-primary" href="listing.html">View companies &amp; chains</a>
+    </section>
+  </div>
+
+  <footer class="site-foot">
+    <div class="site-foot-inner">
+      <a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
+      <div class="foot-nav"><a href="./">Overview</a><a href="listing.html">Companies &amp; chains</a><a href="methodology.html">Methodology</a><a href="../presse.html">Press (DE)</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Privacy (DE)</a></div>
+      <div class="foot-legal">aidos is an independent journalistic transparency project. Removal figures originate from Google&nbsp;LLC (public Google Maps profiles). Values including removed reviews are computed estimates, not statements of fact. Not legal advice. “Google” and “Google Maps” are trademarks of Google LLC; no affiliation exists.</div>
+      <div class="foot-meta">No trackers, no cookies · self-hosted fonts · © 2026 aidos</div>
+    </div>
+  </footer>
+
+  <script src="../aggregates.js"></script>
+  <script src="../lookup.js"></script>
+  <script>
+    const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
+    const T = A.totals || {};
+    const en = (n) => (n == null ? '–' : Number(n).toLocaleString('en-US'));
+    const en1 = (n) => (n == null ? '–' : Number(n).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const slug = (s) => (s || '').toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/&/g, ' und ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+    // display translations — links keep the German slugs (the detail pages are German)
+    const BR_EN = { 'Gastronomie & Hotel': 'Hospitality', 'Automobil': 'Automotive', 'Fitness & Sport': 'Fitness & sports', 'Gesundheit': 'Healthcare', 'Recht & Beratung': 'Legal & consulting', 'Beauty & Wellness': 'Beauty & wellness', 'Immobilien': 'Real estate', 'Einzelhandel': 'Retail', 'Handwerk & Bau': 'Trades & construction', 'Sonstige': 'Other', 'Unbekannt': 'Unknown' };
+    const CITY_EN = { 'München': 'Munich', 'Köln': 'Cologne', 'Nürnberg': 'Nuremberg', 'Frankfurt am Main': 'Frankfurt' };
+    const tB = (k) => BR_EN[k] || k, tC = (k) => CITY_EN[k] || k;
+
+    document.getElementById('byline').innerHTML = 'An independent data project · <span class="asof">baseline survey ' + (T.month || '') + ' · ' + en(T.businesses || 0) + ' profiles</span>';
+
+    document.getElementById('s1').dataset.to = T.businesses || 0;
+    document.getElementById('s1s').textContent = 'baseline survey — coverage is being extended';
+    document.getElementById('s2').dataset.to = T.removed || 0;
+    const topIdx = [...(A.branches || [])].sort((a, b) => b.aidos_index - a.aidos_index)[0];
+    if (topIdx) { document.getElementById('s3').textContent = tB(topIdx.key); document.getElementById('s3s').textContent = 'statistical index ' + topIdx.aidos_index + '/100'; }
+
+    const top5 = (A.branches || []).slice(0, 5); const maxRem = Math.max(1, ...top5.map((b) => b.removed));
+    document.getElementById('heroViz').innerHTML = top5.map((b) =>
+      `<div class="cbar"><span>${esc(tB(b.key).split(' ')[0])}</span><div class="track"><i data-w="${Math.round((b.removed / maxRem) * 100)}"></i></div><span class="v">${en(Math.round(b.removed))}</span></div>`).join('');
+
+    const tr = A.trend || {};
+    document.getElementById('momentum').innerHTML = tr.available
+      ? `<div class="lead-figure reveal">${tr.delta >= 0 ? '+' : '−'}${en(Math.abs(tr.delta))}<span class="unit">reviews vs. ${tr.prev} · ${en(tr.panelSize)} continuously surveyed businesses</span></div>`
+      : `<div class="baseline-note reveal"><span class="big">Baseline survey ${T.month || ''}</span><span class="small">The month-on-month comparison appears automatically with the second baseline survey — never estimated.</span></div>`;
+
+    document.getElementById('rankHint').textContent = 'baseline survey · ' + (T.month || '');
+    const maxIdx = Math.max(1, ...(A.branches || []).map((b) => b.aidos_index));
+    document.getElementById('rankBody').innerHTML = (A.branches || []).map((b, i) =>
+      `<tr><td class="rank-num">${i + 1}</td>` +
+      `<td><a href="../branche/${slug(b.key)}.html">${esc(tB(b.key))}</a></td>` +
+      `<td class="num mono-num">${en(b.n)}</td>` +
+      `<td><div class="idxbar"><div class="t"><i data-w="${Math.round((b.aidos_index / maxIdx) * 100)}"></i></div></div></td>` +
+      `<td class="num"><span class="score" title="rank ${i + 1} of ${A.branches.length} surveyed industries"><span class="val">${b.aidos_index}</span><span class="of">/100</span></span></td></tr>`).join('');
+    document.getElementById('rankNote').textContent = 'The index neutrally measures the number of removed reviews per location across industries (100 = most conspicuous industry in the dataset). A description of the data, not a value judgement.';
+
+    const realCities = (A.cities || []).filter((c) => c.n >= 3);
+    const maxCity = Math.max(1, ...realCities.map((c) => c.removed || c.n));
+    document.getElementById('cityGrid').innerHTML = realCities.map((c) =>
+      `<a class="citycard reveal" href="../stadt/${slug(c.key)}.html"><div class="cn">${esc(tC(c.key))}</div><div class="ch">focus: ${esc((c.hotspot || []).map(tB).join(' & ') || '–')}</div><div class="cs">${en(c.n)} surveyed profiles · index ${en1(c.score)}/10</div><div class="bar"><i data-w="${Math.round(100 * (c.removed || c.n) / maxCity)}"></i></div></a>`).join('')
+      || '<p class="muted">No city with a sufficient data basis yet.</p>';
+
+    const gen = A.generated ? new Date(A.generated).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }) : null;
+    document.getElementById('covBody').innerHTML = realCities.slice().sort((a, b) => b.n - a.n).map((c) =>
+      `<tr><td><a href="../stadt/${slug(c.key)}.html">${esc(tC(c.key))}</a></td><td class="num">${en(c.n)}</td><td><a class="more" href="../stadt/${slug(c.key)}.html">city page (DE) →</a></td></tr>`).join('');
+    const cov = A.coverage || [];
+    const covLine = cov.length
+      ? ' Measured: ' + cov.map((c) => `in ${tC(c.city)} ${en(c.hit)} of ${en(c.checked)} checked profiles carried the notice (${en1(c.prevalencePct)}%)`).join('; ') + ' — so the vast majority of checked businesses do not appear here at all.'
+      : ' The notice is rare: only around 3–5% of checked profiles carry it — the vast majority of checked businesses therefore do not appear here at all.';
+    document.getElementById('covNote').textContent = `${en(realCities.length)} cities surveyed · ${en(T.businesses)} profiles with an active removal notice in the dataset` + (gen ? ` · as of: ${gen}` : '') + '.' + covLine;
+
+    (function () {
+      const LK = window.AIDOS_LOOKUP || [];
+      const input = document.getElementById('lk'), res = document.getElementById('lkres');
+      input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        if (q.length < 2) { res.innerHTML = ''; return; }
+        const hits = LK.filter((x) => x.n.toLowerCase().includes(q) || (x.c && x.c.toLowerCase().includes(q))).slice(0, 6);
+        if (hits.length) {
+          res.innerHTML = hits.map((x) => `<a class="lk-hit" href="../${x.u}"><div><b>${esc(x.n)}</b><span>${esc(tC(x.c))} · ${esc(tB(x.b))}</span></div><div class="r">${esc(x.r)} removed</div></a>`).join('');
+        } else {
+          const mail = 'mailto:contact@aidos.tech?subject=' + encodeURIComponent('Check a company: ' + input.value) + '&body=' + encodeURIComponent('Please add this company to the aidos survey:\n\n' + input.value);
+          res.innerHTML = `<div class="lk-none"><b>“${esc(input.value)}”</b> is not in the dataset yet.<br/><a href="${mail}">→ Submit a company for review</a></div>`;
+        }
+      });
+    })();
+
+    function countUp(el) { const to = +el.dataset.to || 0, dur = 1000, t0 = performance.now();
+      const tick = (t) => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(to * e).toLocaleString('en-US'); if (p < 1) requestAnimationFrame(tick); }; requestAnimationFrame(tick); }
+    const io = new IntersectionObserver((ents) => ents.forEach((en2) => { if (!en2.isIntersecting) return; const el = en2.target; el.classList.add('in');
+      if (el.dataset.count !== undefined) countUp(el);
+      el.querySelectorAll?.('[data-w]').forEach((f) => (f.style.width = f.dataset.w + '%'));
+      io.unobserve(el); }), { threshold: .2 });
+    document.querySelectorAll('.reveal, .chartcard, table.rank, .stat, [data-count]').forEach((el) => io.observe(el));
+    requestAnimationFrame(() => document.querySelectorAll('[data-w]').forEach((f) => (f.style.width = f.dataset.w + '%')));
+  </script>
+</body>
 </html>

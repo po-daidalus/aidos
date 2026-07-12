@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Methodology — How aidos surveys, computes and publishes</title>
+    <meta name="description" content="Transparently explained: data source, monthly survey, estimation model, aidos score, naming policy and the limits of the aidos evaluation." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link href="../fonts/fonts.css" rel="stylesheet" />
+    <link href="../site.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="masthead"><div class="masthead-inner">
+<a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<span class="tagline">Transparency on Google reviews</span>
+<nav class="nav"><a href="./">Overview</a><a href="listing.html">Companies &amp; chains</a><a class="on" href="methodology.html">Methodology</a><span class="lang-switch"><a href="../methodik.html">DE</a><a class="on" href="#">EN</a></span></nav>
+</div></header>
+
+    <div class="wrap">
+      <span class="pill">Methodology</span>
+      <h1>How aidos surveys, computes and publishes</h1>
+      <span class="motif"><b></b><i></i></span>
+      <p class="lead">Every figure on this site must be traceable to a publicly visible statement. This page explains where the data comes from, what we compute from it — and what we deliberately do <b>not</b> do.</p>
+
+      <h2>1. The data source</h2>
+      <div class="card static">
+        <p>The basis is the <b>Google&nbsp;Maps transparency notice</b>: since 2026, Google states on public business profiles how many reviews were removed in the past 365 days “due to complaints about defamation”. aidos records exclusively what is <b>visible to everyone</b> there:</p>
+        <ul>
+          <li>the removal notice with its <b>range</b> (e.g. “51 to 100”, at most “over 250”),</li>
+          <li>the currently <b>displayed average rating</b> and the star distribution,</li>
+          <li>the number of visible reviews, industry and location.</li>
+        </ul>
+        <p><b>Not recorded</b>: the content or authors of individual reviews — neither visible nor removed ones.</p>
+      </div>
+
+      <h2>2. The survey</h2>
+      <div class="card static">
+        <ol class="steps">
+          <li><b>Candidates:</b> business profiles are systematically compiled from open sources (incl. OpenStreetMap) — city by city, across industries.</li>
+          <li><b>Checking:</b> every profile is checked for the transparency notice. Profiles <b>without</b> a notice are counted too — that is the only way to say credibly how widespread removals really are (a measured denominator instead of anecdote).</li>
+          <li><b>Monthly repetition:</b> the survey re-runs monthly. Every entry carries a <b>survey date</b>; entries that are not re-confirmed disappear from the public view.</li>
+        </ol>
+        <p class="asof" style="margin-top:8px">On reach: the notice is rare — in the cities surveyed so far, only around 3–5&nbsp;% of checked profiles carry it. Since July 2026 the survey logs every checked URL with its outcome; the resulting <b>measured</b> rate per city is shown in the <a href="./">data-basis overview</a>.</p>
+      </div>
+
+      <h2>3. What we compute</h2>
+      <div class="card static">
+        <h3>Ranges, never false precision</h3>
+        <p>Google publishes ranges, not exact figures. We compute with these ranges and report them as such. For “over 250” the true number is unknown — we cap conservatively and label the <b>dark figure</b>.</p>
+        <h3>The “rating without removals” estimate</h3>
+        <p>For sufficiently documented profiles we estimate where the rating would stand <i>if the removed reviews still counted</i>: Google's published range is arithmetically re-inserted into the real star distribution at 1–2★ (best/worst case yields the range). This is explicitly an <b>estimate</b> — if the removals were justified (e.g. fake campaigns), the displayed rating is the more accurate one.</p>
+        <h3>The aidos score</h3>
+        <p>The score (0–100) is a <b>percentile</b>: it ranks a profile by its number of removed reviews within the collected dataset. A score of 90 means “more removals than 90&nbsp;% of surveyed profiles” — a neutral statistical classification, <b>not a value judgement</b> and no proof of misconduct.</p>
+      </div>
+
+      <h2>4. Whom we name — and whom we don't</h2>
+      <div class="callout"><b>Names are published only for legal entities and chains.</b> Only corporations (GmbH, AG&nbsp;…), larger chains and high-revenue businesses appear publicly by name. Sole traders and micro businesses enter the statistics only <b>anonymised in aggregates</b> (industry, city, count) and are stored pseudonymised internally. Details in the <a href="../impressum.html#datenschutz">privacy policy (DE)</a>.</div>
+
+      <h2>5. Limits of the data</h2>
+      <div class="card static">
+        <ul>
+          <li>The removal notice is a <b>rolling 365-day total</b>. <b>When</b> individual reviews were removed is not published by Google — which is why we show no removal curves, only verifiable trajectories and clearly labelled model calculations.</li>
+          <li>All values are <b>snapshots</b> of the public Google data at the respective survey date.</li>
+          <li><b>Who</b> requested a removal is not publicly visible. We therefore write “Google removed after defamation complaints” — never that a business “had reviews deleted”.</li>
+          <li>A high number of removed reviews is <b>no evidence of unfair conduct</b>: businesses are frequently targeted by unjustified fake campaigns; removals can be entirely legitimate.</li>
+        </ul>
+      </div>
+
+      <h2>6. Corrections</h2>
+      <div class="card static">
+        <p>Mistakes happen — and get corrected. Affected businesses can contest their data via <a href="../daten-melden.html">report / correct data (DE)</a> or <a href="mailto:contact@aidos.tech">contact@aidos.tech</a>. If a review is not completed within 5 days, we precautionarily remove the entry from public view. Substantive corrections are noted on the affected page.</p>
+      </div>
+
+      <footer class="site-foot"><div class="site-foot-inner">
+<a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
+<div class="foot-nav"><a href="./">Overview</a><a href="listing.html">Companies &amp; chains</a><a href="methodology.html">Methodology</a><a href="../presse.html">Press (DE)</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Privacy (DE)</a></div>
+<div class="foot-legal">aidos is an independent journalistic transparency project. Removal figures originate from Google&nbsp;LLC. Values including removed reviews are computed estimates, not statements of fact. Not legal advice. “Google” and “Google Maps” are trademarks of Google LLC; no affiliation exists.</div>
+<div class="foot-meta">No trackers, no cookies · self-hosted fonts · © 2026 aidos</div>
+</div></footer>
+    </div>
+  </body>
+</html>
