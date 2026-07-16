@@ -280,7 +280,7 @@
 {"aid":"4aa2914046618d76","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.42}
 {"aid":"dc496ec45fdbdc41","date":"2026-07","branch":"Unbekannt","city":"Köln","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.01}
 {"aid":"5847e8f88b81afad","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":21,"range_max":50,"rating":3.4,"rating_drop":0.23}
-{"aid":"0fbfd1fa9714734d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":250,"range_max":null,"rating":4.3,"rating_drop":0.51}
+{"aid":"0fbfd1fa9714734d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":250,"range_max":null,"rating":4.2,"rating_drop":0.5}
 {"aid":"5e4384c1d1426111","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":2.42}
 {"aid":"55f0b1b3b3b9aeb5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":0.67}
 {"aid":"b785d12c73de70b0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Köln","nameable":false,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":3.03}
@@ -462,7 +462,7 @@
 {"aid":"1b2fcc91913869d1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.96}
 {"aid":"0900c60be8c61594","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":0.92}
 {"aid":"e63b8b18349f3046","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.36}
-{"aid":"4282805871e9a8dc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.9,"rating_drop":0.86}
+{"aid":"4282805871e9a8dc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.9,"rating_drop":0.85}
 {"aid":"59526996af508d64","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.95}
 {"aid":"608ab57728a3a9bc","date":"2026-07","branch":"Beauty & Wellness","city":"Düsseldorf","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
 {"aid":"af58b5d3ae94821c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Düsseldorf","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.73}
@@ -704,7 +704,7 @@
 {"aid":"f5beccdb1766c083","date":"2026-07","branch":"Gesundheit","city":"Hannover","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
 {"aid":"969c19c359102a51","date":"2026-07","branch":"Immobilien","city":"Hannover","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.85}
 {"aid":"bbf359153b64e205","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.06}
-{"aid":"acd4b640e5eeb128","date":"2026-07","branch":"Automobil","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.95}
+{"aid":"acd4b640e5eeb128","date":"2026-07","branch":"Automobil","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.86}
 {"aid":"72322a19cea4bc54","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.98}
 {"aid":"7a22c9949b0f64db","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.44}
 {"aid":"85b0cc7bee276947","date":"2026-07","branch":"Gastronomie & Hotel","city":"Hannover","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.05}
