@@ -133,12 +133,12 @@ function seriesChart(locs) {
   let M = months.slice(a, b + 1), C = cnt.slice(a, b + 1), Sm = sum.slice(a, b + 1);
   let IL = iL.slice(a, b + 1), IH = iH.slice(a, b + 1);
   // Axis cap (Markus 2026-07-19): the transparency notice only covers removals of the past 365
-  // days — show that window plus ~6 months of lead-in (18 total). Older harvest data is coarse
+  // days — show that window plus 3 months of lead-in (15 total). Older harvest data is coarse
   // year-buckets anyway; trimmed months flow into the seed so the line still ends exactly at
   // today's displayed note.
   if (M.length) {
     const last = M[M.length - 1];
-    const cutD = new Date(last + '-01T00:00:00Z'); cutD.setUTCMonth(cutD.getUTCMonth() - 17);
+    const cutD = new Date(last + '-01T00:00:00Z'); cutD.setUTCMonth(cutD.getUTCMonth() - 14); // 365d window + 3 months lead-in (Markus)
     const cutoff = cutD.toISOString().slice(0, 7);
     let cut = 0; while (cut < M.length && M[cut] < cutoff) cut++;
     for (let i = 0; i < cut; i++) { seedC += C[i]; seedS += Sm[i]; }
@@ -166,8 +166,8 @@ function seriesChart(locs) {
   // last-365-day window (rightmost ≤12 months) — where Google's removal total applies
   const bandI = Math.max(0, n - 12);
   const bandX = xf(bandI) - step / 2, bandW = W - pad.r - bandX;
-  // DSA notice-and-action start (02/2024), only if inside the axis
-  const dsaI = M.findIndex((m) => m >= '2024-02');
+  // public transparency notice visible since 2026-04-26, only if inside the axis
+  const bannerI = M.findIndex((m) => m >= '2026-04');
   // build bars + rating path
   const bw = Math.max(2, Math.min(16, step * 0.6));
   const bars = C.map((v, i) => v > 0 ? `<rect x="${(xf(i) - bw / 2).toFixed(1)}" y="${yBar(v).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pad.t + ih - yBar(v)).toFixed(1)}" fill="#7fa8e0" opacity="0.5" rx="1"/>` : '').join('');
@@ -199,14 +199,20 @@ function seriesChart(locs) {
     + `<text x="${(bandX + bandW - 5).toFixed(1)}" y="${pad.t + 13}" text-anchor="end" font-size="10.5" fill="#8c161d" font-family="Roboto,sans-serif">letzte 365 Tage (Entfernungs-Zeitraum)</text>`
     + rTicks
     + bars
-    + (dsaI > 0 ? `<line x1="${xf(dsaI).toFixed(1)}" y1="${pad.t}" x2="${xf(dsaI).toFixed(1)}" y2="${pad.t + ih}" stroke="#b9bcc4" stroke-width="1" stroke-dasharray="3 3"/><text x="${(xf(dsaI) + 4).toFixed(1)}" y="${pad.t + ih - 4}" font-size="10" fill="#676972" font-family="Roboto,sans-serif">DSA 02/24</text>` : '')
+    + (bannerI > 0 ? `<line x1="${xf(bannerI).toFixed(1)}" y1="${pad.t}" x2="${xf(bannerI).toFixed(1)}" y2="${pad.t + ih}" stroke="#b9bcc4" stroke-width="1" stroke-dasharray="3 3"/><text x="${(xf(bannerI) + 4).toFixed(1)}" y="${pad.t + ih - 4}" font-size="10" fill="#676972" font-family="Roboto,sans-serif">Hinweis öffentlich seit 26.04.26</text>` : '')
     + cfBand
     + `<path d="${line}" fill="none" stroke="#2456a6" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2600" stroke-dashoffset="2600"><animate attributeName="stroke-dashoffset" from="2600" to="0" dur="1.3s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1" values="2600;0"/></path>`
     + `<circle cx="${endX.toFixed(1)}" cy="${endY.toFixed(1)}" r="4" fill="#2456a6"/>`
     + `<text x="${(endX - 6).toFixed(1)}" y="${(endY - 8).toFixed(1)}" text-anchor="end" font-size="12" font-weight="600" fill="#2456a6" font-family="Roboto,sans-serif">${de1(rate[n - 1])}★</text>`
     + cfEnd
-    + `<text x="${pad.l}" y="${H - 8}" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${firstM}</text>`
-    + `<text x="${W - pad.r}" y="${H - 8}" text-anchor="end" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${lastM}</text>`
+    + M.map((m, i) => {
+      if (i !== n - 1 && (n - 1 - i) % 2 !== 0) return ''; // every 2nd month, anchored on the newest
+      if (i === n - 2) return ''; // avoid crowding next to the last label
+      const t = new Date(m + '-01T00:00:00Z').toLocaleDateString('de-DE', { month: 'short' }) + ' ' + m.slice(2, 4);
+      const anchor = i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle';
+      const x = i === 0 ? pad.l : i === n - 1 ? W - pad.r : xf(i);
+      return `<text x="${x.toFixed(1)}" y="${H - 8}" text-anchor="${anchor}" font-size="10.5" fill="#676972" font-family="Roboto,sans-serif">${t}</text>`;
+    }).join('')
     + `</svg>`;
   return `<section class="tschart"><h2>Historische Entwicklung</h2>`
     + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: Notenverlauf, rückgerechnet aus den <b>heute sichtbaren</b> Bewertungen — die entfernten sind darin nie enthalten, deshalb zeigt diese Linie keinen Entfernungs-Sprung; sie endet bei der heute angezeigten Note · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen (${de(totalRev)} datierte Bewertungen).${hasCf ? ` <b style="color:#b31e26">Rote Spanne (rechts)</b>: wo die Note <b>heute</b> läge, wenn die entfernten Bewertungen (als 1–2★ gerechnet) noch zählten.` : ''}</p>`
@@ -259,9 +265,9 @@ for (const [bkey, locs] of brands) {
     `<div class="stat"><div class="v">${de(locs.reduce((s, d) => s + (d.reviews || 0), 0))}</div><div class="l">sichtbare Bewertungen</div></div>` +
     `<div class="stat"><div class="v" style="color:${scoreCol(score)}">${score}<span style="font-size:16px;color:var(--ink-3)"> / 100</span></div><div class="l">Statistik-Index (Perzentil nach entfernten Bewertungen im erfassten Datensatz)</div></div>` +
     `</div>` +
-    (hasEst ? `<div class="card"><h2>Was wäre die Bewertung ohne die entfernten Rezensionen?</h2><p class="est-line">Nimmt man an, dass die entfernten Rezensionen im Schnitt 1–2★ vergeben hätten, läge die Note rechnerisch bei <b>~${de1(est)}★</b> statt der angezeigten <b>${de1(rating)}★</b>. Nur eine Schätzung, keine exakten Werte — waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die angezeigte Note die zutreffendere.</p></div>` : '') +
     locList +
     seriesChart(locs) +
+    (hasEst ? `<div class="card"><h2>Was wäre die Bewertung ohne die entfernten Rezensionen?</h2><p class="est-line">Nimmt man an, dass die entfernten Rezensionen im Schnitt 1–2★ vergeben hätten, läge die Note rechnerisch bei <b>~${de1(est)}★</b> statt der angezeigten <b>${de1(rating)}★</b>. Nur eine Schätzung, keine exakten Werte — waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die angezeigte Note die zutreffendere.</p></div>` : '') +
     disclaimer +
     `<p style="font-size:13.5px;color:var(--ink-3)">Mehr: <a href="../branche/${slug(branch)}.html">alle ${esc(branch)}-Einträge</a>${cities[0] ? ` · <a href="../stadt/${slug(cities[0])}.html">${esc(cities[0])}</a>` : ''} · <a href="../rechtslage.html">Warum werden Bewertungen entfernt?</a></p>`;
   const jsonld = breadcrumbLd([{ t: 'aidos', abs: '' }, { t: branch, abs: 'branche/' + slug(branch) + '.html' }, { t: name, abs: rel }]);
