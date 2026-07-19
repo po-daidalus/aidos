@@ -182,8 +182,11 @@ function seriesChart(locs) {
     const yl = yR(cfLo), yh = yR(cfHi), wx = xf(n - 1);
     const cfMid = (cfLo + cfHi) / 2;
     const delta = rate[n - 1] - cfMid;
-    // whisker (range) at the right edge + caps
-    cfBand = `<line x1="${wx.toFixed(1)}" y1="${yl.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2.4" stroke-linecap="round"/>`
+    // horizontal dotted reference line at the estimate mid across the 365d window — a static
+    // "today's estimated level" reference (standard chart idiom), NOT a time path; ends in the whisker
+    const refY = yR(cfMid);
+    cfBand = `<line x1="${bandX.toFixed(1)}" y1="${refY.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${refY.toFixed(1)}" stroke="#b31e26" stroke-width="1.6" stroke-dasharray="1.5 5" stroke-linecap="round" opacity="0.7"/>`
+      + `<line x1="${wx.toFixed(1)}" y1="${yl.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2.4" stroke-linecap="round"/>`
       + `<line x1="${(wx - 5).toFixed(1)}" y1="${yl.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yl.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`
       + `<line x1="${(wx - 5).toFixed(1)}" y1="${yh.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`
       + `<line x1="${wx.toFixed(1)}" y1="${((yl + yh) / 2).toFixed(1)}" x2="${wx.toFixed(1)}" y2="${(yR(rate[n - 1]) + 7).toFixed(1)}" stroke="#b9bcc4" stroke-width="1" stroke-dasharray="2 3"/>`;
@@ -215,7 +218,7 @@ function seriesChart(locs) {
     }).join('')
     + `</svg>`;
   return `<section class="tschart"><h2>Historische Entwicklung</h2>`
-    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: Notenverlauf, rückgerechnet aus den <b>heute sichtbaren</b> Bewertungen — die entfernten sind darin nie enthalten, deshalb zeigt diese Linie keinen Entfernungs-Sprung; sie endet bei der heute angezeigten Note · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen (${de(totalRev)} datierte Bewertungen).${hasCf ? ` <b style="color:#b31e26">Rote Spanne (rechts)</b>: wo die Note <b>heute</b> läge, wenn die entfernten Bewertungen (als 1–2★ gerechnet) noch zählten.` : ''}</p>`
+    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: Notenverlauf, rückgerechnet aus den <b>heute sichtbaren</b> Bewertungen — die entfernten sind darin nie enthalten, deshalb zeigt diese Linie keinen Entfernungs-Sprung; sie endet bei der heute angezeigten Note · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen (${de(totalRev)} datierte Bewertungen).${hasCf ? ` <b style="color:#b31e26">Gepunktete Linie + Spanne (rechts)</b>: wo die Note <b>heute</b> läge, wenn die entfernten Bewertungen (als 1–2★ gerechnet) noch zählten — ein heutiges Schätzniveau als Referenz, keine historische Messung.` : ''}</p>`
     + svg
     + `<p class="cap">Rot hinterlegt sind die letzten 365 Tage, für die Google die Zahl entfernter Bewertungen ausweist.${hasCf ? ` Die tatsächlich angezeigte Note lag <b>vor</b> der Entfernung vermutlich näher an der roten Spanne und ist mit der Entfernung auf das Niveau der blauen Linie <b>gestiegen</b> — <b>wann</b>, veröffentlicht Google nicht, deshalb zeigen wir den Effekt als heutige Spanne und nicht als Verlaufskurve. Die Spanne ist eine <b>Schätzung</b> (Best-/Worst-Case der Google-Spanne); waren die Entfernungen berechtigt (z. B. bei Fake-Kampagnen), ist die angezeigte Note die zutreffendere.` : ` <b>Wann</b> im Fenster entfernt wurde, veröffentlicht Google nicht.`} Werte sind Momentaufnahmen der öffentlichen Google-Daten.</p>`
     + `</section>`;
