@@ -58,7 +58,7 @@
     <div class="kicker">Companies &amp; chains</div>
     <h1>Which companies had the most Google reviews removed?</h1>
     <span class="motif"><b></b><i></i></span>
-    <p class="deck" style="max-width:72ch">Legal entities and larger chains only — no private individuals. Every figure comes from the public Google transparency notice (rolling 365 days). Company detail pages are currently in German.</p>
+    <p class="deck" style="max-width:72ch">Legal entities and larger chains only — no private individuals. Every figure comes from the public Google transparency notice (rolling 365 days).</p>
     <div class="byline"><span class="asof" id="asof"></span></div>
 
     <div class="lookup-box" style="margin:22px 0 4px"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="q" placeholder="Search company or city" autocomplete="off" /></div>
@@ -158,7 +158,7 @@ const brandKey = (b) => { const c = chainOf(b.name); return c ? 'chain:' + c : (
       document.getElementById('empty').style.display = g.length ? 'none' : 'block';
       document.getElementById('rows').innerHTML = g.map((x, i) => {
         const letter = (x.name.match(/[A-Za-zÄÖÜ]/) || ['·'])[0].toUpperCase();
-        const nameCell = x.url ? `<a href="../${x.url}">${esc(x.name)}</a>` : `<span style="font-weight:600;color:var(--ink)">${esc(x.name)}</span>`;
+        const nameCell = x.url ? `<a href="../en/${x.url}">${esc(x.name)}</a>` : `<span style="font-weight:600;color:var(--ink)">${esc(x.name)}</span>`;
         const chainPill = x.n > 1 ? `<span class="pill chain">${x.n} locations</span>` : '';
         const whisk = (x.rating != null && x.est != null && x.est <= x.rating)
           ? `<div class="whisk"><div class="tr"><div class="band" style="left:${scale(x.est).toFixed(0)}%;right:${(100 - scale(x.rating)).toFixed(0)}%"></div><div class="est" style="left:${scale(x.est).toFixed(0)}%"></div><div class="disp" style="left:${scale(x.rating).toFixed(0)}%"></div></div><div class="cap"><span class="r">estimated ${en1(x.est)}★</span><span class="b">displayed ${en1(x.rating)}★</span></div></div>`

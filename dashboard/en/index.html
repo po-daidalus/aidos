@@ -119,7 +119,7 @@
       <div class="covbox">
         <table class="rank" id="covTable"><thead><tr><th>City</th><th class="num">Profiles with removal notice</th><th></th></tr></thead><tbody id="covBody"></tbody></table>
         <p class="asof" id="covNote"></p>
-        <p class="asof">How the survey works is documented in the <a href="methodology.html">methodology</a>. Detailed city and company pages are currently available in German.</p>
+        <p class="asof">How the survey works is documented in the <a href="methodology.html">methodology</a>. City, industry and company pages are available in both languages.</p>
       </div>
     </section>
 
@@ -175,7 +175,7 @@
     const maxIdx = Math.max(1, ...(A.branches || []).map((b) => b.aidos_index));
     document.getElementById('rankBody').innerHTML = (A.branches || []).map((b, i) =>
       `<tr><td class="rank-num">${i + 1}</td>` +
-      `<td><a href="../branche/${slug(b.key)}.html">${esc(tB(b.key))}</a></td>` +
+      `<td><a href="../en/branche/${slug(b.key)}.html">${esc(tB(b.key))}</a></td>` +
       `<td class="num mono-num">${en(b.n)}</td>` +
       `<td><div class="idxbar"><div class="t"><i data-w="${Math.round((b.aidos_index / maxIdx) * 100)}"></i></div></div></td>` +
       `<td class="num"><span class="score" title="rank ${i + 1} of ${A.branches.length} surveyed industries"><span class="val">${b.aidos_index}</span><span class="of">/100</span></span></td></tr>`).join('');
@@ -184,12 +184,12 @@
     const realCities = (A.cities || []).filter((c) => c.n >= 3);
     const maxCity = Math.max(1, ...realCities.map((c) => c.removed || c.n));
     document.getElementById('cityGrid').innerHTML = realCities.map((c) =>
-      `<a class="citycard reveal" href="../stadt/${slug(c.key)}.html"><div class="cn">${esc(tC(c.key))}</div><div class="ch">focus: ${esc((c.hotspot || []).map(tB).join(' & ') || '–')}</div><div class="cs">${en(c.n)} surveyed profiles · index ${en1(c.score)}/10</div><div class="bar"><i data-w="${Math.round(100 * (c.removed || c.n) / maxCity)}"></i></div></a>`).join('')
+      `<a class="citycard reveal" href="../en/stadt/${slug(c.key)}.html"><div class="cn">${esc(tC(c.key))}</div><div class="ch">focus: ${esc((c.hotspot || []).map(tB).join(' & ') || '–')}</div><div class="cs">${en(c.n)} surveyed profiles · index ${en1(c.score)}/10</div><div class="bar"><i data-w="${Math.round(100 * (c.removed || c.n) / maxCity)}"></i></div></a>`).join('')
       || '<p class="muted">No city with a sufficient data basis yet.</p>';
 
     const gen = A.generated ? new Date(A.generated).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }) : null;
     document.getElementById('covBody').innerHTML = realCities.slice().sort((a, b) => b.n - a.n).map((c) =>
-      `<tr><td><a href="../stadt/${slug(c.key)}.html">${esc(tC(c.key))}</a></td><td class="num">${en(c.n)}</td><td><a class="more" href="../stadt/${slug(c.key)}.html">city page (DE) →</a></td></tr>`).join('');
+      `<tr><td><a href="../en/stadt/${slug(c.key)}.html">${esc(tC(c.key))}</a></td><td class="num">${en(c.n)}</td><td><a class="more" href="../en/stadt/${slug(c.key)}.html">city page →</a></td></tr>`).join('');
     const cov = A.coverage || [];
     const covLine = cov.length
       ? ' Measured: ' + cov.map((c) => `in ${tC(c.city)} ${en(c.hit)} of ${en(c.checked)} checked profiles carried the notice (${en1(c.prevalencePct)}%)`).join('; ') + ' — so the vast majority of checked businesses do not appear here at all.'
@@ -204,7 +204,7 @@
         if (q.length < 2) { res.innerHTML = ''; return; }
         const hits = LK.filter((x) => x.n.toLowerCase().includes(q) || (x.c && x.c.toLowerCase().includes(q))).slice(0, 6);
         if (hits.length) {
-          res.innerHTML = hits.map((x) => `<a class="lk-hit" href="../${x.u}"><div><b>${esc(x.n)}</b><span>${esc(tC(x.c))} · ${esc(tB(x.b))}</span></div><div class="r">${esc(x.r)} removed</div></a>`).join('');
+          res.innerHTML = hits.map((x) => `<a class="lk-hit" href="../en/${x.u}"><div><b>${esc(x.n)}</b><span>${esc(tC(x.c))} · ${esc(tB(x.b))}</span></div><div class="r">${esc(x.r)} removed</div></a>`).join('');
         } else {
           const mail = 'mailto:contact@aidos.tech?subject=' + encodeURIComponent('Check a company: ' + input.value) + '&body=' + encodeURIComponent('Please add this company to the aidos survey:\n\n' + input.value);
           res.innerHTML = `<div class="lk-none"><b>“${esc(input.value)}”</b> is not in the dataset yet.<br/><a href="${mail}">→ Submit a company for review</a></div>`;
