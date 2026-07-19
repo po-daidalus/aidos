@@ -88,6 +88,7 @@
 
   <script src="../data.js"></script>
   <script src="../pagemap.js"></script>
+  <script src="../branch-icons.js"></script>
   <script>
     const DATA = (window.AIDOS_DATA || []).filter((b) => b.name);
     const PAGES = window.AIDOS_PAGES || {};
@@ -157,13 +158,12 @@ const brandKey = (b) => { const c = chainOf(b.name); return c ? 'chain:' + c : (
 
       document.getElementById('empty').style.display = g.length ? 'none' : 'block';
       document.getElementById('rows').innerHTML = g.map((x, i) => {
-        const letter = (x.name.match(/[A-Za-zÄÖÜ]/) || ['·'])[0].toUpperCase();
         const nameCell = x.url ? `<a href="../en/${x.url}">${esc(x.name)}</a>` : `<span style="font-weight:600;color:var(--ink)">${esc(x.name)}</span>`;
         const chainPill = x.n > 1 ? `<span class="pill chain">${x.n} locations</span>` : '';
         const whisk = (x.rating != null && x.est != null && x.est <= x.rating)
           ? `<div class="whisk"><div class="tr"><div class="band" style="left:${scale(x.est).toFixed(0)}%;right:${(100 - scale(x.rating)).toFixed(0)}%"></div><div class="est" style="left:${scale(x.est).toFixed(0)}%"></div><div class="disp" style="left:${scale(x.rating).toFixed(0)}%"></div></div><div class="cap"><span class="r">estimated ${en1(x.est)}★</span><span class="b">displayed ${en1(x.rating)}★</span></div></div>`
           : (x.rating != null ? `<div class="whisk"><div class="cap"><span class="b" style="margin-left:auto">displayed ${en1(x.rating)}★</span></div></div>` : '');
-        return `<div class="row"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.branch] || '#5a5a5a'}">${letter}</div>` +
+        return `<div class="row"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.branch] || '#5a5a5a'}">${aidosBranchIcon(x.branch, 24)}</div>` +
           `<div><div class="nm">${nameCell} ${chainPill}</div><div class="meta"><span class="pill">${esc(tB(x.branch))}</span>${x.cities.slice(0, 2).map((c) => `<span class="pill">${esc(tC(c))}</span>`).join('')}${x.rating != null ? `<span class="muted" style="font-size:12.5px">★ ${en1(x.rating)} · ${en(x.reviews)} reviews</span>` : ''}</div></div>` +
           `<div class="right"><div class="removed">${x.label}<span class="lbl">removed reviews${x.n > 1 ? ' (total)' : ''}</span></div>${whisk}</div></div>`;
       }).join('');

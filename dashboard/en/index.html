@@ -42,7 +42,7 @@
     .co-row .nm { color: var(--ink); font-weight: 600; font-size: 15.5px; }
     a.co-row:hover .nm { color: var(--accent); }
     .co-row .meta { display: flex; gap: 6px; align-items: center; margin-top: 3px; flex-wrap: wrap; }
-    .co-row .pill { font: 500 11px var(--sans); color: var(--ink-2); background: var(--fill); padding: 2px 8px; border-radius: 12px; }
+    .co-row .pill { font: 500 11px var(--sans); color: var(--ink-2); background: var(--fill); padding: 2px 8px; border-radius: 12px; display: inline-block; letter-spacing: 0; text-transform: none; margin-bottom: 0; }
     .co-row .right { text-align: right; min-width: 150px; }
     .co-row .removed { font-family: var(--serif); font-weight: 600; font-size: 17px; color: var(--accent); font-variant-numeric: tabular-nums; }
     .co-row .removed .lbl { font-family: var(--sans); font-size: 10.5px; color: var(--ink-3); font-weight: 400; display: block; }
@@ -99,20 +99,6 @@
       <div id="momentum"></div>
     </section>
 
-    <!-- COMPANIES PREVIEW -->
-    <section>
-      <div class="sec-head"><h2>Which companies &amp; chains are affected?</h2><span class="hint">top 5 by removed reviews</span></div>
-      <p class="sec-intro">The businesses with the most removed reviews in the dataset — legal entities and larger chains only, no private individuals. Each row links to the full profile.</p>
-      <div class="co-widget reveal">
-        <div id="coRows"></div>
-        <div class="co-foot">
-          <span class="co-sum" id="coSum"></span>
-          <a class="btn btn-primary" href="listing.html">View the full filterable list →</a>
-        </div>
-      </div>
-      <div class="co-chips" id="coChips"></div>
-    </section>
-
     <!-- LOOKUP -->
     <section>
       <div class="sec-head"><h2>Check a company</h2><span class="hint">searches the collected dataset</span></div>
@@ -149,6 +135,20 @@
       <div class="cities" id="cityGrid"></div>
     </section>
 
+    <!-- COMPANIES PREVIEW -->
+    <section>
+      <div class="sec-head"><h2>Which companies &amp; chains are affected?</h2><span class="hint">top 5 by removed reviews</span></div>
+      <p class="sec-intro">The businesses with the most removed reviews in the dataset — legal entities and larger chains only, no private individuals. Each row links to the full profile.</p>
+      <div class="co-widget reveal">
+        <div id="coRows"></div>
+        <div class="co-foot">
+          <span class="co-sum" id="coSum"></span>
+          <a class="btn btn-primary" href="listing.html">View the full filterable list →</a>
+        </div>
+      </div>
+      <div class="co-chips" id="coChips"></div>
+    </section>
+
     <!-- COVERAGE -->
     <section>
       <div class="sec-head"><h2>The data basis</h2><span class="hint">what is included — and what is not yet</span></div>
@@ -173,6 +173,7 @@
 
   <script src="../aggregates.js"></script>
   <script src="../lookup.js"></script>
+  <script src="../branch-icons.js"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
     const T = A.totals || {};
@@ -236,10 +237,9 @@
       const top = LK.slice().sort((a, b) => remOf(b) - remOf(a)).slice(0, 5);
       const maxRem = Math.max(1, ...top.map(remOf));
       document.getElementById('coRows').innerHTML = top.map((x, i) => {
-        const letter = (x.n.match(/[A-Za-zÄÖÜ]/) || ['·'])[0].toUpperCase();
         const cities = String(x.c || '').split(', ').map(tC);
         const cityLbl = cities.slice(0, 2).join(', ') + (cities.length > 2 ? ` +${cities.length - 2} more` : '');
-        return `<a class="co-row" href="../en/${x.u}"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.b] || '#5a5a5a'}">${letter}</div>` +
+        return `<a class="co-row" href="../en/${x.u}"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.b] || '#5a5a5a'}">${aidosBranchIcon(x.b, 22)}</div>` +
           `<div><div class="nm">${esc(x.n)}</div><div class="meta"><span class="pill">${esc(tB(x.b))}</span><span class="pill">${esc(cityLbl)}</span></div></div>` +
           `<div class="right"><div class="removed">${esc(tR(x.r))}<span class="lbl">removed reviews</span></div><div class="bar"><i data-w="${Math.round(100 * remOf(x) / maxRem)}"></i></div></div></a>`;
       }).join('');

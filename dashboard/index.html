@@ -44,7 +44,7 @@
     .co-row .nm { color: var(--ink); font-weight: 600; font-size: 15.5px; }
     a.co-row:hover .nm { color: var(--accent); }
     .co-row .meta { display: flex; gap: 6px; align-items: center; margin-top: 3px; flex-wrap: wrap; }
-    .co-row .pill { font: 500 11px var(--sans); color: var(--ink-2); background: var(--fill); padding: 2px 8px; border-radius: 12px; }
+    .co-row .pill { font: 500 11px var(--sans); color: var(--ink-2); background: var(--fill); padding: 2px 8px; border-radius: 12px; display: inline-block; letter-spacing: 0; text-transform: none; margin-bottom: 0; }
     .co-row .right { text-align: right; min-width: 150px; }
     .co-row .removed { font-family: var(--serif); font-weight: 600; font-size: 17px; color: var(--accent); font-variant-numeric: tabular-nums; }
     .co-row .removed .lbl { font-family: var(--sans); font-size: 10.5px; color: var(--ink-3); font-weight: 400; display: block; }
@@ -102,20 +102,6 @@
       <div id="momentum"></div>
     </section>
 
-    <!-- COMPANIES PREVIEW -->
-    <section>
-      <div class="sec-head"><h2>Welche Unternehmen &amp; Ketten sind betroffen?</h2><span class="hint">Top 5 nach entfernten Bewertungen</span></div>
-      <p class="sec-intro">Die Betriebe mit den meisten entfernten Bewertungen im Datensatz — ausschließlich juristische Personen und größere Ketten, keine Einzelpersonen. Jede Zeile führt zum vollständigen Profil.</p>
-      <div class="co-widget reveal">
-        <div id="coRows"></div>
-        <div class="co-foot">
-          <span class="co-sum" id="coSum"></span>
-          <a class="btn btn-primary" href="listing.html">Vollständige Liste mit Filtern ansehen →</a>
-        </div>
-      </div>
-      <div class="co-chips" id="coChips"></div>
-    </section>
-
     <!-- LOOKUP -->
     <section>
       <div class="sec-head"><h2>Prüfe ein Unternehmen</h2><span class="hint">durchsucht den erfassten Datensatz</span></div>
@@ -152,6 +138,20 @@
       <div class="cities" id="cityGrid"></div>
     </section>
 
+    <!-- COMPANIES PREVIEW -->
+    <section>
+      <div class="sec-head"><h2>Welche Unternehmen &amp; Ketten sind betroffen?</h2><span class="hint">Top 5 nach entfernten Bewertungen</span></div>
+      <p class="sec-intro">Die Betriebe mit den meisten entfernten Bewertungen im Datensatz — ausschließlich juristische Personen und größere Ketten, keine Einzelpersonen. Jede Zeile führt zum vollständigen Profil.</p>
+      <div class="co-widget reveal">
+        <div id="coRows"></div>
+        <div class="co-foot">
+          <span class="co-sum" id="coSum"></span>
+          <a class="btn btn-primary" href="listing.html">Vollständige Liste mit Filtern ansehen →</a>
+        </div>
+      </div>
+      <div class="co-chips" id="coChips"></div>
+    </section>
+
     <!-- COVERAGE / DATENBASIS -->
     <section>
       <div class="sec-head"><h2>Die Datenbasis</h2><span class="hint">was drin ist — und was noch nicht</span></div>
@@ -182,6 +182,7 @@
 
   <script src="aggregates.js"></script>
   <script src="lookup.js"></script>
+  <script src="branch-icons.js"></script>
   <script src="articles.js"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
@@ -257,10 +258,9 @@
       const top = LK.slice().sort((a, b) => remOf(b) - remOf(a)).slice(0, 5);
       const maxRem = Math.max(1, ...top.map(remOf));
       document.getElementById('coRows').innerHTML = top.map((x, i) => {
-        const letter = (x.n.match(/[A-Za-zÄÖÜ]/) || ['·'])[0].toUpperCase();
         const cities = String(x.c || '').split(', ');
         const cityLbl = cities.slice(0, 2).join(', ') + (cities.length > 2 ? ` +${cities.length - 2} weitere` : '');
-        return `<a class="co-row" href="${x.u}"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.b] || '#5a5a5a'}">${letter}</div>` +
+        return `<a class="co-row" href="${x.u}"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.b] || '#5a5a5a'}">${aidosBranchIcon(x.b, 22)}</div>` +
           `<div><div class="nm">${esc(x.n)}</div><div class="meta"><span class="pill">${esc(x.b)}</span><span class="pill">${esc(cityLbl)}</span></div></div>` +
           `<div class="right"><div class="removed">${esc(x.r)}<span class="lbl">entfernte Bewertungen</span></div><div class="bar"><i data-w="${Math.round(100 * remOf(x) / maxRem)}"></i></div></div></a>`;
       }).join('');

@@ -112,6 +112,18 @@ const CHAIN_CANON = { 'holmes place': 'Holmes Place', 'mcfit': 'McFIT', 'fitx': 
 const chainOf = (n) => { const l = (n || '').toLowerCase(); return Object.keys(CHAIN_CANON).find((c) => l.includes(c)) || null; };
 const brandKey = (b) => { const c = chainOf(b.name); return c ? 'chain:' + c : (b.website && rootDomain(b.website)) || normName(b.name).toLowerCase() || b.place_id; };
 
+// ---------- brand identity on profile pages ----------
+// Self-hosted logo (fetch-logos.mjs → assets/logos/manifest.json) purely for identification;
+// fallback: the aidos branch icon (branch-icons.js). Never hotlinked third-party assets.
+const ICONS = (() => { const w = {}; new Function('window', fs.readFileSync(new URL('dashboard/branch-icons.js', ROOT), 'utf8'))(w); return w.AIDOS_BRANCH_ICONS; })();
+let LOGOS = {};
+try { LOGOS = JSON.parse(fs.readFileSync(new URL('dashboard/assets/logos/manifest.json', ROOT), 'utf8')); } catch { /* kein Logo-Build → überall Branchen-Icon */ }
+const BR_COL = { 'Automobil': '#5a6b52', 'Gastronomie & Hotel': '#8a5a3c', 'Fitness & Sport': '#3a5f6b', 'Gesundheit': '#4a6b6b', 'Recht & Beratung': '#5b5570', 'Immobilien': '#6b5a3c', 'Beauty & Wellness': '#7a4a5a', 'Handwerk & Bau': '#6b5340', 'Einzelhandel': '#4a5a70', 'Sonstige': '#5a5a5a' };
+const branchIconSvg = (branch) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[branch] || ICONS['Sonstige']}</svg>`;
+const brandMark = (name, branch, P) => LOGOS[name]
+  ? `<span class="brandmark logo"><img src="${P}${LOGOS[name]}" alt="" loading="lazy"/></span>`
+  : `<span class="brandmark" style="background:${BR_COL[branch] || '#5a5a5a'}">${branchIconSvg(branch)}</span>`;
+
 const nameable = nameableAll.filter((b) => b.name);
 const brandsAll = new Map();
 for (const b of nameable) { const k = brandKey(b); (brandsAll.get(k) || brandsAll.set(k, []).get(k)).push(b); }
@@ -333,7 +345,7 @@ for (const [bkey, locs] of brands) {
     const locList = locs.length > 1 ? `<div class="card"><h2>${S.locH}</h2><div class="table-scroll"><table class="rank"><thead><tr><th>${S.locTh[0]}</th><th>${S.locTh[1]}</th><th class="num">${S.locTh[2]}</th><th class="num">${S.locTh[3]}</th></tr></thead><tbody>${locs.slice().sort((x, y) => (y.range_max || y.range_min || 0) - (x.range_max || x.range_min || 0)).map((d) => `<tr><td>${esc(d.name || '–')}</td><td>${esc(L.tC(d.city) || '–')}</td><td class="num" style="color:var(--accent);font-weight:600">${L.rangeLabel(d.range_min, d.range_max)}</td><td class="num">${d.rating != null ? nf1(d.rating) + '★' : '–'}</td></tr>`).join('')}</tbody></table></div><p class="asof">${S.locNote}</p></div>` : '';
     const body = crumbs([{ t: 'aidos', href: lang === 'de' ? P + 'index.html' : P + 'en/' }, { t: brLbl, href: brHref }, { t: name }]) +
       `<div class="kicker">${esc(brLbl)}${cities.length ? ' · ' + esc(cityLbls.join(', ')) : ''}</div>` +
-      `<h1>${esc(name)}</h1><span class="motif"><b></b><i></i></span>` +
+      `<div class="titlerow">${brandMark(name, branch, P)}<h1>${esc(name)}</h1></div><span class="motif"><b></b><i></i></span>` +
       `<p class="sub">${S.sub}</p>` +
       (S.asof ? `<p class="asof">${S.asof}</p>` : '') +
       `<div class="grid">` +

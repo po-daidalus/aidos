@@ -15,7 +15,7 @@ const BRANCHES = [
 ];
 
 // Berlin districts / landmarks → Berlin. Extend with more cities as the sweep grows.
-const CITIES = ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt', 'Stuttgart', 'Düsseldorf', 'Leipzig', 'Dortmund', 'Essen', 'Bremen', 'Dresden', 'Hannover', 'Nürnberg', 'Duisburg', 'Bochum', 'Wuppertal', 'Bielefeld', 'Bonn', 'Münster', 'Schönefeld', 'Potsdam'];
+const CITIES = ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt', 'Stuttgart', 'Düsseldorf', 'Leipzig', 'Dortmund', 'Essen', 'Bremen', 'Dresden', 'Hannover', 'Nürnberg', 'Duisburg', 'Bochum', 'Wuppertal', 'Bielefeld', 'Bonn', 'Münster', 'Mannheim', 'Karlsruhe', 'Augsburg', 'Wiesbaden', 'Mönchengladbach', 'Schönefeld', 'Potsdam'];
 const BERLIN_HINTS = ['mitte', 'wedding', 'friedrichshain', 'kreuzberg', 'charlottenburg', 'wilmersdorf', 'neukölln', 'schöneberg', 'steglitz', 'zehlendorf', 'spandau', 'pankow', 'reinickendorf', 'tempelhof', 'lichtenberg', 'treptow', 'köpenick', 'marzahn', 'hellersdorf', 'moabit', 'prenzlauer', "ku'damm", 'ku’damm', 'kudamm', 'kurfürstendamm', 'alexanderplatz', 'potsdamer platz'];
 
 export function branchOf(name = '', category = '') {
@@ -67,6 +67,15 @@ export function plzCity(plz) {
   if (p >= 44135 && p <= 44388) return 'Dortmund';
   if (p >= 44787 && p <= 44894) return 'Bochum';
   if (p >= 47051 && p <= 47279) return 'Duisburg';
+  if (p >= 42103 && p <= 42399) return 'Wuppertal';
+  if (p >= 33602 && p <= 33739) return 'Bielefeld';
+  if (p >= 53111 && p <= 53229) return 'Bonn';
+  if (p >= 48143 && p <= 48167) return 'Münster';
+  if (p >= 68159 && p <= 68309) return 'Mannheim';
+  if (p >= 76131 && p <= 76229) return 'Karlsruhe';
+  if (p >= 86150 && p <= 86199) return 'Augsburg';
+  if (p >= 65183 && p <= 65207) return 'Wiesbaden';
+  if (p >= 41061 && p <= 41239) return 'Mönchengladbach';
   return null;
 }
 const KNOWN = new Set(CITIES.concat('Frankfurt am Main').map((c) => c.toLowerCase()));

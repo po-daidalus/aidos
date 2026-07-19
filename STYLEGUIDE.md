@@ -52,6 +52,15 @@ Nur **eine** Akzentfarbe. Rot/Grün-Wertungen vermeiden (kein „Ampel"-Framing 
 </a>
 ```
 
+## Branchen-Icons & Markenlogos
+- **Branchen-Icons:** eigenes Set in `dashboard/branch-icons.js` (`aidosBranchIcon(branch, px)`) —
+  im Duktus des Bildzeichens: geometrische Grundformen, eine Strichstärke (1.7), runde Kappen,
+  `currentColor`. Einsatz: Avatare in Listen/Widgets (weiß auf Branchenfarbe), Fallback auf Profilseiten.
+- **Markenlogos:** NUR auf der jeweiligen Unternehmens-Profilseite, rein zur Identifikation
+  (referenzielle Nutzung). Zur Build-Zeit geladen und **selbst gehostet**
+  (`node pipeline/fetch-logos.mjs` → `dashboard/assets/logos/` + `manifest.json`) — nie gehotlinkt.
+  Kein Logo im Manifest → Branchen-Icon. Social-Plattform-Icons (Instagram & Co.) sind ausgeschlossen.
+
 ## Komponenten (in `site.css`)
 - `.masthead` / `.masthead-inner` / `.nav a.on` — 2px-Tinte-Unterkante, sticky, keine Schatten.
 - `.kicker` (Bordeaux-Versalien) · `.deck` (Serif-Vorspann) · `.byline` · `.sec-head` + `.hint`.
@@ -68,7 +77,7 @@ Nur **eine** Akzentfarbe. Rot/Grün-Wertungen vermeiden (kein „Ampel"-Framing 
 ## Verbindliche Don'ts
 - ❌ Google-Markenfarben, `'Google Sans'`, Material-Elevation/Schatten.
 - ❌ Emoji als Icon/Ranking-Schmuck.
-- ❌ Fremde Fotos, gehotlinkte Favicons/Static-Maps.
+- ❌ Fremde Fotos, gehotlinkte Favicons/Static-Maps. (Einzige Ausnahme: selbst gehostete Markenlogos auf Profilseiten, s. o.)
 - ❌ Kennzahl ohne Stand-Datum; Score/Index ohne sichtbares `n`.
 - ❌ Erfundene Artikel-Karten/Lesezeiten für nicht existierende Inhalte.
 
