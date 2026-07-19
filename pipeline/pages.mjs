@@ -91,7 +91,7 @@ ${foot}
 <script>
 (function(){
   document.querySelectorAll('.more-btn').forEach(function(b){b.addEventListener('click',function(){var r=b.nextElementSibling;var open=r.hidden;r.hidden=!open;b.textContent=open?(b.dataset.less||'weniger'):(b.dataset.more||'mehr');});});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.35});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;requestAnimationFrame(function(){requestAnimationFrame(function(){el.classList.add('in');});});io.unobserve(el);}});},{threshold:.25});
   document.querySelectorAll('.tschart').forEach(function(el){io.observe(el);});
 })();
 </script>
@@ -207,7 +207,10 @@ function seriesChart(locs, lang, estPair) {
     cfBand = `<g class="ts-fade"><rect x="${bandX.toFixed(1)}" y="${yh.toFixed(1)}" width="${(wx - bandX).toFixed(1)}" height="${Math.max(2, yl - yh).toFixed(1)}" fill="#b31e26" opacity="0.07"/>`
       + `<line x1="${bandX.toFixed(1)}" y1="${yh.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="1.2" stroke-dasharray="1 4.5" stroke-linecap="round" opacity="0.5"/>`
       + `<line x1="${bandX.toFixed(1)}" y1="${yl.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yl.toFixed(1)}" stroke="#b31e26" stroke-width="1.2" stroke-dasharray="1 4.5" stroke-linecap="round" opacity="0.5"/>`
+      + `<line x1="${bandX.toFixed(1)}" y1="${((yl + yh) / 2).toFixed(1)}" x2="${wx.toFixed(1)}" y2="${((yl + yh) / 2).toFixed(1)}" stroke="#b31e26" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>`
       + `<line x1="${wx.toFixed(1)}" y1="${yl.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2.2" stroke-linecap="round"/>`
+      + `<line x1="${(wx - 5).toFixed(1)}" y1="${yl.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yl.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`
+      + `<line x1="${(wx - 5).toFixed(1)}" y1="${yh.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`
       + `<text x="${(wx - 8).toFixed(1)}" y="${(yl + 15).toFixed(1)}" text-anchor="end" font-size="11.5" font-weight="600" fill="#b31e26">${cfLbl}</text></g>`;
   }
   const rTicks = [lo, (lo + hi) / 2, hi].map((t, ti) => `<line x1="${pad.l}" y1="${yR(t).toFixed(1)}" x2="${W - pad.r}" y2="${yR(t).toFixed(1)}" stroke="#eef0f4"/><text x="${pad.l - 6}" y="${(yR(t) + 3.5).toFixed(1)}" text-anchor="end" font-size="10" fill="#9a9ca6">${nf1(t)}${ti === 2 ? '★' : ''}</text>`).join('');

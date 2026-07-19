@@ -35,6 +35,29 @@
     .idxbar .t { flex: 1; height: 8px; background: var(--fill); border-radius: 4px; overflow: hidden; max-width: 160px; }
     .idxbar .t > i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 4px; transition: width 1s var(--ease); }
     .idxbar b { font-variant-numeric: tabular-nums; color: var(--ink); }
+    /* companies preview widget */
+    .co-widget { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .co-row { display: grid; grid-template-columns: 24px 42px 1fr auto; gap: 14px; align-items: center; padding: 13px 20px; border-bottom: 1px solid var(--rule); }
+    a.co-row:hover { background: var(--fill); text-decoration: none; }
+    .co-row .rk { font-family: var(--serif); font-weight: 600; font-size: 17px; color: var(--ink-3); text-align: center; }
+    .co-row .av { width: 42px; height: 42px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 600; font-size: 18px; color: #fff; }
+    .co-row .nm { color: var(--ink); font-weight: 600; font-size: 15.5px; }
+    a.co-row:hover .nm { color: var(--accent); }
+    .co-row .meta { display: flex; gap: 6px; align-items: center; margin-top: 3px; flex-wrap: wrap; }
+    .co-row .pill { font: 500 11px var(--sans); color: var(--ink-2); background: var(--fill); padding: 2px 8px; border-radius: 12px; }
+    .co-row .right { text-align: right; min-width: 150px; }
+    .co-row .removed { font-family: var(--serif); font-weight: 600; font-size: 17px; color: var(--accent); font-variant-numeric: tabular-nums; }
+    .co-row .removed .lbl { font-family: var(--sans); font-size: 10.5px; color: var(--ink-3); font-weight: 400; display: block; }
+    .co-row .bar { height: 5px; background: var(--fill); border-radius: 3px; overflow: hidden; margin-top: 5px; }
+    .co-row .bar > i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 3px; transition: width 1s var(--ease); }
+    .co-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 15px 20px; }
+    .co-sum { font-size: 13.5px; color: var(--ink-2); }
+    .co-sum b { color: var(--ink); }
+    .co-chips { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 14px; }
+    .co-chips .lbl { font-size: 12.5px; color: var(--ink-3); margin-right: 2px; }
+    .co-chip { font: 500 12.5px var(--sans); padding: 5px 12px; border: 1px solid var(--rule-2); border-radius: 18px; color: var(--ink-2); background: var(--surface); }
+    .co-chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) { .co-row { grid-template-columns: 38px 1fr; } .co-row .rk { display: none; } .co-row .right { grid-column: 2; text-align: left; } .co-foot { flex-direction: column; align-items: flex-start; } }
     /* city cards */
     .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
     .citycard { display: block; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); padding: 18px 20px; transition: box-shadow .2s var(--ease), transform .2s var(--ease); }
@@ -77,6 +100,20 @@
       <div class="sec-head"><h2>Was sich verändert hat</h2><span class="hint">Vergleich der monatlichen Basismessungen — öffentliche Angaben, jeweils zum Stand-Datum</span></div>
       <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen berechnen wir die <em>Veränderung</em> derselben Betriebe — einen Fluss-Wert, den Google selbst nie anzeigt.</p>
       <div id="momentum"></div>
+    </section>
+
+    <!-- COMPANIES PREVIEW -->
+    <section>
+      <div class="sec-head"><h2>Welche Unternehmen &amp; Ketten sind betroffen?</h2><span class="hint">Top 5 nach entfernten Bewertungen</span></div>
+      <p class="sec-intro">Die Betriebe mit den meisten entfernten Bewertungen im Datensatz — ausschließlich juristische Personen und größere Ketten, keine Einzelpersonen. Jede Zeile führt zum vollständigen Profil.</p>
+      <div class="co-widget reveal">
+        <div id="coRows"></div>
+        <div class="co-foot">
+          <span class="co-sum" id="coSum"></span>
+          <a class="btn btn-primary" href="listing.html">Vollständige Liste mit Filtern ansehen →</a>
+        </div>
+      </div>
+      <div class="co-chips" id="coChips"></div>
     </section>
 
     <!-- LOOKUP -->
@@ -132,12 +169,6 @@
       <div class="tiles" id="tiles"></div>
     </section>
 
-    <!-- CTA -->
-    <section>
-      <div class="sec-head"><h2>Welche Unternehmen &amp; Ketten sind betroffen?</h2></div>
-      <p class="sec-intro">Zur durchsuch- und filterbaren Liste — ausschließlich juristische Personen und größere Ketten, keine Einzelpersonen.</p>
-      <a class="btn btn-primary" href="listing.html">Unternehmen &amp; Ketten ansehen</a>
-    </section>
   </div>
 
   <footer class="site-foot">
@@ -217,6 +248,27 @@
       const bars = (a.bars || [40, 70, 100, 55, 30, 60, 45]).map((h) => `<i style="height:${h}%"></i>`).join('');
       return `<a class="tile reveal" href="${a.url}"><div class="cover"><span class="tag">${esc(a.tag || 'Report')}</span><div class="cbars">${bars}</div></div><div class="body"><h3>${esc(a.title)}</h3><p>${esc(a.teaser)}</p><span class="more">Report lesen →</span></div></a>`;
     }).join('');
+
+    // companies preview — top 5 by removed reviews, straight from the lookup index
+    (function () {
+      const LK = window.AIDOS_LOOKUP || [];
+      const BR_COL = { 'Automobil': '#5a6b52', 'Gastronomie & Hotel': '#8a5a3c', 'Fitness & Sport': '#3a5f6b', 'Gesundheit': '#4a6b6b', 'Recht & Beratung': '#5b5570', 'Immobilien': '#6b5a3c', 'Beauty & Wellness': '#7a4a5a', 'Handwerk & Bau': '#6b5340', 'Einzelhandel': '#4a5a70', 'Sonstige': '#5a5a5a' };
+      const remOf = (x) => Math.max(0, ...(String(x.r || '').match(/\d+/g) || ['0']).map(Number));
+      const top = LK.slice().sort((a, b) => remOf(b) - remOf(a)).slice(0, 5);
+      const maxRem = Math.max(1, ...top.map(remOf));
+      document.getElementById('coRows').innerHTML = top.map((x, i) => {
+        const letter = (x.n.match(/[A-Za-zÄÖÜ]/) || ['·'])[0].toUpperCase();
+        const cities = String(x.c || '').split(', ');
+        const cityLbl = cities.slice(0, 2).join(', ') + (cities.length > 2 ? ` +${cities.length - 2} weitere` : '');
+        return `<a class="co-row" href="${x.u}"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.b] || '#5a5a5a'}">${letter}</div>` +
+          `<div><div class="nm">${esc(x.n)}</div><div class="meta"><span class="pill">${esc(x.b)}</span><span class="pill">${esc(cityLbl)}</span></div></div>` +
+          `<div class="right"><div class="removed">${esc(x.r)}<span class="lbl">entfernte Bewertungen</span></div><div class="bar"><i data-w="${Math.round(100 * remOf(x) / maxRem)}"></i></div></div></a>`;
+      }).join('');
+      document.getElementById('coSum').innerHTML = `<b>${de(LK.length)}</b> gelistete Unternehmen &amp; Ketten in <b>${de(cityCount)}</b> Städten — durchsuchbar, filterbar nach Branche und Stadt, mit geschätztem Rating-Effekt.`;
+      document.getElementById('coChips').innerHTML = '<span class="lbl">Direkt zur Branche:</span>' +
+        (A.branches || []).slice(0, 5).map((b) => `<a class="co-chip" href="listing.html?branche=${encodeURIComponent(b.key)}">${esc(b.key)}</a>`).join('') +
+        '<a class="co-chip" href="listing.html">Alle Branchen →</a>';
+    })();
 
     // lookup
     (function () {

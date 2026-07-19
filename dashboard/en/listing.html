@@ -177,6 +177,16 @@ const brandKey = (b) => { const c = chainOf(b.name); return c ? 'chain:' + c : (
     document.getElementById('city').addEventListener('change', (e) => { fCity = e.target.value; render(); });
     document.getElementById('sort').addEventListener('change', (e) => { fSort = e.target.value; render(); });
     document.getElementById('q').addEventListener('input', (e) => { fQ = e.target.value.trim().toLowerCase(); render(); });
+
+    // deep links from the home widget: ?branche=…&stadt=…&q=… (keys are the German data values)
+    const qp = new URLSearchParams(location.search);
+    const qpBranch = qp.get('branche') || '', qpCity = qp.get('stadt') || '', qpQ = (qp.get('q') || '').trim();
+    if (qpBranch && branchesByVol.includes(qpBranch)) {
+      fBranch = qpBranch;
+      document.querySelectorAll('#chips .chip').forEach((c) => c.classList.toggle('on', c.dataset.b === fBranch));
+    }
+    if (qpCity && allCities.includes(qpCity)) { fCity = qpCity; document.getElementById('city').value = qpCity; }
+    if (qpQ) { fQ = qpQ.toLowerCase(); document.getElementById('q').value = qpQ; }
     render();
   </script>
 </body>
