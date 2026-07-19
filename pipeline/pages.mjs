@@ -130,8 +130,18 @@ function seriesChart(locs) {
   }
   let a = 0; while (a < months.length && cnt[a] === 0) a++;          // trim empty lead
   let b = months.length - 1; while (b > a && cnt[b] === 0) b--;       // trim empty tail
-  const M = months.slice(a, b + 1), C = cnt.slice(a, b + 1), Sm = sum.slice(a, b + 1);
-  const IL = iL.slice(a, b + 1), IH = iH.slice(a, b + 1);
+  let M = months.slice(a, b + 1), C = cnt.slice(a, b + 1), Sm = sum.slice(a, b + 1);
+  let IL = iL.slice(a, b + 1), IH = iH.slice(a, b + 1);
+  // Axis cap (Markus 2026-07-19): the transparency notice only covers removals of the past 365
+  // days — show that window plus ~6 months of lead-in (18 total). Older harvest data is coarse
+  // year-buckets anyway; trimmed months flow into the seed so the line still ends exactly at
+  // today's displayed note.
+  const KEEP = 18;
+  if (M.length > KEEP) {
+    const cut = M.length - KEEP;
+    for (let i = 0; i < cut; i++) { seedC += C[i]; seedS += Sm[i]; }
+    M = M.slice(cut); C = C.slice(cut); Sm = Sm.slice(cut); IL = IL.slice(cut); IH = IH.slice(cut);
+  }
   const totalRev = C.reduce((s, v) => s + v, 0);
   if (M.length < 4 || totalRev < 12) return tsPlaceholder();         // too sparse to be meaningful
   let cc = seedC, cs = seedS; const rate = M.map((m, i) => { cc += C[i]; cs += Sm[i]; return cs / cc; }); // cumulative displayed rating
@@ -197,9 +207,9 @@ function seriesChart(locs) {
     + `<text x="${W - pad.r}" y="${H - 8}" text-anchor="end" font-size="11" fill="#676972" font-family="Roboto,sans-serif">${lastM}</text>`
     + `</svg>`;
   return `<section class="tschart"><h2>Historische Entwicklung</h2>`
-    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: Verlauf der angezeigten Note (ohne die entfernten Bewertungen — endet bei der heute angezeigten Note) · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen (${de(totalRev)} datierte Bewertungen).${hasCf ? ` <b style="color:#b31e26">Rote Spanne (rechts)</b>: wo die Note <b>heute</b> läge, wenn die entfernten Bewertungen (als 1–2★ gerechnet) noch zählten — die Entfernungen haben die angezeigte Note also um den markierten Effekt <b>angehoben</b>.` : ''}</p>`
+    + `<p class="lead"><b style="color:#2456a6">Blaue Linie</b>: Notenverlauf, rückgerechnet aus den <b>heute sichtbaren</b> Bewertungen — die entfernten sind darin nie enthalten, deshalb zeigt diese Linie keinen Entfernungs-Sprung; sie endet bei der heute angezeigten Note · <b style="color:#7fa8e0">Balken</b>: monatliches Bewertungs-Aufkommen (${de(totalRev)} datierte Bewertungen).${hasCf ? ` <b style="color:#b31e26">Rote Spanne (rechts)</b>: wo die Note <b>heute</b> läge, wenn die entfernten Bewertungen (als 1–2★ gerechnet) noch zählten.` : ''}</p>`
     + svg
-    + `<p class="cap">Rot hinterlegt sind die letzten 365 Tage, für die Google die Zahl entfernter Bewertungen ausweist. <b>Wann</b> im Fenster entfernt wurde, veröffentlicht Google nicht — deshalb zeigen wir den Effekt bewusst als heutige Spanne und nicht als Verlaufskurve.${hasCf ? ` Die Spanne ist eine <b>Schätzung</b> (Best-/Worst-Case der Google-Spanne); waren die Entfernungen berechtigt (z. B. bei Fake-Kampagnen), ist die angezeigte Note die zutreffendere.` : ''} Werte sind Momentaufnahmen der öffentlichen Google-Daten.</p>`
+    + `<p class="cap">Rot hinterlegt sind die letzten 365 Tage, für die Google die Zahl entfernter Bewertungen ausweist.${hasCf ? ` Die tatsächlich angezeigte Note lag <b>vor</b> der Entfernung vermutlich näher an der roten Spanne und ist mit der Entfernung auf das Niveau der blauen Linie <b>gestiegen</b> — <b>wann</b>, veröffentlicht Google nicht, deshalb zeigen wir den Effekt als heutige Spanne und nicht als Verlaufskurve. Die Spanne ist eine <b>Schätzung</b> (Best-/Worst-Case der Google-Spanne); waren die Entfernungen berechtigt (z. B. bei Fake-Kampagnen), ist die angezeigte Note die zutreffendere.` : ` <b>Wann</b> im Fenster entfernt wurde, veröffentlicht Google nicht.`} Werte sind Momentaufnahmen der öffentlichen Google-Daten.</p>`
     + `</section>`;
 }
 
