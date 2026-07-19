@@ -136,9 +136,11 @@ function seriesChart(locs) {
   // days — show that window plus ~6 months of lead-in (18 total). Older harvest data is coarse
   // year-buckets anyway; trimmed months flow into the seed so the line still ends exactly at
   // today's displayed note.
-  const KEEP = 18;
-  if (M.length > KEEP) {
-    const cut = M.length - KEEP;
+  if (M.length) {
+    const last = M[M.length - 1];
+    const cutD = new Date(last + '-01T00:00:00Z'); cutD.setUTCMonth(cutD.getUTCMonth() - 17);
+    const cutoff = cutD.toISOString().slice(0, 7);
+    let cut = 0; while (cut < M.length && M[cut] < cutoff) cut++;
     for (let i = 0; i < cut; i++) { seedC += C[i]; seedS += Sm[i]; }
     M = M.slice(cut); C = C.slice(cut); Sm = Sm.slice(cut); IL = IL.slice(cut); IH = IH.slice(cut);
   }
