@@ -124,6 +124,17 @@ const brandMark = (name, branch, P) => LOGOS[name]
   ? `<span class="brandmark logo"><img src="${P}${LOGOS[name]}" alt="" loading="lazy"/></span>`
   : `<span class="brandmark" style="background:${BR_COL[branch] || '#5a5a5a'}">${branchIconSvg(branch)}</span>`;
 
+// per-location estimate whisker (mirrors listing.html rows: red dot = estimated, blue dot = displayed)
+const scaleR = (v) => Math.max(0, Math.min(100, ((v - 3) / 2) * 100)); // rating 3–5 → 0–100%
+function locWhisk(d, lang) {
+  const L = LANGS[lang];
+  const g = lang === 'de' ? 'geschätzt' : 'estimated', a = lang === 'de' ? 'angezeigt' : 'displayed';
+  if (d.rating == null) return '–';
+  if (d.est_mid == null || d.est_mid > d.rating)
+    return `<div class="whisk"><div class="cap"><span class="b" style="margin-left:auto">${a} ${L.nf1(d.rating)}★</span></div></div>`;
+  return `<div class="whisk"><div class="tr"><div class="band" style="left:${scaleR(d.est_mid).toFixed(0)}%;right:${(100 - scaleR(d.rating)).toFixed(0)}%"></div><div class="est" style="left:${scaleR(d.est_mid).toFixed(0)}%"></div><div class="disp" style="left:${scaleR(d.rating).toFixed(0)}%"></div></div><div class="cap"><span class="r">${g} ${L.nf1(d.est_mid)}★</span><span class="b">${a} ${L.nf1(d.rating)}★</span></div></div>`;
+}
+
 const nameable = nameableAll.filter((b) => b.name);
 const brandsAll = new Map();
 for (const b of nameable) { const k = brandKey(b); (brandsAll.get(k) || brandsAll.set(k, []).get(k)).push(b); }
@@ -321,7 +332,7 @@ for (const [bkey, locs] of brands) {
       ? `Laut dem öffentlichen Transparenz-Hinweis von Google Maps wurden bei ${name}${cities.length ? ' (' + cityLbls.join(', ') + ')' : ''} in den letzten 365 Tagen ${rl} Bewertungen nach Diffamierungs-Beschwerden entfernt${ar.multi ? ' (Summe aller Standorte)' : ''}. Branche: ${brLbl}.`
       : `According to Google Maps' public transparency notice, ${rl} reviews were removed at ${name}${cities.length ? ' (' + cityLbls.join(', ') + ')' : ''} in the past 365 days following defamation complaints${ar.multi ? ' (total across locations)' : ''}. Industry: ${brLbl}.`;
     const S = lang === 'de' ? {
-      locH: `${locs.length} erfasste Standorte`, locTh: ['Standort', 'Stadt', 'Entfernt (365 T.)', 'angezeigte Note'],
+      locH: `${locs.length} erfasste Standorte`, locTh: ['Standort', 'Stadt', 'Entfernt (365 T.)', 'Note: geschätzt · angezeigt'],
       locNote: 'Zahlen je Standort aus dem jeweiligen öffentlichen Google-Maps-Profil zum Stand-Datum.',
       sub: `Laut dem öffentlichen Google-Maps-Hinweis wurden bei ${locs.length > 1 ? 'diesen Standorten' : 'diesem Unternehmen'} in den letzten 365 Tagen <b>${rl}</b> Bewertungen nach Diffamierungs-Beschwerden entfernt.`,
       asof: stand ? `Stand der Erhebung: ${stand} · Quelle: öffentliches Google-Maps-Profil · <a href="${esc(mapsUrl)}" target="_blank" rel="noopener">auf Google Maps ansehen ↗</a>` : null,
@@ -331,7 +342,7 @@ for (const [bkey, locs] of brands) {
       moreRow: `Mehr: <a href="${P}branche/${slug(branch)}.html">alle ${esc(brLbl)}-Einträge</a>${cities[0] ? ` · <a href="${P}stadt/${slug(cities[0])}.html">${esc(cityLbls[0])}</a>` : ''} · <a href="${P}rechtslage.html">Warum werden Bewertungen entfernt?</a>`,
       branches: 'Branchen',
     } : {
-      locH: `${locs.length} surveyed locations`, locTh: ['Location', 'City', 'Removed (365 d)', 'displayed rating'],
+      locH: `${locs.length} surveyed locations`, locTh: ['Location', 'City', 'Removed (365 d)', 'rating: estimated · displayed'],
       locNote: 'Per-location figures from the respective public Google Maps profile at the survey date.',
       sub: `According to the public Google Maps notice, <b>${rl}</b> reviews were removed at ${locs.length > 1 ? 'these locations' : 'this business'} in the past 365 days following defamation complaints.`,
       asof: stand ? `Survey date: ${stand} · source: public Google Maps profile · <a href="${esc(mapsUrl)}" target="_blank" rel="noopener">view on Google Maps ↗</a>` : null,
@@ -342,7 +353,7 @@ for (const [bkey, locs] of brands) {
       branches: 'Industries',
     };
     const brHref = (lang === 'de' ? P + 'branche/' : P + 'en/branche/') + slug(branch) + '.html';
-    const locList = locs.length > 1 ? `<div class="card"><h2>${S.locH}</h2><div class="table-scroll"><table class="rank"><thead><tr><th>${S.locTh[0]}</th><th>${S.locTh[1]}</th><th class="num">${S.locTh[2]}</th><th class="num">${S.locTh[3]}</th></tr></thead><tbody>${locs.slice().sort((x, y) => (y.range_max || y.range_min || 0) - (x.range_max || x.range_min || 0)).map((d) => `<tr><td>${esc(d.name || '–')}</td><td>${esc(L.tC(d.city) || '–')}</td><td class="num" style="color:var(--accent);font-weight:600">${L.rangeLabel(d.range_min, d.range_max)}</td><td class="num">${d.rating != null ? nf1(d.rating) + '★' : '–'}</td></tr>`).join('')}</tbody></table></div><p class="asof">${S.locNote}</p></div>` : '';
+    const locList = locs.length > 1 ? `<div class="card"><h2>${S.locH}</h2><div class="table-scroll"><table class="rank"><thead><tr><th>${S.locTh[0]}</th><th>${S.locTh[1]}</th><th class="num">${S.locTh[2]}</th><th class="num">${S.locTh[3]}</th></tr></thead><tbody>${locs.slice().sort((x, y) => (y.range_max || y.range_min || 0) - (x.range_max || x.range_min || 0)).map((d) => `<tr><td>${esc(d.name || '–')}</td><td>${esc(L.tC(d.city) || '–')}</td><td class="num" style="color:var(--accent);font-weight:600">${L.rangeLabel(d.range_min, d.range_max)}</td><td class="num">${locWhisk(d, lang)}</td></tr>`).join('')}</tbody></table></div><p class="asof">${S.locNote}</p></div>` : '';
     const body = crumbs([{ t: 'aidos', href: lang === 'de' ? P + 'index.html' : P + 'en/' }, { t: brLbl, href: brHref }, { t: name }]) +
       `<div class="kicker">${esc(brLbl)}${cities.length ? ' · ' + esc(cityLbls.join(', ')) : ''}</div>` +
       `<div class="titlerow">${brandMark(name, branch, P)}<h1>${esc(name)}</h1></div><span class="motif"><b></b><i></i></span>` +
