@@ -98,7 +98,12 @@
     // brand grouping (mirrors pages.mjs so links match the generated /unternehmen pages)
     const normName = (n) => (n || '').split(/ [-–] /)[0].trim();
     const rootDomain = (u) => { try { const h = new URL(u).hostname.replace(/^www\./, ''); const p = h.split('.'); return p.length > 2 ? p.slice(-2).join('.') : h; } catch { return null; } };
-    const brandKey = (b) => (b.website && rootDomain(b.website)) || normName(b.name).toLowerCase() || b.place_id;
+    // well-known chains: group ALL locations under ONE canonical brand page, regardless of the
+// name suffixes Google shows ("Holmes Place", "Holmes Place Berlin New World", "Holmes Place
+// Fitness - ..." are one brand) — enables the brand → locations drill-down requested
+const CHAIN_CANON = { 'holmes place': 'Holmes Place', 'mcfit': 'McFIT', 'fitx': 'FitX', 'clever fit': 'clever fit', 'john reed': 'JOHN REED', 'superfit': 'SuperFit', 'evo fitness': 'EVO Fitness', 'aspria': 'Aspria', 'alldent': 'AllDent Zahnzentrum', 'autoland': 'Autoland', 'mcmakler': 'McMakler', 'ibis budget': 'ibis budget', 'motel one': 'Motel One', "mongo's": "Mongo's", 'kult gemüse kebab': 'Kult Gemüse Kebab' };
+const chainOf = (n) => { const l = (n || '').toLowerCase(); return Object.keys(CHAIN_CANON).find((c) => l.includes(c)) || null; };
+const brandKey = (b) => { const c = chainOf(b.name); return c ? 'chain:' + c : (b.website && rootDomain(b.website)) || normName(b.name).toLowerCase() || b.place_id; };
     const LEGAL_FORM = /\b(g?GmbH|mbH|UG|AG|KGaA|KG|OHG|SE|Ltd|Limited|Inc|PLC)\b/i;
     const CHAINS = ['holmes place', 'mcfit', 'fitx', 'clever fit', 'john reed', 'fitness first', 'kieser', 'aspria', 'vapiano', "l'osteria", 'peter pane', 'block house', 'nordsee', 'starbucks', 'mcdonald', 'burger king', 'kfc', 'subway', 'motel one', 'ibis', 'novotel', 'mercure', 'premier inn', 'meininger', 'leonardo', 'radisson', 'hilton', 'autoland', 'rossmann', 'edeka', 'rewe', 'aldi', 'lidl', 'citroen', 'citroën'];
     const BR_COL = { 'Automobil': '#5a6b52', 'Gastronomie & Hotel': '#8a5a3c', 'Fitness & Sport': '#3a5f6b', 'Gesundheit': '#4a6b6b', 'Recht & Beratung': '#5b5570', 'Immobilien': '#6b5a3c', 'Beauty & Wellness': '#7a4a5a', 'Handwerk & Bau': '#6b5340', 'Einzelhandel': '#4a5a70', 'Sonstige': '#5a5a5a' };
@@ -116,7 +121,8 @@
     function aggRange(locs) { const min = locs.reduce((s, d) => s + (d.range_min || 0), 0); const anyCap = locs.some((d) => d.range_min != null && d.range_max == null); const max = locs.reduce((s, d) => s + (d.range_max || d.range_min || 0), 0); return { label: anyCap ? 'über ' + min : (min === max ? String(min) : min + '–' + max), min, max: anyCap ? null : max }; }
 
     const GROUPS = [...brands.entries()].filter(([, l]) => isListable(l)).map(([k, locs]) => {
-      const name = normName(locs[0].name) || locs[0].name;
+      const ck = chainOf(locs[0].name);
+      const name = ck ? CHAIN_CANON[ck] : (normName(locs[0].name) || locs[0].name);
       const cities = [...new Set(locs.map((d) => d.city).filter(Boolean))];
       const branch = locs.map((d) => d.branch).find(Boolean) || 'Sonstige';
       const ar = aggRange(locs);

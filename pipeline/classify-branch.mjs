@@ -84,7 +84,8 @@ export function cityOf(name = '', city = '', address = '') {
   const byPlz = plz && plzCity(plz[1]);
   if (byPlz) return byPlz;
   const hay = ((address || '') + ' ' + (name || '')).toLowerCase();
-  for (const c of CITIES) if (hay.includes(c.toLowerCase())) return canonCity(c);
+  // word-boundary match: "Potsdamer Platz" must NOT match the city Potsdam
+  for (const c of CITIES) if (new RegExp(c.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![a-z\u00e4\u00f6\u00fc\u00df])').test(hay)) return canonCity(c);
   if (BERLIN_HINTS.some((h) => hay.includes(h))) return 'Berlin';
   return null;
 }

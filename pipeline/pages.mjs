@@ -69,7 +69,12 @@ const disclaimer = '<div class="notice"><b>Hinweis:</b> Die Zahl entfernter Bewe
 // ---------- group nameable businesses into brands (mirror listing.html) ----------
 const normName = (n) => (n || '').split(/ [-–] /)[0].trim();
 const rootDomain = (u) => { try { const h = new URL(u).hostname.replace(/^www\./, ''); const p = h.split('.'); return p.length > 2 ? p.slice(-2).join('.') : h; } catch { return null; } };
-const brandKey = (b) => (b.website && rootDomain(b.website)) || normName(b.name).toLowerCase() || b.place_id;
+// well-known chains: group ALL locations under ONE canonical brand page, regardless of the
+// name suffixes Google shows ("Holmes Place", "Holmes Place Berlin New World", "Holmes Place
+// Fitness - ..." are one brand) — enables the brand → locations drill-down Markus asked for
+const CHAIN_CANON = { 'holmes place': 'Holmes Place', 'mcfit': 'McFIT', 'fitx': 'FitX', 'clever fit': 'clever fit', 'john reed': 'JOHN REED', 'superfit': 'SuperFit', 'evo fitness': 'EVO Fitness', 'aspria': 'Aspria', 'alldent': 'AllDent Zahnzentrum', 'autoland': 'Autoland', 'mcmakler': 'McMakler', 'ibis budget': 'ibis budget', 'motel one': 'Motel One', "mongo's": "Mongo's", 'kult gemüse kebab': 'Kult Gemüse Kebab' };
+const chainOf = (n) => { const l = (n || '').toLowerCase(); return Object.keys(CHAIN_CANON).find((c) => l.includes(c)) || null; };
+const brandKey = (b) => { const c = chainOf(b.name); return c ? 'chain:' + c : (b.website && rootDomain(b.website)) || normName(b.name).toLowerCase() || b.place_id; };
 
 const nameable = nameableAll.filter((b) => b.name);
 const brandsAll = new Map();
@@ -213,7 +218,8 @@ function uniqueSlug(base) { let s = base || 'eintrag', i = 2; while (usedSlugs.h
 // ---------- company pages ----------
 const companyLinks = {}; // brandName → relative url (for branch/city listings)
 for (const [bkey, locs] of brands) {
-  const name = normName(locs[0].name) || locs[0].name;
+  const ck = chainOf(locs[0].name);
+  const name = ck ? CHAIN_CANON[ck] : (normName(locs[0].name) || locs[0].name);
   const cities = [...new Set(locs.map((d) => d.city).filter(Boolean))];
   const branch = locs.map((d) => d.branch).find(Boolean) || 'Sonstige';
   const ar = aggRange(locs); const remMin = ar.min, remMax = ar.max;
@@ -228,7 +234,7 @@ for (const [bkey, locs] of brands) {
   const hasEst = est != null && rating != null && est <= rating;
   const lastSeen = locs.map((d) => d.last_seen).filter(Boolean).sort().pop();
   const stand = lastSeen ? new Date(lastSeen + 'T00:00:00Z').toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }) : null;
-  const locList = locs.length > 1 ? `<div class="card"><h2>${locs.length} erfasste Standorte</h2><div class="loc-list">${locs.slice().sort((a, b) => (b.range_min || 0) - (a.range_min || 0)).map((d) => `<span class="chip">${esc((d.name || '').split(/ [-–] /).slice(1).join(' – ') || d.city || 'Standort')}: ${rangeLabel(d.range_min, d.range_max)}</span>`).join('')}</div></div>` : '';
+  const locList = locs.length > 1 ? `<div class="card"><h2>${locs.length} erfasste Standorte</h2><div class="table-scroll"><table class="rank"><thead><tr><th>Standort</th><th>Stadt</th><th class="num">Entfernt (365 T.)</th><th class="num">angezeigte Note</th></tr></thead><tbody>${locs.slice().sort((a, b) => (b.range_max || b.range_min || 0) - (a.range_max || a.range_min || 0)).map((d) => `<tr><td>${esc(d.name || 'Standort')}</td><td>${esc(d.city || '–')}</td><td class="num" style="color:var(--accent);font-weight:600">${rangeLabel(d.range_min, d.range_max)}</td><td class="num">${d.rating != null ? de1(d.rating) + '★' : '–'}</td></tr>`).join('')}</tbody></table></div><p class="asof">Zahlen je Standort aus dem jeweiligen öffentlichen Google-Maps-Profil zum Stand-Datum.</p></div>` : '';
   const mapsUrl = (locs[0].url) || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(name + ' ' + (cities[0] || ''));
   const body = crumbs([{ t: 'aidos', href: '../index.html', abs: '' }, { t: branch, href: '../branche/' + slug(branch) + '.html', abs: 'branche/' + slug(branch) + '.html' }, { t: name }]) +
     `<div class="kicker">${esc(branch)}${cities.length ? ' · ' + esc(cities.join(', ')) : ''}</div>` +
