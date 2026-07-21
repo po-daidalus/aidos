@@ -237,7 +237,16 @@ table.rank a:hover { color: var(--accent); }
 @media (max-width: 760px) {
   body { font-size: 16px; }
   .band, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  .masthead-inner { gap: 10px 16px; }
+  .masthead-inner { position: relative; gap: 10px 16px; }
   .tagline { display: none; }
-  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* language switch pinned to the top-right of the header (never wraps to its
+     own line inside the nav on mobile) */
+  .lang-switch { position: absolute; top: 8px; right: 24px; margin-left: 0; }
+  /* wide tables never force the page sideways — scroll inside their own box */
+  .table-scroll, .covbox { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* nav: one scrollable row on its own line instead of a 2-line block that
+     leaves the sticky masthead eating a sixth of the viewport */
+  .nav { flex-basis: 100%; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { padding: 9px 12px; }   /* a little taller for touch */
 }
