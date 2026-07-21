@@ -78,7 +78,7 @@ ${altCanonical ? `<link rel="alternate" hreflang="${lang === 'de' ? 'en' : 'de'}
 <meta property="og:type" content="article"/><meta property="og:title" content="${esc(title)}"/>
 <meta property="og:description" content="${esc(desc)}"/><meta property="og:url" content="${esc(canonical)}"/>
 <meta property="og:site_name" content="aidos"/><meta name="twitter:card" content="summary_large_image"/>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link href="${P}fonts/fonts.css" rel="stylesheet"/><link href="${P}pages.css" rel="stylesheet"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link href="${P}fonts/fonts.css" rel="stylesheet"/><link href="${P}pages.css?v=20260721" rel="stylesheet"/>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}</head>
 <body><header class="masthead"><div class="masthead-inner">
 <a class="wordmark" href="${home}"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6"/><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26"/></svg>aidos<span class="tld">.tech</span></a>
