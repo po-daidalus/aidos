@@ -953,3 +953,202 @@
 {"aid":"c529c06686e0729b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Duisburg","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":3.03}
 {"aid":"6e23a3944ae84aa7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Unbekannt","nameable":false,"range_min":21,"range_max":50,"rating":4.1,"rating_drop":1.45}
 {"aid":"3b66f34dc8d5ae46","date":"2026-07","branch":"Gastronomie & Hotel","city":"Unbekannt","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":3.03}
+{"aid":"d603214b8f5117fe","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.09}
+{"aid":"cdf06f92a3a4fc31","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.75}
+{"aid":"c79816474aea2a06","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.57}
+{"aid":"affdea6fe308ffa3","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":1.44}
+{"aid":"2f861795bae73f39","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.21}
+{"aid":"3cdbede8082169e2","date":"2026-07","branch":"Fitness & Sport","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.48}
+{"aid":"083d0fac85179b35","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.23}
+{"aid":"cedd9a7a8ea4bb4c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.33}
+{"aid":"8490cc77ed7edea5","date":"2026-07","branch":"Beauty & Wellness","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.21}
+{"aid":"264d38b5039a4362","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.86}
+{"aid":"c4869f9ba8771ed1","date":"2026-07","branch":"Beauty & Wellness","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":3.01}
+{"aid":"82dafbb36597d12c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":51,"range_max":100,"rating":4.2,"rating_drop":0.32}
+{"aid":"2e94cc461f61f980","date":"2026-07","branch":"Immobilien","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.39}
+{"aid":"7522cfdf9d4a0271","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.09}
+{"aid":"ea51121b07cf5bfe","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.73}
+{"aid":"a4ee461a5ccdff5f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":1.41}
+{"aid":"449af42540ca8ded","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":0.72}
+{"aid":"34ad553e21afd544","date":"2026-07","branch":"Gesundheit","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.16}
+{"aid":"b3d482641e488653","date":"2026-07","branch":"Unbekannt","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.39}
+{"aid":"225df4ee1d8e80af","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.2,"rating_drop":2.06}
+{"aid":"453f3ae3a965d288","date":"2026-07","branch":"Unbekannt","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.01}
+{"aid":"08c206dfc7bac7db","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.48}
+{"aid":"93cd51e6d1d1967b","date":"2026-07","branch":"Beauty & Wellness","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.11}
+{"aid":"fd297ec3afc62530","date":"2026-07","branch":"Gesundheit","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.25}
+{"aid":"5977f7a0d5482930","date":"2026-07","branch":"Beauty & Wellness","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.04}
+{"aid":"0b292c17fe3826a5","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":0.27}
+{"aid":"a2db0758d09cb806","date":"2026-07","branch":"Beauty & Wellness","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.44}
+{"aid":"b5541edaa1ae6964","date":"2026-07","branch":"Beauty & Wellness","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.63}
+{"aid":"f64d72813d1d57a0","date":"2026-07","branch":"Unbekannt","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.47}
+{"aid":"6462ffd0eb517ec8","date":"2026-07","branch":"Gesundheit","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.24}
+{"aid":"42cf28d539723cc1","date":"2026-07","branch":"Unbekannt","city":"Bonn","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":2.56}
+{"aid":"c6381319846756a0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.62}
+{"aid":"3b6e5ae4c5b1b368","date":"2026-07","branch":"Automobil","city":"Bonn","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.88}
+{"aid":"7861516314aa8198","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.25}
+{"aid":"15f0405d03b7b2cd","date":"2026-07","branch":"Automobil","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.52}
+{"aid":"b3b809dc82034035","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.08}
+{"aid":"134462264129adb9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":0.85}
+{"aid":"b4db5857e75913be","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":2.73}
+{"aid":"45fed1298ff5275c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":1.05}
+{"aid":"388bda4c800a443c","date":"2026-07","branch":"Unbekannt","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.23}
+{"aid":"4f345633ee0af430","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":1.82}
+{"aid":"a58bcbd7128fe51c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":3.01}
+{"aid":"d22ab2793c9c417c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":2.83}
+{"aid":"5e9d7cfd363803c9","date":"2026-07","branch":"Gesundheit","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":3.01}
+{"aid":"095c07fdd37fcf1e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.21}
+{"aid":"ffb05303bb9070ab","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.68}
+{"aid":"2998244b4019938b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":0.11}
+{"aid":"970aeb2ccfcaf619","date":"2026-07","branch":"Unbekannt","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.04}
+{"aid":"102c6ceb0c26f565","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":3.01}
+{"aid":"089de7da3f20caed","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
+{"aid":"7fdb20720660c080","date":"2026-07","branch":"Unbekannt","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.54}
+{"aid":"809500f492a0446b","date":"2026-07","branch":"Gesundheit","city":"Bonn","nameable":false,"range_min":21,"range_max":50,"rating":5,"rating_drop":1.74}
+{"aid":"980e089bc41c604f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bonn","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.33}
+{"aid":"fa67d75b60ae0f4e","date":"2026-07","branch":"Beauty & Wellness","city":"Bonn","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":1.23}
+{"aid":"00ffdcda7c98817c","date":"2026-07","branch":"Unbekannt","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.46}
+{"aid":"a1ad447396862f36","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":3.8,"rating_drop":1.88}
+{"aid":"0866dc70db33be3b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
+{"aid":"3c51a2cb25610a63","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
+{"aid":"c47507d64c9bb4e6","date":"2026-07","branch":"Unbekannt","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.47}
+{"aid":"086565b180f936af","date":"2026-07","branch":"Gesundheit","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.69}
+{"aid":"e4150d85ed975bb9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":2.99}
+{"aid":"78ecc81fb2402a1b","date":"2026-07","branch":"Gesundheit","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.54}
+{"aid":"a4379b3473bbbee2","date":"2026-07","branch":"Beauty & Wellness","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":3.06}
+{"aid":"c79ee32fd915457c","date":"2026-07","branch":"Automobil","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
+{"aid":"7575d0b71e2895f0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":2.93}
+{"aid":"c15d61666ec44dce","date":"2026-07","branch":"Fitness & Sport","city":"Bielefeld","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":2.9}
+{"aid":"e2cf2fa96ac3c70f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.88}
+{"aid":"18cb4ba2648eb631","date":"2026-07","branch":"Gesundheit","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":2.58}
+{"aid":"f84bbc1f3f2daa24","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.66}
+{"aid":"a4a3aabe1f3c6de4","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.75}
+{"aid":"15af99ef16f18ace","date":"2026-07","branch":"Beauty & Wellness","city":"Bielefeld","nameable":false,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":2.39}
+{"aid":"30677b494bff49dd","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
+{"aid":"08a9080b370e0d7c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.53}
+{"aid":"def06dff5b01bbec","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.97}
+{"aid":"7a92578b27c977a9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.62}
+{"aid":"b3343d3aa55542ef","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":1.95}
+{"aid":"f2cdc94999c21f67","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":0.47}
+{"aid":"f9b65ad0c972ed45","date":"2026-07","branch":"Unbekannt","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.27}
+{"aid":"f49863425f9d40a1","date":"2026-07","branch":"Unbekannt","city":"Bielefeld","nameable":true,"range_min":101,"range_max":150,"rating":4.5,"rating_drop":2.41}
+{"aid":"bd44511e74f61f58","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.87}
+{"aid":"93483515ded9bb75","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.98}
+{"aid":"623032dcda4d1c1c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":101,"range_max":150,"rating":4.4,"rating_drop":2.3}
+{"aid":"50d525c42a3dd38e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.74}
+{"aid":"b3292124c4107231","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.37}
+{"aid":"2611c4c8575287ff","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":250,"range_max":null,"rating":4.5,"rating_drop":2.92}
+{"aid":"bd14b2d2e523d68e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":1.29}
+{"aid":"a18706e7592b2983","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":1.1}
+{"aid":"5eeefc632382086d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.07}
+{"aid":"6419f7f8a3c748a0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":250,"range_max":null,"rating":4.5,"rating_drop":2.56}
+{"aid":"9c06082ba8d38977","date":"2026-07","branch":"Sonstige","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.85}
+{"aid":"0d1a5965f95c3bae","date":"2026-07","branch":"Unbekannt","city":"Bielefeld","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.24}
+{"aid":"fe0ed28a807ea237","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":101,"range_max":150,"rating":4.5,"rating_drop":2.29}
+{"aid":"16ea774aac730fec","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":2.87}
+{"aid":"eefcc53fa9266e94","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.74}
+{"aid":"b326b69455ae46e9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.55}
+{"aid":"ce33211474e82f6f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.61}
+{"aid":"6968e5970cf2ee54","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.76}
+{"aid":"d4aeffe085e8571f","date":"2026-07","branch":"Unbekannt","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.07}
+{"aid":"606429c6f53bfade","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":1.65}
+{"aid":"083dd889e1550cab","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.98}
+{"aid":"e3e5e5bfb8139a18","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":0.15}
+{"aid":"ef40654e34b4b3ef","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.96}
+{"aid":"ce4979489039aa0c","date":"2026-07","branch":"Sonstige","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.62}
+{"aid":"f5083f1453dfd682","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.42}
+{"aid":"2e77b3ccb7f40fe9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":2.29}
+{"aid":"9f290d4631a7e551","date":"2026-07","branch":"Unbekannt","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.35}
+{"aid":"92c5d030e54ac122","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.74}
+{"aid":"8c13037809f4d1bc","date":"2026-07","branch":"Unbekannt","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.89}
+{"aid":"e4da9a60b007c6f0","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":2.34}
+{"aid":"e83870d48c6bed4b","date":"2026-07","branch":"Beauty & Wellness","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.85}
+{"aid":"2617860922d7f68b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":1.27}
+{"aid":"f9a37d14a1b66d6e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.26}
+{"aid":"bf0eb9452ea9aec9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":0.84}
+{"aid":"473275aefb14dd72","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.8}
+{"aid":"b15357f81cd40e76","date":"2026-07","branch":"Beauty & Wellness","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.69}
+{"aid":"077d8e141de6fdb7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":11,"range_max":20,"rating":4.1,"rating_drop":2.3}
+{"aid":"898e00c81256d16d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.48}
+{"aid":"3ac62887121d6820","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.51}
+{"aid":"87bea61099bbd219","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.35}
+{"aid":"4c02f261e245fa06","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.18}
+{"aid":"298329fe53ac2353","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.57}
+{"aid":"1638e3a6ccfe5bcd","date":"2026-07","branch":"Automobil","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":0.76}
+{"aid":"8dc5559130bbb0f8","date":"2026-07","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.77}
+{"aid":"6ace397d11b9bece","date":"2026-07","branch":"Gesundheit","city":"Bielefeld","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.21}
+{"aid":"d6e441e9ef3fe4b1","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
+{"aid":"96cb5aacf193c670","date":"2026-07","branch":"Unbekannt","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.77}
+{"aid":"f432f2615d65edb2","date":"2026-07","branch":"Fitness & Sport","city":"Münster","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.73}
+{"aid":"bafc64260238da90","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.96}
+{"aid":"1e0aaabfb3b54726","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.3,"rating_drop":0.11}
+{"aid":"3771ab475c75a63c","date":"2026-07","branch":"Automobil","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.93}
+{"aid":"065f63504b0cac68","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.43}
+{"aid":"81c7df71a2ea7d91","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.73}
+{"aid":"0c96df00e776ae7f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.73}
+{"aid":"858aac52ee4a67c7","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.64}
+{"aid":"62b4c9652d8372fd","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.68}
+{"aid":"d288b13c57736a03","date":"2026-07","branch":"Fitness & Sport","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":0.76}
+{"aid":"783185244712f398","date":"2026-07","branch":"Unbekannt","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.85}
+{"aid":"d1e82f5361df6486","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.24}
+{"aid":"c38197d7d33a03ff","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.94}
+{"aid":"6645bbcee4bc3eb9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.38}
+{"aid":"a705888ae55e7739","date":"2026-07","branch":"Unbekannt","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.48}
+{"aid":"3da971929c2b346b","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":0.59}
+{"aid":"584466cc264ab5c6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.93}
+{"aid":"7b7b5241d3a8b4e6","date":"2026-07","branch":"Beauty & Wellness","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
+{"aid":"e8df312bc7e4e926","date":"2026-07","branch":"Gesundheit","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.98}
+{"aid":"95f241394b3ccc7f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.1,"rating_drop":0.23}
+{"aid":"328d490b7f5a0c13","date":"2026-07","branch":"Beauty & Wellness","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.82}
+{"aid":"9ef6f843fc098a8a","date":"2026-07","branch":"Unbekannt","city":"Münster","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.16}
+{"aid":"64e74a372fe4ba16","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.45}
+{"aid":"63102d5bac169724","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.36}
+{"aid":"af78bf87ad83cfe2","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.8}
+{"aid":"de61853e7bdad546","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":0.89}
+{"aid":"69984f36fb102261","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.75}
+{"aid":"32d8d26e6c9490ad","date":"2026-07","branch":"Sonstige","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
+{"aid":"f9d191f4f7d693ab","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.2}
+{"aid":"653d147bba8390aa","date":"2026-07","branch":"Fitness & Sport","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.54}
+{"aid":"d69042f74646864d","date":"2026-07","branch":"Beauty & Wellness","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
+{"aid":"f0952f9c4beed2a5","date":"2026-07","branch":"Unbekannt","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.91}
+{"aid":"97f4abba08639b65","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.2,"rating_drop":2.43}
+{"aid":"08c8130fe50d2a35","date":"2026-07","branch":"Gesundheit","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.25}
+{"aid":"388968d27a53abab","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":2.43}
+{"aid":"f43a485daba5d4f4","date":"2026-07","branch":"Sonstige","city":"Münster","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.62}
+{"aid":"c6b04aad7159e736","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.03}
+{"aid":"412d1c0aa6b92c3d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":false,"range_min":11,"range_max":20,"rating":3,"rating_drop":0.95}
+{"aid":"10cb1a5fda6955f9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.32}
+{"aid":"a7c931d14dca7a9d","date":"2026-07","branch":"Gastronomie & Hotel","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.65}
+{"aid":"a73dcc75c7ba3925","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.86}
+{"aid":"c344ff1799a6665a","date":"2026-07","branch":"Unbekannt","city":"Wuppertal","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.76}
+{"aid":"2ebb3ab5ff58b1eb","date":"2026-07","branch":"Unbekannt","city":"Wuppertal","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.15}
+{"aid":"f940e2cf827578dd","date":"2026-07","branch":"Unbekannt","city":"Wuppertal","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.08}
+{"aid":"8904394fcfc898f6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.79}
+{"aid":"d22b4c57444e2aae","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":51,"range_max":100,"rating":4.4,"rating_drop":1.16}
+{"aid":"73fafb67b85120d1","date":"2026-07","branch":"Automobil","city":"Wuppertal","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.74}
+{"aid":"ebb1dc2537a85490","date":"2026-07","branch":"Unbekannt","city":"Wuppertal","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.95}
+{"aid":"1f5ea5307ef94a18","date":"2026-07","branch":"Fitness & Sport","city":"Wuppertal","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.51}
+{"aid":"cdba88413108e41e","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.1}
+{"aid":"92b04731cfe3fbb6","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":false,"range_min":101,"range_max":150,"rating":4.5,"rating_drop":2.95}
+{"aid":"5731d5b8a51f1828","date":"2026-07","branch":"Beauty & Wellness","city":"Wuppertal","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.85}
+{"aid":"3464eb5409d72507","date":"2026-07","branch":"Unbekannt","city":"Wuppertal","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.02}
+{"aid":"67e29e09ad6c4a4a","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":101,"range_max":150,"rating":4.8,"rating_drop":3.13}
+{"aid":"859a7f1569460897","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.94}
+{"aid":"6aee70d50ca55ffe","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":false,"range_min":151,"range_max":200,"rating":4.7,"rating_drop":3.11}
+{"aid":"fd8b4ba4a9803a42","date":"2026-07","branch":"Gesundheit","city":"Wuppertal","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.92}
+{"aid":"dfe7117f5d17007c","date":"2026-07","branch":"Beauty & Wellness","city":"Wuppertal","nameable":false,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":2.26}
+{"aid":"5ff173d9eb51d2fc","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":1.69}
+{"aid":"49606ccfa00aeff2","date":"2026-07","branch":"Beauty & Wellness","city":"Wuppertal","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.68}
+{"aid":"cdb749372bc00f73","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.53}
+{"aid":"c8874802757e413c","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":3.15}
+{"aid":"2b9b9c1816845fa4","date":"2026-07","branch":"Gesundheit","city":"Wuppertal","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.57}
+{"aid":"f34e7360cd903875","date":"2026-07","branch":"Sonstige","city":"Wuppertal","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":3.01}
+{"aid":"69e2add8c62fb528","date":"2026-07","branch":"Automobil","city":"Wuppertal","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.97}
+{"aid":"e734b0507dcbf04f","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.39}
+{"aid":"1ca7fb36e489b98f","date":"2026-07","branch":"Gesundheit","city":"Wuppertal","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.57}
+{"aid":"0a568eb9833e5688","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.53}
+{"aid":"f00bf01e042e45c9","date":"2026-07","branch":"Gastronomie & Hotel","city":"Wuppertal","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":2.31}
+{"aid":"62d8868304cef025","date":"2026-07","branch":"Unbekannt","city":"Wuppertal","nameable":false,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":3.14}
+{"aid":"4924713d188b31d8","date":"2026-07","branch":"Beauty & Wellness","city":"Wuppertal","nameable":true,"range_min":11,"range_max":20,"rating":5,"rating_drop":2.31}
+{"aid":"e8630a3147a04a9b","date":"2026-07","branch":"Gesundheit","city":"Wuppertal","nameable":false,"range_min":21,"range_max":50,"rating":4,"rating_drop":2.04}
+{"aid":"fcd37940f3a8bee5","date":"2026-07","branch":"Unbekannt","city":"Wuppertal","nameable":false,"range_min":21,"range_max":50,"rating":3.1,"rating_drop":1.12}
