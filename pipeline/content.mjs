@@ -70,7 +70,7 @@ const rel = `report/${month}.html`, BASE = 'https://aidos.tech';
 const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}"/><link rel="canonical" href="${BASE}/${rel}"/>
-<meta property="og:type" content="article"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(desc)}"/><meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:type" content="article"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(desc)}"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image" content="https://aidos.tech/og.png"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link href="../fonts/fonts.css" rel="stylesheet"/><link href="../pages.css?v=20260721" rel="stylesheet"/>
 <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'NewsArticle', headline: title, datePublished: month + '-01', author: { '@type': 'Organization', name: 'aidos' }, publisher: { '@type': 'Organization', name: 'aidos' } })}</script></head>
 <body><header class="masthead"><div class="masthead-inner">

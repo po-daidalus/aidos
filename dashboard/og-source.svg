@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fcfcfd"/>
+  <rect width="1200" height="10" y="620" fill="#1a1a1a"/>
+  <!-- wordmark -->
+  <g transform="translate(80,86)">
+    <rect x="0" y="10" width="86" height="11" rx="5" fill="#2456a6"/>
+    <rect x="0" y="34" width="52" height="11" rx="5" fill="#b31e26"/>
+    <text x="112" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" fill="#1a1a1a">aidos<tspan font-size="30" fill="#b31e26">.tech</tspan></text>
+  </g>
+  <!-- headline -->
+  <text x="80" y="250" font-family="Georgia, serif" font-size="62" font-weight="700" fill="#1a1a1a">Welche Firmen verlieren die</text>
+  <text x="80" y="322" font-family="Georgia, serif" font-size="62" font-weight="700" fill="#1a1a1a">meisten Google-Bewertungen?</text>
+  <text x="80" y="384" font-family="Arial, sans-serif" font-size="28" fill="#4a4c55">Fortlaufende Auswertung der DSA-Löschhinweise auf Google&#160;Maps.</text>
+  <!-- stat band -->
+  <g transform="translate(80,452)">
+    <text x="0" y="52" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#b31e26">64.502</text>
+    <text x="0" y="92" font-family="Arial, sans-serif" font-size="23" fill="#676972">entfernte Bewertungen (geschätzt)</text>
+    <text x="520" y="52" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#2456a6">1.154</text>
+    <text x="520" y="92" font-family="Arial, sans-serif" font-size="23" fill="#676972">betroffene Profile · 20 Städte</text>
+  </g>
+</svg>

@@ -77,7 +77,7 @@ function shell({ lang, title, desc, canonical, altHref, altCanonical, jsonld, bo
 ${altCanonical ? `<link rel="alternate" hreflang="${lang === 'de' ? 'en' : 'de'}" href="${esc(altCanonical)}"/><link rel="alternate" hreflang="${lang}" href="${esc(canonical)}"/>` : ''}
 <meta property="og:type" content="article"/><meta property="og:title" content="${esc(title)}"/>
 <meta property="og:description" content="${esc(desc)}"/><meta property="og:url" content="${esc(canonical)}"/>
-<meta property="og:site_name" content="aidos"/><meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:site_name" content="aidos"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image" content="https://aidos.tech/og.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link href="${P}fonts/fonts.css" rel="stylesheet"/><link href="${P}pages.css?v=20260721" rel="stylesheet"/>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}</head>
 <body><header class="masthead"><div class="masthead-inner">
