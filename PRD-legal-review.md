@@ -181,6 +181,7 @@ A listing is **kept** only if it is a **legal person** (name contains GmbH / AG 
 
 | Date | Version | Change | Legal effect |
 |------|---------|--------|--------------|
+| 2026-07-24 | 2.3 | **Copy de-risked (DE+EN, live).** (a) og:description dropped the Alleinstellungsbehauptung „Die einzige fortlaufende Auswertung …"/"The only ongoing evaluation …" → now „Auswertung von Googles DSA-Löschhinweisen in Deutschland. Für mehr Transparenz bei Google-Bewertungen." (b) Hero deck: „Wir bewahren, was Googles rollierender 365-Tage-Hinweis wieder unsichtbar macht" → „Monatliche Messungen zeigen, wie sich die Zahlen über die Zeit entwickeln – über Googles rollierenden 365-Tage-Hinweis hinaus." Editorial rule: no superlatives, no preservation-framing — method-language only. | (a) Removes §5 UWG uniqueness claim with unwinnable burden of proof. (b) Removes a written statement of intent to keep expiring negative data visible (Prangerwirkung ammunition; interacts with the open >365d-retention question in v1.2). |
 | 2026-07-02 | 1.0 | Initial PRD for legal review. | — |
 | 2026-07-02 | 1.1 | Removed satirical "aidos verdict" from all entry pages. | Removes Schmähkritik/defamation risk of editorial comment. |
 | 2026-07-02 | 1.1 | Added `entity-filter.mjs`: auto-exclude namentlich genannte Privatpersonen at discovery + ingest; keep only legal persons & chains. Purged existing DB accordingly (Berlin test set 31 → 23). | Removes bulk of DSGVO / personality-rights exposure. |
