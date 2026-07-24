@@ -37,10 +37,13 @@ const CHAINS = [
 ];
 
 // Academic / personal titles → essentially always attached to an individual's name → EXCLUDE.
-const TITLE = /(\bDr\b\.?|\bProf\b\.?|\bDipl\b\.?|\bDDr\b|\bMag\b\.?|\bmed\b\.|\bdent\b\.|\bjur\b\.|\bDDS\b|\bM\.?Sc\b|\bMBA\b)/;
+// Includes ALL-CAPS variants (Maps names like "DR. RICK & DR. NICK") — the unanchored-case
+// forms are listed explicitly rather than via /i, because /i would also match ordinary words
+// ("mag", "Magazin") and acronyms (MBA GmbH) too aggressively.
+const TITLE = /(\bDr\b\.?|\bDR\b\.?|\bProf\b\.?|\bPROF\b\.?|\bDipl\b\.?|\bDIPL\b\.?|\bDDr\b|\bMag\b\.?|\bmed\b\.|\bdent\b\.|\bjur\b\.|\bDDS\b|\bM\.?Sc\b|\bMBA\b)/;
 
 // Profession words that, when directly followed by a personal surname, indicate a named practitioner.
-const PROFESSION = /(zahnarzt|zahnärzt|hausarzt|hausärzt|facharzt|fachärzt|kinderarzt|frauenarzt|tierarzt|tierärzt|augenarzt|hautarzt|orthopäd|rechtsanwalt|rechtsanwält|anwaltskanzlei|anwältin|notar|notariat|steuerberater|steuerberatung|steuerkanzlei|heilpraktiker|heilpraktikerin|psychotherapeut|physiotherapeut|logopäd|hebamme|architekt|architektur)/i;
+const PROFESSION = /(zahnarzt|zahnärzt|hausarzt|hausärzt|facharzt|fachärzt|kinderarzt|frauenarzt|tierarzt|tierärzt|augenarzt|hautarzt|orthopäd|rechtsanwalt|rechtsanwält|anwaltskanzlei|anwältin|notar|notariat|steuerberater|steuerberatung|steuerkanzlei|heilpraktiker|heilpraktikerin|psychotherapeut|physiotherapeut|logopäd|hebamme|architekt|architektur|friseur|coiffeur|barbier|kosmetiker)/i;
 
 // Non-name tokens: business/legal/geo/particle words. If a token is here it is NOT a person's name.
 const STOP = new Set([
@@ -91,6 +94,20 @@ function hasEmbeddedFullName(name) {
   return false;
 }
 
+// Abbreviated first-name initial directly followed by a surname (e.g. "Tierarztpraxis M. Radev",
+// "Praxis A. Nejad") → a named individual. Single letters are stripped of their dot by tokens().
+// Guard: the token BEFORE the initial must not itself be name-like — "JONNY M. Club" is a
+// first name + initial (surname withheld → identifies nobody), while "Tierarztpraxis M. Radev"
+// has a business word before the initial and a surname after it. "H&M", "C&A" (two bare
+// letters) never fire because the following token must be surname-like.
+function hasInitialPlusName(name) {
+  const toks = tokens(name);
+  for (let i = 0; i < toks.length - 1; i++) {
+    if (/^[A-ZÄÖÜ]$/.test(toks[i]) && isNameTok(toks[i + 1]) && !(i > 0 && isNameTok(toks[i - 1]))) return true;
+  }
+  return false;
+}
+
 // Profession word directly followed by a single surname (e.g. "Zahnärztin Witascheck") → named person.
 function hasProfessionPlusName(name) {
   const toks = tokens(name);
@@ -122,6 +139,7 @@ export function classify(name, category = '') {
   if (isBarePersonName(name)) return { keep: false, reason: 'bare personal name', type: 'person' };
   if (hasProfessionPlusName(name)) return { keep: false, reason: 'profession + surname (Privatperson)', type: 'person' };
   if (hasNamePlusProfession(name)) return { keep: false, reason: 'surname + profession (Privatperson)', type: 'person' };
+  if (hasInitialPlusName(name)) return { keep: false, reason: 'initial + surname (Privatperson)', type: 'person' };
   if (hasEmbeddedFullName(name)) return { keep: false, reason: 'embedded personal name', type: 'person' };
   return { keep: true, reason: 'business name (no named individual)', type: 'business' };
 }

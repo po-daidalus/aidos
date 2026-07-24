@@ -19496,121 +19496,20 @@
       "first_seen": "2026-07-05",
       "last_seen": "2026-07-05"
     },
-    "0x47bf2550e85cc785:0xfd5f4b26ad65f096": {
-      "place_id": "0x47bf2550e85cc785:0xfd5f4b26ad65f096",
-      "name": "Friseur Men's World - Köln",
-      "category": null,
-      "nameable": true,
+    "a255bdaf9f9b904c": {
+      "aid": "a255bdaf9f9b904c",
+      "nameable": false,
       "branch": "Beauty & Wellness",
       "city": "Köln",
-      "postal_code": null,
-      "address": null,
-      "website": null,
-      "image": null,
       "rating": 4.8,
       "reviews": 107,
-      "dist": [
-        1,
-        1,
-        null,
-        13,
-        92
-      ],
-      "price_level": null,
-      "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
       "est_low": 4.2,
       "est_mid": 4.38,
       "est_high": 4.54,
-      "lat": 50.9491691,
-      "lng": 6.9180237,
-      "url": "https://www.google.com/maps/place/Friseur+Men's+World+-+K%C3%B6ln/@50.9491691,6.9180237,17z/data=!4m8!3m7!1s0x47bf2550e85cc785:0xfd5f4b26ad65f096!8m2!3d50.9491691!4d6.9180237!9m1!1b1!16s%2Fg%2F11g0vzzcy4?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-05",
-      "last_seen": "2026-07-19",
-      "rev_hist": {
-        "2018-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2019-07": {
-          "n": 9,
-          "sum": 44
-        },
-        "2020-07": {
-          "n": 1,
-          "sum": 4
-        },
-        "2021-07": {
-          "n": 3,
-          "sum": 15
-        },
-        "2022-07": {
-          "n": 9,
-          "sum": 44
-        },
-        "2023-07": {
-          "n": 5,
-          "sum": 25
-        },
-        "2024-07": {
-          "n": 10,
-          "sum": 50
-        },
-        "2025-07": {
-          "n": 19,
-          "sum": 94
-        },
-        "2025-08": {
-          "n": 2,
-          "sum": 10
-        },
-        "2025-09": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-12": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-02": {
-          "n": 5,
-          "sum": 25
-        },
-        "2026-03": {
-          "n": 2,
-          "sum": 6
-        },
-        "2026-04": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-07": {
-          "n": 1,
-          "sum": 5
-        }
-      },
-      "rev_hist_meta": {
-        "at": "2026-07-19T01:22:45.646Z",
-        "complete": true,
-        "dbg": {
-          "btn": "Sort reviews|Sort",
-          "item": "Newest",
-          "n0": 64,
-          "n_end": 306,
-          "n_sort": 77,
-          "n_start": 77,
-          "n_tab": 64,
-          "pane": true,
-          "pre_matched": 58
-        },
-        "matched": 70,
-        "oldest_months": 24,
-        "scanned": 70,
-        "sorted": true,
-        "tab_retry": false
-      }
+      "last_seen": "2026-07-19"
     },
     "b7f2c0ece746a7a5": {
       "aid": "b7f2c0ece746a7a5",
@@ -34703,125 +34602,20 @@
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-11"
     },
-    "0x47b8fd0876dd2a1d:0x2a150f72340dd25d": {
-      "place_id": "0x47b8fd0876dd2a1d:0x2a150f72340dd25d",
-      "name": "Aesthetify Düsseldorf | DR. RICK & DR. NICK",
-      "category": null,
-      "nameable": true,
+    "270818b36d3bf8b4": {
+      "aid": "270818b36d3bf8b4",
+      "nameable": false,
       "branch": null,
       "city": "Düsseldorf",
-      "postal_code": null,
-      "address": null,
-      "website": null,
-      "image": null,
       "rating": 5,
       "reviews": 772,
-      "dist": [
-        1,
-        2,
-        4,
-        14,
-        751
-      ],
-      "price_level": null,
-      "business_status": "operational",
       "range_min": 51,
       "range_max": 100,
-      "banner_text": "51 to 100 reviews removed due to defamation complaints",
       "est_low": 4.54,
       "est_mid": 4.69,
       "est_high": 4.81,
-      "lat": 51.2258916,
-      "lng": 6.7805843,
-      "url": "https://www.google.com/maps/place/Aesthetify+D%C3%BCsseldorf+%7C+DR.+RICK+%26+DR.+NICK/@51.2258916,6.7805843,17z/data=!4m8!3m7!1s0x47b8fd0876dd2a1d:0x2a150f72340dd25d!8m2!3d51.2258916!4d6.7805843!9m1!1b1!16s%2Fg%2F11jbdg5ltl?entry=ttu&g_ep=EgoyMDI2MDcwNi4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-09",
-      "last_seen": "2026-07-19",
-      "rev_hist": {
-        "2022-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2023-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2024-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-07": {
-          "n": 65,
-          "sum": 322
-        },
-        "2025-08": {
-          "n": 14,
-          "sum": 70
-        },
-        "2025-09": {
-          "n": 4,
-          "sum": 20
-        },
-        "2025-10": {
-          "n": 7,
-          "sum": 35
-        },
-        "2025-11": {
-          "n": 10,
-          "sum": 50
-        },
-        "2025-12": {
-          "n": 5,
-          "sum": 25
-        },
-        "2026-01": {
-          "n": 4,
-          "sum": 19
-        },
-        "2026-02": {
-          "n": 5,
-          "sum": 25
-        },
-        "2026-03": {
-          "n": 19,
-          "sum": 95
-        },
-        "2026-04": {
-          "n": 23,
-          "sum": 112
-        },
-        "2026-05": {
-          "n": 27,
-          "sum": 131
-        },
-        "2026-06": {
-          "n": 26,
-          "sum": 128
-        },
-        "2026-07": {
-          "n": 23,
-          "sum": 113
-        }
-      },
-      "rev_hist_meta": {
-        "at": "2026-07-18T22:44:25.864Z",
-        "complete": false,
-        "dbg": {
-          "btn": "Sort reviews|Sort",
-          "item": "Newest",
-          "n0": 65,
-          "n_end": 2198,
-          "n_sort": 99,
-          "n_start": 99,
-          "n_tab": 65,
-          "pane": true,
-          "pre_matched": 58
-        },
-        "matched": 235,
-        "oldest_months": 12,
-        "scanned": 235,
-        "sorted": true,
-        "tab_retry": false
-      }
+      "last_seen": "2026-07-19"
     },
     "0x47bf33f5900f1da5:0x4ce6dc7d87ad5262": {
       "place_id": "0x47bf33f5900f1da5:0x4ce6dc7d87ad5262",
@@ -45814,117 +45608,20 @@
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-11"
     },
-    "0x479f57aa263bf5a1:0x9f35e949fb8db8a7": {
-      "place_id": "0x479f57aa263bf5a1:0x9f35e949fb8db8a7",
-      "name": "Friseur Unicut Nürnberg – Haar- und Bartschnitt",
-      "category": null,
-      "nameable": true,
+    "72984dbdc64adc9d": {
+      "aid": "72984dbdc64adc9d",
+      "nameable": false,
       "branch": "Beauty & Wellness",
       "city": "Nürnberg",
-      "postal_code": null,
-      "address": null,
-      "website": null,
-      "image": null,
       "rating": 5,
       "reviews": 59,
-      "dist": [
-        null,
-        null,
-        null,
-        1,
-        58
-      ],
-      "price_level": null,
-      "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
       "est_low": 3.99,
       "est_mid": 4.27,
       "est_high": 4.53,
-      "lat": 49.4488813,
-      "lng": 11.0684209,
-      "url": "https://www.google.com/maps/place/Friseur+Unicut+N%C3%BCrnberg+%E2%80%93+Haar-+und+Bartschnitt/@49.4488813,11.0684209,17z/data=!4m8!3m7!1s0x479f57aa263bf5a1:0x9f35e949fb8db8a7!8m2!3d49.4488813!4d11.0684209!9m1!1b1!16s%2Fg%2F11h_wz81mf?entry=ttu&g_ep=EgoyMDI2MDcwNi4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-09",
-      "last_seen": "2026-07-19",
-      "rev_hist": {
-        "2020-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2021-07": {
-          "n": 2,
-          "sum": 9
-        },
-        "2022-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2023-07": {
-          "n": 3,
-          "sum": 15
-        },
-        "2024-07": {
-          "n": 10,
-          "sum": 50
-        },
-        "2025-07": {
-          "n": 23,
-          "sum": 115
-        },
-        "2025-08": {
-          "n": 5,
-          "sum": 25
-        },
-        "2025-10": {
-          "n": 2,
-          "sum": 10
-        },
-        "2025-11": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-12": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-02": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-04": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-05": {
-          "n": 3,
-          "sum": 15
-        },
-        "2026-06": {
-          "n": 4,
-          "sum": 20
-        }
-      },
-      "rev_hist_meta": {
-        "at": "2026-07-19T01:58:32.825Z",
-        "complete": true,
-        "dbg": {
-          "btn": "Sort reviews|Sort",
-          "item": "Newest",
-          "n0": 64,
-          "n_end": 330,
-          "n_sort": 77,
-          "n_start": 77,
-          "n_tab": 64,
-          "pane": true,
-          "pre_matched": 58
-        },
-        "matched": 58,
-        "oldest_months": 0,
-        "scanned": 58,
-        "sorted": true,
-        "tab_retry": false
-      }
+      "last_seen": "2026-07-19"
     },
     "0x479f57aafdd95c77:0xfe36ce11e9d19f66": {
       "place_id": "0x479f57aafdd95c77:0xfe36ce11e9d19f66",
@@ -68292,117 +67989,20 @@
       "first_seen": "2026-07-22",
       "last_seen": "2026-07-22"
     },
-    "0x47bee116d6b8c331:0x667271915abe4d9b": {
-      "place_id": "0x47bee116d6b8c331:0x667271915abe4d9b",
-      "name": "Hair Studio Stasch | Friseur Bonn-Beuel",
-      "category": null,
-      "nameable": true,
+    "8490cc77ed7edea5": {
+      "aid": "8490cc77ed7edea5",
+      "nameable": false,
       "branch": "Beauty & Wellness",
       "city": "Bonn",
-      "postal_code": null,
-      "address": null,
-      "website": null,
-      "image": null,
       "rating": 4.9,
       "reviews": 439,
-      "dist": [
-        1,
-        null,
-        4,
-        16,
-        418
-      ],
-      "price_level": null,
-      "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.73,
       "est_mid": 4.78,
       "est_high": 4.83,
-      "lat": 50.7399837,
-      "lng": 7.124476,
-      "url": "https://www.google.com/maps/place/Hair+Studio+Stasch+%7C+Friseur+Bonn-Beuel/@50.7399837,7.124476,17z/data=!4m8!3m7!1s0x47bee116d6b8c331:0x667271915abe4d9b!8m2!3d50.7399837!4d7.124476!9m1!1b1!16s%2Fg%2F1tj2mljf?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-07-22",
-      "rev_hist": {
-        "2022-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2023-07": {
-          "n": 2,
-          "sum": 10
-        },
-        "2024-07": {
-          "n": 11,
-          "sum": 55
-        },
-        "2025-07": {
-          "n": 69,
-          "sum": 337
-        },
-        "2025-08": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-09": {
-          "n": 4,
-          "sum": 20
-        },
-        "2025-10": {
-          "n": 2,
-          "sum": 10
-        },
-        "2025-11": {
-          "n": 6,
-          "sum": 30
-        },
-        "2026-01": {
-          "n": 5,
-          "sum": 25
-        },
-        "2026-02": {
-          "n": 6,
-          "sum": 30
-        },
-        "2026-03": {
-          "n": 2,
-          "sum": 10
-        },
-        "2026-04": {
-          "n": 5,
-          "sum": 25
-        },
-        "2026-06": {
-          "n": 5,
-          "sum": 25
-        },
-        "2026-07": {
-          "n": 6,
-          "sum": 26
-        }
-      },
-      "rev_hist_meta": {
-        "at": "2026-07-21T19:22:50.231Z",
-        "complete": true,
-        "dbg": {
-          "btn": "Sort reviews|Sort",
-          "item": "Newest",
-          "n0": 113,
-          "n_end": 1257,
-          "n_sort": 99,
-          "n_start": 99,
-          "n_tab": 113,
-          "pane": true,
-          "pre_matched": 60
-        },
-        "matched": 125,
-        "oldest_months": 24,
-        "scanned": 125,
-        "sorted": true,
-        "tab_retry": false
-      }
+      "last_seen": "2026-07-22"
     },
     "264d38b5039a4362": {
       "aid": "264d38b5039a4362",
@@ -78841,253 +78441,35 @@
       "first_seen": "2026-07-22",
       "last_seen": "2026-07-22"
     },
-    "0x47b9bac527903425:0x483d952376ce85ff": {
-      "place_id": "0x47b9bac527903425:0x483d952376ce85ff",
-      "name": "Friseur Extraschnitt Münster",
-      "category": null,
-      "nameable": true,
+    "7b7b5241d3a8b4e6": {
+      "aid": "7b7b5241d3a8b4e6",
+      "nameable": false,
       "branch": "Beauty & Wellness",
       "city": "Münster",
-      "postal_code": null,
-      "address": null,
-      "website": null,
-      "image": null,
       "rating": 4.8,
       "reviews": 87,
-      "dist": [
-        1,
-        null,
-        2,
-        9,
-        75
-      ],
-      "price_level": null,
-      "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.09,
       "est_mid": 4.3,
       "est_high": 4.49,
-      "lat": 51.9575968,
-      "lng": 7.6277964,
-      "url": "https://www.google.com/maps/place/Friseur+Extraschnitt+M%C3%BCnster/@51.9575968,7.6277964,17z/data=!4m8!3m7!1s0x47b9bac527903425:0x483d952376ce85ff!8m2!3d51.9575968!4d7.6277964!9m1!1b1!16s%2Fg%2F1tz94vkm?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-07-22",
-      "rev_hist": {
-        "2014-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2016-07": {
-          "n": 2,
-          "sum": 10
-        },
-        "2017-07": {
-          "n": 2,
-          "sum": 10
-        },
-        "2018-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2019-07": {
-          "n": 5,
-          "sum": 23
-        },
-        "2020-07": {
-          "n": 2,
-          "sum": 10
-        },
-        "2021-07": {
-          "n": 11,
-          "sum": 53
-        },
-        "2022-07": {
-          "n": 5,
-          "sum": 25
-        },
-        "2023-07": {
-          "n": 6,
-          "sum": 29
-        },
-        "2024-07": {
-          "n": 6,
-          "sum": 26
-        },
-        "2025-07": {
-          "n": 8,
-          "sum": 40
-        },
-        "2025-09": {
-          "n": 3,
-          "sum": 15
-        },
-        "2025-10": {
-          "n": 6,
-          "sum": 28
-        },
-        "2026-01": {
-          "n": 2,
-          "sum": 10
-        },
-        "2026-03": {
-          "n": 2,
-          "sum": 9
-        },
-        "2026-05": {
-          "n": 3,
-          "sum": 11
-        }
-      },
-      "rev_hist_meta": {
-        "at": "2026-07-21T17:27:00.926Z",
-        "complete": true,
-        "dbg": {
-          "btn": "Sort reviews|Sort",
-          "item": "Newest",
-          "n0": 85,
-          "n_end": 232,
-          "n_sort": 80,
-          "n_start": 80,
-          "n_tab": 85,
-          "pane": true,
-          "pre_matched": 60
-        },
-        "matched": 65,
-        "oldest_months": 24,
-        "scanned": 65,
-        "sorted": true,
-        "tab_retry": false
-      }
+      "last_seen": "2026-07-22"
     },
-    "0x47b9bad0dd7a7e31:0xe618648b9704df45": {
-      "place_id": "0x47b9bad0dd7a7e31:0xe618648b9704df45",
-      "name": "Tierarztpraxis M. Radev",
-      "category": "veterinary",
-      "nameable": true,
+    "e8df312bc7e4e926": {
+      "aid": "e8df312bc7e4e926",
+      "nameable": false,
       "branch": "Gesundheit",
       "city": "Münster",
-      "postal_code": null,
-      "address": null,
-      "website": null,
-      "image": null,
       "rating": 4.9,
       "reviews": 561,
-      "dist": [
-        8,
-        2,
-        7,
-        29,
-        515
-      ],
-      "price_level": null,
-      "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.58,
       "est_mid": 4.7,
       "est_high": 4.8,
-      "lat": 51.9401736,
-      "lng": 7.6093019,
-      "url": "https://www.google.com/maps/place/Tierarztpraxis+M.+Radev/@51.9401736,7.6093019,17z/data=!3m1!5s0x47b9a54a059efa4f:0x801e160d009c6056!4m8!3m7!1s0x47b9bad0dd7a7e31:0xe618648b9704df45!8m2!3d51.9401736!4d7.6093019!9m1!1b1!16s%2Fg%2F1vd74__w?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-07-22",
-      "rev_hist": {
-        "2015-07": {
-          "n": 1,
-          "sum": 3
-        },
-        "2020-07": {
-          "n": 2,
-          "sum": 8
-        },
-        "2022-07": {
-          "n": 2,
-          "sum": 10
-        },
-        "2023-07": {
-          "n": 3,
-          "sum": 15
-        },
-        "2024-07": {
-          "n": 14,
-          "sum": 70
-        },
-        "2025-07": {
-          "n": 43,
-          "sum": 209
-        },
-        "2025-08": {
-          "n": 9,
-          "sum": 41
-        },
-        "2025-09": {
-          "n": 3,
-          "sum": 15
-        },
-        "2025-10": {
-          "n": 4,
-          "sum": 17
-        },
-        "2025-11": {
-          "n": 2,
-          "sum": 7
-        },
-        "2025-12": {
-          "n": 2,
-          "sum": 10
-        },
-        "2026-01": {
-          "n": 3,
-          "sum": 15
-        },
-        "2026-02": {
-          "n": 2,
-          "sum": 10
-        },
-        "2026-03": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-04": {
-          "n": 4,
-          "sum": 20
-        },
-        "2026-05": {
-          "n": 5,
-          "sum": 25
-        },
-        "2026-06": {
-          "n": 2,
-          "sum": 6
-        },
-        "2026-07": {
-          "n": 8,
-          "sum": 32
-        }
-      },
-      "rev_hist_meta": {
-        "at": "2026-07-22T04:10:05.632Z",
-        "complete": true,
-        "dbg": {
-          "btn": "Sort reviews|Sort",
-          "item": "Newest",
-          "n0": 82,
-          "n_end": 786,
-          "n_sort": 78,
-          "n_start": 78,
-          "n_tab": 82,
-          "pane": true,
-          "pre_matched": 60
-        },
-        "matched": 110,
-        "oldest_months": 24,
-        "scanned": 111,
-        "sorted": true,
-        "tab_retry": false
-      }
+      "last_seen": "2026-07-22"
     },
     "95f241394b3ccc7f": {
       "aid": "95f241394b3ccc7f",
@@ -79104,137 +78486,20 @@
       "first_seen": "2026-07-22",
       "last_seen": "2026-07-22"
     },
-    "0x47b9bada4bc6a69b:0xf9220c8dd824243f": {
-      "place_id": "0x47b9bada4bc6a69b:0xf9220c8dd824243f",
-      "name": "Friseur Alanya",
-      "category": null,
-      "nameable": true,
+    "328d490b7f5a0c13": {
+      "aid": "328d490b7f5a0c13",
+      "nameable": false,
       "branch": "Beauty & Wellness",
       "city": "Münster",
-      "postal_code": null,
-      "address": null,
-      "website": null,
-      "image": null,
       "rating": 4.8,
       "reviews": 272,
-      "dist": [
-        4,
-        1,
-        null,
-        28,
-        239
-      ],
-      "price_level": null,
-      "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.21,
       "est_mid": 4.42,
       "est_high": 4.6,
-      "lat": 51.9568795,
-      "lng": 7.6334438,
-      "url": "https://www.google.com/maps/place/Friseur+Alanya/@51.9568795,7.6334438,17z/data=!4m8!3m7!1s0x47b9bada4bc6a69b:0xf9220c8dd824243f!8m2!3d51.9568795!4d7.6334438!9m1!1b1!16s%2Fg%2F1hc3d35zf?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-07-22",
-      "rev_hist": {
-        "2017-07": {
-          "n": 2,
-          "sum": 9
-        },
-        "2018-07": {
-          "n": 1,
-          "sum": 1
-        },
-        "2019-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2020-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2021-07": {
-          "n": 1,
-          "sum": 5
-        },
-        "2022-07": {
-          "n": 10,
-          "sum": 50
-        },
-        "2023-07": {
-          "n": 10,
-          "sum": 50
-        },
-        "2024-07": {
-          "n": 14,
-          "sum": 66
-        },
-        "2025-07": {
-          "n": 14,
-          "sum": 68
-        },
-        "2025-08": {
-          "n": 4,
-          "sum": 20
-        },
-        "2025-10": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-11": {
-          "n": 4,
-          "sum": 20
-        },
-        "2025-12": {
-          "n": 3,
-          "sum": 15
-        },
-        "2026-01": {
-          "n": 3,
-          "sum": 14
-        },
-        "2026-02": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-03": {
-          "n": 2,
-          "sum": 2
-        },
-        "2026-04": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-06": {
-          "n": 3,
-          "sum": 15
-        },
-        "2026-07": {
-          "n": 3,
-          "sum": 11
-        }
-      },
-      "rev_hist_meta": {
-        "at": "2026-07-21T18:10:55.675Z",
-        "complete": true,
-        "dbg": {
-          "btn": "Sort reviews|Sort",
-          "item": "Newest",
-          "n0": 80,
-          "n_end": 402,
-          "n_sort": 77,
-          "n_start": 77,
-          "n_tab": 80,
-          "pane": true,
-          "pre_matched": 60
-        },
-        "matched": 79,
-        "oldest_months": 24,
-        "scanned": 79,
-        "sorted": true,
-        "tab_retry": false
-      }
+      "last_seen": "2026-07-22"
     },
     "9ef6f843fc098a8a": {
       "aid": "9ef6f843fc098a8a",
@@ -79990,105 +79255,20 @@
         "tab_retry": false
       }
     },
-    "0x47b9bb5b54b30eab:0xef9466a76db5efc3": {
-      "place_id": "0x47b9bb5b54b30eab:0xef9466a76db5efc3",
-      "name": "Friseur Montana - Münster",
-      "category": null,
-      "nameable": true,
+    "d69042f74646864d": {
+      "aid": "d69042f74646864d",
+      "nameable": false,
       "branch": "Beauty & Wellness",
       "city": "Münster",
-      "postal_code": null,
-      "address": null,
-      "website": null,
-      "image": null,
       "rating": 4.8,
       "reviews": 110,
-      "dist": [
-        1,
-        1,
-        null,
-        12,
-        96
-      ],
-      "price_level": null,
-      "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.61,
       "est_mid": 3.99,
       "est_high": 4.35,
-      "lat": 51.958962,
-      "lng": 7.6346115,
-      "url": "https://www.google.com/maps/place/Friseur+Montana+-+M%C3%BCnster/@51.958962,7.6346115,17z/data=!4m8!3m7!1s0x47b9bb5b54b30eab:0xef9466a76db5efc3!8m2!3d51.958962!4d7.6346115!9m1!1b1!16s%2Fg%2F11h_5lr0l5?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-22",
-      "last_seen": "2026-07-22",
-      "rev_hist": {
-        "2020-07": {
-          "n": 18,
-          "sum": 85
-        },
-        "2021-07": {
-          "n": 14,
-          "sum": 70
-        },
-        "2022-07": {
-          "n": 10,
-          "sum": 49
-        },
-        "2023-07": {
-          "n": 5,
-          "sum": 24
-        },
-        "2024-07": {
-          "n": 6,
-          "sum": 30
-        },
-        "2025-07": {
-          "n": 3,
-          "sum": 12
-        },
-        "2025-09": {
-          "n": 4,
-          "sum": 20
-        },
-        "2025-11": {
-          "n": 1,
-          "sum": 5
-        },
-        "2026-04": {
-          "n": 2,
-          "sum": 10
-        },
-        "2026-05": {
-          "n": 3,
-          "sum": 15
-        },
-        "2026-06": {
-          "n": 1,
-          "sum": 5
-        }
-      },
-      "rev_hist_meta": {
-        "at": "2026-07-21T23:33:48.859Z",
-        "complete": true,
-        "dbg": {
-          "btn": "Sort reviews|Sort",
-          "item": "Newest",
-          "n0": 81,
-          "n_end": 144,
-          "n_sort": 0,
-          "n_start": 71,
-          "n_tab": 81,
-          "pane": true,
-          "pre_matched": 60
-        },
-        "matched": 67,
-        "oldest_months": 24,
-        "scanned": 68,
-        "sorted": true,
-        "tab_retry": false
-      }
+      "last_seen": "2026-07-22"
     },
     "f0952f9c4beed2a5": {
       "aid": "f0952f9c4beed2a5",

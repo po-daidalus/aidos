@@ -273,7 +273,7 @@
 {"date":"2026-07","id":"0x47bf2541a6aaa81f:0x8292f1fadbe65b3a","nameable":true,"rating":4.7,"reviews":359,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"0x47bf2543cb00a08b:0x8af1cd9d2a30ecfb","nameable":true,"rating":4.2,"reviews":176,"range_min":51,"range_max":100}
 {"date":"2026-07","id":"589107179003bf86","nameable":false,"rating":4.2,"reviews":83,"range_min":51,"range_max":100}
-{"date":"2026-07","id":"0x47bf2550e85cc785:0xfd5f4b26ad65f096","nameable":true,"rating":4.8,"reviews":107,"range_min":11,"range_max":20}
+{"date":"2026-07","id":"a255bdaf9f9b904c","nameable":false,"rating":4.8,"reviews":107,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"b7f2c0ece746a7a5","nameable":false,"rating":4.7,"reviews":420,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"0x47bf25705ba9f205:0x9eb5acc09ee5521a","nameable":true,"rating":4.9,"reviews":1828,"range_min":101,"range_max":150}
 {"date":"2026-07","id":"0x47bf25837a9e8173:0xfe5ac841d2f18083","nameable":true,"rating":4.8,"reviews":545,"range_min":21,"range_max":50}
@@ -501,7 +501,7 @@
 {"date":"2026-07","id":"d7803bb00879bb8a","nameable":false,"rating":4.9,"reviews":92,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"7e69d566713f6939","nameable":false,"rating":4.4,"reviews":82,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"1b91bf0c34c56c17","nameable":false,"rating":4.6,"reviews":960,"range_min":201,"range_max":250}
-{"date":"2026-07","id":"0x47b8fd0876dd2a1d:0x2a150f72340dd25d","nameable":true,"rating":5,"reviews":772,"range_min":51,"range_max":100}
+{"date":"2026-07","id":"270818b36d3bf8b4","nameable":false,"rating":5,"reviews":772,"range_min":51,"range_max":100}
 {"date":"2026-07","id":"0x47bf33f5900f1da5:0x4ce6dc7d87ad5262","nameable":true,"rating":4.3,"reviews":59,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"q:kult gem se kebab das original aus berlin|d sseldorf","nameable":true,"rating":4.7,"reviews":787,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"c052553aec03e3a0","nameable":false,"rating":4.8,"reviews":2402,"range_min":11,"range_max":20}
@@ -651,7 +651,7 @@
 {"date":"2026-07","id":"0x479f57a85e95e399:0xd9dbd1d8f6fe183f","nameable":true,"rating":4.6,"reviews":1408,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"66ef2b43381a2c38","nameable":false,"rating":4.6,"reviews":99,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"43f83c1dff150b74","nameable":false,"rating":4.6,"reviews":1310,"range_min":250,"range_max":null}
-{"date":"2026-07","id":"0x479f57aa263bf5a1:0x9f35e949fb8db8a7","nameable":true,"rating":5,"reviews":59,"range_min":11,"range_max":20}
+{"date":"2026-07","id":"72984dbdc64adc9d","nameable":false,"rating":5,"reviews":59,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"0x479f57aafdd95c77:0xfe36ce11e9d19f66","nameable":true,"rating":4.7,"reviews":1193,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"0x479f57abaabea759:0x7bfc15e85cd3a7b4","nameable":true,"rating":4.3,"reviews":147,"range_min":51,"range_max":100}
 {"date":"2026-07","id":"0x479f57ac490f9319:0x37c0749a58f6e27","nameable":true,"rating":4.8,"reviews":344,"range_min":21,"range_max":50}
@@ -962,7 +962,7 @@
 {"date":"2026-07","id":"3cdbede8082169e2","nameable":false,"rating":4.6,"reviews":606,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"0x47bee111ee90a9c3:0x13f183aee29a6634","nameable":true,"rating":4.6,"reviews":1066,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"cedd9a7a8ea4bb4c","nameable":false,"rating":4.8,"reviews":138,"range_min":11,"range_max":20}
-{"date":"2026-07","id":"0x47bee116d6b8c331:0x667271915abe4d9b","nameable":true,"rating":4.9,"reviews":439,"range_min":11,"range_max":20}
+{"date":"2026-07","id":"8490cc77ed7edea5","nameable":false,"rating":4.9,"reviews":439,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"264d38b5039a4362","nameable":false,"rating":4.6,"reviews":165,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"0x47bee126c976b643:0xc93b6bc64e75c387","nameable":true,"rating":4.9,"reviews":58,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"0x47bee1497caa4c01:0xb7b1da6b768380ca","nameable":true,"rating":4.2,"reviews":567,"range_min":51,"range_max":100}
@@ -1097,10 +1097,10 @@
 {"date":"2026-07","id":"0x47b9bac2991c0915:0xa62f382e95eb2ff3","nameable":true,"rating":4.7,"reviews":494,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"0x47b9bac2c97efa55:0x2b7289a43c1de9d4","nameable":true,"rating":4.5,"reviews":1029,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"584466cc264ab5c6","nameable":false,"rating":4.6,"reviews":660,"range_min":11,"range_max":20}
-{"date":"2026-07","id":"0x47b9bac527903425:0x483d952376ce85ff","nameable":true,"rating":4.8,"reviews":87,"range_min":11,"range_max":20}
-{"date":"2026-07","id":"0x47b9bad0dd7a7e31:0xe618648b9704df45","nameable":true,"rating":4.9,"reviews":561,"range_min":21,"range_max":50}
+{"date":"2026-07","id":"7b7b5241d3a8b4e6","nameable":false,"rating":4.8,"reviews":87,"range_min":11,"range_max":20}
+{"date":"2026-07","id":"e8df312bc7e4e926","nameable":false,"rating":4.9,"reviews":561,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"95f241394b3ccc7f","nameable":false,"rating":4.1,"reviews":374,"range_min":21,"range_max":50}
-{"date":"2026-07","id":"0x47b9bada4bc6a69b:0xf9220c8dd824243f","nameable":true,"rating":4.8,"reviews":272,"range_min":21,"range_max":50}
+{"date":"2026-07","id":"328d490b7f5a0c13","nameable":false,"rating":4.8,"reviews":272,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"9ef6f843fc098a8a","nameable":false,"rating":4.6,"reviews":93,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"0x47b9badf80e14d55:0xa98241f1ccea55be","nameable":true,"rating":4.5,"reviews":197,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"0x47b9bafc8a984b2f:0xa35643e27356260d","nameable":true,"rating":4.8,"reviews":488,"range_min":11,"range_max":20}
@@ -1110,7 +1110,7 @@
 {"date":"2026-07","id":"0x47b9bb1f80ba4451:0x9dd127f66c1b7a46","nameable":true,"rating":4.8,"reviews":156,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"0x47b9bb21d2b93fad:0x45bd2d9c8a5e58d0","nameable":true,"rating":4.7,"reviews":143,"range_min":11,"range_max":20}
 {"date":"2026-07","id":"0x47b9bb41a94161ff:0xc61fca98146b4e63","nameable":true,"rating":4.4,"reviews":183,"range_min":21,"range_max":50}
-{"date":"2026-07","id":"0x47b9bb5b54b30eab:0xef9466a76db5efc3","nameable":true,"rating":4.8,"reviews":110,"range_min":21,"range_max":50}
+{"date":"2026-07","id":"d69042f74646864d","nameable":false,"rating":4.8,"reviews":110,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"f0952f9c4beed2a5","nameable":false,"rating":4.6,"reviews":187,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"0x47b9bb5fa08fd843:0xed3010a5043d8c2a","nameable":true,"rating":4.2,"reviews":266,"range_min":21,"range_max":50}
 {"date":"2026-07","id":"08c8130fe50d2a35","nameable":false,"rating":4.7,"reviews":90,"range_min":21,"range_max":50}
