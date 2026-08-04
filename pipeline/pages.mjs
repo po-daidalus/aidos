@@ -44,6 +44,14 @@ const LANGS = {
 };
 const de = LANGS.de.nf, de1 = LANGS.de.nf1, rangeLabel = LANGS.de.rangeLabel; // DE shorthands (lookup index etc.)
 
+// A page's FILE PATH and its PUBLIC URL are not the same thing. We write unternehmen/x.html to
+// disk, but Cloudflare Pages serves it at /unternehmen/x and 308-redirects /unternehmen/x.html
+// there. Advertising the .html form pointed every sitemap entry, canonical, hreflang and internal
+// link at a redirect — Google was told "the canonical of this page is a URL that immediately
+// bounces you back here", which is a self-defeating signal and made the whole sitemap resolve
+// through 866 redirects. Write .html, advertise what is actually served.
+const pub = (rel) => '/' + String(rel).replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, '');
+
 // Honest aggregate range across locations: if ANY location is capped ("über N"), the true total is
 // unbounded. Never invent a false closed range. For multi-location brands the figure is the SUM of
 // Google's per-location ranges, flagged as such.
@@ -59,16 +67,16 @@ function shell({ lang, title, desc, canonical, altHref, altCanonical, jsonld, bo
   const L = LANGS[lang]; const P = L.pfx;
   const on = (k) => (active === k ? ' class="on"' : '');
   const nav = lang === 'de'
-    ? `<a${on('index')} href="${P}index.html">Übersicht</a><a${on('listing')} href="${P}listing.html">Unternehmen &amp; Ketten</a><a${on('methodik')} href="${P}methodik.html">Methodik</a><span class="lang-switch"><a class="on" href="#">DE</a><a href="${altHref}">EN</a></span>`
-    : `<a${on('index')} href="${P}en/">Overview</a><a${on('listing')} href="${P}en/listing.html">Companies &amp; chains</a><a${on('methodik')} href="${P}en/methodology.html">Methodology</a><span class="lang-switch"><a href="${altHref}">DE</a><a class="on" href="#">EN</a></span>`;
+    ? `<a${on('index')} href="${P}">Übersicht</a><a${on('listing')} href="${P}listing">Unternehmen &amp; Ketten</a><a${on('methodik')} href="${P}methodik">Methodik</a><span class="lang-switch"><a class="on" href="#">DE</a><a href="${altHref}">EN</a></span>`
+    : `<a${on('index')} href="${P}en/">Overview</a><a${on('listing')} href="${P}en/listing">Companies &amp; chains</a><a${on('methodik')} href="${P}en/methodology">Methodology</a><span class="lang-switch"><a href="${altHref}">DE</a><a class="on" href="#">EN</a></span>`;
   const foot = lang === 'de'
-    ? `<div class="foot-nav"><a href="${P}index.html">Übersicht</a><a href="${P}listing.html">Unternehmen &amp; Ketten</a><a href="${P}methodik.html">Methodik</a><a href="${P}presse.html">Presse</a><a href="${P}ueber-aidos.html">Über aidos</a><a href="${P}rechtslage.html">Rechtslage</a><a href="${P}impressum.html">Impressum</a><a href="${P}impressum.html#datenschutz">Datenschutz</a><a href="${P}daten-melden.html">Daten melden</a></div>
+    ? `<div class="foot-nav"><a href="${P}">Übersicht</a><a href="${P}listing">Unternehmen &amp; Ketten</a><a href="${P}methodik">Methodik</a><a href="${P}presse">Presse</a><a href="${P}ueber-aidos">Über aidos</a><a href="${P}rechtslage">Rechtslage</a><a href="${P}impressum">Impressum</a><a href="${P}impressum#datenschutz">Datenschutz</a><a href="${P}daten-melden">Daten melden</a></div>
 <div class="foot-legal">Quelle: öffentliche Google-Maps-Profile (Hinweis „… Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt"). Eine hohe Zahl entfernter Bewertungen ist <b>kein</b> Beweis für unlauteres Verhalten. Werte inkl. entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. Keine Rechtsberatung. „Google" und „Google Maps" sind Marken der Google LLC; eine Verbindung besteht nicht.</div>
 <div class="foot-meta">Keine Tracker, keine Cookies · Schriften selbst gehostet · © 2026 aidos</div>`
-    : `<div class="foot-nav"><a href="${P}en/">Overview</a><a href="${P}en/listing.html">Companies &amp; chains</a><a href="${P}en/methodology.html">Methodology</a><a href="${P}presse.html">Press (DE)</a><a href="${P}impressum.html">Impressum</a><a href="${P}impressum.html#datenschutz">Privacy (DE)</a></div>
+    : `<div class="foot-nav"><a href="${P}en/">Overview</a><a href="${P}en/listing">Companies &amp; chains</a><a href="${P}en/methodology">Methodology</a><a href="${P}presse">Press (DE)</a><a href="${P}impressum">Impressum</a><a href="${P}impressum#datenschutz">Privacy (DE)</a></div>
 <div class="foot-legal">Source: public Google Maps profiles (notice “… reviews removed due to complaints about defamation”). A high number of removed reviews is <b>no</b> proof of unfair conduct. Values including removed reviews are computed estimates, not statements of fact. Not legal advice. “Google” and “Google Maps” are trademarks of Google LLC; no affiliation exists.</div>
 <div class="foot-meta">No trackers, no cookies · self-hosted fonts · © 2026 aidos</div>`;
-  const home = lang === 'de' ? `${P}index.html` : `${P}en/`;
+  const home = lang === 'de' ? `${P}` : `${P}en/`;
   return `<!doctype html><html lang="${L.htmlLang}"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>${esc(title)}</title>
@@ -98,10 +106,10 @@ ${foot}
 </body></html>`;
 }
 const crumbs = (items) => `<div class="crumbs">${items.map((i, n) => (i.href ? `<a href="${i.href}">${esc(i.t)}</a>` : esc(i.t)) + (n < items.length - 1 ? ' › ' : '')).join('')}</div>`;
-const breadcrumbLd = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.t, item: BASE + '/' + (i.abs || '') })) });
+const breadcrumbLd = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.t, item: BASE + pub(i.abs || '') })) });
 const disclaimer = (lang, P) => lang === 'de'
-  ? `<div class="notice"><b>Hinweis:</b> Die Zahl entfernter Bewertungen stammt von Google&nbsp;LLC (öffentliches Google-Maps-Profil, rollierende 365 Tage). Sie bedeutet <b>nicht</b>, dass das Unternehmen rechtswidrig gehandelt hat – Unternehmen sind häufig Ziel unberechtigter Fake-Bewertungskampagnen. Werte inkl. entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. <a href="${P}daten-melden.html">Daten melden / korrigieren</a>.</div>`
-  : `<div class="notice"><b>Note:</b> The number of removed reviews originates from Google&nbsp;LLC (public Google Maps profile, rolling 365 days). It does <b>not</b> mean the business acted unlawfully – businesses are frequently targeted by unjustified fake-review campaigns. Values including removed reviews are computed estimates, not statements of fact. <a href="${P}daten-melden.html">Report / correct data (DE)</a>.</div>`;
+  ? `<div class="notice"><b>Hinweis:</b> Die Zahl entfernter Bewertungen stammt von Google&nbsp;LLC (öffentliches Google-Maps-Profil, rollierende 365 Tage). Sie bedeutet <b>nicht</b>, dass das Unternehmen rechtswidrig gehandelt hat – Unternehmen sind häufig Ziel unberechtigter Fake-Bewertungskampagnen. Werte inkl. entfernter Rezensionen sind rechnerische Schätzungen, keine Tatsachenbehauptungen. <a href="${P}daten-melden">Daten melden / korrigieren</a>.</div>`
+  : `<div class="notice"><b>Note:</b> The number of removed reviews originates from Google&nbsp;LLC (public Google Maps profile, rolling 365 days). It does <b>not</b> mean the business acted unlawfully – businesses are frequently targeted by unjustified fake-review campaigns. Values including removed reviews are computed estimates, not statements of fact. <a href="${P}daten-melden">Report / correct data (DE)</a>.</div>`;
 
 // ---------- group nameable businesses into brands (mirror listing.html) ----------
 const normName = (n) => (n || '').split(/ [-–] /)[0].trim();
@@ -319,8 +327,8 @@ for (const [bkey, locs] of brands) {
   for (const lang of ['de', 'en']) {
     const L = LANGS[lang]; const P = L.pfx; const nf = L.nf, nf1 = L.nf1;
     const rel = lang === 'de' ? relDe : relEn;
-    const alt = lang === 'de' ? P + relEn : P + relDe;
-    const canonical = BASE + '/' + rel;
+    const alt = P + pub(lang === 'de' ? relEn : relDe).slice(1); // relative link, served form (no .html)
+    const canonical = BASE + pub(rel);
     const rl = L.rangeLabel(remMin, remMax);
     const cityLbls = cities.map(L.tC);
     const brLbl = L.tB(branch);
@@ -339,7 +347,7 @@ for (const [bkey, locs] of brands) {
       stats: ['entfernte Bewertungen (letzte 365 Tage)', 'aktuell angezeigte Bewertung', 'sichtbare Bewertungen', 'Statistik-Index (Perzentil nach entfernten Bewertungen im erfassten Datensatz)'],
       estH: 'Was wäre die Bewertung ohne die entfernten Rezensionen?',
       est: `Nimmt man an, dass die entfernten Rezensionen im Schnitt 1–2★ vergeben hätten, läge die Note rechnerisch bei <b>~${nf1(est)}★</b> statt der angezeigten <b>${nf1(rating)}★</b> — die Entfernungen heben die Anzeige also um geschätzt <b>+${nf1(rating - est)}★</b>. Nur eine Schätzung, keine exakten Werte — waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die angezeigte Note die zutreffendere.`,
-      moreRow: `Mehr: <a href="${P}branche/${slug(branch)}.html">alle ${esc(brLbl)}-Einträge</a>${cities[0] ? ` · <a href="${P}stadt/${slug(cities[0])}.html">${esc(cityLbls[0])}</a>` : ''} · <a href="${P}rechtslage.html">Warum werden Bewertungen entfernt?</a>`,
+      moreRow: `Mehr: <a href="${P}branche/${slug(branch)}">alle ${esc(brLbl)}-Einträge</a>${cities[0] ? ` · <a href="${P}stadt/${slug(cities[0])}">${esc(cityLbls[0])}</a>` : ''} · <a href="${P}rechtslage">Warum werden Bewertungen entfernt?</a>`,
       branches: 'Branchen',
     } : {
       locH: `${locs.length} surveyed locations`, locTh: ['Location', 'City', 'Removed (365 d)', 'rating: estimated · displayed'],
@@ -349,12 +357,12 @@ for (const [bkey, locs] of brands) {
       stats: ['removed reviews (past 365 days)', 'currently displayed rating', 'visible reviews', 'statistical index (percentile by removed reviews within the dataset)'],
       estH: 'What would the rating be without the removed reviews?',
       est: `Assuming the removed reviews would have averaged 1–2★, the rating would arithmetically stand at <b>~${nf1(est)}★</b> instead of the displayed <b>${nf1(rating)}★</b> — the removals lift the display by an estimated <b>+${nf1(rating - est)}★</b>. An estimate only, no exact values — if the removals were justified (e.g. fake campaigns), the displayed rating is the more accurate one.`,
-      moreRow: `More: <a href="${P}en/branche/${slug(branch)}.html">all ${esc(brLbl)} entries</a>${cities[0] ? ` · <a href="${P}en/stadt/${slug(cities[0])}.html">${esc(cityLbls[0])}</a>` : ''} · <a href="${P}rechtslage.html">Why are reviews removed? (DE)</a>`,
+      moreRow: `More: <a href="${P}en/branche/${slug(branch)}">all ${esc(brLbl)} entries</a>${cities[0] ? ` · <a href="${P}en/stadt/${slug(cities[0])}">${esc(cityLbls[0])}</a>` : ''} · <a href="${P}rechtslage">Why are reviews removed? (DE)</a>`,
       branches: 'Industries',
     };
-    const brHref = (lang === 'de' ? P + 'branche/' : P + 'en/branche/') + slug(branch) + '.html';
+    const brHref = (lang === 'de' ? P + 'branche/' : P + 'en/branche/') + slug(branch);
     const locList = locs.length > 1 ? `<div class="card"><h2>${S.locH}</h2><div class="table-scroll"><table class="rank"><thead><tr><th>${S.locTh[0]}</th><th>${S.locTh[1]}</th><th class="num">${S.locTh[2]}</th><th class="num">${S.locTh[3]}</th></tr></thead><tbody>${locs.slice().sort((x, y) => (y.range_max || y.range_min || 0) - (x.range_max || x.range_min || 0)).map((d) => `<tr><td>${esc(d.name || '–')}</td><td>${esc(L.tC(d.city) || '–')}</td><td class="num" style="color:var(--accent);font-weight:600">${L.rangeLabel(d.range_min, d.range_max)}</td><td class="num">${locWhisk(d, lang)}</td></tr>`).join('')}</tbody></table></div><p class="asof">${S.locNote}</p></div>` : '';
-    const body = crumbs([{ t: 'aidos', href: lang === 'de' ? P + 'index.html' : P + 'en/' }, { t: brLbl, href: brHref }, { t: name }]) +
+    const body = crumbs([{ t: 'aidos', href: lang === 'de' ? P : P + 'en/' }, { t: brLbl, href: brHref }, { t: name }]) +
       `<div class="kicker">${esc(brLbl)}${cities.length ? ' · ' + esc(cityLbls.join(', ')) : ''}</div>` +
       `<div class="titlerow">${brandMark(name, branch, P)}<h1>${esc(name)}</h1></div><span class="motif"><b></b><i></i></span>` +
       `<p class="sub">${S.sub}</p>` +
@@ -370,12 +378,12 @@ for (const [bkey, locs] of brands) {
       (hasEst ? `<div class="card"><h2>${S.estH}</h2><p class="est-line">${S.est}</p></div>` : '') +
       disclaimer(lang, P) +
       `<p style="font-size:13.5px;color:var(--ink-3)">${S.moreRow}</p>`;
-    const jsonld = breadcrumbLd([{ t: 'aidos', abs: lang === 'de' ? '' : 'en/' }, { t: brLbl, abs: (lang === 'de' ? '' : 'en/') + 'branche/' + slug(branch) + '.html' }, { t: name, abs: rel }]);
-    fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + '/' + (lang === 'de' ? relEn : relDe), jsonld, body }));
+    const jsonld = breadcrumbLd([{ t: 'aidos', abs: lang === 'de' ? '' : 'en/' }, { t: brLbl, abs: (lang === 'de' ? '' : 'en/') + 'branche/' + slug(branch) }, { t: name, abs: rel }]);
+    fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + pub(lang === 'de' ? relEn : relDe), jsonld, body }));
     urls.push({ loc: canonical, removed: (remMin + (remMax || remMin)) / 2 });
   }
-  lookup.push({ n: name, c: cities.join(', '), u: relDe, r: rangeLabel(remMin, remMax), s: score, b: branch });
-  pageMap[bkey] = relDe;
+  lookup.push({ n: name, c: cities.join(', '), u: pub(relDe).slice(1), r: rangeLabel(remMin, remMax), s: score, b: branch });
+  pageMap[bkey] = pub(relDe).slice(1);
   locs._brand = { name, rel: relDe, relEn, remMin, remMax, cities, branch, score, rating };
 }
 
@@ -385,7 +393,7 @@ function brandTable(list, lang) {
   const L = LANGS[lang]; const P = L.pfx;
   const th = lang === 'de' ? ['Unternehmen', 'Stadt', 'Entfernt (365 T.)', 'aidos-Score'] : ['Company', 'City', 'Removed (365 d)', 'aidos score'];
   return `<table class="rank"><thead><tr><th>${th[0]}</th><th>${th[1]}</th><th>${th[2]}</th><th>${th[3]}</th></tr></thead><tbody>` +
-    list.map((b) => `<tr><td><a href="${P}${lang === 'de' ? b.rel : b.relEn}">${esc(b.name)}</a></td><td>${esc(b.cities.map(L.tC).join(', '))}</td><td>${L.rangeLabel(b.remMin, b.remMax)}</td><td style="color:${scoreCol(b.score)};font-weight:500">${b.score}</td></tr>`).join('') +
+    list.map((b) => `<tr><td><a href="${P}${pub(lang === 'de' ? b.rel : b.relEn).slice(1)}">${esc(b.name)}</a></td><td>${esc(b.cities.map(L.tC).join(', '))}</td><td>${L.rangeLabel(b.remMin, b.remMax)}</td><td style="color:${scoreCol(b.score)};font-weight:500">${b.score}</td></tr>`).join('') +
     `</tbody></table>`;
 }
 
@@ -396,17 +404,17 @@ for (const br of agg.branches) {
   for (const lang of ['de', 'en']) {
     const L = LANGS[lang]; const P = L.pfx; const nf = L.nf;
     const rel = (lang === 'de' ? '' : 'en/') + 'branche/' + sg + '.html';
-    const alt = lang === 'de' ? P + 'en/branche/' + sg + '.html' : P + 'branche/' + sg + '.html';
-    const canonical = BASE + '/' + rel;
+    const alt = lang === 'de' ? P + 'en/branche/' + sg : P + 'branche/' + sg;
+    const canonical = BASE + pub(rel);
     const brLbl = L.tB(br.key);
     const title = lang === 'de' ? `${brLbl}: entfernte Google-Bewertungen im Vergleich | aidos` : `${brLbl}: removed Google reviews compared | aidos`;
     const desc = lang === 'de'
       ? `${brLbl} in der Auswertung: geschätzt ${nf(Math.round(br.removed))} entfernte Bewertungen, aidos-Index ${br.aidos_index}/100. ${list.length} gelistete Unternehmen & Ketten.`
       : `${brLbl} in the analysis: an estimated ${nf(Math.round(br.removed))} removed reviews, aidos index ${br.aidos_index}/100. ${list.length} listed companies & chains.`;
     const S = lang === 'de'
-      ? { kick: 'Branche', sub: `Geschätzt <b>${nf(Math.round(br.removed))}</b> entfernte Bewertungen über ${br.n} erfasste Profile. aidos-Index <b>${br.aidos_index}/100</b>.`, stats: ['geschätzt entfernte Bewertungen', 'erfasste Profile', 'aidos-Index (Auffälligkeit der Branche)', 'Anteil an allen Entfernungen'], listH: `Gelistete Unternehmen &amp; Ketten (${list.length})`, back: '← Alle Branchen &amp; Städte', backHref: P + 'index.html', crumb: 'Branchen' }
+      ? { kick: 'Branche', sub: `Geschätzt <b>${nf(Math.round(br.removed))}</b> entfernte Bewertungen über ${br.n} erfasste Profile. aidos-Index <b>${br.aidos_index}/100</b>.`, stats: ['geschätzt entfernte Bewertungen', 'erfasste Profile', 'aidos-Index (Auffälligkeit der Branche)', 'Anteil an allen Entfernungen'], listH: `Gelistete Unternehmen &amp; Ketten (${list.length})`, back: '← Alle Branchen &amp; Städte', backHref: P, crumb: 'Branchen' }
       : { kick: 'Industry', sub: `An estimated <b>${nf(Math.round(br.removed))}</b> removed reviews across ${br.n} surveyed profiles. aidos index <b>${br.aidos_index}/100</b>.`, stats: ['estimated removed reviews', 'surveyed profiles', 'aidos index (conspicuousness of the industry)', 'share of all removals'], listH: `Listed companies &amp; chains (${list.length})`, back: '← All industries &amp; cities', backHref: P + 'en/', crumb: 'Industries' };
-    const body = crumbs([{ t: 'aidos', href: lang === 'de' ? P + 'index.html' : P + 'en/' }, { t: S.crumb }, { t: brLbl }]) +
+    const body = crumbs([{ t: 'aidos', href: lang === 'de' ? P : P + 'en/' }, { t: S.crumb }, { t: brLbl }]) +
       `<div class="kicker">${S.kick}</div><h1>${esc(brLbl)}</h1><span class="motif"><b></b><i></i></span>` +
       `<p class="sub">${S.sub}</p>` +
       `<div class="grid"><div class="stat"><div class="v red">${nf(Math.round(br.removed))}</div><div class="l">${S.stats[0]}</div></div>` +
@@ -415,7 +423,7 @@ for (const br of agg.branches) {
       `<div class="stat"><div class="v">${br.share} %</div><div class="l">${S.stats[3]}</div></div></div>` +
       (list.length ? `<div class="card"><h2>${S.listH}</h2>${brandTable(list, lang)}</div>` : '') +
       disclaimer(lang, P) + `<p style="font-size:13px;color:var(--ink-3)"><a href="${S.backHref}">${S.back}</a></p>`;
-    fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + '/' + (lang === 'de' ? 'en/' : '') + 'branche/' + sg + '.html'.replace('en/en/', 'en/'), jsonld: breadcrumbLd([{ t: 'aidos', abs: lang === 'de' ? '' : 'en/' }, { t: brLbl, abs: rel }]), body }));
+    fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + pub((lang === 'de' ? 'en/' : '') + 'branche/' + sg), jsonld: breadcrumbLd([{ t: 'aidos', abs: lang === 'de' ? '' : 'en/' }, { t: brLbl, abs: rel }]), body }));
     urls.push({ loc: canonical, removed: br.removed });
   }
 }
@@ -427,8 +435,8 @@ for (const c of agg.cities.filter((c) => c.n >= 3)) {
   for (const lang of ['de', 'en']) {
     const L = LANGS[lang]; const P = L.pfx; const nf = L.nf, nf1 = L.nf1;
     const rel = (lang === 'de' ? '' : 'en/') + 'stadt/' + sg + '.html';
-    const alt = lang === 'de' ? P + 'en/stadt/' + sg + '.html' : P + 'stadt/' + sg + '.html';
-    const canonical = BASE + '/' + rel;
+    const alt = lang === 'de' ? P + 'en/stadt/' + sg : P + 'stadt/' + sg;
+    const canonical = BASE + pub(rel);
     const cLbl = L.tC(c.key);
     const hot = (c.hotspot || []).map(L.tB);
     const title = lang === 'de' ? `Entfernte Google-Bewertungen in ${cLbl} | aidos` : `Removed Google reviews in ${cLbl} | aidos`;
@@ -436,26 +444,26 @@ for (const c of agg.cities.filter((c) => c.n >= 3)) {
       ? `${cLbl}: geschätzt ${nf(Math.round(c.removed))} entfernte Bewertungen über ${c.n} erfasste Profile. Auffälligkeits-Score ${nf1(c.score)}/10. Hotspot: ${hot.join(', ')}.`
       : `${cLbl}: an estimated ${nf(Math.round(c.removed))} removed reviews across ${c.n} surveyed profiles. Conspicuousness score ${nf1(c.score)}/10. Hotspot: ${hot.join(', ')}.`;
     const S = lang === 'de'
-      ? { kick: 'Stadt', h1: `Entfernte Bewertungen in ${esc(cLbl)}`, sub: `Geschätzt <b>${nf(Math.round(c.removed))}</b> entfernte Bewertungen über ${c.n} erfasste Profile. Auffälligkeits-Score <b>${nf1(c.score)}/10</b>${hot.length ? `, Schwerpunkt <b>${esc(hot.join(' & '))}</b>` : ''}.`, listH: `Gelistete Unternehmen &amp; Ketten (${list.length})`, back: '← Übersicht', backHref: P + 'index.html', crumb: 'Städte' }
+      ? { kick: 'Stadt', h1: `Entfernte Bewertungen in ${esc(cLbl)}`, sub: `Geschätzt <b>${nf(Math.round(c.removed))}</b> entfernte Bewertungen über ${c.n} erfasste Profile. Auffälligkeits-Score <b>${nf1(c.score)}/10</b>${hot.length ? `, Schwerpunkt <b>${esc(hot.join(' & '))}</b>` : ''}.`, listH: `Gelistete Unternehmen &amp; Ketten (${list.length})`, back: '← Übersicht', backHref: P, crumb: 'Städte' }
       : { kick: 'City', h1: `Removed reviews in ${esc(cLbl)}`, sub: `An estimated <b>${nf(Math.round(c.removed))}</b> removed reviews across ${c.n} surveyed profiles. Conspicuousness score <b>${nf1(c.score)}/10</b>${hot.length ? `, focus <b>${esc(hot.join(' & '))}</b>` : ''}.`, listH: `Listed companies &amp; chains (${list.length})`, back: '← Overview', backHref: P + 'en/', crumb: 'Cities' };
-    const body = crumbs([{ t: 'aidos', href: lang === 'de' ? P + 'index.html' : P + 'en/' }, { t: S.crumb }, { t: cLbl }]) +
+    const body = crumbs([{ t: 'aidos', href: lang === 'de' ? P : P + 'en/' }, { t: S.crumb }, { t: cLbl }]) +
       `<div class="kicker">${S.kick}</div><h1>${S.h1}</h1><span class="motif"><b></b><i></i></span>` +
       `<p class="sub">${S.sub}</p>` +
       (list.length ? `<div class="card"><h2>${S.listH}</h2>${brandTable(list, lang)}</div>` : '') +
       disclaimer(lang, P) + `<p style="font-size:13px;color:var(--ink-3)"><a href="${S.backHref}">${S.back}</a></p>`;
-    fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + '/' + (lang === 'de' ? 'en/' : '') + 'stadt/' + sg + '.html', jsonld: breadcrumbLd([{ t: 'aidos', abs: lang === 'de' ? '' : 'en/' }, { t: cLbl, abs: rel }]), body }));
+    fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + pub((lang === 'de' ? 'en/' : '') + 'stadt/' + sg), jsonld: breadcrumbLd([{ t: 'aidos', abs: lang === 'de' ? '' : 'en/' }, { t: cLbl, abs: rel }]), body }));
     urls.push({ loc: canonical, removed: c.removed });
   }
 }
 
 // include auto-generated monthly report pages (from content.mjs) in the sitemap
-try { for (const f of fs.readdirSync(new URL('report/', OUT))) if (f.endsWith('.html')) urls.push({ loc: BASE + '/report/' + f, removed: 1e9 }); } catch { /* no reports yet */ }
+try { for (const f of fs.readdirSync(new URL('report/', OUT))) if (f.endsWith('.html')) urls.push({ loc: BASE + pub('report/' + f), removed: 1e9 }); } catch { /* no reports yet */ }
 
 // ---------- sitemap + robots ----------
 const staticPages = ['index.html', 'listing.html', 'methodik.html', 'presse.html', 'ueber-aidos.html', 'rechtslage.html', 'impressum.html', 'daten-melden.html', 'en/index.html', 'en/listing.html', 'en/methodology.html'];
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  staticPages.map((p) => `  <url><loc>${BASE}/${p === 'index.html' ? '' : p}</loc><lastmod>${today}</lastmod></url>`).join('\n') + '\n' +
+  staticPages.map((p) => `  <url><loc>${BASE}${pub(p)}</loc><lastmod>${today}</lastmod></url>`).join('\n') + '\n' +
   urls.sort((a, b) => b.removed - a.removed).map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod></url>`).join('\n') +
   `\n</urlset>\n`;
 fs.writeFileSync(new URL('sitemap.xml', OUT), sitemap);

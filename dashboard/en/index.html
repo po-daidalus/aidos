@@ -6,6 +6,9 @@
   <title>aidos — Removed Google reviews in Germany, evaluated as data journalism</title>
   <meta name="description" content="aidos systematically evaluates Google Maps' official DSA transparency notices: which businesses and industries had reviews removed for defamation. Neutral, data-driven, ongoing." />
   <link rel="canonical" href="https://aidos.tech/en/" />
+    <link rel="alternate" hreflang="en" href="https://aidos.tech/en/" />
+    <link rel="alternate" hreflang="de" href="https://aidos.tech/" />
+    <link rel="alternate" hreflang="x-default" href="https://aidos.tech/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="aidos — Transparency on Google reviews" />
   <meta property="og:description" content="Evaluation of Google's DSA removal notices in Germany. For more transparency in Google reviews." />
@@ -71,7 +74,7 @@
     <div class="masthead-inner">
       <a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#2456a6" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
       <span class="tagline">Transparency on Google reviews</span>
-      <nav class="nav"><a class="on" href="./">Overview</a><a href="listing.html">Companies &amp; chains</a><a href="methodology.html">Methodology</a><span class="lang-switch"><a href="../index.html">DE</a><a class="on" href="#">EN</a></span></nav>
+      <nav class="nav"><a class="on" href="./">Overview</a><a href="listing">Companies &amp; chains</a><a href="methodology">Methodology</a><span class="lang-switch"><a href="../">DE</a><a class="on" href="#">EN</a></span></nav>
     </div>
   </header>
 
@@ -144,7 +147,7 @@
         <div id="coRows"></div>
         <div class="co-foot">
           <span class="co-sum" id="coSum"></span>
-          <a class="btn btn-primary" href="listing.html">View the full filterable list →</a>
+          <a class="btn btn-primary" href="listing">View the full filterable list →</a>
         </div>
       </div>
       <div class="co-chips" id="coChips"></div>
@@ -157,7 +160,7 @@
       <div class="covbox">
         <table class="rank" id="covTable"><thead><tr><th>City</th><th class="num">Profiles with removal notice</th><th></th></tr></thead><tbody id="covBody"></tbody></table>
         <p class="asof" id="covNote"></p>
-        <p class="asof">How the survey works is documented in the <a href="methodology.html">methodology</a>. City, industry and company pages are available in both languages.</p>
+        <p class="asof">How the survey works is documented in the <a href="methodology">methodology</a>. City, industry and company pages are available in both languages.</p>
       </div>
     </section>
 
@@ -166,7 +169,7 @@
   <footer class="site-foot">
     <div class="site-foot-inner">
       <a class="wordmark" href="./"><svg class="glyph" viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="8" width="20" height="2.6" rx="1" fill="#7fa8e0" /><rect x="3" y="15" width="12" height="2.6" rx="1" fill="#b31e26" /></svg>aidos<span class="tld">.tech</span></a>
-      <div class="foot-nav"><a href="./">Overview</a><a href="listing.html">Companies &amp; chains</a><a href="methodology.html">Methodology</a><a href="../presse.html">Press (DE)</a><a href="../impressum.html">Impressum</a><a href="../impressum.html#datenschutz">Privacy (DE)</a></div>
+      <div class="foot-nav"><a href="./">Overview</a><a href="listing">Companies &amp; chains</a><a href="methodology">Methodology</a><a href="../presse">Press (DE)</a><a href="../impressum">Impressum</a><a href="../impressum#datenschutz">Privacy (DE)</a></div>
       <div class="foot-legal">aidos is an independent journalistic transparency project. Removal figures originate from Google&nbsp;LLC (public Google Maps profiles). Values including removed reviews are computed estimates, not statements of fact. Not legal advice. “Google” and “Google Maps” are trademarks of Google LLC; no affiliation exists.</div>
       <div class="foot-meta">No trackers, no cookies · self-hosted fonts · © 2026 aidos</div>
     </div>
@@ -212,7 +215,7 @@
     const maxIdx = Math.max(1, ...(A.branches || []).map((b) => b.aidos_index));
     document.getElementById('rankBody').innerHTML = (A.branches || []).map((b, i) =>
       `<tr><td class="rank-num">${i + 1}</td>` +
-      `<td><a href="../en/branche/${slug(b.key)}.html">${esc(tB(b.key))}</a></td>` +
+      `<td><a href="../en/branche/${slug(b.key)}">${esc(tB(b.key))}</a></td>` +
       `<td class="num mono-num">${en(b.n)}</td>` +
       `<td><div class="idxbar"><div class="t"><i data-w="${Math.round((b.aidos_index / maxIdx) * 100)}"></i></div></div></td>` +
       `<td class="num"><span class="score" title="rank ${i + 1} of ${A.branches.length} surveyed industries"><span class="val">${b.aidos_index}</span><span class="of">/100</span></span></td></tr>`).join('');
@@ -221,12 +224,12 @@
     const realCities = (A.cities || []).filter((c) => c.n >= 3);
     const maxCity = Math.max(1, ...realCities.map((c) => c.removed || c.n));
     document.getElementById('cityGrid').innerHTML = realCities.map((c) =>
-      `<a class="citycard reveal" href="../en/stadt/${slug(c.key)}.html"><div class="cn">${esc(tC(c.key))}</div><div class="ch">focus: ${esc((c.hotspot || []).map(tB).join(' & ') || '–')}</div><div class="cs">${en(c.n)} surveyed profiles · index ${en1(c.score)}/10</div><div class="bar"><i data-w="${Math.round(100 * (c.removed || c.n) / maxCity)}"></i></div></a>`).join('')
+      `<a class="citycard reveal" href="../en/stadt/${slug(c.key)}"><div class="cn">${esc(tC(c.key))}</div><div class="ch">focus: ${esc((c.hotspot || []).map(tB).join(' & ') || '–')}</div><div class="cs">${en(c.n)} surveyed profiles · index ${en1(c.score)}/10</div><div class="bar"><i data-w="${Math.round(100 * (c.removed || c.n) / maxCity)}"></i></div></a>`).join('')
       || '<p class="muted">No city with a sufficient data basis yet.</p>';
 
     const gen = A.generated ? new Date(A.generated).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }) : null;
     document.getElementById('covBody').innerHTML = realCities.slice().sort((a, b) => b.n - a.n).map((c) =>
-      `<tr><td><a href="../en/stadt/${slug(c.key)}.html">${esc(tC(c.key))}</a></td><td class="num">${en(c.n)}</td><td><a class="more" href="../en/stadt/${slug(c.key)}.html">city page →</a></td></tr>`).join('');
+      `<tr><td><a href="../en/stadt/${slug(c.key)}">${esc(tC(c.key))}</a></td><td class="num">${en(c.n)}</td><td><a class="more" href="../en/stadt/${slug(c.key)}">city page →</a></td></tr>`).join('');
     const cov = A.coverage || [];
     const covLine = cov.length
       ? ' Measured: ' + cov.map((c) => `in ${tC(c.city)} ${en(c.hit)} of ${en(c.checked)} checked profiles carried the notice (${en1(c.prevalencePct)}%)`).join('; ') + ' — so the vast majority of checked businesses do not appear here at all.'
@@ -250,8 +253,8 @@
       }).join('');
       document.getElementById('coSum').innerHTML = `<b>${en(LK.length)}</b> listed companies &amp; chains in <b>${en((A.cities || []).length)}</b> cities — searchable, filterable by industry and city, with the estimated rating effect.`;
       document.getElementById('coChips').innerHTML = '<span class="lbl">Jump to an industry:</span>' +
-        (A.branches || []).slice(0, 5).map((b) => `<a class="co-chip" href="listing.html?branche=${encodeURIComponent(b.key)}">${esc(tB(b.key))}</a>`).join('') +
-        '<a class="co-chip" href="listing.html">All industries →</a>';
+        (A.branches || []).slice(0, 5).map((b) => `<a class="co-chip" href="listing?branche=${encodeURIComponent(b.key)}">${esc(tB(b.key))}</a>`).join('') +
+        '<a class="co-chip" href="listing">All industries →</a>';
     })();
 
     (function () {
