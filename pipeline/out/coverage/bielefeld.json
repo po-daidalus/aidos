@@ -1,0 +1,17 @@
+{
+  "city": "Bielefeld",
+  "slug": "bielefeld",
+  "generated": "2026-08-03T21:46:41.679Z",
+  "total": 1032,
+  "perBranch": {
+    "Gesundheit": 174,
+    "Sonstige": 221,
+    "Gastronomie & Hotel": 386,
+    "Automobil": 68,
+    "Einzelhandel": 3,
+    "Recht & Beratung": 13,
+    "Immobilien": 20,
+    "Fitness & Sport": 37,
+    "Beauty & Wellness": 110
+  }
+}

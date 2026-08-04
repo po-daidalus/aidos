@@ -1,0 +1,18 @@
+{
+  "city": "Münster",
+  "slug": "muenster",
+  "generated": "2026-08-03T21:59:29.414Z",
+  "total": 912,
+  "perBranch": {
+    "Gesundheit": 169,
+    "Sonstige": 178,
+    "Einzelhandel": 1,
+    "Recht & Beratung": 22,
+    "Immobilien": 15,
+    "Beauty & Wellness": 69,
+    "Automobil": 37,
+    "Fitness & Sport": 29,
+    "Gastronomie & Hotel": 391,
+    "Handwerk & Bau": 1
+  }
+}

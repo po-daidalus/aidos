@@ -1,0 +1,17 @@
+{
+  "city": "Wuppertal",
+  "slug": "wuppertal",
+  "generated": "2026-08-03T21:40:23.052Z",
+  "total": 897,
+  "perBranch": {
+    "Gesundheit": 111,
+    "Fitness & Sport": 19,
+    "Sonstige": 185,
+    "Gastronomie & Hotel": 384,
+    "Automobil": 55,
+    "Recht & Beratung": 17,
+    "Immobilien": 8,
+    "Beauty & Wellness": 117,
+    "Einzelhandel": 1
+  }
+}

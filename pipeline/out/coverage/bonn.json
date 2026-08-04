@@ -1,0 +1,17 @@
+{
+  "city": "Bonn",
+  "slug": "bonn",
+  "generated": "2026-08-03T21:53:19.649Z",
+  "total": 1160,
+  "perBranch": {
+    "Gesundheit": 213,
+    "Sonstige": 253,
+    "Automobil": 52,
+    "Gastronomie & Hotel": 416,
+    "Recht & Beratung": 24,
+    "Immobilien": 27,
+    "Beauty & Wellness": 131,
+    "Einzelhandel": 1,
+    "Fitness & Sport": 43
+  }
+}

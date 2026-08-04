@@ -98,7 +98,13 @@ let allRecs = rawRecs
 // Persist AGGREGATED coverage counts to pipeline/out/checks.jsonl — one row per (month, city):
 // { date, city, checked, hit, no_banner, no_place, blocked }. No per-place identifiers stored, so
 // there is no DSGVO exposure; this is all prevalence (= hits / (hit+no_banner)) needs.
-if (rawChecks.length) {
+// HARD RULE: only SCREENING runs (a full candidate list) may write checks. A hit-only run — e.g.
+// the monthly panel re-check of known businesses — has a ~100% hit rate; ingesting it would replace
+// this month+city's row below and report a fake prevalence. Guarded automatically, --no-checks to
+// skip explicitly, --force-checks only if you know the list really was a full screening list.
+const noChecks = process.argv.includes('--no-checks');
+const forceChecks = process.argv.includes('--force-checks');
+if (rawChecks.length && !noChecks) {
   const CHK_PATH = new URL('pipeline/out/checks.jsonl', ROOT);
   const monthNow = new Date().toISOString().slice(0, 7);
   const city = defCity || 'Unbekannt';
@@ -107,11 +113,18 @@ if (rawChecks.length) {
     agg.checked++;
     if (c.outcome in agg) agg[c.outcome]++;
   }
-  let chk = fs.existsSync(CHK_PATH) ? fs.readFileSync(CHK_PATH, 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
-  const key = (r) => r.date + '|' + r.city, i = chk.findIndex((r) => key(r) === key(agg));
-  if (i >= 0) chk[i] = agg; else chk.push(agg); // replace this month+city's counts with the latest export
-  fs.writeFileSync(CHK_PATH, chk.map((r) => JSON.stringify(r)).join('\n') + '\n');
-  console.log(`checks: ${agg.checked} checked in ${city} (${agg.hit} hit / ${agg.no_banner} no-banner / ${agg.no_place} no-place / ${agg.blocked} blocked)`);
+  const hitRate = agg.checked ? agg.hit / agg.checked : 0;
+  if (hitRate > 0.5 && !forceChecks) {
+    console.log(`⚠️  checks SKIPPED: hit rate ${(100 * hitRate).toFixed(1)}% looks like a hit-only/panel run, not a screening sweep.`);
+    console.log('    Prevalence must only come from full candidate-list runs. Records were still ingested. Use --force-checks to override.');
+    rawChecks.length = 0;
+  } else {
+    let chk = fs.existsSync(CHK_PATH) ? fs.readFileSync(CHK_PATH, 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
+    const key = (r) => r.date + '|' + r.city, i = chk.findIndex((r) => key(r) === key(agg));
+    if (i >= 0) chk[i] = agg; else chk.push(agg); // replace this month+city's counts with the latest export
+    fs.writeFileSync(CHK_PATH, chk.map((r) => JSON.stringify(r)).join('\n') + '\n');
+    console.log(`checks: ${agg.checked} checked in ${city} (${agg.hit} hit / ${agg.no_banner} no-banner / ${agg.no_place} no-place / ${agg.blocked} blocked)`);
+  }
 }
 // Everyone (incl. named individuals) is stored in the DB and counted in aggregates. The `nameable`
 // flag decides only whether an entity may be shown INDIVIDUALLY on the listing page. Individuals
