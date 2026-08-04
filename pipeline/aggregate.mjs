@@ -148,22 +148,35 @@ if (cities.length) {
 // --- trend module (Method D): activates with ≥2 months ---
 let trend = { available: false, months, note: `Basismessung ${latest}. Monatliche Snapshots ab sofort — Trends (z. B. „+40 % seit Jahresbeginn") erscheinen automatisch, sobald ≥2 Messpunkte vorliegen.` };
 if (months.length >= 2) {
-  // SAME-PANEL comparison only: sum removals over entities present in BOTH months, so the delta
-  // reflects real change - never the arrival of a new city. The unique, defensible datapoint
-  // (a flow value Google itself never displays).
+  // SAME-PANEL comparison only: entities present in BOTH months, so the change reflects real
+  // movement - never the arrival of a new city.
+  //
+  // THE HEADLINE IS A COUNT OF BAND CROSSINGS, NOT A SUM OF REVIEWS. Google publishes only ranges
+  // ("151 bis 200"), so a month-over-month difference of range midpoints measures BAND WIDTH, not
+  // removals: one business moving 151-200 -> 201-250 fabricates "+50" when the true increase may
+  // be 1, and every change INSIDE a band is invisible. That midpoint delta is neither an upper nor
+  // a lower bound - it is an artifact and must never be published as a review count. What IS a hard
+  // fact from Google's own display: how many businesses crossed a published band boundary, and in
+  // which direction. The mid* figures below are kept for internal reference only.
   const prevM = months[months.length - 2];
   const byMonth = (ym) => new Map(rows.filter((r) => r.date === ym).map((r) => [r.aid, r]));
   const A = byMonth(prevM), B = byMonth(latest);
   const panel = [...B.keys()].filter((aid) => A.has(aid));
   const a = panel.reduce((s, aid) => s + mid(A.get(aid)), 0);
   const b = panel.reduce((s, aid) => s + mid(B.get(aid)), 0);
-  const delta = b - a, pct = a ? (delta / a) * 100 : 0;
-  const sign = delta >= 0 ? "+" : "−";
-  trend = { available: true, months, prev: prevM, latest, panelSize: panel.length, prevRemoved: r0(a), latestRemoved: r0(b), delta: r0(delta), changePct: r1(pct) };
+  let up = 0, down = 0;
+  for (const aid of panel) { const d = mid(B.get(aid)) - mid(A.get(aid)); if (d > 0) up++; else if (d < 0) down++; }
+  const moved = up + down, flat = panel.length - moved;
+  trend = {
+    available: true, months, prev: prevM, latest, panelSize: panel.length,
+    up, down, moved, flat, // the publishable facts
+    midPrev: r0(a), midLatest: r0(b), midDelta: r0(b - a), midChangePct: r1(a ? ((b - a) / a) * 100 : 0), // internal only - quantization artifact, never a headline
+  };
+  const dir = down === 0 && up > 0 ? 'keiner sank' : up === 0 && down > 0 ? 'keiner stieg' : `${de(down)} sanken`;
   add(95, "Momentum",
-    `Bei ${de(panel.length)} durchgehend erfassten Betrieben entfernte Google ${sign}${de(Math.abs(delta))} Bewertungen gegenüber ${prevM}`,
-    `Vergleich derselben ${de(panel.length)} Betriebe in beiden Monaten (${de(a)} → ${de(b)}). Neu hinzugekommene Städte fließen bewusst nicht ein - so misst der Wert echte Veränderung, nicht wachsende Abdeckung.`,
-    `${sign}${de(Math.abs(delta))}`);
+    `Bei ${de(up)} von ${de(panel.length)} durchgehend erfassten Betrieben stieg die Zahl entfernter Bewertungen über eine Bereichsgrenze — ${dir}`,
+    `Vergleich derselben ${de(panel.length)} Betriebe in beiden Monaten (${prevM} → ${latest}). Google veröffentlicht nur Spannen, deshalb ist der Wechsel in einen höheren Bereich das kleinste sicher messbare Ereignis. Bei ${de(flat)} Betrieben blieb die Angabe im selben Bereich — das schließt Veränderungen unterhalb der Spannenbreite ein. Neu hinzugekommene Städte fließen bewusst nicht ein.`,
+    `${de(up)}/${de(panel.length)}`);
 }
 
 insights.sort((a, b) => b.score - a.score);

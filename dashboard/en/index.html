@@ -96,7 +96,7 @@
     <!-- MOMENTUM -->
     <section>
       <div class="sec-head"><h2>What has changed</h2><span class="hint">comparison of the monthly baseline surveys — public figures, each at its survey date</span></div>
-      <p class="sec-intro">Google shows only a rolling 365-day range per place. From monthly surveys we compute the <em>change</em> for the same businesses — a flow figure Google itself never displays.</p>
+      <p class="sec-intro">Google shows only a rolling 365-day range per place. From monthly surveys we count how many of the same businesses have <em>moved into a higher band</em> — a change Google itself never reports.</p>
       <div id="momentum"></div>
     </section>
 
@@ -199,9 +199,13 @@
     document.getElementById('heroViz').innerHTML = top5.map((b) =>
       `<div class="cbar"><span>${esc(tB(b.key).split(' ')[0])}</span><div class="track"><i data-w="${Math.round((b.removed / maxRem) * 100)}"></i></div><span class="v">${en(Math.round(b.removed))}</span></div>`).join('');
 
+    // Count of BAND CROSSINGS, never a sum of range midpoints: that would measure Google's band
+    // widths rather than removed reviews.
     const tr = A.trend || {};
+    const trDir = tr.down === 0 && tr.up > 0 ? 'none fell' : tr.up === 0 && tr.down > 0 ? 'none rose' : `${en(tr.down || 0)} fell`;
     document.getElementById('momentum').innerHTML = tr.available
-      ? `<div class="lead-figure reveal">${tr.delta >= 0 ? '+' : '−'}${en(Math.abs(tr.delta))}<span class="unit">reviews vs. ${tr.prev} · ${en(tr.panelSize)} continuously surveyed businesses</span></div>`
+      ? `<div class="lead-figure reveal">${en(tr.up || 0)} of ${en(tr.panelSize)}<span class="unit">businesses crossed into a higher band · ${trDir} · vs. ${tr.prev}</span></div>
+         <p class="small muted">Google publishes the number of removed reviews only as a range. We therefore count how many businesses moved into a higher band — the smallest reliably measurable event. For ${en(tr.flat || 0)} businesses the figure stayed within the same band; changes smaller than the band width are not visible in it. A count of removed reviews cannot be derived from this.</p>`
       : `<div class="baseline-note reveal"><span class="big">Baseline survey ${T.month || ''}</span><span class="small">The month-on-month comparison appears automatically with the second baseline survey — never estimated.</span></div>`;
 
     document.getElementById('rankHint').textContent = 'baseline survey · ' + (T.month || '');

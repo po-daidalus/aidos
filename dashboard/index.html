@@ -102,7 +102,7 @@
     <!-- MOMENTUM -->
     <section>
       <div class="sec-head"><h2>Was sich verändert hat</h2><span class="hint">Vergleich der monatlichen Basismessungen — öffentliche Angaben, jeweils zum Stand-Datum</span></div>
-      <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen berechnen wir die <em>Veränderung</em> derselben Betriebe — einen Fluss-Wert, den Google selbst nie anzeigt.</p>
+      <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen zählen wir, bei wie vielen derselben Betriebe diese Spanne <em>in einen höheren Bereich gewechselt</em> ist — eine Veränderung, die Google selbst nie ausweist.</p>
       <div id="momentum"></div>
     </section>
 
@@ -212,10 +212,13 @@
     document.getElementById('heroViz').innerHTML = top5.map((b) =>
       `<div class="cbar"><span>${esc(b.key.split(' ')[0])}</span><div class="track"><i data-w="${Math.round((b.removed / maxRem) * 100)}"></i></div><span class="v">${de(Math.round(b.removed))}</span></div>`).join('');
 
-    // momentum — real Δ if ≥2 snapshots, else a calm baseline note (never a giant red placeholder)
+    // momentum — count of BAND CROSSINGS if ≥2 snapshots, else a calm baseline note.
+    // Never a sum of range midpoints: that measures Google's band widths, not removed reviews.
     const tr = A.trend || {};
+    const trDir = tr.down === 0 && tr.up > 0 ? 'keiner sank' : tr.up === 0 && tr.down > 0 ? 'keiner stieg' : `${de(tr.down || 0)} sanken`;
     document.getElementById('momentum').innerHTML = tr.available
-      ? `<div class="lead-figure reveal">${tr.delta >= 0 ? '+' : '−'}${de(Math.abs(tr.delta))}<span class="unit">Bewertungen ggü. ${tr.prev} · ${de(tr.panelSize)} durchgehend erfasste Betriebe</span></div>`
+      ? `<div class="lead-figure reveal">${de(tr.up || 0)} von ${de(tr.panelSize)}<span class="unit">Betrieben stiegen über eine Bereichsgrenze · ${trDir} · ggü. ${tr.prev}</span></div>
+         <p class="small muted">Google veröffentlicht die Zahl entfernter Bewertungen nur als Spanne. Gezählt wird deshalb, wie viele Betriebe in einen höheren Bereich gewechselt sind — das kleinste sicher messbare Ereignis. Bei ${de(tr.flat || 0)} Betrieben blieb die Angabe im selben Bereich; Veränderungen unterhalb der Spannenbreite sind darin nicht sichtbar. Eine Stückzahl entfernter Bewertungen lässt sich daraus nicht ableiten.</p>`
       : `<div class="baseline-note reveal"><span class="big">Basismessung ${T.month || ''}</span><span class="small">Der Monatsvergleich erscheint automatisch mit der zweiten Basismessung — nie geschätzt.</span></div>`;
 
     // ranking table

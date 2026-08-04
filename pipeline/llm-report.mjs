@@ -18,9 +18,14 @@ export function buildFacts(agg) {
   return {
     monat: T.month, erfasste_profile: T.businesses, entfernt_gesamt_geschaetzt: T.removed,
     profile_ueber_250: T.capCount, anzeige_deckel: 250, // Google caps the public figure at "über 250"
+    fenster_tage: 365, // Google's figure is a rolling 365-day total — a fixed property of the source, quotable
     auffaelligste_branche: top ? top.key : null, auffaelligster_index: top ? top.aidos_index : null,
     branchen: branches, staedte: cities, messung_banner_quote: messung.length ? messung : null,
-    momentum: (agg.trend && agg.trend.available) ? { delta: agg.trend.delta, vormonat: agg.trend.prev, panel: agg.trend.panelSize } : null,
+    // Band crossings only. The midpoint delta (trend.midDelta) is deliberately NOT passed to the
+    // model: it measures Google's range widths, not removed reviews, and must never reach the copy.
+    momentum: (agg.trend && agg.trend.available)
+      ? { vormonat: agg.trend.prev, panel: agg.trend.panelSize, betriebe_gestiegen: agg.trend.up, betriebe_gesunken: agg.trend.down, betriebe_unveraendert: agg.trend.flat }
+      : null,
   };
 }
 
@@ -60,6 +65,7 @@ HARTE REGELN (nicht verhandelbar):
 - Nenne KEINE einzelnen Unternehmen oder Personen — nur Branchen, Städte, Aggregate.
 - Kein Werturteil. Eine hohe Zahl ist kein Beweis für Fehlverhalten (Fake-Kampagnen sind häufig). Der Index ist eine neutrale Statistik.
 - Werte inkl. entfernter Bewertungen sind Schätzungen, keine Tatsachen.
+- MONATSVERGLEICH (momentum): Die Felder betriebe_gestiegen/gesunken/unveraendert zählen BETRIEBE, die eine Spannengrenze überschritten haben — NIEMALS Bewertungen. Formuliere sie ausschließlich als Anzahl von Betrieben ("bei X von Y Betrieben wechselte die Angabe in einen höheren Bereich"). Schreibe NIE, es seien X Bewertungen mehr entfernt worden, und leite aus dem Vergleich KEINE Stückzahl und KEINE Prozent-Veränderung ab. "Unverändert" bedeutet NICHT "keine Entfernungen" — bei einer rollierenden 365-Tage-Summe können neue Entfernungen und herausgefallene Altfälle einander aufheben; erwähne das, wenn du den Vergleich einordnest.
 
 Antworte NUR mit einem JSON-Objekt, ohne Markdown-Fences:
 {"kicker":"kurzer Kicker","sections":[{"h":"Überschrift","p":"1–3 Sätze Fließtext"}]}
