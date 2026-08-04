@@ -56,11 +56,18 @@ function describe(file, buf) {
 if (process.argv.includes('--relink')) {
   const m = readManifest();
   const onDisk = fs.readdirSync(DIR).filter((f) => f !== 'MANIFEST.json' && f !== 'README.md');
-  const known = new Set(m.entries.map((e) => e.file));
-  console.log(`manifest: ${m.entries.length} entries | on disk: ${onDisk.length}`);
-  for (const f of onDisk) if (!known.has(f)) console.log(`  ⚠️  on disk but not in manifest: ${f}`);
-  for (const e of m.entries) if (!onDisk.includes(e.file)) console.log(`  ⚠️  in manifest but MISSING on disk: ${e.file}`);
-  process.exit(0);
+  const stored = m.entries.filter((e) => e.stored);           // stored:false entries have no file by design
+  const known = new Set(stored.map((e) => e.file));
+  console.log(`manifest: ${stored.length} stored (+${m.entries.length - stored.length} empty, recorded only) | on disk: ${onDisk.length}`);
+  let bad = 0;
+  for (const f of onDisk) if (!known.has(f)) { bad++; console.log(`  ⚠️  on disk but not in manifest: ${f}`); }
+  for (const e of stored) {
+    if (!onDisk.includes(e.file)) { bad++; console.log(`  ⚠️  in manifest but MISSING on disk: ${e.file}`); continue; }
+    const h = sha(fs.readFileSync(new URL(e.file, DIR)));      // content check, not just presence
+    if (h !== e.sha256) { bad++; console.log(`  ⚠️  CHECKSUM MISMATCH (file altered): ${e.file}`); }
+  }
+  console.log(bad ? `\n${bad} problem(s)` : '\n✓ manifest and archive agree, all checksums match');
+  process.exit(bad ? 1 : 0);
 }
 
 const inputs = process.argv.slice(2).filter((a) => !a.startsWith('--'));
