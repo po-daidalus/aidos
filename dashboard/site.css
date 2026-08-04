@@ -117,6 +117,17 @@ table.rank tbody tr:hover, table.rank tr:hover { background: var(--fill); }
 table.rank .num { text-align: right; font-variant-numeric: tabular-nums; }
 table.rank a { color: var(--ink); font-weight: 500; }
 table.rank a:hover { color: var(--accent); }
+/* Whole row is the tap target — the name link is stretched across it. Done in CSS rather than a
+   JS row handler so it stays a real <a>: keyboard focus, middle-click, context menu and crawlability
+   all survive. Rows without a link (the per-location table on company pages) are untouched, since
+   the overlay only exists where an <a> does. Matters most on phones, where hitting the text alone
+   is fiddly. */
+table.rank tbody tr { position: relative; }
+table.rank tbody tr:has(a) { cursor: pointer; }
+table.rank tbody td a::after { content: ""; position: absolute; inset: 0; }
+table.rank tbody tr:focus-within { background: var(--fill); }
+table.rank tbody td a:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 2px; }
+table.rank tbody td a:focus:not(:focus-visible) { outline: none; }
 .rank-num { font-family: var(--serif); font-weight: 600; color: var(--ink-3); width: 1.6em; font-size: 17px; }
 
 /* — index / score chip (statistical, neutral — always with its n via title) — */
