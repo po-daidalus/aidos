@@ -44,6 +44,34 @@ Das Projekt versteht sich als Datenjournalismus (Einordnungstexte, Monatsreports
 ### F7 — Formalia
 Kurzprüfung Impressum (§ 5 DDG, § 18 MStV) und Datenschutzerklärung auf Vollständigkeit für diesen Dienst.
 
+### F8 — Aufbewahrung des unveröffentlichten Rohmaterials ⭐ neu, 04.08.2026
+Wir bewahren jeden Roh-Export der Erhebung unverändert auf (`pipeline/out/exports/`, aktuell 35 Dateien,
+25,8 MB, Zeitraum 29.06.–03.08.2026). Grund ist die Nachprüfbarkeit: Googles Hinweis ist eine rollierende
+365-Tage-Summe, ein vergangener Monat lässt sich **nicht erneut abfragen**. Alle veröffentlichten Daten
+sind daraus abgeleitet; ohne das Rohmaterial wäre weder ein Erhebungsfehler korrigierbar noch eine
+Angabe gegenüber einem Betroffenen belegbar.
+
+**Wichtig für die Bewertung — das Rohmaterial ist deutlich personenbezogener als die Veröffentlichung:**
+
+- **917 von 4.505** archivierten Datensätzen betreffen **natürliche Personen** (nach unserem eigenen
+  Namensfilter), jeweils mit Klarname, Anschrift, Telefonnummer, Koordinaten und Google-Permalink.
+- Genau diese Gruppe wird in der veröffentlichten Datenbank **pseudonymisiert** (gesalzener Einweg-Hash,
+  kein Name, keine URL, keine Adresse) und erscheint auf der Website ausschließlich in Aggregaten.
+- Das Rohmaterial liegt also bewusst in einer Form vor, die wir öffentlich gerade vermeiden.
+- Ablage derzeit: privates Git-Repository (GitHub) plus Arbeitsrechner, **unverschlüsselt at rest**,
+  Zugriff nur Betreiber.
+
+**Fragen:** (a) Ist die unbefristete Aufbewahrung des Rohmaterials zu Nachweis- und Korrekturzwecken
+zulässig — trägt das Medienprivileg (vgl. F6) auch die *nicht veröffentlichten* Rohdaten? (b) Falls ja:
+ist eine Löschfrist geboten, und welche? (c) Welches Schutzniveau ist gefordert — genügt ein privates
+Repository, oder ist Verschlüsselung at rest bzw. Trennung von Rohmaterial und Auswertung erforderlich?
+(d) Wie ist mit einem Auskunfts- oder Löschverlangen umzugehen, wenn die betroffene Person in der
+veröffentlichten Datenbank nur pseudonym vorkommt, im Rohmaterial aber im Klartext?
+
+**Unsere Vorbereitung:** Ein Umzug der Roh-Exports in verschlüsselten Objektspeicher (nur die
+Prüfsummen-Liste bliebe im Repository) ist vorbereitet und wartet bewusst auf diese Einschätzung,
+damit die Aufbewahrungsentscheidung nicht durch technische Zufälle vorweggenommen wird.
+
 ---
 
 ## 3. Konkrete Einzelfälle zur Entscheidung (Anhang zu F2)
