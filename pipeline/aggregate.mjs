@@ -167,11 +167,16 @@ if (months.length >= 2) {
   let up = 0, down = 0;
   for (const aid of panel) { const d = mid(B.get(aid)) - mid(A.get(aid)); if (d > 0) up++; else if (d < 0) down++; }
   const moved = up + down, flat = panel.length - moved;
-  trend = {
-    available: true, months, prev: prevM, latest, panelSize: panel.length,
-    up, down, moved, flat, // the publishable facts
-    midPrev: r0(a), midLatest: r0(b), midDelta: r0(b - a), midChangePct: r1(a ? ((b - a) / a) * 100 : 0), // internal only - quantization artifact, never a headline
-  };
+  // Shipped to the browser: the publishable facts only.
+  trend = { available: true, months, prev: prevM, latest, panelSize: panel.length, up, down, moved, flat };
+  // The midpoint sums stay OUT of dashboard/aggregates.js. They are a quantization artifact, not a
+  // review count, and anything sitting in a public file gets quoted sooner or later. Kept here for
+  // internal calibration only - pipeline/out/ is tracked but never served.
+  fs.writeFileSync(new URL('pipeline/out/trend-internal.json', ROOT), JSON.stringify({
+    note: 'INTERNAL ONLY. midDelta is the difference of range midpoints = a measure of Google\'s band widths, NOT removed reviews. Never publish, never quote. The publishable figure is up/down/flat.',
+    prev: prevM, latest, panelSize: panel.length, up, down, moved, flat,
+    midPrev: r0(a), midLatest: r0(b), midDelta: r0(b - a), midChangePct: r1(a ? ((b - a) / a) * 100 : 0),
+  }, null, 2) + '\n');
   const dir = down === 0 && up > 0 ? 'keiner sank' : up === 0 && down > 0 ? 'keiner stieg' : `${de(down)} sanken`;
   add(95, "Momentum",
     `Bei ${de(up)} von ${de(panel.length)} durchgehend erfassten Betrieben stieg die Zahl entfernter Bewertungen über eine Bereichsgrenze — ${dir}`,
