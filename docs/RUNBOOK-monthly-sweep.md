@@ -84,7 +84,7 @@ node pipeline/build.mjs
 node pipeline/content.mjs --llm      # Monatsreport (Fable 5, zahlenverifiziert)
 node pipeline/og-image.mjs           # Social-Card mit den neuen Zahlen
 node pipeline/fetch-logos.mjs        # VOR pages.mjs
-node pipeline/pages.mjs
+node pipeline/pages.mjs              # stempelt am Ende automatisch Content-Hashes auf alle Assets
 npx wrangler pages deploy dashboard --project-name=aidos --branch=main --commit-dirty=true
 ```
 

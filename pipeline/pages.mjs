@@ -475,3 +475,8 @@ fs.writeFileSync(new URL('lookup.js', OUT), 'window.AIDOS_LOOKUP = ' + JSON.stri
 fs.writeFileSync(new URL('pagemap.js', OUT), 'window.AIDOS_PAGES = ' + JSON.stringify(pageMap) + ';\n');
 
 console.log(`pages: ${brands.size} companies ×2 languages (${skipped} below naming threshold → aggregates only), ${agg.branches.length} branches, ${agg.cities.filter((c) => c.n >= 3).length} cities | sitemap: ${urls.length + staticPages.length} URLs | lookup index: ${lookup.length}`);
+
+// Stamp content hashes onto every asset reference — must run LAST, after all HTML and all data
+// files exist, or a stale hash ships. Without this, a rebuilt aggregates.js stayed invisible to
+// returning visitors for up to the 4h cache TTL.
+await import('./stamp-assets.mjs');
