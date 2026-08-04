@@ -1,0 +1,323 @@
+{
+  "records": [
+    {
+      "_debug": {
+        "authority": null,
+        "ext": [],
+        "f7": null,
+        "h1": null,
+        "og": "https://maps.google.com/maps/api/staticmap?center=52.5203875%2C13.41214&zoom=17&",
+        "rez": [
+          "Reviews for Carambar",
+          "5 stars, 5,728 reviews",
+          "4 stars, 1,436 reviews",
+          "3 stars, 742 reviews"
+        ],
+        "sterne": [
+          " stars",
+          "5 stars, 5,728 reviews",
+          "4 stars, 1,436 reviews",
+          "3 stars, 742 reviews",
+          "2 stars, 32 reviews",
+          "1 stars, 47 reviews"
+        ],
+        "website": []
+      },
+      "address": null,
+      "aidos_version": "v1.2.5",
+      "banner_text": "Over 250 reviews removed due to defamation complaints",
+      "business_status": "operational",
+      "captured_at": "2026-07-11T23:50:30.255Z",
+      "category": null,
+      "city": null,
+      "dist_1": 47,
+      "dist_2": 32,
+      "dist_3": 742,
+      "dist_4": 1436,
+      "dist_5": 5728,
+      "image": null,
+      "key": "0x47a84e21d89b7aa7:0xc6629316d9daa009",
+      "lat": 52.5203875,
+      "lng": 13.41214,
+      "name": "Carambar",
+      "phone": null,
+      "plus_code": null,
+      "postal_code": null,
+      "price_level": null,
+      "range_max": null,
+      "range_min": 250,
+      "rating": 4.6,
+      "rev_hist": {
+        "2023-07": {
+          "n": 2,
+          "sum": 8
+        },
+        "2025-07": {
+          "n": 4,
+          "sum": 16
+        },
+        "2025-11": {
+          "n": 1,
+          "sum": 4
+        },
+        "2026-03": {
+          "n": 1,
+          "sum": 5
+        }
+      },
+      "rev_hist_meta": {
+        "at": "2026-07-11T23:51:00.222Z",
+        "complete": true,
+        "dbg": {
+          "btn": "Sort reviews|Sort",
+          "item": "Most relevant",
+          "n0": 88,
+          "n_end": 0,
+          "n_sort": 0,
+          "n_start": 0,
+          "n_tab": 88,
+          "pane": false,
+          "pre_matched": 8,
+          "reverted": true
+        },
+        "matched": 8,
+        "oldest_months": 0,
+        "scanned": 8,
+        "sorted": false,
+        "tab_retry": false
+      },
+      "reviews": 753,
+      "url": "https://www.google.com/maps/place/Carambar/@52.5203875,13.41214,17z/data=!3m1!5s0x47a84e1f7db9c2b5:0x78cc8305f4544644!4m8!3m7!1s0x47a84e21d89b7aa7:0xc6629316d9daa009!8m2!3d52.5203875!4d13.41214!9m1!1b1!16s%2Fg%2F1tdy3hrw?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "website": null
+    },
+    {
+      "_debug": {
+        "authority": null,
+        "ext": [],
+        "f7": null,
+        "h1": null,
+        "og": "https://maps.google.com/maps/api/staticmap?center=53.546087%2C9.975282&zoom=17&s",
+        "rez": [
+          "Reviews for Olá Lisboa",
+          "5 stars, 4,808 reviews",
+          "4 stars, 1,347 reviews",
+          "3 stars, 170 reviews"
+        ],
+        "sterne": [
+          " stars",
+          "5 stars, 4,808 reviews",
+          "4 stars, 1,347 reviews",
+          "3 stars, 170 reviews",
+          "2 stars, 24 reviews",
+          "1 stars, 73 reviews"
+        ],
+        "website": []
+      },
+      "address": null,
+      "aidos_version": "v1.2.5",
+      "banner_text": "Over 250 reviews removed due to defamation complaints",
+      "business_status": "operational",
+      "captured_at": "2026-07-11T23:51:09.291Z",
+      "category": null,
+      "city": null,
+      "dist_1": 73,
+      "dist_2": 24,
+      "dist_3": 170,
+      "dist_4": 1347,
+      "dist_5": 4808,
+      "image": null,
+      "key": "0x47b18f0c2a35318b:0x178a08d5f25eb399",
+      "lat": 53.546087,
+      "lng": 9.975282,
+      "name": "Olá Lisboa",
+      "phone": null,
+      "plus_code": null,
+      "postal_code": null,
+      "price_level": null,
+      "range_max": null,
+      "range_min": 250,
+      "rating": 4.7,
+      "rev_hist": {
+        "2025-07": {
+          "n": 1,
+          "sum": 4
+        },
+        "2025-10": {
+          "n": 1,
+          "sum": 5
+        },
+        "2025-11": {
+          "n": 1,
+          "sum": 5
+        },
+        "2026-02": {
+          "n": 1,
+          "sum": 5
+        },
+        "2026-03": {
+          "n": 1,
+          "sum": 5
+        },
+        "2026-04": {
+          "n": 49,
+          "sum": 224
+        },
+        "2026-05": {
+          "n": 46,
+          "sum": 217
+        },
+        "2026-06": {
+          "n": 68,
+          "sum": 319
+        },
+        "2026-07": {
+          "n": 65,
+          "sum": 299
+        }
+      },
+      "rev_hist_meta": {
+        "at": "2026-07-11T23:51:36.387Z",
+        "complete": false,
+        "dbg": {
+          "btn": "Sort reviews|Sort",
+          "item": "Newest",
+          "n0": 88,
+          "n_end": 2017,
+          "n_sort": 88,
+          "n_start": 88,
+          "n_tab": 88,
+          "pane": true,
+          "pre_matched": 8
+        },
+        "matched": 233,
+        "oldest_months": 3,
+        "scanned": 235,
+        "sorted": true,
+        "tab_retry": false
+      },
+      "reviews": 270,
+      "url": "https://www.google.com/maps/place/Ol%C3%A1+Lisboa/@53.546087,9.975282,17z/data=!4m8!3m7!1s0x47b18f0c2a35318b:0x178a08d5f25eb399!8m2!3d53.546087!4d9.975282!9m1!1b1!16s%2Fg%2F11cm6dly66?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "website": null
+    },
+    {
+      "_debug": {
+        "authority": null,
+        "ext": [],
+        "f7": null,
+        "h1": null,
+        "og": "https://maps.google.com/maps/api/staticmap?center=51.4568079%2C7.0099323&zoom=17",
+        "rez": [
+          "Reviews for Al Midan Al Dimaschki",
+          "5 stars, 7,571 reviews",
+          "4 stars, 1,541 reviews",
+          "3 stars, 761 reviews"
+        ],
+        "sterne": [
+          " stars",
+          "5 stars, 7,571 reviews",
+          "4 stars, 1,541 reviews",
+          "3 stars, 761 reviews",
+          "2 stars, 292 reviews",
+          "1 stars, 1,932 reviews"
+        ],
+        "website": []
+      },
+      "address": null,
+      "aidos_version": "v1.2.5",
+      "banner_text": "Over 250 reviews removed due to defamation complaints",
+      "business_status": "operational",
+      "captured_at": "2026-07-11T23:49:55.035Z",
+      "category": null,
+      "city": null,
+      "dist_1": 1932,
+      "dist_2": 292,
+      "dist_3": 761,
+      "dist_4": 1541,
+      "dist_5": 7571,
+      "image": null,
+      "key": "0x47b8c2b7182b256f:0xbb1155da0ee37379",
+      "lat": 51.4568079,
+      "lng": 7.0099323,
+      "name": "Al Midan Al Dimaschki",
+      "phone": null,
+      "plus_code": null,
+      "postal_code": null,
+      "price_level": null,
+      "range_max": null,
+      "range_min": 250,
+      "rating": 4,
+      "rev_hist": {
+        "2025-07": {
+          "n": 3,
+          "sum": 6
+        },
+        "2025-09": {
+          "n": 1,
+          "sum": 5
+        },
+        "2026-04": {
+          "n": 2,
+          "sum": 7
+        },
+        "2026-05": {
+          "n": 1,
+          "sum": 1
+        },
+        "2026-06": {
+          "n": 1,
+          "sum": 1
+        }
+      },
+      "rev_hist_meta": {
+        "at": "2026-07-11T23:50:25.000Z",
+        "complete": true,
+        "dbg": {
+          "btn": "Sort reviews|Sort",
+          "item": "Most relevant",
+          "n0": 76,
+          "n_end": 0,
+          "n_sort": 0,
+          "n_start": 0,
+          "n_tab": 76,
+          "pane": false,
+          "pre_matched": 8,
+          "reverted": true
+        },
+        "matched": 8,
+        "oldest_months": 0,
+        "scanned": 8,
+        "sorted": false,
+        "tab_retry": false
+      },
+      "reviews": 141,
+      "url": "https://www.google.com/maps/place/Al+Midan+Al+Dimaschki/@51.4568079,7.0099323,17z/data=!4m8!3m7!1s0x47b8c2b7182b256f:0xbb1155da0ee37379!8m2!3d51.4568079!4d7.0099323!9m1!1b1!16s%2Fg%2F11dymnwmjg?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D",
+      "website": null
+    }
+  ],
+  "checks": [
+    {
+      "aidos_version": "v1.2.5",
+      "key": "0x47a84e21d89b7aa7:0xc6629316d9daa009",
+      "outcome": "hit",
+      "page_rendered": true,
+      "ts": "2026-07-11T23:50:36.166Z",
+      "url": "https://www.google.com/maps/place/Carambar/@52.5203875,13.41214,17z/data=!3m1!5s0x47a84e1f7db9c2b5:0x78cc8305f4544644!4m8!3m7!1s0x47a84e21d89b7aa7:0xc6629316d9daa009!8m2!3d52.5203875!4d13.41214!9m1!1b1!16s%2Fg%2F1tdy3hrw?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+      "aidos_version": "v1.2.5",
+      "key": "0x47b18f0c2a35318b:0x178a08d5f25eb399",
+      "outcome": "hit",
+      "page_rendered": true,
+      "ts": "2026-07-11T23:51:15.211Z",
+      "url": "https://www.google.com/maps/place/Ol%C3%A1+Lisboa/@53.546087,9.975282,17z/data=!4m8!3m7!1s0x47b18f0c2a35318b:0x178a08d5f25eb399!8m2!3d53.546087!4d9.975282!9m1!1b1!16s%2Fg%2F11cm6dly66?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+      "aidos_version": "v1.2.5",
+      "key": "0x47b8c2b7182b256f:0xbb1155da0ee37379",
+      "outcome": "hit",
+      "page_rendered": true,
+      "ts": "2026-07-11T23:50:00.943Z",
+      "url": "https://www.google.com/maps/place/Al+Midan+Al+Dimaschki/@51.4568079,7.0099323,17z/data=!4m8!3m7!1s0x47b8c2b7182b256f:0xbb1155da0ee37379!8m2!3d51.4568079!4d7.0099323!9m1!1b1!16s%2Fg%2F11dymnwmjg?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D"
+    }
+  ]
+}

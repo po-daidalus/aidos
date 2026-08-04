@@ -1,0 +1,727 @@
+{
+  "entries": [
+    {
+      "file": null,
+      "stored": false,
+      "reason": "empty export",
+      "originalName": "aidos-banners (1).json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2,
+      "format": "json",
+      "records": 0,
+      "checks": 0,
+      "outcomes": {},
+      "hitRatePct": null,
+      "extensionVersions": [],
+      "capturedFrom": null,
+      "capturedTo": null,
+      "kind": "empty"
+    },
+    {
+      "file": null,
+      "stored": false,
+      "reason": "empty export",
+      "originalName": "aidos-banners (19).json",
+      "sha256": "c68eeba2c033b9d272b07d9ff79236be25a1ceeb93d2f6a51fe4e019e2d9dd19",
+      "bytes": 35,
+      "format": "json",
+      "records": 0,
+      "checks": 0,
+      "outcomes": {},
+      "hitRatePct": null,
+      "extensionVersions": [],
+      "capturedFrom": null,
+      "capturedTo": null,
+      "kind": "empty"
+    },
+    {
+      "file": null,
+      "stored": false,
+      "reason": "empty export",
+      "originalName": "aidos-banners.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2,
+      "format": "json",
+      "records": 0,
+      "checks": 0,
+      "outcomes": {},
+      "hitRatePct": null,
+      "extensionVersions": [],
+      "capturedFrom": null,
+      "capturedTo": null,
+      "kind": "empty"
+    },
+    {
+      "file": "2026-06-29_csv-no-checks_1r-0c_40225e33.csv",
+      "stored": true,
+      "originalName": "aidos-banners (1).csv",
+      "sha256": "40225e3353f6d319e86982c207fed7fef88381102a6a289d4e13765e35719edc",
+      "bytes": 604,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (1).csv",
+      "format": "csv",
+      "records": 1,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": null,
+      "stored": false,
+      "reason": "empty export",
+      "originalName": "aidos-banners (10).csv",
+      "sha256": "a87240a50e7a49ae9c0493a4444f2a1f463c2c1736c48aafe57c2509fc710928",
+      "bytes": 220,
+      "format": "csv",
+      "records": 0,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-03_csv-no-checks_6r-0c_56175907.csv",
+      "stored": true,
+      "originalName": "aidos-banners (11).csv",
+      "sha256": "5617590779cb602362a69ad28d715ac07eecf7e08b8905193707da02c7c76c55",
+      "bytes": 3124,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (11).csv",
+      "format": "csv",
+      "records": 6,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-03_csv-no-checks_8r-0c_49a42875.csv",
+      "stored": true,
+      "originalName": "aidos-banners (12).csv",
+      "sha256": "49a428757a8ef07c281938bbbc575f69fcd4379b326cfae58b658b3bfc8fc20a",
+      "bytes": 4372,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (12).csv",
+      "format": "csv",
+      "records": 8,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-04_csv-no-checks_104r-0c_3b249140.csv",
+      "stored": true,
+      "originalName": "aidos-banners (13).csv",
+      "sha256": "3b249140fc3ab94597aeee949bcbeddbeb48f07cd7caa65d861ff8df96af288a",
+      "bytes": 54848,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (13).csv",
+      "format": "csv",
+      "records": 104,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-04_csv-no-checks_72r-0c_12625717.csv",
+      "stored": true,
+      "originalName": "aidos-banners (14).csv",
+      "sha256": "126257176db64adc18febd62009eb8e2d20ec53aa7fd4fff7ff022e0c0f23b27",
+      "bytes": 37765,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (14).csv",
+      "format": "csv",
+      "records": 72,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-04_csv-no-checks_82r-0c_84ffed8b.csv",
+      "stored": true,
+      "originalName": "aidos-banners (15).csv",
+      "sha256": "84ffed8bcca24914e62115f08fe0bcb94da55bdf42b9de3e0386e8d98c2db9a8",
+      "bytes": 43421,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (15).csv",
+      "format": "csv",
+      "records": 82,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-05_csv-no-checks_156r-0c_b0c25c7b.csv",
+      "stored": true,
+      "originalName": "aidos-banners (16).csv",
+      "sha256": "b0c25c7be29f530ddcd4ce1a58966020b7b2d6d57bd3aefc22e3b9ed52be5751",
+      "bytes": 82829,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (16).csv",
+      "format": "csv",
+      "records": 156,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence.",
+      "alsoSeenAs": [
+        "aidos-banners (17).csv"
+      ]
+    },
+    {
+      "file": "2026-07-05_csv-no-checks_247r-0c_2c880f1a.csv",
+      "stored": true,
+      "originalName": "aidos-banners (18).csv",
+      "sha256": "2c880f1ac814de6be798d81149b09e01feb49b00f2da14464c954b13e848467d",
+      "bytes": 130148,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (18).csv",
+      "format": "csv",
+      "records": 247,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-06_csv-no-checks_89r-0c_507c01bd.csv",
+      "stored": true,
+      "originalName": "aidos-banners (19).csv",
+      "sha256": "507c01bd2727e0952963c7ffc2aca2aa5dd0987301d11e80c5c625e5b7706477",
+      "bytes": 47388,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (19).csv",
+      "format": "csv",
+      "records": 89,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence.",
+      "alsoSeenAs": [
+        "aidos-banners (20).csv"
+      ]
+    },
+    {
+      "file": "2026-06-29_csv-no-checks_1r-0c_2e990dc5.csv",
+      "stored": true,
+      "originalName": "aidos-banners (2).csv",
+      "sha256": "2e990dc5246c655d28a9be09c5382eeee8b6e02d304119925f38061e5050684f",
+      "bytes": 662,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (2).csv",
+      "format": "csv",
+      "records": 1,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-08_csv-no-checks_63r-0c_18c4723c.csv",
+      "stored": true,
+      "originalName": "aidos-banners (21).csv",
+      "sha256": "18c4723c05e057aca13a722c6c608fe140e5ee04f08a7f3761c75ae3ff0223b1",
+      "bytes": 34727,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (21).csv",
+      "format": "csv",
+      "records": 63,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-06-29_csv-no-checks_1r-0c_2e116f5f.csv",
+      "stored": true,
+      "originalName": "aidos-banners (3).csv",
+      "sha256": "2e116f5f2da469eebc649aaba5015b4a19b942b4aae2b2b96e4bb663e96c7a6d",
+      "bytes": 662,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (3).csv",
+      "format": "csv",
+      "records": 1,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-01_csv-no-checks_58r-0c_f39aa08b.csv",
+      "stored": true,
+      "originalName": "aidos-banners (4).csv",
+      "sha256": "f39aa08bb7e09dca559a27cefc94d6deea2348ee8e2f81c569a29ace94fcea1e",
+      "bytes": 26144,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (4).csv",
+      "format": "csv",
+      "records": 58,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-01_csv-no-checks_59r-0c_61336685.csv",
+      "stored": true,
+      "originalName": "aidos-banners (5).csv",
+      "sha256": "613366856539cb8a1b510aaaf467972db3e06ffcc2359f5feeae1d134ef3dcc5",
+      "bytes": 26637,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (5).csv",
+      "format": "csv",
+      "records": 59,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-02_csv-no-checks_139r-0c_efb0f76f.csv",
+      "stored": true,
+      "originalName": "aidos-banners (6).csv",
+      "sha256": "efb0f76f5f0d70a1d930126ebafa4167bf1137467d6c0b78eb0b94327f57a189",
+      "bytes": 90560,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (6).csv",
+      "format": "csv",
+      "records": 139,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-02_csv-no-checks_139r-0c_229f7851.csv",
+      "stored": true,
+      "originalName": "aidos-banners (7).csv",
+      "sha256": "229f7851734db3c024ad175a13a5a864d18c1bbc52b4ed9de363bea678f14618",
+      "bytes": 91749,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (7).csv",
+      "format": "csv",
+      "records": 139,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-03_csv-no-checks_117r-0c_0fbe19ec.csv",
+      "stored": true,
+      "originalName": "aidos-banners (8).csv",
+      "sha256": "0fbe19ec2afc5ace817875cb447d6dfb88ba3fb5d779f7b8173d7f94ab19051f",
+      "bytes": 62600,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (8).csv",
+      "format": "csv",
+      "records": 117,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": null,
+      "stored": false,
+      "reason": "empty export",
+      "originalName": "aidos-banners (9).csv",
+      "sha256": "a87240a50e7a49ae9c0493a4444f2a1f463c2c1736c48aafe57c2509fc710928",
+      "bytes": 220,
+      "format": "csv",
+      "records": 0,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-06-29_csv-no-checks_1r-0c_35b894a3.csv",
+      "stored": true,
+      "originalName": "aidos-banners.csv",
+      "sha256": "35b894a3ac722a143c754ed1d15a5c388ba0fa1615965db1355fe4be81ea7722",
+      "bytes": 539,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners.csv",
+      "format": "csv",
+      "records": 1,
+      "checks": 0,
+      "kind": "csv-no-checks",
+      "note": "CSV carries no checks log — usable for records only, never for prevalence."
+    },
+    {
+      "file": "2026-07-03_probe_6r-0c_28d40a09.json",
+      "stored": true,
+      "originalName": "aidos-banners (2).json",
+      "sha256": "28d40a09ac3e14fe565c80feaa0b5c78e9ffcdaa5d31e484c23dbdca31b5de7e",
+      "bytes": 9637,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (2).json",
+      "format": "json",
+      "records": 6,
+      "checks": 0,
+      "outcomes": {},
+      "hitRatePct": null,
+      "extensionVersions": [
+        "v0.8"
+      ],
+      "capturedFrom": "2026-07-03T14:55:40.873Z",
+      "capturedTo": "2026-07-03T14:56:28.009Z",
+      "kind": "probe"
+    },
+    {
+      "file": "2026-07-04_mixed_137r-0c_bc781701.json",
+      "stored": true,
+      "originalName": "aidos-banners (3).json",
+      "sha256": "bc7817013af858dae2561baf88cb58834f0ed0089dba06c851d17883be1110cc",
+      "bytes": 234226,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (3).json",
+      "format": "json",
+      "records": 137,
+      "checks": 0,
+      "outcomes": {},
+      "hitRatePct": null,
+      "extensionVersions": [
+        "v0.9"
+      ],
+      "capturedFrom": "2026-07-04T10:27:32.965Z",
+      "capturedTo": "2026-07-05T01:18:10.849Z",
+      "kind": "mixed"
+    },
+    {
+      "file": "2026-07-08_screening_63r-1282c_d6544537.json",
+      "stored": true,
+      "originalName": "aidos-banners (4).json",
+      "sha256": "d6544537e2d5e3a7a215c3812fffa2bfbc17bc127a621b9ff8a6efa733ae6c55",
+      "bytes": 688039,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (4).json",
+      "format": "json",
+      "records": 63,
+      "checks": 1282,
+      "outcomes": {
+        "no_banner": 1246,
+        "hit": 36
+      },
+      "hitRatePct": 2.8,
+      "extensionVersions": [
+        "v1.1"
+      ],
+      "capturedFrom": "2026-07-08T13:59:44.552Z",
+      "capturedTo": "2026-07-08T20:29:35.657Z",
+      "kind": "screening"
+    },
+    {
+      "file": "2026-07-08_screening_330r-4612c_9e546cca.json",
+      "stored": true,
+      "originalName": "aidos-banners (5).json",
+      "sha256": "9e546cca0d16305f89c30c01f6270030cc498c10e4d1a335b173ad0477b7de95",
+      "bytes": 2668338,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (5).json",
+      "format": "json",
+      "records": 330,
+      "checks": 4612,
+      "outcomes": {
+        "no_banner": 4387,
+        "hit": 224,
+        "no_place": 1
+      },
+      "hitRatePct": 4.9,
+      "extensionVersions": [
+        "v1.1"
+      ],
+      "capturedFrom": "2026-07-08T20:55:41.648Z",
+      "capturedTo": "2026-07-09T20:42:03.674Z",
+      "kind": "screening",
+      "containedIn": [
+        "2026-07-08_screening_645r-9335c_65421dc6.json",
+        "2026-07-08_screening_811r-12836c_4bc06c6a.json"
+      ]
+    },
+    {
+      "file": "2026-07-08_screening_645r-9335c_65421dc6.json",
+      "stored": true,
+      "originalName": "aidos-banners (6).json",
+      "sha256": "65421dc659901d65e2593fb15cab52f807e6d8fa8b35c26dd504b80ef1973539",
+      "bytes": 5346486,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (6).json",
+      "format": "json",
+      "records": 645,
+      "checks": 9335,
+      "outcomes": {
+        "no_banner": 8928,
+        "hit": 404,
+        "no_place": 3
+      },
+      "hitRatePct": 4.3,
+      "extensionVersions": [
+        "v1.1"
+      ],
+      "capturedFrom": "2026-07-08T20:55:41.648Z",
+      "capturedTo": "2026-07-10T21:34:59.908Z",
+      "kind": "screening",
+      "containedIn": [
+        "2026-07-08_screening_811r-12836c_4bc06c6a.json"
+      ]
+    },
+    {
+      "file": "2026-07-08_screening_811r-12836c_4bc06c6a.json",
+      "stored": true,
+      "originalName": "aidos-banners (7).json",
+      "sha256": "4bc06c6acdbb3799f86927d16f34cecc00d925d2c433021955571fcce4cdc87b",
+      "bytes": 7204927,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (7).json",
+      "format": "json",
+      "records": 811,
+      "checks": 12836,
+      "outcomes": {
+        "no_banner": 12278,
+        "hit": 539,
+        "no_place": 19
+      },
+      "hitRatePct": 4.2,
+      "extensionVersions": [
+        "v1.1"
+      ],
+      "capturedFrom": "2026-07-08T20:55:41.648Z",
+      "capturedTo": "2026-07-11T14:17:08.258Z",
+      "kind": "screening"
+    },
+    {
+      "file": "2026-07-11_panel_551r-550c_9a7c2f12.json",
+      "stored": true,
+      "originalName": "aidos-banners (8).json",
+      "sha256": "9a7c2f127c0fbf90816102d99ef864ac3c658f902ccf5a95700b54e6126bd5d2",
+      "bytes": 1800798,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (8).json",
+      "format": "json",
+      "records": 551,
+      "checks": 550,
+      "outcomes": {
+        "hit": 549,
+        "no_banner": 1
+      },
+      "hitRatePct": 99.8,
+      "extensionVersions": [
+        "v1.2"
+      ],
+      "capturedFrom": "2026-07-11T17:15:38.315Z",
+      "capturedTo": "2026-07-11T19:41:20.907Z",
+      "kind": "panel"
+    },
+    {
+      "file": "2026-07-11_probe_3r-3c_d9c3655e.json",
+      "stored": true,
+      "originalName": "aidos-banners (9).json",
+      "sha256": "d9c3655e7e4d5a61de116f287f2304c819c66fa6735f60d7b3f3f72d67c4588a",
+      "bytes": 6808,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (9).json",
+      "format": "json",
+      "records": 3,
+      "checks": 3,
+      "outcomes": {
+        "hit": 3
+      },
+      "hitRatePct": 100,
+      "extensionVersions": [
+        "v1.2.1"
+      ],
+      "capturedFrom": "2026-07-11T23:07:32.194Z",
+      "capturedTo": "2026-07-11T23:08:08.095Z",
+      "kind": "probe",
+      "containedIn": [
+        "2026-07-12_panel_551r-549c_968f59f0.json",
+        "2026-08-03_panel_667r-667c_7687566e.json",
+        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+      ]
+    },
+    {
+      "file": "2026-07-11_probe_3r-3c_c87aaf5d.json",
+      "stored": true,
+      "originalName": "aidos-banners (10).json",
+      "sha256": "c87aaf5d3c9f72ff3b0591f72da67772ab355b74a478c88525b6f92117ce438f",
+      "bytes": 7326,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (10).json",
+      "format": "json",
+      "records": 3,
+      "checks": 3,
+      "outcomes": {
+        "hit": 3
+      },
+      "hitRatePct": 100,
+      "extensionVersions": [
+        "v1.2.2"
+      ],
+      "capturedFrom": "2026-07-11T23:13:07.148Z",
+      "capturedTo": "2026-07-11T23:13:51.537Z",
+      "kind": "probe",
+      "containedIn": [
+        "2026-07-12_panel_551r-549c_968f59f0.json",
+        "2026-08-03_panel_667r-667c_7687566e.json",
+        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+      ]
+    },
+    {
+      "file": "2026-07-11_probe_3r-3c_6f4c83a3.json",
+      "stored": true,
+      "originalName": "aidos-banners (11).json",
+      "sha256": "6f4c83a375a85120ac8d3feecf4c1a407ec31c0a21005dad01c6d50cf26a270c",
+      "bytes": 7410,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (11).json",
+      "format": "json",
+      "records": 3,
+      "checks": 3,
+      "outcomes": {
+        "hit": 3
+      },
+      "hitRatePct": 100,
+      "extensionVersions": [
+        "v1.2.3"
+      ],
+      "capturedFrom": "2026-07-11T23:22:44.318Z",
+      "capturedTo": "2026-07-11T23:23:28.885Z",
+      "kind": "probe",
+      "containedIn": [
+        "2026-07-12_panel_551r-549c_968f59f0.json",
+        "2026-08-03_panel_667r-667c_7687566e.json",
+        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+      ]
+    },
+    {
+      "file": "2026-07-11_probe_3r-3c_38013df8.json",
+      "stored": true,
+      "originalName": "aidos-banners (12).json",
+      "sha256": "38013df83f3f627a336546c7fb2b4708b0224362b63a2f1863bfbc1bc67fb1d2",
+      "bytes": 9176,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (12).json",
+      "format": "json",
+      "records": 3,
+      "checks": 3,
+      "outcomes": {
+        "hit": 3
+      },
+      "hitRatePct": 100,
+      "extensionVersions": [
+        "v1.2.4"
+      ],
+      "capturedFrom": "2026-07-11T23:44:57.594Z",
+      "capturedTo": "2026-07-11T23:45:44.847Z",
+      "kind": "probe",
+      "containedIn": [
+        "2026-07-12_panel_551r-549c_968f59f0.json",
+        "2026-08-03_panel_667r-667c_7687566e.json",
+        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+      ]
+    },
+    {
+      "file": "2026-07-11_probe_3r-3c_01555b7e.json",
+      "stored": true,
+      "originalName": "aidos-banners (13).json",
+      "sha256": "01555b7ec879be264b20385200659d18a423c5d7b1cce92077cedd8d9d1496c8",
+      "bytes": 9246,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (13).json",
+      "format": "json",
+      "records": 3,
+      "checks": 3,
+      "outcomes": {
+        "hit": 3
+      },
+      "hitRatePct": 100,
+      "extensionVersions": [
+        "v1.2.5"
+      ],
+      "capturedFrom": "2026-07-11T23:49:55.035Z",
+      "capturedTo": "2026-07-11T23:51:15.211Z",
+      "kind": "probe",
+      "containedIn": [
+        "2026-07-12_panel_551r-549c_968f59f0.json",
+        "2026-08-03_panel_667r-667c_7687566e.json",
+        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+      ]
+    },
+    {
+      "file": "2026-07-11_probe_3r-3c_bef67a25.json",
+      "stored": true,
+      "originalName": "aidos-banners (14).json",
+      "sha256": "bef67a25a65907443b41fc47e4b97f0aef567db8ff82f1434c5cb24000566adb",
+      "bytes": 11511,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (14).json",
+      "format": "json",
+      "records": 3,
+      "checks": 3,
+      "outcomes": {
+        "hit": 3
+      },
+      "hitRatePct": 100,
+      "extensionVersions": [
+        "v1.2.6"
+      ],
+      "capturedFrom": "2026-07-11T23:55:42.907Z",
+      "capturedTo": "2026-07-11T23:57:19.525Z",
+      "kind": "probe",
+      "containedIn": [
+        "2026-07-12_panel_551r-549c_968f59f0.json",
+        "2026-08-03_panel_667r-667c_7687566e.json",
+        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+      ]
+    },
+    {
+      "file": "2026-07-12_panel_551r-549c_968f59f0.json",
+      "stored": true,
+      "originalName": "aidos-banners (15).json",
+      "sha256": "968f59f0538488019d471da49e172a0c4d4d65b266ca51c2cafb9bc393489b0c",
+      "bytes": 1682685,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (15).json",
+      "format": "json",
+      "records": 551,
+      "checks": 549,
+      "outcomes": {
+        "hit": 548,
+        "no_banner": 1
+      },
+      "hitRatePct": 99.8,
+      "extensionVersions": [
+        "v1.2.6"
+      ],
+      "capturedFrom": "2026-07-12T00:00:17.663Z",
+      "capturedTo": "2026-07-12T04:31:49.633Z",
+      "kind": "panel",
+      "alsoSeenAs": [
+        "aidos-banners (16).json"
+      ]
+    },
+    {
+      "file": "2026-07-18_panel_499r-498c_9d796254.json",
+      "stored": true,
+      "originalName": "aidos-banners (17).json",
+      "sha256": "9d79625438290d979183dd28a751a3b2991a61ffa93e414bb658aa36160b99d2",
+      "bytes": 1816510,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (17).json",
+      "format": "json",
+      "records": 499,
+      "checks": 498,
+      "outcomes": {
+        "hit": 498
+      },
+      "hitRatePct": 100,
+      "extensionVersions": [
+        "v1.2.6"
+      ],
+      "capturedFrom": "2026-07-18T21:48:58.641Z",
+      "capturedTo": "2026-07-19T02:15:59.918Z",
+      "kind": "panel"
+    },
+    {
+      "file": "2026-07-21_screening_227r-3754c_7f827cdd.json",
+      "stored": true,
+      "originalName": "aidos-banners (18).json",
+      "sha256": "7f827cddb50c9f165e650eb8b48c60b33f137cf9907c535a987451f8a99574f4",
+      "bytes": 2392778,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (18).json",
+      "format": "json",
+      "records": 227,
+      "checks": 3754,
+      "outcomes": {
+        "no_banner": 3562,
+        "hit": 192
+      },
+      "hitRatePct": 5.1,
+      "extensionVersions": [
+        "v1.2.6"
+      ],
+      "capturedFrom": "2026-07-21T11:49:35.528Z",
+      "capturedTo": "2026-07-22T05:34:30.275Z",
+      "kind": "screening"
+    },
+    {
+      "file": "2026-08-03_panel_667r-667c_7687566e.json",
+      "stored": true,
+      "originalName": "aidos-banners (20).json",
+      "sha256": "7687566e87cec62b3206a1c3b779fe7f1690d10ed7bf62c4bbcc74356b01dd09",
+      "bytes": 2464147,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (20).json",
+      "format": "json",
+      "records": 667,
+      "checks": 667,
+      "outcomes": {
+        "hit": 666,
+        "no_banner": 1
+      },
+      "hitRatePct": 99.9,
+      "extensionVersions": [
+        "v1.2.6"
+      ],
+      "capturedFrom": "2026-08-03T21:25:06.105Z",
+      "capturedTo": "2026-08-04T03:21:25.703Z",
+      "kind": "panel"
+    }
+  ],
+  "updated": "2026-08-04T19:04:45.101Z",
+  "totalStored": 35
+}

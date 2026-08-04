@@ -32,9 +32,10 @@ Ablauf:
 4. Dauer grob: ~675 Treffer × ~45 s Deep-Capture ≈ 10–11 h.
 5. Export als **JSON** (nicht CSV — CSV hat kein checks-Log).
 
-Ingest:
+Ingest — **Archivieren kommt zuerst, immer**:
 
 ```bash
+node pipeline/archive-export.mjs <export.json>   # ← VOR dem Ingest, nie überspringen
 node pipeline/split-run.mjs <export.json>
 node pipeline/ingest.mjs pipeline/out/runsplit/<slug>.json --city=<Stadt> --no-checks
 ```
@@ -57,9 +58,21 @@ laufen lassen, exportieren. Der Lauf ist resumierbar (`chrome.alarms`), Abbrüch
 Ingest je Stadt (**ohne** `--no-checks`, hier sollen die checks landen):
 
 ```bash
+node pipeline/archive-export.mjs <export.json>   # ← auch hier zuerst
 node pipeline/split-run.mjs <export.json>
 node pipeline/ingest.mjs pipeline/out/runsplit/<slug>.json --city=<Stadt>
 ```
+
+Die Screening-Listen sind **deterministisch gemischt** (Seed = Stadt + Monat). Grund: `discover-osm`
+fragt Branche für Branche ab, die Rohliste kommt also in 13 zusammenhängenden Branchenblöcken an —
+Gastronomie & Hotel, die Branche mit der höchsten Entfernungsrate, steht am Ende. Ein abgebrochener
+Lauf hätte sonst nur die vorderen Branchen gemessen und die Prävalenz massiv unterschätzt. Durch die
+Mischung ist **jeder Anfangsteil repräsentativ**: bricht eine Nacht ab, ist die gemessene Quote
+trotzdem unverzerrt — einfach exportieren, was da ist.
+
+Gemessener Durchsatz (aus dem Juli-Screening, 3.754 checks): **~14,8 s pro URL netto**, unabhängig
+vom Ergebnis. Berlin (2.127 URLs) ≈ 8,5–9 h. Ohne `caffeinate -d` gehen zusätzlich Stunden verloren
+— im Juli-Lauf waren es 2,27 h reine Schlaf-Pausen.
 
 ---
 
