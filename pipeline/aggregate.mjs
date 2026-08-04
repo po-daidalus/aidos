@@ -19,7 +19,7 @@ const r1 = (x) => Math.round(x * 10) / 10;
 const de = (x) => r0(x).toLocaleString('de-DE');
 const de1 = (x) => r1(x).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
-// --- cross-section (the "Basismessung") = latest observation PER entity ---
+// --- cross-section (the rolling cross-section) = latest observation PER entity ---
 // NOT rows.filter(date === latest): that would drop every city scraped in an earlier month the
 // moment a new month's sweep begins (Berlin ingested July would vanish once Köln lands in August),
 // conflating coverage growth with real change. Instead take each aid's most recent snapshot, and
@@ -70,11 +70,24 @@ const hotspotOf = (cityKey) => {
 const maxCityPer = Math.max(1, ...cities.map((c) => c.perLoc));
 cities.forEach((c) => { c.hotspot = hotspotOf(c.key); c.score = Math.round((100 * c.perLoc) / maxCityPer) / 10; });
 
+// The cross-section is NOT one month's snapshot: it takes each entity's most recent observation,
+// so a city not re-scanned this month still carries last month's figure. Labelling the whole thing
+// with a single month ("Basismessung 2026-08") claimed a freshness 42% of the rows did not have —
+// and "Basismessung" moved to the newest month every run, which is the opposite of a baseline.
+// Report the actual span plus how much of it was re-measured in the newest month.
+const curMonths = [...new Set(cur.map((r) => r.date))].sort();
 const totals = {
   month: latest, businesses: cur.length, nameable: cur.filter((r) => r.nameable).length,
+  spanFrom: curMonths[0] || latest, spanTo: curMonths[curMonths.length - 1] || latest,
+  freshN: cur.filter((r) => r.date === latest).length, // re-measured in the newest month
   removed: r0(totalRemoved), capCount: totalCap, industries: branches.length, cities: cities.length,
   avgDrop: avgDrop != null ? r1(avgDrop) : null,
 };
+// "Juli–August 2026" / "August 2026" — the honest label for a rolling survey.
+const monthName = (ym, lang) => new Date(ym + '-01T00:00:00Z').toLocaleDateString(lang === 'en' ? 'en-GB' : 'de-DE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const spanLabel = (lang) => (totals.spanFrom === totals.spanTo
+  ? monthName(totals.spanTo, lang)
+  : monthName(totals.spanFrom, lang).replace(/ \d{4}$/, '') + '–' + monthName(totals.spanTo, lang));
 
 // --- insight engine: build candidate insights, score by "interestingness", keep the strongest ---
 const insights = [];
@@ -83,7 +96,7 @@ const add = (score, tag, headline, body, stat) => insights.push({ score, tag, he
 // 1) Head figure
 add(100, 'Gesamtbild',
   `Google entfernte bei ${de(cur.length)} untersuchten Unternehmen geschätzt ${de(totalRemoved)} Bewertungen wegen Diffamierung`,
-  `Basismessung ${latest}. Die Zahlen sind eine konservative Untergrenze: Google zeigt nur die letzten 365 Tage und nur Spannen (z. B. „151 bis 200").`,
+  `Erhebungsstand ${spanLabel('de')}. Jeder Eintrag trägt sein eigenes Stand-Datum; ${de(totals.freshN)} der ${de(cur.length)} Profile wurden im ${monthName(latest, 'de')} nachgemessen. Die Zahlen sind eine konservative Untergrenze: Google zeigt nur die letzten 365 Tage und nur Spannen (z. B. „151 bis 200").`,
   de(totalRemoved));
 
 // 2) Strongest rating distortion by industry (avgDrop vs overall)
@@ -146,7 +159,7 @@ if (cities.length) {
 }
 
 // --- trend module (Method D): activates with ≥2 months ---
-let trend = { available: false, months, note: `Basismessung ${latest}. Monatliche Snapshots ab sofort — Trends (z. B. „+40 % seit Jahresbeginn") erscheinen automatisch, sobald ≥2 Messpunkte vorliegen.` };
+let trend = { available: false, months, note: `Erhebungsstand ${spanLabel('de')}. Monatliche Snapshots ab sofort — Trends (z. B. „+40 % seit Jahresbeginn") erscheinen automatisch, sobald ≥2 Messpunkte vorliegen.` };
 if (months.length >= 2) {
   // SAME-PANEL comparison only: entities present in BOTH months, so the change reflects real
   // movement - never the arrival of a new city.

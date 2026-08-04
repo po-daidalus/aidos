@@ -30,6 +30,10 @@ const MONTHS = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'A
 const month = T.month || new Date().toISOString().slice(0, 7);
 const [yy, mm] = month.split('-').map(Number);
 const monthLabel = `${MONTHS[mm - 1]} ${yy}`;
+// Der Querschnitt umfasst pro Betrieb die neueste Beobachtung, also ggf. mehrere Monate —
+// ein einzelnes Monatslabel würde eine Frische behaupten, die nur ein Teil der Zeilen hat.
+const mName = (ym) => new Date(ym + '-01T00:00:00Z').toLocaleDateString('de-DE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const spanLabel = !T.spanFrom ? monthLabel : (T.spanFrom === T.spanTo ? mName(T.spanTo) : mName(T.spanFrom).replace(/ \d{4}$/, '') + '–' + mName(T.spanTo));
 
 const branches = agg.branches || [], cities = (agg.cities || []).filter((c) => c.n >= 3);
 const topByIdx = [...branches].sort((a, b) => b.aidos_index - a.aidos_index)[0];
@@ -44,7 +48,7 @@ if (useLLM && !llm) console.warn('content: --llm requested but no verified draft
 // ---------- report body (all figures from real aggregates in BOTH modes) ----------
 const sections = [];
 // lead paragraph stays deterministic — the headline numbers must always be exactly the aggregates
-sections.push(`<p class="sub">Basismessung ${monthLabel}. Google hat bei <b>${de(T.businesses)}</b> untersuchten Profilen mit aktivem Lösch-Hinweis im vergangenen Jahr geschätzt <b>${de(T.removed)}</b> Bewertungen wegen Diffamierung entfernt. Alle Zahlen stammen von den öffentlichen Transparenz-Bannern von Google Maps.</p>`);
+sections.push(`<p class="sub">Erhebungsstand ${spanLabel}. ${de(T.freshN || 0)} der ${de(T.businesses)} Profile wurden im ${monthLabel} nachgemessen. Google hat bei <b>${de(T.businesses)}</b> untersuchten Profilen mit aktivem Lösch-Hinweis im vergangenen Jahr geschätzt <b>${de(T.removed)}</b> Bewertungen wegen Diffamierung entfernt. Alle Zahlen stammen von den öffentlichen Transparenz-Bannern von Google Maps.</p>`);
 
 if (llm) {
   // Fable's prose sections (already number-verified against the aggregates by llm-report.mjs)

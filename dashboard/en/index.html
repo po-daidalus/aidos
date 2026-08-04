@@ -90,7 +90,7 @@
           <div class="byline" id="byline"></div>
         </div>
         <div class="chartcard reveal">
-          <h4>Affected profiles by industry · baseline survey</h4>
+          <h4>Affected profiles by industry · survey span</h4>
           <div id="heroViz"></div>
         </div>
       </div>
@@ -98,7 +98,7 @@
 
     <!-- MOMENTUM -->
     <section>
-      <div class="sec-head"><h2>What has changed</h2><span class="hint">comparison of the monthly baseline surveys — public figures, each at its survey date</span></div>
+      <div class="sec-head"><h2>What has changed</h2><span class="hint">comparison of the monthly surveys — public figures, each at its survey date</span></div>
       <p class="sec-intro">Google shows only a rolling 365-day range per place. From monthly surveys we count how many of the same businesses have <em>moved into a higher band</em> — a change Google itself never reports.</p>
       <div id="momentum"></div>
     </section>
@@ -181,6 +181,11 @@
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
     const T = A.totals || {};
+
+    // Survey span: the cross-section takes each business's most recent observation, so it spans
+    // several months. A single month label would claim a freshness only some rows have.
+    const mName = (ym) => new Date(ym + '-01T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    const spanLabel = () => !T.spanFrom ? (T.month || '') : (T.spanFrom === T.spanTo ? mName(T.spanTo) : mName(T.spanFrom).replace(/ \d{4}$/, '') + '–' + mName(T.spanTo));
     const en = (n) => (n == null ? '–' : Number(n).toLocaleString('en-US'));
     const en1 = (n) => (n == null ? '–' : Number(n).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
     const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -190,10 +195,10 @@
     const CITY_EN = { 'München': 'Munich', 'Köln': 'Cologne', 'Nürnberg': 'Nuremberg', 'Frankfurt am Main': 'Frankfurt' };
     const tB = (k) => BR_EN[k] || k, tC = (k) => CITY_EN[k] || k;
 
-    document.getElementById('byline').innerHTML = 'An independent data project · <span class="asof">baseline survey ' + (T.month || '') + ' · ' + en(T.businesses || 0) + ' profiles</span>';
+    document.getElementById('byline').innerHTML = 'An independent data project · <span class="asof">survey span ' + spanLabel() + ' · ' + en(T.businesses || 0) + ' profiles</span>';
 
     document.getElementById('s1').dataset.to = T.businesses || 0;
-    document.getElementById('s1s').textContent = 'baseline survey — coverage is being extended';
+    document.getElementById('s1s').textContent = en(T.freshN || 0) + ' re-measured in ' + mName(T.month);
     document.getElementById('s2').dataset.to = T.removed || 0;
     const topIdx = [...(A.branches || [])].sort((a, b) => b.aidos_index - a.aidos_index)[0];
     if (topIdx) { document.getElementById('s3').textContent = tB(topIdx.key); document.getElementById('s3s').textContent = 'statistical index ' + topIdx.aidos_index + '/100'; }
@@ -209,9 +214,9 @@
     document.getElementById('momentum').innerHTML = tr.available
       ? `<div class="lead-figure reveal">${en(tr.up || 0)} of ${en(tr.panelSize)}<span class="unit">businesses crossed into a higher band · ${trDir} · vs. ${tr.prev}</span></div>
          <p class="small muted">Google publishes the number of removed reviews only as a range. We therefore count how many businesses moved into a higher band — the smallest reliably measurable event. For ${en(tr.flat || 0)} businesses the figure stayed within the same band; changes smaller than the band width are not visible in it. A count of removed reviews cannot be derived from this.</p>`
-      : `<div class="baseline-note reveal"><span class="big">Baseline survey ${T.month || ''}</span><span class="small">The month-on-month comparison appears automatically with the second baseline survey — never estimated.</span></div>`;
+      : `<div class="baseline-note reveal"><span class="big">Survey span ${spanLabel()}</span><span class="small">The month-on-month comparison appears automatically with the second survey — never estimated.</span></div>`;
 
-    document.getElementById('rankHint').textContent = 'baseline survey · ' + (T.month || '');
+    document.getElementById('rankHint').textContent = 'survey span · ' + spanLabel();
     const maxIdx = Math.max(1, ...(A.branches || []).map((b) => b.aidos_index));
     document.getElementById('rankBody').innerHTML = (A.branches || []).map((b, i) =>
       `<tr><td class="rank-num">${i + 1}</td>` +

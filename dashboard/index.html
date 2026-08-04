@@ -96,7 +96,7 @@
           <div class="byline" id="byline"></div>
         </div>
         <div class="chartcard reveal">
-          <h4>Betroffene Profile nach Branche · Basismessung</h4>
+          <h4>Betroffene Profile nach Branche · Erhebungsstand</h4>
           <div id="heroViz"></div>
         </div>
       </div>
@@ -104,7 +104,7 @@
 
     <!-- MOMENTUM -->
     <section>
-      <div class="sec-head"><h2>Was sich verändert hat</h2><span class="hint">Vergleich der monatlichen Basismessungen — öffentliche Angaben, jeweils zum Stand-Datum</span></div>
+      <div class="sec-head"><h2>Was sich verändert hat</h2><span class="hint">Vergleich der monatlichen Erhebungen — öffentliche Angaben, jeweils zum Stand-Datum</span></div>
       <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen zählen wir, bei wie vielen derselben Betriebe diese Spanne <em>in einen höheren Bereich gewechselt</em> ist — eine Veränderung, die Google selbst nie ausweist.</p>
       <div id="momentum"></div>
     </section>
@@ -194,6 +194,11 @@
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
     const T = A.totals || {};
+
+    // Erhebungsstand: der Querschnitt nimmt pro Betrieb die NEUESTE Beobachtung, deckt also mehrere
+    // Monate ab. Ein einzelnes Monatslabel würde eine Frische behaupten, die nur ein Teil der Zeilen hat.
+    const mName = (ym) => new Date(ym + '-01T00:00:00Z').toLocaleDateString('de-DE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    const spanLabel = () => !T.spanFrom ? (T.month || '') : (T.spanFrom === T.spanTo ? mName(T.spanTo) : mName(T.spanFrom).replace(/ \d{4}$/, '') + '–' + mName(T.spanTo));
     const de = (n) => (n == null ? '–' : Number(n).toLocaleString('de-DE'));
     const de1 = (n) => (n == null ? '–' : Number(n).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
     const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -201,11 +206,11 @@
     const cityCount = (A.cities || []).length;
 
     // byline — neutral; the responsible person is named only in the Impressum (legally required there)
-    document.getElementById('byline').innerHTML = 'Ein unabhängiges Datenprojekt · <span class="asof">Basismessung ' + (T.month || '') + ' · ' + de(T.businesses || 0) + ' Profile</span>';
+    document.getElementById('byline').innerHTML = 'Ein unabhängiges Datenprojekt · <span class="asof">Erhebungsstand ' + spanLabel() + ' · ' + de(T.businesses || 0) + ' Profile</span>';
 
     // stat band
     document.getElementById('s1').dataset.to = T.businesses || 0;
-    document.getElementById('s1s').textContent = 'Basismessung – Erhebung wird ausgeweitet';
+    document.getElementById('s1s').textContent = de(T.freshN || 0) + ' im ' + mName(T.month) + ' nachgemessen';
     document.getElementById('s2').dataset.to = T.removed || 0;
     const topIdx = [...(A.branches || [])].sort((a, b) => b.aidos_index - a.aidos_index)[0];
     if (topIdx) { document.getElementById('s3').textContent = topIdx.key; document.getElementById('s3s').textContent = 'Statistik-Index ' + topIdx.aidos_index + '/100'; }
@@ -222,10 +227,10 @@
     document.getElementById('momentum').innerHTML = tr.available
       ? `<div class="lead-figure reveal">${de(tr.up || 0)} von ${de(tr.panelSize)}<span class="unit">Betrieben stiegen über eine Bereichsgrenze · ${trDir} · ggü. ${tr.prev}</span></div>
          <p class="small muted">Google veröffentlicht die Zahl entfernter Bewertungen nur als Spanne. Gezählt wird deshalb, wie viele Betriebe in einen höheren Bereich gewechselt sind — das kleinste sicher messbare Ereignis. Bei ${de(tr.flat || 0)} Betrieben blieb die Angabe im selben Bereich; Veränderungen unterhalb der Spannenbreite sind darin nicht sichtbar. Eine Stückzahl entfernter Bewertungen lässt sich daraus nicht ableiten.</p>`
-      : `<div class="baseline-note reveal"><span class="big">Basismessung ${T.month || ''}</span><span class="small">Der Monatsvergleich erscheint automatisch mit der zweiten Basismessung — nie geschätzt.</span></div>`;
+      : `<div class="baseline-note reveal"><span class="big">Erhebungsstand ${spanLabel()}</span><span class="small">Der Monatsvergleich erscheint automatisch mit der zweiten Erhebung — nie geschätzt.</span></div>`;
 
     // ranking table
-    document.getElementById('rankHint').textContent = 'Basismessung · ' + (T.month || '');
+    document.getElementById('rankHint').textContent = 'Erhebungsstand · ' + spanLabel();
     const maxIdx = Math.max(1, ...(A.branches || []).map((b) => b.aidos_index));
     document.getElementById('rankBody').innerHTML = (A.branches || []).map((b, i) =>
       `<tr><td class="rank-num">${i + 1}</td>` +
