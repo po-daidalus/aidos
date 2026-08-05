@@ -150,16 +150,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Uwe%20Dzierzon%20Bremen"
   },
   {
-    "name": "Varoga",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5691677,
-    "lng": 8.5924517,
-    "url": "https://www.google.com/maps/search/?api=1&query=Varoga%20Bremen"
-  },
-  {
     "name": "Romberg / Blasse",
     "city": "Bremen",
     "category": "dentist",
@@ -250,16 +240,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=J%C3%B6rn%20Bethmann%20Bremen"
   },
   {
-    "name": "Erik Schreithauer",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5451316,
-    "lng": 8.5762939,
-    "url": "https://www.google.com/maps/search/?api=1&query=Erik%20Schreithauer%20Bremen"
-  },
-  {
     "name": "Zahnarztpraxis Went und Meyer Partnerschaft",
     "city": "Bremen",
     "category": "dentist",
@@ -348,26 +328,6 @@
     "lat": 53.083017,
     "lng": 8.8270204,
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Sylvia%20Loelke%20Bremen"
-  },
-  {
-    "name": "Stefan Weinle",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5431586,
-    "lng": 8.579016,
-    "url": "https://www.google.com/maps/search/?api=1&query=Stefan%20Weinle%20Bremen"
-  },
-  {
-    "name": "Wolfgang Kriebel",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5399083,
-    "lng": 8.5814782,
-    "url": "https://www.google.com/maps/search/?api=1&query=Wolfgang%20Kriebel%20Bremen"
   },
   {
     "name": "Pfannenstiel, Meyer im Hagen, Risick",
@@ -470,16 +430,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Schwier%20Bremen"
   },
   {
-    "name": "Dr. Buchwald & Partner GbR",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5903681,
-    "lng": 8.5982577,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Buchwald%20%26%20Partner%20GbR%20Bremen"
-  },
-  {
     "name": "Dr. med. dent. Edzard Fink, Peter Knor",
     "city": "Bremen",
     "category": "dentist",
@@ -528,16 +478,6 @@
     "lat": 53.112106,
     "lng": 8.8514283,
     "url": "https://www.google.com/maps/search/?api=1&query=Zahn%C3%A4rzteteam%20Dr.%20Michael%20Wei%C3%9F%20im%20Technologiepark%20Bremen"
-  },
-  {
-    "name": "Dr. Bach",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5064785,
-    "lng": 8.598328,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Bach%20Bremen"
   },
   {
     "name": "Gemeinschaftspraxis Dres. Holstermann",
@@ -860,16 +800,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Anna%20Banas-Wanik%20Bremen"
   },
   {
-    "name": "Linneweber, Grosse",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5427875,
-    "lng": 8.5736436,
-    "url": "https://www.google.com/maps/search/?api=1&query=Linneweber%2C%20Grosse%20Bremen"
-  },
-  {
     "name": "Dr. van den Busch",
     "city": "Bremen",
     "category": "dentist",
@@ -908,16 +838,6 @@
     "lat": 53.0798657,
     "lng": 8.8221941,
     "url": "https://www.google.com/maps/search/?api=1&query=M.Sc.%20Abderrahmane%20Basta%20Bremen"
-  },
-  {
-    "name": "Buschmeyer",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5319766,
-    "lng": 8.5912066,
-    "url": "https://www.google.com/maps/search/?api=1&query=Buschmeyer%20Bremen"
   },
   {
     "name": "Dr. Olaf Jürgensen, Dr. Tobias Conrad",
@@ -1110,16 +1030,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Mund-Kiefer-Gesichtschirugie%20Bremen"
   },
   {
-    "name": "Dr. Katja Baake",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5327692,
-    "lng": 8.5956214,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Katja%20Baake%20Bremen"
-  },
-  {
     "name": "Dr. Volker Martin",
     "city": "Bremen",
     "category": "dentist",
@@ -1140,16 +1050,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Ihr%20Zahnarztzentrum%20Bremen%20Bremen"
   },
   {
-    "name": "Christian Geitmann-Mügge",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5748043,
-    "lng": 8.5953362,
-    "url": "https://www.google.com/maps/search/?api=1&query=Christian%20Geitmann-M%C3%BCgge%20Bremen"
-  },
-  {
     "name": "Kieferorthopäde Lesum",
     "city": "Bremen",
     "category": "dentist",
@@ -1158,26 +1058,6 @@
     "lat": 53.1740522,
     "lng": 8.6836186,
     "url": "https://www.google.com/maps/search/?api=1&query=Kieferorthop%C3%A4de%20Lesum%20Bremen"
-  },
-  {
-    "name": "Kieferorthopädie am Weissenstein",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5163308,
-    "lng": 8.603388,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kieferorthop%C3%A4die%20am%20Weissenstein%20Bremen"
-  },
-  {
-    "name": "Dr.Arendt Dental",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.573403,
-    "lng": 8.5931001,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.Arendt%20Dental%20Bremen"
   },
   {
     "name": "AllDent",
@@ -1198,16 +1078,6 @@
     "lat": 53.081227,
     "lng": 8.833059,
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20dent.%20Mehmet%20G%C3%BCrtekin%20Bremen"
-  },
-  {
-    "name": "Olaf Oppermann",
-    "city": "Bremen",
-    "category": "dentist",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5327106,
-    "lng": 8.5986166,
-    "url": "https://www.google.com/maps/search/?api=1&query=Olaf%20Oppermann%20Bremen"
   },
   {
     "name": "Zahnarztpraxis Dr. Grit Burggraf",
@@ -1580,26 +1450,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Ana%20Ali%20Bremen"
   },
   {
-    "name": "Dr. Roehl & Prof. Dr. Haasper",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5691294,
-    "lng": 8.5945144,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Roehl%20%26%20Prof.%20Dr.%20Haasper%20Bremen"
-  },
-  {
-    "name": "Institut für Radiologie & Nuklearmedizin Bremerhaven",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5510996,
-    "lng": 8.5720899,
-    "url": "https://www.google.com/maps/search/?api=1&query=Institut%20f%C3%BCr%20Radiologie%20%26%20Nuklearmedizin%20Bremerhaven%20Bremen"
-  },
-  {
     "name": "Ärztliche Partnerschaft",
     "city": "Bremen",
     "category": "doctors",
@@ -1790,16 +1640,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Michael%20Stern%20Bremen"
   },
   {
-    "name": "Augenärzte am Meer",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5471547,
-    "lng": 8.575351,
-    "url": "https://www.google.com/maps/search/?api=1&query=Augen%C3%A4rzte%20am%20Meer%20Bremen"
-  },
-  {
     "name": "Hausärzte Habenhausen",
     "city": "Bremen",
     "category": "doctors",
@@ -1910,36 +1750,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Dipl.-Psychologe%20Klaus%20Pohlmeyer%20Bremen"
   },
   {
-    "name": "Jörg Schöner, Henrike Schöner",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5530857,
-    "lng": 8.5726675,
-    "url": "https://www.google.com/maps/search/?api=1&query=J%C3%B6rg%20Sch%C3%B6ner%2C%20Henrike%20Sch%C3%B6ner%20Bremen"
-  },
-  {
-    "name": "Klaus-L. Jahn, Hilde Koslowski",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5432318,
-    "lng": 8.5789624,
-    "url": "https://www.google.com/maps/search/?api=1&query=Klaus-L.%20Jahn%2C%20Hilde%20Koslowski%20Bremen"
-  },
-  {
-    "name": "Thomas Ganser",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5531136,
-    "lng": 8.5726052,
-    "url": "https://www.google.com/maps/search/?api=1&query=Thomas%20Ganser%20Bremen"
-  },
-  {
     "name": "Augenärzte Bodanowitz / Ertel / Birnbaum",
     "city": "Bremen",
     "category": "doctors",
@@ -1948,16 +1758,6 @@
     "lat": 53.0909969,
     "lng": 8.8686327,
     "url": "https://www.google.com/maps/search/?api=1&query=Augen%C3%A4rzte%20Bodanowitz%20%2F%20Ertel%20%2F%20Birnbaum%20Bremen"
-  },
-  {
-    "name": "Augenärzte Kröncke & Zwick",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5318604,
-    "lng": 8.5912806,
-    "url": "https://www.google.com/maps/search/?api=1&query=Augen%C3%A4rzte%20Kr%C3%B6ncke%20%26%20Zwick%20Bremen"
   },
   {
     "name": "Dr. med. Said Ferdowsky",
@@ -1998,136 +1798,6 @@
     "lat": 53.0828035,
     "lng": 8.8231761,
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20H.-J.%20Igelmann%20%26%20Dr.%20med.%20K.%20Wietholt%20Bremen"
-  },
-  {
-    "name": "Christa Bock-Tessarczik",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5558298,
-    "lng": 8.5842948,
-    "url": "https://www.google.com/maps/search/?api=1&query=Christa%20Bock-Tessarczik%20Bremen"
-  },
-  {
-    "name": "Dr. med. Christine Bartsch",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5457118,
-    "lng": 8.5765857,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Christine%20Bartsch%20Bremen"
-  },
-  {
-    "name": "Angelika Fusch-Fornaçon",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5706918,
-    "lng": 8.5934261,
-    "url": "https://www.google.com/maps/search/?api=1&query=Angelika%20Fusch-Forna%C3%A7on%20Bremen"
-  },
-  {
-    "name": "Praxis am Park",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5882183,
-    "lng": 8.5962124,
-    "url": "https://www.google.com/maps/search/?api=1&query=Praxis%20am%20Park%20Bremen"
-  },
-  {
-    "name": "Hausarztpraxis im Zentrum (HIZ)",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5455316,
-    "lng": 8.5768434,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hausarztpraxis%20im%20Zentrum%20(HIZ)%20Bremen"
-  },
-  {
-    "name": "Björn-Ole Dieckvoß",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5208301,
-    "lng": 8.6395247,
-    "url": "https://www.google.com/maps/search/?api=1&query=Bj%C3%B6rn-Ole%20Dieckvo%C3%9F%20Bremen"
-  },
-  {
-    "name": "Burkhard Fox",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5691271,
-    "lng": 8.5924148,
-    "url": "https://www.google.com/maps/search/?api=1&query=Burkhard%20Fox%20Bremen"
-  },
-  {
-    "name": "G. H. Marencke",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5639338,
-    "lng": 8.5868895,
-    "url": "https://www.google.com/maps/search/?api=1&query=G.%20H.%20Marencke%20Bremen"
-  },
-  {
-    "name": "Dr. med. Fotios Hassalevris",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5575211,
-    "lng": 8.5848717,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Fotios%20Hassalevris%20Bremen"
-  },
-  {
-    "name": "Dr. med. Ruth Gravenhorst",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5394142,
-    "lng": 8.5876514,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Ruth%20Gravenhorst%20Bremen"
-  },
-  {
-    "name": "Sigrid Falk-Struck",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5216729,
-    "lng": 8.5959723,
-    "url": "https://www.google.com/maps/search/?api=1&query=Sigrid%20Falk-Struck%20Bremen"
-  },
-  {
-    "name": "Udo Fit",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5617674,
-    "lng": 8.5952417,
-    "url": "https://www.google.com/maps/search/?api=1&query=Udo%20Fit%20Bremen"
-  },
-  {
-    "name": "Dr. med. Wasielewski",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5729909,
-    "lng": 8.5935655,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Wasielewski%20Bremen"
   },
   {
     "name": "Dr. med Hilmar Rauschert",
@@ -2278,36 +1948,6 @@
     "lat": 53.0603706,
     "lng": 8.8863573,
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Boris%20M%C3%BCller%20Bremen"
-  },
-  {
-    "name": "D. G. Gozali",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5058557,
-    "lng": 8.5989828,
-    "url": "https://www.google.com/maps/search/?api=1&query=D.%20G.%20Gozali%20Bremen"
-  },
-  {
-    "name": "Dr. med. Pieplow",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.505064,
-    "lng": 8.5996675,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Pieplow%20Bremen"
-  },
-  {
-    "name": "Walacides und Hansing",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5932642,
-    "lng": 8.6179093,
-    "url": "https://www.google.com/maps/search/?api=1&query=Walacides%20und%20Hansing%20Bremen"
   },
   {
     "name": "Dr. med. Tammo Onken, Dr. med. Eberhard Thoma, Bastian Vogelsberger",
@@ -2563,8 +2203,8 @@
     "name": "K. Gebhardt/M. Thielen",
     "city": "Bremen",
     "category": "doctors",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.0693423,
     "lng": 8.9613008,
     "url": "https://www.google.com/maps/search/?api=1&query=K.%20Gebhardt%2FM.%20Thielen%20Bremen"
@@ -2678,16 +2318,6 @@
     "lat": 53.0643797,
     "lng": 8.9489376,
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Heinrich%20Eitmann%20Bremen"
-  },
-  {
-    "name": "Klaus Struck",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5216384,
-    "lng": 8.5958337,
-    "url": "https://www.google.com/maps/search/?api=1&query=Klaus%20Struck%20Bremen"
   },
   {
     "name": "Dr. med Anette Munz-Widjaja, Dr. med. Dirk Ahrens",
@@ -3000,16 +2630,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Hans%20A.%20Hilden%20Bremen"
   },
   {
-    "name": "Gemeinschaftspraxis Dr. K. Lührßen und Dr. B. Steiner",
-    "city": "Bremen",
-    "category": "doctors",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5432832,
-    "lng": 8.5803612,
-    "url": "https://www.google.com/maps/search/?api=1&query=Gemeinschaftspraxis%20Dr.%20K.%20L%C3%BChr%C3%9Fen%20und%20Dr.%20B.%20Steiner%20Bremen"
-  },
-  {
     "name": "Hausarztpraxis Oberneuland",
     "city": "Bremen",
     "category": "doctors",
@@ -3070,6 +2690,236 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Bernhard%20Schweiger%20Bremen"
   },
   {
+    "name": "A. Fabianowski",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0969116,
+    "lng": 8.8720676,
+    "url": "https://www.google.com/maps/search/?api=1&query=A.%20Fabianowski%20Bremen"
+  },
+  {
+    "name": "Urologicum Ärztezentrum Horn",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0967833,
+    "lng": 8.8720507,
+    "url": "https://www.google.com/maps/search/?api=1&query=Urologicum%20%C3%84rztezentrum%20Horn%20Bremen"
+  },
+  {
+    "name": "Frauenarztpraxis Schwachhausen",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0820598,
+    "lng": 8.8374278,
+    "url": "https://www.google.com/maps/search/?api=1&query=Frauenarztpraxis%20Schwachhausen%20Bremen"
+  },
+  {
+    "name": "Pneomologische Praxis - Dr. med. A. Beuing & S. Heumann",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0841782,
+    "lng": 8.8349239,
+    "url": "https://www.google.com/maps/search/?api=1&query=Pneomologische%20Praxis%20-%20Dr.%20med.%20A.%20Beuing%20%26%20S.%20Heumann%20Bremen"
+  },
+  {
+    "name": "Dr. med. Gerald Kuboschek",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1006103,
+    "lng": 8.8855489,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Gerald%20Kuboschek%20Bremen"
+  },
+  {
+    "name": "Annette Heuermann",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1005831,
+    "lng": 8.8855262,
+    "url": "https://www.google.com/maps/search/?api=1&query=Annette%20Heuermann%20Bremen"
+  },
+  {
+    "name": "Dr. med. Kirsten Kensy",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1005974,
+    "lng": 8.8854846,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Kirsten%20Kensy%20Bremen"
+  },
+  {
+    "name": "Dr. med. Gottfried Bruhn",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0967629,
+    "lng": 8.8720514,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Gottfried%20Bruhn%20Bremen"
+  },
+  {
+    "name": "Jörg-Guido Schlegel",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0968062,
+    "lng": 8.8720454,
+    "url": "https://www.google.com/maps/search/?api=1&query=J%C3%B6rg-Guido%20Schlegel%20Bremen"
+  },
+  {
+    "name": "Dr. med. Klaus Gorkisch",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0778735,
+    "lng": 8.8240003,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Klaus%20Gorkisch%20Bremen"
+  },
+  {
+    "name": "Radiologie Zentrum Bremen",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0840907,
+    "lng": 8.834673,
+    "url": "https://www.google.com/maps/search/?api=1&query=Radiologie%20Zentrum%20Bremen%20Bremen"
+  },
+  {
+    "name": "Radiologie Zentrum Bremen Brustdiagnostik im Madicum",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0822267,
+    "lng": 8.8340005,
+    "url": "https://www.google.com/maps/search/?api=1&query=Radiologie%20Zentrum%20Bremen%20Brustdiagnostik%20im%20Madicum%20Bremen"
+  },
+  {
+    "name": "Hausarztpraxis Dr. Kreusler & Dr. Huthoff",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0965548,
+    "lng": 8.7820444,
+    "url": "https://www.google.com/maps/search/?api=1&query=Hausarztpraxis%20Dr.%20Kreusler%20%26%20Dr.%20Huthoff%20Bremen"
+  },
+  {
+    "name": "Dr. med. Sigrid Rosenthal",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0964276,
+    "lng": 8.7838121,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Sigrid%20Rosenthal%20Bremen"
+  },
+  {
+    "name": "Carsten Teichmann, Dr. med. Immo Rathcke",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0979813,
+    "lng": 8.8707697,
+    "url": "https://www.google.com/maps/search/?api=1&query=Carsten%20Teichmann%2C%20Dr.%20med.%20Immo%20Rathcke%20Bremen"
+  },
+  {
+    "name": "Dr. med. Ute Bock-Steinweg",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0787983,
+    "lng": 8.8073162,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20med.%20Ute%20Bock-Steinweg%20Bremen"
+  },
+  {
+    "name": "Frauenärztliche Praxisgemeinschaft im Medicum",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0821878,
+    "lng": 8.8340663,
+    "url": "https://www.google.com/maps/search/?api=1&query=Frauen%C3%A4rztliche%20Praxisgemeinschaft%20im%20Medicum%20Bremen"
+  },
+  {
+    "name": "Dr. Eulalia Arau, Dr. Angela Lenz",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0753969,
+    "lng": 8.8229163,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Eulalia%20Arau%2C%20Dr.%20Angela%20Lenz%20Bremen"
+  },
+  {
+    "name": "Christiana Maria Barten-Schubert, Nicolas Mokroß",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0615921,
+    "lng": 8.8014477,
+    "url": "https://www.google.com/maps/search/?api=1&query=Christiana%20Maria%20Barten-Schubert%2C%20Nicolas%20Mokro%C3%9F%20Bremen"
+  },
+  {
+    "name": "Haarpraxis Bremen",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0815549,
+    "lng": 8.8346621,
+    "url": "https://www.google.com/maps/search/?api=1&query=Haarpraxis%20Bremen%20Bremen"
+  },
+  {
+    "name": "Sabine Barz",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0747001,
+    "lng": 8.8071663,
+    "url": "https://www.google.com/maps/search/?api=1&query=Sabine%20Barz%20Bremen"
+  },
+  {
+    "name": "Jessika Buch",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1547682,
+    "lng": 8.7049218,
+    "url": "https://www.google.com/maps/search/?api=1&query=Jessika%20Buch%20Bremen"
+  },
+  {
+    "name": "Zentrum für Nuklearmedizin und PET/CT Bremen",
+    "city": "Bremen",
+    "category": "doctors",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0834517,
+    "lng": 8.8355855,
+    "url": "https://www.google.com/maps/search/?api=1&query=Zentrum%20f%C3%BCr%20Nuklearmedizin%20und%20PET%2FCT%20Bremen%20Bremen"
+  },
+  {
     "name": "Kleintierpraxis Dr. Tanja Kruse",
     "city": "Bremen",
     "category": "veterinary",
@@ -3118,16 +2968,6 @@
     "lat": 53.0344656,
     "lng": 8.8440316,
     "url": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Dr.%20Susanne%20Vennefrohne%20Bremen"
-  },
-  {
-    "name": "Kleintierpraxis Bremerhaven-Mitte",
-    "city": "Bremen",
-    "category": "veterinary",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5421595,
-    "lng": 8.5829101,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Bremerhaven-Mitte%20Bremen"
   },
   {
     "name": "Tierarztpraxis Dr. Stickdorn / Schulze / Heine",
@@ -3300,16 +3140,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Nina%20Berg%20Bremen"
   },
   {
-    "name": "Dr. H. Nagelfeld",
-    "city": "Bremen",
-    "category": "veterinary",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5322547,
-    "lng": 8.5879904,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20H.%20Nagelfeld%20Bremen"
-  },
-  {
     "name": "Dr. med. vet. Jasmin-Janina Biege",
     "city": "Bremen",
     "category": "veterinary",
@@ -3460,26 +3290,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Notar%20%26%20Advokatur%20Wedepohl%20Bremen"
   },
   {
-    "name": "Tomke Claußen",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5286816,
-    "lng": 8.6326333,
-    "url": "https://www.google.com/maps/search/?api=1&query=Tomke%20Clau%C3%9Fen%20Bremen"
-  },
-  {
-    "name": "Holger Meyer",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5016235,
-    "lng": 8.6000585,
-    "url": "https://www.google.com/maps/search/?api=1&query=Holger%20Meyer%20Bremen"
-  },
-  {
     "name": "ZACCO",
     "city": "Bremen",
     "category": "lawyer",
@@ -3528,26 +3338,6 @@
     "lat": 53.0765197,
     "lng": 8.880567,
     "url": "https://www.google.com/maps/search/?api=1&query=Corinna%20Gurzinski%20%2B%20Swantje%20Jonasson%20Bremen"
-  },
-  {
-    "name": "Kanzleigemeinschaft Bärbel Barbe-Becker, Veit-Koop, Wendt",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.580923,
-    "lng": 8.593657,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kanzleigemeinschaft%20B%C3%A4rbel%20Barbe-Becker%2C%20Veit-Koop%2C%20Wendt%20Bremen"
-  },
-  {
-    "name": "Möller und Oest Rechtsanwälte und Notar",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5478383,
-    "lng": 8.5752587,
-    "url": "https://www.google.com/maps/search/?api=1&query=M%C3%B6ller%20und%20Oest%20Rechtsanw%C3%A4lte%20und%20Notar%20Bremen"
   },
   {
     "name": "Kanzlei Grosskopf",
@@ -3700,26 +3490,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Matthias%20Westerholt%20Bremen"
   },
   {
-    "name": "Ensenbach Rechtsanwälte",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.537803,
-    "lng": 8.5838343,
-    "url": "https://www.google.com/maps/search/?api=1&query=Ensenbach%20Rechtsanw%C3%A4lte%20Bremen"
-  },
-  {
-    "name": "Anwalt Staab.Kollegen | Büro Bremerhaven",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5361032,
-    "lng": 8.5832942,
-    "url": "https://www.google.com/maps/search/?api=1&query=Anwalt%20Staab.Kollegen%20%7C%20B%C3%BCro%20Bremerhaven%20Bremen"
-  },
-  {
     "name": "Dr. Führling & Partner",
     "city": "Bremen",
     "category": "lawyer",
@@ -3760,16 +3530,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=N%C3%B6lle%20%26%20Stoevesandt%20Bremen"
   },
   {
-    "name": "DIE KANZLEI Lenz Gebhardt",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5280643,
-    "lng": 8.5927808,
-    "url": "https://www.google.com/maps/search/?api=1&query=DIE%20KANZLEI%20Lenz%20Gebhardt%20Bremen"
-  },
-  {
     "name": "Jessica Hansen",
     "city": "Bremen",
     "category": "lawyer",
@@ -3798,16 +3558,6 @@
     "lat": 53.0877318,
     "lng": 8.7796639,
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Alexandra%20N%C3%B6th%20Bremen"
-  },
-  {
-    "name": "Veit-Koop",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5457734,
-    "lng": 8.5756955,
-    "url": "https://www.google.com/maps/search/?api=1&query=Veit-Koop%20Bremen"
   },
   {
     "name": "Bianca Lönnecker",
@@ -3920,16 +3670,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Dr.%20Andreas%20Gabbey%20Bremen"
   },
   {
-    "name": "cardo",
-    "city": "Bremen",
-    "category": "lawyer",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.523361,
-    "lng": 8.5874902,
-    "url": "https://www.google.com/maps/search/?api=1&query=cardo%20Bremen"
-  },
-  {
     "name": "Dr. Lohsin & Partner Rechtsanwälte und Notare",
     "city": "Bremen",
     "category": "lawyer",
@@ -3995,8 +3735,8 @@
     "category": "lawyer",
     "nameable": false,
     "entity_type": "person",
-    "lat": 53.0622356,
-    "lng": 8.8862233,
+    "lat": 53.0621205,
+    "lng": 8.8865198,
     "url": "https://www.google.com/maps/search/?api=1&query=G%C3%BCnter%20Tober%20Bremen"
   },
   {
@@ -4020,16 +3760,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Strunck%20%26%20Holz%20Partnerschaft%20Steuerberatungsgesellschaft%20mbB%20Bremen"
   },
   {
-    "name": "BDO von Riegen Lienau Seewald und Partner GmbH",
-    "city": "Bremen",
-    "category": "tax_advisor",
-    "nameable": true,
-    "entity_type": "legal",
-    "lat": 53.5799967,
-    "lng": 8.5941097,
-    "url": "https://www.google.com/maps/search/?api=1&query=BDO%20von%20Riegen%20Lienau%20Seewald%20und%20Partner%20GmbH%20Bremen"
-  },
-  {
     "name": "Michael Paesler Steinmetz und Steinbildhauerei Werkstatt für Steinrestaurierung",
     "city": "Bremen",
     "category": "tax_advisor",
@@ -4038,16 +3768,6 @@
     "lat": 53.0920908,
     "lng": 8.8571883,
     "url": "https://www.google.com/maps/search/?api=1&query=Michael%20Paesler%20Steinmetz%20und%20Steinbildhauerei%20Werkstatt%20f%C3%BCr%20Steinrestaurierung%20Bremen"
-  },
-  {
-    "name": "Heribert Lausch",
-    "city": "Bremen",
-    "category": "tax_advisor",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5522412,
-    "lng": 8.5826541,
-    "url": "https://www.google.com/maps/search/?api=1&query=Heribert%20Lausch%20Bremen"
   },
   {
     "name": "India-Ester Meyer",
@@ -4133,8 +3853,8 @@
     "name": "Sozietät Frommherz & Beekmann Steuerberater PartG mbB",
     "city": "Bremen",
     "category": "tax_advisor",
-    "nameable": true,
-    "entity_type": "legal",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.1814103,
     "lng": 8.6204089,
     "url": "https://www.google.com/maps/search/?api=1&query=Soziet%C3%A4t%20Frommherz%20%26%20Beekmann%20Steuerberater%20PartG%20mbB%20Bremen"
@@ -4280,21 +4000,11 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Schwachhauser%20Immobilien%20Plus%20Bremen"
   },
   {
-    "name": "Heiko Kötter Immobilien",
+    "name": "Micaela Fundt Immobilien e.K.",
     "city": "Bremen",
     "category": "estate_agent",
     "nameable": false,
     "entity_type": "person",
-    "lat": 53.5506903,
-    "lng": 8.5806471,
-    "url": "https://www.google.com/maps/search/?api=1&query=Heiko%20K%C3%B6tter%20Immobilien%20Bremen"
-  },
-  {
-    "name": "Micaela Fundt Immobilien e.K.",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": true,
-    "entity_type": "legal",
     "lat": 53.13795,
     "lng": 8.724112,
     "url": "https://www.google.com/maps/search/?api=1&query=Micaela%20Fundt%20Immobilien%20e.K.%20Bremen"
@@ -4328,16 +4038,6 @@
     "lat": 53.0896361,
     "lng": 8.859113,
     "url": "https://www.google.com/maps/search/?api=1&query=Century%2021%20Bremen"
-  },
-  {
-    "name": "GWF",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5294777,
-    "lng": 8.5894143,
-    "url": "https://www.google.com/maps/search/?api=1&query=GWF%20Bremen"
   },
   {
     "name": "EXPOSÉ Immobilien",
@@ -4470,16 +4170,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=J%C3%BCrgensen%20%26%20Eilts%20Bremen"
   },
   {
-    "name": "Concepta",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5034016,
-    "lng": 8.5996154,
-    "url": "https://www.google.com/maps/search/?api=1&query=Concepta%20Bremen"
-  },
-  {
     "name": "KUL",
     "city": "Bremen",
     "category": "estate_agent",
@@ -4550,16 +4240,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Engel%20%26%20V%C3%B6lkers%20Bremen"
   },
   {
-    "name": "Brune",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5894129,
-    "lng": 8.5970041,
-    "url": "https://www.google.com/maps/search/?api=1&query=Brune%20Bremen"
-  },
-  {
     "name": "Beerhirt Immobilien",
     "city": "Bremen",
     "category": "estate_agent",
@@ -4588,26 +4268,6 @@
     "lat": 53.0811116,
     "lng": 8.8547047,
     "url": "https://www.google.com/maps/search/?api=1&query=Hafindo%20Finance%20Bremen"
-  },
-  {
-    "name": "Abraham & Abraham",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5630401,
-    "lng": 8.586448,
-    "url": "https://www.google.com/maps/search/?api=1&query=Abraham%20%26%20Abraham%20Bremen"
-  },
-  {
-    "name": "Der Havenmakler",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5261793,
-    "lng": 8.5771908,
-    "url": "https://www.google.com/maps/search/?api=1&query=Der%20Havenmakler%20Bremen"
   },
   {
     "name": "KSM Immobilien",
@@ -4688,46 +4348,6 @@
     "lat": 53.0625397,
     "lng": 8.8861619,
     "url": "https://www.google.com/maps/search/?api=1&query=Emlak%20Immobilien%20Bremen"
-  },
-  {
-    "name": "baas homes",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5494591,
-    "lng": 8.5675281,
-    "url": "https://www.google.com/maps/search/?api=1&query=baas%20homes%20Bremen"
-  },
-  {
-    "name": "dwp Beratungsgesellschaft",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5494902,
-    "lng": 8.5675134,
-    "url": "https://www.google.com/maps/search/?api=1&query=dwp%20Beratungsgesellschaft%20Bremen"
-  },
-  {
-    "name": "Polzin Immobilien",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5495495,
-    "lng": 8.567512,
-    "url": "https://www.google.com/maps/search/?api=1&query=Polzin%20Immobilien%20Bremen"
-  },
-  {
-    "name": "Forner Wichern Immobilien",
-    "city": "Bremen",
-    "category": "estate_agent",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5499704,
-    "lng": 8.5671155,
-    "url": "https://www.google.com/maps/search/?api=1&query=Forner%20Wichern%20Immobilien%20Bremen"
   },
   {
     "name": "Robert C. Spies",
@@ -4840,106 +4460,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Skoda%20Burghardt%20Bremen"
   },
   {
-    "name": "Autohaus Bobrink",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5714359,
-    "lng": 8.597219,
-    "url": "https://www.google.com/maps/search/?api=1&query=Autohaus%20Bobrink%20Bremen"
-  },
-  {
-    "name": "Autopflege Jakob Paustian",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5700118,
-    "lng": 8.6012746,
-    "url": "https://www.google.com/maps/search/?api=1&query=Autopflege%20Jakob%20Paustian%20Bremen"
-  },
-  {
-    "name": "Manikowski",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5642772,
-    "lng": 8.5742761,
-    "url": "https://www.google.com/maps/search/?api=1&query=Manikowski%20Bremen"
-  },
-  {
-    "name": "Werner Automobile",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.555031,
-    "lng": 8.5665071,
-    "url": "https://www.google.com/maps/search/?api=1&query=Werner%20Automobile%20Bremen"
-  },
-  {
-    "name": "Autogalerie",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5576385,
-    "lng": 8.5647516,
-    "url": "https://www.google.com/maps/search/?api=1&query=Autogalerie%20Bremen"
-  },
-  {
-    "name": "Automobile Adler",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.50773,
-    "lng": 8.5975947,
-    "url": "https://www.google.com/maps/search/?api=1&query=Automobile%20Adler%20Bremen"
-  },
-  {
-    "name": "Hans Biela",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5155159,
-    "lng": 8.5929572,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hans%20Biela%20Bremen"
-  },
-  {
-    "name": "Autohaus Bolle",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5549264,
-    "lng": 8.5936171,
-    "url": "https://www.google.com/maps/search/?api=1&query=Autohaus%20Bolle%20Bremen"
-  },
-  {
-    "name": "Diekmann",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5495516,
-    "lng": 8.5942493,
-    "url": "https://www.google.com/maps/search/?api=1&query=Diekmann%20Bremen"
-  },
-  {
-    "name": "Autohof Stöppelkamp",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5508873,
-    "lng": 8.5953899,
-    "url": "https://www.google.com/maps/search/?api=1&query=Autohof%20St%C3%B6ppelkamp%20Bremen"
-  },
-  {
     "name": "Schmidt + Koch Autohaus Utbremen",
     "city": "Bremen",
     "category": "car",
@@ -4973,8 +4493,8 @@
     "name": "E.L.S. Automobile",
     "city": "Bremen",
     "category": "car",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.1921443,
     "lng": 8.5527262,
     "url": "https://www.google.com/maps/search/?api=1&query=E.L.S.%20Automobile%20Bremen"
@@ -5060,16 +4580,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Autohaus%20Stern%20Bremen"
   },
   {
-    "name": "Auto-Box Automobilhandels GmbH",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "legal",
-    "lat": 53.5678578,
-    "lng": 8.5960834,
-    "url": "https://www.google.com/maps/search/?api=1&query=Auto-Box%20Automobilhandels%20GmbH%20Bremen"
-  },
-  {
     "name": "Dagher",
     "city": "Bremen",
     "category": "car",
@@ -5090,6 +4600,16 @@
     "url": "https://www.google.com/maps/search/?api=1&query=M%C3%B6hler%20Bremen"
   },
   {
+    "name": "Werner Automobile",
+    "city": "Bremen",
+    "category": "car",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1062763,
+    "lng": 8.8809569,
+    "url": "https://www.google.com/maps/search/?api=1&query=Werner%20Automobile%20Bremen"
+  },
+  {
     "name": "Autohaus West",
     "city": "Bremen",
     "category": "car",
@@ -5098,16 +4618,6 @@
     "lat": 53.1346395,
     "lng": 8.7324758,
     "url": "https://www.google.com/maps/search/?api=1&query=Autohaus%20West%20Bremen"
-  },
-  {
-    "name": "Seat und Peugeot Dehn und Toben GmbH",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "legal",
-    "lat": 53.5816849,
-    "lng": 8.5985018,
-    "url": "https://www.google.com/maps/search/?api=1&query=Seat%20und%20Peugeot%20Dehn%20und%20Toben%20GmbH%20Bremen"
   },
   {
     "name": "Auto Makler",
@@ -5120,16 +4630,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Auto%20Makler%20Bremen"
   },
   {
-    "name": "Kalkofen Bremerhaven",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5619271,
-    "lng": 8.5940582,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kalkofen%20Bremerhaven%20Bremen"
-  },
-  {
     "name": "NUFA Nutzfahrzeug-Center Schmidt + Koch",
     "city": "Bremen",
     "category": "car",
@@ -5138,16 +4638,6 @@
     "lat": 53.0703537,
     "lng": 8.8585338,
     "url": "https://www.google.com/maps/search/?api=1&query=NUFA%20Nutzfahrzeug-Center%20Schmidt%20%2B%20Koch%20Bremen"
-  },
-  {
-    "name": "Audi Zentrum Bremerhaven (Schmidt + Koch)",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5559713,
-    "lng": 8.593693,
-    "url": "https://www.google.com/maps/search/?api=1&query=Audi%20Zentrum%20Bremerhaven%20(Schmidt%20%2B%20Koch)%20Bremen"
   },
   {
     "name": "Autoservice Autohandel Fährstraße",
@@ -5220,16 +4710,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Porsche%20Zentrum%20Bremen%20Bremen"
   },
   {
-    "name": "Bremerhavener Automobile",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5932769,
-    "lng": 8.5983226,
-    "url": "https://www.google.com/maps/search/?api=1&query=Bremerhavener%20Automobile%20Bremen"
-  },
-  {
     "name": "DRIVERAMA Bremen",
     "city": "Bremen",
     "category": "car",
@@ -5298,26 +4778,6 @@
     "lat": 53.0445658,
     "lng": 8.9629354,
     "url": "https://www.google.com/maps/search/?api=1&query=Wesermotors%20GmbH%20Bremen"
-  },
-  {
-    "name": "K & S Automobile",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5607089,
-    "lng": 8.5738729,
-    "url": "https://www.google.com/maps/search/?api=1&query=K%20%26%20S%20Automobile%20Bremen"
-  },
-  {
-    "name": "Autohaus Musli",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.562947,
-    "lng": 8.5749198,
-    "url": "https://www.google.com/maps/search/?api=1&query=Autohaus%20Musli%20Bremen"
   },
   {
     "name": "Autohaus DELLO Bremen-Flughafen",
@@ -5418,46 +4878,6 @@
     "lat": 53.1743886,
     "lng": 8.6511854,
     "url": "https://www.google.com/maps/search/?api=1&query=Mercedes%20Benz%20Niederlassung%20Bremen-Nord%20Bremen"
-  },
-  {
-    "name": "Autohaus Schwarze GmbH",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "legal",
-    "lat": 53.5311665,
-    "lng": 8.6354086,
-    "url": "https://www.google.com/maps/search/?api=1&query=Autohaus%20Schwarze%20GmbH%20Bremen"
-  },
-  {
-    "name": "Schmalzried",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5480184,
-    "lng": 8.5934688,
-    "url": "https://www.google.com/maps/search/?api=1&query=Schmalzried%20Bremen"
-  },
-  {
-    "name": "Autohaus Fritz Fischer KG",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "legal",
-    "lat": 53.5498645,
-    "lng": 8.5929884,
-    "url": "https://www.google.com/maps/search/?api=1&query=Autohaus%20Fritz%20Fischer%20KG%20Bremen"
-  },
-  {
-    "name": "Auto Janssen",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5686739,
-    "lng": 8.5966991,
-    "url": "https://www.google.com/maps/search/?api=1&query=Auto%20Janssen%20Bremen"
   },
   {
     "name": "Aumunder Autohaus Schmidt+Koch",
@@ -5600,16 +5020,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Venus%20Automobile%20Bremen"
   },
   {
-    "name": "Kfz-Sköries",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5029896,
-    "lng": 8.6008505,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kfz-Sk%C3%B6ries%20Bremen"
-  },
-  {
     "name": "Woltmann Föhrenstraße",
     "city": "Bremen",
     "category": "car",
@@ -5618,16 +5028,6 @@
     "lat": 53.0611469,
     "lng": 8.8761431,
     "url": "https://www.google.com/maps/search/?api=1&query=Woltmann%20F%C3%B6hrenstra%C3%9Fe%20Bremen"
-  },
-  {
-    "name": "Automarkt Wulsdorf",
-    "city": "Bremen",
-    "category": "car",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5089954,
-    "lng": 8.5970722,
-    "url": "https://www.google.com/maps/search/?api=1&query=Automarkt%20Wulsdorf%20Bremen"
   },
   {
     "name": "Weser-Ems Automobile",
@@ -5703,8 +5103,8 @@
     "name": "Stil Friseur",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.0990409,
     "lng": 8.7881563,
     "url": "https://www.google.com/maps/search/?api=1&query=Stil%20Friseur%20Bremen"
@@ -5713,8 +5113,8 @@
     "name": "Kayel Friseur",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.0947013,
     "lng": 8.8016561,
     "url": "https://www.google.com/maps/search/?api=1&query=Kayel%20Friseur%20Bremen"
@@ -5780,16 +5180,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Iris%20Bleyer%20Bremen"
   },
   {
-    "name": "essanelle",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5721025,
-    "lng": 8.5991775,
-    "url": "https://www.google.com/maps/search/?api=1&query=essanelle%20Bremen"
-  },
-  {
     "name": "Salon Katja Danker",
     "city": "Bremen",
     "category": "hairdresser",
@@ -5803,8 +5193,8 @@
     "name": "Elite Friseur",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.0667565,
     "lng": 8.7940177,
     "url": "https://www.google.com/maps/search/?api=1&query=Elite%20Friseur%20Bremen"
@@ -5858,16 +5248,6 @@
     "lat": 53.1163548,
     "lng": 8.7582719,
     "url": "https://www.google.com/maps/search/?api=1&query=La%20M%C3%A8che%20Bremen"
-  },
-  {
-    "name": "Frisuerteam Angela Jauch",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5708984,
-    "lng": 8.6063863,
-    "url": "https://www.google.com/maps/search/?api=1&query=Frisuerteam%20Angela%20Jauch%20Bremen"
   },
   {
     "name": "Haareszeiten",
@@ -5980,44 +5360,14 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Gentleman%20Barber%20Shop%20Bremen"
   },
   {
-    "name": "Form & Schick",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5661823,
-    "lng": 8.5914953,
-    "url": "https://www.google.com/maps/search/?api=1&query=Form%20%26%20Schick%20Bremen"
-  },
-  {
-    "name": "Der Friseursalon Gaby Voigt",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.570119,
-    "lng": 8.6016773,
-    "url": "https://www.google.com/maps/search/?api=1&query=Der%20Friseursalon%20Gaby%20Voigt%20Bremen"
-  },
-  {
     "name": "Friseur Capelli",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.1382698,
     "lng": 8.7426332,
     "url": "https://www.google.com/maps/search/?api=1&query=Friseur%20Capelli%20Bremen"
-  },
-  {
-    "name": "Las Bonitas",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5322108,
-    "lng": 8.598152,
-    "url": "https://www.google.com/maps/search/?api=1&query=Las%20Bonitas%20Bremen"
   },
   {
     "name": "Schnittpunkt Horn",
@@ -6073,8 +5423,8 @@
     "name": "Akzente Friseur",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.0986564,
     "lng": 8.8134767,
     "url": "https://www.google.com/maps/search/?api=1&query=Akzente%20Friseur%20Bremen"
@@ -6133,8 +5483,8 @@
     "name": "Damen + Herren Friseur",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.0711185,
     "lng": 8.8516403,
     "url": "https://www.google.com/maps/search/?api=1&query=Damen%20%2B%20Herren%20Friseur%20Bremen"
@@ -6210,26 +5560,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Svetlana's%20Haarstudio%20Bremen"
   },
   {
-    "name": "Classic Hair",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.540906,
-    "lng": 8.583923,
-    "url": "https://www.google.com/maps/search/?api=1&query=Classic%20Hair%20Bremen"
-  },
-  {
-    "name": "Schnittpunkt",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5412393,
-    "lng": 8.582686,
-    "url": "https://www.google.com/maps/search/?api=1&query=Schnittpunkt%20Bremen"
-  },
-  {
     "name": "Master of hair",
     "city": "Bremen",
     "category": "hairdresser",
@@ -6238,26 +5568,6 @@
     "lat": 53.0941734,
     "lng": 8.8064767,
     "url": "https://www.google.com/maps/search/?api=1&query=Master%20of%20hair%20Bremen"
-  },
-  {
-    "name": "Axel Stromski",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.541476,
-    "lng": 8.582442,
-    "url": "https://www.google.com/maps/search/?api=1&query=Axel%20Stromski%20Bremen"
-  },
-  {
-    "name": "Jenny for Hair",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5412427,
-    "lng": 8.5810626,
-    "url": "https://www.google.com/maps/search/?api=1&query=Jenny%20for%20Hair%20Bremen"
   },
   {
     "name": "Michele's Herrensalon",
@@ -6308,16 +5618,6 @@
     "lat": 53.1274421,
     "lng": 8.9022018,
     "url": "https://www.google.com/maps/search/?api=1&query=Fris%C3%B6r%20Baldar%20Albers%20Bremen"
-  },
-  {
-    "name": "Schnittpunkt next generation",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5590638,
-    "lng": 8.589068,
-    "url": "https://www.google.com/maps/search/?api=1&query=Schnittpunkt%20next%20generation%20Bremen"
   },
   {
     "name": "Schnittgemeinschaft",
@@ -6393,8 +5693,8 @@
     "name": "Coiffeur Grande",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.1812825,
     "lng": 8.572339,
     "url": "https://www.google.com/maps/search/?api=1&query=Coiffeur%20Grande%20Bremen"
@@ -6550,26 +5850,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Signature%20Bremen"
   },
   {
-    "name": "Effekte",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.543286,
-    "lng": 8.5818216,
-    "url": "https://www.google.com/maps/search/?api=1&query=Effekte%20Bremen"
-  },
-  {
-    "name": "Hair Deluxe",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5426357,
-    "lng": 8.5820422,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hair%20Deluxe%20Bremen"
-  },
-  {
     "name": "Horner Barber",
     "city": "Bremen",
     "category": "hairdresser",
@@ -6680,6 +5960,16 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Fris%C3%B6r%20Klier%20Bremen"
   },
   {
+    "name": "essanelle",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0462619,
+    "lng": 8.8483931,
+    "url": "https://www.google.com/maps/search/?api=1&query=essanelle%20Bremen"
+  },
+  {
     "name": "M.J. Style Friseursalon",
     "city": "Bremen",
     "category": "hairdresser",
@@ -6688,56 +5978,6 @@
     "lat": 53.0774761,
     "lng": 8.8453261,
     "url": "https://www.google.com/maps/search/?api=1&query=M.J.%20Style%20Friseursalon%20Bremen"
-  },
-  {
-    "name": "Die Haarprofis",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5501065,
-    "lng": 8.5798261,
-    "url": "https://www.google.com/maps/search/?api=1&query=Die%20Haarprofis%20Bremen"
-  },
-  {
-    "name": "Regina's Salon",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.549696,
-    "lng": 8.5795599,
-    "url": "https://www.google.com/maps/search/?api=1&query=Regina's%20Salon%20Bremen"
-  },
-  {
-    "name": "blond.",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5515899,
-    "lng": 8.5722026,
-    "url": "https://www.google.com/maps/search/?api=1&query=blond.%20Bremen"
-  },
-  {
-    "name": "Coiffeur Jacek",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5498503,
-    "lng": 8.5732974,
-    "url": "https://www.google.com/maps/search/?api=1&query=Coiffeur%20Jacek%20Bremen"
-  },
-  {
-    "name": "Kontraste Haarstudio",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5488665,
-    "lng": 8.574994,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kontraste%20Haarstudio%20Bremen"
   },
   {
     "name": "MD Extensions",
@@ -6910,16 +6150,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=AbSchnitt%2028%20Bremen"
   },
   {
-    "name": "Friseur J. Wohkittel",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5562293,
-    "lng": 8.5801616,
-    "url": "https://www.google.com/maps/search/?api=1&query=Friseur%20J.%20Wohkittel%20Bremen"
-  },
-  {
     "name": "Schnipp-Schnapp",
     "city": "Bremen",
     "category": "hairdresser",
@@ -6928,16 +6158,6 @@
     "lat": 53.07308,
     "lng": 8.8115393,
     "url": "https://www.google.com/maps/search/?api=1&query=Schnipp-Schnapp%20Bremen"
-  },
-  {
-    "name": "Salon Busche",
-    "city": "Bremen",
-    "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5808714,
-    "lng": 8.5911522,
-    "url": "https://www.google.com/maps/search/?api=1&query=Salon%20Busche%20Bremen"
   },
   {
     "name": "Madame & Monsieur 2",
@@ -7063,8 +6283,8 @@
     "name": "Friseur Kepinska",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.0853655,
     "lng": 8.8284923,
     "url": "https://www.google.com/maps/search/?api=1&query=Friseur%20Kepinska%20Bremen"
@@ -7283,8 +6503,8 @@
     "name": "Friseur Nissaneh",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.069566,
     "lng": 8.841522,
     "url": "https://www.google.com/maps/search/?api=1&query=Friseur%20Nissaneh%20Bremen"
@@ -7303,8 +6523,8 @@
     "name": "Friseur Jonas",
     "city": "Bremen",
     "category": "hairdresser",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.073029,
     "lng": 8.8810622,
     "url": "https://www.google.com/maps/search/?api=1&query=Friseur%20Jonas%20Bremen"
@@ -7410,6 +6630,196 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Prestige%20Bremen"
   },
   {
+    "name": "Hair-Design",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0319853,
+    "lng": 8.8465534,
+    "url": "https://www.google.com/maps/search/?api=1&query=Hair-Design%20Bremen"
+  },
+  {
+    "name": "Haarige Zeiten",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.077563,
+    "lng": 8.9408515,
+    "url": "https://www.google.com/maps/search/?api=1&query=Haarige%20Zeiten%20Bremen"
+  },
+  {
+    "name": "C.U.T.",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1730807,
+    "lng": 8.6178863,
+    "url": "https://www.google.com/maps/search/?api=1&query=C.U.T.%20Bremen"
+  },
+  {
+    "name": "Özdemir",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.172228,
+    "lng": 8.6213187,
+    "url": "https://www.google.com/maps/search/?api=1&query=%C3%96zdemir%20Bremen"
+  },
+  {
+    "name": "Haupt-Sache schöne Haare",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.1753779,
+    "lng": 8.6238711,
+    "url": "https://www.google.com/maps/search/?api=1&query=Haupt-Sache%20sch%C3%B6ne%20Haare%20Bremen"
+  },
+  {
+    "name": "Rita Höpfner",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1762753,
+    "lng": 8.6245879,
+    "url": "https://www.google.com/maps/search/?api=1&query=Rita%20H%C3%B6pfner%20Bremen"
+  },
+  {
+    "name": "Sandra Reineking Frisuren",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0387784,
+    "lng": 8.9098076,
+    "url": "https://www.google.com/maps/search/?api=1&query=Sandra%20Reineking%20Frisuren%20Bremen"
+  },
+  {
+    "name": "Haarstudio",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0475091,
+    "lng": 8.892975,
+    "url": "https://www.google.com/maps/search/?api=1&query=Haarstudio%20Bremen"
+  },
+  {
+    "name": "IBO's Scharfe Schere",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0480672,
+    "lng": 8.8920941,
+    "url": "https://www.google.com/maps/search/?api=1&query=IBO's%20Scharfe%20Schere%20Bremen"
+  },
+  {
+    "name": "Farideh's flinke Schere",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0447752,
+    "lng": 8.896458,
+    "url": "https://www.google.com/maps/search/?api=1&query=Farideh's%20flinke%20Schere%20Bremen"
+  },
+  {
+    "name": "Charisma Barbiershop",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0613363,
+    "lng": 8.8057782,
+    "url": "https://www.google.com/maps/search/?api=1&query=Charisma%20Barbiershop%20Bremen"
+  },
+  {
+    "name": "Super Cut",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0482256,
+    "lng": 8.7428047,
+    "url": "https://www.google.com/maps/search/?api=1&query=Super%20Cut%20Bremen"
+  },
+  {
+    "name": "for men",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0550956,
+    "lng": 8.8923007,
+    "url": "https://www.google.com/maps/search/?api=1&query=for%20men%20Bremen"
+  },
+  {
+    "name": "Vair vegan & fair hair",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0604585,
+    "lng": 8.8069858,
+    "url": "https://www.google.com/maps/search/?api=1&query=Vair%20vegan%20%26%20fair%20hair%20Bremen"
+  },
+  {
+    "name": "Beauty & Style",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0803639,
+    "lng": 8.893368,
+    "url": "https://www.google.com/maps/search/?api=1&query=Beauty%20%26%20Style%20Bremen"
+  },
+  {
+    "name": "Dimitri",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0749695,
+    "lng": 8.8214788,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dimitri%20Bremen"
+  },
+  {
+    "name": "Trend Friseur Frieda",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0792386,
+    "lng": 8.883438,
+    "url": "https://www.google.com/maps/search/?api=1&query=Trend%20Friseur%20Frieda%20Bremen"
+  },
+  {
+    "name": "Ronny's Frisör",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0709837,
+    "lng": 8.8003732,
+    "url": "https://www.google.com/maps/search/?api=1&query=Ronny's%20Fris%C3%B6r%20Bremen"
+  },
+  {
+    "name": "Querschnitt",
+    "city": "Bremen",
+    "category": "hairdresser",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.1270142,
+    "lng": 8.9028092,
+    "url": "https://www.google.com/maps/search/?api=1&query=Querschnitt%20Bremen"
+  },
+  {
     "name": "Beauty Center",
     "city": "Bremen",
     "category": "beauty",
@@ -7480,16 +6890,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Ihr%20Sonnenstudio%20Bremen"
   },
   {
-    "name": "Nails and more",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.570083,
-    "lng": 8.5950664,
-    "url": "https://www.google.com/maps/search/?api=1&query=Nails%20and%20more%20Bremen"
-  },
-  {
     "name": "Soul Sun",
     "city": "Bremen",
     "category": "beauty",
@@ -7528,16 +6928,6 @@
     "lat": 53.0899286,
     "lng": 8.8122439,
     "url": "https://www.google.com/maps/search/?api=1&query=IMP%20Cosmetics%20Bremen"
-  },
-  {
-    "name": "Kim Nails",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.542708,
-    "lng": 8.5805588,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kim%20Nails%20Bremen"
   },
   {
     "name": "Nado Makeup Studio",
@@ -7690,26 +7080,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=D.N.%20Nails%20America%20Style%20Bremen"
   },
   {
-    "name": "Charme Beauty Lounge",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5495714,
-    "lng": 8.5735053,
-    "url": "https://www.google.com/maps/search/?api=1&query=Charme%20Beauty%20Lounge%20Bremen"
-  },
-  {
-    "name": "Kosmetik-Studio Hildegard Simon",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5494133,
-    "lng": 8.5732474,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kosmetik-Studio%20Hildegard%20Simon%20Bremen"
-  },
-  {
     "name": "Beator‘s Beauty",
     "city": "Bremen",
     "category": "beauty",
@@ -7758,16 +7128,6 @@
     "lat": 53.0451024,
     "lng": 8.8482322,
     "url": "https://www.google.com/maps/search/?api=1&query=Sunpoint%20Bremen"
-  },
-  {
-    "name": "Element",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5369158,
-    "lng": 8.5820393,
-    "url": "https://www.google.com/maps/search/?api=1&query=Element%20Bremen"
   },
   {
     "name": "Visage Kosmetik-Studio",
@@ -7858,26 +7218,6 @@
     "lat": 53.0388751,
     "lng": 8.9098264,
     "url": "https://www.google.com/maps/search/?api=1&query=Hansa%20Nails%20%26%20Beauty%20Bremen"
-  },
-  {
-    "name": "Salon Irina",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5458966,
-    "lng": 8.577867,
-    "url": "https://www.google.com/maps/search/?api=1&query=Salon%20Irina%20Bremen"
-  },
-  {
-    "name": "Nagelstudio Hand & Fuß",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5293637,
-    "lng": 8.6375615,
-    "url": "https://www.google.com/maps/search/?api=1&query=Nagelstudio%20Hand%20%26%20Fu%C3%9F%20Bremen"
   },
   {
     "name": "Bella Kosmetik",
@@ -8250,16 +7590,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Brasil%20Tropical%20Waxing%20Bremen"
   },
   {
-    "name": "GOLD nails & beauty",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.54126,
-    "lng": 8.5809278,
-    "url": "https://www.google.com/maps/search/?api=1&query=GOLD%20nails%20%26%20beauty%20Bremen"
-  },
-  {
     "name": "Nofretete",
     "city": "Bremen",
     "category": "beauty",
@@ -8310,26 +7640,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Glamour%20Girlz%20Bremen"
   },
   {
-    "name": "Perfect Nails",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5452116,
-    "lng": 8.5778303,
-    "url": "https://www.google.com/maps/search/?api=1&query=Perfect%20Nails%20Bremen"
-  },
-  {
-    "name": "New York Nails",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5420858,
-    "lng": 8.5808298,
-    "url": "https://www.google.com/maps/search/?api=1&query=New%20York%20Nails%20Bremen"
-  },
-  {
     "name": "Nail Design",
     "city": "Bremen",
     "category": "beauty",
@@ -8368,16 +7678,6 @@
     "lat": 53.1007713,
     "lng": 8.8733819,
     "url": "https://www.google.com/maps/search/?api=1&query=Beri%20Beauty%20Bremen"
-  },
-  {
-    "name": "Gülsen's Kosmetiksalon",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5335992,
-    "lng": 8.593721,
-    "url": "https://www.google.com/maps/search/?api=1&query=G%C3%BClsen's%20Kosmetiksalon%20Bremen"
   },
   {
     "name": "Nilwa Kosmetik",
@@ -8490,56 +7790,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Essential%20Bremen"
   },
   {
-    "name": "Beauty Station",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5341623,
-    "lng": 8.5890997,
-    "url": "https://www.google.com/maps/search/?api=1&query=Beauty%20Station%20Bremen"
-  },
-  {
-    "name": "beauty line",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5321705,
-    "lng": 8.5891879,
-    "url": "https://www.google.com/maps/search/?api=1&query=beauty%20line%20Bremen"
-  },
-  {
-    "name": "Tatjana Wilhelm",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5887991,
-    "lng": 8.5975845,
-    "url": "https://www.google.com/maps/search/?api=1&query=Tatjana%20Wilhelm%20Bremen"
-  },
-  {
-    "name": "Liebe zur Schönheit",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5912438,
-    "lng": 8.6014649,
-    "url": "https://www.google.com/maps/search/?api=1&query=Liebe%20zur%20Sch%C3%B6nheit%20Bremen"
-  },
-  {
-    "name": "Kosmetik-Studio",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5910669,
-    "lng": 8.6002154,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kosmetik-Studio%20Bremen"
-  },
-  {
     "name": "Electra Permanent Make-Up",
     "city": "Bremen",
     "category": "beauty",
@@ -8580,84 +7830,14 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Cosmo%20Bremen"
   },
   {
-    "name": "La Belle",
+    "name": "New York Nails",
     "city": "Bremen",
     "category": "beauty",
     "nameable": false,
     "entity_type": "person",
-    "lat": 53.53234,
-    "lng": 8.5896861,
-    "url": "https://www.google.com/maps/search/?api=1&query=La%20Belle%20Bremen"
-  },
-  {
-    "name": "Nails Lenkabeauty",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5326373,
-    "lng": 8.594563,
-    "url": "https://www.google.com/maps/search/?api=1&query=Nails%20Lenkabeauty%20Bremen"
-  },
-  {
-    "name": "Wir für Sie",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5313354,
-    "lng": 8.5898178,
-    "url": "https://www.google.com/maps/search/?api=1&query=Wir%20f%C3%BCr%20Sie%20Bremen"
-  },
-  {
-    "name": "TM Beauty & Soul",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5515279,
-    "lng": 8.572264,
-    "url": "https://www.google.com/maps/search/?api=1&query=TM%20Beauty%20%26%20Soul%20Bremen"
-  },
-  {
-    "name": "Fantastic Nails",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.54922,
-    "lng": 8.5738479,
-    "url": "https://www.google.com/maps/search/?api=1&query=Fantastic%20Nails%20Bremen"
-  },
-  {
-    "name": "Unlimited",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5526962,
-    "lng": 8.5816021,
-    "url": "https://www.google.com/maps/search/?api=1&query=Unlimited%20Bremen"
-  },
-  {
-    "name": "Ela Beauty",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5521021,
-    "lng": 8.5811959,
-    "url": "https://www.google.com/maps/search/?api=1&query=Ela%20Beauty%20Bremen"
-  },
-  {
-    "name": "Angelina Schröder",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5047369,
-    "lng": 8.5988748,
-    "url": "https://www.google.com/maps/search/?api=1&query=Angelina%20Schr%C3%B6der%20Bremen"
+    "lat": 53.0478147,
+    "lng": 8.741315,
+    "url": "https://www.google.com/maps/search/?api=1&query=New%20York%20Nails%20Bremen"
   },
   {
     "name": "Le-NHI Nails",
@@ -8750,26 +7930,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Browtiful%20Bremen"
   },
   {
-    "name": "Ruby Nails",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5468665,
-    "lng": 8.5756466,
-    "url": "https://www.google.com/maps/search/?api=1&query=Ruby%20Nails%20Bremen"
-  },
-  {
-    "name": "The Studio",
-    "city": "Bremen",
-    "category": "beauty",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.53229,
-    "lng": 8.5940073,
-    "url": "https://www.google.com/maps/search/?api=1&query=The%20Studio%20Bremen"
-  },
-  {
     "name": "Nails for You",
     "city": "Bremen",
     "category": "beauty",
@@ -8838,6 +7998,16 @@
     "lat": 53.0784969,
     "lng": 8.8049913,
     "url": "https://www.google.com/maps/search/?api=1&query=Mt%20Nail%20Salon%20Bremen"
+  },
+  {
+    "name": "La Belle",
+    "city": "Bremen",
+    "category": "beauty",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1023352,
+    "lng": 8.8745373,
+    "url": "https://www.google.com/maps/search/?api=1&query=La%20Belle%20Bremen"
   },
   {
     "name": "Kosmetiksalon Nou Tieltz",
@@ -8970,16 +8140,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Madani%20Fit%20Bremen"
   },
   {
-    "name": "Ebene 2 Fitness",
-    "city": "Bremen",
-    "category": "fitness_centre",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5439471,
-    "lng": 8.5764024,
-    "url": "https://www.google.com/maps/search/?api=1&query=Ebene%202%20Fitness%20Bremen"
-  },
-  {
     "name": "Vitaria Fitness",
     "city": "Bremen",
     "category": "fitness_centre",
@@ -8988,16 +8148,6 @@
     "lat": 53.0810535,
     "lng": 8.8741384,
     "url": "https://www.google.com/maps/search/?api=1&query=Vitaria%20Fitness%20Bremen"
-  },
-  {
-    "name": "myLife Fitness",
-    "city": "Bremen",
-    "category": "fitness_centre",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5065769,
-    "lng": 8.5976467,
-    "url": "https://www.google.com/maps/search/?api=1&query=myLife%20Fitness%20Bremen"
   },
   {
     "name": "Yoga Vidya",
@@ -9128,16 +8278,6 @@
     "lat": 53.0722506,
     "lng": 8.8163143,
     "url": "https://www.google.com/maps/search/?api=1&query=Qi%2055%20Bremen"
-  },
-  {
-    "name": "wellyou",
-    "city": "Bremen",
-    "category": "fitness_centre",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5059444,
-    "lng": 8.5961366,
-    "url": "https://www.google.com/maps/search/?api=1&query=wellyou%20Bremen"
   },
   {
     "name": "LX66",
@@ -9300,16 +8440,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Kreativraum%20Bremen"
   },
   {
-    "name": "Yoga Studio Bremerhaven",
-    "city": "Bremen",
-    "category": "fitness_centre",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5260709,
-    "lng": 8.5770397,
-    "url": "https://www.google.com/maps/search/?api=1&query=Yoga%20Studio%20Bremerhaven%20Bremen"
-  },
-  {
     "name": "Yogalab Am Brommyplatz",
     "city": "Bremen",
     "category": "fitness_centre",
@@ -9328,16 +8458,6 @@
     "lat": 53.0720962,
     "lng": 8.8278036,
     "url": "https://www.google.com/maps/search/?api=1&query=Vinya%20Loft%20Bremen"
-  },
-  {
-    "name": "Parkhaus Fitness Club",
-    "city": "Bremen",
-    "category": "fitness_centre",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5871658,
-    "lng": 8.5892669,
-    "url": "https://www.google.com/maps/search/?api=1&query=Parkhaus%20Fitness%20Club%20Bremen"
   },
   {
     "name": "Fitness Galerie",
@@ -9368,6 +8488,16 @@
     "lat": 53.1879014,
     "lng": 8.6146069,
     "url": "https://www.google.com/maps/search/?api=1&query=Fitness%20Park%20Aumund%20Bremen"
+  },
+  {
+    "name": "wellyou",
+    "city": "Bremen",
+    "category": "fitness_centre",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.1194074,
+    "lng": 8.7563585,
+    "url": "https://www.google.com/maps/search/?api=1&query=wellyou%20Bremen"
   },
   {
     "name": "Beck's Ambiente",
@@ -10140,26 +9270,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Asiana%20Bremen"
   },
   {
-    "name": "China-Restaurant",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5482903,
-    "lng": 8.5755063,
-    "url": "https://www.google.com/maps/search/?api=1&query=China-Restaurant%20Bremen"
-  },
-  {
-    "name": "Mamma Mia",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5534694,
-    "lng": 8.5795624,
-    "url": "https://www.google.com/maps/search/?api=1&query=Mamma%20Mia%20Bremen"
-  },
-  {
     "name": "Melia",
     "city": "Bremen",
     "category": "restaurant",
@@ -10210,26 +9320,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Victorian%20Bremen"
   },
   {
-    "name": "Bürgerhaus Lehe",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5640862,
-    "lng": 8.599335,
-    "url": "https://www.google.com/maps/search/?api=1&query=B%C3%BCrgerhaus%20Lehe%20Bremen"
-  },
-  {
-    "name": "Ayla",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5572586,
-    "lng": 8.5847742,
-    "url": "https://www.google.com/maps/search/?api=1&query=Ayla%20Bremen"
-  },
-  {
     "name": "Kreta",
     "city": "Bremen",
     "category": "restaurant",
@@ -10260,16 +9350,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Hibiduri%20Bremen"
   },
   {
-    "name": "Delphi",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5452342,
-    "lng": 8.5795306,
-    "url": "https://www.google.com/maps/search/?api=1&query=Delphi%20Bremen"
-  },
-  {
     "name": "Ibrahimi",
     "city": "Bremen",
     "category": "restaurant",
@@ -10278,26 +9358,6 @@
     "lat": 53.0847718,
     "lng": 8.8020941,
     "url": "https://www.google.com/maps/search/?api=1&query=Ibrahimi%20Bremen"
-  },
-  {
-    "name": "Dorfkrug",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.4995895,
-    "lng": 8.6062656,
-    "url": "https://www.google.com/maps/search/?api=1&query=Dorfkrug%20Bremen"
-  },
-  {
-    "name": "Steakhaus An der Mühle",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5302519,
-    "lng": 8.598789,
-    "url": "https://www.google.com/maps/search/?api=1&query=Steakhaus%20An%20der%20M%C3%BChle%20Bremen"
   },
   {
     "name": "Tampopo",
@@ -10418,16 +9478,6 @@
     "lat": 53.0729026,
     "lng": 8.8253651,
     "url": "https://www.google.com/maps/search/?api=1&query=Sea%20Moon%20Bremen"
-  },
-  {
-    "name": "Wirtshaus im Park",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5925857,
-    "lng": 8.5863853,
-    "url": "https://www.google.com/maps/search/?api=1&query=Wirtshaus%20im%20Park%20Bremen"
   },
   {
     "name": "La Niña",
@@ -10560,24 +9610,14 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Landhaus%20Kuhsiel%20Bremen"
   },
   {
-    "name": "Surajaya Tabo",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.0770275,
-    "lng": 8.8239446,
-    "url": "https://www.google.com/maps/search/?api=1&query=Surajaya%20Tabo%20Bremen"
-  },
-  {
-    "name": "Natusch",
+    "name": "Das singende Diner",
     "city": "Bremen",
     "category": "restaurant",
     "nameable": true,
     "entity_type": "business",
-    "lat": 53.521712,
-    "lng": 8.5806791,
-    "url": "https://www.google.com/maps/search/?api=1&query=Natusch%20Bremen"
+    "lat": 53.0770275,
+    "lng": 8.8239446,
+    "url": "https://www.google.com/maps/search/?api=1&query=Das%20singende%20Diner%20Bremen"
   },
   {
     "name": "Gartelmann's Gasthof",
@@ -10600,16 +9640,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Orpheas%20Bremen"
   },
   {
-    "name": "überSEE",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5476444,
-    "lng": 8.5691054,
-    "url": "https://www.google.com/maps/search/?api=1&query=%C3%BCberSEE%20Bremen"
-  },
-  {
     "name": "Artemis",
     "city": "Bremen",
     "category": "restaurant",
@@ -10618,26 +9648,6 @@
     "lat": 53.0932965,
     "lng": 8.8114646,
     "url": "https://www.google.com/maps/search/?api=1&query=Artemis%20Bremen"
-  },
-  {
-    "name": "Paprika Grill",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5357197,
-    "lng": 8.5839001,
-    "url": "https://www.google.com/maps/search/?api=1&query=Paprika%20Grill%20Bremen"
-  },
-  {
-    "name": "\"Guter Freund\" China Food",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.54739,
-    "lng": 8.5748782,
-    "url": "https://www.google.com/maps/search/?api=1&query=%22Guter%20Freund%22%20China%20Food%20Bremen"
   },
   {
     "name": "Osteria",
@@ -10728,36 +9738,6 @@
     "lat": 53.1540403,
     "lng": 8.7051863,
     "url": "https://www.google.com/maps/search/?api=1&query=Murats%20D%C3%B6ner%20Haus%20Bremen"
-  },
-  {
-    "name": "Wasserschout",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5386603,
-    "lng": 8.5797131,
-    "url": "https://www.google.com/maps/search/?api=1&query=Wasserschout%20Bremen"
-  },
-  {
-    "name": "Piccalilli",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5448143,
-    "lng": 8.5782504,
-    "url": "https://www.google.com/maps/search/?api=1&query=Piccalilli%20Bremen"
-  },
-  {
-    "name": "Ristorante Scala",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5447345,
-    "lng": 8.5788894,
-    "url": "https://www.google.com/maps/search/?api=1&query=Ristorante%20Scala%20Bremen"
   },
   {
     "name": "Ba Hungs - Asian Kitchen",
@@ -11000,16 +9980,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Eichengrund%20Bremen"
   },
   {
-    "name": "Restaurant Finger",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5419725,
-    "lng": 8.5819545,
-    "url": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Finger%20Bremen"
-  },
-  {
     "name": "Rona's Mezze & Küche",
     "city": "Bremen",
     "category": "restaurant",
@@ -11018,16 +9988,6 @@
     "lat": 53.0693457,
     "lng": 8.7921087,
     "url": "https://www.google.com/maps/search/?api=1&query=Rona's%20Mezze%20%26%20K%C3%BCche%20Bremen"
-  },
-  {
-    "name": "Servus",
-    "city": "Bremen",
-    "category": "restaurant",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5407955,
-    "lng": 8.5823651,
-    "url": "https://www.google.com/maps/search/?api=1&query=Servus%20Bremen"
   },
   {
     "name": "Gaststätte Lühr",
@@ -11150,6 +10110,176 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Ni%20Hao%20Bremen"
   },
   {
+    "name": "Port im Speicher XI",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0965225,
+    "lng": 8.7715791,
+    "url": "https://www.google.com/maps/search/?api=1&query=Port%20im%20Speicher%20XI%20Bremen"
+  },
+  {
+    "name": "Sara",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0930755,
+    "lng": 8.802694,
+    "url": "https://www.google.com/maps/search/?api=1&query=Sara%20Bremen"
+  },
+  {
+    "name": "Metaxa",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0942372,
+    "lng": 8.8066776,
+    "url": "https://www.google.com/maps/search/?api=1&query=Metaxa%20Bremen"
+  },
+  {
+    "name": "Yakumi Sushi & Grill",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0804181,
+    "lng": 8.8091134,
+    "url": "https://www.google.com/maps/search/?api=1&query=Yakumi%20Sushi%20%26%20Grill%20Bremen"
+  },
+  {
+    "name": "Tendüre",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0808406,
+    "lng": 8.8053163,
+    "url": "https://www.google.com/maps/search/?api=1&query=Tend%C3%BCre%20Bremen"
+  },
+  {
+    "name": "Rioniart",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0807351,
+    "lng": 8.8168277,
+    "url": "https://www.google.com/maps/search/?api=1&query=Rioniart%20Bremen"
+  },
+  {
+    "name": "Unikum",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.1077215,
+    "lng": 8.852817,
+    "url": "https://www.google.com/maps/search/?api=1&query=Unikum%20Bremen"
+  },
+  {
+    "name": "Asia-Phönix",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.1384999,
+    "lng": 8.7427484,
+    "url": "https://www.google.com/maps/search/?api=1&query=Asia-Ph%C3%B6nix%20Bremen"
+  },
+  {
+    "name": "Fellini",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.1350685,
+    "lng": 8.7402884,
+    "url": "https://www.google.com/maps/search/?api=1&query=Fellini%20Bremen"
+  },
+  {
+    "name": "Hazari Shirin Türkisches Restaurant",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.137279,
+    "lng": 8.7442451,
+    "url": "https://www.google.com/maps/search/?api=1&query=Hazari%20Shirin%20T%C3%BCrkisches%20Restaurant%20Bremen"
+  },
+  {
+    "name": "Sportgalerie",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.13335,
+    "lng": 8.7445327,
+    "url": "https://www.google.com/maps/search/?api=1&query=Sportgalerie%20Bremen"
+  },
+  {
+    "name": "Özlem",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.1157939,
+    "lng": 8.7598822,
+    "url": "https://www.google.com/maps/search/?api=1&query=%C3%96zlem%20Bremen"
+  },
+  {
+    "name": "Dunia",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0728759,
+    "lng": 8.8077071,
+    "url": "https://www.google.com/maps/search/?api=1&query=Dunia%20Bremen"
+  },
+  {
+    "name": "Murkens Krug zur Fähre",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.160692,
+    "lng": 8.6793649,
+    "url": "https://www.google.com/maps/search/?api=1&query=Murkens%20Krug%20zur%20F%C3%A4hre%20Bremen"
+  },
+  {
+    "name": "Landgasthof Heuer",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.1322448,
+    "lng": 8.8908259,
+    "url": "https://www.google.com/maps/search/?api=1&query=Landgasthof%20Heuer%20Bremen"
+  },
+  {
+    "name": "Zafar",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0967682,
+    "lng": 8.8109124,
+    "url": "https://www.google.com/maps/search/?api=1&query=Zafar%20Bremen"
+  },
+  {
+    "name": "Kitchens of India",
+    "city": "Bremen",
+    "category": "restaurant",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0965028,
+    "lng": 8.8106494,
+    "url": "https://www.google.com/maps/search/?api=1&query=Kitchens%20of%20India%20Bremen"
+  },
+  {
     "name": "Nouras Pizzaexpress",
     "city": "Bremen",
     "category": "fast_food",
@@ -11220,16 +10350,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=D%C3%B6ner%20Time%20Bremen"
   },
   {
-    "name": "Sky Pizza",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5638136,
-    "lng": 8.5943522,
-    "url": "https://www.google.com/maps/search/?api=1&query=Sky%20Pizza%20Bremen"
-  },
-  {
     "name": "Pamukkale Döner Imbiss",
     "city": "Bremen",
     "category": "fast_food",
@@ -11268,16 +10388,6 @@
     "lat": 53.1249071,
     "lng": 8.7491345,
     "url": "https://www.google.com/maps/search/?api=1&query=Metropol%20Bremen"
-  },
-  {
-    "name": "King of Kebab",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5033645,
-    "lng": 8.6001341,
-    "url": "https://www.google.com/maps/search/?api=1&query=King%20of%20Kebab%20Bremen"
   },
   {
     "name": "Gül Imbiss",
@@ -11490,16 +10600,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Waller%20H%C3%A4hnchenhaus%20K%C3%B6z%20Grill%20Bremen"
   },
   {
-    "name": "Kervan",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5484189,
-    "lng": 8.5757735,
-    "url": "https://www.google.com/maps/search/?api=1&query=Kervan%20Bremen"
-  },
-  {
     "name": "Porcini",
     "city": "Bremen",
     "category": "fast_food",
@@ -11528,16 +10628,6 @@
     "lat": 53.1268508,
     "lng": 8.9029204,
     "url": "https://www.google.com/maps/search/?api=1&query=Confetti's%20Bremen"
-  },
-  {
-    "name": "GOSCH Sylt",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5416893,
-    "lng": 8.5759842,
-    "url": "https://www.google.com/maps/search/?api=1&query=GOSCH%20Sylt%20Bremen"
   },
   {
     "name": "Pizza Bremen",
@@ -11700,16 +10790,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Uluda%C4%9F%20D%C3%B6ner%20Bremen"
   },
   {
-    "name": "Antep Grill",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5609306,
-    "lng": 8.5833122,
-    "url": "https://www.google.com/maps/search/?api=1&query=Antep%20Grill%20Bremen"
-  },
-  {
     "name": "Günes Imbiss",
     "city": "Bremen",
     "category": "fast_food",
@@ -11738,16 +10818,6 @@
     "lat": 53.0814886,
     "lng": 8.8111178,
     "url": "https://www.google.com/maps/search/?api=1&query=KFC%20Bremen"
-  },
-  {
-    "name": "Pizza41",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5486551,
-    "lng": 8.5776359,
-    "url": "https://www.google.com/maps/search/?api=1&query=Pizza41%20Bremen"
   },
   {
     "name": "Tepe",
@@ -11870,16 +10940,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Home%20Pizza%20Bremen"
   },
   {
-    "name": "Niko's Kombüse",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "legal",
-    "lat": 53.5404595,
-    "lng": 8.5845922,
-    "url": "https://www.google.com/maps/search/?api=1&query=Niko's%20Komb%C3%BCse%20Bremen"
-  },
-  {
     "name": "Bahce Grill",
     "city": "Bremen",
     "category": "fast_food",
@@ -11970,6 +11030,16 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Peros%20Bremen"
   },
   {
+    "name": "Burger4You",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0711896,
+    "lng": 8.7891726,
+    "url": "https://www.google.com/maps/search/?api=1&query=Burger4You%20Bremen"
+  },
+  {
     "name": "Emin Usta",
     "city": "Bremen",
     "category": "fast_food",
@@ -11988,6 +11058,16 @@
     "lat": 53.0777313,
     "lng": 8.8059644,
     "url": "https://www.google.com/maps/search/?api=1&query=Johann%20Keuneke%20Bremen"
+  },
+  {
+    "name": "GOSCH Sylt",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.077633,
+    "lng": 8.8057127,
+    "url": "https://www.google.com/maps/search/?api=1&query=GOSCH%20Sylt%20Bremen"
   },
   {
     "name": "Mahouk's",
@@ -12010,16 +11090,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=%C3%87oban%20Kumpir%20Bremen"
   },
   {
-    "name": "Alexis",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5579381,
-    "lng": 8.5858718,
-    "url": "https://www.google.com/maps/search/?api=1&query=Alexis%20Bremen"
-  },
-  {
     "name": "Döner Ecke",
     "city": "Bremen",
     "category": "fast_food",
@@ -12028,36 +11098,6 @@
     "lat": 53.0818135,
     "lng": 8.811528,
     "url": "https://www.google.com/maps/search/?api=1&query=D%C3%B6ner%20Ecke%20Bremen"
-  },
-  {
-    "name": "Willy's Schnellimbiss",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5608151,
-    "lng": 8.5857658,
-    "url": "https://www.google.com/maps/search/?api=1&query=Willy's%20Schnellimbiss%20Bremen"
-  },
-  {
-    "name": "C'est si bon",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5908606,
-    "lng": 8.5994974,
-    "url": "https://www.google.com/maps/search/?api=1&query=C'est%20si%20bon%20Bremen"
-  },
-  {
-    "name": "International",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5608848,
-    "lng": 8.5845898,
-    "url": "https://www.google.com/maps/search/?api=1&query=International%20Bremen"
   },
   {
     "name": "Schnellrestaurant Istanbul",
@@ -12070,16 +11110,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Schnellrestaurant%20Istanbul%20Bremen"
   },
   {
-    "name": "XXL Essen und Trinken",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5065419,
-    "lng": 8.5976813,
-    "url": "https://www.google.com/maps/search/?api=1&query=XXL%20Essen%20und%20Trinken%20Bremen"
-  },
-  {
     "name": "Sahin Döner",
     "city": "Bremen",
     "category": "fast_food",
@@ -12090,14 +11120,14 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Sahin%20D%C3%B6ner%20Bremen"
   },
   {
-    "name": "Günther's Imbiss",
+    "name": "Harput Kebaphaus",
     "city": "Bremen",
     "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
+    "nameable": false,
+    "entity_type": "person",
     "lat": 53.1189468,
     "lng": 8.7561842,
-    "url": "https://www.google.com/maps/search/?api=1&query=G%C3%BCnther's%20Imbiss%20Bremen"
+    "url": "https://www.google.com/maps/search/?api=1&query=Harput%20Kebaphaus%20Bremen"
   },
   {
     "name": "Imbiss",
@@ -12250,46 +11280,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Campino%20Bremen"
   },
   {
-    "name": "grillbar",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.4877819,
-    "lng": 8.5981117,
-    "url": "https://www.google.com/maps/search/?api=1&query=grillbar%20Bremen"
-  },
-  {
-    "name": "Waikiki Bowl",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5419652,
-    "lng": 8.5756214,
-    "url": "https://www.google.com/maps/search/?api=1&query=Waikiki%20Bowl%20Bremen"
-  },
-  {
-    "name": "Bao My",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5412711,
-    "lng": 8.5826237,
-    "url": "https://www.google.com/maps/search/?api=1&query=Bao%20My%20Bremen"
-  },
-  {
-    "name": "Päpper",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5346431,
-    "lng": 8.5898963,
-    "url": "https://www.google.com/maps/search/?api=1&query=P%C3%A4pper%20Bremen"
-  },
-  {
     "name": "Döner Donie",
     "city": "Bremen",
     "category": "fast_food",
@@ -12298,6 +11288,16 @@
     "lat": 53.0610508,
     "lng": 8.7999488,
     "url": "https://www.google.com/maps/search/?api=1&query=D%C3%B6ner%20Donie%20Bremen"
+  },
+  {
+    "name": "Kervan",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.074758,
+    "lng": 8.8083182,
+    "url": "https://www.google.com/maps/search/?api=1&query=Kervan%20Bremen"
   },
   {
     "name": "Sam's Kitchen",
@@ -12318,46 +11318,6 @@
     "lat": 53.1840779,
     "lng": 8.6073388,
     "url": "https://www.google.com/maps/search/?api=1&query=Aumunder%20Imbiss%20Bremen"
-  },
-  {
-    "name": "Mirna's Pizza",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.540504,
-    "lng": 8.5844209,
-    "url": "https://www.google.com/maps/search/?api=1&query=Mirna's%20Pizza%20Bremen"
-  },
-  {
-    "name": "Abelmann",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5212992,
-    "lng": 8.5860577,
-    "url": "https://www.google.com/maps/search/?api=1&query=Abelmann%20Bremen"
-  },
-  {
-    "name": "Phan Asia Gourmet",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5421076,
-    "lng": 8.5797292,
-    "url": "https://www.google.com/maps/search/?api=1&query=Phan%20Asia%20Gourmet%20Bremen"
-  },
-  {
-    "name": "Monsieur Croque",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5317848,
-    "lng": 8.5984019,
-    "url": "https://www.google.com/maps/search/?api=1&query=Monsieur%20Croque%20Bremen"
   },
   {
     "name": "Blumenthaler Grill und Kebabhaus",
@@ -12438,16 +11398,6 @@
     "lat": 53.12706,
     "lng": 8.902829,
     "url": "https://www.google.com/maps/search/?api=1&query=Teigtraum%20Bremen"
-  },
-  {
-    "name": "Döner Bar",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5319437,
-    "lng": 8.5907522,
-    "url": "https://www.google.com/maps/search/?api=1&query=D%C3%B6ner%20Bar%20Bremen"
   },
   {
     "name": "Ismet III",
@@ -12640,16 +11590,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Kazan%20K%C3%B6fte%20Bremen"
   },
   {
-    "name": "Lloyd's",
-    "city": "Bremen",
-    "category": "fast_food",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5438722,
-    "lng": 8.5731029,
-    "url": "https://www.google.com/maps/search/?api=1&query=Lloyd's%20Bremen"
-  },
-  {
     "name": "Asia Bistro",
     "city": "Bremen",
     "category": "fast_food",
@@ -12700,6 +11640,16 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Tekin%20Grill%20Haus%20Bremen"
   },
   {
+    "name": "Siggys Gemüse Kebap",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "legal",
+    "lat": 53.0651372,
+    "lng": 8.7957253,
+    "url": "https://www.google.com/maps/search/?api=1&query=Siggys%20Gem%C3%BCse%20Kebap%20Bremen"
+  },
+  {
     "name": "Loft Pizza Factory",
     "city": "Bremen",
     "category": "fast_food",
@@ -12708,6 +11658,16 @@
     "lat": 53.0610286,
     "lng": 8.7664313,
     "url": "https://www.google.com/maps/search/?api=1&query=Loft%20Pizza%20Factory%20Bremen"
+  },
+  {
+    "name": "Döner District",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0961374,
+    "lng": 8.8402514,
+    "url": "https://www.google.com/maps/search/?api=1&query=D%C3%B6ner%20District%20Bremen"
   },
   {
     "name": "Zeki Baba",
@@ -12730,24 +11690,214 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Finepizza%20Bremen"
   },
   {
-    "name": "Arthotel ANA Nautic",
+    "name": "Hypnotize Wings",
     "city": "Bremen",
-    "category": "hotel",
+    "category": "fast_food",
     "nameable": false,
     "entity_type": "person",
-    "lat": 53.5543453,
-    "lng": 8.5939515,
-    "url": "https://www.google.com/maps/search/?api=1&query=Arthotel%20ANA%20Nautic%20Bremen"
+    "lat": 53.0784854,
+    "lng": 8.82391,
+    "url": "https://www.google.com/maps/search/?api=1&query=Hypnotize%20Wings%20Bremen"
   },
   {
-    "name": "Atlantic Hotel am Flötenkiel",
+    "name": "Happy Chicken",
     "city": "Bremen",
-    "category": "hotel",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.037933,
+    "lng": 8.9448583,
+    "url": "https://www.google.com/maps/search/?api=1&query=Happy%20Chicken%20Bremen"
+  },
+  {
+    "name": "Don Alfredo",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0639703,
+    "lng": 8.949176,
+    "url": "https://www.google.com/maps/search/?api=1&query=Don%20Alfredo%20Bremen"
+  },
+  {
+    "name": "Sultan Ahmet Kebab",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0646576,
+    "lng": 8.9501383,
+    "url": "https://www.google.com/maps/search/?api=1&query=Sultan%20Ahmet%20Kebab%20Bremen"
+  },
+  {
+    "name": "Kaya's HähnchenGrill",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0957127,
+    "lng": 8.809647,
+    "url": "https://www.google.com/maps/search/?api=1&query=Kaya's%20H%C3%A4hnchenGrill%20Bremen"
+  },
+  {
+    "name": "Just Fine",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0958977,
+    "lng": 8.8104214,
+    "url": "https://www.google.com/maps/search/?api=1&query=Just%20Fine%20Bremen"
+  },
+  {
+    "name": "Samy's",
+    "city": "Bremen",
+    "category": "fast_food",
     "nameable": true,
     "entity_type": "business",
-    "lat": 53.5713006,
-    "lng": 8.5950751,
-    "url": "https://www.google.com/maps/search/?api=1&query=Atlantic%20Hotel%20am%20Fl%C3%B6tenkiel%20Bremen"
+    "lat": 53.0806468,
+    "lng": 8.8117788,
+    "url": "https://www.google.com/maps/search/?api=1&query=Samy's%20Bremen"
+  },
+  {
+    "name": "Mersin Tantuni & Grillhaus",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0810195,
+    "lng": 8.8103275,
+    "url": "https://www.google.com/maps/search/?api=1&query=Mersin%20Tantuni%20%26%20Grillhaus%20Bremen"
+  },
+  {
+    "name": "HB Hotdog & Burger",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0795578,
+    "lng": 8.8148323,
+    "url": "https://www.google.com/maps/search/?api=1&query=HB%20Hotdog%20%26%20Burger%20Bremen"
+  },
+  {
+    "name": "Tatlisess",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0792249,
+    "lng": 8.8154401,
+    "url": "https://www.google.com/maps/search/?api=1&query=Tatlisess%20Bremen"
+  },
+  {
+    "name": "Zedern Falafel",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0732439,
+    "lng": 8.8229731,
+    "url": "https://www.google.com/maps/search/?api=1&query=Zedern%20Falafel%20Bremen"
+  },
+  {
+    "name": "Falafel Ya Hala",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": false,
+    "entity_type": "person",
+    "lat": 53.0799464,
+    "lng": 8.8099676,
+    "url": "https://www.google.com/maps/search/?api=1&query=Falafel%20Ya%20Hala%20Bremen"
+  },
+  {
+    "name": "Malibo Döner",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0597006,
+    "lng": 8.8080663,
+    "url": "https://www.google.com/maps/search/?api=1&query=Malibo%20D%C3%B6ner%20Bremen"
+  },
+  {
+    "name": "Burger Grill",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.072717,
+    "lng": 8.8219224,
+    "url": "https://www.google.com/maps/search/?api=1&query=Burger%20Grill%20Bremen"
+  },
+  {
+    "name": "Köfteci ¼",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0727566,
+    "lng": 8.8222636,
+    "url": "https://www.google.com/maps/search/?api=1&query=K%C3%B6fteci%20%C2%BC%20Bremen"
+  },
+  {
+    "name": "Torno",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0732817,
+    "lng": 8.8229618,
+    "url": "https://www.google.com/maps/search/?api=1&query=Torno%20Bremen"
+  },
+  {
+    "name": "Da Marco e Paolo",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0634499,
+    "lng": 8.7945048,
+    "url": "https://www.google.com/maps/search/?api=1&query=Da%20Marco%20e%20Paolo%20Bremen"
+  },
+  {
+    "name": "Edessa",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.059402,
+    "lng": 8.9303992,
+    "url": "https://www.google.com/maps/search/?api=1&query=Edessa%20Bremen"
+  },
+  {
+    "name": "Kismet",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0787114,
+    "lng": 8.8087459,
+    "url": "https://www.google.com/maps/search/?api=1&query=Kismet%20Bremen"
+  },
+  {
+    "name": "Asia Long Vu",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0515293,
+    "lng": 8.8188569,
+    "url": "https://www.google.com/maps/search/?api=1&query=Asia%20Long%20Vu%20Bremen"
+  },
+  {
+    "name": "Falafeliano",
+    "city": "Bremen",
+    "category": "fast_food",
+    "nameable": true,
+    "entity_type": "business",
+    "lat": 53.0651226,
+    "lng": 8.8065683,
+    "url": "https://www.google.com/maps/search/?api=1&query=Falafeliano%20Bremen"
   },
   {
     "name": "B&B Hotel Bremen-Altstadt",
@@ -12798,16 +11948,6 @@
     "lat": 53.070174,
     "lng": 8.841863,
     "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20Haus%20Bremen%20Bremen"
-  },
-  {
-    "name": "Columbus",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5637803,
-    "lng": 8.5879409,
-    "url": "https://www.google.com/maps/search/?api=1&query=Columbus%20Bremen"
   },
   {
     "name": "Behrens-Hof",
@@ -12870,16 +12010,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Avanos%20Bremen"
   },
   {
-    "name": "City Hotel Bremerhaven",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.534673,
-    "lng": 8.5927691,
-    "url": "https://www.google.com/maps/search/?api=1&query=City%20Hotel%20Bremerhaven%20Bremen"
-  },
-  {
     "name": "artHotel Bremen",
     "city": "Bremen",
     "category": "hotel",
@@ -12908,16 +12038,6 @@
     "lat": 53.068324,
     "lng": 8.8459774,
     "url": "https://www.google.com/maps/search/?api=1&query=Bremer%20Privathotels%20Bremen"
-  },
-  {
-    "name": "nordsee Hotel Bremerhaven Fischereihafen",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "chain",
-    "lat": 53.5224778,
-    "lng": 8.5858843,
-    "url": "https://www.google.com/maps/search/?api=1&query=nordsee%20Hotel%20Bremerhaven%20Fischereihafen%20Bremen"
   },
   {
     "name": "Nena",
@@ -12988,66 +12108,6 @@
     "lat": 53.0839423,
     "lng": 8.8159764,
     "url": "https://www.google.com/maps/search/?api=1&query=Courtyard%20by%20Marriott%20Bremen"
-  },
-  {
-    "name": "Hotel Haverkamp",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5436347,
-    "lng": 8.5810362,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20Haverkamp%20Bremen"
-  },
-  {
-    "name": "Nordsee Hotel",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "chain",
-    "lat": 53.5417222,
-    "lng": 8.5815609,
-    "url": "https://www.google.com/maps/search/?api=1&query=Nordsee%20Hotel%20Bremen"
-  },
-  {
-    "name": "Hotel an der Karlstadt",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5404053,
-    "lng": 8.5840661,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20an%20der%20Karlstadt%20Bremen"
-  },
-  {
-    "name": "Hotel Amaris",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5368599,
-    "lng": 8.5897526,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20Amaris%20Bremen"
-  },
-  {
-    "name": "Hotel am Theaterplatz",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5421666,
-    "lng": 8.5817745,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20am%20Theaterplatz%20Bremen"
-  },
-  {
-    "name": "Atlantic Hotel Sail City",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.542777,
-    "lng": 8.5737385,
-    "url": "https://www.google.com/maps/search/?api=1&query=Atlantic%20Hotel%20Sail%20City%20Bremen"
   },
   {
     "name": "Monopol Boutique Hotel",
@@ -13230,16 +12290,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Alexander%20von%20Humboldt%20%E2%80%93%20Das%20Schiff%20Bremen"
   },
   {
-    "name": "Best Western Plus Hotel",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5224549,
-    "lng": 8.5823205,
-    "url": "https://www.google.com/maps/search/?api=1&query=Best%20Western%20Plus%20Hotel%20Bremen"
-  },
-  {
     "name": "Hotel Havenhaus",
     "city": "Bremen",
     "category": "hotel",
@@ -13340,26 +12390,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Dorint%20City-Hotel%20Bremen%20Bremen"
   },
   {
-    "name": "Haverkamp Suites",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5431867,
-    "lng": 8.5804859,
-    "url": "https://www.google.com/maps/search/?api=1&query=Haverkamp%20Suites%20Bremen"
-  },
-  {
-    "name": "The Liberty",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.545967,
-    "lng": 8.5732741,
-    "url": "https://www.google.com/maps/search/?api=1&query=The%20Liberty%20Bremen"
-  },
-  {
     "name": "unique Hotel",
     "city": "Bremen",
     "category": "hotel",
@@ -13438,26 +12468,6 @@
     "lat": 53.0810194,
     "lng": 8.8120713,
     "url": "https://www.google.com/maps/search/?api=1&query=DORMERO%20Hotel%20Bremen"
-  },
-  {
-    "name": "limehome",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5588123,
-    "lng": 8.5682934,
-    "url": "https://www.google.com/maps/search/?api=1&query=limehome%20Bremen"
-  },
-  {
-    "name": "Schulschiff Deutschland",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5465829,
-    "lng": 8.572192,
-    "url": "https://www.google.com/maps/search/?api=1&query=Schulschiff%20Deutschland%20Bremen"
   },
   {
     "name": "John & Will Silo-Hotel",
@@ -13650,16 +12660,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Zum%20Kl%C3%BCverbaum%20Bremen"
   },
   {
-    "name": "Hotel Wurster Kroog",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": false,
-    "entity_type": "person",
-    "lat": 53.5755395,
-    "lng": 8.5923362,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20Wurster%20Kroog%20Bremen"
-  },
-  {
     "name": "Hotel Boardinghouse",
     "city": "Bremen",
     "category": "hotel",
@@ -13740,16 +12740,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20Heldt%20Bremen"
   },
   {
-    "name": "im-jaich hotel bremerhaven",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.5486555,
-    "lng": 8.5683523,
-    "url": "https://www.google.com/maps/search/?api=1&query=im-jaich%20hotel%20bremerhaven%20Bremen"
-  },
-  {
     "name": "Steigenberger Hotel Bremen",
     "city": "Bremen",
     "category": "hotel",
@@ -13788,16 +12778,6 @@
     "lat": 53.0889188,
     "lng": 8.8216172,
     "url": "https://www.google.com/maps/search/?api=1&query=Parkhotel%20Bremen"
-  },
-  {
-    "name": "Hotel Adena",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.55184,
-    "lng": 8.5797935,
-    "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20Adena%20Bremen"
   },
   {
     "name": "Hotel Schönfeld",
@@ -13890,16 +12870,6 @@
     "url": "https://www.google.com/maps/search/?api=1&query=PLAZA%20Premium%20Columbus%20Bremen%20Bremen"
   },
   {
-    "name": "Landhaus",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "business",
-    "lat": 53.485559,
-    "lng": 8.602491,
-    "url": "https://www.google.com/maps/search/?api=1&query=Landhaus%20Bremen"
-  },
-  {
     "name": "Hotel zum Kuhhirten",
     "city": "Bremen",
     "category": "hotel",
@@ -13908,16 +12878,6 @@
     "lat": 53.0628721,
     "lng": 8.8202877,
     "url": "https://www.google.com/maps/search/?api=1&query=Hotel%20zum%20Kuhhirten%20Bremen"
-  },
-  {
-    "name": "B&B Hotel Bremerhaven",
-    "city": "Bremen",
-    "category": "hotel",
-    "nameable": true,
-    "entity_type": "chain",
-    "lat": 53.548818,
-    "lng": 8.5721212,
-    "url": "https://www.google.com/maps/search/?api=1&query=B%26B%20Hotel%20Bremerhaven%20Bremen"
   },
   {
     "name": "Moxy",

@@ -496,9 +496,9 @@
       "capturedTo": "2026-07-11T23:08:08.095Z",
       "kind": "probe",
       "containedIn": [
+        "2026-07-11_panel_551r-550c_9a7c2f12.json",
         "2026-07-12_panel_551r-549c_968f59f0.json",
-        "2026-08-03_panel_667r-667c_7687566e.json",
-        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+        "2026-08-03_panel_667r-667c_7687566e.json"
       ]
     },
     {
@@ -522,9 +522,9 @@
       "capturedTo": "2026-07-11T23:13:51.537Z",
       "kind": "probe",
       "containedIn": [
+        "2026-07-11_panel_551r-550c_9a7c2f12.json",
         "2026-07-12_panel_551r-549c_968f59f0.json",
-        "2026-08-03_panel_667r-667c_7687566e.json",
-        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+        "2026-08-03_panel_667r-667c_7687566e.json"
       ]
     },
     {
@@ -548,9 +548,9 @@
       "capturedTo": "2026-07-11T23:23:28.885Z",
       "kind": "probe",
       "containedIn": [
+        "2026-07-11_panel_551r-550c_9a7c2f12.json",
         "2026-07-12_panel_551r-549c_968f59f0.json",
-        "2026-08-03_panel_667r-667c_7687566e.json",
-        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+        "2026-08-03_panel_667r-667c_7687566e.json"
       ]
     },
     {
@@ -574,9 +574,9 @@
       "capturedTo": "2026-07-11T23:45:44.847Z",
       "kind": "probe",
       "containedIn": [
+        "2026-07-11_panel_551r-550c_9a7c2f12.json",
         "2026-07-12_panel_551r-549c_968f59f0.json",
-        "2026-08-03_panel_667r-667c_7687566e.json",
-        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+        "2026-08-03_panel_667r-667c_7687566e.json"
       ]
     },
     {
@@ -600,9 +600,9 @@
       "capturedTo": "2026-07-11T23:51:15.211Z",
       "kind": "probe",
       "containedIn": [
+        "2026-07-11_panel_551r-550c_9a7c2f12.json",
         "2026-07-12_panel_551r-549c_968f59f0.json",
-        "2026-08-03_panel_667r-667c_7687566e.json",
-        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+        "2026-08-03_panel_667r-667c_7687566e.json"
       ]
     },
     {
@@ -626,9 +626,9 @@
       "capturedTo": "2026-07-11T23:57:19.525Z",
       "kind": "probe",
       "containedIn": [
+        "2026-07-11_panel_551r-550c_9a7c2f12.json",
         "2026-07-12_panel_551r-549c_968f59f0.json",
-        "2026-08-03_panel_667r-667c_7687566e.json",
-        "2026-07-11_panel_551r-550c_9a7c2f12.json"
+        "2026-08-03_panel_667r-667c_7687566e.json"
       ]
     },
     {
@@ -720,8 +720,30 @@
       "capturedFrom": "2026-08-03T21:25:06.105Z",
       "capturedTo": "2026-08-04T03:21:25.703Z",
       "kind": "panel"
+    },
+    {
+      "file": "2026-08-04_screening_125r-2444c_a75a1ed3.json",
+      "stored": true,
+      "originalName": "aidos-banners (21).json",
+      "sha256": "a75a1ed3b745fde5f2048cef547ff5e83f48cbf5fdbda86843c891d0db040bbf",
+      "bytes": 1502977,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (21).json",
+      "format": "json",
+      "records": 125,
+      "checks": 2444,
+      "outcomes": {
+        "no_banner": 2331,
+        "hit": 113
+      },
+      "hitRatePct": 4.6,
+      "extensionVersions": [
+        "v1.2.6"
+      ],
+      "capturedFrom": "2026-08-04T20:08:11.505Z",
+      "capturedTo": "2026-08-05T07:41:46.366Z",
+      "kind": "screening"
     }
   ],
-  "updated": "2026-08-04T19:04:45.101Z",
-  "totalStored": 35
+  "updated": "2026-08-05T17:22:08.011Z",
+  "totalStored": 36
 }

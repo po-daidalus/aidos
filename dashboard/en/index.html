@@ -175,8 +175,8 @@
     </div>
   </footer>
 
-  <script src="../aggregates.js?v=b60a8097"></script>
-  <script src="../lookup.js?v=d32cf32d"></script>
+  <script src="../aggregates.js?v=bd2c24e3"></script>
+  <script src="../lookup.js?v=62f85271"></script>
   <script src="../branch-icons.js?v=38883451"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
@@ -235,9 +235,19 @@
     const gen = A.generated ? new Date(A.generated).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }) : null;
     document.getElementById('covBody').innerHTML = realCities.slice().sort((a, b) => b.n - a.n).map((c) =>
       `<tr><td><a href="../en/stadt/${slug(c.key)}">${esc(tC(c.key))}</a></td><td class="num">${en(c.n)}</td><td><a class="more" href="../en/stadt/${slug(c.key)}">city page →</a></td></tr>`).join('');
+    // Total + range instead of listing every city: with 16 surveyed cities the sentence would be
+    // unreadable, and now that cities were last measured in different months each clause would also
+    // have to name its month. The overall rate is the sturdier figure anyway.
     const cov = A.coverage || [];
-    const covLine = cov.length
-      ? ' Measured: ' + cov.map((c) => `in ${tC(c.city)} ${en(c.hit)} of ${en(c.checked)} checked profiles carried the notice (${en1(c.prevalencePct)}%)`).join('; ') + ' — so the vast majority of checked businesses do not appear here at all.'
+    const covM = [...new Set(cov.map((c) => c.month).filter(Boolean))].sort();
+    const covChecked = cov.reduce((s, c) => s + c.checked, 0), covHit = cov.reduce((s, c) => s + c.hit, 0);
+    const byRate = cov.slice().sort((a, b) => a.prevalencePct - b.prevalencePct);
+    const lo = byRate[0], hi = byRate[byRate.length - 1];
+    const covLine = cov.length && covChecked
+      ? ` Measured: in ${en(cov.length)} of them, ${en(covHit)} of ${en(covChecked)} checked profiles carried the notice (${en1(100 * covHit / covChecked)}%)`
+        + (covM.length ? `, survey span ${covM[0] === covM[covM.length - 1] ? mName(covM[0]) : mName(covM[0]).replace(/ \d{4}$/, '') + '–' + mName(covM[covM.length - 1])}` : '')
+        + (lo && hi && lo.city !== hi.city ? ` — ranging from ${en1(lo.prevalencePct)}% (${tC(lo.city)}) to ${en1(hi.prevalencePct)}% (${tC(hi.city)})` : '')
+        + '. So the vast majority of checked businesses do not appear here at all.'
       : ' The notice is rare: only around 3–5% of checked profiles carry it — the vast majority of checked businesses therefore do not appear here at all.';
     document.getElementById('covNote').textContent = `${en(realCities.length)} cities surveyed · ${en(T.businesses)} profiles with an active removal notice in the dataset` + (gen ? ` · as of: ${gen}` : '') + '.' + covLine;
 

@@ -26,7 +26,40 @@ const GEO = {
   'Hamburg': [53.4, 53.75, 9.7, 10.3], 'Köln': [50.83, 51.09, 6.77, 7.16], 'Leipzig': [51.23, 51.45, 12.23, 12.55],
   'Frankfurt am Main': [50.02, 50.23, 8.47, 8.8],
 };
-const geoCity = (lat, lng) => { for (const [c, [a, b, x, y]] of Object.entries(GEO)) if (lat >= a && lat <= b && lng >= x && lng <= y) return c; return null; };
+const boxCity = (lat, lng) => { for (const [c, [a, b, x, y]] of Object.entries(GEO)) if (lat >= a && lat <= b && lng >= x && lng <= y) return c; return null; };
+
+// City attribution by nearest OSM candidate, NOT by the hand-drawn GEO boxes above.
+// WHY: the boxes were guesses and several were too small — 6.1 % of Duisburg's candidates, 7.1 % of
+// Essen's and 4.4 % of Dortmund's fall outside their own city's box (Duisburg-Hamborn sits north of
+// the 51.5 edge). Those hits landed in strays.json every single month and quietly never reached the
+// DB. The candidate list IS the survey universe, so "which city was this place searched for" is
+// answered exactly by "whose candidate is nearest". Measured density: median neighbour distance
+// 41 m, p99 545 m, max 1.86 km — a 2 km cutoff is far outside any real gap yet well inside the
+// distance to the next city. Boxes stay as a fallback for cities that have no candidate list yet.
+const NEAR_KM = 2, CELL = 0.1; // half a cell is ≥3.3 km even at Hamburg's latitude, so ±1 cell always covers NEAR_KM
+const grid = new Map(); // 0.1° cells → candidate points, so a lookup scans 9 cells instead of 27k points
+const cell = (lat, lng) => Math.round(lat / CELL) + ':' + Math.round(lng / CELL);
+try {
+  const dir = new URL('pipeline/out/candidates/', ROOT);
+  for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+    for (const i of JSON.parse(fs.readFileSync(new URL(f, dir), 'utf8'))) {
+      if (!+i.lat || !+i.lng || !i.city) continue;
+      const k = cell(+i.lat, +i.lng);
+      (grid.get(k) || grid.set(k, []).get(k)).push([+i.lat, +i.lng, i.city]);
+    }
+  }
+} catch { /* no candidate lists → boxes only */ }
+const kmBetween = (a, b, c, d) => Math.hypot((b - d) * 111.2 * Math.cos(a * Math.PI / 180), (a - c) * 111.2);
+function geoCity(lat, lng) {
+  if (!grid.size) return boxCity(lat, lng);
+  let best = NEAR_KM, city = null;
+  for (let di = -1; di <= 1; di++) for (let dj = -1; dj <= 1; dj++) {
+    for (const [a, b, c] of grid.get(cell(lat + di * CELL, lng + dj * CELL)) || []) {
+      const d = kmBetween(lat, lng, a, b); if (d < best) { best = d; city = c; }
+    }
+  }
+  return city || boxCity(lat, lng);
+}
 const PLZ2 = { '40': 'Düsseldorf', '01': 'Dresden', '70': 'Stuttgart', '90': 'Nürnberg', '30': 'Hannover', '28': 'Bremen', '45': 'Essen', '47': 'Duisburg', '04': 'Leipzig', '50': 'Köln', '51': 'Köln', '10': 'Berlin', '12': 'Berlin', '13': 'Berlin', '14': 'Berlin', '20': 'Hamburg', '21': 'Hamburg', '22': 'Hamburg', '60': 'Frankfurt am Main', '42': 'Wuppertal', '33': 'Bielefeld', '53': 'Bonn', '48': 'Münster', '68': 'Mannheim', '76': 'Karlsruhe', '86': 'Augsburg', '41': 'Mönchengladbach' };
 
 function cityOfUrl(url) {

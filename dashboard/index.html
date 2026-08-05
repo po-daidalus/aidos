@@ -187,10 +187,10 @@
     </div>
   </footer>
 
-  <script src="aggregates.js?v=b60a8097"></script>
-  <script src="lookup.js?v=d32cf32d"></script>
+  <script src="aggregates.js?v=bd2c24e3"></script>
+  <script src="lookup.js?v=62f85271"></script>
   <script src="branch-icons.js?v=38883451"></script>
-  <script src="articles.js?v=b40787bd"></script>
+  <script src="articles.js?v=84f3ff66"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
     const T = A.totals || {};
@@ -252,9 +252,19 @@
     document.getElementById('covBody').innerHTML = realCities.slice().sort((a, b) => b.n - a.n).map((c) =>
       `<tr><td><a href="stadt/${slug(c.key)}">${esc(c.key)}</a></td><td class="num">${de(c.n)}</td><td><a class="more" href="stadt/${slug(c.key)}">zur Stadtseite →</a></td></tr>`).join('');
     // measured prevalence (extension outcome log) where we have it; honest prose otherwise
+    // Summe + Spannweite statt einer Aufzählung aller Städte: mit 16 erhobenen Städten wäre der
+    // Satz unlesbar, und seit die Städte in verschiedenen Monaten zuletzt gemessen wurden, müsste
+    // jede Klausel zusätzlich ihren Monat nennen. Die Gesamtquote ist ohnehin die belastbarere Zahl.
     const cov = A.coverage || [];
-    const covLine = cov.length
-      ? ' Gemessen: ' + cov.map((c) => `in ${c.city} trugen ${de(c.hit)} von ${de(c.checked)} geprüften Profilen den Hinweis (${de1(c.prevalencePct)} %)`).join('; ') + ' — die große Mehrheit der geprüften Unternehmen taucht hier also gar nicht auf.'
+    const covM = [...new Set(cov.map((c) => c.month).filter(Boolean))].sort();
+    const covChecked = cov.reduce((s, c) => s + c.checked, 0), covHit = cov.reduce((s, c) => s + c.hit, 0);
+    const byRate = cov.slice().sort((a, b) => a.prevalencePct - b.prevalencePct);
+    const lo = byRate[0], hi = byRate[byRate.length - 1];
+    const covLine = cov.length && covChecked
+      ? ` Gemessen: in ${de(cov.length)} davon trugen ${de(covHit)} von ${de(covChecked)} geprüften Profilen den Hinweis (${de1(100 * covHit / covChecked)} %)`
+        + (covM.length ? `, Erhebungsstand ${covM[0] === covM[covM.length - 1] ? mName(covM[0]) : mName(covM[0]).replace(/ \d{4}$/, '') + '–' + mName(covM[covM.length - 1])}` : '')
+        + (lo && hi && lo.city !== hi.city ? ` — je nach Stadt zwischen ${de1(lo.prevalencePct)} % (${lo.city}) und ${de1(hi.prevalencePct)} % (${hi.city})` : '')
+        + '. Die große Mehrheit der geprüften Unternehmen taucht hier also gar nicht auf.'
       : ' Der Hinweis ist selten: nur rund 3–5 % der geprüften Profile tragen ihn — die große Mehrheit der geprüften Unternehmen taucht hier deshalb gar nicht auf.';
     document.getElementById('covNote').textContent = `${de(realCities.length)} Städte erhoben · ${de(T.businesses)} Profile mit aktivem Lösch-Hinweis im Datensatz` + (gen ? ` · Stand: ${gen}` : '') + '.' + covLine;
 

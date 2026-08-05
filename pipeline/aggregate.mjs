@@ -205,9 +205,16 @@ insights.sort((a, b) => b.score - a.score);
 let coverage = [];
 try {
   const chk = fs.readFileSync(new URL('pipeline/out/checks.jsonl', ROOT), 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l));
-  coverage = chk.filter((c) => c.date === latest && c.checked >= 200).map((c) => ({
-    city: c.city, checked: c.checked, hit: c.hit, prevalencePct: r1((100 * c.hit) / Math.max(1, c.hit + c.no_banner)),
-  }));
+  // LATEST measurement per city, not "measurement in the latest month". A screening round takes
+  // ~10 nights for 20 cities, so at any given time most cities were last measured a month ago.
+  // Filtering on `date === latest` wiped all 16 July cities the moment the August panel run made
+  // August the newest month, and would then have shown only the 3 cities screened so far — reading
+  // as if the survey had shrunk. Each row carries the month it was measured in; the front end says so.
+  const byCity = new Map();
+  for (const c of chk.filter((c) => c.checked >= 200).sort((a, b) => a.date.localeCompare(b.date))) byCity.set(c.city, c);
+  coverage = [...byCity.values()].map((c) => ({
+    city: c.city, month: c.date, checked: c.checked, hit: c.hit, prevalencePct: r1((100 * c.hit) / Math.max(1, c.hit + c.no_banner)),
+  })).sort((a, b) => b.checked - a.checked);
 } catch { /* no checks yet */ }
 
 const out = { totals, branches, cities, coverage, insights: insights.slice(0, 8), trend, generated: new Date().toISOString() };

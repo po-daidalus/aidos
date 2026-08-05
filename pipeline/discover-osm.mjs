@@ -39,7 +39,12 @@ async function overpass(query) {
 
 // Most big cities are kreisfrei (admin_level 6) or Stadtstaaten (4). Hannover sits inside the
 // "Region Hannover" and its city boundary is admin_level 8 — matching 4|6 there returns nothing.
-const ADMIN_LEVEL = ({ Hannover: '^8$' })[city] || '^(4|6)$';
+// Bremen must be pinned to 6: it is the one Bundesland whose state boundary (level 4, "Freie
+// Hansestadt Bremen") is larger than the city of the same name, and Overpass unions every matching
+// area — so 4|6 pulled in Bremerhaven, 60 km away. That put 195 Bremerhaven businesses into the
+// "Bremen" candidate list, inflating the city's prevalence denominator. Hamburg and Berlin are
+// safe: there state and city are the same polygon.
+const ADMIN_LEVEL = ({ Hannover: '^8$', Bremen: '^6$' })[city] || '^(4|6)$';
 
 const seen = new Set(), cands = [];
 let individuals = 0;
