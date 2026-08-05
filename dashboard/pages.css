@@ -147,3 +147,8 @@ table.rank tr:hover{background:var(--surface);}
 @media(max-width:640px){h1{font-size:27px;}}
 /* small phones: two 155px stat cards no longer fit side by side → single column */
 @media(max-width:400px){.grid{grid-template-columns:1fr;}}
+
+/* Marker für gedeckelte Profile ("über 250"): Google nennt dort keine Obergrenze, der ausgewiesene
+   Effekt ist also nur der garantierte Boden und kann deutlich größer sein. Ohne diesen Hinweis
+   sortiert die Liste solche Betriebe zu weit unten ein, ohne dass man es der Zeile ansieht. */
+.openmark { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 0; margin-left: 2px; }

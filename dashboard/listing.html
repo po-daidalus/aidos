@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://aidos.tech/og.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link href="fonts/fonts.css" rel="stylesheet" />
-  <link href="site.css?v=d8280e76" rel="stylesheet" />
+  <link href="site.css?v=6f73fca3" rel="stylesheet" />
   <style>
     .filterbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 14px 0; border-bottom: 1px solid var(--rule); position: sticky; top: 55px; background: var(--paper); z-index: 10; }
     .chip { font: 500 13px var(--sans); padding: 6px 13px; border: 1px solid var(--rule-2); border-radius: 20px; color: var(--ink-2); cursor: pointer; background: var(--surface); user-select: none; }
@@ -135,9 +135,12 @@ const brandKey = (b) => { const c = chainOf(b.name); return c ? 'chain:' + c : (
       // Ranking-Schluessel: der Effekt in der Lesart, die sich nicht kleinrechnen laesst
       // (wenigste von Google genannte Entfernungen, mildeste Sternannahme).
       const estHigh = wavg(locs, (d) => d.est_high);
+      // Ein gedeckelter Standort macht die ganze Marke gedeckelt: eine Summe, deren groesster
+      // Summand unbeschraenkt ist, laesst sich nicht nach oben begrenzen.
+      const open = locs.some((d) => d.est_open);
       const reviews = locs.reduce((s, d) => s + (d.reviews || 0), 0);
       const url = PAGES[k] || PAGES[normName(locs[0].name).toLowerCase()] || null;
-      return { key: k, name, cities, branch, remMin: ar.min, remMax: ar.max, label: ar.label, rating, est, reviews, n: locs.length, drop: (rating != null && estHigh != null && estHigh <= rating) ? rating - estHigh : 0, url };
+      return { key: k, name, cities, branch, remMin: ar.min, remMax: ar.max, label: ar.label, rating, est, reviews, n: locs.length, open, drop: (rating != null && estHigh != null && estHigh <= rating) ? rating - estHigh : 0, url };
     });
 
     const allCities = [...new Set(GROUPS.flatMap((g) => g.cities))].sort();
@@ -159,14 +162,16 @@ const brandKey = (b) => { const c = chainOf(b.name); return c ? 'chain:' + c : (
       const sumMin = g.reduce((s, x) => s + (x.remMin || 0), 0);
       const withDrop = g.filter((x) => x.drop > 0);
       const meanDrop = withDrop.length ? withDrop.reduce((s, x) => s + x.drop, 0) / withDrop.length : 0;
-      document.getElementById('summary').innerHTML = `Bei <b>${g.length}</b> ${fBranch ? esc(fBranch) + '-' : 'gelisteten '}Betrieben wurden mindestens <b>${de(sumMin)}</b> Bewertungen entfernt. Rechnerisch liegt die angezeigte Note dadurch im Schnitt <b>${de1(meanDrop)}★</b> höher, als sie ohne die Entfernungen wäre.`;
+      const nOpen = g.filter((x) => x.open).length;
+      document.getElementById('summary').innerHTML = `Bei <b>${g.length}</b> ${fBranch ? esc(fBranch) + '-' : 'gelisteten '}Betrieben wurden mindestens <b>${de(sumMin)}</b> Bewertungen entfernt. Rechnerisch liegt die angezeigte Note dadurch im Schnitt <b>${de1(meanDrop)}★</b> höher, als sie ohne die Entfernungen wäre.`
+        + (nOpen ? ` Bei <b>${de(nOpen)}</b> davon nennt Google nur „über 250" und keine Obergrenze (mit <span class="openmark">≥</span> markiert) — dort ist der gezeigte Wert nur der garantierte Boden, der tatsächliche Effekt kann deutlich größer sein.` : '');
 
       document.getElementById('empty').style.display = g.length ? 'none' : 'block';
       document.getElementById('rows').innerHTML = g.map((x, i) => {
         const nameCell = x.url ? `<a href="${x.url}">${esc(x.name)}</a>` : `<span style="font-weight:600;color:var(--ink)">${esc(x.name)}</span>`;
         const chainPill = x.n > 1 ? `<span class="pill chain">${x.n} Standorte</span>` : '';
         const whisk = (x.rating != null && x.est != null && x.est <= x.rating)
-          ? `<div class="whisk"><div class="tr"><div class="band" style="left:${scale(x.est).toFixed(0)}%;right:${(100 - scale(x.rating)).toFixed(0)}%"></div><div class="est" style="left:${scale(x.est).toFixed(0)}%"></div><div class="disp" style="left:${scale(x.rating).toFixed(0)}%"></div></div><div class="cap"><span class="r">geschätzt ${de1(x.est)}★</span><span class="b">angezeigt ${de1(x.rating)}★</span></div></div>`
+          ? `<div class="whisk"><div class="tr"><div class="band" style="left:${scale(x.est).toFixed(0)}%;right:${(100 - scale(x.rating)).toFixed(0)}%"></div><div class="est" style="left:${scale(x.est).toFixed(0)}%"></div><div class="disp" style="left:${scale(x.rating).toFixed(0)}%"></div></div><div class="cap"><span class="r">${x.open ? '≥ ' : ''}geschätzt ${de1(x.est)}★</span><span class="b">angezeigt ${de1(x.rating)}★</span></div></div>`
           : (x.rating != null ? `<div class="whisk"><div class="cap"><span class="b" style="margin-left:auto">angezeigt ${de1(x.rating)}★</span></div></div>` : '');
         return `<div class="row"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.branch] || '#5a5a5a'}">${aidosBranchIcon(x.branch, 24)}</div>` +
           `<div><div class="nm">${nameCell} ${chainPill}</div><div class="meta"><span class="pill">${esc(x.branch)}</span>${x.cities.slice(0, 2).map((c) => `<span class="pill">${esc(c)}</span>`).join('')}${x.rating != null ? `<span class="muted" style="font-size:12.5px">★ ${de1(x.rating)} · ${de(x.reviews)} Bewertungen</span>` : ''}</div></div>` +

@@ -426,9 +426,9 @@ for (const [bkey, locs] of brands) {
     fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + pub(lang === 'de' ? relEn : relDe), jsonld, body }));
     urls.push({ loc: canonical, removed: (remMin + (remMax || remMin)) / 2 });
   }
-  lookup.push({ n: name, c: cities.join(', '), u: pub(relDe).slice(1), r: rangeLabel(remMin, remMax), s: score, b: branch, d: dropMin });
+  lookup.push({ n: name, c: cities.join(', '), u: pub(relDe).slice(1), r: rangeLabel(remMin, remMax), s: score, b: branch, d: dropMin, o: estOpen ? 1 : 0 });
   pageMap[bkey] = pub(relDe).slice(1);
-  locs._brand = { name, rel: relDe, relEn, remMin, remMax, cities, branch, score, rating, dropMin };
+  locs._brand = { name, rel: relDe, relEn, remMin, remMax, cities, branch, score, rating, dropMin, open: estOpen };
 }
 
 // helper: brand table for branch/city pages
@@ -439,12 +439,23 @@ function brandTable(list, lang) {
   // only this figure's percentile — printing both would say the same thing twice, and "mindestens
   // 0,9★" is far more legible than "97". The removal count stays as the raw fact from Google.
   const th = lang === 'de' ? ['Unternehmen', 'Stadt', 'Entfernt (365 T.)', 'Effekt auf die Note'] : ['Company', 'City', 'Removed (365 d)', 'Effect on the rating'];
+  // Bei "über 250" nennt Google keine Obergrenze — der Wert ist dort nur der garantierte Boden und
+  // die Zeile steht in der nach dem Effekt sortierten Liste zwangsläufig zu weit unten. Der Marker
+  // sagt das; ein "≥" allein täte es nicht, weil "mind." dieselbe Aussage schon trägt.
+  const mark = lang === 'de'
+    ? '<abbr class="openmark" title="Google nennt hier keine Obergrenze (&bdquo;über 250&ldquo;) — der tatsächliche Effekt kann deutlich größer sein.">↑</abbr>'
+    : '<abbr class="openmark" title="Google publishes no upper bound here (&ldquo;over 250&rdquo;) — the real effect may be considerably larger.">↑</abbr>';
   const eff = (b) => (b.dropMin > 0
-    ? `<span style="color:var(--accent);font-weight:600">${lang === 'de' ? 'mind. ' : 'at least '}${L.nf1(b.dropMin)}★</span>`
+    ? `<span style="color:var(--accent);font-weight:600">${lang === 'de' ? 'mind. ' : 'at least '}${L.nf1(b.dropMin)}★</span>${b.open ? mark : ''}`
     : '<span class="muted">–</span>');
+  const note = list.some((b) => b.open && b.dropMin > 0)
+    ? `<p class="asof">${lang === 'de'
+        ? '↑ = Google nennt für dieses Profil nur „über 250" und keine Obergrenze. Ausgewiesen ist der garantierte Mindesteffekt, der tatsächliche kann deutlich größer sein — solche Profile stehen in dieser Sortierung also eher zu weit unten.'
+        : '↑ = for this profile Google publishes only “over 250” and no upper bound. What is shown is the guaranteed minimum effect; the real one may be considerably larger — so such profiles sit rather too low in this ordering.'}</p>`
+    : '';
   return `<table class="rank"><thead><tr><th>${th[0]}</th><th>${th[1]}</th><th class="num">${th[2]}</th><th class="num">${th[3]}</th></tr></thead><tbody>` +
     list.map((b) => `<tr><td><a href="${P}${pub(lang === 'de' ? b.rel : b.relEn).slice(1)}">${esc(b.name)}</a></td><td>${esc(b.cities.map(L.tC).join(', '))}</td><td class="num">${L.rangeLabel(b.remMin, b.remMax)}</td><td class="num">${eff(b)}</td></tr>`).join('') +
-    `</tbody></table>`;
+    `</tbody></table>` + note;
 }
 
 // ---------- branch pages (DE + EN) ----------

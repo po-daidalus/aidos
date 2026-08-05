@@ -19,7 +19,7 @@
   <meta property="og:image" content="https://aidos.tech/og.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link href="fonts/fonts.css" rel="stylesheet" />
-  <link href="site.css?v=d8280e76" rel="stylesheet" />
+  <link href="site.css?v=6f73fca3" rel="stylesheet" />
   <style>
     .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
     @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
@@ -188,7 +188,7 @@
   </footer>
 
   <script src="aggregates.js?v=1d81ce33"></script>
-  <script src="lookup.js?v=7f754147"></script>
+  <script src="lookup.js?v=c4199c30"></script>
   <script src="branch-icons.js?v=38883451"></script>
   <script src="articles.js?v=84f3ff66"></script>
   <script>
@@ -290,7 +290,7 @@
         const cityLbl = cities.slice(0, 2).join(', ') + (cities.length > 2 ? ` +${cities.length - 2} weitere` : '');
         return `<a class="co-row" href="${x.u}"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.b] || '#5a5a5a'}">${aidosBranchIcon(x.b, 22)}</div>` +
           `<div><div class="nm">${esc(x.n)}</div><div class="meta"><span class="pill">${esc(x.b)}</span><span class="pill">${esc(cityLbl)}</span></div></div>` +
-          `<div class="right"><div class="removed">mind. ${de1(dropOf(x))}★<span class="lbl">Effekt auf die Note · ${esc(x.r)} entfernt</span></div><div class="bar"><i data-w="${Math.round(100 * dropOf(x) / maxDrop)}"></i></div></div></a>`;
+          `<div class="right"><div class="removed">mind. ${de1(dropOf(x))}★${x.o ? '<abbr class="openmark" title="Google nennt hier keine Obergrenze — der tatsächliche Effekt kann deutlich größer sein.">↑</abbr>' : ''}<span class="lbl">Effekt auf die Note · ${esc(x.r)} entfernt</span></div><div class="bar"><i data-w="${Math.round(100 * dropOf(x) / maxDrop)}"></i></div></div></a>`;
       }).join('');
       document.getElementById('coSum').innerHTML = `<b>${de(LK.length)}</b> gelistete Unternehmen &amp; Ketten in <b>${de(cityCount)}</b> Städten — durchsuchbar, filterbar nach Branche und Stadt, mit geschätztem Rating-Effekt.`;
       document.getElementById('coChips').innerHTML = '<span class="lbl">Direkt zur Branche:</span>' +

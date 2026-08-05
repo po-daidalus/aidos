@@ -273,3 +273,8 @@ table.facts { width: 100%; border-collapse: collapse; margin: 14px 0; font-size:
 table.facts th, table.facts td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); }
 table.facts th { color: var(--ink-3); font-weight: 500; font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; }
 table.facts td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Marker für gedeckelte Profile ("über 250"): Google nennt dort keine Obergrenze, der ausgewiesene
+   Effekt ist also nur der garantierte Boden und kann deutlich größer sein. Ohne diesen Hinweis
+   sortiert die Liste solche Betriebe zu weit unten ein, ohne dass man es der Zeile ansieht. */
+.openmark { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 0; margin-left: 2px; }
