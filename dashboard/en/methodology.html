@@ -12,7 +12,7 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:image" content="https://aidos.tech/og.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
     <link href="../fonts/fonts.css" rel="stylesheet" />
-    <link href="../site.css?v=91cbbf0e" rel="stylesheet" />
+    <link href="../site.css?v=d8280e76" rel="stylesheet" />
   </head>
   <body>
     <header class="masthead"><div class="masthead-inner">
@@ -51,9 +51,45 @@
       <h2>3. What we compute</h2>
       <div class="card static">
         <h3>Ranges, never false precision</h3>
-        <p>Google publishes ranges, not exact figures. We compute with these ranges and report them as such. For “over 250” the true number is unknown — we cap conservatively and label the <b>dark figure</b>.</p>
+        <p>Google publishes ranges, not exact figures. We compute with these ranges and report them as such. For “over 250” the true number is unknown — there we compute with 250 as a <b>lower bound</b> and mark everything beyond it as open-ended, rather than inventing a ceiling.</p>
         <h3>The “rating without removals” estimate</h3>
-        <p>For sufficiently documented profiles we estimate where the rating would stand <i>if the removed reviews still counted</i>: Google's published range is arithmetically re-inserted into the real star distribution at 1–2★ (best/worst case yields the range). This is explicitly an <b>estimate</b> — if the removals were justified (e.g. fake campaigns), the displayed rating is the more accurate one.</p>
+        <p>For sufficiently documented profiles we estimate where the rating would stand <i>if the removed reviews still counted</i>. The computation is a single line: the removed reviews are put back into the displayed average.</p>
+        <div class="formula">ρ′ = (S + <b>R</b>&nbsp;·&nbsp;<b>a</b>) / (N + <b>R</b>)<br />
+          <span class="cm">ρ = displayed rating · N = displayed review count · S = ρ · N<br />
+          R = number of removed reviews (from Google) · a = their assumed star value</span></div>
+        <p>Everything except <b>R</b> and <b>a</b> is public on the Google profile. Those two are unknown — but unknown to very different degrees, and that is the heart of the method.</p>
+
+        <h3>a — the star value of the removed reviews</h3>
+        <p>The removed reviews are gone, so their star value is fundamentally unobservable. Removal follows a defamation complaint, which makes them negative by their nature; we set the support to <b>1–2★</b>.</p>
+        <p>The mean within that support is measured, not asserted. The only empirical anchor is the negative reviews that <i>survived</i> at the very same businesses — across all surveyed profiles with a star distribution:</p>
+        <table class="facts"><thead><tr><th>Stars</th><th class="num">Share of surviving reviews</th></tr></thead><tbody>
+          <tr><td>1★</td><td class="num">2.1&nbsp;%</td></tr>
+          <tr><td>2★</td><td class="num">1.1&nbsp;%</td></tr>
+          <tr><td>3★</td><td class="num">4.4&nbsp;%</td></tr>
+          <tr><td>4★</td><td class="num">18.0&nbsp;%</td></tr>
+          <tr><td>5★</td><td class="num">74.5&nbsp;%</td></tr>
+        </tbody></table>
+        <p>1★ outnumber 2★ by <b>1.98 : 1</b> (median per business: exactly 2 : 1), which gives a mean of <b>1.335★</b> — the value we use. <b>3★ are deliberately excluded:</b> they make up 58&nbsp;% of the whole 1–3★ pool, would pull the mean to 2.3★ and roughly halve the reported effect — and a middling 3★ review is essentially never removed as defamatory.</p>
+
+        <h3>R — where the uncertainty actually sits</h3>
+        <p>We measured how much each unknown really moves the result. Sweeping <b>a</b> across its entire 1★–2★ support changes the reported effect by only about <b>0.1★</b> at the median. Google’s range for <b>R</b> moves it more than that for <b>93&nbsp;% of profiles</b>. The argument about star values is therefore the smaller question; the spread shown on the site comes overwhelmingly from Google writing “151 to 200” instead of a number.</p>
+        <p>So we pair the ends of the corridor to make it a genuine envelope rather than decoration:</p>
+        <div class="formula">upper edge <span class="cm">= fewest removals (R<sub>min</sub>) × mildest assumption (2★)</span> → <b>minimum effect</b><br />
+          lower edge <span class="cm">= most removals (R<sub>max</sub>) × harshest assumption (1★)</span> → <b>maximum effect</b></div>
+        <p>The upper edge is what we report, as an <b>“at least”</b>. It assumes the lowest count Google names <i>and</i> the mildest rating at the same time, so it cannot be dismissed as having been computed too harshly.</p>
+
+        <h3>“Over 250” — a corridor with no floor</h3>
+        <p>For the most conspicuous profiles Google publishes only a lower bound. For them <b>no</b> upper edge of R exists, and therefore no lower edge of the corridor. We do not substitute a stand-in value; we draw the corridor <b>open-ended</b> and say “at most X★”. A stand-in would have the opposite effect: it would make precisely the most heavily affected profiles look the safest.</p>
+
+        <h3>Why the estimate is systematically too low</h3>
+        <p>Google’s figure is a <b>rolling 365-day total</b>. Anything older drops out of it — while still weighing on the displayed overall average, which is all-time. The reported effect is therefore a <b>floor for the total distortion</b>, not a measure of it.</p>
+        <p>Continuous monthly measurement can raise that floor — but not by addition. Two readings a month apart overlap by eleven twelfths: “151 to 200” in July and again in August largely describe the <i>same</i> removals, not 400. Three bounds are defensible, and we use the largest:</p>
+        <div class="formula">1 · the largest window ever read <span class="cm">— every window is a subset of the total</span><br />
+          2 · first window + every observed increase <span class="cm">— from W<sub>t</sub> − W<sub>t−1</sub> = r(t) − r(t−12) and r ≥ 0 it follows that r(t) ≥ W<sub>t</sub> − W<sub>t−1</sub></span><br />
+          3 · sum of readings ≥ 12 months apart <span class="cm">— their windows do not overlap and count in full</span></div>
+        <p>Within the bands we use the lower edge for increases and the upper edge for deductions; a capped “over 250” contributes nothing and can therefore never inflate the figure. Across a simulation of 5,675 trajectories this bound <b>never</b> exceeded the true count and understated it by 42&nbsp;% on average — it is a floor, not an estimate. It appears on a profile page only once it says more than Google’s current window.</p>
+
+        <p>All of it remains explicitly an <b>estimate</b>: if the removals were justified — a fake campaign, say — the displayed rating is the more accurate one. The computation says how much the display depends on the removals, not whether they were warranted.</p>
         <h3>The aidos score</h3>
         <p>The score (0–100) is a <b>percentile</b>: it ranks a profile by its number of removed reviews within the collected dataset. A score of 90 means “more removals than 90&nbsp;% of surveyed profiles” — a neutral statistical classification, <b>not a value judgement</b> and no proof of misconduct.</p>
         <h3>The monthly comparison — why we count businesses, not reviews</h3>

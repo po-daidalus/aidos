@@ -261,3 +261,15 @@ table.rank tbody td a:focus:not(:focus-visible) { outline: none; }
   .nav::-webkit-scrollbar { display: none; }
   .nav a { padding: 9px 12px; }   /* a little taller for touch */
 }
+
+/* Methodik: Formel-Block und kompakte Kennzahl-Tabelle. Die Rechenwege gehören sichtbar auf die
+   Seite — wer die Schätzung anzweifelt, soll sie nachrechnen können, ohne den Code zu lesen. */
+.formula { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13.5px; line-height: 1.7;
+  background: var(--fill); border-left: 3px solid var(--rule-2); border-radius: var(--radius-sm);
+  padding: 12px 16px; margin: 14px 0; overflow-x: auto; color: var(--ink); }
+.formula b { color: var(--accent); font-weight: 600; }
+.formula .cm { color: var(--ink-3); }
+table.facts { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+table.facts th, table.facts td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); }
+table.facts th { color: var(--ink-3); font-weight: 500; font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; }
+table.facts td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }

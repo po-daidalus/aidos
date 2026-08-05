@@ -136,7 +136,9 @@ const brandMark = (name, branch, P) => LOGOS[name]
 const scaleR = (v) => Math.max(0, Math.min(100, ((v - 3) / 2) * 100)); // rating 3–5 → 0–100%
 function locWhisk(d, lang) {
   const L = LANGS[lang];
-  const g = lang === 'de' ? 'geschätzt' : 'estimated', a = lang === 'de' ? 'angezeigt' : 'displayed';
+  // "über 250" has no upper bound, so this location's estimate is a ceiling, not a point — the ≥
+  // prefix says the true effect can only be larger.
+  const g = (d.est_open ? '≥ ' : '') + (lang === 'de' ? 'geschätzt' : 'estimated'), a = lang === 'de' ? 'angezeigt' : 'displayed';
   if (d.rating == null) return '–';
   if (d.est_mid == null || d.est_mid > d.rating)
     return `<div class="whisk"><div class="cap"><span class="b" style="margin-left:auto">${a} ${L.nf1(d.rating)}★</span></div></div>`;
@@ -217,7 +219,11 @@ function seriesChart(locs, lang, estPair) {
   const xf = (i) => pad.l + (n > 1 ? (i / (n - 1)) * iw : iw / 2);
   const step = n > 1 ? iw / (n - 1) : iw;
   const maxC = Math.max(...C, 1);
-  const cfFloor = hasCf ? [(estPair && estPair[0] != null) ? estPair[0] : rLow[rLow.length - 1]] : [];
+  // estPair = [low, high, open]. `open` marks "über 250": Google publishes no upper bound, so the
+  // corridor has no lower edge — it is drawn running off the bottom of the axis rather than being
+  // closed at an invented value (which is what the old rmax = rmin substitution amounted to).
+  const cfOpen = !!(estPair && estPair[2]);
+  const cfFloor = hasCf ? [cfOpen ? estPair[1] : ((estPair && estPair[0] != null) ? estPair[0] : rLow[rLow.length - 1])] : [];
   const rMin = Math.min(...rate, ...cfFloor), lo = Math.max(1, Math.floor((rMin - 0.25) * 2) / 2), hi = 5;
   const yBar = (v) => pad.t + ih - (v / maxC) * (ih * 0.86);
   const yR = (r) => pad.t + ih - ((r - lo) / (hi - lo)) * ih;
@@ -231,18 +237,26 @@ function seriesChart(locs, lang, estPair) {
   if (hasCf) {
     // corridor endpoints = the SAME pooled full-population estimates shown in the est box and the
     // listing (single source of truth — the series-based arithmetic diverged on thin harvests)
-    const cfLo = (estPair && estPair[0] != null) ? estPair[0] : rLow[M.length - 1];
     const cfHi = (estPair && estPair[1] != null) ? Math.min(estPair[1], rate[M.length - 1]) : rHigh[M.length - 1];
+    const cfLo = cfOpen ? lo : ((estPair && estPair[0] != null) ? estPair[0] : rLow[M.length - 1]);
     const yl = yR(cfLo), yh = yR(cfHi), wx = xf(n - 1);
-    const cfLbl = lang === 'de' ? `mit Entfernungen ~${nf1(cfLo)}–${nf1(cfHi)}★` : `with removals ~${nf1(cfLo)}–${nf1(cfHi)}★`;
+    const cfLbl = cfOpen
+      ? (lang === 'de' ? `mit Entfernungen höchstens ${nf1(cfHi)}★ — nach unten offen` : `with removals at most ${nf1(cfHi)}★ — open-ended`)
+      : (lang === 'de' ? `mit Entfernungen ~${nf1(cfLo)}–${nf1(cfHi)}★` : `with removals ~${nf1(cfLo)}–${nf1(cfHi)}★`);
     cfBand = `<g class="ts-fade"><rect x="${bandX.toFixed(1)}" y="${yh.toFixed(1)}" width="${(wx - bandX).toFixed(1)}" height="${Math.max(2, yl - yh).toFixed(1)}" fill="#b31e26" opacity="0.07"/>`
       + `<line x1="${bandX.toFixed(1)}" y1="${yh.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="1.2" stroke-dasharray="1 4.5" stroke-linecap="round" opacity="0.5"/>`
-      + `<line x1="${bandX.toFixed(1)}" y1="${yl.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yl.toFixed(1)}" stroke="#b31e26" stroke-width="1.2" stroke-dasharray="1 4.5" stroke-linecap="round" opacity="0.5"/>`
-      + `<line x1="${bandX.toFixed(1)}" y1="${((yl + yh) / 2).toFixed(1)}" x2="${wx.toFixed(1)}" y2="${((yl + yh) / 2).toFixed(1)}" stroke="#b31e26" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>`
+      // An open corridor gets neither a bottom edge nor a centre line: both would assert a value
+      // ("it ends here", "the middle is here") that does not exist when Google publishes no ceiling.
+      + (cfOpen ? '' : `<line x1="${bandX.toFixed(1)}" y1="${yl.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yl.toFixed(1)}" stroke="#b31e26" stroke-width="1.2" stroke-dasharray="1 4.5" stroke-linecap="round" opacity="0.5"/>`
+        + `<line x1="${bandX.toFixed(1)}" y1="${((yl + yh) / 2).toFixed(1)}" x2="${wx.toFixed(1)}" y2="${((yl + yh) / 2).toFixed(1)}" stroke="#b31e26" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>`)
       + `<line x1="${wx.toFixed(1)}" y1="${yl.toFixed(1)}" x2="${wx.toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2.2" stroke-linecap="round"/>`
-      + `<line x1="${(wx - 5).toFixed(1)}" y1="${yl.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yl.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`
+      // closed corridor gets an end cap at both ends; an open one gets an arrow instead of a
+      // bottom cap, because there is no lower value to cap it at.
+      + (cfOpen
+        ? `<path d="M${(wx - 5).toFixed(1)} ${(yl - 7).toFixed(1)} L${wx.toFixed(1)} ${yl.toFixed(1)} L${(wx + 5).toFixed(1)} ${(yl - 7).toFixed(1)}" fill="none" stroke="#b31e26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`
+        : `<line x1="${(wx - 5).toFixed(1)}" y1="${yl.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yl.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`)
       + `<line x1="${(wx - 5).toFixed(1)}" y1="${yh.toFixed(1)}" x2="${(wx + 5).toFixed(1)}" y2="${yh.toFixed(1)}" stroke="#b31e26" stroke-width="2"/>`
-      + `<text x="${(wx - 8).toFixed(1)}" y="${(yl + 15).toFixed(1)}" text-anchor="end" font-size="11.5" font-weight="600" fill="#b31e26">${cfLbl}</text></g>`;
+      + `<text x="${(wx - 8).toFixed(1)}" y="${(cfOpen ? yh + 15 : yl + 15).toFixed(1)}" text-anchor="end" font-size="11.5" font-weight="600" fill="#b31e26">${cfLbl}</text></g>`;
   }
   const rTicks = [lo, (lo + hi) / 2, hi].map((t, ti) => `<line x1="${pad.l}" y1="${yR(t).toFixed(1)}" x2="${W - pad.r}" y2="${yR(t).toFixed(1)}" stroke="#eef0f4"/><text x="${pad.l - 6}" y="${(yR(t) + 3.5).toFixed(1)}" text-anchor="end" font-size="10" fill="#9a9ca6">${nf1(t)}${ti === 2 ? '★' : ''}</text>`).join('');
   const endX = xf(n - 1), endY = yR(rate[n - 1]);
@@ -315,11 +329,22 @@ for (const [bkey, locs] of brands) {
   const branch = locs.map((d) => d.branch).find(Boolean) || 'Sonstige';
   const ar = aggRange(locs); const remMin = ar.min, remMax = ar.max;
   const rating = wavg(locs, (d) => d.rating), est = wavg(locs, (d) => d.est_mid);
+  // One capped location makes the whole brand's corridor open — you cannot bound a sum whose
+  // largest term is unbounded.
+  const estOpen = locs.some((d) => d.est_open);
+  const estHigh = wavg(locs, (d) => d.est_high);          // conservative end → the "at least" figure
+  const estLow = estOpen ? null : wavg(locs, (d) => d.est_low);
+  const cumMin = locs.reduce((s, d) => s + (d.removed_cum_min || 0), 0) || null;
+  const monthsObs = Math.max(0, ...locs.map((d) => d.months_observed || 0));
+  // Only quote the cumulative floor once it actually says more than the current window already
+  // does. Early on the two coincide, and repeating the same number under a new label would suggest
+  // a second, independent finding.
+  const cumAdds = cumMin != null && ar.min != null && cumMin > ar.min;
   const score = Math.max(...locs.map((d) => d.aidos_score ?? 0));
   const sg = uniqueSlug(slug(name + (cities[0] ? '-' + cities[0] : '')));
   const relDe = 'unternehmen/' + sg + '.html', relEn = 'en/unternehmen/' + sg + '.html';
   companyLinks[name] = relDe;
-  const hasEst = est != null && rating != null && est <= rating;
+  const hasEst = estHigh != null && rating != null && estHigh <= rating;
   const lastSeen = locs.map((d) => d.last_seen).filter(Boolean).sort().pop();
   const reviewsTotal = locs.reduce((s, d) => s + (d.reviews || 0), 0);
   const mapsUrl = (locs[0].url) || 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(name + ' ' + (cities[0] || ''));
@@ -346,7 +371,15 @@ for (const [bkey, locs] of brands) {
       asof: stand ? `Stand der Erhebung: ${stand} · Quelle: öffentliches Google-Maps-Profil · <a href="${esc(mapsUrl)}" target="_blank" rel="noopener">auf Google Maps ansehen ↗</a>` : null,
       stats: ['entfernte Bewertungen (letzte 365 Tage)', 'aktuell angezeigte Bewertung', 'sichtbare Bewertungen', 'Statistik-Index (Perzentil nach entfernten Bewertungen im erfassten Datensatz)'],
       estH: 'Was wäre die Bewertung ohne die entfernten Rezensionen?',
-      est: `Nimmt man an, dass die entfernten Rezensionen im Schnitt 1–2★ vergeben hätten, läge die Note rechnerisch bei <b>~${nf1(est)}★</b> statt der angezeigten <b>${nf1(rating)}★</b> — die Entfernungen heben die Anzeige also um geschätzt <b>+${nf1(rating - est)}★</b>. Nur eine Schätzung, keine exakten Werte — waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die angezeigte Note die zutreffendere.`,
+      est: `Entfernte Rezensionen wegen Diffamierung sind ihrer Natur nach negativ; wir rechnen sie mit 1–2★ zurück in den Schnitt (Details in der <a href="${P}methodik">Methodik</a>). `
+        + `Selbst in der vorsichtigsten Variante — die wenigste von Google genannte Zahl, jede mit milden 2★ — läge die Note bei <b>${nf1(estHigh)}★</b> statt der angezeigten <b>${nf1(rating)}★</b>. Die Entfernungen heben die Anzeige also um <b>mindestens ${nf1(rating - estHigh)}★</b>`
+        + (estOpen
+          ? `. Nach oben ist das offen: Google nennt für dieses Profil nur „über 250“ und keine Obergrenze, der tatsächliche Effekt kann also deutlich größer sein.`
+          : `, in der ungünstigsten Lesart um ${nf1(rating - estLow)}★.`)
+        + ` Ausschlaggebend für diese Spanne ist Googles Zahlen-Spanne, nicht die Sternannahme. `
+        + `Eine Schätzung, keine exakten Werte — waren die Entfernungen berechtigt (z. B. Fake-Kampagnen), ist die angezeigte Note die zutreffendere.`
+        + (monthsObs >= 2 ? ` Googles Angabe umfasst ohnehin nur die letzten 365 Tage; ältere Entfernungen zählt sie nicht mehr mit, obwohl sie im Gesamtschnitt weiterwirken. Der ausgewiesene Effekt ist deshalb eine Untergrenze für die gesamte Verzerrung.` : '')
+        + (cumAdds ? ` Über unsere bisherigen Messungen hinweg sind <b>mindestens ${nf(cumMin)}</b> entfernte Bewertungen belegt — mehr, als in Googles aktuellem 365-Tage-Fenster steht.` : ''),
       moreRow: `Mehr: <a href="${P}branche/${slug(branch)}">alle ${esc(brLbl)}-Einträge</a>${cities[0] ? ` · <a href="${P}stadt/${slug(cities[0])}">${esc(cityLbls[0])}</a>` : ''} · <a href="${P}rechtslage">Warum werden Bewertungen entfernt?</a>`,
       branches: 'Branchen',
     } : {
@@ -356,7 +389,15 @@ for (const [bkey, locs] of brands) {
       asof: stand ? `Survey date: ${stand} · source: public Google Maps profile · <a href="${esc(mapsUrl)}" target="_blank" rel="noopener">view on Google Maps ↗</a>` : null,
       stats: ['removed reviews (past 365 days)', 'currently displayed rating', 'visible reviews', 'statistical index (percentile by removed reviews within the dataset)'],
       estH: 'What would the rating be without the removed reviews?',
-      est: `Assuming the removed reviews would have averaged 1–2★, the rating would arithmetically stand at <b>~${nf1(est)}★</b> instead of the displayed <b>${nf1(rating)}★</b> — the removals lift the display by an estimated <b>+${nf1(rating - est)}★</b>. An estimate only, no exact values — if the removals were justified (e.g. fake campaigns), the displayed rating is the more accurate one.`,
+      est: `Reviews removed over defamation are negative by their nature; we put them back into the average at 1–2★ (details in the <a href="${P}methodology">methodology</a>). `
+        + `Even on the most cautious reading — the fewest reviews Google names, each at a mild 2★ — the rating would stand at <b>${nf1(estHigh)}★</b> instead of the displayed <b>${nf1(rating)}★</b>. The removals lift the display by <b>at least ${nf1(rating - estHigh)}★</b>`
+        + (estOpen
+          ? `. There is no ceiling on that: for this profile Google publishes only "over 250" and no upper bound, so the real effect may be considerably larger.`
+          : `, and by ${nf1(rating - estLow)}★ on the least favourable reading.`)
+        + ` What drives that spread is Google's range for the count, not the star assumption. `
+        + `An estimate only, no exact values — if the removals were justified (e.g. fake campaigns), the displayed rating is the more accurate one.`
+        + (monthsObs >= 2 ? ` Google's figure covers only the past 365 days anyway; older removals drop out of it even though they keep weighing on the overall average. The effect shown is therefore a floor for the total distortion.` : '')
+        + (cumAdds ? ` Across our measurements so far, <b>at least ${nf(cumMin)}</b> removals are documented — more than Google's current 365-day window states.` : ''),
       moreRow: `More: <a href="${P}en/branche/${slug(branch)}">all ${esc(brLbl)} entries</a>${cities[0] ? ` · <a href="${P}en/stadt/${slug(cities[0])}">${esc(cityLbls[0])}</a>` : ''} · <a href="${P}rechtslage">Why are reviews removed? (DE)</a>`,
       branches: 'Industries',
     };
@@ -374,7 +415,7 @@ for (const [bkey, locs] of brands) {
       `<div class="stat"><div class="v" style="color:${scoreCol(score)}">${score}<span style="font-size:16px;color:var(--ink-3)"> / 100</span></div><div class="l">${S.stats[3]}</div></div>` +
       `</div>` +
       locList +
-      seriesChart(locs, lang, [wavg(locs, (d) => d.est_low), wavg(locs, (d) => d.est_high)]) +
+      seriesChart(locs, lang, [estLow, estHigh, estOpen]) +
       (hasEst ? `<div class="card"><h2>${S.estH}</h2><p class="est-line">${S.est}</p></div>` : '') +
       disclaimer(lang, P) +
       `<p style="font-size:13.5px;color:var(--ink-3)">${S.moreRow}</p>`;

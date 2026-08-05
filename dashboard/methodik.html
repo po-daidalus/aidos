@@ -12,7 +12,7 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:image" content="https://aidos.tech/og.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
     <link href="fonts/fonts.css" rel="stylesheet" />
-    <link href="site.css?v=91cbbf0e" rel="stylesheet" />
+    <link href="site.css?v=d8280e76" rel="stylesheet" />
   </head>
   <body>
     <header class="masthead"><div class="masthead-inner">
@@ -51,9 +51,45 @@
       <h2>3. Was wir berechnen</h2>
       <div class="card static">
         <h3>Spannen, nie Scheingenauigkeit</h3>
-        <p>Google nennt keine exakten Zahlen, sondern Spannen. Wir rechnen mit diesen Spannen weiter und weisen sie auch so aus. Bei „über 250" ist die wahre Zahl unbekannt — wir deckeln konservativ und kennzeichnen die <b>Dunkelziffer</b>.</p>
+        <p>Google nennt keine exakten Zahlen, sondern Spannen. Wir rechnen mit diesen Spannen weiter und weisen sie auch so aus. Bei „über 250" ist die wahre Zahl unbekannt — dort rechnen wir mit 250 als <b>Untergrenze</b> und kennzeichnen alles Weitere als nach oben offen, statt eine Obergrenze zu erfinden.</p>
         <h3>Die Schätzung „Note ohne Entfernungen"</h3>
-        <p>Für Profile mit ausreichender Datenlage schätzen wir, wo die Note läge, <i>wenn die entfernten Bewertungen noch zählten</i>: Die von Google ausgewiesene Spanne wird rechnerisch mit 1–2★ in die echte Sternverteilung zurückgelegt (Best-/Worst-Case ergibt die Bandbreite). Das ist ausdrücklich eine <b>Schätzung</b> — waren die Entfernungen berechtigt (etwa bei Fake-Kampagnen), ist die angezeigte Note die zutreffendere.</p>
+        <p>Für Profile mit ausreichender Datenlage schätzen wir, wo die Note läge, <i>wenn die entfernten Bewertungen noch zählten</i>. Die Rechnung ist eine einzige Zeile: Die entfernten Bewertungen werden in den angezeigten Schnitt zurückgelegt.</p>
+        <div class="formula">ρ′ = (S + <b>R</b>&nbsp;·&nbsp;<b>a</b>) / (N + <b>R</b>)<br />
+          <span class="cm">ρ = angezeigte Note · N = angezeigte Bewertungen · S = ρ · N<br />
+          R = Zahl der entfernten Bewertungen (von Google) · a = deren angenommener Sternwert</span></div>
+        <p>Alles außer <b>R</b> und <b>a</b> steht öffentlich im Google-Profil. Diese beiden Größen sind unbekannt — aber sehr unterschiedlich unbekannt, und das ist der Kern des Verfahrens.</p>
+
+        <h3>a — der Sternwert der entfernten Bewertungen</h3>
+        <p>Die entfernten Bewertungen sind weg, ihr Sternwert also grundsätzlich nicht beobachtbar. Entfernt wird auf Diffamierungs-Beschwerde hin, sie sind damit ihrer Natur nach negativ; wir setzen den Wertebereich auf <b>1–2★</b>.</p>
+        <p>Der Mittelwert darin ist keine Setzung, sondern gemessen. Der einzige empirische Anker sind die Negativbewertungen, die bei denselben Betrieben <i>überlebt</i> haben — über alle erfassten Profile mit Sternverteilung:</p>
+        <table class="facts"><thead><tr><th>Sterne</th><th class="num">Anteil überlebender Bewertungen</th></tr></thead><tbody>
+          <tr><td>1★</td><td class="num">2,1 %</td></tr>
+          <tr><td>2★</td><td class="num">1,1 %</td></tr>
+          <tr><td>3★</td><td class="num">4,4 %</td></tr>
+          <tr><td>4★</td><td class="num">18,0 %</td></tr>
+          <tr><td>5★</td><td class="num">74,5 %</td></tr>
+        </tbody></table>
+        <p>1★ übertreffen 2★ im Verhältnis <b>1,98 : 1</b> (Median je Betrieb: exakt 2 : 1). Daraus ergibt sich ein Mittelwert von <b>1,335★</b>, und genau diesen Wert verwenden wir. <b>3★ bleiben bewusst außen vor:</b> Sie stellen 58 % des gesamten 1–3★-Bestands, würden den Mittelwert auf 2,3★ ziehen und den ausgewiesenen Effekt damit etwa halbieren — und eine mittelmäßige 3★-Bewertung wird praktisch nie als diffamierend entfernt.</p>
+
+        <h3>R — hier sitzt die eigentliche Unsicherheit</h3>
+        <p>Wir haben nachgerechnet, wie stark die beiden Unbekannten überhaupt wirken. Verschiebt man <b>a</b> über seinen gesamten Bereich von 1★ bis 2★, ändert sich der ausgewiesene Effekt im Median nur um rund <b>0,1★</b>. Googles Spanne für <b>R</b> bewegt ihn dagegen bei <b>93 % der Profile</b> stärker. Die Debatte über den Sternwert ist also die kleinere Frage; die Bandbreite auf der Seite stammt ganz überwiegend daher, dass Google „151 bis 200" schreibt statt einer Zahl.</p>
+        <p>Deshalb koppeln wir die Enden des Korridors so, dass er eine echte Umhüllende ist und keine Zierde:</p>
+        <div class="formula">obere Kante <span class="cm">= wenigste Entfernungen (R<sub>min</sub>) × mildeste Annahme (2★)</span> → <b>Mindesteffekt</b><br />
+          untere Kante <span class="cm">= meiste Entfernungen (R<sub>max</sub>) × härteste Annahme (1★)</span> → <b>Höchsteffekt</b></div>
+        <p>Ausgewiesen wird die obere Kante als <b>„mindestens"</b>. Sie unterstellt gleichzeitig die niedrigste von Google genannte Zahl <i>und</i> die mildeste Bewertung — sie lässt sich also nicht mit dem Argument bestreiten, wir hätten zu drastisch gerechnet.</p>
+
+        <h3>„Über 250" — ein Korridor ohne Boden</h3>
+        <p>Bei den auffälligsten Profilen nennt Google nur eine Untergrenze. Für sie existiert <b>keine</b> obere Kante von R und damit keine untere Kante des Korridors. Wir setzen dort keinen Ersatzwert ein, sondern zeichnen den Korridor <b>nach unten offen</b> und schreiben „höchstens X★". Ein eingesetzter Ersatzwert hätte den gegenteiligen Effekt: Er ließe ausgerechnet die am stärksten betroffenen Profile am sichersten aussehen.</p>
+
+        <h3>Warum die Schätzung systematisch zu niedrig ist</h3>
+        <p>Googles Angabe ist eine <b>rollierende 365-Tage-Summe</b>. Was länger zurückliegt, fällt aus ihr heraus — wirkt aber im angezeigten Gesamtschnitt weiter, denn der ist All-Time. Der ausgewiesene Effekt ist deshalb eine <b>Untergrenze für die gesamte Verzerrung</b>, nicht deren Maß.</p>
+        <p>Genau das lässt sich mit fortlaufenden Monatsmessungen anheben — allerdings nicht durch Addition. Zwei Messungen im Abstand eines Monats überlappen zu elf Zwölfteln: „151 bis 200" im Juli und noch einmal im August beschreiben überwiegend <i>dieselben</i> Entfernungen, nicht 400. Belastbar sind drei Schranken, von denen wir die größte verwenden:</p>
+        <div class="formula">1 · das größte je gelesene Fenster <span class="cm">— jedes Fenster ist eine Teilmenge des Gesamten</span><br />
+          2 · erstes Fenster + jeder beobachtete Zuwachs <span class="cm">— aus W<sub>t</sub> − W<sub>t−1</sub> = r(t) − r(t−12) und r ≥ 0 folgt r(t) ≥ W<sub>t</sub> − W<sub>t−1</sub></span><br />
+          3 · Summe von Messungen im Abstand ≥ 12 Monaten <span class="cm">— deren Fenster überlappen nicht und zählen voll</span></div>
+        <p>Bei den Bändern rechnen wir mit der Untergrenze für Zuwächse und der Obergrenze für Abzüge; ein gedeckeltes „über 250" trägt nichts bei und kann die Zahl folglich nie aufblähen. In einer Simulation über 5.675 Verläufe hat diese Schranke die tatsächliche Zahl <b>nie</b> überschritten und sie im Mittel um 42 % unterschätzt — sie ist ein Boden, keine Schätzung. Auf einer Profilseite erscheint sie erst, sobald sie mehr aussagt als Googles aktuelles Fenster.</p>
+
+        <p>Alles zusammen bleibt ausdrücklich eine <b>Schätzung</b>: Waren die Entfernungen berechtigt — etwa bei einer Fake-Kampagne —, ist die angezeigte Note die zutreffendere. Die Rechnung sagt, wie stark die Anzeige von den Entfernungen abhängt, nicht ob sie zu Recht erfolgten.</p>
         <h3>Der aidos-Score</h3>
         <p>Der Score (0–100) ist ein <b>Perzentil</b>: Er ordnet ein Profil nach der Zahl entfernter Bewertungen in den erfassten Datensatz ein. Ein Score von 90 heißt „mehr Entfernungen als 90&nbsp;% der erfassten Profile" — eine neutrale statistische Einordnung, <b>kein Werturteil</b> und kein Beweis für Fehlverhalten.</p>
         <h3>Der Monatsvergleich — warum wir Betriebe zählen, keine Bewertungen</h3>

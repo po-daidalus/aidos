@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import { classify } from './entity-filter.mjs';
 import { branchOf, cityOf } from './classify-branch.mjs';
 import { anonId } from './salt.mjs';
+import { estimate } from './counterfactual.mjs';
 
 const ROOT = new URL('..', import.meta.url);
 const DB_PATH = new URL('pipeline/out/db.json', ROOT);
@@ -45,12 +46,6 @@ function parseCsv(text) {
   return rows.map((r) => Object.fromEntries(head.map((h, i) => [h, r[i]])));
 }
 const r2 = (x) => (x == null ? null : Math.round(x * 100) / 100);
-function estimate(rating, reviews, rmin, rmax) {
-  const S = rating != null && reviews != null ? rating * reviews : null, N = reviews;
-  if (S == null || !N || !rmin) return { est_low: null, est_mid: null, est_high: null };
-  const Rmax = rmax || rmin, Rmid = (rmin + Rmax) / 2, calc = (R, a) => (S + R * a) / (N + R);
-  return { est_low: r2(calc(Rmax, 1)), est_mid: r2(calc(Rmid, 1.5)), est_high: r2(calc(rmin, 2)) };
-}
 const numv = (v) => (v == null || v === '' ? null : typeof v === 'number' ? v : +String(v).replace(',', '.'));
 const intv = (v) => (v == null || v === '' ? null : parseInt(String(v).replace(/[^\d]/g, ''), 10) || null);
 
@@ -193,7 +188,7 @@ for (const r of allRecs) {
       rating, reviews, dist: eff.dist.some((x) => x) ? eff.dist : (prev.dist || null),
       price_level: intv(r.price_level) ?? prev.price_level ?? null, business_status: r.business_status || prev.business_status || null,
       range_min: rmin, range_max: rmax, banner_text: r.banner_text || prev.banner_text || null,
-      est_low: est.est_low, est_mid: est.est_mid, est_high: est.est_high,
+      est_low: est.est_low, est_mid: est.est_mid, est_high: est.est_high, est_open: est.est_open,
       lat: numv(r.lat) ?? prev.lat ?? null, lng: numv(r.lng) ?? prev.lng ?? null,
       url: r.url || prev.url || null, first_seen: prev.first_seen || today, last_seen: today,
       // v1.2 deep capture: monthly (month → {n, sum}) review histogram — feeds the profile chart.
@@ -208,7 +203,7 @@ for (const r of allRecs) {
     db.businesses[key] = {
       aid: key, nameable: false, branch, city,
       rating, reviews, range_min: rmin, range_max: rmax,
-      est_low: est.est_low, est_mid: est.est_mid, est_high: est.est_high,
+      est_low: est.est_low, est_mid: est.est_mid, est_high: est.est_high, est_open: est.est_open,
       first_seen: prev.first_seen || today, last_seen: today,
     };
   }
@@ -255,6 +250,11 @@ for (const r of allRecs) {
     city: cityOf(name, r.city, r.address) || defCity || 'Unbekannt',
     nameable: classify(name, category).keep, // whether this entity may be named on listing pages
     range_min: rmin, range_max: rmax, rating,
+    // Written with whatever counterfactual model was current at ingest time, and the anonymized feed
+    // deliberately carries no review count, so it cannot be recomputed later the way build.mjs
+    // recomputes est_* from db.json. A model change therefore reaches these rows only as cities are
+    // re-ingested — a full monthly sweep heals it. Feeds avgDrop, published to one decimal, and the
+    // 2026-08 change to A_MID moved that by less than 0.02★, so the transient mix is invisible there.
     rating_drop: rating != null && est.est_mid != null ? r2(rating - est.est_mid) : null,
   };
   if (aidx.has(akof(row))) aggRows[aidx.get(akof(row))] = row; else { aidx.set(akof(row), aggRows.length); aggRows.push(row); }

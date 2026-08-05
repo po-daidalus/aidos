@@ -4,6 +4,7 @@
 // Usage: node pipeline/build.mjs
 import fs from 'node:fs';
 import { suppressSet, isSuppressed } from './takedowns.mjs';
+import { cumulativeMin, cfRating, estimate, A_HIGH } from './counterfactual.mjs';
 
 const ROOT = new URL('..', import.meta.url);
 const db = JSON.parse(fs.readFileSync(new URL('pipeline/out/db.json', ROOT), 'utf8'));
@@ -17,6 +18,40 @@ const remMid = (b) => (b.range_min != null ? (b.range_min + (b.range_max || b.ra
 const vals = allBusinesses.map(remMid).filter((v) => v > 0).sort((a, b) => a - b);
 const pctRank = (v) => { if (!vals.length || v <= 0) return null; let c = 0; for (const x of vals) if (x <= v) c++; return Math.round((100 * c) / vals.length); };
 allBusinesses.forEach((b) => (b.aidos_score = pctRank(remMid(b))));
+
+// CUMULATIVE removals (Method D pay-off). Google's figure is a rolling 365-day sum, so removals
+// that aged out of its window are invisible to Google's own number while still weighing on the
+// all-time average a visitor sees — our single-window estimate therefore UNDERSTATES the total
+// distortion by construction. Our monthly snapshots let us raise that floor over time without ever
+// adding overlapping windows together; see cumulativeMin() for the derivation.
+// The history row's `id` IS the db key (place_id for legal persons, salted aid for individuals).
+const histPath = new URL('pipeline/out/history.jsonl', ROOT);
+const histById = new Map();
+if (fs.existsSync(histPath)) {
+  for (const l of fs.readFileSync(histPath, 'utf8').trim().split('\n').filter(Boolean)) {
+    const s = JSON.parse(l);
+    if (!histById.has(s.id)) histById.set(s.id, []);
+    histById.get(s.id).push(s);
+  }
+}
+let cumAbove = 0;
+for (const b of allBusinesses) {
+  // est_* are DERIVED, so recompute them here instead of trusting whatever the ingest that first
+  // saw this profile happened to write. Otherwise a change to the model only reaches the profiles
+  // touched by the next sweep and the site silently mixes two generations of the formula.
+  Object.assign(b, estimate(b.rating, b.reviews, b.range_min, b.range_max));
+  const snaps = histById.get(b.place_id || b.aid);
+  const cum = cumulativeMin(snaps);
+  b.removed_cum_min = cum;
+  b.months_observed = snaps ? new Set(snaps.map((s) => s.date)).size : 0;
+  // Conservative throughout: the cumulative floor is paired with the mildest star assumption, so
+  // est_cum can only ever be a rating the profile is at LEAST this far above.
+  b.est_cum = (cum != null && b.rating != null && b.reviews)
+    ? Math.round(cfRating(b.rating * b.reviews, b.reviews, cum, A_HIGH) * 100) / 100
+    : null;
+  if (cum != null && b.range_min != null && cum > b.range_min) cumAbove++;
+}
+console.log(`cumulative floor: ${histById.size} profiles with history, ${cumAbove} already above their current window`);
 
 // PII safety: only NAMEABLE entities (legal persons & chains) are shipped to the browser. Named
 // individuals stay in the internal DB and feed the anonymized aggregates, but their name/address
@@ -41,15 +76,6 @@ console.log(`data.js: shipped ${businesses.length} nameable${suppressed ? ` / ${
 // existing real (non-placeholder) series
 const seriesPath = new URL('pipeline/out/series.json', ROOT);
 const prev = fs.existsSync(seriesPath) ? JSON.parse(fs.readFileSync(seriesPath, 'utf8')) : {};
-
-// monthly snapshots per place (Method D)
-const histPath = new URL('pipeline/out/history.jsonl', ROOT);
-const byPlace = {};
-if (fs.existsSync(histPath)) {
-  for (const l of fs.readFileSync(histPath, 'utf8').trim().split('\n').filter(Boolean)) {
-    const s = JSON.parse(l); (byPlace[s.place_id] ||= []).push(s);
-  }
-}
 
 // HARD RULE: never synthesize/fabricate a time-series. We ship ONLY real captured history.
 // A business with no real series simply has no chart. Synthetic placeholders were removed 2026-07-03.

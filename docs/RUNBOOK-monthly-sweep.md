@@ -80,7 +80,7 @@ vom Ergebnis. Berlin (2.127 URLs) ≈ 8,5–9 h. Ohne `caffeinate -d` gehen zus�
 
 ```bash
 node pipeline/aggregate.mjs
-node pipeline/build.mjs
+node pipeline/build.mjs               # rechnet est_* für ALLE Profile neu + kumulative Untergrenze
 node pipeline/content.mjs --llm      # Monatsreport (Fable 5, zahlenverifiziert)
 node pipeline/og-image.mjs           # Social-Card mit den neuen Zahlen
 node pipeline/fetch-logos.mjs        # VOR pages.mjs
@@ -107,3 +107,28 @@ Schreibt `candidates/<slug>.txt` (URL-Liste), `candidates/<slug>.json` (Metadate
 `coverage/<slug>.json` (Branchen-Nenner). Dauert einige Minuten pro Stadt (Overpass, 14 Branchen-Tags
 einzeln). **Die Listen gehören ins Git** — sie sind der Nenner der Prävalenz; gehen sie verloren, ist
 der Monatsvergleich der Quote nicht mehr sauber.
+
+---
+
+## Das Schätzmodell (`pipeline/counterfactual.mjs`)
+
+Die „Note ohne Entfernungen" lebt in **einem** Modul; `ingest.mjs` und `build.mjs` importieren beide
+von dort, damit die Konstanten nicht auseinanderlaufen.
+
+`A_MID = 1.335` ist gemessen, nicht gesetzt: `node pipeline/measure-star-mix.mjs` druckt die
+überlebende Sternverteilung und das 1★:2★-Verhältnis, aus dem der Wert stammt. **Nach jedem größeren
+Sweep einmal laufen lassen** — verschiebt sich das Verhältnis spürbar, gehört die Konstante
+angepasst und die Methodik-Seite mit ihr (dort stehen dieselben Zahlen im Klartext).
+
+Zwei Fallen, beide schon einmal zugeschnappt:
+
+- **est_\* sind abgeleitet, nicht erhoben.** `build.mjs` rechnet sie bei jedem Lauf aus
+  `rating/reviews/range_*` neu. Verlässt man sich auf die bei irgendeinem früheren Ingest
+  geschriebenen Werte, mischt die Site zwei Generationen der Formel.
+- **`rating_drop` in `aggregate.jsonl` heilt erst beim nächsten Voll-Sweep.** Der anonymisierte Feed
+  führt bewusst keine Bewertungszahl mit, die Zeile ist also nicht nachrechenbar. Nur relevant für
+  `avgDrop` (eine Nachkommastelle) — Modelländerungen unterhalb ~0,05★ bleiben dort unsichtbar.
+
+Bei „über 250" gibt es **keine** Obergrenze für R. `est_low` bleibt dann `null`, `est_open` ist wahr,
+und die Seite zeichnet einen nach unten offenen Korridor. Nie einen Ersatzwert einsetzen: das ließe
+ausgerechnet die am stärksten betroffenen Profile am unauffälligsten aussehen.
