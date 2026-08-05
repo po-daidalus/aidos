@@ -333,6 +333,9 @@ for (const [bkey, locs] of brands) {
   // largest term is unbounded.
   const estOpen = locs.some((d) => d.est_open);
   const estHigh = wavg(locs, (d) => d.est_high);          // conservative end → the "at least" figure
+  // The ranking key across the whole site: how far the removals lift the displayed rating, in the
+  // reading that cannot be argued down. Size of the business does not enter it.
+  const dropMin = (rating != null && estHigh != null && estHigh <= rating) ? Math.round((rating - estHigh) * 100) / 100 : 0;
   const estLow = estOpen ? null : wavg(locs, (d) => d.est_low);
   const cumMin = locs.reduce((s, d) => s + (d.removed_cum_min || 0), 0) || null;
   const monthsObs = Math.max(0, ...locs.map((d) => d.months_observed || 0));
@@ -369,7 +372,7 @@ for (const [bkey, locs] of brands) {
       locNote: 'Zahlen je Standort aus dem jeweiligen öffentlichen Google-Maps-Profil zum Stand-Datum.',
       sub: `Laut dem öffentlichen Google-Maps-Hinweis wurden bei ${locs.length > 1 ? 'diesen Standorten' : 'diesem Unternehmen'} in den letzten 365 Tagen <b>${rl}</b> Bewertungen nach Diffamierungs-Beschwerden entfernt.`,
       asof: stand ? `Stand der Erhebung: ${stand} · Quelle: öffentliches Google-Maps-Profil · <a href="${esc(mapsUrl)}" target="_blank" rel="noopener">auf Google Maps ansehen ↗</a>` : null,
-      stats: ['entfernte Bewertungen (letzte 365 Tage)', 'aktuell angezeigte Bewertung', 'sichtbare Bewertungen', 'Statistik-Index (Perzentil nach entfernten Bewertungen im erfassten Datensatz)'],
+      stats: ['entfernte Bewertungen (letzte 365 Tage)', 'aktuell angezeigte Bewertung', 'sichtbare Bewertungen', 'Statistik-Index (Perzentil nach dem Mindesteffekt auf die angezeigte Note, im erfassten Datensatz)'],
       estH: 'Was wäre die Bewertung ohne die entfernten Rezensionen?',
       est: `Entfernte Rezensionen wegen Diffamierung sind ihrer Natur nach negativ; wir rechnen sie mit 1–2★ zurück in den Schnitt (Details in der <a href="${P}methodik">Methodik</a>). `
         + `Selbst in der vorsichtigsten Variante — die wenigste von Google genannte Zahl, jede mit milden 2★ — läge die Note bei <b>${nf1(estHigh)}★</b> statt der angezeigten <b>${nf1(rating)}★</b>. Die Entfernungen heben die Anzeige also um <b>mindestens ${nf1(rating - estHigh)}★</b>`
@@ -387,7 +390,7 @@ for (const [bkey, locs] of brands) {
       locNote: 'Per-location figures from the respective public Google Maps profile at the survey date.',
       sub: `According to the public Google Maps notice, <b>${rl}</b> reviews were removed at ${locs.length > 1 ? 'these locations' : 'this business'} in the past 365 days following defamation complaints.`,
       asof: stand ? `Survey date: ${stand} · source: public Google Maps profile · <a href="${esc(mapsUrl)}" target="_blank" rel="noopener">view on Google Maps ↗</a>` : null,
-      stats: ['removed reviews (past 365 days)', 'currently displayed rating', 'visible reviews', 'statistical index (percentile by removed reviews within the dataset)'],
+      stats: ['removed reviews (past 365 days)', 'currently displayed rating', 'visible reviews', 'statistical index (percentile by the minimum effect on the displayed rating, within the dataset)'],
       estH: 'What would the rating be without the removed reviews?',
       est: `Reviews removed over defamation are negative by their nature; we put them back into the average at 1–2★ (details in the <a href="${P}methodology">methodology</a>). `
         + `Even on the most cautious reading — the fewest reviews Google names, each at a mild 2★ — the rating would stand at <b>${nf1(estHigh)}★</b> instead of the displayed <b>${nf1(rating)}★</b>. The removals lift the display by <b>at least ${nf1(rating - estHigh)}★</b>`
@@ -423,25 +426,31 @@ for (const [bkey, locs] of brands) {
     fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + pub(lang === 'de' ? relEn : relDe), jsonld, body }));
     urls.push({ loc: canonical, removed: (remMin + (remMax || remMin)) / 2 });
   }
-  lookup.push({ n: name, c: cities.join(', '), u: pub(relDe).slice(1), r: rangeLabel(remMin, remMax), s: score, b: branch });
+  lookup.push({ n: name, c: cities.join(', '), u: pub(relDe).slice(1), r: rangeLabel(remMin, remMax), s: score, b: branch, d: dropMin });
   pageMap[bkey] = pub(relDe).slice(1);
-  locs._brand = { name, rel: relDe, relEn, remMin, remMax, cities, branch, score, rating };
+  locs._brand = { name, rel: relDe, relEn, remMin, remMax, cities, branch, score, rating, dropMin };
 }
 
 // helper: brand table for branch/city pages
 const allBrands = [...brands.values()].map((locs) => locs._brand);
 function brandTable(list, lang) {
   const L = LANGS[lang]; const P = L.pfx;
-  const th = lang === 'de' ? ['Unternehmen', 'Stadt', 'Entfernt (365 T.)', 'aidos-Score'] : ['Company', 'City', 'Removed (365 d)', 'aidos score'];
-  return `<table class="rank"><thead><tr><th>${th[0]}</th><th>${th[1]}</th><th>${th[2]}</th><th>${th[3]}</th></tr></thead><tbody>` +
-    list.map((b) => `<tr><td><a href="${P}${pub(lang === 'de' ? b.rel : b.relEn).slice(1)}">${esc(b.name)}</a></td><td>${esc(b.cities.map(L.tC).join(', '))}</td><td>${L.rangeLabel(b.remMin, b.remMax)}</td><td style="color:${scoreCol(b.score)};font-weight:500">${b.score}</td></tr>`).join('') +
+  // Sorted by the rating effect, so that is the column that has to be visible. The aidos score is
+  // only this figure's percentile — printing both would say the same thing twice, and "mindestens
+  // 0,9★" is far more legible than "97". The removal count stays as the raw fact from Google.
+  const th = lang === 'de' ? ['Unternehmen', 'Stadt', 'Entfernt (365 T.)', 'Effekt auf die Note'] : ['Company', 'City', 'Removed (365 d)', 'Effect on the rating'];
+  const eff = (b) => (b.dropMin > 0
+    ? `<span style="color:var(--accent);font-weight:600">${lang === 'de' ? 'mind. ' : 'at least '}${L.nf1(b.dropMin)}★</span>`
+    : '<span class="muted">–</span>');
+  return `<table class="rank"><thead><tr><th>${th[0]}</th><th>${th[1]}</th><th class="num">${th[2]}</th><th class="num">${th[3]}</th></tr></thead><tbody>` +
+    list.map((b) => `<tr><td><a href="${P}${pub(lang === 'de' ? b.rel : b.relEn).slice(1)}">${esc(b.name)}</a></td><td>${esc(b.cities.map(L.tC).join(', '))}</td><td class="num">${L.rangeLabel(b.remMin, b.remMax)}</td><td class="num">${eff(b)}</td></tr>`).join('') +
     `</tbody></table>`;
 }
 
 // ---------- branch pages (DE + EN) ----------
 for (const br of agg.branches) {
   const sg = slug(br.key);
-  const list = allBrands.filter((b) => b.branch === br.key).sort((a, b) => (a.remMin + (a.remMax || a.remMin)) < (b.remMin + (b.remMax || b.remMin)) ? 1 : -1);
+  const list = allBrands.filter((b) => b.branch === br.key).sort((a, b) => (b.dropMin || 0) - (a.dropMin || 0) || (b.remMin + (b.remMax || b.remMin)) - (a.remMin + (a.remMax || a.remMin)));
   for (const lang of ['de', 'en']) {
     const L = LANGS[lang]; const P = L.pfx; const nf = L.nf;
     const rel = (lang === 'de' ? '' : 'en/') + 'branche/' + sg + '.html';
@@ -472,7 +481,7 @@ for (const br of agg.branches) {
 // ---------- city pages (DE + EN) ----------
 for (const c of agg.cities.filter((c) => c.n >= 3)) {
   const sg = slug(c.key);
-  const list = allBrands.filter((b) => b.cities.includes(c.key)).sort((a, b) => (a.remMin + (a.remMax || a.remMin)) < (b.remMin + (b.remMax || b.remMin)) ? 1 : -1);
+  const list = allBrands.filter((b) => b.cities.includes(c.key)).sort((a, b) => (b.dropMin || 0) - (a.dropMin || 0) || (b.remMin + (b.remMax || b.remMin)) - (a.remMin + (a.remMax || a.remMin)));
   for (const lang of ['de', 'en']) {
     const L = LANGS[lang]; const P = L.pfx; const nf = L.nf, nf1 = L.nf1;
     const rel = (lang === 'de' ? '' : 'en/') + 'stadt/' + sg + '.html';

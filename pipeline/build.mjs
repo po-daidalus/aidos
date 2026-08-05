@@ -11,14 +11,6 @@ const db = JSON.parse(fs.readFileSync(new URL('pipeline/out/db.json', ROOT), 'ut
 const allBusinesses = Object.values(db.businesses);
 const nowYM = new Date().toISOString().slice(0, 7);
 
-// aidos-Score: neutral statistical conspicuousness index (0–100) = percentile rank of a business
-// by number of removed reviews within the dataset. Computed over the FULL DB (incl. individuals),
-// so the ranking is stable, but only nameable entities are shipped to the browser (see below).
-const remMid = (b) => (b.range_min != null ? (b.range_min + (b.range_max || b.range_min)) / 2 : 0);
-const vals = allBusinesses.map(remMid).filter((v) => v > 0).sort((a, b) => a - b);
-const pctRank = (v) => { if (!vals.length || v <= 0) return null; let c = 0; for (const x of vals) if (x <= v) c++; return Math.round((100 * c) / vals.length); };
-allBusinesses.forEach((b) => (b.aidos_score = pctRank(remMid(b))));
-
 // CUMULATIVE removals (Method D pay-off). Google's figure is a rolling 365-day sum, so removals
 // that aged out of its window are invisible to Google's own number while still weighing on the
 // all-time average a visitor sees — our single-window estimate therefore UNDERSTATES the total
@@ -52,6 +44,18 @@ for (const b of allBusinesses) {
   if (cum != null && b.range_min != null && cum > b.range_min) cumAbove++;
 }
 console.log(`cumulative floor: ${histById.size} profiles with history, ${cumAbove} already above their current window`);
+
+// aidos-Score: neutral statistical index (0–100) = percentile rank by the MINIMUM effect the
+// removals have on the displayed rating (ρ − est_high: fewest removals Google names, mildest star
+// assumption). Ranking by the raw removal count instead measured business SIZE, not distortion — an
+// 8,000-review restaurant with "over 250" removed moved its rating by 0.08★ yet outranked a
+// 113-review one whose rating is flattered by at least 1.27★. Computed over the FULL DB (incl.
+// individuals) so the percentile is stable; only nameable entities ship to the browser.
+// Must run AFTER est_* are recomputed above.
+const dropMin = (b) => (b.rating != null && b.est_high != null && b.est_high <= b.rating ? b.rating - b.est_high : 0);
+const vals = allBusinesses.map(dropMin).filter((v) => v > 0).sort((a, b) => a - b);
+const pctRank = (v) => { if (!vals.length || v <= 0) return null; let c = 0; for (const x of vals) if (x <= v) c++; return Math.round((100 * c) / vals.length); };
+allBusinesses.forEach((b) => { b.drop_min = Math.round(dropMin(b) * 100) / 100; b.aidos_score = pctRank(dropMin(b)); });
 
 // PII safety: only NAMEABLE entities (legal persons & chains) are shipped to the browser. Named
 // individuals stay in the internal DB and feed the anonymized aggregates, but their name/address

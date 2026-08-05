@@ -141,8 +141,8 @@
 
     <!-- COMPANIES PREVIEW -->
     <section>
-      <div class="sec-head"><h2>Which companies &amp; chains are affected?</h2><span class="hint">top 5 by removed reviews</span></div>
-      <p class="sec-intro">The businesses with the most removed reviews in the dataset — legal entities and larger chains only, no private individuals. Each row links to the full profile.</p>
+      <div class="sec-head"><h2>Which companies &amp; chains are affected?</h2><span class="hint">top 5 by effect on the rating</span></div>
+      <p class="sec-intro">The businesses whose displayed rating benefits most from the removals — not those with the most removals: a large chain inevitably accumulates more of them without its rating moving measurably. Legal entities and larger chains only, no private individuals. Each row links to the full profile.</p>
       <div class="co-widget reveal">
         <div id="coRows"></div>
         <div class="co-foot">
@@ -175,8 +175,8 @@
     </div>
   </footer>
 
-  <script src="../aggregates.js?v=bd2c24e3"></script>
-  <script src="../lookup.js?v=62f85271"></script>
+  <script src="../aggregates.js?v=1d81ce33"></script>
+  <script src="../lookup.js?v=7f754147"></script>
   <script src="../branch-icons.js?v=38883451"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
@@ -255,16 +255,19 @@
     (function () {
       const LK = window.AIDOS_LOOKUP || [];
       const BR_COL = { 'Automobil': '#5a6b52', 'Gastronomie & Hotel': '#8a5a3c', 'Fitness & Sport': '#3a5f6b', 'Gesundheit': '#4a6b6b', 'Recht & Beratung': '#5b5570', 'Immobilien': '#6b5a3c', 'Beauty & Wellness': '#7a4a5a', 'Handwerk & Bau': '#6b5340', 'Einzelhandel': '#4a5a70', 'Sonstige': '#5a5a5a' };
-      const remOf = (x) => Math.max(0, ...(String(x.r || '').match(/\d+/g) || ['0']).map(Number));
+      // Ranked by the minimum effect on the rating, not by removal count: the latter mostly measures
+      // business size — a restaurant with 8,000 reviews and "over 250" removals shifts its rating by
+      // 0.08★ and still sat near the top.
+      const dropOf = (x) => +x.d || 0;
       const tR = (r) => String(r || '').replace('über', 'over');
-      const top = LK.slice().sort((a, b) => remOf(b) - remOf(a)).slice(0, 5);
-      const maxRem = Math.max(1, ...top.map(remOf));
+      const top = LK.slice().sort((a, b) => dropOf(b) - dropOf(a)).slice(0, 5);
+      const maxDrop = Math.max(0.01, ...top.map(dropOf));
       document.getElementById('coRows').innerHTML = top.map((x, i) => {
         const cities = String(x.c || '').split(', ').map(tC);
         const cityLbl = cities.slice(0, 2).join(', ') + (cities.length > 2 ? ` +${cities.length - 2} more` : '');
         return `<a class="co-row" href="../en/${x.u}"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.b] || '#5a5a5a'}">${aidosBranchIcon(x.b, 22)}</div>` +
           `<div><div class="nm">${esc(x.n)}</div><div class="meta"><span class="pill">${esc(tB(x.b))}</span><span class="pill">${esc(cityLbl)}</span></div></div>` +
-          `<div class="right"><div class="removed">${esc(tR(x.r))}<span class="lbl">removed reviews</span></div><div class="bar"><i data-w="${Math.round(100 * remOf(x) / maxRem)}"></i></div></div></a>`;
+          `<div class="right"><div class="removed">at least ${en1(dropOf(x))}★<span class="lbl">effect on the rating · ${esc(tR(x.r))} removed</span></div><div class="bar"><i data-w="${Math.round(100 * dropOf(x) / maxDrop)}"></i></div></div></a>`;
       }).join('');
       document.getElementById('coSum').innerHTML = `<b>${en(LK.length)}</b> listed companies &amp; chains in <b>${en((A.cities || []).length)}</b> cities — searchable, filterable by industry and city, with the estimated rating effect.`;
       document.getElementById('coChips').innerHTML = '<span class="lbl">Jump to an industry:</span>' +
