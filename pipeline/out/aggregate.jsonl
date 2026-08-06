@@ -1151,78 +1151,78 @@
 {"aid":"4924713d188b31d8","date":"2026-07","branch":"Beauty & Wellness","city":"Wuppertal","nameable":true,"range_min":11,"range_max":20,"rating":5,"rating_drop":2.31}
 {"aid":"e8630a3147a04a9b","date":"2026-07","branch":"Gesundheit","city":"Wuppertal","nameable":false,"range_min":21,"range_max":50,"rating":4,"rating_drop":2.04}
 {"aid":"fcd37940f3a8bee5","date":"2026-07","branch":"Unbekannt","city":"Wuppertal","nameable":false,"range_min":21,"range_max":50,"rating":3.1,"rating_drop":1.12}
-{"aid":"e05f4938fc614724","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.5}
-{"aid":"32ca87ab1d6c4c20","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.02}
-{"aid":"13c5ed2cb47a5023","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.22}
+{"aid":"e05f4938fc614724","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.62}
+{"aid":"32ca87ab1d6c4c20","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.13}
+{"aid":"13c5ed2cb47a5023","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":0.23}
 {"aid":"16df70d380e12cda","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":3.07}
-{"aid":"cb83ebfb32677fd5","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.2,"rating_drop":0.81}
-{"aid":"427cc25fce7369f2","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.9,"rating_drop":1.27}
+{"aid":"cb83ebfb32677fd5","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.2,"rating_drop":0.86}
+{"aid":"427cc25fce7369f2","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.9,"rating_drop":1.36}
 {"aid":"c629c5a9275d75ba","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.4}
-{"aid":"f61f47b2a927e599","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.66}
+{"aid":"f61f47b2a927e599","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":2.8}
 {"aid":"d1252dab82a7d9de","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.34}
 {"aid":"75b92966549e1170","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.88}
-{"aid":"7dc1c07cfd228ba3","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":0.8}
+{"aid":"7dc1c07cfd228ba3","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":0.84}
 {"aid":"353a22c5cbecf601","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.79}
-{"aid":"5e679cb6da0aa33f","date":"2026-08","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.68}
-{"aid":"8724fb2d1c554457","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":201,"range_max":250,"rating":4.8,"rating_drop":3.03}
-{"aid":"c2d11f71cad1cab9","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.89}
-{"aid":"8a90395a188b6d53","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.21}
-{"aid":"14624703e1ff7038","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":1.1}
-{"aid":"0def563d4449b1fb","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.76}
-{"aid":"ec0f4449fc7e514f","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.5,"rating_drop":0.4}
-{"aid":"98a43d903bae0e7c","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.09}
-{"aid":"4403606187290f3c","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.08}
+{"aid":"5e679cb6da0aa33f","date":"2026-08","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.77}
+{"aid":"8724fb2d1c554457","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":201,"range_max":250,"rating":4.8,"rating_drop":3.18}
+{"aid":"c2d11f71cad1cab9","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.04}
+{"aid":"8a90395a188b6d53","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.32}
+{"aid":"14624703e1ff7038","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.5,"rating_drop":1.16}
+{"aid":"0def563d4449b1fb","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.89}
+{"aid":"ec0f4449fc7e514f","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":3.5,"rating_drop":0.44}
+{"aid":"98a43d903bae0e7c","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.2}
+{"aid":"4403606187290f3c","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.2}
 {"aid":"e06efce34dd70999","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.82}
-{"aid":"b319fd5728af934d","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.9}
+{"aid":"b319fd5728af934d","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":1.99}
 {"aid":"a300ba85247c5819","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.5,"rating_drop":1.69}
 {"aid":"4407b7b948eb29f6","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":3}
-{"aid":"c0853ecd1167f3e4","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":1.16}
-{"aid":"02d5f0492b33bb8c","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.28}
-{"aid":"0731f8aab76f71bf","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.85}
-{"aid":"698349758a5d365d","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.54}
-{"aid":"ef355cfd5a8b9f57","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.29}
+{"aid":"c0853ecd1167f3e4","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":1.21}
+{"aid":"02d5f0492b33bb8c","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.4}
+{"aid":"0731f8aab76f71bf","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.95}
+{"aid":"698349758a5d365d","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.67}
+{"aid":"ef355cfd5a8b9f57","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.41}
 {"aid":"6efa7f87bface131","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.9,"rating_drop":3.02}
-{"aid":"94d7147584e801ba","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.74}
+{"aid":"94d7147584e801ba","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.88}
 {"aid":"d6409fcee8b0d411","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.79}
-{"aid":"70032ce5381cdc15","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.76}
-{"aid":"c89cb0ca3a02862d","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.12}
-{"aid":"c960c9597089cfde","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.6}
-{"aid":"2950ffc4890eb686","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.24}
-{"aid":"b4c463d984eb9176","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
-{"aid":"7808728972ea11ae","date":"2026-08","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.12}
-{"aid":"6f9a6cacb0037a3d","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.91}
-{"aid":"a40ae12a5d153085","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":0.56}
-{"aid":"e1fd6f8f106f1f7d","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.18}
-{"aid":"11885806d4b936f6","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":2.91}
+{"aid":"70032ce5381cdc15","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.9}
+{"aid":"c89cb0ca3a02862d","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":0.13}
+{"aid":"c960c9597089cfde","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.72}
+{"aid":"2950ffc4890eb686","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.31}
+{"aid":"b4c463d984eb9176","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.98}
+{"aid":"7808728972ea11ae","date":"2026-08","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.28}
+{"aid":"6f9a6cacb0037a3d","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":3.06}
+{"aid":"a40ae12a5d153085","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":250,"range_max":null,"rating":4.7,"rating_drop":0.58}
+{"aid":"e1fd6f8f106f1f7d","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.3}
+{"aid":"11885806d4b936f6","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":3.06}
 {"aid":"8b2fffa2c3d8b5a5","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.4,"rating_drop":2.37}
-{"aid":"d34e6d2c6c179749","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":3.9,"rating_drop":2.34}
+{"aid":"d34e6d2c6c179749","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":3.9,"rating_drop":2.51}
 {"aid":"cbb8a80647d3bc4d","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.44}
-{"aid":"286182c76a271b1c","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":2.87}
-{"aid":"3183a9bc9d8f356e","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":0.32}
-{"aid":"77e81e29caa082bf","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.39}
+{"aid":"286182c76a271b1c","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":3.02}
+{"aid":"3183a9bc9d8f356e","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.2,"rating_drop":0.34}
+{"aid":"77e81e29caa082bf","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.51}
 {"aid":"98c1769a9d0d5e75","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.8,"rating_drop":2.7}
 {"aid":"2213b5f3b95deb29","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.9,"rating_drop":2.71}
-{"aid":"25499fbd8980873b","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":2.9}
+{"aid":"25499fbd8980873b","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":3.05}
 {"aid":"32c3977214f19e36","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":0.04}
 {"aid":"0b8081f4b6b7b97a","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.98}
 {"aid":"72219e03d7740b69","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":1.73}
 {"aid":"63898edea8529c55","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":2.83}
 {"aid":"f1a1999be8bdab1b","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":2.64}
 {"aid":"4ea5a849a51e629b","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.5,"rating_drop":1.45}
-{"aid":"230cc83204fbb959","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.44}
-{"aid":"0f67ba9a7e2bd0f7","date":"2026-08","branch":"Beauty & Wellness","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
+{"aid":"230cc83204fbb959","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.52}
+{"aid":"0f67ba9a7e2bd0f7","date":"2026-08","branch":"Beauty & Wellness","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":3.07}
 {"aid":"f3b3c788bc76dbbd","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":151,"range_max":200,"rating":4.6,"rating_drop":2.32}
-{"aid":"764911a31189aecd","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.47}
-{"aid":"6716328c0f981012","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
-{"aid":"03efa4fc4d9c7dbe","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.65}
-{"aid":"b8b426e4b61bba5b","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
-{"aid":"55af55cec4f22189","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":0.51}
-{"aid":"a1bd4b60ca43cd58","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.85}
-{"aid":"a03e732c7c22e0d7","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.92}
-{"aid":"f1cd8807178a85e5","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.73}
-{"aid":"130f022213d94ff9","date":"2026-08","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":3.01}
+{"aid":"764911a31189aecd","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.6}
+{"aid":"6716328c0f981012","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":3.07}
+{"aid":"03efa4fc4d9c7dbe","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":0.68}
+{"aid":"b8b426e4b61bba5b","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.75}
+{"aid":"55af55cec4f22189","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":0.54}
+{"aid":"a1bd4b60ca43cd58","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.95}
+{"aid":"a03e732c7c22e0d7","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":3.07}
+{"aid":"f1cd8807178a85e5","date":"2026-08","branch":"Fitness & Sport","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":1.83}
+{"aid":"130f022213d94ff9","date":"2026-08","branch":"Immobilien","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":3.16}
 {"aid":"a689b5331f424c10","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":5,"rating_drop":3.1}
-{"aid":"9307420f64dd5bc5","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.44}
+{"aid":"9307420f64dd5bc5","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":0.47}
 {"aid":"00ffdcda7c98817c","date":"2026-08","branch":"Unbekannt","city":"Bielefeld","nameable":true,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.46}
 {"aid":"a1ad447396862f36","date":"2026-08","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":3.8,"rating_drop":1.88}
 {"aid":"3c51a2cb25610a63","date":"2026-08","branch":"Gastronomie & Hotel","city":"Bielefeld","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.61}
@@ -1871,3 +1871,50 @@
 {"aid":"a7c931d14dca7a9d","date":"2026-08","branch":"Gastronomie & Hotel","city":"Münster","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.7}
 {"aid":"0c459f822c60c5b1","date":"2026-08","branch":"Gastronomie & Hotel","city":"Duisburg","nameable":true,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":2.64}
 {"aid":"6e23a3944ae84aa7","date":"2026-08","branch":"Gastronomie & Hotel","city":"Duisburg","nameable":false,"range_min":21,"range_max":50,"rating":4.1,"rating_drop":1.55}
+{"aid":"4a1fa2b8c7149481","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.6,"rating_drop":3.02}
+{"aid":"279a5d83cb0e2159","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":1.24}
+{"aid":"68bf668404456402","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":0.9}
+{"aid":"c661caf3f2093eaa","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":3.07}
+{"aid":"ef4e7a93e0392c19","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.28}
+{"aid":"503a39caad8a5d15","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.5,"rating_drop":1.92}
+{"aid":"ae9241c00af42a13","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.54}
+{"aid":"7fe48474ee2353f0","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.5,"rating_drop":3.09}
+{"aid":"78c630c62e18865e","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.75}
+{"aid":"1113276c5fd9c68a","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.4,"rating_drop":1.75}
+{"aid":"589ba3b27a2dd7b7","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":0.63}
+{"aid":"a08ad1f135c3e533","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":3.9,"rating_drop":1.15}
+{"aid":"a1e56b0126e24686","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.9,"rating_drop":2.73}
+{"aid":"a5f4a86b296e880d","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.6,"rating_drop":2.07}
+{"aid":"f27511fd91f64db0","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.99}
+{"aid":"84df8d4734558e6e","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":2.71}
+{"aid":"8700fbd7a4d520ab","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":0.48}
+{"aid":"2126e64dd4652a52","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":151,"range_max":200,"rating":4.7,"rating_drop":3.1}
+{"aid":"768c15e701452b23","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.14}
+{"aid":"e8d098fbe3435d05","date":"2026-08","branch":"Beauty & Wellness","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.62}
+{"aid":"182c69ae9974f139","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.97}
+{"aid":"887a0e4baa196500","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.19}
+{"aid":"d6049ceedd2e068e","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.19}
+{"aid":"d204a1dc8f086f2d","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.4,"rating_drop":2.97}
+{"aid":"21fe381ee0e76f64","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":3.9,"rating_drop":0.12}
+{"aid":"d22a9a07f37f95d7","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":1.44}
+{"aid":"900d2bf6e2324a2e","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.4,"rating_drop":2.32}
+{"aid":"ac182023d5f9be19","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.1,"rating_drop":2.66}
+{"aid":"7703e42e4bb1d3da","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.7,"rating_drop":1.9}
+{"aid":"7e8bcc5cfbb631d2","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":3.16}
+{"aid":"1f75abad64455fc6","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":5,"rating_drop":1.75}
+{"aid":"06b8b0bf0aea8099","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":201,"range_max":250,"rating":3.8,"rating_drop":1.07}
+{"aid":"f61334eb51e1c8d6","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.5,"rating_drop":1.28}
+{"aid":"2bee4d27fe5d1c38","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":5,"rating_drop":1.06}
+{"aid":"5cc1d5257c07e499","date":"2026-08","branch":"Recht & Beratung","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":3.28}
+{"aid":"52b37a03229aaa01","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.8,"rating_drop":0.46}
+{"aid":"4dc34985623e4fee","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":2.29}
+{"aid":"39b71ecbde42ccbf","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":101,"range_max":150,"rating":4.6,"rating_drop":2.03}
+{"aid":"46328b3729a10fbe","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.14}
+{"aid":"adb61cbfd6f06549","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":3.24}
+{"aid":"201c1f5b0cba0e06","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":true,"range_min":21,"range_max":50,"rating":4,"rating_drop":1.22}
+{"aid":"2b8c9c429a4773e7","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":1.91}
+{"aid":"f3d884cf50442728","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.33}
+{"aid":"66051ff91b7f825c","date":"2026-08","branch":"Gastronomie & Hotel","city":"Berlin","nameable":false,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":3.1}
+{"aid":"da6b78d00af16822","date":"2026-08","branch":"Automobil","city":"Berlin","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":3.07}
+{"aid":"13103e5e4f3f70d9","date":"2026-08","branch":"Gesundheit","city":"Berlin","nameable":false,"range_min":101,"range_max":150,"rating":4.7,"rating_drop":3.12}
+{"aid":"5f652484d8aa327c","date":"2026-08","branch":"Unbekannt","city":"Berlin","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":3.07}

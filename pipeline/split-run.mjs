@@ -2,7 +2,7 @@
 // The combined sweep visits several cities in one run; ingest.mjs attributes checks per city via
 // --city, so the export must be split first. City attribution cascade:
 //   records: capture lat/lng → geo box · address PLZ · URL/query text
-//   checks:  final URL → query text (incl. English city names) · direction target · URL lat/lng
+//   checks:  place-level URL lat/lng (>=15z) → query text (incl. English city names)
 // Output: pipeline/out/runsplit/<slug>.json ({records, checks}) + strays.json (real places that
 // resolved OUTSIDE every survey city — ingested without a survey city, never mislabeled).
 // Usage: node pipeline/split-run.mjs "<export.json>"
@@ -62,13 +62,21 @@ function geoCity(lat, lng) {
 }
 const PLZ2 = { '40': 'Düsseldorf', '01': 'Dresden', '70': 'Stuttgart', '90': 'Nürnberg', '30': 'Hannover', '28': 'Bremen', '45': 'Essen', '47': 'Duisburg', '04': 'Leipzig', '50': 'Köln', '51': 'Köln', '10': 'Berlin', '12': 'Berlin', '13': 'Berlin', '14': 'Berlin', '20': 'Hamburg', '21': 'Hamburg', '22': 'Hamburg', '60': 'Frankfurt am Main', '42': 'Wuppertal', '33': 'Bielefeld', '53': 'Bonn', '48': 'Münster', '68': 'Mannheim', '76': 'Karlsruhe', '86': 'Augsburg', '41': 'Mönchengladbach' };
 
+// The zoom token decides which evidence is real. At >=15z Maps has resolved a PLACE, so /@ IS the
+// business — coordinates then beat the text, because German street names carry other cities' names
+// ("Berliner Straße" in Düsseldorf, "Frankfurter Allee" in Berlin) and the text path would ship
+// those checks to a city that was not even being surveyed that night. Below 15z the URL is a search
+// page and /@ is only the viewport centre — meaningless as a location, so the query text is all we
+// have, and if that names no city the check stays unassigned rather than being placed by a viewport.
+const PLACE_ZOOM = 15;
 function cityOfUrl(url) {
   let u = ''; try { u = decodeURIComponent(url || '').replace(/\+/g, ' '); } catch { u = url || ''; }
+  const m = u.match(/\/@(-?\d+\.\d+),(-?\d+\.\d+),([\d.]+)z/);
+  if (m && +m[3] >= PLACE_ZOOM) { const g = geoCity(+m[1], +m[2]); if (g) return g; }
   const q = u.split('/@')[0].toLowerCase();
   for (const c of CITIES) if (q.includes(' ' + c.toLowerCase()) || q.endsWith('/' + c.toLowerCase())) return c;
   for (const [en, de] of Object.entries(EN)) if (q.includes(en)) return de;
-  const m = u.match(/\/@(-?\d+\.\d+),(-?\d+\.\d+)/);
-  if (m) return geoCity(+m[1], +m[2]);
+  if (m && +m[3] >= PLACE_ZOOM) return boxCity(+m[1], +m[2]);
   return null;
 }
 function cityOfRec(r) {
