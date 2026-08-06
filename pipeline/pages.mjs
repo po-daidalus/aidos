@@ -152,7 +152,11 @@ for (const b of nameable) { const k = brandKey(b); (brandsAll.get(k) || brandsAl
 // Naming policy (mirrors listing.html isListable): public pages name only chains
 // (≥2 locations), legal persons (GmbH, AG …), known chain brands, or larger
 // single-site operations (≥400 reviews).
-const LEGAL_FORM_RE = /\b(g?GmbH|mbH|UG|AG|KGaA|KG|OHG|SE|e\.?\s?K\.?|e\.?\s?G\.?|Ltd|Limited|Inc|PartG(?:mbB)?)\b/i;
+// Must stay character-for-character identical to LEGAL_FORM in listing.html / en/listing.html.
+// The two lists drifted once (eG, e.K., PartG only here, PLC only there): WGH-Herrenhausen eG then
+// had a public page, sat in the sitemap and on the city page — and was missing from the listing,
+// the one surface a reader uses to check whether a company is in the dataset.
+const LEGAL_FORM_RE = /\b(g?GmbH|mbH|UG|AG|KGaA|KG|OHG|SE|e\.?\s?K\.?|e\.?\s?G\.?|Ltd|Limited|Inc|PLC|PartG(?:mbB)?)\b/i;
 const CHAIN_NAMES = ['holmes place', 'mcfit', 'fitx', 'clever fit', 'john reed', 'fitness first', 'kieser', 'aspria', 'vapiano', "l'osteria", 'hans im glück', 'peter pane', 'dean & david', 'block house', 'nordsee', 'starbucks', 'mcdonald', 'burger king', 'kfc', 'subway', 'motel one', 'ibis', 'novotel', 'mercure', 'premier inn', 'meininger', 'leonardo', 'radisson', 'hilton', 'a&o', 'mcmakler', 'autoland', 'rossmann', 'edeka', 'rewe', 'aldi', 'lidl', 'citroën', 'citroen'];
 function isListable(locs) {
   if (locs.length >= 2) return true;
