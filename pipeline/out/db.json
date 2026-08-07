@@ -8753,35 +8753,40 @@
       "website": null,
       "image": null,
       "rating": 4.5,
-      "reviews": 771,
+      "reviews": 770,
       "dist": [
         40,
         21,
         27,
         77,
-        606
+        605
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.29,
-      "est_mid": 4.37,
+      "est_mid": 4.36,
       "est_high": 4.43,
+      "est_open": false,
       "lat": 53.5878532,
       "lng": 10.0446407,
-      "url": "https://www.google.com/maps/place/TRU+Fitness+Club/@53.5878532,10.0446407,17z/data=!4m8!3m7!1s0x47a850f961daad1f:0xc5f27b38c1b59916!8m2!3d53.5878532!4d10.0446407!9m1!1b1!16s%2Fg%2F11fxvsll95?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/TRU+Fitness+Club/@53.5878532,10.0446407,17z/data=!4m8!3m7!1s0x47a850f961daad1f:0xc5f27b38c1b59916!8m2!3d53.5878532!4d10.0446407!9m1!1b1!16s%2Fg%2F11fxvsll95?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2020-08": {
           "n": 2,
           "sum": 10
         },
+        "2021-08": {
+          "n": 1,
+          "sum": 4
+        },
         "2022-08": {
-          "n": 4,
-          "sum": 18
+          "n": 3,
+          "sum": 14
         },
         "2023-08": {
           "n": 5,
@@ -8796,67 +8801,67 @@
           "sum": 74
         },
         "2025-10": {
-          "n": 3,
-          "sum": 15
+          "n": 4,
+          "sum": 20
         },
         "2025-11": {
           "n": 3,
           "sum": 14
         },
         "2025-12": {
-          "n": 72,
-          "sum": 345
+          "n": 76,
+          "sum": 364
         },
         "2026-01": {
           "n": 33,
-          "sum": 159
+          "sum": 160
         },
         "2026-02": {
-          "n": 27,
-          "sum": 111
+          "n": 28,
+          "sum": 112
         },
         "2026-03": {
-          "n": 25,
-          "sum": 119
+          "n": 24,
+          "sum": 114
         },
         "2026-04": {
-          "n": 18,
-          "sum": 81
+          "n": 15,
+          "sum": 69
         },
         "2026-05": {
-          "n": 6,
-          "sum": 22
+          "n": 5,
+          "sum": 18
         },
         "2026-06": {
-          "n": 9,
-          "sum": 39
+          "n": 16,
+          "sum": 72
         },
         "2026-07": {
-          "n": 16,
-          "sum": 48
+          "n": 10,
+          "sum": 20
         },
         "2026-08": {
-          "n": 29,
-          "sum": 136
+          "n": 28,
+          "sum": 131
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:00:45.123Z",
+        "at": "2026-08-07T01:18:41.372Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 67,
-          "n_end": 2013,
-          "n_sort": 74,
-          "n_start": 74,
-          "n_tab": 67,
+          "n0": 84,
+          "n_end": 2028,
+          "n_sort": 86,
+          "n_start": 86,
+          "n_tab": 84,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 270,
+        "matched": 271,
         "oldest_months": 8,
-        "scanned": 270,
+        "scanned": 271,
         "sorted": true,
         "tab_retry": false
       }
@@ -8871,10 +8876,11 @@
       "range_min": 21,
       "range_max": 50,
       "est_low": 3.91,
-      "est_mid": 4.23,
+      "est_mid": 4.2,
       "est_high": 4.54,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b1859227c99e73:0xafca0703780b9a9e": {
       "place_id": "0x47b1859227c99e73:0xafca0703780b9a9e",
@@ -8888,35 +8894,36 @@
       "website": null,
       "image": null,
       "rating": 4.8,
-      "reviews": 1163,
+      "reviews": 1165,
       "dist": [
         2,
         1,
         32,
-        142,
-        986
+        143,
+        987
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.74,
-      "est_mid": 4.76,
+      "est_mid": 4.75,
       "est_high": 4.77,
+      "est_open": false,
       "lat": 53.5591619,
       "lng": 9.9249322,
-      "url": "https://www.google.com/maps/place/Farina+meets+Mehl/@53.5591619,9.9249322,17z/data=!3m1!5s0x47b185922702ff5b:0x7230693f00765780!4m8!3m7!1s0x47b1859227c99e73:0xafca0703780b9a9e!8m2!3d53.5591619!4d9.9249322!9m1!1b1!16s%2Fg%2F1hm45k431?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Farina+meets+Mehl/@53.5591619,9.9249322,17z/data=!3m1!5s0x47b185922702ff5b:0x7230693f00765780!4m8!3m7!1s0x47b1859227c99e73:0xafca0703780b9a9e!8m2!3d53.5591619!4d9.9249322!9m1!1b1!16s%2Fg%2F1hm45k431?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2015-08": {
           "n": 1,
           "sum": 5
         },
         "2017-08": {
-          "n": 1,
-          "sum": 5
+          "n": 2,
+          "sum": 10
         },
         "2018-08": {
           "n": 1,
@@ -8939,79 +8946,79 @@
           "sum": 32
         },
         "2024-08": {
-          "n": 16,
-          "sum": 77
+          "n": 17,
+          "sum": 80
         },
         "2025-08": {
           "n": 11,
           "sum": 53
         },
         "2025-09": {
-          "n": 7,
-          "sum": 33
+          "n": 8,
+          "sum": 36
         },
         "2025-10": {
-          "n": 23,
-          "sum": 109
+          "n": 22,
+          "sum": 106
         },
         "2025-11": {
           "n": 30,
           "sum": 144
         },
         "2025-12": {
-          "n": 15,
-          "sum": 75
+          "n": 14,
+          "sum": 70
         },
         "2026-01": {
           "n": 15,
-          "sum": 71
+          "sum": 70
         },
         "2026-02": {
           "n": 16,
-          "sum": 77
+          "sum": 78
         },
         "2026-03": {
-          "n": 16,
-          "sum": 76
+          "n": 17,
+          "sum": 77
         },
         "2026-04": {
-          "n": 26,
-          "sum": 124
+          "n": 31,
+          "sum": 149
         },
         "2026-05": {
-          "n": 22,
-          "sum": 104
+          "n": 18,
+          "sum": 85
         },
         "2026-06": {
           "n": 19,
-          "sum": 87
+          "sum": 90
         },
         "2026-07": {
-          "n": 15,
-          "sum": 73
+          "n": 16,
+          "sum": 76
         },
         "2026-08": {
-          "n": 26,
-          "sum": 123
+          "n": 24,
+          "sum": 114
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:01:25.661Z",
+        "at": "2026-08-07T04:02:10.571Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 84,
+          "n0": 107,
           "n_end": 2065,
-          "n_sort": 103,
-          "n_start": 103,
-          "n_tab": 84,
+          "n_sort": 99,
+          "n_start": 99,
+          "n_tab": 107,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 273,
+        "matched": 275,
         "oldest_months": 11,
-        "scanned": 274,
+        "scanned": 277,
         "sorted": true,
         "tab_retry": false
       }
@@ -9028,75 +9035,76 @@
       "website": null,
       "image": null,
       "rating": 4.8,
-      "reviews": 129,
+      "reviews": 130,
       "dist": [
         1,
         null,
         7,
         8,
-        113
+        114
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.29,
-      "est_mid": 4.45,
+      "est_mid": 4.43,
       "est_high": 4.58,
+      "est_open": false,
       "lat": 53.5690182,
       "lng": 9.9181697,
-      "url": "https://www.google.com/maps/place/Autoland+Niederlassung+Hamburg/@53.5690182,9.9181697,17z/data=!4m8!3m7!1s0x47b185a053640da9:0x5f22e28b6b0116b6!8m2!3d53.5690182!4d9.9181697!9m1!1b1!16s%2Fg%2F11xg__559k?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Autoland+Niederlassung+Hamburg/@53.5690182,9.9181697,17z/data=!4m8!3m7!1s0x47b185a053640da9:0x5f22e28b6b0116b6!8m2!3d53.5690182!4d9.9181697!9m1!1b1!16s%2Fg%2F11xg__559k?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2025-08": {
           "n": 11,
           "sum": 53
         },
         "2025-09": {
-          "n": 12,
-          "sum": 59
+          "n": 13,
+          "sum": 64
         },
         "2025-10": {
-          "n": 17,
-          "sum": 85
+          "n": 18,
+          "sum": 90
         },
         "2025-11": {
-          "n": 16,
-          "sum": 79
+          "n": 15,
+          "sum": 74
         },
         "2025-12": {
-          "n": 9,
-          "sum": 42
+          "n": 11,
+          "sum": 50
         },
         "2026-01": {
-          "n": 7,
-          "sum": 33
+          "n": 4,
+          "sum": 20
         },
         "2026-02": {
           "n": 4,
           "sum": 20
         },
         "2026-03": {
-          "n": 10,
-          "sum": 47
+          "n": 11,
+          "sum": 52
         },
         "2026-04": {
-          "n": 8,
-          "sum": 38
+          "n": 7,
+          "sum": 33
         },
         "2026-05": {
-          "n": 11,
-          "sum": 54
+          "n": 12,
+          "sum": 59
         },
         "2026-06": {
-          "n": 14,
-          "sum": 63
+          "n": 13,
+          "sum": 58
         },
         "2026-07": {
-          "n": 5,
-          "sum": 22
+          "n": 7,
+          "sum": 32
         },
         "2026-08": {
           "n": 4,
@@ -9104,22 +9112,22 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:01:56.204Z",
+        "at": "2026-08-07T02:32:15.533Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 70,
-          "n_end": 1024,
-          "n_sort": 69,
-          "n_start": 69,
-          "n_tab": 70,
+          "n0": 88,
+          "n_end": 1033,
+          "n_sort": 73,
+          "n_start": 73,
+          "n_tab": 88,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 128,
+        "matched": 130,
         "oldest_months": 12,
-        "scanned": 129,
+        "scanned": 130,
         "sorted": true,
         "tab_retry": false
       }
@@ -9136,35 +9144,36 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 140,
+      "reviews": 141,
       "dist": [
         6,
         1,
         null,
         10,
-        123
+        124
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.73,
-      "est_mid": 4.05,
+      "est_mid": 4.02,
       "est_high": 4.35,
+      "est_open": false,
       "lat": 53.5598489,
       "lng": 9.9107867,
-      "url": "https://www.google.com/maps/place/Zahnklinik+-+MVZ+Dentologicum+290/@53.5598489,9.9107867,17z/data=!3m1!5s0x47b18414d33ebc99:0x38f5aa703608ba00!4m8!3m7!1s0x47b185bde03db2df:0xefc4ec3fe68a277d!8m2!3d53.5598489!4d9.9107867!9m1!1b1!16s%2Fg%2F1tl9lmy8?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Zahnklinik+-+MVZ+Dentologicum+290/@53.5598489,9.9107867,17z/data=!3m1!5s0x47b18414d33ebc99:0x38f5aa703608ba00!4m8!3m7!1s0x47b185bde03db2df:0xefc4ec3fe68a277d!8m2!3d53.5598489!4d9.9107867!9m1!1b1!16s%2Fg%2F1tl9lmy8?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2014-08": {
           "n": 1,
           "sum": 5
         },
         "2017-08": {
-          "n": 1,
-          "sum": 4
+          "n": 2,
+          "sum": 9
         },
         "2018-08": {
           "n": 3,
@@ -9227,12 +9236,8 @@
           "sum": 6
         },
         "2026-05": {
-          "n": 5,
-          "sum": 10
-        },
-        "2026-06": {
-          "n": 1,
-          "sum": 5
+          "n": 6,
+          "sum": 15
         },
         "2026-07": {
           "n": 2,
@@ -9244,22 +9249,22 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:02:19.631Z",
+        "at": "2026-08-06T22:11:10.972Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 68,
-          "n_end": 485,
-          "n_sort": 83,
-          "n_start": 83,
-          "n_tab": 68,
+          "n0": 84,
+          "n_end": 484,
+          "n_sort": 82,
+          "n_start": 82,
+          "n_tab": 84,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 83,
+        "matched": 84,
         "oldest_months": 24,
-        "scanned": 83,
+        "scanned": 85,
         "sorted": true,
         "tab_retry": false
       }
@@ -9288,15 +9293,16 @@
       "business_status": "operational",
       "range_min": 51,
       "range_max": 100,
-      "banner_text": "51 to 100 reviews removed due to defamation complaints",
+      "banner_text": "51 bis 100 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.56,
-      "est_mid": 3.83,
+      "est_mid": 3.8,
       "est_high": 4.06,
+      "est_open": false,
       "lat": 53.5805396,
       "lng": 9.9057144,
-      "url": "https://www.google.com/maps/place/Das+Bauernhaus/@53.5805396,9.9057144,17z/data=!4m8!3m7!1s0x47b185da733e1c89:0xb27fd438691db14c!8m2!3d53.5805396!4d9.9057144!9m1!1b1!16s%2Fg%2F1vq9lbgt?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Das+Bauernhaus/@53.5805396,9.9057144,17z/data=!4m8!3m7!1s0x47b185da733e1c89:0xb27fd438691db14c!8m2!3d53.5805396!4d9.9057144!9m1!1b1!16s%2Fg%2F1vq9lbgt?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2017-08": {
           "n": 1,
@@ -9323,8 +9329,8 @@
           "sum": 14
         },
         "2024-08": {
-          "n": 8,
-          "sum": 37
+          "n": 10,
+          "sum": 44
         },
         "2025-08": {
           "n": 40,
@@ -9347,43 +9353,43 @@
           "sum": 5
         },
         "2026-04": {
-          "n": 1,
-          "sum": 5
+          "n": 2,
+          "sum": 6
         },
         "2026-05": {
-          "n": 5,
-          "sum": 18
+          "n": 4,
+          "sum": 17
         },
         "2026-06": {
-          "n": 2,
-          "sum": 9
+          "n": 3,
+          "sum": 14
         },
         "2026-07": {
-          "n": 10,
-          "sum": 44
+          "n": 11,
+          "sum": 49
         },
         "2026-08": {
-          "n": 4,
-          "sum": 16
+          "n": 2,
+          "sum": 6
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:02:46.704Z",
+        "at": "2026-08-07T02:33:55.155Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 90,
+          "n0": 113,
           "n_end": 673,
           "n_sort": 97,
           "n_start": 97,
-          "n_tab": 90,
+          "n_tab": 113,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 101,
+        "matched": 103,
         "oldest_months": 24,
-        "scanned": 101,
+        "scanned": 103,
         "sorted": true,
         "tab_retry": false
       }
@@ -9412,23 +9418,24 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.3,
-      "est_mid": 4.48,
+      "est_mid": 4.46,
       "est_high": 4.63,
+      "est_open": false,
       "lat": 53.5511668,
       "lng": 9.9388507,
-      "url": "https://www.google.com/maps/place/Lady+Fitness+Center+-+Frauen+Fitnessstudio+in+Hamburg+Altona/@53.5511668,9.9388507,17z/data=!4m8!3m7!1s0x47b185f01724dffd:0x1223e931d2e862d5!8m2!3d53.5511668!4d9.9388507!9m1!1b1!16s%2Fg%2F1td7mc4_?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Lady+Fitness+Center+-+Frauen+Fitnessstudio+in+Hamburg+Altona/@53.5511668,9.9388507,17z/data=!4m8!3m7!1s0x47b185f01724dffd:0x1223e931d2e862d5!8m2!3d53.5511668!4d9.9388507!9m1!1b1!16s%2Fg%2F1td7mc4_?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2016-08": {
           "n": 1,
           "sum": 5
         },
         "2017-08": {
-          "n": 1,
-          "sum": 4
+          "n": 3,
+          "sum": 14
         },
         "2018-08": {
           "n": 3,
@@ -9443,12 +9450,12 @@
           "sum": 25
         },
         "2021-08": {
-          "n": 4,
-          "sum": 19
+          "n": 5,
+          "sum": 23
         },
         "2022-08": {
-          "n": 7,
-          "sum": 33
+          "n": 6,
+          "sum": 29
         },
         "2023-08": {
           "n": 6,
@@ -9463,16 +9470,16 @@
           "sum": 59
         },
         "2025-10": {
-          "n": 2,
-          "sum": 10
+          "n": 3,
+          "sum": 15
         },
-        "2025-11": {
+        "2025-12": {
           "n": 1,
           "sum": 5
         },
         "2026-01": {
-          "n": 5,
-          "sum": 25
+          "n": 4,
+          "sum": 20
         },
         "2026-03": {
           "n": 1,
@@ -9483,31 +9490,31 @@
           "sum": 15
         },
         "2026-07": {
-          "n": 2,
-          "sum": 10
-        },
-        "2026-08": {
           "n": 3,
           "sum": 15
+        },
+        "2026-08": {
+          "n": 2,
+          "sum": 10
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:03:07.284Z",
+        "at": "2026-08-07T00:00:51.075Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 73,
+          "n0": 95,
           "n_end": 349,
           "n_sort": 97,
           "n_start": 97,
-          "n_tab": 73,
+          "n_tab": 95,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 72,
+        "matched": 74,
         "oldest_months": 24,
-        "scanned": 72,
+        "scanned": 74,
         "sorted": true,
         "tab_retry": false
       }
@@ -9524,27 +9531,28 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 564,
+      "reviews": 566,
       "dist": [
         23,
         2,
         5,
-        77,
-        457
+        78,
+        458
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 51,
       "range_max": 100,
-      "banner_text": "51 to 100 reviews removed due to defamation complaints",
+      "banner_text": "51 bis 100 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.14,
-      "est_mid": 4.32,
+      "est_mid": 4.3,
       "est_high": 4.48,
+      "est_open": false,
       "lat": 53.6242668,
       "lng": 9.9097315,
-      "url": "https://www.google.com/maps/place/Tecius+und+Reimers+Automobile+oHG/@53.6242668,9.9097315,17z/data=!4m8!3m7!1s0x47b18656536cbabd:0x8091b6d0d7837e83!8m2!3d53.6242668!4d9.9097315!9m1!1b1!16s%2Fg%2F1tfn1sq9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Tecius+und+Reimers+Automobile+oHG/@53.6242668,9.9097315,17z/data=!4m8!3m7!1s0x47b18656536cbabd:0x8091b6d0d7837e83!8m2!3d53.6242668!4d9.9097315!9m1!1b1!16s%2Fg%2F1tfn1sq9?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2019-08": {
           "n": 1,
@@ -9567,12 +9575,12 @@
           "sum": 5
         },
         "2024-08": {
-          "n": 8,
-          "sum": 40
+          "n": 6,
+          "sum": 30
         },
         "2025-08": {
-          "n": 46,
-          "sum": 211
+          "n": 45,
+          "sum": 208
         },
         "2025-09": {
           "n": 9,
@@ -9587,57 +9595,57 @@
           "sum": 98
         },
         "2025-12": {
-          "n": 8,
-          "sum": 35
+          "n": 9,
+          "sum": 39
         },
         "2026-01": {
-          "n": 8,
-          "sum": 39
+          "n": 9,
+          "sum": 45
         },
         "2026-02": {
           "n": 5,
           "sum": 25
         },
         "2026-03": {
-          "n": 11,
-          "sum": 54
+          "n": 9,
+          "sum": 44
         },
         "2026-04": {
-          "n": 8,
-          "sum": 38
+          "n": 9,
+          "sum": 42
         },
         "2026-05": {
           "n": 20,
-          "sum": 92
+          "sum": 93
         },
         "2026-06": {
-          "n": 11,
-          "sum": 51
+          "n": 13,
+          "sum": 61
         },
         "2026-07": {
-          "n": 17,
-          "sum": 80
+          "n": 15,
+          "sum": 70
         },
         "2026-08": {
-          "n": 20,
-          "sum": 97
+          "n": 21,
+          "sum": 99
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:03:41.329Z",
+        "at": "2026-08-07T01:46:27.581Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 71,
-          "n_end": 1951,
-          "n_sort": 86,
-          "n_start": 86,
-          "n_tab": 71,
+          "n0": 85,
+          "n_end": 1956,
+          "n_sort": 88,
+          "n_start": 88,
+          "n_tab": 85,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 209,
+        "matched": 208,
         "oldest_months": 24,
         "scanned": 209,
         "sorted": true,
@@ -9668,15 +9676,16 @@
       "business_status": "operational",
       "range_min": 250,
       "range_max": null,
-      "banner_text": "Over 250 reviews removed due to defamation complaints",
-      "est_low": 3.25,
-      "est_mid": 3.43,
+      "banner_text": "Über 250 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
+      "est_low": null,
+      "est_mid": 3.37,
       "est_high": 3.6,
+      "est_open": true,
       "lat": 53.6036003,
       "lng": 9.8930469,
-      "url": "https://www.google.com/maps/place/Ess-Bahn+D%C3%B6ner/@53.6036003,9.8930469,17z/data=!4m8!3m7!1s0x47b1868915267187:0x58a8b235c125f6c7!8m2!3d53.6036003!4d9.8930469!9m1!1b1!16s%2Fg%2F11bw67yblb?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Ess-Bahn+D%C3%B6ner/@53.6036003,9.8930469,17z/data=!4m8!3m7!1s0x47b1868915267187:0x58a8b235c125f6c7!8m2!3d53.6036003!4d9.8930469!9m1!1b1!16s%2Fg%2F11bw67yblb?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2019-08": {
           "n": 3,
@@ -9695,12 +9704,12 @@
           "sum": 34
         },
         "2023-08": {
-          "n": 2,
-          "sum": 8
+          "n": 3,
+          "sum": 12
         },
         "2024-08": {
-          "n": 13,
-          "sum": 61
+          "n": 14,
+          "sum": 66
         },
         "2025-08": {
           "n": 35,
@@ -9727,51 +9736,51 @@
           "sum": 10
         },
         "2026-02": {
-          "n": 4,
-          "sum": 15
+          "n": 5,
+          "sum": 19
         },
         "2026-03": {
-          "n": 7,
-          "sum": 19
+          "n": 6,
+          "sum": 15
         },
         "2026-04": {
           "n": 6,
           "sum": 18
         },
         "2026-05": {
-          "n": 4,
-          "sum": 10
+          "n": 5,
+          "sum": 11
         },
         "2026-06": {
-          "n": 7,
-          "sum": 20
+          "n": 6,
+          "sum": 19
         },
         "2026-07": {
-          "n": 4,
-          "sum": 6
+          "n": 5,
+          "sum": 11
         },
         "2026-08": {
-          "n": 4,
-          "sum": 16
+          "n": 3,
+          "sum": 11
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:04:06.378Z",
+        "at": "2026-08-07T00:49:35.342Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 61,
+          "n0": 76,
           "n_end": 746,
           "n_sort": 84,
           "n_start": 84,
-          "n_tab": 61,
+          "n_tab": 76,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 116,
+        "matched": 118,
         "oldest_months": 24,
-        "scanned": 116,
+        "scanned": 118,
         "sorted": true,
         "tab_retry": false
       }
@@ -9800,23 +9809,24 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.17,
-      "est_mid": 4.33,
+      "est_mid": 4.31,
       "est_high": 4.47,
+      "est_open": false,
       "lat": 53.6092071,
       "lng": 9.9044999,
-      "url": "https://www.google.com/maps/place/Lashanh+%2F+Hamburg/@53.6092071,9.9044999,17z/data=!4m8!3m7!1s0x47b187952f9e9701:0xc39b627d814a4b1c!8m2!3d53.6092071!4d9.9044999!9m1!1b1!16s%2Fg%2F11l9_b453s?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Lashanh+%2F+Hamburg/@53.6092071,9.9044999,17z/data=!4m8!3m7!1s0x47b187952f9e9701:0xc39b627d814a4b1c!8m2!3d53.6092071!4d9.9044999!9m1!1b1!16s%2Fg%2F11l9_b453s?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2021-08": {
           "n": 1,
           "sum": 5
         },
         "2022-08": {
-          "n": 11,
-          "sum": 54
+          "n": 12,
+          "sum": 59
         },
         "2023-08": {
           "n": 15,
@@ -9872,22 +9882,22 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:04:25.760Z",
+        "at": "2026-08-06T22:25:55.161Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 78,
+          "n0": 95,
           "n_end": 325,
           "n_sort": 83,
           "n_start": 83,
-          "n_tab": 78,
+          "n_tab": 95,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 77,
+        "matched": 78,
         "oldest_months": 24,
-        "scanned": 77,
+        "scanned": 78,
         "sorted": true,
         "tab_retry": false
       }
@@ -9904,35 +9914,36 @@
       "website": null,
       "image": null,
       "rating": 4.8,
-      "reviews": 749,
+      "reviews": 753,
       "dist": [
         7,
         4,
         3,
-        139,
-        596
+        140,
+        599
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 151,
       "range_max": 200,
-      "banner_text": "151 to 200 reviews removed due to defamation complaints",
+      "banner_text": "151 bis 200 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4,
-      "est_mid": 4.17,
+      "est_mid": 4.15,
       "est_high": 4.33,
+      "est_open": false,
       "lat": 53.6197042,
       "lng": 9.9522937,
-      "url": "https://www.google.com/maps/place/Tibarg+Kebap+Haus/@53.6197042,9.9522937,17z/data=!3m1!5s0x47b1862e6d2acff7:0x6f655b40b1a47d3d!4m8!3m7!1s0x47b187efdd6e0417:0x2a5e8cd4e902897b!8m2!3d53.6197042!4d9.9522937!9m1!1b1!16s%2Fg%2F11cm9g3bnz?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Tibarg+Kebap+Haus/@53.6197042,9.9522937,17z/data=!3m1!5s0x47b1862e6d2acff7:0x6f655b40b1a47d3d!4m8!3m7!1s0x47b187efdd6e0417:0x2a5e8cd4e902897b!8m2!3d53.6197042!4d9.9522937!9m1!1b1!16s%2Fg%2F11cm9g3bnz?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2018-08": {
           "n": 3,
           "sum": 14
         },
         "2019-08": {
-          "n": 2,
-          "sum": 10
+          "n": 3,
+          "sum": 14
         },
         "2020-08": {
           "n": 2,
@@ -9955,8 +9966,8 @@
           "sum": 30
         },
         "2025-08": {
-          "n": 24,
-          "sum": 111
+          "n": 20,
+          "sum": 91
         },
         "2025-09": {
           "n": 6,
@@ -9967,24 +9978,24 @@
           "sum": 14
         },
         "2025-11": {
-          "n": 90,
-          "sum": 440
+          "n": 94,
+          "sum": 459
         },
         "2025-12": {
-          "n": 24,
-          "sum": 113
+          "n": 21,
+          "sum": 99
         },
         "2026-01": {
-          "n": 20,
-          "sum": 90
+          "n": 19,
+          "sum": 85
         },
         "2026-02": {
-          "n": 16,
-          "sum": 80
+          "n": 20,
+          "sum": 98
         },
         "2026-03": {
-          "n": 13,
-          "sum": 58
+          "n": 9,
+          "sum": 40
         },
         "2026-04": {
           "n": 6,
@@ -9999,31 +10010,31 @@
           "sum": 58
         },
         "2026-07": {
-          "n": 4,
-          "sum": 13
+          "n": 5,
+          "sum": 18
         },
         "2026-08": {
-          "n": 10,
-          "sum": 49
+          "n": 11,
+          "sum": 54
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:05:03.884Z",
+        "at": "2026-08-07T02:54:03.644Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 69,
+          "n0": 85,
           "n_end": 1983,
-          "n_sort": 79,
-          "n_start": 79,
-          "n_tab": 69,
+          "n_sort": 84,
+          "n_start": 84,
+          "n_tab": 85,
           "pane": true,
-          "pre_matched": 57
+          "pre_matched": 60
         },
-        "matched": 259,
+        "matched": 258,
         "oldest_months": 12,
-        "scanned": 260,
+        "scanned": 261,
         "sorted": true,
         "tab_retry": false
       }
@@ -10052,16 +10063,21 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.39,
-      "est_mid": 4.46,
+      "est_mid": 4.45,
       "est_high": 4.51,
+      "est_open": false,
       "lat": 53.5925327,
       "lng": 9.9605683,
-      "url": "https://www.google.com/maps/place/The+vets+at+Grandweg+68+GmbH/@53.5925327,9.9605683,17z/data=!3m1!5s0x47b188a8bfc19f03:0x2bc4fe906fda11d0!4m8!3m7!1s0x47b188a895712ecf:0x38b1b3e55937e06d!8m2!3d53.5925327!4d9.9605683!9m1!1b1!16s%2Fg%2F1tt1rrkd?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/The+vets+at+Grandweg+68+GmbH/@53.5925327,9.9605683,17z/data=!3m1!5s0x47b188a8bfc19f03:0x2bc4fe906fda11d0!4m8!3m7!1s0x47b188a895712ecf:0x38b1b3e55937e06d!8m2!3d53.5925327!4d9.9605683!9m1!1b1!16s%2Fg%2F1tt1rrkd?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
+        "2017-08": {
+          "n": 1,
+          "sum": 5
+        },
         "2018-08": {
           "n": 1,
           "sum": 5
@@ -10087,16 +10103,16 @@
           "sum": 37
         },
         "2024-08": {
-          "n": 11,
-          "sum": 53
+          "n": 12,
+          "sum": 58
         },
         "2025-08": {
-          "n": 17,
-          "sum": 84
+          "n": 18,
+          "sum": 89
         },
         "2025-09": {
-          "n": 2,
-          "sum": 10
+          "n": 1,
+          "sum": 5
         },
         "2025-10": {
           "n": 3,
@@ -10136,22 +10152,22 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:05:24.568Z",
+        "at": "2026-08-06T22:34:01.009Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 64,
+          "n0": 81,
           "n_end": 286,
           "n_sort": 73,
           "n_start": 73,
-          "n_tab": 64,
+          "n_tab": 81,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 80,
+        "matched": 82,
         "oldest_months": 24,
-        "scanned": 80,
+        "scanned": 82,
         "sorted": true,
         "tab_retry": false
       }
@@ -10162,14 +10178,15 @@
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
       "rating": 4.7,
-      "reviews": 1442,
+      "reviews": 1457,
       "range_min": 21,
       "range_max": 50,
       "est_low": 4.58,
       "est_mid": 4.62,
       "est_high": 4.66,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b188c4b12007e1:0xb3262b963eda090": {
       "place_id": "0x47b188c4b12007e1:0xb3262b963eda090",
@@ -10195,15 +10212,16 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.6,
       "est_mid": 4.63,
       "est_high": 4.66,
+      "est_open": false,
       "lat": 53.5952799,
       "lng": 10.0001458,
-      "url": "https://www.google.com/maps/place/Restaurant+IRODION/@53.5952799,10.0001458,17z/data=!4m8!3m7!1s0x47b188c4b12007e1:0xb3262b963eda090!8m2!3d53.5952799!4d10.0001458!9m1!1b1!16s%2Fg%2F1trsx15q?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Restaurant+IRODION/@53.5952799,10.0001458,17z/data=!4m8!3m7!1s0x47b188c4b12007e1:0xb3262b963eda090!8m2!3d53.5952799!4d10.0001458!9m1!1b1!16s%2Fg%2F1trsx15q?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2018-08": {
           "n": 1,
@@ -10226,28 +10244,28 @@
           "sum": 72
         },
         "2025-08": {
-          "n": 96,
-          "sum": 456
+          "n": 95,
+          "sum": 451
         },
         "2025-09": {
-          "n": 4,
-          "sum": 19
+          "n": 5,
+          "sum": 24
         },
         "2025-10": {
-          "n": 11,
-          "sum": 54
+          "n": 12,
+          "sum": 59
         },
         "2025-11": {
-          "n": 5,
-          "sum": 25
+          "n": 4,
+          "sum": 20
         },
         "2025-12": {
           "n": 2,
           "sum": 9
         },
         "2026-01": {
-          "n": 7,
-          "sum": 35
+          "n": 6,
+          "sum": 30
         },
         "2026-02": {
           "n": 11,
@@ -10258,41 +10276,41 @@
           "sum": 15
         },
         "2026-04": {
-          "n": 11,
-          "sum": 52
+          "n": 13,
+          "sum": 62
         },
         "2026-05": {
-          "n": 17,
-          "sum": 84
+          "n": 15,
+          "sum": 74
         },
         "2026-06": {
-          "n": 7,
-          "sum": 33
+          "n": 8,
+          "sum": 37
         },
         "2026-07": {
-          "n": 6,
-          "sum": 27
+          "n": 7,
+          "sum": 30
         },
         "2026-08": {
-          "n": 10,
-          "sum": 43
+          "n": 8,
+          "sum": 36
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:05:59.295Z",
+        "at": "2026-08-06T22:51:16.761Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 67,
+          "n0": 81,
           "n_end": 1729,
-          "n_sort": 91,
-          "n_start": 91,
-          "n_tab": 67,
+          "n_sort": 89,
+          "n_start": 89,
+          "n_tab": 81,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 217,
+        "matched": 216,
         "oldest_months": 24,
         "scanned": 217,
         "sorted": true,
@@ -10305,14 +10323,15 @@
       "branch": null,
       "city": "Hamburg",
       "rating": 4.7,
-      "reviews": 1126,
+      "reviews": 1130,
       "range_min": 51,
       "range_max": 100,
       "est_low": 4.4,
-      "est_mid": 4.5,
+      "est_mid": 4.49,
       "est_high": 4.58,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b1893d8af053ad:0x340df1939c228f49": {
       "place_id": "0x47b1893d8af053ad:0x340df1939c228f49",
@@ -10326,27 +10345,28 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 767,
+      "reviews": 771,
       "dist": [
         null,
         11,
         29,
-        116,
-        611
+        118,
+        613
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.61,
-      "est_mid": 4.64,
+      "est_mid": 4.63,
       "est_high": 4.66,
+      "est_open": false,
       "lat": 53.5983082,
       "lng": 10.0381493,
-      "url": "https://www.google.com/maps/place/Kalliopea+-+Mediterranean+kitchen+in+Hamburg+Barmbek/@53.5983082,10.0381493,17z/data=!4m8!3m7!1s0x47b1893d8af053ad:0x340df1939c228f49!8m2!3d53.5983082!4d10.0381493!9m1!1b1!16s%2Fg%2F1thvf_fy?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Kalliopea+-+Mediterranean+kitchen+in+Hamburg+Barmbek/@53.5983082,10.0381493,17z/data=!4m8!3m7!1s0x47b1893d8af053ad:0x340df1939c228f49!8m2!3d53.5983082!4d10.0381493!9m1!1b1!16s%2Fg%2F1thvf_fy?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2015-08": {
           "n": 1,
@@ -10357,12 +10377,12 @@
           "sum": 4
         },
         "2018-08": {
-          "n": 3,
-          "sum": 13
+          "n": 4,
+          "sum": 17
         },
         "2019-08": {
-          "n": 6,
-          "sum": 28
+          "n": 5,
+          "sum": 24
         },
         "2020-08": {
           "n": 3,
@@ -10373,36 +10393,36 @@
           "sum": 10
         },
         "2022-08": {
-          "n": 3,
-          "sum": 15
+          "n": 4,
+          "sum": 20
         },
         "2023-08": {
           "n": 4,
           "sum": 20
         },
         "2024-08": {
-          "n": 4,
-          "sum": 20
+          "n": 12,
+          "sum": 59
         },
         "2025-08": {
-          "n": 60,
-          "sum": 296
+          "n": 59,
+          "sum": 291
         },
         "2025-09": {
-          "n": 14,
-          "sum": 68
+          "n": 15,
+          "sum": 72
         },
         "2025-10": {
-          "n": 5,
-          "sum": 24
+          "n": 4,
+          "sum": 20
         },
         "2025-11": {
           "n": 2,
           "sum": 10
         },
         "2025-12": {
-          "n": 8,
-          "sum": 40
+          "n": 7,
+          "sum": 35
         },
         "2026-01": {
           "n": 4,
@@ -10417,43 +10437,43 @@
           "sum": 10
         },
         "2026-04": {
-          "n": 5,
-          "sum": 23
+          "n": 7,
+          "sum": 33
         },
         "2026-05": {
           "n": 4,
           "sum": 20
         },
         "2026-06": {
-          "n": 9,
-          "sum": 44
+          "n": 10,
+          "sum": 48
         },
         "2026-07": {
-          "n": 9,
-          "sum": 43
+          "n": 6,
+          "sum": 29
         },
         "2026-08": {
-          "n": 6,
-          "sum": 28
+          "n": 10,
+          "sum": 45
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:06:30.222Z",
+        "at": "2026-08-06T21:37:44.995Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 68,
-          "n_end": 1221,
+          "n0": 82,
+          "n_end": 1296,
           "n_sort": 79,
           "n_start": 79,
-          "n_tab": 68,
+          "n_tab": 82,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 165,
+        "matched": 176,
         "oldest_months": 24,
-        "scanned": 166,
+        "scanned": 177,
         "sorted": true,
         "tab_retry": false
       }
@@ -10470,27 +10490,28 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 118,
+      "reviews": 119,
       "dist": [
         8,
         1,
         null,
         4,
-        105
+        106
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
-      "est_low": 3.6,
-      "est_mid": 3.96,
-      "est_high": 4.29,
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
+      "est_low": 3.61,
+      "est_mid": 3.93,
+      "est_high": 4.3,
+      "est_open": false,
       "lat": 53.5881748,
       "lng": 10.0965591,
-      "url": "https://www.google.com/maps/place/Marita+Autohaus+GmbH/@53.5881748,10.0965591,17z/data=!3m1!5s0x47b18be950c57911:0x40ab480749df57ac!4m8!3m7!1s0x47b189442f93f745:0x9d9232b9f264c01!8m2!3d53.5881748!4d10.0965591!9m1!1b1!16s%2Fg%2F11gdrj1yyg?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Marita+Autohaus+GmbH/@53.5881748,10.0965591,17z/data=!3m1!5s0x47b18be950c57911:0x40ab480749df57ac!4m8!3m7!1s0x47b189442f93f745:0x9d9232b9f264c01!8m2!3d53.5881748!4d10.0965591!9m1!1b1!16s%2Fg%2F11gdrj1yyg?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2018-08": {
           "n": 1,
@@ -10501,24 +10522,24 @@
           "sum": 5
         },
         "2020-08": {
-          "n": 1,
-          "sum": 5
+          "n": 2,
+          "sum": 10
         },
         "2021-08": {
-          "n": 4,
-          "sum": 20
+          "n": 3,
+          "sum": 15
         },
         "2022-08": {
           "n": 5,
           "sum": 25
         },
         "2023-08": {
-          "n": 6,
-          "sum": 30
+          "n": 8,
+          "sum": 40
         },
         "2024-08": {
-          "n": 15,
-          "sum": 70
+          "n": 14,
+          "sum": 65
         },
         "2025-08": {
           "n": 23,
@@ -10549,35 +10570,35 @@
           "sum": 5
         },
         "2026-05": {
-          "n": 1,
-          "sum": 1
-        },
-        "2026-06": {
           "n": 2,
           "sum": 2
         },
+        "2026-06": {
+          "n": 2,
+          "sum": 3
+        },
         "2026-07": {
-          "n": 4,
-          "sum": 17
+          "n": 3,
+          "sum": 15
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:06:53.361Z",
+        "at": "2026-08-07T02:37:47.982Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 71,
-          "n_end": 429,
+          "n0": 88,
+          "n_end": 430,
           "n_sort": 90,
           "n_start": 90,
-          "n_tab": 71,
+          "n_tab": 88,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 76,
+        "matched": 77,
         "oldest_months": 24,
-        "scanned": 76,
+        "scanned": 78,
         "sorted": true,
         "tab_retry": false
       }
@@ -10606,55 +10627,52 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.18,
-      "est_mid": 4.37,
+      "est_mid": 4.35,
       "est_high": 4.53,
+      "est_open": false,
       "lat": 53.6421753,
       "lng": 10.0123265,
-      "url": "https://www.google.com/maps/place/TRC+Automobile+GmbH+Hamburg/@53.6421753,10.0123265,17z/data=!4m8!3m7!1s0x47b18950356136b7:0x8b9a1a4863581d4e!8m2!3d53.6421753!4d10.0123265!9m1!1b1!16s%2Fg%2F11gsn07m50?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/TRC+Automobile+GmbH+Hamburg/@53.6421753,10.0123265,17z/data=!4m8!3m7!1s0x47b18950356136b7:0x8b9a1a4863581d4e!8m2!3d53.6421753!4d10.0123265!9m1!1b1!16s%2Fg%2F11gsn07m50?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2019-08": {
-          "n": 2,
-          "sum": 10
+          "n": 3,
+          "sum": 15
         },
         "2020-08": {
-          "n": 5,
-          "sum": 24
+          "n": 6,
+          "sum": 29
         },
         "2021-08": {
-          "n": 8,
-          "sum": 37
+          "n": 7,
+          "sum": 32
         },
         "2022-08": {
-          "n": 11,
-          "sum": 55
+          "n": 12,
+          "sum": 60
         },
         "2023-08": {
-          "n": 9,
-          "sum": 43
+          "n": 10,
+          "sum": 48
         },
         "2024-08": {
           "n": 9,
           "sum": 43
         },
         "2025-08": {
-          "n": 13,
-          "sum": 60
+          "n": 12,
+          "sum": 55
         },
         "2025-09": {
           "n": 1,
           "sum": 5
         },
         "2025-10": {
-          "n": 4,
-          "sum": 18
-        },
-        "2025-11": {
-          "n": 1,
-          "sum": 5
+          "n": 5,
+          "sum": 23
         },
         "2026-03": {
           "n": 2,
@@ -10662,22 +10680,22 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:07:12.057Z",
+        "at": "2026-08-06T23:37:09.839Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 61,
+          "n0": 78,
           "n_end": 225,
           "n_sort": 80,
           "n_start": 80,
-          "n_tab": 61,
+          "n_tab": 78,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 65,
+        "matched": 67,
         "oldest_months": 24,
-        "scanned": 65,
+        "scanned": 67,
         "sorted": true,
         "tab_retry": false
       }
@@ -10694,27 +10712,28 @@
       "website": null,
       "image": null,
       "rating": 4.6,
-      "reviews": 283,
+      "reviews": 285,
       "dist": [
-        4,
+        5,
         1,
         20,
-        46,
+        47,
         212
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.36,
-      "est_mid": 4.44,
+      "est_mid": 4.43,
       "est_high": 4.5,
+      "est_open": false,
       "lat": 53.550682,
       "lng": 10.042193,
-      "url": "https://www.google.com/maps/place/B.+Sperling+%26+Sohn+GmbH+Ford+%26+Fiat+Vertragswerkstatt,+Mitsubishi+%26+GWM+Ora%2BWey+H%C3%A4ndler/@53.550682,10.042193,17z/data=!4m8!3m7!1s0x47b189539d9d32bd:0xc5de3ed7e2d0d98f!8m2!3d53.550682!4d10.042193!9m1!1b1!16s%2Fg%2F1tdn_j3t?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/B.+Sperling+%26+Sohn+GmbH+Ford+%26+Fiat+Vertragswerkstatt,+Mitsubishi+%26+GWM+Ora%2BWey+H%C3%A4ndler/@53.550682,10.042193,17z/data=!4m8!3m7!1s0x47b189539d9d32bd:0xc5de3ed7e2d0d98f!8m2!3d53.550682!4d10.042193!9m1!1b1!16s%2Fg%2F1tdn_j3t?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2012-08": {
           "n": 1,
@@ -10745,16 +10764,16 @@
           "sum": 4
         },
         "2022-08": {
-          "n": 5,
-          "sum": 25
+          "n": 6,
+          "sum": 30
         },
         "2023-08": {
           "n": 5,
           "sum": 19
         },
         "2024-08": {
-          "n": 25,
-          "sum": 122
+          "n": 23,
+          "sum": 113
         },
         "2025-08": {
           "n": 19,
@@ -10789,27 +10808,27 @@
           "sum": 20
         },
         "2026-08": {
-          "n": 2,
-          "sum": 8
+          "n": 4,
+          "sum": 13
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:07:36.191Z",
+        "at": "2026-08-07T01:03:55.469Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 64,
-          "n_end": 364,
-          "n_sort": 72,
-          "n_start": 72,
-          "n_tab": 64,
+          "n0": 82,
+          "n_end": 368,
+          "n_sort": 70,
+          "n_start": 70,
+          "n_tab": 82,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 90,
+        "matched": 91,
         "oldest_months": 24,
-        "scanned": 90,
+        "scanned": 91,
         "sorted": true,
         "tab_retry": false
       }
@@ -10826,10 +10845,10 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 236,
+      "reviews": 237,
       "dist": [
         4,
-        null,
+        1,
         11,
         28,
         193
@@ -10838,15 +10857,16 @@
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
-      "est_low": 4.05,
-      "est_mid": 4.28,
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
+      "est_low": 4.06,
+      "est_mid": 4.26,
       "est_high": 4.48,
+      "est_open": false,
       "lat": 53.5972758,
       "lng": 10.0721913,
-      "url": "https://www.google.com/maps/place/Kreutziger+Automobile+GmbH/@53.5972758,10.0721913,17z/data=!4m8!3m7!1s0x47b18960c2dbaa51:0x879977ae31bd176!8m2!3d53.5972758!4d10.0721913!9m1!1b1!16s%2Fg%2F1tj5k622?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Kreutziger+Automobile+GmbH/@53.5972758,10.0721913,17z/data=!4m8!3m7!1s0x47b18960c2dbaa51:0x879977ae31bd176!8m2!3d53.5972758!4d10.0721913!9m1!1b1!16s%2Fg%2F1tj5k622?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2019-08": {
           "n": 1,
@@ -10857,16 +10877,16 @@
           "sum": 4
         },
         "2021-08": {
-          "n": 1,
-          "sum": 5
+          "n": 2,
+          "sum": 10
         },
         "2022-08": {
           "n": 5,
           "sum": 25
         },
         "2023-08": {
-          "n": 7,
-          "sum": 34
+          "n": 8,
+          "sum": 39
         },
         "2024-08": {
           "n": 14,
@@ -10921,27 +10941,27 @@
           "sum": 5
         },
         "2026-08": {
-          "n": 1,
-          "sum": 5
+          "n": 2,
+          "sum": 7
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:08:01.903Z",
+        "at": "2026-08-07T02:02:04.378Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 65,
+          "n0": 85,
           "n_end": 577,
-          "n_sort": 85,
-          "n_start": 85,
-          "n_tab": 65,
+          "n_sort": 89,
+          "n_start": 89,
+          "n_tab": 85,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 91,
+        "matched": 94,
         "oldest_months": 24,
-        "scanned": 91,
+        "scanned": 94,
         "sorted": true,
         "tab_retry": false
       }
@@ -10951,30 +10971,32 @@
       "nameable": false,
       "branch": null,
       "city": "Hamburg",
-      "rating": 4.8,
-      "reviews": 71,
+      "rating": 4.9,
+      "reviews": 68,
       "range_min": 11,
       "range_max": 20,
-      "est_low": 3.96,
-      "est_mid": 4.21,
-      "est_high": 4.42,
+      "est_low": 4.01,
+      "est_mid": 4.24,
+      "est_high": 4.5,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "b9ceccebeeb8460b": {
       "aid": "b9ceccebeeb8460b",
       "nameable": false,
       "branch": "Fitness & Sport",
       "city": "Hamburg",
-      "rating": 4.8,
-      "reviews": 399,
-      "range_min": 11,
-      "range_max": 20,
-      "est_low": 4.62,
-      "est_mid": 4.68,
-      "est_high": 4.72,
+      "rating": 4.9,
+      "reviews": 387,
+      "range_min": 21,
+      "range_max": 50,
+      "est_low": 4.45,
+      "est_mid": 4.6,
+      "est_high": 4.75,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18b8bb1879065:0x8846c714b35e9a98": {
       "place_id": "0x47b18b8bb1879065:0x8846c714b35e9a98",
@@ -11000,15 +11022,16 @@
       "business_status": "operational",
       "range_min": 51,
       "range_max": 100,
-      "banner_text": "51 to 100 reviews removed due to defamation complaints",
+      "banner_text": "51 bis 100 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.4,
-      "est_mid": 3.68,
+      "est_mid": 3.65,
       "est_high": 3.93,
+      "est_open": false,
       "lat": 53.5737534,
       "lng": 10.1048766,
-      "url": "https://www.google.com/maps/place/Autohaus+Michael+GmbH+%26+Co.KG/@53.5737534,10.1048766,17z/data=!4m8!3m7!1s0x47b18b8bb1879065:0x8846c714b35e9a98!8m2!3d53.5737534!4d10.1048766!9m1!1b1!16s%2Fg%2F1td_9r5z?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Autohaus+Michael+GmbH+%26+Co.KG/@53.5737534,10.1048766,17z/data=!4m8!3m7!1s0x47b18b8bb1879065:0x8846c714b35e9a98!8m2!3d53.5737534!4d10.1048766!9m1!1b1!16s%2Fg%2F1td_9r5z?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2016-08": {
           "n": 2,
@@ -11023,12 +11046,12 @@
           "sum": 24
         },
         "2019-08": {
-          "n": 8,
-          "sum": 35
+          "n": 9,
+          "sum": 36
         },
         "2020-08": {
-          "n": 9,
-          "sum": 37
+          "n": 10,
+          "sum": 39
         },
         "2021-08": {
           "n": 4,
@@ -11051,20 +11074,20 @@
           "sum": 48
         },
         "2025-09": {
-          "n": 1,
-          "sum": 4
+          "n": 2,
+          "sum": 9
         },
         "2025-10": {
-          "n": 2,
-          "sum": 10
+          "n": 1,
+          "sum": 5
         },
         "2025-11": {
-          "n": 1,
-          "sum": 4
+          "n": 2,
+          "sum": 9
         },
         "2025-12": {
-          "n": 2,
-          "sum": 10
+          "n": 1,
+          "sum": 5
         },
         "2026-01": {
           "n": 1,
@@ -11087,31 +11110,31 @@
           "sum": 5
         },
         "2026-06": {
-          "n": 1,
-          "sum": 5
+          "n": 2,
+          "sum": 6
         },
         "2026-07": {
-          "n": 6,
-          "sum": 18
+          "n": 5,
+          "sum": 17
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:08:20.260Z",
+        "at": "2026-08-07T04:56:52.901Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 80,
+          "n0": 101,
           "n_end": 262,
           "n_sort": 86,
           "n_start": 86,
-          "n_tab": 80,
+          "n_tab": 101,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 74,
+        "matched": 76,
         "oldest_months": 24,
-        "scanned": 74,
+        "scanned": 76,
         "sorted": true,
         "tab_retry": false
       }
@@ -11122,14 +11145,15 @@
       "branch": "Fitness & Sport",
       "city": "Hamburg",
       "rating": 4.9,
-      "reviews": 1805,
+      "reviews": 1866,
       "range_min": 51,
       "range_max": 100,
       "est_low": 4.7,
       "est_mid": 4.76,
       "est_high": 4.82,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "d7d08d0b82a15543": {
       "aid": "d7d08d0b82a15543",
@@ -11137,14 +11161,15 @@
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
       "rating": 4.5,
-      "reviews": 993,
+      "reviews": 994,
       "range_min": 11,
       "range_max": 20,
       "est_low": 4.43,
       "est_mid": 4.45,
       "est_high": 4.47,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18bff72ae57c5:0xf445edfc70064d71": {
       "place_id": "0x47b18bff72ae57c5:0xf445edfc70064d71",
@@ -11170,15 +11195,16 @@
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4,
-      "est_mid": 4.21,
+      "est_mid": 4.19,
       "est_high": 4.4,
+      "est_open": false,
       "lat": 53.5748007,
       "lng": 10.0735596,
-      "url": "https://www.google.com/maps/place/Tierarztpraxis+Am+Eichtalpark/@53.5748007,10.0735596,17z/data=!3m1!5s0x47b18bff0d1dca8d:0xc205a63fc85f43a2!4m8!3m7!1s0x47b18bff72ae57c5:0xf445edfc70064d71!8m2!3d53.5748007!4d10.0735596!9m1!1b1!16s%2Fg%2F1tfbmck8?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Tierarztpraxis+Am+Eichtalpark/@53.5748007,10.0735596,17z/data=!3m1!5s0x47b18bff0d1dca8d:0xc205a63fc85f43a2!4m8!3m7!1s0x47b18bff72ae57c5:0xf445edfc70064d71!8m2!3d53.5748007!4d10.0735596!9m1!1b1!16s%2Fg%2F1tfbmck8?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2017-08": {
           "n": 1,
@@ -11193,16 +11219,16 @@
           "sum": 4
         },
         "2021-08": {
-          "n": 2,
-          "sum": 10
+          "n": 3,
+          "sum": 15
         },
         "2023-08": {
           "n": 4,
           "sum": 20
         },
         "2024-08": {
-          "n": 14,
-          "sum": 69
+          "n": 15,
+          "sum": 74
         },
         "2025-08": {
           "n": 34,
@@ -11237,43 +11263,43 @@
           "sum": 25
         },
         "2026-04": {
-          "n": 5,
-          "sum": 25
+          "n": 6,
+          "sum": 30
         },
         "2026-05": {
-          "n": 7,
-          "sum": 27
+          "n": 6,
+          "sum": 22
         },
         "2026-06": {
-          "n": 3,
-          "sum": 7
+          "n": 4,
+          "sum": 8
         },
         "2026-07": {
-          "n": 6,
-          "sum": 19
+          "n": 5,
+          "sum": 18
         },
         "2026-08": {
-          "n": 2,
-          "sum": 10
+          "n": 3,
+          "sum": 14
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:08:45.139Z",
+        "at": "2026-08-07T02:07:46.942Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 73,
+          "n0": 94,
           "n_end": 624,
           "n_sort": 85,
           "n_start": 85,
-          "n_tab": 73,
+          "n_tab": 94,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 95,
+        "matched": 98,
         "oldest_months": 24,
-        "scanned": 96,
+        "scanned": 98,
         "sorted": true,
         "tab_retry": false
       }
@@ -11284,14 +11310,15 @@
       "branch": "Gesundheit",
       "city": "Hamburg",
       "rating": 4.9,
-      "reviews": 82,
+      "reviews": 81,
       "range_min": 11,
       "range_max": 20,
-      "est_low": 4.14,
-      "est_mid": 4.36,
-      "est_high": 4.56,
+      "est_low": 4.13,
+      "est_mid": 4.33,
+      "est_high": 4.55,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "bb4caed63ce3dd20": {
       "aid": "bb4caed63ce3dd20",
@@ -11299,29 +11326,31 @@
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
       "rating": 4.7,
-      "reviews": 453,
+      "reviews": 461,
       "range_min": 21,
       "range_max": 50,
-      "est_low": 4.33,
-      "est_mid": 4.47,
+      "est_low": 4.34,
+      "est_mid": 4.46,
       "est_high": 4.58,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "648e96ea58a5995a": {
       "aid": "648e96ea58a5995a",
       "nameable": false,
       "branch": null,
       "city": "Hamburg",
-      "rating": 3.5,
+      "rating": 3.6,
       "reviews": 152,
       "range_min": 21,
       "range_max": 50,
-      "est_low": 2.88,
-      "est_mid": 3.12,
-      "est_high": 3.32,
+      "est_low": 2.96,
+      "est_mid": 3.17,
+      "est_high": 3.41,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "af1e8011ca1da86f": {
       "aid": "af1e8011ca1da86f",
@@ -11329,14 +11358,15 @@
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
       "rating": 4.8,
-      "reviews": 43,
+      "reviews": 42,
       "range_min": 21,
       "range_max": 50,
-      "est_low": 2.76,
-      "est_mid": 3.31,
-      "est_high": 3.88,
+      "est_low": 2.73,
+      "est_mid": 3.21,
+      "est_high": 3.87,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18edab8e8a7df:0xe87cd1f973f59df": {
       "place_id": "0x47b18edab8e8a7df:0xe87cd1f973f59df",
@@ -11350,11 +11380,11 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 2507,
+      "reviews": 2508,
       "dist": [
         40,
         36,
-        133,
+        134,
         298,
         2000
       ],
@@ -11362,15 +11392,16 @@
       "business_status": "operational",
       "range_min": 51,
       "range_max": 100,
-      "banner_text": "51 to 100 reviews removed due to defamation complaints",
+      "banner_text": "51 bis 100 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.56,
-      "est_mid": 4.61,
+      "est_mid": 4.6,
       "est_high": 4.65,
+      "est_open": false,
       "lat": 53.5658379,
       "lng": 10.0192505,
-      "url": "https://www.google.com/maps/place/Anleger+1870/@53.5658379,10.0192505,17z/data=!4m8!3m7!1s0x47b18edab8e8a7df:0xe87cd1f973f59df!8m2!3d53.5658379!4d10.0192505!9m1!1b1!16s%2Fg%2F1v76yq6m?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Anleger+1870/@53.5658379,10.0192505,17z/data=!4m8!3m7!1s0x47b18edab8e8a7df:0xe87cd1f973f59df!8m2!3d53.5658379!4d10.0192505!9m1!1b1!16s%2Fg%2F1v76yq6m?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2017-08": {
           "n": 1,
@@ -11381,8 +11412,8 @@
           "sum": 9
         },
         "2019-08": {
-          "n": 2,
-          "sum": 9
+          "n": 3,
+          "sum": 12
         },
         "2020-08": {
           "n": 2,
@@ -11393,8 +11424,8 @@
           "sum": 12
         },
         "2022-08": {
-          "n": 9,
-          "sum": 39
+          "n": 10,
+          "sum": 43
         },
         "2023-08": {
           "n": 12,
@@ -11413,63 +11444,63 @@
           "sum": 5
         },
         "2025-11": {
-          "n": 44,
-          "sum": 211
+          "n": 48,
+          "sum": 230
         },
         "2025-12": {
-          "n": 41,
-          "sum": 201
+          "n": 37,
+          "sum": 180
         },
         "2026-01": {
-          "n": 31,
-          "sum": 142
+          "n": 30,
+          "sum": 139
         },
         "2026-02": {
-          "n": 25,
-          "sum": 116
+          "n": 30,
+          "sum": 139
         },
         "2026-03": {
-          "n": 17,
-          "sum": 81
+          "n": 13,
+          "sum": 61
         },
         "2026-04": {
-          "n": 18,
-          "sum": 86
+          "n": 22,
+          "sum": 107
         },
         "2026-05": {
-          "n": 16,
-          "sum": 71
+          "n": 11,
+          "sum": 47
         },
         "2026-06": {
-          "n": 11,
-          "sum": 43
+          "n": 12,
+          "sum": 48
         },
         "2026-07": {
           "n": 13,
-          "sum": 51
+          "sum": 50
         },
         "2026-08": {
           "n": 14,
-          "sum": 48
+          "sum": 47
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:09:22.093Z",
+        "at": "2026-08-06T21:19:47.113Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 81,
-          "n_end": 2107,
-          "n_sort": 89,
-          "n_start": 89,
-          "n_tab": 81,
+          "n0": 102,
+          "n_end": 2108,
+          "n_sort": 88,
+          "n_start": 88,
+          "n_tab": 102,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 281,
+        "matched": 283,
         "oldest_months": 9,
-        "scanned": 281,
+        "scanned": 283,
         "sorted": true,
         "tab_retry": false
       }
@@ -11479,15 +11510,16 @@
       "nameable": false,
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
-      "rating": 4.4,
-      "reviews": 586,
+      "rating": 4.3,
+      "reviews": 595,
       "range_min": 101,
       "range_max": 150,
-      "est_low": 3.71,
-      "est_mid": 3.89,
-      "est_high": 4.05,
+      "est_low": 3.64,
+      "est_mid": 3.78,
+      "est_high": 3.97,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18f003bfc810b:0xe33a378a8586bf1f": {
       "place_id": "0x47b18f003bfc810b:0xe33a378a8586bf1f",
@@ -11501,9 +11533,9 @@
       "website": null,
       "image": null,
       "rating": 4.4,
-      "reviews": 249,
+      "reviews": 250,
       "dist": [
-        11,
+        12,
         9,
         23,
         39,
@@ -11513,19 +11545,20 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.15,
-      "est_mid": 4.23,
+      "est_mid": 4.22,
       "est_high": 4.3,
+      "est_open": false,
       "lat": 53.5602676,
       "lng": 9.9636524,
-      "url": "https://www.google.com/maps/place/Haus+des+D%C3%B6ners/@53.5602676,9.9636524,17z/data=!3m1!5s0x47b18f69ddb4cb3d:0xb0f8b1596132af12!4m8!3m7!1s0x47b18f003bfc810b:0xe33a378a8586bf1f!8m2!3d53.5602676!4d9.9636524!9m1!1b1!16s%2Fg%2F11y458x21y?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Haus+des+D%C3%B6ners/@53.5602676,9.9636524,17z/data=!3m1!5s0x47b18f69ddb4cb3d:0xb0f8b1596132af12!4m8!3m7!1s0x47b18f003bfc810b:0xe33a378a8586bf1f!8m2!3d53.5602676!4d9.9636524!9m1!1b1!16s%2Fg%2F11y458x21y?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2024-08": {
-          "n": 10,
-          "sum": 40
+          "n": 20,
+          "sum": 88
         },
         "2025-08": {
           "n": 83,
@@ -11540,12 +11573,12 @@
           "sum": 9
         },
         "2025-11": {
-          "n": 2,
-          "sum": 10
+          "n": 4,
+          "sum": 19
         },
         "2025-12": {
-          "n": 6,
-          "sum": 27
+          "n": 4,
+          "sum": 18
         },
         "2026-01": {
           "n": 12,
@@ -11560,43 +11593,43 @@
           "sum": 12
         },
         "2026-04": {
-          "n": 5,
-          "sum": 14
+          "n": 9,
+          "sum": 28
         },
         "2026-05": {
-          "n": 15,
-          "sum": 45
+          "n": 11,
+          "sum": 31
         },
         "2026-06": {
           "n": 14,
           "sum": 59
         },
         "2026-07": {
-          "n": 9,
-          "sum": 34
+          "n": 10,
+          "sum": 39
         },
         "2026-08": {
           "n": 5,
-          "sum": 18
+          "sum": 14
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:09:53.973Z",
+        "at": "2026-08-07T00:00:04.598Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 65,
-          "n_end": 1448,
-          "n_sort": 81,
-          "n_start": 81,
-          "n_tab": 65,
+          "n0": 86,
+          "n_end": 1529,
+          "n_sort": 80,
+          "n_start": 80,
+          "n_tab": 86,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 179,
+        "matched": 190,
         "oldest_months": 24,
-        "scanned": 179,
+        "scanned": 190,
         "sorted": true,
         "tab_retry": false
       }
@@ -11613,31 +11646,32 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 6358,
+      "reviews": 6369,
       "dist": [
-        63,
-        25,
+        64,
+        26,
         69,
-        1354,
-        4847
+        1355,
+        4855
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 250,
       "range_max": null,
-      "banner_text": "Over 250 reviews removed due to defamation complaints",
-      "est_low": 4.56,
-      "est_mid": 4.58,
+      "banner_text": "Über 250 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
+      "est_low": null,
+      "est_mid": 4.57,
       "est_high": 4.6,
+      "est_open": true,
       "lat": 53.546087,
       "lng": 9.975282,
-      "url": "https://www.google.com/maps/place/Ol%C3%A1+Lisboa/@53.546087,9.975282,17z/data=!4m8!3m7!1s0x47b18f0c2a35318b:0x178a08d5f25eb399!8m2!3d53.546087!4d9.975282!9m1!1b1!16s%2Fg%2F11cm6dly66?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Ol%C3%A1+Lisboa/@53.546087,9.975282,17z/data=!4m8!3m7!1s0x47b18f0c2a35318b:0x178a08d5f25eb399!8m2!3d53.546087!4d9.975282!9m1!1b1!16s%2Fg%2F11cm6dly66?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2019-08": {
-          "n": 2,
-          "sum": 9
+          "n": 3,
+          "sum": 13
         },
         "2020-08": {
           "n": 2,
@@ -11648,16 +11682,16 @@
           "sum": 5
         },
         "2022-08": {
-          "n": 8,
-          "sum": 30
+          "n": 9,
+          "sum": 35
         },
         "2023-08": {
-          "n": 9,
-          "sum": 42
+          "n": 10,
+          "sum": 46
         },
         "2024-08": {
-          "n": 11,
-          "sum": 52
+          "n": 10,
+          "sum": 48
         },
         "2025-08": {
           "n": 10,
@@ -11688,39 +11722,39 @@
           "sum": 10
         },
         "2026-05": {
-          "n": 30,
-          "sum": 140
+          "n": 25,
+          "sum": 118
         },
         "2026-06": {
-          "n": 57,
-          "sum": 268
+          "n": 60,
+          "sum": 283
         },
         "2026-07": {
-          "n": 71,
-          "sum": 339
+          "n": 67,
+          "sum": 319
         },
         "2026-08": {
-          "n": 70,
-          "sum": 319
+          "n": 78,
+          "sum": 348
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:10:32.918Z",
+        "at": "2026-08-07T01:10:52.045Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 86,
-          "n_end": 2005,
-          "n_sort": 89,
-          "n_start": 89,
-          "n_tab": 86,
+          "n0": 106,
+          "n_end": 2000,
+          "n_sort": 88,
+          "n_start": 88,
+          "n_tab": 106,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 281,
+        "matched": 285,
         "oldest_months": 3,
-        "scanned": 284,
+        "scanned": 286,
         "sorted": true,
         "tab_retry": false
       }
@@ -11731,14 +11765,15 @@
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
       "rating": 4.7,
-      "reviews": 2237,
+      "reviews": 2338,
       "range_min": 51,
       "range_max": 100,
-      "est_low": 4.54,
-      "est_mid": 4.6,
+      "est_low": 4.55,
+      "est_mid": 4.59,
       "est_high": 4.64,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18f0e81af980d:0xdc1202a483ddbba6": {
       "place_id": "0x47b18f0e81af980d:0xdc1202a483ddbba6",
@@ -11752,27 +11787,28 @@
       "website": null,
       "image": null,
       "rating": 4.5,
-      "reviews": 5404,
+      "reviews": 5411,
       "dist": [
-        37,
+        39,
         21,
         531,
-        1526,
-        3289
+        1529,
+        3291
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.47,
       "est_mid": 4.48,
       "est_high": 4.49,
+      "est_open": false,
       "lat": 53.5459316,
       "lng": 9.9758931,
-      "url": "https://www.google.com/maps/place/Restaurant+D.+Jos%C3%A9+-+Portugiesenviertel/@53.5459316,9.9758931,17z/data=!3m1!5s0x47b18f0e8123b7d1:0xc17dec5c2e08bdd8!4m8!3m7!1s0x47b18f0e81af980d:0xdc1202a483ddbba6!8m2!3d53.5459316!4d9.9758931!9m1!1b1!16s%2Fg%2F1tff6nxv?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Restaurant+D.+Jos%C3%A9+-+Portugiesenviertel/@53.5459316,9.9758931,17z/data=!3m1!5s0x47b18f0e8123b7d1:0xc17dec5c2e08bdd8!4m8!3m7!1s0x47b18f0e81af980d:0xdc1202a483ddbba6!8m2!3d53.5459316!4d9.9758931!9m1!1b1!16s%2Fg%2F1tff6nxv?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2015-08": {
           "n": 1,
@@ -11803,71 +11839,67 @@
           "sum": 37
         },
         "2023-08": {
-          "n": 5,
-          "sum": 23
+          "n": 6,
+          "sum": 28
         },
         "2024-08": {
-          "n": 5,
-          "sum": 22
+          "n": 6,
+          "sum": 26
         },
         "2025-08": {
           "n": 13,
-          "sum": 51
+          "sum": 52
         },
         "2025-11": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-12": {
-          "n": 1,
-          "sum": 5
+          "n": 2,
+          "sum": 10
         },
         "2026-01": {
-          "n": 3,
-          "sum": 3
+          "n": 4,
+          "sum": 4
         },
-        "2026-02": {
+        "2026-03": {
           "n": 1,
-          "sum": 1
+          "sum": 5
         },
         "2026-04": {
-          "n": 18,
-          "sum": 76
+          "n": 14,
+          "sum": 60
         },
         "2026-05": {
-          "n": 37,
-          "sum": 147
+          "n": 38,
+          "sum": 145
         },
         "2026-06": {
-          "n": 64,
-          "sum": 238
+          "n": 61,
+          "sum": 228
         },
         "2026-07": {
-          "n": 37,
-          "sum": 153
+          "n": 41,
+          "sum": 174
         },
         "2026-08": {
-          "n": 72,
-          "sum": 309
+          "n": 73,
+          "sum": 310
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:11:11.848Z",
+        "at": "2026-08-07T02:51:40.914Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 78,
-          "n_end": 2004,
-          "n_sort": 90,
-          "n_start": 90,
-          "n_tab": 78,
+          "n0": 98,
+          "n_end": 2005,
+          "n_sort": 87,
+          "n_start": 87,
+          "n_tab": 98,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 282,
+        "matched": 284,
         "oldest_months": 4,
-        "scanned": 286,
+        "scanned": 288,
         "sorted": true,
         "tab_retry": false
       }
@@ -11896,15 +11928,16 @@
       "business_status": "operational",
       "range_min": 151,
       "range_max": 200,
-      "banner_text": "151 to 200 reviews removed due to defamation complaints",
+      "banner_text": "151 bis 200 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.42,
-      "est_mid": 4.46,
+      "est_mid": 4.45,
       "est_high": 4.5,
+      "est_open": false,
       "lat": 53.5434955,
       "lng": 9.9787231,
-      "url": "https://www.google.com/maps/place/Das+Feuerschiff+LV+13/@53.5434955,9.9787231,17z/data=!4m11!3m10!1s0x47b18f0edc403d03:0xcf96c498cbfbff70!5m2!4m1!1i2!8m2!3d53.5434955!4d9.9787231!9m1!1b1!16s%2Fg%2F1tfgng8z?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Das+Feuerschiff+LV+13/@53.5434955,9.9787231,17z/data=!4m11!3m10!1s0x47b18f0edc403d03:0xcf96c498cbfbff70!5m2!4m1!1i2!8m2!3d53.5434955!4d9.9787231!9m1!1b1!16s%2Fg%2F1tfgng8z?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": null,
       "rev_hist_meta": null
     },
@@ -11920,27 +11953,28 @@
       "website": null,
       "image": null,
       "rating": 4.6,
-      "reviews": 2208,
+      "reviews": 2210,
       "dist": [
         21,
         7,
-        82,
+        83,
         665,
-        1433
+        1434
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 250,
       "range_max": null,
-      "banner_text": "Over 250 reviews removed due to defamation complaints",
-      "est_low": 4.23,
-      "est_mid": 4.28,
+      "banner_text": "Über 250 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
+      "est_low": null,
+      "est_mid": 4.27,
       "est_high": 4.34,
+      "est_open": true,
       "lat": 53.5567539,
       "lng": 9.9748471,
-      "url": "https://www.google.com/maps/place/Restaurant+September/@53.5567539,9.9748471,17z/data=!4m8!3m7!1s0x47b18f14fc9e6041:0x8d66f3529cb6e591!8m2!3d53.5567539!4d9.9748471!9m1!1b1!16s%2Fg%2F1xgz9vr9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Restaurant+September/@53.5567539,9.9748471,17z/data=!4m8!3m7!1s0x47b18f14fc9e6041:0x8d66f3529cb6e591!8m2!3d53.5567539!4d9.9748471!9m1!1b1!16s%2Fg%2F1xgz9vr9?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2016-08": {
           "n": 1,
@@ -11963,32 +11997,32 @@
           "sum": 37
         },
         "2023-08": {
-          "n": 11,
-          "sum": 50
+          "n": 12,
+          "sum": 54
         },
         "2024-08": {
           "n": 15,
           "sum": 73
         },
         "2025-08": {
-          "n": 28,
-          "sum": 127
+          "n": 27,
+          "sum": 123
         },
         "2025-09": {
-          "n": 15,
-          "sum": 69
+          "n": 14,
+          "sum": 64
         },
         "2025-10": {
-          "n": 13,
-          "sum": 61
+          "n": 14,
+          "sum": 66
         },
         "2025-11": {
           "n": 25,
-          "sum": 117
+          "sum": 116
         },
         "2025-12": {
-          "n": 9,
-          "sum": 41
+          "n": 8,
+          "sum": 37
         },
         "2026-01": {
           "n": 17,
@@ -11999,47 +12033,47 @@
           "sum": 62
         },
         "2026-03": {
-          "n": 10,
-          "sum": 48
+          "n": 11,
+          "sum": 53
         },
         "2026-04": {
-          "n": 21,
-          "sum": 93
+          "n": 24,
+          "sum": 106
         },
         "2026-05": {
-          "n": 19,
-          "sum": 85
+          "n": 18,
+          "sum": 80
         },
         "2026-06": {
           "n": 22,
-          "sum": 99
+          "sum": 101
         },
         "2026-07": {
           "n": 16,
-          "sum": 71
+          "sum": 70
         },
         "2026-08": {
-          "n": 27,
-          "sum": 127
+          "n": 25,
+          "sum": 116
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:12:17.651Z",
+        "at": "2026-08-07T02:28:18.387Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 78,
+          "n0": 98,
           "n_end": 2036,
-          "n_sort": 88,
-          "n_start": 88,
-          "n_tab": 78,
+          "n_sort": 85,
+          "n_start": 85,
+          "n_tab": 98,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
         "matched": 280,
         "oldest_months": 12,
-        "scanned": 280,
+        "scanned": 281,
         "sorted": true,
         "tab_retry": false
       }
@@ -12068,31 +12102,32 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.37,
-      "est_mid": 4.45,
+      "est_mid": 4.44,
       "est_high": 4.51,
+      "est_open": false,
       "lat": 53.5744224,
       "lng": 10.0586174,
-      "url": "https://www.google.com/maps/place/Qu%C3%A1n+99/@53.5744224,10.0586174,17z/data=!3m1!5s0x47b18eacd27187a9:0x54ecf39a7a3091c!4m8!3m7!1s0x47b18f193490827b:0x85ab3e7afdfdaf72!8m2!3d53.5744224!4d10.0586174!9m1!1b1!16s%2Fg%2F11shfdtkn2?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Qu%C3%A1n+99/@53.5744224,10.0586174,17z/data=!3m1!5s0x47b18eacd27187a9:0x54ecf39a7a3091c!4m8!3m7!1s0x47b18f193490827b:0x85ab3e7afdfdaf72!8m2!3d53.5744224!4d10.0586174!9m1!1b1!16s%2Fg%2F11shfdtkn2?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2024-08": {
-          "n": 27,
-          "sum": 125
+          "n": 19,
+          "sum": 87
         },
         "2025-08": {
-          "n": 103,
-          "sum": 472
+          "n": 102,
+          "sum": 468
         },
         "2025-09": {
           "n": 3,
           "sum": 14
         },
         "2025-10": {
-          "n": 5,
-          "sum": 24
+          "n": 4,
+          "sum": 19
         },
         "2025-11": {
           "n": 5,
@@ -12107,51 +12142,51 @@
           "sum": 21
         },
         "2026-02": {
-          "n": 6,
-          "sum": 27
+          "n": 8,
+          "sum": 32
         },
         "2026-03": {
-          "n": 7,
-          "sum": 30
+          "n": 5,
+          "sum": 25
         },
         "2026-04": {
           "n": 7,
           "sum": 32
         },
         "2026-05": {
-          "n": 8,
-          "sum": 38
+          "n": 9,
+          "sum": 39
         },
         "2026-06": {
           "n": 7,
-          "sum": 28
+          "sum": 32
         },
         "2026-07": {
           "n": 5,
           "sum": 25
         },
         "2026-08": {
-          "n": 7,
-          "sum": 34
+          "n": 6,
+          "sum": 29
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:12:50.016Z",
+        "at": "2026-08-07T01:15:08.949Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 83,
-          "n_end": 1558,
+          "n0": 99,
+          "n_end": 1467,
           "n_sort": 79,
           "n_start": 79,
-          "n_tab": 83,
+          "n_tab": 99,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 198,
+        "matched": 188,
         "oldest_months": 24,
-        "scanned": 198,
+        "scanned": 188,
         "sorted": true,
         "tab_retry": false
       }
@@ -12161,15 +12196,16 @@
       "nameable": false,
       "branch": "Gesundheit",
       "city": "Hamburg",
-      "rating": 4.6,
-      "reviews": 162,
+      "rating": 4.7,
+      "reviews": 163,
       "range_min": 11,
       "range_max": 20,
-      "est_low": 4.2,
-      "est_mid": 4.33,
-      "est_high": 4.43,
+      "est_low": 4.3,
+      "est_mid": 4.41,
+      "est_high": 4.53,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "12bf4abd5dd2e3df": {
       "aid": "12bf4abd5dd2e3df",
@@ -12177,14 +12213,15 @@
       "branch": "Fitness & Sport",
       "city": "Hamburg",
       "rating": 4.9,
-      "reviews": 231,
+      "reviews": 236,
       "range_min": 21,
       "range_max": 50,
-      "est_low": 4.21,
-      "est_mid": 4.45,
+      "est_low": 4.22,
+      "est_mid": 4.43,
       "est_high": 4.66,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18f2b4b217b5d:0x6ffe19de28e9055e": {
       "place_id": "0x47b18f2b4b217b5d:0x6ffe19de28e9055e",
@@ -12210,15 +12247,16 @@
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.63,
-      "est_mid": 3.95,
+      "est_mid": 3.92,
       "est_high": 4.25,
+      "est_open": false,
       "lat": 53.5608975,
       "lng": 9.9480407,
-      "url": "https://www.google.com/maps/place/bock+auf+asia/@53.5608975,9.9480407,17z/data=!4m8!3m7!1s0x47b18f2b4b217b5d:0x6ffe19de28e9055e!8m2!3d53.5608975!4d9.9480407!9m1!1b1!16s%2Fg%2F11kk615q6r?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/bock+auf+asia/@53.5608975,9.9480407,17z/data=!4m8!3m7!1s0x47b18f2b4b217b5d:0x6ffe19de28e9055e!8m2!3d53.5608975!4d9.9480407!9m1!1b1!16s%2Fg%2F11kk615q6r?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2023-08": {
           "n": 3,
@@ -12229,16 +12267,16 @@
           "sum": 43
         },
         "2025-08": {
-          "n": 51,
-          "sum": 246
+          "n": 52,
+          "sum": 251
         },
         "2025-09": {
-          "n": 5,
-          "sum": 25
+          "n": 6,
+          "sum": 30
         },
         "2025-10": {
-          "n": 7,
-          "sum": 35
+          "n": 5,
+          "sum": 25
         },
         "2025-11": {
           "n": 5,
@@ -12261,12 +12299,12 @@
           "sum": 10
         },
         "2026-04": {
-          "n": 5,
-          "sum": 19
+          "n": 6,
+          "sum": 24
         },
         "2026-05": {
-          "n": 2,
-          "sum": 8
+          "n": 1,
+          "sum": 3
         },
         "2026-07": {
           "n": 8,
@@ -12278,18 +12316,18 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:13:18.716Z",
+        "at": "2026-08-07T01:27:08.628Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 72,
+          "n0": 91,
           "n_end": 876,
           "n_sort": 87,
           "n_start": 87,
-          "n_tab": 72,
+          "n_tab": 91,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
         "matched": 109,
         "oldest_months": 24,
@@ -12304,14 +12342,15 @@
       "branch": null,
       "city": "Hamburg",
       "rating": 4.8,
-      "reviews": 5605,
+      "reviews": 5663,
       "range_min": 51,
       "range_max": 100,
       "est_low": 4.73,
-      "est_mid": 4.76,
-      "est_high": 4.77,
+      "est_mid": 4.75,
+      "est_high": 4.78,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18f432db99f81:0x352d1e684ad44827": {
       "place_id": "0x47b18f432db99f81:0x352d1e684ad44827",
@@ -12337,15 +12376,16 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.15,
-      "est_mid": 3.52,
+      "est_mid": 3.47,
       "est_high": 3.86,
+      "est_open": false,
       "lat": 53.5643715,
       "lng": 9.9599813,
-      "url": "https://www.google.com/maps/place/HomeCompany+Hamburg/@53.5643715,9.9599813,17z/data=!4m8!3m7!1s0x47b18f432db99f81:0x352d1e684ad44827!8m2!3d53.5643715!4d9.9599813!9m1!1b1!16s%2Fg%2F1tdn7qr_?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/HomeCompany+Hamburg/@53.5643715,9.9599813,17z/data=!4m8!3m7!1s0x47b18f432db99f81:0x352d1e684ad44827!8m2!3d53.5643715!4d9.9599813!9m1!1b1!16s%2Fg%2F1tdn7qr_?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2017-08": {
           "n": 1,
@@ -12360,12 +12400,12 @@
           "sum": 15
         },
         "2020-08": {
-          "n": 3,
-          "sum": 15
+          "n": 4,
+          "sum": 20
         },
         "2021-08": {
-          "n": 9,
-          "sum": 44
+          "n": 8,
+          "sum": 39
         },
         "2022-08": {
           "n": 6,
@@ -12380,29 +12420,25 @@
           "sum": 6
         },
         "2025-08": {
-          "n": 2,
-          "sum": 2
+          "n": 3,
+          "sum": 7
         },
-        "2025-09": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-12": {
+        "2025-11": {
           "n": 1,
           "sum": 5
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:13:40.537Z",
+        "at": "2026-08-07T04:07:40.594Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 62,
+          "n0": 77,
           "n_end": 231,
           "n_sort": 73,
           "n_start": 73,
-          "n_tab": 62,
+          "n_tab": 77,
           "pane": true,
           "pre_matched": 32
         },
@@ -12418,15 +12454,16 @@
       "nameable": false,
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
-      "rating": 4.7,
-      "reviews": 507,
+      "rating": 4.6,
+      "reviews": 513,
       "range_min": 51,
       "range_max": 100,
-      "est_low": 4.09,
-      "est_mid": 4.29,
-      "est_high": 4.45,
+      "est_low": 4.01,
+      "est_mid": 4.18,
+      "est_high": 4.36,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "af3503e38515b91d": {
       "aid": "af3503e38515b91d",
@@ -12434,14 +12471,15 @@
       "branch": "Gesundheit",
       "city": "Hamburg",
       "rating": 4.9,
-      "reviews": 260,
+      "reviews": 262,
       "range_min": 21,
       "range_max": 50,
-      "est_low": 4.27,
-      "est_mid": 4.49,
+      "est_low": 4.28,
+      "est_mid": 4.47,
       "est_high": 4.68,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "f756f0d0a7d8f148": {
       "aid": "f756f0d0a7d8f148",
@@ -12449,14 +12487,15 @@
       "branch": null,
       "city": "Hamburg",
       "rating": 4.9,
-      "reviews": 70,
+      "reviews": 72,
       "range_min": 11,
       "range_max": 20,
-      "est_low": 4.03,
-      "est_mid": 4.28,
-      "est_high": 4.51,
+      "est_low": 4.05,
+      "est_mid": 4.27,
+      "est_high": 4.52,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18f62d230c223:0xf7b2590268e9aae3": {
       "place_id": "0x47b18f62d230c223:0xf7b2590268e9aae3",
@@ -12470,27 +12509,28 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 682,
+      "reviews": 683,
       "dist": [
         2,
         3,
         50,
         115,
-        512
+        513
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.45,
-      "est_mid": 4.54,
+      "est_mid": 4.53,
       "est_high": 4.62,
+      "est_open": false,
       "lat": 53.5739802,
       "lng": 9.9618372,
-      "url": "https://www.google.com/maps/place/Herzst%C3%BCck/@53.5739802,9.9618372,17z/data=!4m8!3m7!1s0x47b18f62d230c223:0xf7b2590268e9aae3!8m2!3d53.5739802!4d9.9618372!9m1!1b1!16s%2Fg%2F11jkbqzrnf?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Herzst%C3%BCck/@53.5739802,9.9618372,17z/data=!4m8!3m7!1s0x47b18f62d230c223:0xf7b2590268e9aae3!8m2!3d53.5739802!4d9.9618372!9m1!1b1!16s%2Fg%2F11jkbqzrnf?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2021-08": {
           "n": 2,
@@ -12509,12 +12549,12 @@
           "sum": 31
         },
         "2025-08": {
-          "n": 105,
-          "sum": 486
+          "n": 108,
+          "sum": 499
         },
         "2025-09": {
-          "n": 14,
-          "sum": 64
+          "n": 11,
+          "sum": 51
         },
         "2025-10": {
           "n": 8,
@@ -12529,20 +12569,20 @@
           "sum": 38
         },
         "2026-01": {
-          "n": 16,
-          "sum": 77
+          "n": 17,
+          "sum": 82
         },
         "2026-02": {
           "n": 9,
-          "sum": 44
+          "sum": 43
         },
         "2026-03": {
-          "n": 9,
-          "sum": 39
+          "n": 10,
+          "sum": 44
         },
         "2026-04": {
-          "n": 16,
-          "sum": 77
+          "n": 14,
+          "sum": 68
         },
         "2026-05": {
           "n": 7,
@@ -12553,31 +12593,31 @@
           "sum": 49
         },
         "2026-07": {
-          "n": 8,
-          "sum": 34
+          "n": 9,
+          "sum": 39
         },
         "2026-08": {
-          "n": 12,
-          "sum": 56
+          "n": 13,
+          "sum": 61
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:14:20.578Z",
+        "at": "2026-08-07T02:10:01.666Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 79,
+          "n0": 97,
           "n_end": 2041,
           "n_sort": 91,
           "n_start": 91,
-          "n_tab": 79,
+          "n_tab": 97,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 247,
+        "matched": 249,
         "oldest_months": 12,
-        "scanned": 249,
+        "scanned": 250,
         "sorted": true,
         "tab_retry": false
       }
@@ -12587,15 +12627,16 @@
       "nameable": false,
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
-      "rating": 4.5,
-      "reviews": 863,
+      "rating": 4.4,
+      "reviews": 888,
       "range_min": 101,
       "range_max": 150,
-      "est_low": 3.98,
-      "est_mid": 4.12,
-      "est_high": 4.24,
+      "est_low": 3.91,
+      "est_mid": 4.02,
+      "est_high": 4.15,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "84fc52a8c0c80d4d": {
       "aid": "84fc52a8c0c80d4d",
@@ -12603,14 +12644,15 @@
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
       "rating": 4.6,
-      "reviews": 1466,
+      "reviews": 1483,
       "range_min": 250,
       "range_max": null,
-      "est_low": 4.08,
-      "est_mid": 4.15,
+      "est_low": null,
+      "est_mid": 4.13,
       "est_high": 4.22,
+      "est_open": true,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18f8052dbdb49:0x402e1fab4930e067": {
       "place_id": "0x47b18f8052dbdb49:0x402e1fab4930e067",
@@ -12624,27 +12666,28 @@
       "website": null,
       "image": null,
       "rating": 4.7,
-      "reviews": 798,
+      "reviews": 799,
       "dist": [
         11,
         3,
         37,
-        98,
+        99,
         649
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.61,
       "est_mid": 4.64,
       "est_high": 4.66,
+      "est_open": false,
       "lat": 53.5367005,
       "lng": 10.0337695,
-      "url": "https://www.google.com/maps/place/Der+Kebap/@53.5367005,10.0337695,17z/data=!3m1!5s0x47b18e896ea47fd9:0x5698283d478fac2a!4m8!3m7!1s0x47b18f8052dbdb49:0x402e1fab4930e067!8m2!3d53.5367005!4d10.0337695!9m1!1b1!16s%2Fg%2F11qbd256h4?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Der+Kebap/@53.5367005,10.0337695,17z/data=!3m1!5s0x47b18e896ea47fd9:0x5698283d478fac2a!4m8!3m7!1s0x47b18f8052dbdb49:0x402e1fab4930e067!8m2!3d53.5367005!4d10.0337695!9m1!1b1!16s%2Fg%2F11qbd256h4?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2022-08": {
           "n": 4,
@@ -12655,8 +12698,8 @@
           "sum": 75
         },
         "2024-08": {
-          "n": 7,
-          "sum": 34
+          "n": 8,
+          "sum": 39
         },
         "2025-08": {
           "n": 51,
@@ -12664,70 +12707,70 @@
         },
         "2025-09": {
           "n": 14,
-          "sum": 66
+          "sum": 65
         },
         "2025-10": {
-          "n": 18,
-          "sum": 78
+          "n": 19,
+          "sum": 77
         },
         "2025-11": {
-          "n": 15,
-          "sum": 60
+          "n": 13,
+          "sum": 57
         },
         "2025-12": {
-          "n": 11,
-          "sum": 45
+          "n": 14,
+          "sum": 60
         },
         "2026-01": {
-          "n": 13,
-          "sum": 61
+          "n": 10,
+          "sum": 46
         },
         "2026-02": {
           "n": 11,
           "sum": 50
         },
         "2026-03": {
-          "n": 2,
-          "sum": 10
+          "n": 3,
+          "sum": 15
         },
         "2026-04": {
-          "n": 14,
-          "sum": 67
+          "n": 15,
+          "sum": 71
         },
         "2026-05": {
-          "n": 23,
-          "sum": 103
+          "n": 25,
+          "sum": 113
         },
         "2026-06": {
-          "n": 27,
-          "sum": 133
+          "n": 24,
+          "sum": 119
         },
         "2026-07": {
-          "n": 11,
-          "sum": 51
+          "n": 10,
+          "sum": 46
         },
         "2026-08": {
-          "n": 25,
-          "sum": 118
+          "n": 26,
+          "sum": 122
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:14:59.362Z",
+        "at": "2026-08-06T22:42:09.804Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 76,
-          "n_end": 2058,
-          "n_sort": 89,
-          "n_start": 89,
-          "n_tab": 76,
+          "n0": 92,
+          "n_end": 2061,
+          "n_sort": 91,
+          "n_start": 91,
+          "n_tab": 92,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 261,
+        "matched": 262,
         "oldest_months": 12,
-        "scanned": 261,
+        "scanned": 262,
         "sorted": true,
         "tab_retry": false
       }
@@ -12756,19 +12799,20 @@
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.34,
-      "est_mid": 4.51,
+      "est_mid": 4.49,
       "est_high": 4.65,
+      "est_open": false,
       "lat": 53.5617631,
       "lng": 10.0145584,
-      "url": "https://www.google.com/maps/place/Kanzlei+CleverLaw/@53.5617631,10.0145584,17z/data=!4m8!3m7!1s0x47b18f850efca5a7:0xadfc5216d0d50ecc!8m2!3d53.5617631!4d10.0145584!9m1!1b1!16s%2Fg%2F11rrs841rx?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Kanzlei+CleverLaw/@53.5617631,10.0145584,17z/data=!4m8!3m7!1s0x47b18f850efca5a7:0xadfc5216d0d50ecc!8m2!3d53.5617631!4d10.0145584!9m1!1b1!16s%2Fg%2F11rrs841rx?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2022-08": {
-          "n": 26,
-          "sum": 130
+          "n": 27,
+          "sum": 135
         },
         "2023-08": {
           "n": 13,
@@ -12790,9 +12834,13 @@
           "n": 1,
           "sum": 5
         },
+        "2026-03": {
+          "n": 2,
+          "sum": 10
+        },
         "2026-04": {
-          "n": 3,
-          "sum": 15
+          "n": 1,
+          "sum": 5
         },
         "2026-05": {
           "n": 1,
@@ -12808,22 +12856,22 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:15:18.169Z",
+        "at": "2026-08-07T04:29:26.505Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 67,
+          "n0": 85,
           "n_end": 229,
           "n_sort": 79,
           "n_start": 79,
-          "n_tab": 67,
+          "n_tab": 85,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 69,
+        "matched": 70,
         "oldest_months": 24,
-        "scanned": 69,
+        "scanned": 70,
         "sorted": true,
         "tab_retry": false
       }
@@ -12833,15 +12881,16 @@
       "nameable": false,
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
-      "rating": 4.6,
-      "reviews": 191,
+      "rating": 4.5,
+      "reviews": 194,
       "range_min": 21,
       "range_max": 50,
-      "est_low": 3.85,
-      "est_mid": 4.11,
-      "est_high": 4.34,
+      "est_low": 3.78,
+      "est_mid": 4.01,
+      "est_high": 4.26,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18feabc47f9ef:0x8e282c06a4613844": {
       "place_id": "0x47b18feabc47f9ef:0x8e282c06a4613844",
@@ -12855,31 +12904,32 @@
       "website": null,
       "image": null,
       "rating": 4.2,
-      "reviews": 543,
+      "reviews": 544,
       "dist": [
         52,
         39,
         40,
         29,
-        383
+        384
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.93,
-      "est_mid": 4.03,
+      "est_mid": 4.02,
       "est_high": 4.12,
+      "est_open": false,
       "lat": 53.5586218,
       "lng": 9.9899588,
-      "url": "https://www.google.com/maps/place/PELLICANO/@53.5586218,9.9899588,17z/data=!4m8!3m7!1s0x47b18feabc47f9ef:0x8e282c06a4613844!8m2!3d53.5586218!4d9.9899588!9m1!1b1!16s%2Fg%2F11xg__kb96?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/PELLICANO/@53.5586218,9.9899588,17z/data=!4m8!3m7!1s0x47b18feabc47f9ef:0x8e282c06a4613844!8m2!3d53.5586218!4d9.9899588!9m1!1b1!16s%2Fg%2F11xg__kb96?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2025-08": {
-          "n": 9,
-          "sum": 42
+          "n": 10,
+          "sum": 47
         },
         "2025-09": {
           "n": 1,
@@ -12890,63 +12940,59 @@
           "sum": 5
         },
         "2025-11": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-12": {
-          "n": 1,
-          "sum": 1
+          "n": 2,
+          "sum": 6
         },
         "2026-01": {
-          "n": 11,
-          "sum": 38
+          "n": 18,
+          "sum": 69
         },
         "2026-02": {
-          "n": 33,
-          "sum": 149
+          "n": 30,
+          "sum": 138
         },
         "2026-03": {
-          "n": 37,
-          "sum": 157
+          "n": 34,
+          "sum": 141
         },
         "2026-04": {
-          "n": 24,
-          "sum": 98
-        },
-        "2026-05": {
-          "n": 32,
-          "sum": 131
-        },
-        "2026-06": {
-          "n": 26,
+          "n": 27,
           "sum": 111
         },
+        "2026-05": {
+          "n": 30,
+          "sum": 123
+        },
+        "2026-06": {
+          "n": 25,
+          "sum": 106
+        },
         "2026-07": {
-          "n": 29,
-          "sum": 100
+          "n": 31,
+          "sum": 107
         },
         "2026-08": {
-          "n": 39,
-          "sum": 148
+          "n": 38,
+          "sum": 146
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:15:57.459Z",
+        "at": "2026-08-06T22:00:20.537Z",
         "complete": false,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 31,
-          "n_end": 2071,
-          "n_sort": 86,
-          "n_start": 86,
-          "n_tab": 31,
+          "n0": 97,
+          "n_end": 2070,
+          "n_sort": 87,
+          "n_start": 87,
+          "n_tab": 97,
           "pane": true,
-          "pre_matched": 53
+          "pre_matched": 60
         },
-        "matched": 244,
+        "matched": 247,
         "oldest_months": 7,
-        "scanned": 246,
+        "scanned": 248,
         "sorted": true,
         "tab_retry": false
       }
@@ -12957,14 +13003,15 @@
       "branch": "Gesundheit",
       "city": "Hamburg",
       "rating": 3.7,
-      "reviews": 132,
+      "reviews": 134,
       "range_min": 11,
       "range_max": 20,
-      "est_low": 3.34,
-      "est_mid": 3.47,
+      "est_low": 3.35,
+      "est_mid": 3.45,
       "est_high": 3.57,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b191a519ee8515:0x3fe0cc7949882deb": {
       "place_id": "0x47b191a519ee8515:0x3fe0cc7949882deb",
@@ -12990,15 +13037,16 @@
       "business_status": "operational",
       "range_min": 51,
       "range_max": 100,
-      "banner_text": "51 to 100 reviews removed due to defamation complaints",
+      "banner_text": "51 bis 100 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.48,
-      "est_mid": 3.66,
+      "est_mid": 3.64,
       "est_high": 3.81,
+      "est_open": false,
       "lat": 53.460079,
       "lng": 9.9786132,
-      "url": "https://www.google.com/maps/place/Golden+City/@53.460079,9.9786132,17z/data=!4m8!3m7!1s0x47b191a519ee8515:0x3fe0cc7949882deb!8m2!3d53.460079!4d9.9786132!9m1!1b1!16s%2Fg%2F1tdg6vwy?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Golden+City/@53.460079,9.9786132,17z/data=!4m8!3m7!1s0x47b191a519ee8515:0x3fe0cc7949882deb!8m2!3d53.460079!4d9.9786132!9m1!1b1!16s%2Fg%2F1tdg6vwy?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2014-08": {
           "n": 1,
@@ -13013,8 +13061,8 @@
           "sum": 18
         },
         "2019-08": {
-          "n": 1,
-          "sum": 5
+          "n": 3,
+          "sum": 8
         },
         "2020-08": {
           "n": 5,
@@ -13060,13 +13108,17 @@
           "n": 1,
           "sum": 2
         },
-        "2026-03": {
+        "2026-02": {
           "n": 1,
           "sum": 4
         },
+        "2026-03": {
+          "n": 1,
+          "sum": 5
+        },
         "2026-04": {
-          "n": 2,
-          "sum": 9
+          "n": 1,
+          "sum": 4
         },
         "2026-05": {
           "n": 1,
@@ -13082,22 +13134,22 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:16:20.299Z",
+        "at": "2026-08-06T23:49:57.318Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 63,
+          "n0": 81,
           "n_end": 516,
           "n_sort": 88,
           "n_start": 88,
-          "n_tab": 63,
+          "n_tab": 81,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 94,
+        "matched": 96,
         "oldest_months": 24,
-        "scanned": 94,
+        "scanned": 96,
         "sorted": true,
         "tab_retry": false
       }
@@ -13114,27 +13166,28 @@
       "website": null,
       "image": null,
       "rating": 4.8,
-      "reviews": 810,
+      "reviews": 813,
       "dist": [
         2,
         1,
         2,
         160,
-        645
+        648
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.58,
       "est_mid": 4.66,
       "est_high": 4.73,
+      "est_open": false,
       "lat": 53.4663592,
       "lng": 9.9869028,
-      "url": "https://www.google.com/maps/place/Momento+di...+Restaurant/@53.4663592,9.9869028,17z/data=!3m1!5s0x47b191b9869c4903:0x46b0ee8c96ebed19!4m8!3m7!1s0x47b191b984567007:0x5e26dc79c281b549!8m2!3d53.4663592!4d9.9869028!9m1!1b1!16s%2Fg%2F1tg85qcf?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Momento+di...+Restaurant/@53.4663592,9.9869028,17z/data=!3m1!5s0x47b191b9869c4903:0x46b0ee8c96ebed19!4m8!3m7!1s0x47b191b984567007:0x5e26dc79c281b549!8m2!3d53.4663592!4d9.9869028!9m1!1b1!16s%2Fg%2F1tg85qcf?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2017-08": {
           "n": 2,
@@ -13153,8 +13206,8 @@
           "sum": 10
         },
         "2021-08": {
-          "n": 4,
-          "sum": 20
+          "n": 5,
+          "sum": 25
         },
         "2022-08": {
           "n": 6,
@@ -13165,16 +13218,16 @@
           "sum": 31
         },
         "2024-08": {
-          "n": 10,
-          "sum": 47
+          "n": 7,
+          "sum": 32
         },
         "2025-08": {
           "n": 80,
           "sum": 393
         },
         "2025-09": {
-          "n": 5,
-          "sum": 25
+          "n": 6,
+          "sum": 30
         },
         "2025-10": {
           "n": 11,
@@ -13189,20 +13242,20 @@
           "sum": 45
         },
         "2026-01": {
-          "n": 3,
-          "sum": 15
+          "n": 2,
+          "sum": 10
         },
         "2026-02": {
           "n": 6,
           "sum": 28
         },
         "2026-03": {
-          "n": 7,
-          "sum": 35
+          "n": 8,
+          "sum": 40
         },
         "2026-04": {
-          "n": 13,
-          "sum": 63
+          "n": 12,
+          "sum": 58
         },
         "2026-05": {
           "n": 6,
@@ -13217,27 +13270,27 @@
           "sum": 26
         },
         "2026-08": {
-          "n": 7,
-          "sum": 30
+          "n": 11,
+          "sum": 50
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:16:55.766Z",
+        "at": "2026-08-07T03:03:32.475Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 78,
-          "n_end": 1517,
+          "n0": 96,
+          "n_end": 1515,
           "n_sort": 91,
           "n_start": 91,
-          "n_tab": 78,
+          "n_tab": 96,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 207,
+        "matched": 209,
         "oldest_months": 24,
-        "scanned": 208,
+        "scanned": 209,
         "sorted": true,
         "tab_retry": false
       }
@@ -13254,31 +13307,36 @@
       "website": null,
       "image": null,
       "rating": 4.5,
-      "reviews": 210,
+      "reviews": 211,
       "dist": [
         11,
         1,
         9,
         34,
-        155
+        156
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 11,
       "range_max": 20,
-      "banner_text": "11 to 20 reviews removed due to defamation complaints",
+      "banner_text": "11 bis 20 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.2,
-      "est_mid": 4.29,
+      "est_mid": 4.28,
       "est_high": 4.38,
+      "est_open": false,
       "lat": 53.4614425,
       "lng": 9.9855816,
-      "url": "https://www.google.com/maps/place/Fitness+Lounge+Ladies/@53.4614425,9.9855816,17z/data=!4m8!3m7!1s0x47b191bb277e4bb3:0xd4f981de2889e016!8m2!3d53.4614425!4d9.9855816!9m1!1b1!16s%2Fg%2F1td1_9qc?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Fitness+Lounge+Ladies/@53.4614425,9.9855816,17z/data=!4m8!3m7!1s0x47b191bb277e4bb3:0xd4f981de2889e016!8m2!3d53.4614425!4d9.9855816!9m1!1b1!16s%2Fg%2F1td1_9qc?entry=ttu&g_ep=EgoyMDI2MDgwMy4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2015-08": {
           "n": 2,
           "sum": 10
+        },
+        "2016-08": {
+          "n": 1,
+          "sum": 4
         },
         "2017-08": {
           "n": 2,
@@ -13301,16 +13359,16 @@
           "sum": 20
         },
         "2022-08": {
-          "n": 13,
-          "sum": 60
+          "n": 14,
+          "sum": 65
         },
         "2023-08": {
           "n": 3,
           "sum": 12
         },
         "2024-08": {
-          "n": 6,
-          "sum": 29
+          "n": 11,
+          "sum": 53
         },
         "2025-08": {
           "n": 18,
@@ -13321,12 +13379,8 @@
           "sum": 14
         },
         "2025-10": {
-          "n": 1,
-          "sum": 5
-        },
-        "2025-11": {
-          "n": 1,
-          "sum": 1
+          "n": 2,
+          "sum": 6
         },
         "2025-12": {
           "n": 2,
@@ -13349,31 +13403,31 @@
           "sum": 13
         },
         "2026-07": {
-          "n": 2,
-          "sum": 6
+          "n": 3,
+          "sum": 11
         },
         "2026-08": {
-          "n": 3,
-          "sum": 7
+          "n": 4,
+          "sum": 9
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:17:15.152Z",
+        "at": "2026-08-06T21:54:42.732Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 60,
-          "n_end": 282,
-          "n_sort": 73,
-          "n_start": 73,
-          "n_tab": 60,
+          "n0": 78,
+          "n_end": 352,
+          "n_sort": 77,
+          "n_start": 77,
+          "n_tab": 78,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 81,
+        "matched": 90,
         "oldest_months": 24,
-        "scanned": 82,
+        "scanned": 90,
         "sorted": true,
         "tab_retry": false
       }
@@ -13384,14 +13438,15 @@
       "branch": null,
       "city": "Hamburg",
       "rating": 4.5,
-      "reviews": 1298,
+      "reviews": 1310,
       "range_min": 51,
       "range_max": 100,
       "est_low": 4.25,
-      "est_mid": 4.34,
+      "est_mid": 4.33,
       "est_high": 4.41,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b227588e6fdfd3:0x6c9a81c8bcbd9fff": {
       "place_id": "0x47b227588e6fdfd3:0x6c9a81c8bcbd9fff",
@@ -13417,15 +13472,16 @@
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.15,
-      "est_mid": 4.31,
+      "est_mid": 4.3,
       "est_high": 4.45,
+      "est_open": false,
       "lat": 53.6611833,
       "lng": 10.0811664,
-      "url": "https://www.google.com/maps/place/Stoltenberg+Automobile+GmbH+%26+Co.+KG/@53.6611833,10.0811664,17z/data=!4m8!3m7!1s0x47b227588e6fdfd3:0x6c9a81c8bcbd9fff!8m2!3d53.6611833!4d10.0811664!9m1!1b1!16s%2Fg%2F1vn_y099?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Stoltenberg+Automobile+GmbH+%26+Co.+KG/@53.6611833,10.0811664,17z/data=!4m8!3m7!1s0x47b227588e6fdfd3:0x6c9a81c8bcbd9fff!8m2!3d53.6611833!4d10.0811664!9m1!1b1!16s%2Fg%2F1vn_y099?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": {
         "2015-08": {
           "n": 1,
@@ -13444,28 +13500,24 @@
           "sum": 16
         },
         "2021-08": {
-          "n": 2,
-          "sum": 10
+          "n": 3,
+          "sum": 15
         },
         "2022-08": {
-          "n": 1,
-          "sum": 5
+          "n": 2,
+          "sum": 10
         },
         "2023-08": {
           "n": 12,
           "sum": 56
         },
         "2024-08": {
-          "n": 10,
-          "sum": 46
+          "n": 11,
+          "sum": 50
         },
         "2025-08": {
           "n": 21,
-          "sum": 99
-        },
-        "2025-09": {
-          "n": 1,
-          "sum": 5
+          "sum": 100
         },
         "2025-10": {
           "n": 4,
@@ -13480,16 +13532,16 @@
           "sum": 5
         },
         "2026-01": {
-          "n": 3,
-          "sum": 14
+          "n": 5,
+          "sum": 17
         },
         "2026-02": {
-          "n": 6,
-          "sum": 23
+          "n": 5,
+          "sum": 24
         },
         "2026-03": {
-          "n": 3,
-          "sum": 14
+          "n": 2,
+          "sum": 10
         },
         "2026-04": {
           "n": 2,
@@ -13513,22 +13565,22 @@
         }
       },
       "rev_hist_meta": {
-        "at": "2026-08-03T22:17:36.517Z",
+        "at": "2026-08-06T22:38:47.827Z",
         "complete": true,
         "dbg": {
           "btn": "Sort reviews|Sort",
           "item": "Newest",
-          "n0": 75,
+          "n0": 93,
           "n_end": 550,
           "n_sort": 88,
           "n_start": 88,
-          "n_tab": 75,
+          "n_tab": 93,
           "pane": true,
-          "pre_matched": 58
+          "pre_matched": 60
         },
-        "matched": 89,
+        "matched": 91,
         "oldest_months": 24,
-        "scanned": 89,
+        "scanned": 91,
         "sorted": true,
         "tab_retry": false
       }
@@ -13539,14 +13591,15 @@
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
       "rating": 3.9,
-      "reviews": 190,
+      "reviews": 191,
       "range_min": 151,
       "range_max": 200,
-      "est_low": 2.41,
-      "est_mid": 2.75,
+      "est_low": 2.42,
+      "est_mid": 2.67,
       "est_high": 3.06,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "b21f8407b902b782": {
       "aid": "b21f8407b902b782",
@@ -13554,14 +13607,15 @@
       "branch": "Gastronomie & Hotel",
       "city": "Hamburg",
       "rating": 3,
-      "reviews": 263,
+      "reviews": 266,
       "range_min": 21,
       "range_max": 50,
       "est_low": 2.68,
-      "est_mid": 2.82,
+      "est_mid": 2.8,
       "est_high": 2.93,
+      "est_open": false,
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-05"
+      "last_seen": "2026-08-07"
     },
     "0x47b18ea00c571409:0xf0881b567abf5061": {
       "place_id": "0x47b18ea00c571409:0xf0881b567abf5061",
@@ -13575,27 +13629,28 @@
       "website": null,
       "image": null,
       "rating": 4.8,
-      "reviews": 1952,
+      "reviews": 1954,
       "dist": [
         2,
         1,
         5,
         329,
-        1615
+        1617
       ],
       "price_level": null,
       "business_status": "operational",
       "range_min": 51,
       "range_max": 100,
-      "banner_text": "51 to 100 reviews removed due to defamation complaints",
+      "banner_text": "51 bis 100 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 4.61,
-      "est_mid": 4.68,
+      "est_mid": 4.67,
       "est_high": 4.73,
+      "est_open": false,
       "lat": 53.5538165,
       "lng": 10.0609725,
-      "url": "https://www.google.com/maps/place/Hotel+Volksschule/@53.5538165,10.0609725,17z/data=!4m11!3m10!1s0x47b18ea00c571409:0xf0881b567abf5061!5m2!4m1!1i2!8m2!3d53.5538165!4d10.0609725!9m1!1b1!16s%2Fg%2F12vqlfx3l?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Hotel+Volksschule/@53.5538165,10.0609725,17z/data=!4m11!3m10!1s0x47b18ea00c571409:0xf0881b567abf5061!5m2!4m1!1i2!8m2!3d53.5538165!4d10.0609725!9m1!1b1!16s%2Fg%2F12vqlfx3l?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": null,
       "rev_hist_meta": null
     },
@@ -13623,15 +13678,16 @@
       "business_status": "operational",
       "range_min": 21,
       "range_max": 50,
-      "banner_text": "21 to 50 reviews removed due to defamation complaints",
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
       "est_low": 3.18,
-      "est_mid": 3.5,
+      "est_mid": 3.46,
       "est_high": 3.78,
+      "est_open": false,
       "lat": 53.55055,
       "lng": 9.95608,
-      "url": "https://www.google.com/maps/place/Hotel+Lafayette/@53.55055,9.95608,17z/data=!4m11!3m10!1s0x47b18f701df9ce4f:0x468c8a7495a0e978!5m2!4m1!1i2!8m2!3d53.55055!4d9.95608!9m1!1b1!16s%2Fg%2F1tf_mc8v?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Hotel+Lafayette/@53.55055,9.95608,17z/data=!4m11!3m10!1s0x47b18f701df9ce4f:0x468c8a7495a0e978!5m2!4m1!1i2!8m2!3d53.55055!4d9.95608!9m1!1b1!16s%2Fg%2F1tf_mc8v?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": null,
       "rev_hist_meta": null
     },
@@ -13647,11 +13703,11 @@
       "website": null,
       "image": null,
       "rating": 4.2,
-      "reviews": 96,
+      "reviews": 97,
       "dist": [
         8,
         1,
-        4,
+        5,
         31,
         52
       ],
@@ -13659,15 +13715,16 @@
       "business_status": "operational",
       "range_min": 51,
       "range_max": 100,
-      "banner_text": "51 to 100 reviews removed due to defamation complaints",
-      "est_low": 2.57,
-      "est_mid": 3.01,
+      "banner_text": "51 bis 100 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
+      "est_low": 2.58,
+      "est_mid": 2.95,
       "est_high": 3.44,
+      "est_open": false,
       "lat": 53.4933537,
       "lng": 10.1978852,
-      "url": "https://www.google.com/maps/place/Hotel+Hanseat/@53.4933537,10.1978852,17z/data=!4m11!3m10!1s0x47b1f293ed3f7ad1:0x85c83ddc90e07133!5m2!4m1!1i2!8m2!3d53.4933537!4d10.1978852!9m1!1b1!16s%2Fg%2F12xqt17vx?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "https://www.google.com/maps/place/Hotel+Hanseat/@53.4933537,10.1978852,17z/data=!4m11!3m10!1s0x47b1f293ed3f7ad1:0x85c83ddc90e07133!5m2!4m1!1i2!8m2!3d53.4933537!4d10.1978852!9m1!1b1!16s%2Fg%2F12xqt17vx?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-07",
       "rev_hist": null,
       "rev_hist_meta": null
     },
@@ -85075,6 +85132,199 @@
         "matched": 85,
         "oldest_months": 24,
         "scanned": 85,
+        "sorted": true,
+        "tab_retry": false
+      }
+    },
+    "f46f09189c77bfaa": {
+      "aid": "f46f09189c77bfaa",
+      "nameable": false,
+      "branch": "Gesundheit",
+      "city": "Hamburg",
+      "rating": 4.8,
+      "reviews": 236,
+      "range_min": 11,
+      "range_max": 20,
+      "est_low": 4.5,
+      "est_mid": 4.59,
+      "est_high": 4.68,
+      "est_open": false,
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07"
+    },
+    "debda82d8c09d364": {
+      "aid": "debda82d8c09d364",
+      "nameable": false,
+      "branch": null,
+      "city": "Hamburg",
+      "rating": 4.8,
+      "reviews": 183,
+      "range_min": 21,
+      "range_max": 50,
+      "est_low": 3.98,
+      "est_mid": 4.24,
+      "est_high": 4.51,
+      "est_open": false,
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07"
+    },
+    "2377839a864915f8": {
+      "aid": "2377839a864915f8",
+      "nameable": false,
+      "branch": null,
+      "city": "Hamburg",
+      "rating": 4.9,
+      "reviews": 701,
+      "range_min": 11,
+      "range_max": 20,
+      "est_low": 4.79,
+      "est_mid": 4.82,
+      "est_high": 4.86,
+      "est_open": false,
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07"
+    },
+    "d77d0a7a301b8560": {
+      "aid": "d77d0a7a301b8560",
+      "nameable": false,
+      "branch": "Gesundheit",
+      "city": "Hamburg",
+      "rating": 4.4,
+      "reviews": 27,
+      "range_min": 11,
+      "range_max": 20,
+      "est_low": 2.95,
+      "est_mid": 3.28,
+      "est_high": 3.71,
+      "est_open": false,
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07"
+    },
+    "0x47b18f72f2075901:0xa44ad6a543be66d0": {
+      "place_id": "0x47b18f72f2075901:0xa44ad6a543be66d0",
+      "name": "Tierarztpraxis St.Pauli",
+      "category": "veterinary",
+      "nameable": true,
+      "branch": "Gesundheit",
+      "city": "Hamburg",
+      "postal_code": null,
+      "address": null,
+      "website": null,
+      "image": null,
+      "rating": 4,
+      "reviews": 142,
+      "dist": [
+        30,
+        null,
+        null,
+        15,
+        97
+      ],
+      "price_level": null,
+      "business_status": "operational",
+      "range_min": 21,
+      "range_max": 50,
+      "banner_text": "21 bis 50 Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt",
+      "est_low": 3.22,
+      "est_mid": 3.47,
+      "est_high": 3.74,
+      "est_open": false,
+      "lat": 53.5479589,
+      "lng": 9.9657534,
+      "url": "https://www.google.com/maps/place/Tierarztpraxis+St.Pauli/@53.5479589,9.9657534,17z/data=!4m8!3m7!1s0x47b18f72f2075901:0xa44ad6a543be66d0!8m2!3d53.5479589!4d9.9657534!9m1!1b1!16s%2Fg%2F1thpvx2j?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D",
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07",
+      "rev_hist": {
+        "2015-08": {
+          "n": 1,
+          "sum": 1
+        },
+        "2017-08": {
+          "n": 1,
+          "sum": 1
+        },
+        "2018-08": {
+          "n": 2,
+          "sum": 5
+        },
+        "2019-08": {
+          "n": 2,
+          "sum": 6
+        },
+        "2020-08": {
+          "n": 5,
+          "sum": 20
+        },
+        "2021-08": {
+          "n": 6,
+          "sum": 17
+        },
+        "2022-08": {
+          "n": 5,
+          "sum": 21
+        },
+        "2023-08": {
+          "n": 8,
+          "sum": 31
+        },
+        "2024-08": {
+          "n": 14,
+          "sum": 58
+        },
+        "2025-08": {
+          "n": 18,
+          "sum": 74
+        },
+        "2025-10": {
+          "n": 3,
+          "sum": 15
+        },
+        "2025-11": {
+          "n": 1,
+          "sum": 5
+        },
+        "2026-01": {
+          "n": 2,
+          "sum": 6
+        },
+        "2026-02": {
+          "n": 1,
+          "sum": 5
+        },
+        "2026-05": {
+          "n": 3,
+          "sum": 11
+        },
+        "2026-06": {
+          "n": 1,
+          "sum": 5
+        },
+        "2026-07": {
+          "n": 4,
+          "sum": 12
+        },
+        "2026-08": {
+          "n": 2,
+          "sum": 10
+        }
+      },
+      "rev_hist_meta": {
+        "at": "2026-08-07T00:46:30.475Z",
+        "complete": true,
+        "dbg": {
+          "btn": "Sort reviews|Sort",
+          "item": "Newest",
+          "n0": 78,
+          "n_end": 309,
+          "n_sort": 83,
+          "n_start": 83,
+          "n_tab": 78,
+          "pane": true,
+          "pre_matched": 60
+        },
+        "matched": 79,
+        "oldest_months": 24,
+        "scanned": 79,
         "sorted": true,
         "tab_retry": false
       }

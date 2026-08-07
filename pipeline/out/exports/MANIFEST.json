@@ -764,8 +764,30 @@
       "capturedFrom": "2026-08-05T19:29:25.292Z",
       "capturedTo": "2026-08-06T04:49:54.047Z",
       "kind": "screening"
+    },
+    {
+      "file": "2026-08-06_screening_76r-1709c_c73c4eb2.json",
+      "stored": true,
+      "originalName": "aidos-banners (23).json",
+      "sha256": "c73c4eb2865cd125abdafbcdf77576727ae89365ec977843cbadbb4b10051c33",
+      "bytes": 1008135,
+      "archivedFrom": "/Users/markusmeixner/Downloads/aidos-banners (23).json",
+      "format": "json",
+      "records": 76,
+      "checks": 1709,
+      "outcomes": {
+        "no_banner": 1642,
+        "hit": 67
+      },
+      "hitRatePct": 3.9,
+      "extensionVersions": [
+        "v1.2.6"
+      ],
+      "capturedFrom": "2026-08-06T21:05:51.304Z",
+      "capturedTo": "2026-08-07T05:11:08.117Z",
+      "kind": "screening"
     }
   ],
-  "updated": "2026-08-06T17:43:00.012Z",
-  "totalStored": 37
+  "updated": "2026-08-07T06:11:01.868Z",
+  "totalStored": 38
 }
