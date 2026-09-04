@@ -175,8 +175,8 @@
     </div>
   </footer>
 
-  <script src="../aggregates.js?v=5fd5d4c5"></script>
-  <script src="../lookup.js?v=77596905"></script>
+  <script src="../aggregates.js?v=deadc472"></script>
+  <script src="../lookup.js?v=a279f907"></script>
   <script src="../branch-icons.js?v=38883451"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
@@ -214,7 +214,7 @@
     document.getElementById('momentum').innerHTML = tr.available
       ? `<div class="lead-figure reveal">${en(tr.up || 0)} of ${en(tr.panelSize)}<span class="unit">businesses crossed into a higher band · ${trDir} · vs. ${tr.prev}</span></div>
          <p class="small muted">Google publishes the number of removed reviews only as a range. We therefore count how many businesses moved into a higher band — the smallest reliably measurable event. For ${en(tr.flat || 0)} businesses the figure stayed within the same band; changes smaller than the band width are not visible in it. A count of removed reviews cannot be derived from this.</p>`
-      : `<div class="baseline-note reveal"><span class="big">Survey span ${spanLabel()}</span><span class="small">The month-on-month comparison appears automatically with the second survey — never estimated.</span></div>`;
+      : `<div class="baseline-note reveal"><span class="big">Survey span ${spanLabel()}</span><span class="small">${tr.pending ? 'The month-on-month comparison appears once this month\u2019s panel sweep has run \u2014 without it, too few businesses are covered in both months to compare.' : 'The month-on-month comparison appears automatically with the second survey — never estimated.'}</span></div>`;
 
     document.getElementById('rankHint').textContent = 'survey span · ' + spanLabel();
     const maxIdx = Math.max(1, ...(A.branches || []).map((b) => b.aidos_index));

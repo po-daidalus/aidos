@@ -101,13 +101,22 @@ const noChecks = process.argv.includes('--no-checks');
 const forceChecks = process.argv.includes('--force-checks');
 if (rawChecks.length && !noChecks) {
   const CHK_PATH = new URL('pipeline/out/checks.jsonl', ROOT);
-  const monthNow = new Date().toISOString().slice(0, 7);
+  // Date the measurement by the CHECKS, not by the wall clock at ingest time. A screening run can
+  // straddle a month boundary (Köln ran 30.08.–03.09.) and is often ingested days later; taking
+  // new Date() then filed the run under whatever month the ingest happened to run in.
+  const stamps = rawChecks.map((c) => c.ts).filter(Boolean).sort();
+  const monthNow = (stamps.length ? stamps[Math.floor(stamps.length / 2)] : new Date().toISOString()).slice(0, 7);
   const city = defCity || 'Unbekannt';
   const agg = { date: monthNow, city, checked: 0, hit: 0, no_banner: 0, no_place: 0, blocked: 0 };
   for (const c of rawChecks) {
     agg.checked++;
     if (c.outcome in agg) agg[c.outcome]++;
   }
+  // NOTE: records without a matching check row are NOT lost visits — do not "recover" them into the
+  // hit count. They are second captures of the same place (panel-resolving pass with a URL key, then
+  // the hex-keyed one), and the visit is already logged once under the hex key. Köln: 53 such
+  // records, every one of them traceable to an existing `hit` row. Counting them would have lifted
+  // the published prevalence from 5.7 % to 8.8 % on pure double-counting.
   const hitRate = agg.checked ? agg.hit / agg.checked : 0;
   if (hitRate > 0.5 && !forceChecks) {
     console.log(`⚠️  checks SKIPPED: hit rate ${(100 * hitRate).toFixed(1)}% looks like a hit-only/panel run, not a screening sweep.`);

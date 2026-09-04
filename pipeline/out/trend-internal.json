@@ -1,14 +1,14 @@
 {
   "note": "INTERNAL ONLY. midDelta is the difference of range midpoints = a measure of Google's band widths, NOT removed reviews. Never publish, never quote. The publishable figure is up/down/flat.",
   "prev": "2026-07",
-  "latest": "2026-08",
-  "panelSize": 773,
-  "up": 12,
+  "latest": "2026-09",
+  "panelSize": 73,
+  "up": 2,
   "down": 0,
-  "moved": 12,
-  "flat": 761,
-  "midPrev": 46116,
-  "midLatest": 46536,
-  "midDelta": 420,
-  "midChangePct": 0.9
+  "moved": 2,
+  "flat": 71,
+  "midPrev": 4650,
+  "midLatest": 4720,
+  "midDelta": 70,
+  "midChangePct": 1.5
 }

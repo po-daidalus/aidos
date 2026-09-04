@@ -187,10 +187,10 @@
     </div>
   </footer>
 
-  <script src="aggregates.js?v=5fd5d4c5"></script>
-  <script src="lookup.js?v=77596905"></script>
+  <script src="aggregates.js?v=deadc472"></script>
+  <script src="lookup.js?v=a279f907"></script>
   <script src="branch-icons.js?v=38883451"></script>
-  <script src="articles.js?v=ce941563"></script>
+  <script src="articles.js?v=09acb4ae"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
     const T = A.totals || {};
@@ -227,7 +227,7 @@
     document.getElementById('momentum').innerHTML = tr.available
       ? `<div class="lead-figure reveal">${de(tr.up || 0)} von ${de(tr.panelSize)}<span class="unit">Betrieben stiegen über eine Bereichsgrenze · ${trDir} · ggü. ${tr.prev}</span></div>
          <p class="small muted">Google veröffentlicht die Zahl entfernter Bewertungen nur als Spanne. Gezählt wird deshalb, wie viele Betriebe in einen höheren Bereich gewechselt sind — das kleinste sicher messbare Ereignis. Bei ${de(tr.flat || 0)} Betrieben blieb die Angabe im selben Bereich; Veränderungen unterhalb der Spannenbreite sind darin nicht sichtbar. Eine Stückzahl entfernter Bewertungen lässt sich daraus nicht ableiten.</p>`
-      : `<div class="baseline-note reveal"><span class="big">Erhebungsstand ${spanLabel()}</span><span class="small">Der Monatsvergleich erscheint automatisch mit der zweiten Erhebung — nie geschätzt.</span></div>`;
+      : `<div class="baseline-note reveal"><span class="big">Erhebungsstand ${spanLabel()}</span><span class="small">${esc(tr.note || 'Der Monatsvergleich erscheint automatisch mit der zweiten Erhebung — nie geschätzt.')}</span></div>`;
 
     // ranking table
     document.getElementById('rankHint').textContent = 'Erhebungsstand · ' + spanLabel();

@@ -159,6 +159,10 @@ if (cities.length) {
 }
 
 // --- trend module (Method D): activates with ≥2 months ---
+// Ein Monatsvergleich braucht ein Panel, das die Erhebung trägt. Der Panel-Lauf liefert ~670
+// Betriebe; ein Screening-Monat allein kann auf wenige Dutzend fallen (Köln: 41).
+const MIN_PANEL = 200;
+let thin = false;
 let trend = { available: false, months, note: `Erhebungsstand ${spanLabel('de')}. Monatliche Snapshots ab sofort — Trends (z. B. „+40 % seit Jahresbeginn") erscheinen automatisch, sobald ≥2 Messpunkte vorliegen.` };
 if (months.length >= 2) {
   // SAME-PANEL comparison only: entities present in BOTH months, so the change reflects real
@@ -171,17 +175,31 @@ if (months.length >= 2) {
   // a lower bound - it is an artifact and must never be published as a review count. What IS a hard
   // fact from Google's own display: how many businesses crossed a published band boundary, and in
   // which direction. The mid* figures below are kept for internal reference only.
-  const prevM = months[months.length - 2];
+  // Compare against the newest EARLIER month that still shares a usable panel. Under the screening
+  // rotation a month can consist of a single city — September opened with Köln alone, whose overlap
+  // with August was 41 businesses. Comparing against that would have put "1 von 41" on the home page
+  // and read as standstill, when the only thing missing was that month's panel run.
   const byMonth = (ym) => new Map(rows.filter((r) => r.date === ym).map((r) => [r.aid, r]));
-  const A = byMonth(prevM), B = byMonth(latest);
-  const panel = [...B.keys()].filter((aid) => A.has(aid));
+  const B = byMonth(latest);
+  const overlap = (ym) => [...B.keys()].filter((aid) => byMonth(ym).has(aid));
+  let prevM = months[months.length - 2], panel = overlap(prevM);
+  for (let i = months.length - 3; i >= 0 && panel.length < MIN_PANEL; i--) {
+    const p = overlap(months[i]);
+    if (p.length > panel.length) { prevM = months[i]; panel = p; }
+  }
+  const A = byMonth(prevM);
+  thin = panel.length < MIN_PANEL;
+  if (thin) console.log(`trend: Panel ${panel.length} (${prevM} → ${latest}) unter der Schwelle ${MIN_PANEL} — Monatsvergleich zurückgehalten, Panel-Lauf fehlt`);
   const a = panel.reduce((s, aid) => s + mid(A.get(aid)), 0);
   const b = panel.reduce((s, aid) => s + mid(B.get(aid)), 0);
   let up = 0, down = 0;
   for (const aid of panel) { const d = mid(B.get(aid)) - mid(A.get(aid)); if (d > 0) up++; else if (d < 0) down++; }
   const moved = up + down, flat = panel.length - moved;
   // Shipped to the browser: the publishable facts only.
-  trend = { available: true, months, prev: prevM, latest, panelSize: panel.length, up, down, moved, flat };
+  trend = thin
+    ? { available: false, months, panelSize: panel.length, pending: true,
+        note: 'Der Monatsvergleich erscheint, sobald der Panel-Lauf dieses Monats vorliegt — ohne ihn sind zu wenige Betriebe in beiden Monaten erfasst, um zu vergleichen.' }
+    : { available: true, months, prev: prevM, latest, panelSize: panel.length, up, down, moved, flat };
   // The midpoint sums stay OUT of dashboard/aggregates.js. They are a quantization artifact, not a
   // review count, and anything sitting in a public file gets quoted sooner or later. Kept here for
   // internal calibration only - pipeline/out/ is tracked but never served.
@@ -191,7 +209,7 @@ if (months.length >= 2) {
     midPrev: r0(a), midLatest: r0(b), midDelta: r0(b - a), midChangePct: r1(a ? ((b - a) / a) * 100 : 0),
   }, null, 2) + '\n');
   const dir = down === 0 && up > 0 ? 'keiner sank' : up === 0 && down > 0 ? 'keiner stieg' : `${de(down)} sanken`;
-  add(95, "Momentum",
+  if (!thin) add(95, "Momentum",
     `Bei ${de(up)} von ${de(panel.length)} durchgehend erfassten Betrieben stieg die Zahl entfernter Bewertungen über eine Bereichsgrenze — ${dir}`,
     `Vergleich derselben ${de(panel.length)} Betriebe in beiden Monaten (${prevM} → ${latest}). Google veröffentlicht nur Spannen, deshalb ist der Wechsel in einen höheren Bereich das kleinste sicher messbare Ereignis. Bei ${de(flat)} Betrieben blieb die Angabe im selben Bereich — das schließt Veränderungen unterhalb der Spannenbreite ein. Neu hinzugekommene Städte fließen bewusst nicht ein.`,
     `${de(up)}/${de(panel.length)}`);
