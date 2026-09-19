@@ -231,11 +231,17 @@ function seriesChart(locs, lang, estPair) {
   const rMin = Math.min(...rate, ...cfFloor), lo = Math.max(1, Math.floor((rMin - 0.25) * 2) / 2), hi = 5;
   const yBar = (v) => pad.t + ih - (v / maxC) * (ih * 0.86);
   const yR = (r) => pad.t + ih - ((r - lo) / (hi - lo)) * ih;
+  // Everything drawn stays inside the plot rectangle [pad.l, W-pad.r]. The first and last month sit
+  // exactly ON those edges, so a centred bar or a half-step-wide band reached past them: the opening
+  // bar overhung the y-axis by half its width, the closing one covered the "4,7★" end label, and the
+  // 365-day band started 31 px left of the axis, tinting the tick labels.
+  const clampX = (x) => Math.min(Math.max(x, pad.l), W - pad.r);
   const bandI = Math.max(0, n - 12);
-  const bandX = xf(bandI) - step / 2, bandW = W - pad.r - bandX;
+  const bandX = clampX(xf(bandI) - step / 2), bandW = W - pad.r - bandX;
   const bannerI = M.findIndex((m) => m >= '2026-04');
   const bw = Math.max(3, Math.min(14, step * 0.5));
-  const bars = C.map((v, i) => v > 0 ? `<rect class="ts-bar" style="transition-delay:${i * 35}ms" x="${(xf(i) - bw / 2).toFixed(1)}" y="${yBar(v).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pad.t + ih - yBar(v)).toFixed(1)}" fill="#7fa8e0" opacity="0.35" rx="2"/>` : '').join('');
+  const barX = (i) => Math.min(Math.max(xf(i) - bw / 2, pad.l), W - pad.r - bw);
+  const bars = C.map((v, i) => v > 0 ? `<rect class="ts-bar" style="transition-delay:${i * 35}ms" x="${barX(i).toFixed(1)}" y="${yBar(v).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pad.t + ih - yBar(v)).toFixed(1)}" fill="#7fa8e0" opacity="0.35" rx="2"/>` : '').join('');
   let line = ''; rate.forEach((r, i) => { line += (i ? 'L' : 'M') + xf(i).toFixed(1) + ' ' + yR(r).toFixed(1) + ' '; });
   let cfBand = '';
   if (hasCf) {
@@ -243,7 +249,10 @@ function seriesChart(locs, lang, estPair) {
     // listing (single source of truth — the series-based arithmetic diverged on thin harvests)
     const cfHi = (estPair && estPair[1] != null) ? Math.min(estPair[1], rate[M.length - 1]) : rHigh[M.length - 1];
     const cfLo = cfOpen ? lo : ((estPair && estPair[0] != null) ? estPair[0] : rLow[M.length - 1]);
-    const yl = yR(cfLo), yh = yR(cfHi), wx = xf(n - 1);
+    // The whisker sits on the last data point, which is ON the right edge — its 5 px end cap and the
+    // open-corridor arrow would hang over it. Pull the whisker in by exactly that much.
+    const CAP = 5;
+    const yl = yR(cfLo), yh = yR(cfHi), wx = Math.min(xf(n - 1), W - pad.r - CAP);
     const cfLbl = cfOpen
       ? (lang === 'de' ? `mit Entfernungen höchstens ${nf1(cfHi)}★ — nach unten offen` : `with removals at most ${nf1(cfHi)}★ — open-ended`)
       : (lang === 'de' ? `mit Entfernungen ~${nf1(cfLo)}–${nf1(cfHi)}★` : `with removals ~${nf1(cfLo)}–${nf1(cfHi)}★`);
