@@ -202,7 +202,10 @@ for (const r of allRecs) {
       url: r.url || prev.url || null, first_seen: prev.first_seen || today, last_seen: today,
       // v1.2 deep capture: monthly (month → {n, sum}) review histogram — feeds the profile chart.
       // Keep the freshest non-empty harvest; never overwrite good data with a missing one.
+      // rev_hist_years (v1.2.7+) holds the year-granularity reviews that must NEVER be given a
+      // month — they travel with rev_hist as one unit, so they are swapped together or not at all.
       rev_hist: (r.rev_hist && Object.keys(r.rev_hist).length ? r.rev_hist : prev.rev_hist) || null,
+      rev_hist_years: (r.rev_hist && Object.keys(r.rev_hist).length ? (r.rev_hist_years || null) : (prev.rev_hist_years || null)),
       rev_hist_meta: (r.rev_hist && Object.keys(r.rev_hist).length ? r.rev_hist_meta : prev.rev_hist_meta) || null,
     };
   } else {

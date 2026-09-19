@@ -3,12 +3,12 @@
   "prev": "2026-08",
   "latest": "2026-09",
   "panelSize": 672,
-  "up": 20,
+  "up": 21,
   "down": 0,
-  "moved": 20,
-  "flat": 652,
+  "moved": 21,
+  "flat": 651,
   "midPrev": 41171,
-  "midLatest": 41851,
-  "midDelta": 680,
+  "midLatest": 41871,
+  "midDelta": 700,
   "midChangePct": 1.7
 }

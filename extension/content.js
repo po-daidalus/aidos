@@ -3,7 +3,7 @@
 // real photo (never a static-map tile), reliable website, PLUS forward-looking fields for
 // meta-analysis: full star distribution (dist_1..dist_5), price level, business status.
 
-const AIDOS_VERSION = 'v1.2.6';
+const AIDOS_VERSION = 'v1.2.7';
 
 // Bilingual — the banner renders in the account's UI language. German: "151 bis 200 Bewertungen …
 // Diffamierung entfernt". English: "11 to 20 reviews removed due to defamation complaints".
@@ -197,18 +197,29 @@ function readOverview() {
 // The number must come from the matched date phrase itself — NEVER from elsewhere in the element
 // (review cards contain the reviewer's own counts like "Local Guide · 982 reviews", and a stray
 // fallback once turned those into "982 years ago" → phantom months in the year 1044).
+//
+// GRANULARITY IS PART OF THE DATUM (fixed v1.2.7). "vor einem Jahr" does NOT mean "exactly 12
+// months ago" — it means somewhere in [12, 23] months ago. Earlier versions multiplied years by 12
+// and emitted a precise YYYY-MM, which stacked every year-granularity review onto the anniversary
+// of the scrape month: a Sept-2026 sweep put 45.893 reviews in September buckets vs ~3–6k in every
+// other month, and 418 published profile charts showed a phantom volume spike at exactly −12
+// months (King of Döner: 151 reviews in one "month" against a median of 3).
+// Month-accurate reviews now go to `hist`; year-granularity ones go to `histYears` keyed by
+// years-ago, where they can be used as pre-window volume but never drawn as a month.
 const REL_DATE_RE = /vor\s+(einem|einer|\d+)\s+(Tag|Tagen|Woche|Wochen|Monat|Monaten|Jahr|Jahren)|\b(an?|\d+)\s+(day|week|month|year)s?\s+ago/i;
-function monthsAgo(text) {
+function relAge(text) {
   const m = (text || '').match(REL_DATE_RE);
   if (!m) return null;
   const raw = m[1] || m[3] || '';
   const n = /^ein/i.test(raw) || /^an?$/i.test(raw) ? 1 : parseInt(raw, 10);
   if (!Number.isFinite(n) || n < 0 || n > 99) return null; // no real relative date exceeds this
   const unit = (m[2] || m[4] || '').toLowerCase();
-  if (/^tag|^day/.test(unit)) return 0;
-  if (/^woche|^week/.test(unit)) return Math.floor((n * 7) / 30);
-  if (/^monat|^month/.test(unit)) return n;
-  if (/^jahr|^year/.test(unit)) return n * 12;
+  // `ago` stays the lower bound in months (so the 13-month scroll stop keeps working unchanged);
+  // `years` is set when Google only gave us year granularity, i.e. no usable month.
+  if (/^tag|^day/.test(unit)) return { ago: 0, years: 0 };
+  if (/^woche|^week/.test(unit)) return { ago: Math.floor((n * 7) / 30), years: 0 };
+  if (/^monat|^month/.test(unit)) return { ago: n, years: 0 };
+  if (/^jahr|^year/.test(unit)) return { ago: n * 12, years: n };
   return null;
 }
 const monthKey = (ago) => { const d = new Date(); d.setMonth(d.getMonth() - ago); return d.toISOString().slice(0, 7); };
@@ -269,8 +280,8 @@ async function retoggleReviewsTab() {
   return !!(await waitFor(reviewNodes, 6000));
 }
 async function harvestHistogram(maxRounds = 22) {
-  const hist = {}; const counted = new Set();
-  let oldestAgo = 0, stale = 0, matched = 0, tabRetry = false;
+  const hist = {}, histYears = {}; const counted = new Set();
+  let oldestAgo = 0, stale = 0, matched = 0, matchedYears = 0, tabRetry = false;
   const dbg = { n0: reviewNodes() };
   // heavy profiles render their tabs late — the initial reviews-tab click may have hit nothing
   // (v1.2.2 pilot: 2 of 3 harvests saw 0 reviews for exactly this reason). Re-click until reviews exist.
@@ -284,14 +295,23 @@ async function harvestHistogram(maxRounds = 22) {
     for (const el of document.querySelectorAll('[data-review-id]')) {
       const id = el.getAttribute('data-review-id');
       if (!id || counted.has(id)) continue;
-      const ago = monthsAgo(el.innerText.slice(0, 400));
+      const age = relAge(el.innerText.slice(0, 400));
       const stars = reviewStars(el);
       counted.add(id);
-      if (ago == null || stars == null) continue;
-      const k = monthKey(ago);
-      (hist[k] ||= { n: 0, sum: 0 }); hist[k].n++; hist[k].sum += stars;
+      if (age == null || stars == null) continue;
+      const { ago, years } = age;
+      if (years) {
+        // year granularity only: bucket by years-ago, never invent a month
+        const k = String(years);
+        (histYears[k] ||= { n: 0, sum: 0 }); histYears[k].n++; histYears[k].sum += stars;
+        matchedYears++;
+      } else {
+        const k = monthKey(ago);
+        (hist[k] ||= { n: 0, sum: 0 }); hist[k].n++; hist[k].sum += stars;
+        matched++;
+      }
       if (ago > oldestAgo) oldestAgo = ago;
-      matched++; fresh++;
+      fresh++;
     }
     return fresh;
   };
@@ -335,7 +355,8 @@ async function harvestHistogram(maxRounds = 22) {
     if (sorted && oldestAgo >= 13) break;     // newest-first guaranteed → past the window means done
   }
   dbg.n_end = reviewNodes(); dbg.pane = !!scrollableReviewPane();
-  return { hist, scanned: counted.size, matched, oldest_months: oldestAgo, sorted, tab_retry: tabRetry, dbg, complete: (sorted && oldestAgo >= 13) || stale >= 3 };
+  return { hist, histYears, scanned: counted.size, matched, matched_years: matchedYears,
+    oldest_months: oldestAgo, sorted, tab_retry: tabRetry, dbg, complete: (sorted && oldestAgo >= 13) || stale >= 3 };
 }
 
 function toast(msg, ok = true) {
@@ -454,7 +475,8 @@ chrome.storage.local.get({ loader: { running: false } }, ({ loader }) => {
           await new Promise((res) => chrome.storage.local.get({ records: {} }, (data) => {
             if (data.records[key]) {
               data.records[key].rev_hist = h.hist;
-              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, oldest_months: h.oldest_months, sorted: h.sorted, tab_retry: h.tab_retry, dbg: h.dbg, complete: h.complete, at: new Date().toISOString() };
+              data.records[key].rev_hist_years = h.histYears;
+              data.records[key].rev_hist_meta = { scanned: h.scanned, matched: h.matched, matched_years: h.matched_years, oldest_months: h.oldest_months, sorted: h.sorted, tab_retry: h.tab_retry, dbg: h.dbg, complete: h.complete, granularity: 'months+years', at: new Date().toISOString() };
               chrome.storage.local.set({ records: data.records }, res);
             } else res();
           }));

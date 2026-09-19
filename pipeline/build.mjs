@@ -87,8 +87,44 @@ const prev = fs.existsSync(seriesPath) ? JSON.parse(fs.readFileSync(seriesPath, 
 //   1) legacy per-review pulls (series.json, 12 businesses)
 //   2) extension v1.2 deep capture: monthly (month, stars) histograms harvested on banner hits
 //      (db field rev_hist = { "YYYY-MM": { n, sum } }) → converted to the same series shape.
-function seriesFromHist(d) {
+// Google's relative review dates are month-accurate only for the last 11 months. "vor einem Jahr"
+// means somewhere in [12,23] months ago — NOT exactly 12. Extension ≤v1.2.6 multiplied years by 12
+// and wrote a precise YYYY-MM, stacking every year-granularity review onto the anniversary of the
+// scrape month. Effect on published pages: 418 of 583 profile charts carried a phantom volume spike
+// at exactly −12 months (worst: 151 reviews in one "month" against a median of 3).
+//
+// v1.2.7+ captures these separately in `rev_hist_years`. For data captured BEFORE that we recover
+// by arithmetic: a bucket sitting exactly k*12 months before the capture month can only have come
+// from "vor k Jahren". Dropping the whole bucket loses the few genuinely month-dated reviews that
+// happened to fall on the anniversary — deliberately conservative: never invent a spike, and the
+// volume is not lost, it flows into the pre-window seed via reviews_total in pages.mjs.
+const ymIdx = (s) => { const [y, m] = s.split('-'); return +y * 12 + (+m - 1); };
+function splitHist(d) {
   const h = d.rev_hist || {};
+  const cap = ((d.rev_hist_meta || {}).at || d.last_seen || '').slice(0, 7);
+  const exact = {}, years = {};
+  let olderN = 0, olderSum = 0, dropped = 0;
+  const addYear = (k, n, sum) => { (years[k] ||= { n: 0, sum: 0 }); years[k].n += n; years[k].sum += sum; olderN += n; olderSum += sum; };
+  // v1.2.7+ already separated them, keyed by years-ago
+  for (const [k, v] of Object.entries(d.rev_hist_years || {})) addYear(k, v.n, v.sum);
+  // pre-v1.2.7: the year is RECOVERABLE, not lost — a bucket exactly k*12 months before the capture
+  // month came from "vor k Jahren", so delta/12 gives back the original year granularity. Keep it:
+  // the chart only ever draws 15 months, but the year buckets are real data (23.485 reviews at
+  // "vor 1 Jahr" alone) and the natural input for later review-burst analysis.
+  const yearsAgo = (m) => {
+    if (!/^\d{4}-\d{2}$/.test(cap)) return 0;          // no capture date → cannot classify, keep as-is
+    const delta = ymIdx(cap) - ymIdx(m);
+    return delta >= 12 && delta % 12 === 0 ? delta / 12 : 0;
+  };
+  for (const [m, v] of Object.entries(h)) {
+    const k = (d.rev_hist_meta || {}).granularity === 'months+years' ? 0 : yearsAgo(m);
+    if (k) { addYear(String(k), v.n, v.sum); dropped++; }
+    else exact[m] = v;
+  }
+  return { exact, years, olderN, olderSum, dropped };
+}
+function seriesFromHist(d) {
+  const { exact: h, years: olderYears, olderN, olderSum, dropped } = splitHist(d);
   const months = Object.keys(h).sort();
   if (months.length < 4) return null; // too sparse for a meaningful trajectory
   const monthCount = months.map((m) => h[m].n), monthSum = months.map((m) => h[m].sum);
@@ -98,22 +134,33 @@ function seriesFromHist(d) {
   const injLow = months.map((m) => (last12.includes(m) ? (d.range_max || d.range_min || 0) / last12.length : 0));
   const injHigh = months.map((m) => (last12.includes(m) ? (d.range_min || 0) / last12.length : 0));
   const fetched = monthCount.reduce((s, v) => s + v, 0);
+  // reviews_fetched stays honest about the whole harvest (dated months + undatable year buckets):
+  // pages.mjs derives the pre-window seed as reviews_total − Σ monthCount, so the year-bucket volume
+  // is carried by the seed instead of being drawn as a month.
+  const harvested = fetched + olderN;
   return {
     name: d.name, months, monthCount, monthSum, injLow, injHigh,
     windowStart: last12[0], rating: d.rating, range_min: d.range_min, range_max: d.range_max,
-    reviews_fetched: fetched, reviews_total: Math.max(d.reviews || fetched, fetched),
+    reviews_fetched: harvested, reviews_total: Math.max(d.reviews || harvested, harvested),
+    // older reviews: counted in the totals, resolved to a YEAR (Google's own limit), never to a month
+    undated_older: olderN || 0, undated_older_sum: olderSum || 0, undated_buckets_dropped: dropped || 0,
+    older_by_year: Object.keys(olderYears).length ? olderYears : undefined,
     source: 'deep-capture', captured_at: (d.rev_hist_meta || {}).at || d.last_seen || null,
   };
 }
 const SERIES = {};
-let real = 0, fromHist = 0;
+let real = 0, fromHist = 0, deAnniv = 0, deAnnivRev = 0;
 for (const d of businesses) {
   const id = d.place_id;
   if (prev[id] && !prev[id].placeholder && prev[id].source !== 'deep-capture') { SERIES[id] = prev[id]; real++; continue; }
   const s = seriesFromHist(d);
-  if (s) { SERIES[id] = s; fromHist++; }
+  if (s) {
+    SERIES[id] = s; fromHist++;
+    if (s.undated_buckets_dropped) { deAnniv++; deAnnivRev += s.undated_older; }
+  }
 }
 fs.writeFileSync(new URL('dashboard/series.js', ROOT), 'window.AIDOS_SERIES = ' + JSON.stringify(SERIES) + ';\n');
 fs.writeFileSync(seriesPath, JSON.stringify(SERIES));
 
 console.log(`built dashboard from ${businesses.length} businesses | series: ${real} legacy + ${fromHist} deep-capture (0 synthetic — fabrication disabled)`);
+console.log(`  year-granularity de-stacking: ${deAnniv} series cleaned, ${deAnnivRev} reviews moved from phantom anniversary months into the undated pre-window seed`);
