@@ -21,14 +21,44 @@
     <link href="fonts/fonts.css" rel="stylesheet" />
   <link href="site.css?v=6f73fca3" rel="stylesheet" />
   <style>
-    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
-    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
-    .chartcard { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
-    .chartcard h4 { color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 16px; }
-    .cbar { display: grid; grid-template-columns: 118px 1fr 46px; align-items: center; gap: 12px; margin: 10px 0; font-size: 13.5px; }
-    .cbar .track { height: 12px; background: var(--fill); border-radius: 6px; overflow: hidden; }
-    .cbar .track > i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), #d1434a); border-radius: 6px; transition: width 1.1s var(--ease); }
-    .cbar .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 500; }
+    /* hero: der Bewertungs-Check */
+    .check-hero { max-width: 780px; }
+    .check-hero h1 { font-size: clamp(34px, 5.4vw, 58px); }
+    .check-box { max-width: 680px; margin-top: 26px; padding: 15px 18px; box-shadow: var(--shadow); }
+    .check-box input { font-size: 18px; }
+    .check-ex { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0 4px; font-size: 13px; color: var(--ink-3); }
+    .check-ex button { font: 500 12.5px var(--sans); padding: 4px 11px; border: 1px solid var(--rule-2); border-radius: 16px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
+    .check-ex button:hover { border-color: var(--accent); color: var(--accent); }
+    .check-hero .byline { margin-top: 22px; }
+    /* result card */
+    .vcard { margin-top: 18px; max-width: 680px; background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow); padding: 20px 22px; }
+    .vcard .vk { font: 500 12px var(--sans); color: var(--ink-3); letter-spacing: .04em; }
+    .vcard h3 { font-family: var(--serif); font-size: 25px; margin: 2px 0 14px; color: var(--ink); }
+    .vcard .vnums { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-start; }
+    .vcard .vn { font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+    .vcard .vn.shown { color: var(--data-blue); } .vcard .vn.with { color: var(--accent); }
+    .vcard .vl { font-size: 12.5px; color: var(--ink-3); margin-top: 6px; max-width: 22ch; line-height: 1.4; }
+    .vcard .varrow { font-size: 26px; color: var(--ink-3); padding-top: 6px; }
+    .vcard .vfacts { margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink-2); }
+    .vcard .vfacts li { padding: 7px 0; border-top: 1px solid var(--rule); }
+    .vcard .vfacts b { color: var(--ink); }
+    .vcard .vfacts .up { color: var(--accent); font-weight: 500; }
+    .vcard .vfine { font-size: 12.5px; color: var(--ink-3); margin: 12px 0 14px; line-height: 1.5; }
+    /* diesen Monat */
+    .month-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 900px) { .month-grid { grid-template-columns: 1fr; } }
+    .mcard { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px 22px; }
+    .mcard h4 { font: 600 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+    .mcard .big { font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+    .mcard .big.ink { color: var(--ink); }
+    .mcard .cap { font-size: 14px; color: var(--ink-2); margin: 8px 0 12px; line-height: 1.45; }
+    .mcard .fine { font-size: 12.5px; color: var(--ink-3); line-height: 1.5; margin-top: 12px; }
+    .mlist { list-style: none; margin: 0; padding: 0; }
+    .mlist li { border-top: 1px solid var(--rule); }
+    .mlist a { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; font-size: 14px; color: var(--ink); }
+    .mlist a:hover { color: var(--accent); text-decoration: none; }
+    .mlist .c { color: var(--ink-3); font-size: 12.5px; }
+    .mlist .r { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--accent); font-size: 13px; }
     /* lookup */
     .lkres { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; max-width: 620px; }
     .lk-hit { display: flex; justify-content: space-between; gap: 12px; align-items: center; border: 1px solid var(--rule); border-radius: var(--radius-sm); padding: 11px 14px; background: var(--surface); }
@@ -85,35 +115,41 @@
   </header>
 
   <div class="wrap">
-    <!-- HERO -->
+    <!-- HERO: der Bewertungs-Check -->
+    <section class="check-hero">
+      <div class="kicker">Der Bewertungs-Check</div>
+      <h1>Was steckt hinter einer Google-Note?</h1>
+      <span class="motif"><b></b><i></i></span>
+      <p class="deck">Seit April 2026 zeigt Google auf deutschen Profilen an, wie viele Bewertungen nach Diffamierungs-Beschwerden entfernt wurden – unauffällig im Rezensionen-Tab. aidos rechnet aus, wie stark das die angezeigte Note hebt.</p>
+      <div class="lookup-box check-box"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="lk" placeholder="Betrieb oder Google-Maps-Link eingeben" autocomplete="off" aria-label="Betrieb suchen" /></div>
+      <div class="check-ex" id="checkEx"></div>
+      <div id="vcard"></div>
+      <div class="lkres" id="lkres"></div>
+      <div class="byline" id="byline"></div>
+    </section>
+
+    <!-- DIESEN MONAT -->
     <section>
-      <div class="hero">
-        <div>
-          <div class="kicker">Transparenz in der Bewertungs-Ökonomie</div>
-          <h1>Bei wie vielen Unternehmen hat Google Bewertungen wegen Diffamierung entfernt?</h1>
-          <span class="motif"><b></b><i></i></span>
-          <p class="deck">aidos wertet die offiziellen Transparenz-Hinweise von Google&nbsp;Maps – eingeführt im Zuge des EU&nbsp;Digital&nbsp;Services&nbsp;Act – systematisch und fortlaufend aus. Monatliche Messungen zeigen, wie sich die Zahlen über die Zeit entwickeln – über Googles rollierenden 365-Tage-Hinweis hinaus.</p>
-          <div class="byline" id="byline"></div>
-        </div>
-        <div class="chartcard reveal">
-          <h4>Betroffene Profile nach Branche · Erhebungsstand</h4>
-          <div id="heroViz"></div>
-        </div>
+      <div class="sec-head"><h2>Was sich diesen Monat bewegt hat</h2><span class="hint" id="monthHint"></span></div>
+      <div class="month-grid">
+        <div class="mcard mcard-wide reveal" id="mMove"></div>
+        <div class="mcard reveal" id="mNew"></div>
+        <div class="mcard reveal" id="mRare"></div>
       </div>
     </section>
 
-    <!-- MOMENTUM -->
+    <!-- COMPANIES PREVIEW -->
     <section>
-      <div class="sec-head"><h2>Was sich verändert hat</h2><span class="hint">Vergleich der monatlichen Erhebungen — öffentliche Angaben, jeweils zum Stand-Datum</span></div>
-      <p class="sec-intro">Google zeigt pro Ort nur eine rollierende 365-Tage-Spanne. Aus monatlichen Messungen zählen wir, bei wie vielen derselben Betriebe diese Spanne <em>in einen höheren Bereich gewechselt</em> ist — eine Veränderung, die Google selbst nie ausweist.</p>
-      <div id="momentum"></div>
-    </section>
-
-    <!-- LOOKUP -->
-    <section>
-      <div class="sec-head"><h2>Prüfe ein Unternehmen</h2><span class="hint">durchsucht den erfassten Datensatz</span></div>
-      <div class="lookup-box"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="lk" placeholder="Firmenname eingeben" autocomplete="off" /></div>
-      <div class="lkres" id="lkres"></div>
+      <div class="sec-head"><h2>Welche Unternehmen &amp; Ketten sind betroffen?</h2><span class="hint">Top 5 nach Effekt auf die Note</span></div>
+      <p class="sec-intro">Die Betriebe, deren angezeigte Note am stärksten von den Entfernungen profitiert — nicht die mit den meisten Entfernungen: eine große Kette sammelt zwangsläufig mehr davon, ohne dass ihre Note sich messbar bewegt. Ausschließlich juristische Personen und größere Ketten, keine Einzelpersonen. Jede Zeile führt zum vollständigen Profil.</p>
+      <div class="co-widget reveal">
+        <div id="coRows"></div>
+        <div class="co-foot">
+          <span class="co-sum" id="coSum"></span>
+          <a class="btn btn-primary" href="listing">Vollständige Liste mit Filtern ansehen →</a>
+        </div>
+      </div>
+      <div class="co-chips" id="coChips"></div>
     </section>
 
     <!-- STAT BAND -->
@@ -145,20 +181,6 @@
       <div class="cities" id="cityGrid"></div>
     </section>
 
-    <!-- COMPANIES PREVIEW -->
-    <section>
-      <div class="sec-head"><h2>Welche Unternehmen &amp; Ketten sind betroffen?</h2><span class="hint">Top 5 nach Effekt auf die Note</span></div>
-      <p class="sec-intro">Die Betriebe, deren angezeigte Note am stärksten von den Entfernungen profitiert — nicht die mit den meisten Entfernungen: eine große Kette sammelt zwangsläufig mehr davon, ohne dass ihre Note sich messbar bewegt. Ausschließlich juristische Personen und größere Ketten, keine Einzelpersonen. Jede Zeile führt zum vollständigen Profil.</p>
-      <div class="co-widget reveal">
-        <div id="coRows"></div>
-        <div class="co-foot">
-          <span class="co-sum" id="coSum"></span>
-          <a class="btn btn-primary" href="listing">Vollständige Liste mit Filtern ansehen →</a>
-        </div>
-      </div>
-      <div class="co-chips" id="coChips"></div>
-    </section>
-
     <!-- COVERAGE / DATENBASIS -->
     <section>
       <div class="sec-head"><h2>Die Datenbasis</h2><span class="hint">was drin ist — und was noch nicht</span></div>
@@ -188,7 +210,7 @@
   </footer>
 
   <script src="aggregates.js?v=0cf7eb78"></script>
-  <script src="lookup.js?v=a4d9171d"></script>
+  <script src="lookup.js?v=e1760f81"></script>
   <script src="branch-icons.js?v=38883451"></script>
   <script src="articles.js?v=9ed884a4"></script>
   <script>
@@ -214,20 +236,6 @@
     document.getElementById('s2').dataset.to = T.removed || 0;
     const topIdx = [...(A.branches || [])].sort((a, b) => b.aidos_index - a.aidos_index)[0];
     if (topIdx) { document.getElementById('s3').textContent = topIdx.key; document.getElementById('s3s').textContent = 'Statistik-Index ' + topIdx.aidos_index + '/100'; }
-
-    // hero viz — top 5 branches by removals
-    const top5 = (A.branches || []).slice(0, 5); const maxRem = Math.max(1, ...top5.map((b) => b.removed));
-    document.getElementById('heroViz').innerHTML = top5.map((b) =>
-      `<div class="cbar"><span>${esc(b.key.split(' ')[0])}</span><div class="track"><i data-w="${Math.round((b.removed / maxRem) * 100)}"></i></div><span class="v">${de(Math.round(b.removed))}</span></div>`).join('');
-
-    // momentum — count of BAND CROSSINGS if ≥2 snapshots, else a calm baseline note.
-    // Never a sum of range midpoints: that measures Google's band widths, not removed reviews.
-    const tr = A.trend || {};
-    const trDir = tr.down === 0 && tr.up > 0 ? 'keiner sank' : tr.up === 0 && tr.down > 0 ? 'keiner stieg' : `${de(tr.down || 0)} sanken`;
-    document.getElementById('momentum').innerHTML = tr.available
-      ? `<div class="lead-figure reveal">${de(tr.up || 0)} von ${de(tr.panelSize)}<span class="unit">Betrieben stiegen über eine Bereichsgrenze · ${trDir} · ggü. ${tr.prev}</span></div>
-         <p class="small muted">Google veröffentlicht die Zahl entfernter Bewertungen nur als Spanne. Gezählt wird deshalb, wie viele Betriebe in einen höheren Bereich gewechselt sind — das kleinste sicher messbare Ereignis. Bei ${de(tr.flat || 0)} Betrieben blieb die Angabe im selben Bereich; Veränderungen unterhalb der Spannenbreite sind darin nicht sichtbar. Eine Stückzahl entfernter Bewertungen lässt sich daraus nicht ableiten.</p>`
-      : `<div class="baseline-note reveal"><span class="big">Erhebungsstand ${spanLabel()}</span><span class="small">${esc(tr.note || 'Der Monatsvergleich erscheint automatisch mit der zweiten Erhebung — nie geschätzt.')}</span></div>`;
 
     // ranking table
     document.getElementById('rankHint').textContent = 'Erhebungsstand · ' + spanLabel();
@@ -298,21 +306,96 @@
         '<a class="co-chip" href="listing">Alle Branchen →</a>';
     })();
 
-    // lookup
+    // ---- shared figures for the check + the month section ----
+    const LKX = window.AIDOS_LOOKUP || [];
+    const surveyed = (A.cities || []).filter((c) => c.n >= 3).length;
+    const cv = A.coverage || [];
+    const cvChecked = cv.reduce((s, c) => s + c.checked, 0), cvHit = cv.reduce((s, c) => s + c.hit, 0);
+    const rarePct = cvChecked ? 100 * cvHit / cvChecked : null;
+    const trx = A.trend || {};
+    const upLbl = (m) => Array.isArray(m) ? `${esc(m[0])} → ${esc(m[1])}` : `${de(m)} ${m === 1 ? 'Standort' : 'Standorte'} höher`;
+
+    // ---- Diesen Monat ----
     (function () {
-      const LK = window.AIDOS_LOOKUP || [];
-      const input = document.getElementById('lk'), res = document.getElementById('lkres');
-      input.addEventListener('input', () => {
-        const q = input.value.trim().toLowerCase();
-        if (q.length < 2) { res.innerHTML = ''; return; }
-        const hits = LK.filter((x) => x.n.toLowerCase().includes(q) || (x.c && x.c.toLowerCase().includes(q))).slice(0, 6);
-        if (hits.length) {
-          res.innerHTML = hits.map((x) => `<a class="lk-hit" href="${x.u}"><div><b>${esc(x.n)}</b><span>${esc(x.c)} · ${esc(x.b)}</span></div><div class="r">${esc(x.r)} entfernt</div></a>`).join('');
-        } else {
-          const mail = 'mailto:contact@aidos.tech?subject=' + encodeURIComponent('Unternehmen prüfen: ' + input.value) + '&body=' + encodeURIComponent('Bitte dieses Unternehmen in die aidos-Auswertung aufnehmen:\n\n' + input.value);
-          res.innerHTML = `<div class="lk-none"><b>„${esc(input.value)}"</b> ist noch nicht im Datensatz.<br/><a href="${mail}">→ Unternehmen zur Prüfung einreichen</a></div>`;
+      document.getElementById('monthHint').textContent = trx.available
+        ? `Vergleich ${mName(trx.prev)} → ${mName(trx.latest)} · dieselben Betriebe in beiden Messungen`
+        : 'Erhebungsstand ' + spanLabel();
+      const movers = LKX.filter((x) => x.m).sort((a, b) => (+b.d || 0) - (+a.d || 0));
+      document.getElementById('mMove').innerHTML = trx.available
+        ? `<h4>In einen höheren Bereich gewechselt</h4><div class="big">${de(trx.up)} <span style="font-size:20px;color:var(--ink-3)">von ${de(trx.panelSize)}</span></div>` +
+          `<p class="cap">Betrieben stieg die Zahl entfernter Bewertungen über eine von Google veröffentlichte Bereichsgrenze · ${trx.down === 0 ? 'keiner sank' : de(trx.down) + ' sanken'}.</p>` +
+          (movers.length ? `<ul class="mlist">${movers.slice(0, 6).map((x) => `<li><a href="${x.u}"><span>${esc(x.n)} <span class="c">${esc(String(x.c).split(', ')[0])}</span></span><span class="r">${upLbl(x.m)}</span></a></li>`).join('')}</ul>` : '') +
+          `<p class="fine">${movers.length ? `Davon in der Liste geführt: ${de(movers.length)}. ` : ''}Betriebe unterhalb der Namens-Schwelle (Einzelpersonen, kleine Einzelbetriebe) nennt aidos nicht. Google veröffentlicht nur Spannen – der Wechsel in einen höheren Bereich ist das kleinste sicher messbare Ereignis, eine Stückzahl lässt sich daraus nicht ableiten.</p>`
+        : `<h4>Monatsvergleich</h4><p class="cap">${esc(trx.note || 'Der Monatsvergleich erscheint automatisch mit der zweiten Erhebung — nie geschätzt.')}</p>`;
+      const newM = trx.latest || T.month;
+      const fresh = LKX.filter((x) => x.nw).sort((a, b) => (+b.d || 0) - (+a.d || 0));
+      document.getElementById('mNew').innerHTML = `<h4>Neu im Datensatz</h4><div class="big ink">${de(fresh.length)}</div>` +
+        `<p class="cap">gelistete Unternehmen &amp; Ketten, erstmals im ${mName(newM)} erfasst.</p>` +
+        (fresh.length ? `<ul class="mlist">${fresh.slice(0, 4).map((x) => `<li><a href="${x.u}"><span>${esc(x.n)} <span class="c">${esc(String(x.c).split(', ')[0])}</span></span><span class="r">${esc(x.r)}</span></a></li>`).join('')}</ul>` : '') +
+        `<p class="fine">Meist, weil eine Stadt neu geprüft wurde – nicht gleichbedeutend mit neuen Entfernungen.</p>`;
+      document.getElementById('mRare').innerHTML = rarePct == null ? '' :
+        `<h4>Seltener als gedacht</h4><div class="big ink">${de1(rarePct)} %</div>` +
+        `<p class="cap">der geprüften Profile tragen den Lösch-Hinweis überhaupt.</p>` +
+        `<p class="fine">${de(cvChecked)} Profile in ${de(cv.length)} Städten vollständig geprüft. Die große Mehrheit der Betriebe taucht bei aidos deshalb gar nicht auf.</p>`;
+    })();
+
+    // ---- Bewertungs-Check ----
+    (function () {
+      const input = document.getElementById('lk'), card = document.getElementById('vcard'), res = document.getElementById('lkres');
+      const norm = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');
+      // A pasted Google Maps link carries the place name in its path: /maps/place/<Name>/@...
+      const queryOf = (raw) => {
+        const m = String(raw).match(/\/maps\/place\/([^/@?]+)/);
+        return m ? decodeURIComponent(m[1]).replace(/\+/g, ' ') : raw;
+      };
+      const rank = (x, q, toks) => {
+        const n = norm(x.n), hay = n + ' ' + norm(x.c);
+        if (n.startsWith(q)) return 3;
+        if (n.includes(q)) return 2;
+        return toks.length > 1 && toks.every((t) => hay.includes(t)) ? 1 : 0;
+      };
+      const vcard = (x) => {
+        const cities = String(x.c || '').split(', ');
+        const cityLbl = cities.slice(0, 2).join(', ') + (cities.length > 2 ? ` +${cities.length - 2} weitere` : '');
+        const hasEst = x.g != null && x.e != null && x.d > 0;
+        return `<div class="vcard"><div class="vk">${esc(x.b)} · ${esc(cityLbl)}</div><h3>${esc(x.n)}</h3>` +
+          (hasEst ? `<div class="vnums"><div><div class="vn shown">${de1(x.g)}★</div><div class="vl">angezeigt bei Google</div></div><div class="varrow">→</div>` +
+            `<div><div class="vn with">${de1(x.e)}★</div><div class="vl">höchstens, mit den entfernten Bewertungen, vorsichtigste Schätzung</div></div></div>` : '') +
+          `<ul class="vfacts">` +
+          `<li><b>${esc(x.r)}</b> Bewertungen wurden in den letzten 365 Tagen nach Diffamierungs-Beschwerden entfernt – laut Googles eigenem Hinweis.</li>` +
+          (hasEst ? `<li>Die Entfernungen heben die angezeigte Note um <b>mindestens ${de1(x.d)}★</b>${x.o ? ' – nach oben offen, weil Google nur „über 250" nennt' : ''}.</li>`
+            : `<li>Die angezeigte Note bewegt sich dadurch nicht messbar – bei vielen Bewertungen fallen die Entfernungen kaum ins Gewicht.</li>`) +
+          (x.m ? (Array.isArray(x.m)
+            ? `<li><span class="up">Im ${mName(trx.latest)} in einen höheren Bereich gewechselt:</span> ${upLbl(x.m)}</li>`
+            : `<li><span class="up">Im ${mName(trx.latest)} ${x.m === 1 ? 'ist 1 Standort' : 'sind ' + de(x.m) + ' Standorte'} in einen höheren Bereich gewechselt.</span></li>`) : '') +
+          (rarePct != null ? `<li>Zum Vergleich: Nur ${de1(rarePct)} % der geprüften Profile tragen diesen Hinweis überhaupt.</li>` : '') +
+          `</ul><p class="vfine">Rechnerische Schätzung, keine Tatsachenbehauptung. Waren die Entfernungen berechtigt – etwa bei Fake-Kampagnen gegen den Betrieb –, ist die angezeigte Note die zutreffendere.</p>` +
+          `<a class="btn btn-primary" href="${x.u}">Vollständiges Profil mit Verlauf →</a></div>`;
+      };
+      const run = () => {
+        const raw = input.value.trim(), q = norm(queryOf(raw)).trim();
+        try { const u = new URL(location.href); raw ? u.searchParams.set('q', raw) : u.searchParams.delete('q'); history.replaceState(null, '', u); } catch (e) {}
+        if (q.length < 2) { card.innerHTML = ''; res.innerHTML = ''; return; }
+        const toks = q.split(/\s+/).filter((t) => t.length > 1);
+        const hits = LKX.map((x) => [x, rank(x, q, toks)]).filter((h) => h[1] > 0)
+          .sort((a, b) => b[1] - a[1] || (+b[0].d || 0) - (+a[0].d || 0)).map((h) => h[0]);
+        if (!hits.length) {
+          const mail = 'mailto:contact@aidos.tech?subject=' + encodeURIComponent('Unternehmen prüfen: ' + raw) + '&body=' + encodeURIComponent('Bitte dieses Unternehmen in die aidos-Auswertung aufnehmen:\n\n' + raw);
+          card.innerHTML = `<div class="lk-none" style="margin-top:16px;max-width:680px"><b>„${esc(queryOf(raw))}"</b> ist nicht im Datensatz. Das heißt nicht, dass dort kein Hinweis steht: aidos prüft bisher ${de(surveyed)} Städte und nennt nur Unternehmen und Ketten, keine Einzelpersonen.` +
+            (rarePct != null ? ` In den geprüften Städten tragen rund ${de1(100 - rarePct)} % der Profile gar keinen Hinweis.` : '') +
+            `<br/><a href="${mail}">→ Unternehmen zur Prüfung einreichen</a></div>`;
+          res.innerHTML = ''; return;
         }
-      });
+        card.innerHTML = vcard(hits[0]);
+        const more = hits.slice(1, 6);
+        res.innerHTML = more.length ? `<div class="hint" style="margin-top:6px">Weitere Treffer</div>` + more.map((x) => `<a class="lk-hit" href="${x.u}"><div><b>${esc(x.n)}</b><span>${esc(x.c)} · ${esc(x.b)}</span></div><div class="r">${esc(x.r)} entfernt</div></a>`).join('') : '';
+      };
+      let t; input.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 120); });
+      const ex = LKX.filter((x) => x.g != null && x.d > 0).sort((a, b) => (+b.d || 0) - (+a.d || 0)).slice(0, 3);
+      document.getElementById('checkEx').innerHTML = ex.length ? '<span>Beispiele:</span>' + ex.map((x, i) => `<button type="button" data-i="${i}">${esc(x.n)}</button>`).join('') : '';
+      document.getElementById('checkEx').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; input.value = ex[+b.dataset.i].n; run(); });
+      const q0 = new URLSearchParams(location.search).get('q');
+      if (q0) { input.value = q0; run(); }
     })();
 
     // motion: reveal + count-up + bar fills

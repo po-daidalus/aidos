@@ -333,6 +333,26 @@ const lookup = [];
 const pageMap = {};
 function uniqueSlug(base) { let s = base || 'eintrag', i = 2; while (usedSlugs.has(s)) s = base + '-' + i++; usedSlugs.add(s); return s; }
 
+// ---------- month-over-month facts for the homepage ----------
+// The same comparison aggregate.mjs publishes as a count ("21 von 672"), resolved per location so
+// the homepage can name WHICH listed businesses crossed a band. Same rule: a crossing of Google's
+// published band boundary is the only movement we report, never a review count.
+const TR = agg.trend || {};
+const histAt = (() => {
+  if (!TR.available) return null;
+  const rows = fs.readFileSync(new URL('pipeline/out/history.jsonl', ROOT), 'utf8').trim().split('\n').map((l) => JSON.parse(l));
+  const at = (ym) => new Map(rows.filter((r) => r.date === ym).map((r) => [r.id, r]));
+  return { prev: at(TR.prev), latest: at(TR.latest) };
+})();
+const movedUp = (d) => {
+  if (!histAt) return null;
+  const a = histAt.prev.get(d.place_id), b = histAt.latest.get(d.place_id);
+  return a && b && mid(b) > mid(a) ? [rangeLabel(a.range_min, a.range_max), rangeLabel(b.range_min, b.range_max)] : null;
+};
+// "Neu im Datensatz" = first captured in the newest survey month. That can be a newly screened city
+// as much as a newly appeared notice, so the homepage never calls it "neu betroffen".
+const NEW_MONTH = TR.latest || agg.totals?.month;
+
 // ---------- company pages (DE + EN twin per brand) ----------
 const companyLinks = {};
 for (const [bkey, locs] of brands) {
@@ -439,7 +459,15 @@ for (const [bkey, locs] of brands) {
     fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + pub(lang === 'de' ? relEn : relDe), jsonld, body }));
     urls.push({ loc: canonical, removed: (remMin + (remMax || remMin)) / 2 });
   }
-  lookup.push({ n: name, c: cities.join(', '), u: pub(relDe).slice(1), r: rangeLabel(remMin, remMax), s: score, b: branch, d: dropMin, o: estOpen ? 1 : 0 });
+  const ups = locs.map(movedUp).filter(Boolean);
+  const isNew = NEW_MONTH && locs.every((d) => (d.first_seen || '').slice(0, 7) >= NEW_MONTH);
+  lookup.push({ n: name, c: cities.join(', '), u: pub(relDe).slice(1), r: rangeLabel(remMin, remMax), s: score, b: branch, d: dropMin, o: estOpen ? 1 : 0,
+    // g = displayed rating, e = the cautious "with the removed reviews" estimate (same figure the
+    // profile page quotes as "selbst in der vorsichtigsten Variante")
+    ...(hasEst ? { g: Math.round(rating * 100) / 100, e: Math.round(estHigh * 100) / 100 } : {}),
+    // m = band crossings this month: [from, to] for a single location, the count for chains
+    ...(ups.length ? { m: locs.length === 1 ? ups[0] : ups.length } : {}),
+    ...(isNew ? { nw: 1 } : {}) });
   pageMap[bkey] = pub(relDe).slice(1);
   locs._brand = { name, rel: relDe, relEn, remMin, remMax, cities, branch, score, rating, dropMin, open: estOpen };
 }
