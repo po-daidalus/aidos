@@ -367,9 +367,21 @@
         res.innerHTML = more.length ? `<div class="hint" style="margin-top:6px">More matches</div>` + more.map((x) => `<a class="lk-hit" href="../en/${x.u}"><div><b>${esc(x.n)}</b><span>${esc(tC(x.c))} · ${esc(tB(x.b))}</span></div><div class="r">${esc(tRg(x.r))} removed</div></a>`).join('') : '';
       };
       let t; input.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 120); });
-      const ex = LKX.filter((x) => x.g != null && x.d > 0).sort((a, b) => (+b.d || 0) - (+a.d || 0)).slice(0, 3);
-      document.getElementById('checkEx').innerHTML = ex.length ? '<span>Examples:</span>' + ex.map((x, i) => `<button type="button" data-i="${i}">${esc(x.n)}</button>`).join('') : '';
-      document.getElementById('checkEx').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; input.value = ex[+b.dataset.i].n; run(); });
+      // Entry via industries rather than example names: three automatically chosen businesses with the
+      // largest effect in the most prominent spot would be a selection with no informational purpose.
+      // The per-industry list is alphabetical, not sorted by effect.
+      const brs = (A.branches || []).filter((b) => b.key !== 'Sonstige' && LKX.some((x) => x.b === b.key)).slice(0, 5);
+      document.getElementById('checkEx').innerHTML = brs.length ? '<span>Or browse by industry:</span>' + brs.map((b, i) => `<button type="button" data-i="${i}">${esc(tB(b.key))}</button>`).join('') : '';
+      document.getElementById('checkEx').addEventListener('click', (e) => {
+        const b = e.target.closest('button'); if (!b) return;
+        const key = brs[+b.dataset.i].key;
+        const all = LKX.filter((x) => x.b === key).sort((a, c) => a.n.replace(/^[^\p{L}]+/u, '').localeCompare(c.n.replace(/^[^\p{L}]+/u, ''), 'en', { sensitivity: 'base' }));
+        input.value = ''; card.innerHTML = '';
+        try { const u = new URL(location.href); u.searchParams.delete('q'); history.replaceState(null, '', u); } catch (err) {}
+        res.innerHTML = `<div class="hint" style="margin-top:14px">${esc(tB(key))}: ${en(all.length)} listed companies &amp; chains · alphabetical</div>` +
+          all.slice(0, 8).map((x) => `<a class="lk-hit" href="../en/${x.u}"><div><b>${esc(x.n)}</b><span>${esc(tC(x.c))}</span></div><div class="r">${esc(tRg(x.r))} removed</div></a>`).join('') +
+          `<a class="more" style="margin-top:6px;font-size:14px" href="listing?branche=${encodeURIComponent(key)}">See all ${en(all.length)} in the list, with filters →</a>`;
+      });
       const q0 = new URLSearchParams(location.search).get('q');
       if (q0) { input.value = q0; run(); }
     })();
