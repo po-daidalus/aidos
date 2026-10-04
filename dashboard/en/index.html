@@ -19,14 +19,44 @@
   <link href="../fonts/fonts.css" rel="stylesheet" />
   <link href="../site.css?v=6f73fca3" rel="stylesheet" />
   <style>
-    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
-    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
-    .chartcard { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
-    .chartcard h4 { color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 16px; }
-    .cbar { display: grid; grid-template-columns: 118px 1fr 46px; align-items: center; gap: 12px; margin: 10px 0; font-size: 13.5px; }
-    .cbar .track { height: 12px; background: var(--fill); border-radius: 6px; overflow: hidden; }
-    .cbar .track > i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), #d1434a); border-radius: 6px; transition: width 1.1s var(--ease); }
-    .cbar .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 500; }
+    /* hero: der Bewertungs-Check */
+    .check-hero { max-width: 780px; }
+    .check-hero h1 { font-size: clamp(34px, 5.4vw, 58px); }
+    .check-box { max-width: 680px; margin-top: 26px; padding: 15px 18px; box-shadow: var(--shadow); }
+    .check-box input { font-size: 18px; }
+    .check-ex { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0 4px; font-size: 13px; color: var(--ink-3); }
+    .check-ex button { font: 500 12.5px var(--sans); padding: 4px 11px; border: 1px solid var(--rule-2); border-radius: 16px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
+    .check-ex button:hover { border-color: var(--accent); color: var(--accent); }
+    .check-hero .byline { margin-top: 22px; }
+    /* result card */
+    .vcard { margin-top: 18px; max-width: 680px; background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow); padding: 20px 22px; }
+    .vcard .vk { font: 500 12px var(--sans); color: var(--ink-3); letter-spacing: .04em; }
+    .vcard h3 { font-family: var(--serif); font-size: 25px; margin: 2px 0 14px; color: var(--ink); }
+    .vcard .vnums { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-start; }
+    .vcard .vn { font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+    .vcard .vn.shown { color: var(--data-blue); } .vcard .vn.with { color: var(--accent); }
+    .vcard .vl { font-size: 12.5px; color: var(--ink-3); margin-top: 6px; max-width: 22ch; line-height: 1.4; }
+    .vcard .varrow { font-size: 26px; color: var(--ink-3); padding-top: 6px; }
+    .vcard .vfacts { margin: 16px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ink-2); }
+    .vcard .vfacts li { padding: 7px 0; border-top: 1px solid var(--rule); }
+    .vcard .vfacts b { color: var(--ink); }
+    .vcard .vfacts .up { color: var(--accent); font-weight: 500; }
+    .vcard .vfine { font-size: 12.5px; color: var(--ink-3); margin: 12px 0 14px; line-height: 1.5; }
+    /* diesen Monat */
+    .month-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 900px) { .month-grid { grid-template-columns: 1fr; } }
+    .mcard { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px 22px; }
+    .mcard h4 { font: 600 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+    .mcard .big { font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+    .mcard .big.ink { color: var(--ink); }
+    .mcard .cap { font-size: 14px; color: var(--ink-2); margin: 8px 0 12px; line-height: 1.45; }
+    .mcard .fine { font-size: 12.5px; color: var(--ink-3); line-height: 1.5; margin-top: 12px; }
+    .mlist { list-style: none; margin: 0; padding: 0; }
+    .mlist li { border-top: 1px solid var(--rule); }
+    .mlist a { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; font-size: 14px; color: var(--ink); }
+    .mlist a:hover { color: var(--accent); text-decoration: none; }
+    .mlist .c { color: var(--ink-3); font-size: 12.5px; }
+    .mlist .r { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--accent); font-size: 13px; }
     .lkres { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; max-width: 620px; }
     .lk-hit { display: flex; justify-content: space-between; gap: 12px; align-items: center; border: 1px solid var(--rule); border-radius: var(--radius-sm); padding: 11px 14px; background: var(--surface); }
     .lk-hit:hover { border-color: var(--accent); text-decoration: none; }
@@ -79,35 +109,41 @@
   </header>
 
   <div class="wrap">
-    <!-- HERO -->
+    <!-- HERO: the rating check -->
+    <section class="check-hero">
+      <div class="kicker">The rating check</div>
+      <h1>What is behind a Google rating?</h1>
+      <span class="motif"><b></b><i></i></span>
+      <p class="deck">Since April 2026, Google shows on German profiles how many reviews were removed following defamation complaints – tucked away in the reviews tab. aidos calculates how much that lifts the displayed rating.</p>
+      <div class="lookup-box check-box"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="lk" placeholder="Enter a business or a Google Maps link" autocomplete="off" aria-label="Search a business" /></div>
+      <div class="check-ex" id="checkEx"></div>
+      <div id="vcard"></div>
+      <div class="lkres" id="lkres"></div>
+      <div class="byline" id="byline"></div>
+    </section>
+
+    <!-- THIS MONTH -->
     <section>
-      <div class="hero">
-        <div>
-          <div class="kicker">Transparency in the review economy</div>
-          <h1>How many businesses had Google reviews removed for defamation?</h1>
-          <span class="motif"><b></b><i></i></span>
-          <p class="deck">aidos systematically and continuously evaluates the official transparency notices on Google&nbsp;Maps — introduced under the EU&nbsp;Digital&nbsp;Services&nbsp;Act. Monthly surveys show how the numbers evolve over time — beyond Google's rolling 365-day notice.</p>
-          <div class="byline" id="byline"></div>
-        </div>
-        <div class="chartcard reveal">
-          <h4>Affected profiles by industry · survey span</h4>
-          <div id="heroViz"></div>
-        </div>
+      <div class="sec-head"><h2>What moved this month</h2><span class="hint" id="monthHint"></span></div>
+      <div class="month-grid">
+        <div class="mcard mcard-wide reveal" id="mMove"></div>
+        <div class="mcard reveal" id="mNew"></div>
+        <div class="mcard reveal" id="mRare"></div>
       </div>
     </section>
 
-    <!-- MOMENTUM -->
+    <!-- COMPANIES PREVIEW -->
     <section>
-      <div class="sec-head"><h2>What has changed</h2><span class="hint">comparison of the monthly surveys — public figures, each at its survey date</span></div>
-      <p class="sec-intro">Google shows only a rolling 365-day range per place. From monthly surveys we count how many of the same businesses have <em>moved into a higher band</em> — a change Google itself never reports.</p>
-      <div id="momentum"></div>
-    </section>
-
-    <!-- LOOKUP -->
-    <section>
-      <div class="sec-head"><h2>Check a company</h2><span class="hint">searches the collected dataset</span></div>
-      <div class="lookup-box"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="lk" placeholder="Enter company name" autocomplete="off" /></div>
-      <div class="lkres" id="lkres"></div>
+      <div class="sec-head"><h2>Which companies &amp; chains are affected?</h2><span class="hint">top 5 by effect on the rating</span></div>
+      <p class="sec-intro">The businesses whose displayed rating benefits most from the removals — not those with the most removals: a large chain inevitably accumulates more of them without its rating moving measurably. Legal entities and larger chains only, no private individuals. Each row links to the full profile.</p>
+      <div class="co-widget reveal">
+        <div id="coRows"></div>
+        <div class="co-foot">
+          <span class="co-sum" id="coSum"></span>
+          <a class="btn btn-primary" href="listing">View the full filterable list →</a>
+        </div>
+      </div>
+      <div class="co-chips" id="coChips"></div>
     </section>
 
     <!-- STAT BAND -->
@@ -137,20 +173,6 @@
       <div class="sec-head"><h2>Regional focus</h2><span class="hint">weighted by removals per profile</span></div>
       <p class="sec-intro">Where are reviews most frequently removed after defamation complaints? The survey is continuously being extended to more cities.</p>
       <div class="cities" id="cityGrid"></div>
-    </section>
-
-    <!-- COMPANIES PREVIEW -->
-    <section>
-      <div class="sec-head"><h2>Which companies &amp; chains are affected?</h2><span class="hint">top 5 by effect on the rating</span></div>
-      <p class="sec-intro">The businesses whose displayed rating benefits most from the removals — not those with the most removals: a large chain inevitably accumulates more of them without its rating moving measurably. Legal entities and larger chains only, no private individuals. Each row links to the full profile.</p>
-      <div class="co-widget reveal">
-        <div id="coRows"></div>
-        <div class="co-foot">
-          <span class="co-sum" id="coSum"></span>
-          <a class="btn btn-primary" href="listing">View the full filterable list →</a>
-        </div>
-      </div>
-      <div class="co-chips" id="coChips"></div>
     </section>
 
     <!-- COVERAGE -->
@@ -202,19 +224,6 @@
     document.getElementById('s2').dataset.to = T.removed || 0;
     const topIdx = [...(A.branches || [])].sort((a, b) => b.aidos_index - a.aidos_index)[0];
     if (topIdx) { document.getElementById('s3').textContent = tB(topIdx.key); document.getElementById('s3s').textContent = 'statistical index ' + topIdx.aidos_index + '/100'; }
-
-    const top5 = (A.branches || []).slice(0, 5); const maxRem = Math.max(1, ...top5.map((b) => b.removed));
-    document.getElementById('heroViz').innerHTML = top5.map((b) =>
-      `<div class="cbar"><span>${esc(tB(b.key).split(' ')[0])}</span><div class="track"><i data-w="${Math.round((b.removed / maxRem) * 100)}"></i></div><span class="v">${en(Math.round(b.removed))}</span></div>`).join('');
-
-    // Count of BAND CROSSINGS, never a sum of range midpoints: that would measure Google's band
-    // widths rather than removed reviews.
-    const tr = A.trend || {};
-    const trDir = tr.down === 0 && tr.up > 0 ? 'none fell' : tr.up === 0 && tr.down > 0 ? 'none rose' : `${en(tr.down || 0)} fell`;
-    document.getElementById('momentum').innerHTML = tr.available
-      ? `<div class="lead-figure reveal">${en(tr.up || 0)} of ${en(tr.panelSize)}<span class="unit">businesses crossed into a higher band · ${trDir} · vs. ${tr.prev}</span></div>
-         <p class="small muted">Google publishes the number of removed reviews only as a range. We therefore count how many businesses moved into a higher band — the smallest reliably measurable event. For ${en(tr.flat || 0)} businesses the figure stayed within the same band; changes smaller than the band width are not visible in it. A count of removed reviews cannot be derived from this.</p>`
-      : `<div class="baseline-note reveal"><span class="big">Survey span ${spanLabel()}</span><span class="small">${tr.pending ? 'The month-on-month comparison appears once this month\u2019s panel sweep has run \u2014 without it, too few businesses are covered in both months to compare.' : 'The month-on-month comparison appears automatically with the second survey — never estimated.'}</span></div>`;
 
     document.getElementById('rankHint').textContent = 'survey span · ' + spanLabel();
     const maxIdx = Math.max(1, ...(A.branches || []).map((b) => b.aidos_index));
@@ -275,20 +284,94 @@
         '<a class="co-chip" href="listing">All industries →</a>';
     })();
 
+    // ---- shared figures for the check + the month section ----
+    const LKX = window.AIDOS_LOOKUP || [];
+    const surveyed = (A.cities || []).filter((c) => c.n >= 3).length;
+    const cv = A.coverage || [];
+    const cvChecked = cv.reduce((s, c) => s + c.checked, 0), cvHit = cv.reduce((s, c) => s + c.hit, 0);
+    const rarePct = cvChecked ? 100 * cvHit / cvChecked : null;
+    const trx = A.trend || {};
+    const tRg = (r) => String(r || '').replace('über', 'over');
+    const upLbl = (m) => Array.isArray(m) ? `${esc(tRg(m[0]))} → ${esc(tRg(m[1]))}` : `${en(m)} ${m === 1 ? 'location' : 'locations'} higher`;
+    const city1 = (c) => tC(String(c).split(', ')[0]);
+
+    // ---- This month ----
     (function () {
-      const LK = window.AIDOS_LOOKUP || [];
-      const input = document.getElementById('lk'), res = document.getElementById('lkres');
-      input.addEventListener('input', () => {
-        const q = input.value.trim().toLowerCase();
-        if (q.length < 2) { res.innerHTML = ''; return; }
-        const hits = LK.filter((x) => x.n.toLowerCase().includes(q) || (x.c && x.c.toLowerCase().includes(q))).slice(0, 6);
-        if (hits.length) {
-          res.innerHTML = hits.map((x) => `<a class="lk-hit" href="../en/${x.u}"><div><b>${esc(x.n)}</b><span>${esc(tC(x.c))} · ${esc(tB(x.b))}</span></div><div class="r">${esc(x.r)} removed</div></a>`).join('');
-        } else {
-          const mail = 'mailto:contact@aidos.tech?subject=' + encodeURIComponent('Check a company: ' + input.value) + '&body=' + encodeURIComponent('Please add this company to the aidos survey:\n\n' + input.value);
-          res.innerHTML = `<div class="lk-none"><b>“${esc(input.value)}”</b> is not in the dataset yet.<br/><a href="${mail}">→ Submit a company for review</a></div>`;
+      document.getElementById('monthHint').textContent = trx.available
+        ? `Comparison ${mName(trx.prev)} → ${mName(trx.latest)} · the same businesses in both surveys`
+        : 'Survey span ' + spanLabel();
+      const movers = LKX.filter((x) => x.m).sort((a, b) => (+b.d || 0) - (+a.d || 0));
+      document.getElementById('mMove').innerHTML = trx.available
+        ? `<h4>Moved into a higher band</h4><div class="big">${en(trx.up)} <span style="font-size:20px;color:var(--ink-3)">of ${en(trx.panelSize)}</span></div>` +
+          `<p class="cap">businesses saw the number of removed reviews cross a band boundary published by Google · ${trx.down === 0 ? 'none fell' : en(trx.down) + ' fell'}.</p>` +
+          (movers.length ? `<ul class="mlist">${movers.slice(0, 6).map((x) => `<li><a href="../en/${x.u}"><span>${esc(x.n)} <span class="c">${esc(city1(x.c))}</span></span><span class="r">${upLbl(x.m)}</span></a></li>`).join('')}</ul>` : '') +
+          `<p class="fine">${movers.length ? `Of these, listed by name: ${en(movers.length)}. ` : ''}Businesses below the naming threshold (individuals, small sole operations) are never named. Google publishes ranges only – moving into a higher band is the smallest reliably measurable event; no count of reviews can be derived from it.</p>`
+        : `<h4>Month-on-month comparison</h4><p class="cap">${trx.pending ? 'The comparison appears once this month’s panel sweep has run — without it, too few businesses are covered in both months.' : 'The comparison appears automatically with the second survey — never estimated.'}</p>`;
+      const newM = trx.latest || T.month;
+      const fresh = LKX.filter((x) => x.nw).sort((a, b) => (+b.d || 0) - (+a.d || 0));
+      document.getElementById('mNew').innerHTML = `<h4>New in the dataset</h4><div class="big ink">${en(fresh.length)}</div>` +
+        `<p class="cap">listed companies &amp; chains, first captured in ${mName(newM)}.</p>` +
+        (fresh.length ? `<ul class="mlist">${fresh.slice(0, 4).map((x) => `<li><a href="../en/${x.u}"><span>${esc(x.n)} <span class="c">${esc(city1(x.c))}</span></span><span class="r">${esc(tRg(x.r))}</span></a></li>`).join('')}</ul>` : '') +
+        `<p class="fine">Usually because a city was newly surveyed – not the same as new removals.</p>`;
+      document.getElementById('mRare').innerHTML = rarePct == null ? '' :
+        `<h4>Rarer than you think</h4><div class="big ink">${en1(rarePct)}%</div>` +
+        `<p class="cap">of checked profiles carry the removal notice at all.</p>` +
+        `<p class="fine">${en(cvChecked)} profiles fully checked in ${en(cv.length)} cities. The vast majority of businesses therefore never appear on aidos.</p>`;
+    })();
+
+    // ---- Rating check ----
+    (function () {
+      const input = document.getElementById('lk'), card = document.getElementById('vcard'), res = document.getElementById('lkres');
+      const norm = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');
+      const queryOf = (raw) => { const m = String(raw).match(/\/maps\/place\/([^/@?]+)/); return m ? decodeURIComponent(m[1]).replace(/\+/g, ' ') : raw; };
+      const rank = (x, q, toks) => {
+        const n = norm(x.n), hay = n + ' ' + norm(x.c) + ' ' + norm(tC(x.c));
+        if (n.startsWith(q)) return 3;
+        if (n.includes(q)) return 2;
+        return toks.length > 1 && toks.every((t) => hay.includes(t)) ? 1 : 0;
+      };
+      const vcard = (x) => {
+        const cities = String(x.c || '').split(', ').map(tC);
+        const cityLbl = cities.slice(0, 2).join(', ') + (cities.length > 2 ? ` +${cities.length - 2} more` : '');
+        const hasEst = x.g != null && x.e != null && x.d > 0;
+        return `<div class="vcard"><div class="vk">${esc(tB(x.b))} · ${esc(cityLbl)}</div><h3>${esc(x.n)}</h3>` +
+          (hasEst ? `<div class="vnums"><div><div class="vn shown">${en1(x.g)}★</div><div class="vl">displayed on Google</div></div><div class="varrow">→</div>` +
+            `<div><div class="vn with">${en1(x.e)}★</div><div class="vl">at most, with the removed reviews, most cautious estimate</div></div></div>` : '') +
+          `<ul class="vfacts">` +
+          `<li><b>${esc(tRg(x.r))}</b> reviews were removed in the past 365 days following defamation complaints – according to Google's own notice.</li>` +
+          (hasEst ? `<li>The removals lift the displayed rating by <b>at least ${en1(x.d)}★</b>${x.o ? ' – open-ended, because Google publishes only "over 250"' : ''}.</li>`
+            : `<li>The displayed rating does not move measurably – with many reviews, the removals barely register.</li>`) +
+          (x.m ? (Array.isArray(x.m)
+            ? `<li><span class="up">Moved into a higher band in ${mName(trx.latest)}:</span> ${upLbl(x.m)}</li>`
+            : `<li><span class="up">In ${mName(trx.latest)}, ${x.m === 1 ? '1 location' : en(x.m) + ' locations'} moved into a higher band.</span></li>`) : '') +
+          (rarePct != null ? `<li>For comparison: only ${en1(rarePct)}% of checked profiles carry this notice at all.</li>` : '') +
+          `</ul><p class="vfine">A calculated estimate, not a statement of fact. If the removals were justified – for instance in fake campaigns against the business – the displayed rating is the more accurate one.</p>` +
+          `<a class="btn btn-primary" href="../en/${x.u}">Full profile with history →</a></div>`;
+      };
+      const run = () => {
+        const raw = input.value.trim(), q = norm(queryOf(raw)).trim();
+        try { const u = new URL(location.href); raw ? u.searchParams.set('q', raw) : u.searchParams.delete('q'); history.replaceState(null, '', u); } catch (e) {}
+        if (q.length < 2) { card.innerHTML = ''; res.innerHTML = ''; return; }
+        const toks = q.split(/\s+/).filter((t) => t.length > 1);
+        const hits = LKX.map((x) => [x, rank(x, q, toks)]).filter((h) => h[1] > 0)
+          .sort((a, b) => b[1] - a[1] || (+b[0].d || 0) - (+a[0].d || 0)).map((h) => h[0]);
+        if (!hits.length) {
+          const mail = 'mailto:contact@aidos.tech?subject=' + encodeURIComponent('Check a company: ' + raw) + '&body=' + encodeURIComponent('Please add this company to the aidos survey:\n\n' + raw);
+          card.innerHTML = `<div class="lk-none" style="margin-top:16px;max-width:680px"><b>“${esc(queryOf(raw))}”</b> is not in the dataset. That does not mean there is no notice: aidos has surveyed ${en(surveyed)} cities so far and names only companies and chains, never individuals.` +
+            (rarePct != null ? ` In the surveyed cities, about ${en1(100 - rarePct)}% of profiles carry no notice at all.` : '') +
+            `<br/><a href="${mail}">→ Submit a company for review</a></div>`;
+          res.innerHTML = ''; return;
         }
-      });
+        card.innerHTML = vcard(hits[0]);
+        const more = hits.slice(1, 6);
+        res.innerHTML = more.length ? `<div class="hint" style="margin-top:6px">More matches</div>` + more.map((x) => `<a class="lk-hit" href="../en/${x.u}"><div><b>${esc(x.n)}</b><span>${esc(tC(x.c))} · ${esc(tB(x.b))}</span></div><div class="r">${esc(tRg(x.r))} removed</div></a>`).join('') : '';
+      };
+      let t; input.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 120); });
+      const ex = LKX.filter((x) => x.g != null && x.d > 0).sort((a, b) => (+b.d || 0) - (+a.d || 0)).slice(0, 3);
+      document.getElementById('checkEx').innerHTML = ex.length ? '<span>Examples:</span>' + ex.map((x, i) => `<button type="button" data-i="${i}">${esc(x.n)}</button>`).join('') : '';
+      document.getElementById('checkEx').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; input.value = ex[+b.dataset.i].n; run(); });
+      const q0 = new URLSearchParams(location.search).get('q');
+      if (q0) { input.value = q0; run(); }
     })();
 
     function countUp(el) { const to = +el.dataset.to || 0, dur = 1000, t0 = performance.now();
