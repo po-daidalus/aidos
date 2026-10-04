@@ -168,15 +168,14 @@
       </div>
     </section>
 
-    <!-- COMPANIES PREVIEW -->
+    <!-- LIST -->
     <section>
-      <div class="sec-head"><h2>Which companies &amp; chains are affected?</h2><span class="hint">top 5 by effect on the rating</span></div>
-      <p class="sec-intro">The businesses whose displayed rating benefits most from the removals — not those with the most removals: a large chain inevitably accumulates more of them without its rating moving measurably. Legal entities and larger chains only, no private individuals. Each row links to the full profile.</p>
+      <div class="sec-head"><h2>All companies &amp; chains</h2><span class="hint">searchable, filterable by industry and city</span></div>
+      <p class="sec-intro">The full list contains only legal entities and larger chains, never individuals. Every entry leads to a profile with history, estimate and notes on how to read it.</p>
       <div class="co-widget reveal">
-        <div id="coRows"></div>
         <div class="co-foot">
           <span class="co-sum" id="coSum"></span>
-          <a class="btn btn-primary" href="listing">View the full filterable list →</a>
+          <a class="btn btn-primary" href="listing">To the full list →</a>
         </div>
       </div>
       <div class="co-chips" id="coChips"></div>
@@ -300,20 +299,6 @@
     (function () {
       const LK = window.AIDOS_LOOKUP || [];
       const BR_COL = { 'Automobil': '#5a6b52', 'Gastronomie & Hotel': '#8a5a3c', 'Fitness & Sport': '#3a5f6b', 'Gesundheit': '#4a6b6b', 'Recht & Beratung': '#5b5570', 'Immobilien': '#6b5a3c', 'Beauty & Wellness': '#7a4a5a', 'Handwerk & Bau': '#6b5340', 'Einzelhandel': '#4a5a70', 'Sonstige': '#5a5a5a' };
-      // Ranked by the minimum effect on the rating, not by removal count: the latter mostly measures
-      // business size — a restaurant with 8,000 reviews and "over 250" removals shifts its rating by
-      // 0.08★ and still sat near the top.
-      const dropOf = (x) => +x.d || 0;
-      const tR = (r) => String(r || '').replace('über', 'over');
-      const top = LK.slice().sort((a, b) => dropOf(b) - dropOf(a)).slice(0, 5);
-      const maxDrop = Math.max(0.01, ...top.map(dropOf));
-      document.getElementById('coRows').innerHTML = top.map((x, i) => {
-        const cities = String(x.c || '').split(', ').map(tC);
-        const cityLbl = cities.slice(0, 2).join(', ') + (cities.length > 2 ? ` +${cities.length - 2} more` : '');
-        return `<a class="co-row" href="../en/${x.u}"><div class="rk">${i + 1}</div><div class="av" style="background:${BR_COL[x.b] || '#5a5a5a'}">${aidosBranchIcon(x.b, 22)}</div>` +
-          `<div><div class="nm">${esc(x.n)}</div><div class="meta"><span class="pill">${esc(tB(x.b))}</span><span class="pill">${esc(cityLbl)}</span></div></div>` +
-          `<div class="right"><div class="removed">at least ${en1(dropOf(x))}★${x.o ? '<abbr class="openmark" title="Google publishes no upper bound here — the real effect may be considerably larger.">↑</abbr>' : ''}<span class="lbl">effect on the rating · ${esc(tR(x.r))} removed</span></div><div class="bar"><i data-w="${Math.round(100 * dropOf(x) / maxDrop)}"></i></div></div></a>`;
-      }).join('');
       document.getElementById('coSum').innerHTML = `<b>${en(LK.length)}</b> listed companies &amp; chains in <b>${en((A.cities || []).length)}</b> cities — searchable, filterable by industry and city, with the estimated rating effect.`;
       document.getElementById('coChips').innerHTML = '<span class="lbl">Jump to an industry:</span>' +
         (A.branches || []).slice(0, 5).map((b) => `<a class="co-chip" href="listing?branche=${encodeURIComponent(b.key)}">${esc(tB(b.key))}</a>`).join('') +
@@ -366,7 +351,9 @@
       document.getElementById('monthHint').textContent = trx.available
         ? `Comparison ${mName(trx.prev)} → ${mName(trx.latest)} · the same businesses in both surveys`
         : 'Survey span ' + spanLabel();
-      const movers = LKX.filter((x) => x.m).sort((a, b) => (+b.d || 0) - (+a.d || 0));
+      const abc = (a, b) => a.n.replace(/^[^\p{L}]+/u, '').localeCompare(b.n.replace(/^[^\p{L}]+/u, ''), 'en', { sensitivity: 'base' });
+      // Alphabetisch, nicht nach Effekt: keine Rangliste an prominenter Stelle.
+      const movers = LKX.filter((x) => x.m).sort(abc);
       document.getElementById('mMove').innerHTML = trx.available
         ? `<h4>Moved into a higher band</h4><div class="big">${en(trx.up)} <span style="font-size:20px;color:var(--ink-3)">of ${en(trx.panelSize)}</span></div>` +
           `<p class="cap">businesses saw the number of removed reviews cross a band boundary published by Google · ${trx.down === 0 ? 'none fell' : en(trx.down) + ' fell'}.</p>` +
@@ -376,7 +363,7 @@
           `<p class="fine">${movers.length ? `Of these, listed by name: ${en(movers.length)}. ` : ''}Businesses below the naming threshold (individuals, small sole operations) are never named. Google publishes ranges only – moving into a higher band is the smallest reliably measurable event; no count of reviews can be derived from it.</p>`
         : `<h4>Month-on-month comparison</h4><p class="cap">${trx.pending ? 'The comparison appears once this month’s panel sweep has run — without it, too few businesses are covered in both months.' : 'The comparison appears automatically with the second survey — never estimated.'}</p>`;
       const newM = trx.latest || T.month;
-      const fresh = LKX.filter((x) => x.nw).sort((a, b) => (+b.d || 0) - (+a.d || 0));
+      const fresh = LKX.filter((x) => x.nw).sort(abc);
       document.getElementById('mNew').innerHTML = `<h4>New in the dataset</h4><div class="big ink">${en(fresh.length)}</div>` +
         `<p class="cap">listed companies &amp; chains, first captured in ${mName(newM)} – by city:</p>` +
         cityBars(Object.entries(fresh.reduce((o, x) => { const c = tC(String(x.c).split(', ')[0]); o[c] = (o[c] || 0) + 1; return o; }, {})).sort((a, b) => b[1] - a[1]).slice(0, 5)) +
