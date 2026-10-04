@@ -1,0 +1,81 @@
+{
+ "day": "2026-10-02",
+ "views": 55,
+ "visitors": 44,
+ "pages": {
+  "/": 26,
+  "/methodik": 2,
+  "/stadt/bochum": 1,
+  "/en/methodology": 3,
+  "/stadt/wuppertal": 1,
+  "/stadt/stuttgart": 1,
+  "/listing": 5,
+  "/en/unternehmen/golden-city-hamburg": 1,
+  "/impressum": 2,
+  "/en/listing": 2,
+  "/en/unternehmen/spezlwirtschaft-muenchen": 1,
+  "/stadt/bonn": 1,
+  "/stadt/duisburg": 1,
+  "/en/": 3,
+  "/en/unternehmen/can-kebap-bremen": 1,
+  "/stadt/essen": 1,
+  "/en/unternehmen/kervan-restaurant-bremen": 1,
+  "/en/unternehmen/trattoria-l-ancora-koeln": 1,
+  "/en/unternehmen/salina-essen": 1
+ },
+ "sections": {
+  "Startseite": 29,
+  "Methodik": 5,
+  "Stadt": 6,
+  "Liste": 7,
+  "Unternehmen": 6,
+  "Sonstige": 2
+ },
+ "countries": {
+  "SG": 2,
+  "US": 12,
+  "DE": 4,
+  "VN": 2,
+  "FI": 1,
+  "FR": 1,
+  "CO": 1,
+  "CN": 9,
+  "BR": 3,
+  "NL": 3,
+  "GB": 6,
+  "PL": 1,
+  "CL": 1,
+  "MX": 3,
+  "SA": 1,
+  "KR": 1,
+  "AU": 1,
+  "JO": 1,
+  "HK": 1,
+  "GR": 1
+ },
+ "devices": {
+  "mobile": 14,
+  "desktop": 41
+ },
+ "bots": {
+  "AI Search": 2,
+  "Search Engine Optimization": 15,
+  "Search Engine Crawler": 130,
+  "Page Preview": 1,
+  "AI Assistant": 9
+ },
+ "dach": {
+  "views": 4,
+  "visitors": 3,
+  "pages": {
+   "/methodik": 1,
+   "/": 2,
+   "/listing": 1
+  },
+  "sections": {
+   "Methodik": 1,
+   "Startseite": 2,
+   "Liste": 1
+  }
+ }
+}

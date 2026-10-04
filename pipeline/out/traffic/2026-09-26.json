@@ -1,0 +1,52 @@
+{
+ "day": "2026-09-26",
+ "views": 45,
+ "visitors": 33,
+ "pages": {
+  "/": 40,
+  "/en/": 4,
+  "/impressum": 1
+ },
+ "sections": {
+  "Startseite": 44,
+  "Sonstige": 1
+ },
+ "countries": {
+  "BR": 1,
+  "US": 15,
+  "SG": 3,
+  "NL": 6,
+  "ES": 1,
+  "LV": 2,
+  "JP": 1,
+  "FR": 3,
+  "GB": 1,
+  "KR": 1,
+  "DE": 3,
+  "TG": 2,
+  "IN": 1,
+  "CN": 3,
+  "HK": 1,
+  "BE": 1
+ },
+ "devices": {
+  "mobile": 12,
+  "desktop": 33
+ },
+ "bots": {
+  "AI Search": 1,
+  "Search Engine Optimization": 698,
+  "Search Engine Crawler": 42,
+  "AI Assistant": 7
+ },
+ "dach": {
+  "views": 3,
+  "visitors": 2,
+  "pages": {
+   "/": 3
+  },
+  "sections": {
+   "Startseite": 3
+  }
+ }
+}

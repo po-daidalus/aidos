@@ -1,0 +1,66 @@
+{
+ "day": "2026-09-29",
+ "views": 55,
+ "visitors": 37,
+ "pages": {
+  "/en/listing": 4,
+  "/listing": 5,
+  "/": 30,
+  "/impressum": 7,
+  "/methodik": 1,
+  "/ueber-aidos": 2,
+  "/unternehmen/restaurant-hanedan-bonn": 2,
+  "/daten-melden": 1,
+  "/presse": 1,
+  "/rechtslage": 1,
+  "/en/": 1
+ },
+ "sections": {
+  "Liste": 9,
+  "Startseite": 31,
+  "Sonstige": 12,
+  "Methodik": 1,
+  "Unternehmen": 2
+ },
+ "countries": {
+  "US": 13,
+  "RO": 11,
+  "SE": 1,
+  "CN": 4,
+  "DE": 5,
+  "ID": 2,
+  "JP": 1,
+  "PL": 7,
+  "KR": 2,
+  "BR": 1,
+  "GB": 1,
+  "SG": 3,
+  "HK": 2,
+  "FR": 1,
+  "NL": 1
+ },
+ "devices": {
+  "desktop": 34,
+  "mobile": 21
+ },
+ "bots": {
+  "AI Search": 3,
+  "Search Engine Optimization": 53,
+  "Search Engine Crawler": 57,
+  "AI Assistant": 5
+ },
+ "dach": {
+  "views": 5,
+  "visitors": 4,
+  "pages": {
+   "/impressum": 2,
+   "/unternehmen/restaurant-hanedan-bonn": 2,
+   "/": 1
+  },
+  "sections": {
+   "Sonstige": 2,
+   "Unternehmen": 2,
+   "Startseite": 1
+  }
+ }
+}

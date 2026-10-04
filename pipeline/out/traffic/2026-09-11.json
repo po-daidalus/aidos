@@ -1,0 +1,78 @@
+{
+ "day": "2026-09-11",
+ "views": 116,
+ "visitors": 57,
+ "pages": {
+  "/methodik": 4,
+  "/en/listing": 3,
+  "/rechtslage": 2,
+  "/": 87,
+  "/presse": 2,
+  "/en/methodology": 2,
+  "/en/": 4,
+  "/impressum": 3,
+  "/ueber-aidos": 2,
+  "/stadt/bielefeld": 1,
+  "/daten-melden": 2,
+  "/listing": 3,
+  "/unternehmen/krispy-kebab-bielefeld": 1
+ },
+ "sections": {
+  "Methodik": 6,
+  "Liste": 6,
+  "Sonstige": 11,
+  "Startseite": 91,
+  "Stadt": 1,
+  "Unternehmen": 1
+ },
+ "countries": {
+  "US": 26,
+  "KR": 3,
+  "CA": 23,
+  "DE": 7,
+  "PL": 3,
+  "XK": 3,
+  "NL": 3,
+  "SE": 2,
+  "HK": 1,
+  "SG": 3,
+  "LU": 5,
+  "CH": 2,
+  "CN": 5,
+  "JP": 1,
+  "GB": 2,
+  "CO": 2,
+  "BE": 2,
+  "FR": 1,
+  "TR": 1,
+  "SI": 2,
+  "CZ": 4,
+  "LT": 1,
+  "RU": 2,
+  "RO": 12
+ },
+ "devices": {
+  "mobile": 30,
+  "desktop": 86
+ },
+ "bots": {
+  "AI Search": 515,
+  "Search Engine Optimization": 8,
+  "AI Crawler": 116,
+  "Search Engine Crawler": 21,
+  "AI Assistant": 8
+ },
+ "dach": {
+  "views": 9,
+  "visitors": 6,
+  "pages": {
+   "/en/methodology": 1,
+   "/": 7,
+   "/methodik": 1
+  },
+  "sections": {
+   "Methodik": 2,
+   "Startseite": 7
+  }
+ }
+}

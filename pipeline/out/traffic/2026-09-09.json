@@ -1,0 +1,72 @@
+{
+ "day": "2026-09-09",
+ "views": 116,
+ "visitors": 64,
+ "pages": {
+  "/listing": 3,
+  "/rechtslage": 1,
+  "/": 84,
+  "/methodik": 3,
+  "/impressum": 5,
+  "/ueber-aidos": 4,
+  "/daten-melden": 3,
+  "/en/listing": 3,
+  "/en/": 5,
+  "/presse": 4,
+  "/en/unternehmen/das-haus-des-doeners-dortmund": 1
+ },
+ "sections": {
+  "Liste": 6,
+  "Sonstige": 17,
+  "Startseite": 89,
+  "Methodik": 3,
+  "Unternehmen": 1
+ },
+ "countries": {
+  "NL": 20,
+  "CA": 13,
+  "US": 42,
+  "PL": 9,
+  "ID": 1,
+  "HK": 2,
+  "DE": 5,
+  "JP": 5,
+  "SE": 1,
+  "CN": 4,
+  "TH": 1,
+  "TT": 1,
+  "IT": 1,
+  "PH": 1,
+  "RU": 3,
+  "SG": 2,
+  "IN": 1,
+  "SI": 3,
+  "MX": 1
+ },
+ "devices": {
+  "desktop": 87,
+  "mobile": 26,
+  "tablet": 3
+ },
+ "bots": {
+  "AI Search": 12,
+  "AI Crawler": 973,
+  "Search Engine Crawler": 27,
+  "AI Assistant": 10
+ },
+ "dach": {
+  "views": 5,
+  "visitors": 3,
+  "pages": {
+   "/": 2,
+   "/en/listing": 1,
+   "/en/unternehmen/das-haus-des-doeners-dortmund": 1,
+   "/en/": 1
+  },
+  "sections": {
+   "Startseite": 3,
+   "Liste": 1,
+   "Unternehmen": 1
+  }
+ }
+}

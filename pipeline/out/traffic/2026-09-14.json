@@ -1,0 +1,66 @@
+{
+ "day": "2026-09-14",
+ "views": 102,
+ "visitors": 46,
+ "pages": {
+  "/en/": 14,
+  "/": 57,
+  "/en/methodology": 2,
+  "/unternehmen/ristorante-franca-e-franco-stuttgart": 1,
+  "/branche/gastronomie-und-hotel": 2,
+  "/unternehmen/heckinghauser-grill-wuppertal": 1,
+  "/impressum": 10,
+  "/en/unternehmen/hotel-windsor-in-koeln-koeln": 1,
+  "/rechtslage": 10,
+  "/unternehmen/montanara-koeln": 1,
+  "/methodik": 1,
+  "/en/listing": 1,
+  "/daten-melden": 1
+ },
+ "sections": {
+  "Startseite": 71,
+  "Methodik": 3,
+  "Unternehmen": 4,
+  "Branche": 2,
+  "Sonstige": 21,
+  "Liste": 1
+ },
+ "countries": {
+  "US": 66,
+  "CN": 8,
+  "XK": 4,
+  "ID": 1,
+  "KE": 1,
+  "MD": 1,
+  "DE": 2,
+  "SG": 2,
+  "FR": 3,
+  "BR": 3,
+  "HK": 3,
+  "NL": 3,
+  "PL": 1,
+  "JP": 1,
+  "KR": 3
+ },
+ "devices": {
+  "desktop": 82,
+  "mobile": 20
+ },
+ "bots": {
+  "AI Search": 22,
+  "Search Engine Optimization": 762,
+  "AI Crawler": 119,
+  "Search Engine Crawler": 51,
+  "AI Assistant": 6
+ },
+ "dach": {
+  "views": 2,
+  "visitors": 2,
+  "pages": {
+   "/": 2
+  },
+  "sections": {
+   "Startseite": 2
+  }
+ }
+}

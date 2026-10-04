@@ -1,0 +1,74 @@
+{
+ "day": "2026-09-15",
+ "views": 84,
+ "visitors": 47,
+ "pages": {
+  "/": 59,
+  "/en/": 11,
+  "/impressum": 4,
+  "/en/unternehmen/ever-young-dr-kramer-gmbh-nuernberg": 1,
+  "/ueber-aidos": 2,
+  "/en/listing": 4,
+  "/listing": 2,
+  "/stadt/muenchen": 1
+ },
+ "sections": {
+  "Startseite": 70,
+  "Sonstige": 6,
+  "Unternehmen": 1,
+  "Liste": 6,
+  "Stadt": 1
+ },
+ "countries": {
+  "FR": 7,
+  "CH": 2,
+  "DE": 14,
+  "CN": 4,
+  "KR": 3,
+  "HK": 2,
+  "BR": 4,
+  "NL": 24,
+  "US": 9,
+  "SG": 3,
+  "JP": 2,
+  "SE": 1,
+  "AT": 1,
+  "RO": 2,
+  "AR": 1,
+  "TR": 3,
+  "CA": 1,
+  "IN": 1
+ },
+ "devices": {
+  "desktop": 56,
+  "mobile": 28
+ },
+ "bots": {
+  "AI Search": 11,
+  "Search Engine Optimization": 16,
+  "AI Crawler": 140,
+  "Search Engine Crawler": 43,
+  "Monitoring & Analytics": 1,
+  "Page Preview": 5,
+  "AI Assistant": 9
+ },
+ "dach": {
+  "views": 17,
+  "visitors": 10,
+  "pages": {
+   "/": 3,
+   "/en/": 7,
+   "/impressum": 1,
+   "/en/unternehmen/ever-young-dr-kramer-gmbh-nuernberg": 1,
+   "/en/listing": 4,
+   "/stadt/muenchen": 1
+  },
+  "sections": {
+   "Startseite": 10,
+   "Sonstige": 1,
+   "Unternehmen": 1,
+   "Liste": 4,
+   "Stadt": 1
+  }
+ }
+}

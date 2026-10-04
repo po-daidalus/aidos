@@ -1,0 +1,52 @@
+{
+ "day": "2026-09-30",
+ "views": 29,
+ "visitors": 26,
+ "pages": {
+  "/": 24,
+  "/ueber-aidos": 1,
+  "/daten-melden": 1,
+  "/impressum": 2,
+  "/unternehmen/deniz-grill-duisburg": 1
+ },
+ "sections": {
+  "Startseite": 24,
+  "Sonstige": 4,
+  "Unternehmen": 1
+ },
+ "countries": {
+  "CN": 5,
+  "BE": 3,
+  "US": 4,
+  "SG": 3,
+  "DE": 4,
+  "KR": 1,
+  "NL": 1,
+  "FR": 3,
+  "HK": 2,
+  "BR": 1,
+  "SE": 2
+ },
+ "devices": {
+  "mobile": 15,
+  "desktop": 14
+ },
+ "bots": {
+  "AI Search": 1,
+  "Search Engine Optimization": 16,
+  "Search Engine Crawler": 86,
+  "AI Assistant": 7
+ },
+ "dach": {
+  "views": 4,
+  "visitors": 2,
+  "pages": {
+   "/": 3,
+   "/impressum": 1
+  },
+  "sections": {
+   "Startseite": 3,
+   "Sonstige": 1
+  }
+ }
+}

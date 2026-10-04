@@ -1,0 +1,62 @@
+{
+ "day": "2026-09-22",
+ "views": 61,
+ "visitors": 39,
+ "pages": {
+  "/": 45,
+  "/impressum": 2,
+  "/listing": 3,
+  "/ueber-aidos": 1,
+  "/en/": 6,
+  "/en/listing": 1,
+  "/branche/sonstige": 1,
+  "/en/stadt/berlin": 1,
+  "/branche/immobilien": 1
+ },
+ "sections": {
+  "Startseite": 51,
+  "Sonstige": 3,
+  "Liste": 4,
+  "Branche": 2,
+  "Stadt": 1
+ },
+ "countries": {
+  "TR": 1,
+  "US": 19,
+  "NL": 16,
+  "DE": 6,
+  "SE": 1,
+  "BR": 2,
+  "IN": 1,
+  "CN": 4,
+  "KR": 1,
+  "BE": 1,
+  "HK": 2,
+  "ET": 1,
+  "FR": 2,
+  "TN": 1,
+  "SG": 1,
+  "CA": 1,
+  "JP": 1
+ },
+ "devices": {
+  "desktop": 37,
+  "mobile": 24
+ },
+ "bots": {
+  "AI Search": 1393,
+  "Search Engine Optimization": 2,
+  "Search Engine Crawler": 28,
+  "AI Assistant": 7
+ },
+ "dach": {
+  "views": 6,
+  "visitors": 3,
+  "pages": {
+   "/": 6
+  },
+  "sections": {
+   "Startseite": 6
+  }
+ }
+}

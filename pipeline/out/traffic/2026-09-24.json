@@ -1,0 +1,59 @@
+{
+ "day": "2026-09-24",
+ "views": 51,
+ "visitors": 30,
+ "pages": {
+  "/": 39,
+  "/listing": 3,
+  "/en/": 2,
+  "/presse": 2,
+  "/en/listing": 2,
+  "/impressum": 2,
+  "/methodik": 1
+ },
+ "sections": {
+  "Startseite": 41,
+  "Liste": 5,
+  "Sonstige": 4,
+  "Methodik": 1
+ },
+ "countries": {
+  "JP": 5,
+  "US": 10,
+  "IN": 12,
+  "PL": 5,
+  "NL": 6,
+  "SG": 1,
+  "KR": 3,
+  "HK": 1,
+  "CN": 2,
+  "DE": 3,
+  "BE": 1,
+  "TH": 1,
+  "CH": 1
+ },
+ "devices": {
+  "mobile": 15,
+  "desktop": 36
+ },
+ "bots": {
+  "AI Search": 5,
+  "Search Engine Optimization": 12,
+  "Search Engine Crawler": 22,
+  "AI Assistant": 12
+ },
+ "dach": {
+  "views": 4,
+  "visitors": 3,
+  "pages": {
+   "/": 2,
+   "/methodik": 1,
+   "/listing": 1
+  },
+  "sections": {
+   "Startseite": 2,
+   "Methodik": 1,
+   "Liste": 1
+  }
+ }
+}

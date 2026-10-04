@@ -1,0 +1,68 @@
+{
+ "day": "2026-09-19",
+ "views": 77,
+ "visitors": 40,
+ "pages": {
+  "/": 48,
+  "/en/": 1,
+  "/ueber-aidos": 4,
+  "/listing": 8,
+  "/unternehmen/hotel-berliner-hof-berlin": 1,
+  "/unternehmen/belchicken-wuppertal-wuppertal": 6,
+  "/methodik": 6,
+  "/impressum": 3
+ },
+ "sections": {
+  "Startseite": 49,
+  "Sonstige": 7,
+  "Liste": 8,
+  "Unternehmen": 7,
+  "Methodik": 6
+ },
+ "countries": {
+  "CN": 5,
+  "NL": 6,
+  "HK": 1,
+  "DE": 35,
+  "US": 12,
+  "SG": 2,
+  "JP": 4,
+  "BE": 1,
+  "BR": 2,
+  "BG": 1,
+  "TR": 1,
+  "FI": 3,
+  "FR": 2,
+  "RO": 2
+ },
+ "devices": {
+  "mobile": 16,
+  "desktop": 61
+ },
+ "bots": {
+  "AI Search": 3,
+  "Search Engine Optimization": 1,
+  "Search Engine Crawler": 37,
+  "AI Assistant": 2
+ },
+ "dach": {
+  "views": 35,
+  "visitors": 8,
+  "pages": {
+   "/": 9,
+   "/ueber-aidos": 4,
+   "/listing": 7,
+   "/unternehmen/hotel-berliner-hof-berlin": 1,
+   "/unternehmen/belchicken-wuppertal-wuppertal": 6,
+   "/methodik": 6,
+   "/impressum": 2
+  },
+  "sections": {
+   "Startseite": 9,
+   "Sonstige": 6,
+   "Liste": 7,
+   "Unternehmen": 7,
+   "Methodik": 6
+  }
+ }
+}

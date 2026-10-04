@@ -1,0 +1,62 @@
+{
+ "day": "2026-10-01",
+ "views": 60,
+ "visitors": 41,
+ "pages": {
+  "/listing": 5,
+  "/rechtslage": 2,
+  "/impressum": 5,
+  "/methodik": 1,
+  "/": 29,
+  "/daten-melden": 1,
+  "/en/listing": 5,
+  "/presse": 4,
+  "/en/unternehmen/der-hufnagel-muenchen": 1,
+  "/ueber-aidos": 1,
+  "/en/": 3,
+  "/en/unternehmen/994-ginza-nuernberg": 1,
+  "/en/unternehmen/grill-mano-s-bonn": 1,
+  "/en/methodology": 1
+ },
+ "sections": {
+  "Liste": 10,
+  "Sonstige": 13,
+  "Methodik": 2,
+  "Startseite": 32,
+  "Unternehmen": 3
+ },
+ "countries": {
+  "US": 21,
+  "MX": 2,
+  "NL": 17,
+  "HK": 1,
+  "SG": 3,
+  "BR": 4,
+  "CN": 7,
+  "DE": 2,
+  "BE": 2,
+  "SE": 1
+ },
+ "devices": {
+  "desktop": 41,
+  "mobile": 19
+ },
+ "bots": {
+  "AI Search": 8,
+  "Search Engine Optimization": 930,
+  "Search Engine Crawler": 59,
+  "AI Assistant": 5
+ },
+ "dach": {
+  "views": 2,
+  "visitors": 2,
+  "pages": {
+   "/en/listing": 1,
+   "/": 1
+  },
+  "sections": {
+   "Liste": 1,
+   "Startseite": 1
+  }
+ }
+}

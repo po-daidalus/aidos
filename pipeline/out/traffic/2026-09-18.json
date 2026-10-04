@@ -1,0 +1,98 @@
+{
+ "day": "2026-09-18",
+ "views": 176,
+ "visitors": 53,
+ "pages": {
+  "/methodik": 13,
+  "/unternehmen/restaurant-st-petersburg-dresden": 1,
+  "/": 116,
+  "/listing": 14,
+  "/en/": 4,
+  "/daten-melden": 2,
+  "/branche/beauty-und-wellness": 1,
+  "/en/methodology": 4,
+  "/branche/gastronomie-und-hotel": 3,
+  "/rechtslage": 1,
+  "/unternehmen/aspria-berlin": 2,
+  "/impressum": 2,
+  "/en/listing": 4,
+  "/presse": 2,
+  "/unternehmen/hotel-haus-schwan-koeln": 1,
+  "/branche/immobilien": 1,
+  "/unternehmen/holmes-place-berlin": 1,
+  "/en/unternehmen/aspria-berlin": 1,
+  "/ueber-aidos": 1,
+  "/branche/gesundheit": 1,
+  "/unternehmen/ess-bahn-doener-hamburg": 1
+ },
+ "sections": {
+  "Methodik": 17,
+  "Unternehmen": 7,
+  "Startseite": 120,
+  "Liste": 18,
+  "Sonstige": 8,
+  "Branche": 6
+ },
+ "countries": {
+  "DE": 61,
+  "NL": 73,
+  "US": 16,
+  "BR": 3,
+  "HK": 1,
+  "MX": 3,
+  "PH": 2,
+  "CN": 4,
+  "IN": 2,
+  "KR": 1,
+  "CA": 3,
+  "SE": 1,
+  "LT": 1,
+  "ID": 2,
+  "XK": 2,
+  "RO": 1
+ },
+ "devices": {
+  "desktop": 158,
+  "mobile": 18
+ },
+ "bots": {
+  "AI Search": 3,
+  "Feed Fetcher": 1,
+  "Search Engine Optimization": 1,
+  "Search Engine Crawler": 57,
+  "Monitoring & Analytics": 25,
+  "Page Preview": 2,
+  "AI Assistant": 10
+ },
+ "dach": {
+  "views": 61,
+  "visitors": 9,
+  "pages": {
+   "/methodik": 12,
+   "/unternehmen/restaurant-st-petersburg-dresden": 1,
+   "/en/": 3,
+   "/daten-melden": 1,
+   "/branche/beauty-und-wellness": 1,
+   "/branche/gastronomie-und-hotel": 1,
+   "/unternehmen/aspria-berlin": 2,
+   "/": 18,
+   "/en/listing": 3,
+   "/listing": 11,
+   "/unternehmen/hotel-haus-schwan-koeln": 1,
+   "/branche/immobilien": 1,
+   "/unternehmen/holmes-place-berlin": 1,
+   "/en/unternehmen/aspria-berlin": 1,
+   "/en/methodology": 2,
+   "/branche/gesundheit": 1,
+   "/unternehmen/ess-bahn-doener-hamburg": 1
+  },
+  "sections": {
+   "Methodik": 14,
+   "Unternehmen": 7,
+   "Startseite": 21,
+   "Sonstige": 1,
+   "Branche": 4,
+   "Liste": 14
+  }
+ }
+}

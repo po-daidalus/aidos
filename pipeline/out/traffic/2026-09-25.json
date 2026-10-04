@@ -1,0 +1,64 @@
+{
+ "day": "2026-09-25",
+ "views": 57,
+ "visitors": 47,
+ "pages": {
+  "/": 29,
+  "/impressum": 2,
+  "/rechtslage": 2,
+  "/en/methodology": 4,
+  "/methodik": 3,
+  "/presse": 3,
+  "/ueber-aidos": 3,
+  "/listing": 5,
+  "/en/listing": 2,
+  "/daten-melden": 2,
+  "/en/": 2
+ },
+ "sections": {
+  "Startseite": 31,
+  "Sonstige": 12,
+  "Methodik": 7,
+  "Liste": 7
+ },
+ "countries": {
+  "US": 15,
+  "CN": 4,
+  "TR": 2,
+  "BR": 6,
+  "NL": 13,
+  "FR": 2,
+  "HK": 1,
+  "KR": 1,
+  "UA": 1,
+  "MX": 4,
+  "RO": 1,
+  "PH": 1,
+  "SE": 1,
+  "DE": 1,
+  "IN": 1,
+  "GB": 1,
+  "BE": 1,
+  "LU": 1
+ },
+ "devices": {
+  "mobile": 18,
+  "desktop": 39
+ },
+ "bots": {
+  "AI Search": 1,
+  "Search Engine Optimization": 14,
+  "Search Engine Crawler": 34,
+  "AI Assistant": 8
+ },
+ "dach": {
+  "views": 1,
+  "visitors": 1,
+  "pages": {
+   "/": 1
+  },
+  "sections": {
+   "Startseite": 1
+  }
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "day": "2026-09-16",
+ "views": 64,
+ "visitors": 37,
+ "pages": {
+  "/": 58,
+  "/rechtslage": 1,
+  "/daten-melden": 1,
+  "/listing": 2,
+  "/ueber-aidos": 1,
+  "/branche/gastronomie-und-hotel": 1
+ },
+ "sections": {
+  "Startseite": 58,
+  "Sonstige": 3,
+  "Liste": 2,
+  "Branche": 1
+ },
+ "countries": {
+  "CN": 8,
+  "HK": 2,
+  "JP": 5,
+  "SE": 2,
+  "FR": 3,
+  "IT": 2,
+  "US": 31,
+  "DE": 4,
+  "GB": 2,
+  "BE": 1,
+  "BR": 1,
+  "CA": 1,
+  "KR": 2
+ },
+ "devices": {
+  "mobile": 16,
+  "desktop": 48
+ },
+ "bots": {
+  "AI Search": 6,
+  "Search Engine Optimization": 5,
+  "Search Engine Crawler": 30,
+  "Page Preview": 9,
+  "AI Assistant": 6
+ },
+ "dach": {
+  "views": 4,
+  "visitors": 3,
+  "pages": {
+   "/": 3,
+   "/branche/gastronomie-und-hotel": 1
+  },
+  "sections": {
+   "Startseite": 3,
+   "Branche": 1
+  }
+ }
+}

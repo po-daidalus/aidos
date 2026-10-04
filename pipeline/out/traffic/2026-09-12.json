@@ -1,0 +1,64 @@
+{
+ "day": "2026-09-12",
+ "views": 75,
+ "visitors": 41,
+ "pages": {
+  "/": 58,
+  "/en/": 1,
+  "/daten-melden": 2,
+  "/presse": 1,
+  "/impressum": 2,
+  "/en/unternehmen/autohaus-israel-gmbh-dresden": 1,
+  "/rechtslage": 2,
+  "/ueber-aidos": 4,
+  "/en/listing": 4
+ },
+ "sections": {
+  "Startseite": 59,
+  "Sonstige": 11,
+  "Unternehmen": 1,
+  "Liste": 4
+ },
+ "countries": {
+  "US": 30,
+  "DE": 3,
+  "SE": 2,
+  "HK": 2,
+  "RO": 1,
+  "NL": 15,
+  "SG": 1,
+  "PL": 2,
+  "GB": 2,
+  "CN": 5,
+  "FR": 4,
+  "BR": 2,
+  "VN": 1,
+  "LT": 1,
+  "SI": 1,
+  "JP": 1,
+  "RU": 1,
+  "IT": 1
+ },
+ "devices": {
+  "desktop": 58,
+  "mobile": 17
+ },
+ "bots": {
+  "AI Search": 28,
+  "Search Engine Optimization": 18,
+  "AI Crawler": 67,
+  "Search Engine Crawler": 23,
+  "Page Preview": 1,
+  "AI Assistant": 6
+ },
+ "dach": {
+  "views": 3,
+  "visitors": 2,
+  "pages": {
+   "/": 3
+  },
+  "sections": {
+   "Startseite": 3
+  }
+ }
+}

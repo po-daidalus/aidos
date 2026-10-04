@@ -1,0 +1,74 @@
+{
+ "day": "2026-09-10",
+ "views": 109,
+ "visitors": 47,
+ "pages": {
+  "/": 88,
+  "/daten-melden": 1,
+  "/stadt/muenchen": 1,
+  "/presse": 3,
+  "/branche/gastronomie-und-hotel": 1,
+  "/en/listing": 1,
+  "/unternehmen/meteora-bremen": 1,
+  "/impressum": 3,
+  "/en/": 4,
+  "/methodik": 1,
+  "/listing": 1,
+  "/en/methodology": 1,
+  "/unternehmen/salotto-muenchen": 1,
+  "/ueber-aidos": 1,
+  "/rechtslage": 1
+ },
+ "sections": {
+  "Startseite": 92,
+  "Sonstige": 9,
+  "Stadt": 1,
+  "Branche": 1,
+  "Liste": 2,
+  "Unternehmen": 2,
+  "Methodik": 2
+ },
+ "countries": {
+  "CN": 5,
+  "US": 42,
+  "DE": 4,
+  "XK": 3,
+  "HK": 5,
+  "NL": 25,
+  "CH": 2,
+  "TH": 1,
+  "JP": 2,
+  "AU": 1,
+  "FR": 3,
+  "BR": 1,
+  "LT": 1,
+  "KR": 2,
+  "SG": 1,
+  "RO": 11
+ },
+ "devices": {
+  "mobile": 22,
+  "desktop": 86,
+  "tablet": 1
+ },
+ "bots": {
+  "Search Engine Optimization": 1,
+  "AI Crawler": 158,
+  "Search Engine Crawler": 15,
+  "AI Assistant": 9
+ },
+ "dach": {
+  "views": 6,
+  "visitors": 4,
+  "pages": {
+   "/stadt/muenchen": 1,
+   "/": 4,
+   "/unternehmen/salotto-muenchen": 1
+  },
+  "sections": {
+   "Stadt": 1,
+   "Startseite": 4,
+   "Unternehmen": 1
+  }
+ }
+}

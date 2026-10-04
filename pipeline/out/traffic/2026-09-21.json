@@ -1,0 +1,57 @@
+{
+ "day": "2026-09-21",
+ "views": 86,
+ "visitors": 38,
+ "pages": {
+  "/": 74,
+  "/daten-melden": 1,
+  "/methodik": 3,
+  "/en/methodology": 4,
+  "/rechtslage": 1,
+  "/listing": 2,
+  "/en/listing": 1
+ },
+ "sections": {
+  "Startseite": 74,
+  "Sonstige": 2,
+  "Methodik": 7,
+  "Liste": 3
+ },
+ "countries": {
+  "SE": 2,
+  "US": 16,
+  "DE": 8,
+  "CN": 3,
+  "BR": 3,
+  "NL": 48,
+  "ID": 1,
+  "HK": 2,
+  "JP": 1,
+  "ES": 1,
+  "IN": 1
+ },
+ "devices": {
+  "desktop": 67,
+  "mobile": 19
+ },
+ "bots": {
+  "AI Search": 9,
+  "Search Engine Optimization": 6,
+  "Search Engine Crawler": 53,
+  "AI Assistant": 7
+ },
+ "dach": {
+  "views": 8,
+  "visitors": 4,
+  "pages": {
+   "/": 4,
+   "/methodik": 2,
+   "/listing": 2
+  },
+  "sections": {
+   "Startseite": 4,
+   "Methodik": 2,
+   "Liste": 2
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "day": "2026-09-06",
+ "views": 30,
+ "visitors": 26,
+ "pages": {
+  "/": 27,
+  "/en/listing": 1,
+  "/listing": 1,
+  "/rechtslage": 1
+ },
+ "sections": {
+  "Startseite": 27,
+  "Liste": 2,
+  "Sonstige": 1
+ },
+ "countries": {
+  "HK": 3,
+  "DE": 1,
+  "NL": 4,
+  "US": 8,
+  "ID": 2,
+  "SG": 2,
+  "CN": 5,
+  "FR": 3,
+  "FI": 1,
+  "RO": 1
+ },
+ "devices": {
+  "mobile": 16,
+  "desktop": 14
+ },
+ "bots": {
+  "AI Search": 9,
+  "Search Engine Optimization": 586,
+  "Search Engine Crawler": 3,
+  "AI Assistant": 5
+ },
+ "dach": {
+  "views": 1,
+  "visitors": 1,
+  "pages": {
+   "/": 1
+  },
+  "sections": {
+   "Startseite": 1
+  }
+ }
+}

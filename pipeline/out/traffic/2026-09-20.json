@@ -1,0 +1,70 @@
+{
+ "day": "2026-09-20",
+ "views": 64,
+ "visitors": 47,
+ "pages": {
+  "/methodik": 2,
+  "/": 49,
+  "/en/methodology": 1,
+  "/unternehmen/per-bacco-nuernberg": 1,
+  "/impressum": 1,
+  "/listing": 3,
+  "/report/2026-09": 1,
+  "/rechtslage": 2,
+  "/en/": 2,
+  "/en/listing": 1,
+  "/unternehmen/wurstdurst-nuernberg": 1
+ },
+ "sections": {
+  "Methodik": 3,
+  "Startseite": 51,
+  "Unternehmen": 2,
+  "Sonstige": 3,
+  "Liste": 4,
+  "Report": 1
+ },
+ "countries": {
+  "DE": 9,
+  "KE": 1,
+  "US": 14,
+  "SE": 2,
+  "BE": 4,
+  "CN": 8,
+  "NL": 5,
+  "SG": 8,
+  "HK": 1,
+  "PL": 2,
+  "ID": 1,
+  "IN": 1,
+  "BR": 2,
+  "FR": 1,
+  "JP": 2,
+  "CA": 1,
+  "CO": 1,
+  "RO": 1
+ },
+ "devices": {
+  "desktop": 42,
+  "mobile": 22
+ },
+ "bots": {
+  "AI Search": 3,
+  "Search Engine Optimization": 55,
+  "Search Engine Crawler": 52,
+  "AI Assistant": 5
+ },
+ "dach": {
+  "views": 9,
+  "visitors": 4,
+  "pages": {
+   "/methodik": 2,
+   "/": 5,
+   "/listing": 2
+  },
+  "sections": {
+   "Methodik": 2,
+   "Startseite": 5,
+   "Liste": 2
+  }
+ }
+}

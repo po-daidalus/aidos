@@ -1,0 +1,64 @@
+{
+ "day": "2026-09-27",
+ "views": 59,
+ "visitors": 38,
+ "pages": {
+  "/unternehmen/pizzeria-cimino-da-rosa-frankfurt-frankfurt-am-main": 1,
+  "/": 41,
+  "/listing": 6,
+  "/unternehmen/ristorante-nuraghe-frankfurt-am-main": 1,
+  "/rechtslage": 2,
+  "/en/methodology": 2,
+  "/en/unternehmen/tierklinik-am-kaiserberg-duisburg": 3,
+  "/en/listing": 2,
+  "/impressum": 1
+ },
+ "sections": {
+  "Unternehmen": 5,
+  "Startseite": 41,
+  "Liste": 8,
+  "Sonstige": 3,
+  "Methodik": 2
+ },
+ "countries": {
+  "DE": 8,
+  "ID": 1,
+  "PL": 12,
+  "LT": 1,
+  "NL": 7,
+  "CN": 3,
+  "HK": 2,
+  "SG": 2,
+  "US": 10,
+  "BR": 2,
+  "LV": 1,
+  "BE": 1,
+  "TH": 1,
+  "JP": 2,
+  "KR": 6
+ },
+ "devices": {
+  "mobile": 19,
+  "desktop": 40
+ },
+ "bots": {
+  "AI Search": 2,
+  "Search Engine Optimization": 114,
+  "Search Engine Crawler": 38,
+  "AI Assistant": 6
+ },
+ "dach": {
+  "views": 8,
+  "visitors": 5,
+  "pages": {
+   "/unternehmen/pizzeria-cimino-da-rosa-frankfurt-frankfurt-am-main": 1,
+   "/listing": 3,
+   "/unternehmen/ristorante-nuraghe-frankfurt-am-main": 1,
+   "/en/unternehmen/tierklinik-am-kaiserberg-duisburg": 3
+  },
+  "sections": {
+   "Unternehmen": 5,
+   "Liste": 3
+  }
+ }
+}

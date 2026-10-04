@@ -1,0 +1,60 @@
+{
+ "day": "2026-10-03",
+ "views": 59,
+ "visitors": 40,
+ "pages": {
+  "/": 40,
+  "/en/": 9,
+  "/en/unternehmen/deniz-grill-duisburg": 1,
+  "/en/methodology": 1,
+  "/impressum": 2,
+  "/en/unternehmen/burgerwerk-bonn": 1,
+  "/en/unternehmen/liebighof-muenchen": 1,
+  "/ueber-aidos": 3,
+  "/en/unternehmen/pizza41-bremerhaven": 1
+ },
+ "sections": {
+  "Startseite": 49,
+  "Unternehmen": 4,
+  "Methodik": 1,
+  "Sonstige": 5
+ },
+ "countries": {
+  "US": 16,
+  "HK": 2,
+  "BR": 2,
+  "SE": 1,
+  "CN": 7,
+  "KR": 2,
+  "JP": 2,
+  "GB": 16,
+  "AU": 1,
+  "IL": 2,
+  "DE": 1,
+  "IN": 2,
+  "NL": 1,
+  "LT": 2,
+  "FR": 1,
+  "ID": 1
+ },
+ "devices": {
+  "desktop": 44,
+  "mobile": 15
+ },
+ "bots": {
+  "AI Search": 7,
+  "Search Engine Optimization": 7,
+  "Search Engine Crawler": 48,
+  "AI Assistant": 7
+ },
+ "dach": {
+  "views": 1,
+  "visitors": 1,
+  "pages": {
+   "/": 1
+  },
+  "sections": {
+   "Startseite": 1
+  }
+ }
+}
