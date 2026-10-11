@@ -1,0 +1,10 @@
+[
+  {
+    "place_id": "0x4709cfc6367709a5:0xeddb117da6280b48",
+    "old_name": "Grand Grill Restaurant-مطعم ومشاوي غراند",
+    "new_name": "Grand Flavour Restaurant",
+    "city": "Dresden",
+    "verified": "2026-10-11",
+    "note": "Same Google listing renamed; entity-filter misreads 'Grand Flavour' as an embedded personal name. It is a restaurant, not a natural person."
+  }
+]

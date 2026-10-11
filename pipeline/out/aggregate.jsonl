@@ -3158,7 +3158,7 @@
 {"aid":"1bcc9f819859a7b4","date":"2026-10","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":51,"range_max":100,"rating":4.3,"rating_drop":2.65}
 {"aid":"6c20545f5afe00fa","date":"2026-10","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":51,"range_max":100,"rating":4.8,"rating_drop":3.38}
 {"aid":"2897f81ec8bb9b04","date":"2026-10","branch":"Gesundheit","city":"Dresden","nameable":true,"range_min":101,"range_max":150,"rating":4.9,"rating_drop":0.74}
-{"aid":"45469f77ef460373","date":"2026-10","branch":"Gastronomie & Hotel","city":"Dresden","nameable":false,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.17}
+{"aid":"45469f77ef460373","date":"2026-10","branch":"Gastronomie & Hotel","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.6,"rating_drop":2.17}
 {"aid":"86e1f77c35f10db7","date":"2026-10","branch":"Unbekannt","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.8,"rating_drop":2.7}
 {"aid":"73981a2e3e276664","date":"2026-10","branch":"Automobil","city":"Dresden","nameable":true,"range_min":151,"range_max":200,"rating":4.8,"rating_drop":3.05}
 {"aid":"b9e9e4551bf153c8","date":"2026-10","branch":"Automobil","city":"Dresden","nameable":true,"range_min":21,"range_max":50,"rating":4.7,"rating_drop":2.51}
@@ -3271,7 +3271,7 @@
 {"aid":"5182268de803001e","date":"2026-10","branch":"Automobil","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.56}
 {"aid":"710758a416aa7074","date":"2026-10","branch":"Automobil","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.65}
 {"aid":"b254f9fe3d5c8c92","date":"2026-10","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.9,"rating_drop":2.7}
-{"aid":"a2a6db9e8b342ae6","date":"2026-10","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":false,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.76}
+{"aid":"a2a6db9e8b342ae6","date":"2026-10","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4.8,"rating_drop":1.76}
 {"aid":"0d42ae2e42963e7b","date":"2026-10","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":250,"range_max":null,"rating":4.6,"rating_drop":2.59}
 {"aid":"80aa10c149699704","date":"2026-10","branch":"Gastronomie & Hotel","city":"Leipzig","nameable":true,"range_min":51,"range_max":100,"rating":4.7,"rating_drop":1.61}
 {"aid":"33adb32712946338","date":"2026-10","branch":"Unbekannt","city":"Leipzig","nameable":true,"range_min":11,"range_max":20,"rating":4,"rating_drop":0.1}

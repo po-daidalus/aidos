@@ -134,9 +134,31 @@ if (rawChecks.length && !noChecks) {
 // flag decides only whether an entity may be shown INDIVIDUALLY on the listing page. Individuals
 // (nameable=false) still contribute anonymously to the Germany-wide statistics; build.mjs keeps
 // their names/addresses out of the browser-shipped data.js.
-const nameableN = allRecs.filter((r) => classify(r.name, r.category).keep).length;
-
 const db = fs.existsSync(DB_PATH) ? JSON.parse(fs.readFileSync(DB_PATH, 'utf8')) : { businesses: {} };
+// RENAME CARRY-OVER. A place we already publish can fall foul of the filter after Google shortens
+// its name ("Only to napoli pizza service" → "ONLY TO NAPOLI" read as a bare personal name); its
+// month then lands under the salted key and the public profile silently stops updating. Same
+// place id + every word of the new name already in the vetted old name ⇒ still the same business.
+// Deliberately a SUBSET test, not a similarity score: a rename that ADDS a word (e.g. a doctor's
+// surname) is never carried over, so this can never publish a name that was not published before.
+// Renames that add a word need a human: pipeline/verified-renames.json lists place ids Markus has
+// checked by hand (same listing, new name is still clearly a business, not a person).
+// Snapshot taken before this run touches the DB, so all classify sites below agree.
+const vettedName = new Map(Object.entries(db.businesses).filter(([, b]) => b.nameable && b.name).map(([k, b]) => [k, b.name]));
+const VERIFIED_RENAMES = new URL('verified-renames.json', import.meta.url);
+const verifiedRenames = new Set(fs.existsSync(VERIFIED_RENAMES) ? JSON.parse(fs.readFileSync(VERIFIED_RENAMES, 'utf8')).map((v) => v.place_id) : []);
+const carried = new Set();
+function nameableOf(rawId, name, category) {
+  if (classify(name, category).keep) return true;
+  const old = vettedName.get(rawId);
+  if (!old || !name) return false;
+  const oldToks = new Set(normName(old).split(' ')), newToks = normName(name).split(' ').filter(Boolean);
+  const subset = newToks.length && newToks.every((t) => oldToks.has(t));
+  if (!subset && !verifiedRenames.has(rawId)) return false;
+  if (!carried.has(rawId)) { carried.add(rawId); console.log(`  rename carry-over: "${old}" → "${name}" (${rawId}) stays nameable`); }
+  return true;
+}
+const nameableN = allRecs.filter((r) => nameableOf(r.key, r.name, r.category)).length;
 // Cross-export twin (hex arrived in an EARLIER export): redirect incoming q:-records onto the
 // existing hex entry instead of inserting a duplicate. (q-then-hex is covered by the migration.)
 {
@@ -166,7 +188,7 @@ for (const r of allRecs) {
   // natural persons are stored under a salted, non-reversible hash (no raw place_id anywhere).
   const nameRaw = r.name || null;
   const catRaw = r.category || osmCat.get(normName(nameRaw)) || null;
-  const nameableFirst = classify(nameRaw, catRaw).keep;
+  const nameableFirst = nameableOf(rawId, nameRaw, catRaw);
   const key = nameableFirst ? rawId : anonId(rawId);
   let prev = db.businesses[key] || {};
   // Migration: this place may exist under a q:-key from an earlier id-less capture — adopt its
@@ -187,7 +209,7 @@ for (const r of allRecs) {
   const rmin = intv(r.range_min), rmax = intv(r.range_max);
   const est = estimate(rating, reviews, rmin, rmax);
   const name = r.name || prev.name || null, category = r.category || osmCat.get(normName(name)) || prev.category || null;
-  const nameable = classify(name, category).keep;
+  const nameable = nameableOf(rawId, name, category);
   const branch = branchOf(name, category), city = cityOf(name, r.city || prev.city, r.address || prev.address) || defCity || prev.city || null;
   if (nameable) {
     db.businesses[key] = {
@@ -260,7 +282,7 @@ for (const r of allRecs) {
   const row = {
     aid: anonId(r.key), date: month, branch: branchOf(name, category) || 'Unbekannt',
     city: cityOf(name, r.city, r.address) || defCity || 'Unbekannt',
-    nameable: classify(name, category).keep, // whether this entity may be named on listing pages
+    nameable: nameableOf(r.key, name, category), // whether this entity may be named on listing pages
     range_min: rmin, range_max: rmax, rating,
     // Written with whatever counterfactual model was current at ingest time, and the anonymized feed
     // deliberately carries no review count, so it cannot be recomputed later the way build.mjs

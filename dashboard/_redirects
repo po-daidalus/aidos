@@ -1,0 +1,3 @@
+# Profile slugs follow the Google name, so a rename moves the page. Keep old URLs alive (301).
+/unternehmen/grand-grill-restaurant-dresden /unternehmen/grand-flavour-restaurant-dresden 301
+/en/unternehmen/grand-grill-restaurant-dresden /en/unternehmen/grand-flavour-restaurant-dresden 301
