@@ -30,6 +30,12 @@
     .sf-chart .ghost { fill: var(--data-blue); opacity: 0; transition: opacity 1.2s var(--ease); }
     .sf-chart.fallen .ghost { opacity: .13; }
     [hidden] { display: none !important; }
+    .sf-filter { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 22px 0 4px; padding-top: 16px; border-top: 1px solid var(--rule); }
+    .sf-filter .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+    .sf-filter button { font: 500 13px var(--sans); padding: 6px 13px; border-radius: 16px; border: 1px solid var(--rule-2); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+    .sf-filter button.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .sf-filter select { font: 500 13px var(--sans); padding: 6px 10px; border-radius: 16px; border: 1px solid var(--rule-2); background: var(--surface); color: var(--ink); }
+    .sf-chart .empty { fill: var(--ink-3); font: 400 15px var(--sans); }
     .sf-fine { font-size: 13px; color: var(--ink-3); max-width: 72ch; margin-top: 18px; line-height: 1.55; }
   </style>
 </head>
@@ -45,6 +51,7 @@
         <button class="btn btn-primary" id="play">▶ Entfernte Bewertungen zurückrechnen</button>
         <button class="btn btn-ghost" id="back" hidden>↺ Wie Google sie zeigt</button>
       </div>
+      <div class="sf-filter"><div class="chips" id="fBranch"></div><select id="fCity" aria-label="Stadt"></select></div>
       <div class="sf-chart" id="chart"><div class="sf-tip" id="tip"></div></div>
       <div class="sf-legend"><span><i style="background:var(--data-blue)"></i>wie Google die Note zeigt</span><span><i style="background:var(--accent)"></i>mit den entfernten Bewertungen (höchstens)</span><span><i style="background:#fff;border:2px solid var(--accent)"></i>nach unten offen („über 250")</span></div>
       <p class="sf-fine">Vorsichtigste Schätzung: die kleinste von Google genannte Zahl entfernter Bewertungen, jede mit milden 2★ zurück in den Schnitt gerechnet. Waren Entfernungen berechtigt, etwa bei Fake-Kampagnen, ist die angezeigte Note die zutreffendere. Erhebungsstand Juli–Oktober 2026.</p>
@@ -52,103 +59,162 @@
   </div>
   <script src="_proto-data.js?v=df9e689d"></script>
   <script>
-    const P = window.PROTO, S = P.stars;           // [shown, est, open, name, city]
+    const P = window.PROTO, S = P.stars;           // [shown, est, open, name, city, branch]
     const de1 = (n) => n.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
     const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const MIN_N = 10;   // below this a "distribution" is a handful of named businesses, not a pattern
 
-    // Geometry: 0.1★ bins on a 2.8–5.0 axis; dots stack upward in each bin column.
-    const W = 1000, H = 470, X0 = 40, X1 = 980, BASE = 420, LO = 2.8, HI = 5.0, R = 3.1, PITCH = 7.4;
-    const nb = Math.round((HI - LO) * 10) + 1, colW = (X1 - X0) / nb, perRow = Math.max(1, Math.floor((colW - 4) / PITCH));
+    // ---------- geometry: 0.1★ columns on a 2.8–5.0 axis, dots stacked upward ----------
+    const W = 1000, H = 470, X0 = 40, X1 = 980, BASE = 420, LO = 2.8, HI = 5.0, MAXH = 320;
+    let R = 3.1, PITCH = 7.4;
+    const nb = Math.round((HI - LO) * 10) + 1, colW = (X1 - X0) / nb;
+    let perRow = 4;
     // floor, not round: a 4,47 estimate belongs left of the 4,5★ line, exactly as the counter counts it
     const bin = (v) => Math.max(0, Math.min(nb - 1, Math.floor((Math.max(LO, v) - LO) * 10 + 1e-6)));
     const slotXY = (b, k) => [X0 + b * colW + (colW - perRow * PITCH) / 2 + (k % perRow) * PITCH + PITCH / 2, BASE - 6 - Math.floor(k / perRow) * PITCH];
-    function layout(val) {
-      const fill = new Array(nb).fill(0), pos = new Array(S.length);
-      S.map((s, i) => [i, val(s)]).sort((a, b) => b[1] - a[1]).forEach(([i, v]) => { const b = bin(v); pos[i] = slotXY(b, fill[b]++); });
+    function layout(idx, field) {
+      const fill = new Array(nb).fill(0), pos = {};
+      idx.slice().sort((a, b) => S[b][field] - S[a][field]).forEach((i) => { const b = bin(S[i][field]); pos[i] = slotXY(b, fill[b]++); });
       return pos;
     }
-    const A = layout((s) => s[0]), B = layout((s) => s[1]);
     const thrX = X0 + bin(4.5) * colW;
+    const tickX = (t) => X0 + bin(t) * colW + colW / 2;
+    const ticks = [3, 3.5, 4, 4.5, 5].map((t) => `<line class="ax" x1="${tickX(t)}" x2="${tickX(t)}" y1="${BASE}" y2="${BASE + 6}"/><text class="tk" x="${tickX(t)}" y="${BASE + 24}" text-anchor="middle">${de1(t)}★</text>`).join('');
+    const NS = 'http://www.w3.org/2000/svg', chart = document.getElementById('chart');
+    chart.insertAdjacentHTML('afterbegin', `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Verteilung der Noten: angezeigt und mit den entfernten Bewertungen"><line class="ax" x1="${X0}" x2="${X1}" y1="${BASE}" y2="${BASE}"/>${ticks}<line class="thr" x1="${thrX}" x2="${thrX}" y1="40" y2="${BASE}"/><text class="thrl" x="${thrX + 8}" y="54">4,5★ und besser →</text><g id="ghost"></g><g id="dots"></g><text class="empty" id="empty" x="${W / 2}" y="${BASE / 2}" text-anchor="middle"></text></svg>`);
+    const mk = (parent, cls) => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', R); if (cls) c.setAttribute('class', cls); parent.appendChild(c); return c; };
+    const ghosts = S.map(() => mk(chart.querySelector('#ghost'), 'ghost'));
+    const dots = S.map(() => mk(chart.querySelector('#dots')));
 
-    const ticks = [3, 3.5, 4, 4.5, 5].map((t) => `<line class="ax" x1="${X0 + bin(t) * colW + colW / 2}" x2="${X0 + bin(t) * colW + colW / 2}" y1="${BASE}" y2="${BASE + 6}"/><text class="tk" x="${X0 + bin(t) * colW + colW / 2}" y="${BASE + 24}" text-anchor="middle">${de1(t)}★</text>`).join('');
-    const svgNS = 'http://www.w3.org/2000/svg';
-    const chart = document.getElementById('chart');
-    chart.insertAdjacentHTML('afterbegin', `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Verteilung der Noten: angezeigt und mit den entfernten Bewertungen"><line class="ax" x1="${X0}" x2="${X1}" y1="${BASE}" y2="${BASE}"/>${ticks}<line class="thr" x1="${thrX}" x2="${thrX}" y1="40" y2="${BASE}"/><text class="thrl" x="${thrX + 8}" y="54">4,5★ und besser →</text><g id="ghost"></g><g id="dots"></g></svg>`);
-    const g = chart.querySelector('#dots'), gg = chart.querySelector('#ghost');
-    // the tower as Google shows it stays behind as a pale silhouette, so before and after can be compared
-    S.forEach((s, i) => { const c = document.createElementNS(svgNS, 'circle'); c.setAttribute('class', 'ghost'); c.setAttribute('r', R); c.setAttribute('cx', A[i][0]); c.setAttribute('cy', A[i][1]); gg.appendChild(c); });
-    const dots = S.map((s, i) => {
-      const c = document.createElementNS(svgNS, 'circle');
-      c.setAttribute('r', R); c.setAttribute('cx', A[i][0]); c.setAttribute('cy', A[i][1]);
-      c.setAttribute('fill', 'var(--data-blue)'); g.appendChild(c); return c;
-    });
-
-    // Colour mix blue → red for dots that actually move; open-ended dots become rings.
+    // ---------- state: every dot tweens from where it is to where it should be ----------
+    const cur = S.map(() => ({ x: X0 + (X1 - X0) / 2, y: BASE, o: 0, t: 0 }));   // t: 0 = blue/shown, 1 = red/estimate
+    let fallen = false, sel = { b: '', c: '' }, raf;
     const mix = (t) => { const a = [36, 86, 166], b = [179, 30, 38]; return `rgb(${a.map((v, k) => Math.round(v + (b[k] - v) * t)).join(',')})`; };
     const moves = S.map((s) => s[0] - s[1] >= 0.05);
-    const shownTop = S.filter((s) => s[0] >= 4.5).length, estTop = S.filter((s) => s[1] >= 4.5).length;
-    const drops = S.map((s) => s[0] - s[1]), small = drops.filter((d) => d < 0.3).length, big = drops.filter((d) => d >= 0.9).length;
-    const nEl = document.getElementById('n'), ofEl = document.getElementById('of'), cap = document.getElementById('cap');
-    nEl.textContent = shownTop; ofEl.textContent = `von ${S.length} Profilen mit Lösch-Hinweis zeigen bei Google 4,5 Sterne oder mehr.`;
-
-    // Bigger drops start later, so the tower visibly crumbles from the top rather than shifting as a block.
-    const delay = S.map((s) => Math.min(900, (s[0] - s[1]) * 1400) + Math.random() * 250);
-    let raf, state = 0;
-    function animate(to) {
-      cancelAnimationFrame(raf);
-      const from = state, t0 = performance.now(), DUR = reduce ? 0 : 1400;
-      const ease = (x) => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-      const frame = (now) => {
-        let done = true, top = 0;
-        S.forEach((s, i) => {
-          const d = to > from ? delay[i] : 0;
-          let p = DUR ? Math.min(1, Math.max(0, (now - t0 - d) / DUR)) : 1;
-          if (p < 1) done = false;
-          const q = from + (to - from) * ease(p);
-          const [ax, ay] = A[i], [bx, by] = B[i];
-          // a small hop on the way down: dots arc rather than slide
-          const hop = Math.sin(Math.PI * q) * (moves[i] ? 26 : 0);
-          dots[i].setAttribute('cx', ax + (bx - ax) * q);
-          dots[i].setAttribute('cy', ay + (by - ay) * q - hop);
-          const open = s[2] && q > .5;
-          dots[i].setAttribute('fill', open ? '#fff' : moves[i] ? mix(q) : 'var(--data-blue)');
-          dots[i].setAttribute('stroke', open ? 'var(--accent)' : 'none');
-          dots[i].setAttribute('stroke-width', open ? 1.6 : 0);
-          if ((q < .5 ? s[0] : s[1]) >= 4.5) top++;
-        });
-        nEl.textContent = top;
-        if (!done) raf = requestAnimationFrame(frame);
-        else {
-          state = to;
-          nEl.classList.toggle('after', to === 1);
-          chart.classList.toggle('fallen', to === 1);
-          ofEl.textContent = to === 1
-            ? `von ${S.length} Profilen kämen mit den entfernten Bewertungen noch auf 4,5 Sterne oder mehr – vorsichtig gerechnet.`
-            : `von ${S.length} Profilen mit Lösch-Hinweis zeigen bei Google 4,5 Sterne oder mehr.`;
-          cap.textContent = to === 1
-            ? `Die Spitze zerfällt: ${shownTop - estTop} Profile rutschen unter die 4,5★-Marke. ${small} von ${S.length} verlieren weniger als drei Zehntel – ${big} fast einen ganzen Stern oder mehr.`
-            : 'Jeder Punkt ist ein Profil, so wie Google es anzeigt.';
-          document.getElementById('play').hidden = to === 1; document.getElementById('back').hidden = to === 0;
-        }
-      };
-      raf = requestAnimationFrame(frame);
+    function draw(i) {
+      const c = cur[i], d = dots[i], s = S[i], open = s[2] && c.t > .5;
+      d.setAttribute('cx', c.x); d.setAttribute('cy', c.y); d.setAttribute('opacity', c.o);
+      d.setAttribute('fill', open ? '#fff' : moves[i] ? mix(c.t) : 'var(--data-blue)');
+      d.setAttribute('stroke', open ? 'var(--accent)' : 'none'); d.setAttribute('stroke-width', open ? 1.6 : 0);
     }
-    document.getElementById('play').onclick = () => animate(1);
-    document.getElementById('back').onclick = () => animate(0);
-    // play once when the chart scrolls into view
-    new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); setTimeout(() => state === 0 && animate(1), 700); } }, { threshold: .5 }).observe(chart);
+    function tween(target, { dur = 1000, delay = () => 0, hop = () => 0 } = {}) {
+      cancelAnimationFrame(raf);
+      const from = cur.map((c) => ({ ...c })), t0 = performance.now(), D = reduce ? 0 : dur;
+      const ease = (x) => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+      return new Promise((res) => {
+        const frame = (now) => {
+          let done = true;
+          S.forEach((s, i) => {
+            const p = D ? Math.min(1, Math.max(0, (now - t0 - delay(i)) / D)) : 1, q = ease(p);
+            if (p < 1) done = false;
+            const a = from[i], b = target[i];
+            cur[i] = { x: a.x + (b.x - a.x) * q, y: a.y + (b.y - a.y) * q - Math.sin(Math.PI * q) * hop(i), o: a.o + (b.o - a.o) * q, t: a.t + (b.t - a.t) * q };
+            draw(i);
+          });
+          updateCount();
+          if (!done) raf = requestAnimationFrame(frame); else res();
+        };
+        raf = requestAnimationFrame(frame);
+      });
+    }
 
-    // Hover: nearest dot within 14px, so tiny marks are still easy to hit.
+    // ---------- filter ----------
+    const inSel = (s) => (!sel.b || s[5] === sel.b) && (!sel.c || s[4] === sel.c);
+    const members = () => S.map((s, i) => i).filter((i) => inSel(S[i]));
+    // Dot size follows the selection: the tallest column (before or after the fall) fills the plot,
+    // so 39 Berlin restaurants read as clearly as all 709 profiles.
+    function fit(idx) {
+      const cnt = (f) => { const c = new Array(nb).fill(0); idx.forEach((i) => c[bin(S[i][f])]++); return Math.max(1, ...c); };
+      const maxC = Math.max(cnt(0), cnt(1));
+      let best = [7.4, 4];
+      for (let p = 1; p <= 8; p++) { const pitch = Math.min((colW - 4) / p, MAXH / Math.ceil(maxC / p), 18); if (pitch > best[0] || (p === 1 && pitch >= best[0])) best = [pitch, p]; }
+      [PITCH, perRow] = best; R = PITCH * 0.42;
+      dots.forEach((d) => d.setAttribute('r', R)); ghosts.forEach((g) => g.setAttribute('r', R));
+    }
+    function targets(idx, isFallen) {
+      if (idx.length) fit(idx);
+      const A = layout(idx, 0), B = layout(idx, 1), on = new Set(idx);
+      ghosts.forEach((g, i) => { const p = A[i]; g.setAttribute('cx', p ? p[0] : -99); g.setAttribute('cy', p ? p[1] : -99); });
+      return S.map((s, i) => {
+        if (!on.has(i)) return { x: cur[i].x, y: cur[i].y, o: 0, t: cur[i].t };
+        const p = isFallen ? B[i] : A[i];
+        return { x: p[0], y: p[1], o: 1, t: isFallen ? 1 : 0 };
+      });
+    }
+
+    // ---------- copy ----------
+    const nEl = document.getElementById('n'), ofEl = document.getElementById('of'), cap = document.getElementById('cap'), emptyEl = document.getElementById('empty');
+    const where = () => [sel.b, sel.c].filter(Boolean).join(', ');
+    function updateCount() {
+      const idx = members(); if (idx.length < MIN_N) return;
+      nEl.textContent = idx.filter((i) => (cur[i].t < .5 ? S[i][0] : S[i][1]) >= 4.5).length;
+    }
+    function settleCopy() {
+      const idx = members(), N = idx.length, w = where();
+      const top0 = idx.filter((i) => S[i][0] >= 4.5).length, top1 = idx.filter((i) => S[i][1] >= 4.5).length;
+      const drops = idx.map((i) => S[i][0] - S[i][1]), small = drops.filter((d) => d < 0.3).length, big = drops.filter((d) => d >= 0.9).length;
+      nEl.classList.toggle('after', fallen);
+      chart.classList.toggle('fallen', fallen);
+      if (N < MIN_N) {
+        nEl.textContent = '–';
+        ofEl.textContent = `${w}: nur ${N} ${N === 1 ? 'Profil' : 'Profile'} – zu wenige für eine Verteilung.`;
+        cap.innerHTML = `Einzelne Betriebe zeigt die <a href="listing">vollständige Liste</a>.`;
+        emptyEl.textContent = `zu wenige Profile (unter ${MIN_N})`;
+        return;
+      }
+      emptyEl.textContent = '';
+      nEl.textContent = fallen ? top1 : top0;
+      const scope = w ? ` (${w})` : '';
+      ofEl.textContent = fallen
+        ? `von ${N} Profilen${scope} kämen mit den entfernten Bewertungen noch auf 4,5 Sterne oder mehr – vorsichtig gerechnet.`
+        : `von ${N} Profilen${scope} mit Lösch-Hinweis zeigen bei Google 4,5 Sterne oder mehr.`;
+      cap.textContent = fallen
+        ? `${top0 - top1} rutschen unter die 4,5★-Marke. ${small} von ${N} verlieren weniger als drei Zehntel` + (big ? ` – ${big} fast einen ganzen Stern oder mehr.` : '.')
+        : 'Jeder Punkt ist ein Profil, so wie Google es anzeigt.';
+      document.getElementById('play').hidden = fallen; document.getElementById('back').hidden = !fallen;
+    }
+
+    // ---------- actions ----------
+    function fall(to) {
+      fallen = to;
+      const idx = members(); if (idx.length < MIN_N) return settleCopy();
+      document.getElementById('play').hidden = true; document.getElementById('back').hidden = true;
+      // bigger drops start later, so the tower visibly crumbles from the top instead of shifting as a block
+      const delay = (i) => to ? Math.min(900, (S[i][0] - S[i][1]) * 1400) + ((i * 7919) % 250) : 0;
+      tween(targets(idx, to), { dur: 1400, delay, hop: (i) => (moves[i] ? 26 : 0) }).then(settleCopy);
+    }
+    function refilter() {
+      const idx = members();
+      tween(targets(idx.length < MIN_N ? [] : idx, fallen), { dur: 700 }).then(settleCopy);
+    }
+    document.getElementById('play').onclick = () => fall(true);
+    document.getElementById('back').onclick = () => fall(false);
+
+    // filter controls: industries with enough profiles as chips, the 20 survey cities as a select
+    const count = (k, v) => S.filter((s) => s[k] === v).length;
+    const brs = [...new Set(S.map((s) => s[5]))].filter((b) => b !== 'Sonstige' && count(5, b) >= MIN_N).sort((a, b) => count(5, b) - count(5, a));
+    const cities = [...new Set(S.map((s) => s[4]))].filter((c) => c && count(4, c) >= MIN_N).sort((a, b) => a.localeCompare(b, 'de'));
+    const fb = document.getElementById('fBranch'), fc = document.getElementById('fCity');
+    fb.innerHTML = ['', ...brs].map((b) => `<button type="button" data-b="${esc(b)}" class="${b ? '' : 'on'}">${b ? esc(b) : 'Alle Branchen'}</button>`).join('');
+    fc.innerHTML = `<option value="">Alle Städte</option>` + cities.map((c) => `<option>${esc(c)}</option>`).join('');
+    fb.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; sel.b = b.dataset.b; fb.querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b)); refilter(); });
+    fc.addEventListener('change', () => { sel.c = fc.value; refilter(); });
+
+    // first paint: dots rise into the tower, then the fall plays once when the chart is in view
+    tween(targets(members(), false), { dur: 900, delay: (i) => (i * 13) % 400 }).then(settleCopy);
+    new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); setTimeout(() => !fallen && fall(true), 1500); } }, { threshold: .5 }).observe(chart);
+
+    // ---------- hover: nearest visible dot within 14px ----------
     const tip = document.getElementById('tip'), svg = chart.querySelector('svg');
     svg.addEventListener('pointermove', (e) => {
       const r = svg.getBoundingClientRect(), k = W / r.width, mx = (e.clientX - r.left) * k, my = (e.clientY - r.top) * k;
       let best = -1, bd = 14 * 14;
-      dots.forEach((c, i) => { const dx = c.cx.baseVal.value - mx, dy = c.cy.baseVal.value - my, d = dx * dx + dy * dy; if (d < bd) { bd = d; best = i; } });
+      cur.forEach((c, i) => { if (c.o < .5) return; const dx = c.x - mx, dy = c.y - my, d = dx * dx + dy * dy; if (d < bd) { bd = d; best = i; } });
       if (best < 0) { tip.style.opacity = 0; return; }
-      const s = S[best], c = dots[best];
-      tip.innerHTML = `<b>${esc(s[3])}</b> · ${esc(s[4])}<br>angezeigt ${de1(s[0])}★ → ${s[2] ? 'höchstens' : 'höchstens'} ${de1(s[1])}★${s[2] ? ' (nach unten offen)' : ''}`;
-      tip.style.left = (c.cx.baseVal.value / k) + 'px'; tip.style.top = (c.cy.baseVal.value / k) + 'px'; tip.style.opacity = 1;
+      const s = S[best], c = cur[best];
+      tip.innerHTML = `<b>${esc(s[3])}</b> · ${esc(s[4] || '')}<br>angezeigt ${de1(s[0])}★ → höchstens ${de1(s[1])}★${s[2] ? ' (nach unten offen)' : ''}`;
+      tip.style.left = (c.x / k) + 'px'; tip.style.top = (c.y / k) + 'px'; tip.style.opacity = 1;
     });
     svg.addEventListener('pointerleave', () => (tip.style.opacity = 0));
   </script>
