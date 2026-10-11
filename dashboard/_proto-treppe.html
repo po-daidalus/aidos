@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Prototyp B · Die Treppe — aidos</title>
+  <link href="fonts/fonts.css" rel="stylesheet" />
+  <link href="site.css" rel="stylesheet" />
+  <style>
+    .proto-tag { display: inline-block; font: 600 11px var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); border: 1px solid var(--rule-2); border-radius: 12px; padding: 3px 10px; margin-bottom: 18px; }
+    .tp { max-width: 1040px; }
+    .tp h1 { font-size: clamp(30px, 4.6vw, 50px); max-width: 20ch; }
+    .tp-month { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin: 26px 0 10px; }
+    .tp-month button { font: 500 14px var(--sans); padding: 8px 16px; border-radius: 20px; border: 1px solid var(--rule-2); background: var(--surface); color: var(--ink-2); cursor: pointer; transition: all .2s var(--ease); }
+    .tp-month button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .tp-month .play { border-radius: 50%; width: 40px; height: 40px; padding: 0; font-size: 15px; margin-right: 8px; }
+    .tp-month .bar { flex: 1; min-width: 80px; height: 3px; background: var(--rule); border-radius: 2px; overflow: hidden; }
+    .tp-month .bar i { display: block; height: 100%; width: 0; background: var(--ink); transition: width .3s linear; }
+    .tp-cap { display: grid; grid-template-columns: auto 1fr; gap: 6px 22px; align-items: baseline; min-height: 96px; margin: 8px 0 4px; }
+    .tp-cap .big { font-family: var(--serif); font-weight: 600; font-size: clamp(44px, 7vw, 72px); line-height: 1; }
+    .tp-cap .big .u { color: var(--accent); } .tp-cap .big .d { color: var(--data-blue); } .tp-cap .big .sep { color: var(--rule-2); margin: 0 10px; }
+    .tp-cap .txt { font-family: var(--serif); font-size: 20px; color: var(--ink-2); max-width: 46ch; line-height: 1.4; }
+    @media (max-width: 700px) { .tp-cap { grid-template-columns: 1fr; } }
+    .tp-chart svg { width: 100%; height: auto; display: block; }
+    .tp-chart .step { fill: var(--fill); }
+    .tp-chart .stepl { fill: var(--ink-2); font: 500 13px var(--sans); }
+    .tp-chart .cnt { fill: var(--ink-3); font: 400 12px var(--sans); font-variant-numeric: tabular-nums; }
+    .tp-chart .axl { fill: var(--ink-3); font: 400 12px var(--sans); }
+    .tp-legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+    .tp-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+    .tp-fine { font-size: 13px; color: var(--ink-3); max-width: 72ch; margin-top: 18px; line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <div class="wrap tp">
+    <section>
+      <span class="proto-tag">Prototyp B · Die Treppe · echte Daten, Zahlen vorläufig</span>
+      <div class="kicker">Monat für Monat</div>
+      <h1>Wer rückt eine Stufe höher?</h1>
+      <p class="deck">Google nennt die entfernten Bewertungen nur in Stufen – von „11 bis 20" bis „über 250". Jeden Monat messen wir dieselben Betriebe neu. Jeder Punkt ist ein Profil.</p>
+      <div class="tp-month" id="months"></div>
+      <div class="tp-cap"><div class="big" id="big"></div><div class="txt" id="txt"></div></div>
+      <div class="tp-chart" id="chart"></div>
+      <div class="tp-legend"><span><i style="background:var(--accent)"></i>eine Stufe höher als im Vormonat</span><span><i style="background:var(--data-blue)"></i>eine Stufe niedriger</span><span><i style="background:#b9bcc4"></i>unverändert</span></div>
+      <p class="tp-fine">Gezeigt sind Profile, die in mindestens zwei Monaten gemessen wurden; fehlt eine Messung, ist der Punkt in diesem Monat ausgeblendet. Google veröffentlicht nur diese Stufen, der Wechsel auf eine andere Stufe ist deshalb die kleinste sicher messbare Veränderung – eine Stückzahl entfernter Bewertungen lässt sich daraus nicht ableiten.</p>
+    </section>
+  </div>
+  <script src="_proto-data.js"></script>
+  <script>
+    const P = window.PROTO, PATHS = P.paths, M = P.months, BANDS = P.bands;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mName = (ym) => new Date(ym + '-01T00:00:00Z').toLocaleDateString('de-DE', { month: 'long', timeZone: 'UTC' });
+    const nf = (n) => n.toLocaleString('de-DE');
+
+    // Staircase: step i sits higher than step i-1; dots pile up on top of their step.
+    const W = 1000, H = 560, X0 = 20, GAP = 8, NB = BANDS.length, SW = (W - X0 * 2 - GAP * (NB - 1)) / NB;
+    const R = 3, PITCH = 7.2, PER = Math.floor((SW - 8) / PITCH), RISE = 34, FLOOR = 520;
+    const stepTop = (b) => FLOOR - 26 - b * RISE;
+    const slot = (b, k) => [X0 + b * (SW + GAP) + (SW - PER * PITCH) / 2 + (k % PER) * PITCH + PITCH / 2, stepTop(b) - 6 - Math.floor(k / PER) * PITCH];
+
+    // Positions per month. Within a step, dots are ordered by their band history, so a business keeps
+    // roughly its place from month to month and only the movers travel.
+    const order = PATHS.map((p, i) => i).sort((a, b) => PATHS[a].join() < PATHS[b].join() ? -1 : 1);
+    // Whoever changed step this month lands on TOP of the new pile, where the eye can find it.
+    const POS = M.map((_, m) => {
+      const fill = new Array(NB).fill(0), pos = new Array(PATHS.length).fill(null);
+      const arrived = (i) => m > 0 && PATHS[i][m - 1] >= 0 && PATHS[i][m] !== PATHS[i][m - 1];
+      for (const i of [...order.filter((i) => !arrived(i)), ...order.filter(arrived)]) { const b = PATHS[i][m]; if (b >= 0) pos[i] = slot(b, fill[b]++); }
+      return { pos, fill };
+    });
+    // crop the drawing to the tallest pile of any month (+ room for its count label)
+    const TOPY = Math.min(...POS.flatMap((p) => p.fill.map((n, b) => stepTop(b) - 14 - Math.ceil(n / PER) * PITCH))) - 24;
+    const change = (m) => { let up = 0, dn = 0; PATHS.forEach((p) => { if (m && p[m] >= 0 && p[m - 1] >= 0) { if (p[m] > p[m - 1]) up++; else if (p[m] < p[m - 1]) dn++; } }); return [up, dn]; };
+
+    const steps = BANDS.map((l, b) => {
+      const x = X0 + b * (SW + GAP), y = stepTop(b);
+      return `<rect class="step" x="${x}" y="${y}" width="${SW}" height="${FLOOR - y}" rx="4"/><text class="stepl" x="${x + SW / 2}" y="${FLOOR + 22}" text-anchor="middle">${l}</text>`;
+    }).join('');
+    const chart = document.getElementById('chart');
+    chart.innerHTML = `<svg viewBox="0 ${TOPY} ${W} ${H + 20 - TOPY}" role="img" aria-label="Profile nach Googles Stufen entfernter Bewertungen, Monat für Monat">${steps}<text class="axl" x="${W - X0}" y="${FLOOR + 44}" text-anchor="end">entfernte Bewertungen in den letzten 365 Tagen, laut Google →</text><g id="cnts"></g><g id="dots"></g></svg>`;
+    const NS = 'http://www.w3.org/2000/svg', g = chart.querySelector('#dots'), cg = chart.querySelector('#cnts');
+    const dots = PATHS.map(() => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', R); c.setAttribute('fill', '#b9bcc4'); g.appendChild(c); return c; });
+    const cnts = BANDS.map((_, b) => { const t = document.createElementNS(NS, 'text'); t.setAttribute('class', 'cnt'); t.setAttribute('text-anchor', 'middle'); t.setAttribute('x', X0 + b * (SW + GAP) + SW / 2); cg.appendChild(t); return t; });
+
+    const GREY = '#b9bcc4';
+    function paint(m, colorize) {
+      PATHS.forEach((p, i) => {
+        const pos = POS[m].pos[i], c = dots[i];
+        if (!pos) { c.setAttribute('opacity', 0); return; }
+        c.setAttribute('opacity', 1); c.setAttribute('cx', pos[0]); c.setAttribute('cy', pos[1]);
+        const prev = m ? p[m - 1] : -1;
+        c.setAttribute('fill', colorize && prev >= 0 && p[m] > prev ? 'var(--accent)' : colorize && prev >= 0 && p[m] < prev ? 'var(--data-blue)' : GREY);
+        c.setAttribute('r', colorize && prev >= 0 && p[m] !== prev ? 4 : R);
+      });
+      BANDS.forEach((_, b) => { const n = POS[m].fill[b]; cnts[b].textContent = nf(n); cnts[b].setAttribute('y', stepTop(b) - 14 - Math.ceil(n / PER) * PITCH); });
+    }
+
+    // Caption: the number of the month is the headline; first month just sets the scene.
+    const big = document.getElementById('big'), txt = document.getElementById('txt');
+    function caption(m) {
+      if (!m) { big.innerHTML = nf(PATHS.filter((p) => p[0] >= 0).length); txt.textContent = `Profile im ${mName(M[0])} – der Ausgangspunkt. Die meisten sitzen auf den unteren Stufen.`; return; }
+      const [up, dn] = change(m);
+      big.innerHTML = `<span class="u">↑${nf(up)}</span>${dn ? `<span class="sep">/</span><span class="d">↓${nf(dn)}</span>` : ''}`;
+      txt.textContent = `${mName(M[m - 1])} → ${mName(M[m])}: ${up} Profile rücken eine Stufe höher` + (dn ? ` – und zum ersten Mal sinken ${dn}.` : ', keines sinkt.');
+    }
+
+    // Movers travel on an arc (up over the top, down underneath); the rest re-settle quietly.
+    let raf, cur = 0;
+    function go(m) {
+      cancelAnimationFrame(raf);
+      const from = cur, t0 = performance.now(), DUR = reduce ? 0 : 1300;
+      caption(m); setPills(m);
+      const ease = (x) => 1 - Math.pow(1 - x, 3);
+      const frame = (now) => {
+        const t = DUR ? Math.min(1, (now - t0) / DUR) : 1, q = ease(t);
+        PATHS.forEach((p, i) => {
+          const a = POS[from].pos[i], b = POS[m].pos[i], c = dots[i];
+          if (!b) { c.setAttribute('opacity', a ? 1 - q : 0); return; }
+          if (!a) { c.setAttribute('opacity', q); c.setAttribute('cx', b[0]); c.setAttribute('cy', b[1]); return; }
+          const moved = p[m] !== p[from] && p[from] >= 0, dir = p[m] > p[from] ? -1 : 1;
+          const arc = moved ? Math.sin(Math.PI * q) * 70 * dir : 0;
+          c.setAttribute('opacity', 1);
+          c.setAttribute('cx', a[0] + (b[0] - a[0]) * q);
+          c.setAttribute('cy', a[1] + (b[1] - a[1]) * q + arc);
+        });
+        if (t < 1) raf = requestAnimationFrame(frame); else { cur = m; paint(m, m === from + 1); }
+      };
+      // movers light up before they jump, so the eye knows where to look
+      if (m === cur + 1) PATHS.forEach((p, i) => { if (p[cur] >= 0 && p[m] >= 0 && p[m] !== p[cur]) { dots[i].setAttribute('fill', p[m] > p[cur] ? 'var(--accent)' : 'var(--data-blue)'); dots[i].setAttribute('r', 4); } else dots[i].setAttribute('fill', GREY); });
+      raf = requestAnimationFrame((n) => setTimeout(() => requestAnimationFrame(frame), reduce ? 0 : 450));
+    }
+
+    const months = document.getElementById('months');
+    months.innerHTML = `<button class="play" id="play" aria-label="Abspielen">▶</button>` + M.map((m, i) => `<button data-m="${i}">${mName(m)}</button>`).join('') + '<span class="bar"><i id="prog"></i></span>';
+    const setPills = (m) => { months.querySelectorAll('[data-m]').forEach((b) => b.classList.toggle('on', +b.dataset.m === m)); document.getElementById('prog').style.width = (100 * m / (M.length - 1)) + '%'; };
+    months.addEventListener('click', (e) => { const b = e.target.closest('[data-m]'); if (b) { stop(); go(+b.dataset.m); } });
+    let timer;
+    const stop = () => { clearTimeout(timer); document.getElementById('play').textContent = '▶'; };
+    function play() {
+      stop(); document.getElementById('play').textContent = '❚❚';
+      let m = cur >= M.length - 1 ? 0 : cur;
+      if (m === 0) { cur = 0; paint(0, false); caption(0); setPills(0); }
+      const next = () => { if (m >= M.length - 1) return stop(); go(++m); timer = setTimeout(next, 3200); };
+      timer = setTimeout(next, 1400);
+    }
+    document.getElementById('play').onclick = () => (document.getElementById('play').textContent === '▶' ? play() : stop());
+
+    paint(0, false); caption(0); setPills(0);
+    new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); play(); } }, { threshold: .4 }).observe(chart);
+  </script>
+</body>
+</html>
