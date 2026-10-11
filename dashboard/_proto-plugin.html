@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Prototyp · aidos für Chrome — aidos</title>
+  <link href="fonts/fonts.css" rel="stylesheet" />
+  <link href="site.css" rel="stylesheet" />
+  <style>
+    .proto-tag { display: inline-block; font: 600 11px var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); border: 1px solid var(--rule-2); border-radius: 12px; padding: 3px 10px; margin-bottom: 18px; }
+    .pp { max-width: 1040px; }
+    .pp h2 { margin-top: 0; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+    @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+    .note { font-size: 13px; color: var(--ink-3); margin-top: 10px; line-height: 1.5; }
+
+    /* neutral stand-in for "some map profile" — deliberately NOT Google's look */
+    .stage { background: repeating-linear-gradient(135deg, #eef0f3 0 14px, #f4f5f7 14px 28px); border: 1px solid var(--rule); border-radius: 12px; padding: 28px; min-height: 300px; position: relative; }
+    .stage .ph { background: #fff; border-radius: 10px; padding: 18px 20px; max-width: 360px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .stage .ph .t { height: 14px; width: 62%; background: #dfe2e7; border-radius: 4px; }
+    .stage .ph .r { display: flex; align-items: center; gap: 10px; margin-top: 12px; color: #8a8f99; font: 500 15px var(--sans); }
+    .stage .ph .r i { height: 10px; width: 90px; background: #e6e8ec; border-radius: 4px; }
+    .stage .ph .l { height: 10px; width: 80%; background: #eceef1; border-radius: 4px; margin-top: 10px; }
+    .stage-cap { position: absolute; right: 14px; bottom: 10px; font: 500 11px var(--sans); color: #9aa0a8; letter-spacing: .04em; }
+
+    /* ---------- the badge (collapsed) ---------- */
+    .ab { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; padding: 7px 12px 7px 10px; background: #171719; color: #fff; border-radius: 999px; font: 500 13.5px var(--sans); box-shadow: 0 6px 18px rgba(23,23,25,.22); cursor: pointer; user-select: none; transition: transform .15s var(--ease); }
+    .ab:hover { transform: translateY(-1px); }
+    .ab .mk { display: inline-flex; flex-direction: column; gap: 3px; }
+    .ab .mk b { display: block; height: 3px; border-radius: 2px; background: #7fa8e0; width: 16px; }
+    .ab .mk b + b { background: #e0565d; width: 10px; }
+    .ab .v1 { color: #a9c4ee; font-variant-numeric: tabular-nums; }
+    .ab .ar { color: #8a8d95; }
+    .ab .v2 { color: #ff8a8f; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .ab .tag { all: unset; font: 400 11px var(--sans); color: #9a9ca3; padding-left: 8px; border-left: 1px solid #3a3b40; }
+
+    /* ---------- the card (expanded) ---------- */
+    .ac { margin-top: 12px; width: 340px; max-width: 100%; background: #fff; color: var(--ink); border-radius: 14px; box-shadow: 0 18px 44px rgba(23,23,25,.18), 0 2px 6px rgba(23,23,25,.06); overflow: hidden; font-family: var(--sans); }
+    .ac .hd { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #171719; color: #fff; }
+    .ac .hd .brand { display: flex; align-items: center; gap: 9px; font: 600 14px var(--serif); letter-spacing: .01em; }
+    .ac .hd .x { color: #8a8d95; font-size: 18px; line-height: 1; cursor: pointer; }
+    .ac .bd { padding: 16px 16px 6px; }
+    .ac .nums { display: flex; align-items: flex-end; gap: 14px; }
+    .ac .n { font: 600 34px/1 var(--serif); font-variant-numeric: tabular-nums; }
+    .ac .n.s { color: var(--data-blue); } .ac .n.e { color: var(--accent); }
+    .ac .nl { font-size: 11.5px; color: var(--ink-3); margin-top: 4px; }
+    .ac .arw { color: var(--ink-3); font-size: 20px; padding-bottom: 14px; }
+    .ac .scale { height: 6px; border-radius: 3px; background: var(--fill); position: relative; margin: 14px 0 4px; }
+    .ac .scale i { position: absolute; top: -3px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; transform: translateX(-50%); }
+    .ac .scale u { position: absolute; top: 2px; height: 2px; background: var(--accent); }
+    .ac .sl { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--ink-3); }
+    .ac ul { list-style: none; padding: 0; margin: 12px 0 0; font-size: 13px; color: var(--ink-2); }
+    .ac li { padding: 8px 0; border-top: 1px solid var(--rule); line-height: 1.4; }
+    .ac li b { color: var(--ink); }
+    .ac .ft { padding: 10px 16px 14px; font-size: 11px; color: var(--ink-3); line-height: 1.45; }
+    .ac .ft a { color: var(--ink-2); }
+    .ac .acts { display: flex; gap: 14px; padding: 0 16px 14px; font-size: 12px; }
+    .ac .acts a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ---------- download section for the website ---------- */
+    .dl { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; background: #171719; color: #fff; border-radius: 16px; padding: 40px 44px; }
+    @media (max-width: 860px) { .dl { grid-template-columns: 1fr; padding: 28px; } }
+    .dl .k { font: 600 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #ff8a8f; }
+    .dl h3 { font: 600 clamp(28px, 3.6vw, 40px)/1.12 var(--serif); margin: 10px 0 12px; color: #fff; }
+    .dl p { color: #c9cbd1; font-size: 16px; line-height: 1.55; margin: 0 0 18px; }
+    .dl ul { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 10px; }
+    .dl li { display: flex; gap: 10px; font-size: 14.5px; color: #e6e7ea; }
+    .dl li::before { content: ""; flex: 0 0 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: #7fa8e0; }
+    .dl .cta { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #171719; font: 600 15px var(--sans); padding: 12px 20px; border-radius: 10px; }
+    .dl .cta small { font-weight: 400; color: #676972; }
+    .dl .fine { font-size: 12px; color: #8a8d95; margin-top: 14px; }
+    .dl .show { display: flex; justify-content: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap pp">
+    <section>
+      <span class="proto-tag">Prototyp · aidos für Chrome · nur Design, noch keine Funktion</span>
+      <div class="kicker">Konzept</div>
+      <h1>Der Bewertungs-Check direkt auf der Karte</h1>
+      <p class="deck">Ein kleines Abzeichen erscheint nur dort, wo Google selbst einen Lösch-Hinweis zeigt. Ein Klick öffnet die Einordnung. Alles wird im Browser gerechnet, nichts verlässt das Gerät.</p>
+    </section>
+
+    <section>
+      <div class="grid2">
+        <div>
+          <h2>1 · Zugeklappt</h2>
+          <div class="stage">
+            <div class="ph"><div class="t"></div><div class="r">4,8 <i></i></div><div class="l"></div>
+              <div class="ab" id="ab"><span class="mk"><b></b><b></b></span><span class="v1">4,8★</span><span class="ar">→</span><span class="v2">≤ 4,5★</span><span class="tag">Schätzung · aidos</span></div>
+            </div>
+            <span class="stage-cap">neutraler Platzhalter für ein Kartenprofil</span>
+          </div>
+          <p class="note">Schwarz, eigene Marke, eigene Form: Es soll nie wie ein Teil der Karte selbst aussehen. Erscheint nur, wenn Googles Hinweis sicher gelesen wurde; sonst erscheint gar nichts.</p>
+        </div>
+        <div>
+          <h2>2 · Aufgeklappt</h2>
+          <div class="stage">
+            <div class="ac">
+              <div class="hd"><span class="brand"><span class="ab mk" style="all:unset;display:inline-flex;flex-direction:column;gap:3px"><b style="display:block;height:3px;width:16px;border-radius:2px;background:#7fa8e0"></b><b style="display:block;height:3px;width:10px;border-radius:2px;background:#e0565d"></b></span>aidos Bewertungs-Check</span><span class="x">×</span></div>
+              <div class="bd">
+                <div class="nums"><div><div class="n s">4,8★</div><div class="nl">angezeigt</div></div><div class="arw">→</div><div><div class="n e">4,5★</div><div class="nl">höchstens, mit den entfernten</div></div></div>
+                <div class="scale"><u style="left:87.5%;width:7.5%"></u><i style="left:87.5%;background:var(--accent)"></i><i style="left:95%;background:var(--data-blue)"></i></div>
+                <div class="sl"><span>1★</span><span>5★</span></div>
+                <ul>
+                  <li>Laut Googles eigenem Hinweis wurden <b>51 bis 100 Bewertungen</b> in 365 Tagen nach Diffamierungs-Beschwerden entfernt.</li>
+                  <li>Das hebt die Note um <b>mindestens 0,3★</b>.</li>
+                  <li>Nur rund <b>5 % der Profile</b> tragen diesen Hinweis überhaupt.</li>
+                </ul>
+              </div>
+              <div class="ft">Rechnerische Schätzung, keine Tatsachenbehauptung. Waren die Entfernungen berechtigt, etwa bei Fake-Kampagnen, ist die angezeigte Note die zutreffendere. <a href="methodik">Methodik</a> · Nicht mit Google verbunden.</div>
+              <div class="acts"><a href="#">Auf dieser Seite ausblenden</a><a href="#">Fehler melden</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3 · Download-Bereich auf aidos.tech</h2>
+      <div class="dl">
+        <div>
+          <div class="k">aidos für Chrome</div>
+          <h3>Sieh beim Stöbern, was hinter einer Note steckt.</h3>
+          <p>Wo Google entfernte Bewertungen meldet, zeigt aidos dir direkt daneben, wie viel davon in der Note steckt.</p>
+          <ul>
+            <li>Liest nur die Seite, die du gerade ansiehst</li>
+            <li>Sendet nichts: kein Konto, kein Tracking, keine Daten an uns</li>
+            <li>Zeigt nichts, wenn Google keinen Hinweis anzeigt</li>
+          </ul>
+          <span class="cta">Zu Chrome hinzufügen <small>· bald verfügbar</small></span>
+          <div class="fine">Kostenlos · Open Source geplant · „Google" und „Google Maps" sind Marken der Google LLC, aidos ist nicht mit Google verbunden.</div>
+        </div>
+        <div class="show"><div class="ab" style="transform:scale(1.25);transform-origin:center"><span class="mk"><b></b><b></b></span><span class="v1">4,8★</span><span class="ar">→</span><span class="v2">≤ 4,5★</span><span class="tag">Schätzung · aidos</span></div></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
