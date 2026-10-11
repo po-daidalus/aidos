@@ -25,13 +25,15 @@
 .sfall-tip b { font-weight: 600; }
 
 /* footer row: legend left, actions right — on one baseline */
-.sfall-foot { display: flex; justify-content: space-between; align-items: center; gap: 14px 24px; flex-wrap: wrap; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.sfall-foot { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 14px 24px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); }
 .sfall-legend { display: flex; gap: 8px 18px; flex-wrap: wrap; font: 400 13px var(--sans); color: var(--ink-2); }
 .sfall-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
-.sfall-actions { display: flex; gap: 8px; }
+.sfall-actions { display: flex; gap: 8px; justify-self: end; }
+.sfall-btn[data-a="toggle"] { min-width: 15.5em; text-align: center; }
+.sfall-btn:disabled { opacity: .55; cursor: default; }
 .sfall-btn { font: 500 14px var(--sans); padding: 8px 15px; border-radius: 6px; border: 1px solid var(--rule-2); background: var(--surface); color: var(--ink); cursor: pointer; white-space: nowrap; transition: border-color .15s var(--ease), background .15s var(--ease); }
 .sfall-btn:hover { border-color: var(--ink); }
 .sfall-btn.primary { background: var(--ink); border-color: var(--ink); color: #fff; }
 .sfall-btn.primary:hover { background: var(--accent); border-color: var(--accent); }
 .sfall-fine { font: 400 12.5px/1.55 var(--sans); color: var(--ink-3); max-width: 76ch; margin: 12px 0 0; }
-@media (max-width: 640px) { .sfall-actions { width: 100%; } .sfall-btn { flex: 1; } }
+@media (max-width: 720px) { .sfall-foot { grid-template-columns: 1fr; } .sfall-actions { justify-self: stretch; } .sfall-btn { flex: 1; } .sfall-btn[data-a="toggle"] { min-width: 0; } }

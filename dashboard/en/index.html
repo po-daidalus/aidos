@@ -17,7 +17,7 @@
   <meta property="og:image" content="https://aidos.tech/og/sternenfall-en.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link href="../fonts/fonts.css" rel="stylesheet" />
-  <link href="../sternenfall.css?v=a3a0367f" rel="stylesheet" />
+  <link href="../sternenfall.css?v=447b84f1" rel="stylesheet" />
   <link href="../site.css?v=6f73fca3" rel="stylesheet" />
   <style>
     /* hero: der Bewertungs-Check */
@@ -96,6 +96,25 @@
       .mcard .ugrid i.u, .mcard .ugrid i.d, .mcard.in .ugrid i.u, .mcard.in .ugrid i.d { animation: none; transform: none; }
       .sharebar i, .cbars2 .t i { transition: none; }
     }
+    /* aidos für Chrome */
+    .dl { display: grid; grid-template-columns: 1.15fr .85fr; gap: 36px; align-items: center; background: #171719; color: #fff; border-radius: 16px; padding: 44px 48px; }
+    @media (max-width: 860px) { .dl { grid-template-columns: 1fr; padding: 30px 26px; } }
+    .dl .k { font: 600 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #ff8a8f; }
+    .dl h2 { font: 600 clamp(28px, 3.6vw, 40px)/1.12 var(--serif); margin: 10px 0 12px; color: #fff; }
+    .dl p { color: #c9cbd1; font-size: 16px; line-height: 1.55; margin: 0 0 18px; max-width: 46ch; }
+    .dl ul { list-style: none; padding: 0; margin: 0 0 26px; display: grid; gap: 10px; }
+    .dl li { display: flex; gap: 10px; font-size: 14.5px; color: #e6e7ea; }
+    .dl li::before { content: ""; flex: 0 0 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: #7fa8e0; }
+    .dl .cta { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #171719; font: 600 15px var(--sans); padding: 12px 20px; border-radius: 10px; }
+    .dl .cta small { font-weight: 400; color: #676972; }
+    .dl .fine { font-size: 12px; color: #8a8d95; margin-top: 14px; max-width: 60ch; }
+    .dl .show { display: flex; justify-content: center; }
+    .abadge { display: inline-flex; align-items: center; gap: 10px; padding: 9px 15px 9px 12px; background: #26272b; color: #fff; border-radius: 999px; font: 500 16px var(--sans); box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px #3a3b40; white-space: nowrap; }
+    .abadge .mk { display: inline-flex; flex-direction: column; gap: 3px; }
+    .abadge .mk b { display: block; height: 3px; border-radius: 2px; background: #7fa8e0; width: 18px; }
+    .abadge .mk b + b { background: #e0565d; width: 11px; }
+    .abadge .v1 { color: #a9c4ee; } .abadge .ar { color: #8a8d95; } .abadge .v2 { color: #ff8a8f; font-weight: 600; }
+    .abadge .tg { font-size: 12px; color: #9a9ca3; padding-left: 9px; border-left: 1px solid #44454b; }
     .lkres { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; max-width: 620px; }
     .lk-hit { display: flex; justify-content: space-between; gap: 12px; align-items: center; border: 1px solid var(--rule); border-radius: var(--radius-sm); padding: 11px 14px; background: var(--surface); }
     .lk-hit:hover { border-color: var(--accent); text-decoration: none; }
@@ -177,6 +196,25 @@
       </div>
     </section>
 
+    <!-- AIDOS FOR CHROME -->
+    <section>
+      <div class="dl">
+        <div>
+          <div class="k">aidos for Chrome</div>
+          <h2>See what is behind a rating while you browse.</h2>
+          <p>Where Google reports removed reviews, aidos shows right next to it how much of the rating rests on them.</p>
+          <ul>
+            <li>Reads only the page you are looking at</li>
+            <li>Sends nothing: no account, no tracking, no data to us</li>
+            <li>Shows nothing when Google shows no notice</li>
+          </ul>
+          <span class="cta">Add to Chrome <small>· coming soon</small></span>
+          <div class="fine">Free. "Google" and "Google Maps" are trademarks of Google LLC; aidos is not affiliated with Google.</div>
+        </div>
+        <div class="show" aria-hidden="true"><span class="abadge"><span class="mk"><b></b><b></b></span><span class="v1">4.8★</span><span class="ar">→</span><span class="v2">≤ 4.5★</span><span class="tg">estimate · aidos</span></span></div>
+      </div>
+    </section>
+
     <!-- LIST -->
     <section>
       <div class="sec-head"><h2>All companies &amp; chains</h2><span class="hint">searchable, filterable by industry and city</span></div>
@@ -245,7 +283,7 @@
   <script src="../lookup.js?v=c91aca2b"></script>
   <script src="../branch-icons.js?v=38883451"></script>
   <script src="../stars.js?v=da5c6667"></script>
-  <script src="../sternenfall.js?v=e7b69580"></script>
+  <script src="../sternenfall.js?v=d29bec4c"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
     const T = A.totals || {};

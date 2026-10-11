@@ -8,7 +8,7 @@
   const MIN_N = 10; // below this a "distribution" is a handful of named businesses, not a pattern
   const T = {
     de: {
-      loc: 'de-DE', anon: 'Betrieb ohne Namensnennung', play: 'Entfernte Bewertungen zurückrechnen', back: 'Wie Google sie zeigt', share: 'Teilen', copied: 'Link kopiert',
+      loc: 'de-DE', anon: 'Betrieb ohne Namensnennung', play: 'Zurückrechnen', back: 'Wie Google sie zeigt', share: 'Teilen', copied: 'Link kopiert',
       lbl0: (N, w) => `von ${N} Profilen${w} zeigen bei Google 4,5 Sterne oder mehr.`,
       lbl1: (N, w) => `von ${N} Profilen${w} kämen mit den entfernten Bewertungen noch auf 4,5 Sterne oder mehr – vorsichtig gerechnet.`,
       cap0: 'Jeder Punkt ist ein Profil mit Lösch-Hinweis, so wie Google seine Note anzeigt.',
@@ -19,7 +19,7 @@
       aria: 'Verteilung der Noten: angezeigt und mit den entfernten Bewertungen',
     },
     en: {
-      loc: 'en-GB', anon: 'Unnamed business', play: 'Add the removed reviews back in', back: 'As Google shows them', share: 'Share', copied: 'Link copied',
+      loc: 'en-GB', anon: 'Unnamed business', play: 'Add them back in', back: 'As Google shows them', share: 'Share', copied: 'Link copied',
       lbl0: (N, w) => `of ${N} profiles${w} show 4.5 stars or more on Google.`,
       lbl1: (N, w) => `of ${N} profiles${w} would still reach 4.5 stars or more with the removed reviews – on a cautious estimate.`,
       cap0: 'Each dot is a profile with a removal notice, at the rating Google displays.',
@@ -68,7 +68,7 @@
       `<line class="thr" x1="${thrX}" x2="${thrX}" y1="40" y2="${BASE}"/><text class="thrl" x="${thrX + 8}" y="54">${L.thr}</text>` +
       `<g class="g-ghost"></g><g class="g-dots"></g></svg><div class="sfall-tip"></div></div>` +
       `<div class="sfall-foot"><div class="sfall-legend"><span><i style="background:var(--data-blue)"></i>${L.shown}</span><span><i style="background:var(--accent)"></i>${L.est}</span><span><i style="background:#fff;border:2px solid var(--accent)"></i>${L.open}</span></div>` +
-      `<div class="sfall-actions"><button type="button" class="sfall-btn primary" data-a="play">▶ ${L.play}</button><button type="button" class="sfall-btn" data-a="back" hidden>↺ ${L.back}</button><button type="button" class="sfall-btn" data-a="share">${L.share}</button></div></div>` +
+      `<div class="sfall-actions"><button type="button" class="sfall-btn primary" data-a="toggle">▶ ${L.play}</button><button type="button" class="sfall-btn" data-a="share">${L.share}</button></div></div>` +
       `<p class="sfall-fine">${L.fine}</p>`;
 
     const NS = 'http://www.w3.org/2000/svg', chart = root.querySelector('.sfall-chart');
@@ -92,7 +92,8 @@
     let fallen = false, raf;
     function fall(to) {
       cancelAnimationFrame(raf); fallen = to;
-      btn('play').hidden = true; btn('back').hidden = true;
+      // one button, fixed width: it only changes its label, so the row never reflows
+      btn('toggle').disabled = true;
       const from = cur.map((c) => ({ ...c })), t0 = performance.now(), D = reduce ? 0 : 1400;
       const ease = (x) => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
       // bigger drops start later, so the tower visibly crumbles from the top instead of shifting as a block
@@ -112,12 +113,13 @@
         nEl.classList.toggle('after', to); chart.classList.toggle('fallen', to);
         lbl.textContent = to ? L.lbl1(S.length, scope) : L.lbl0(S.length, scope);
         cap.innerHTML = to ? L.cap1(top0 - top1, small, S.length, big) : L.cap0;
-        btn('play').hidden = to; btn('back').hidden = !to;
+        btn('toggle').disabled = false;
+        btn('toggle').textContent = to ? `↺ ${L.back}` : `▶ ${L.play}`;
+        btn('toggle').classList.toggle('primary', !to);
       };
       raf = requestAnimationFrame(frame);
     }
-    btn('play').onclick = () => fall(true);
-    btn('back').onclick = () => fall(false);
+    btn('toggle').onclick = () => fall(!fallen);
 
     // share: native share sheet where there is one, otherwise copy the link (no third-party widgets)
     btn('share').onclick = async () => {
