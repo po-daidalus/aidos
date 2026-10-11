@@ -63,7 +63,7 @@ function aggRange(locs) {
 }
 
 // ---------- shared shell ----------
-function shell({ lang, title, desc, canonical, altHref, altCanonical, jsonld, body, active = 'listing' }) {
+function shell({ lang, title, desc, canonical, altHref, altCanonical, jsonld, body, active = 'listing', ogImage = 'og.png' }) {
   const L = LANGS[lang]; const P = L.pfx;
   const on = (k) => (active === k ? ' class="on"' : '');
   const nav = lang === 'de'
@@ -85,7 +85,7 @@ function shell({ lang, title, desc, canonical, altHref, altCanonical, jsonld, bo
 ${altCanonical ? `<link rel="alternate" hreflang="${lang === 'de' ? 'en' : 'de'}" href="${esc(altCanonical)}"/><link rel="alternate" hreflang="${lang}" href="${esc(canonical)}"/>` : ''}
 <meta property="og:type" content="article"/><meta property="og:title" content="${esc(title)}"/>
 <meta property="og:description" content="${esc(desc)}"/><meta property="og:url" content="${esc(canonical)}"/>
-<meta property="og:site_name" content="aidos"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image" content="https://aidos.tech/og.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="aidos"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image" content="https://aidos.tech/${ogImage}"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link href="${P}fonts/fonts.css" rel="stylesheet"/><link href="${P}pages.css?v=20260804" rel="stylesheet"/>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}</head>
 <body><header class="masthead"><div class="masthead-inner">
@@ -499,6 +499,11 @@ function brandTable(list, lang) {
     `</tbody></table>` + note;
 }
 
+// Profiles below the naming threshold (isListable) stay in the distribution but carry NO name: the
+// site names only companies and chains, and a hover tooltip is a display like any other.
+const listed = new Set([...brands.values()].flat().map((d) => d.place_id));
+const stars = nameableAll.filter((d) => d.rating != null && d.est_high != null)
+  .map((d) => [d.rating, Math.round(d.est_high * 100) / 100, d.est_open ? 1 : 0, listed.has(d.place_id) ? d.name : '', d.city || '', d.branch || 'Sonstige']);
 // ---------- branch pages (DE + EN) ----------
 for (const br of agg.branches) {
   const sg = slug(br.key);
@@ -523,9 +528,17 @@ for (const br of agg.branches) {
       `<div class="stat"><div class="v">${br.n}</div><div class="l">${S.stats[1]}</div></div>` +
       `<div class="stat"><div class="v" style="color:${scoreCol(br.aidos_index)}">${br.aidos_index}</div><div class="l">${S.stats[2]}</div></div>` +
       `<div class="stat"><div class="v">${br.share} %</div><div class="l">${S.stats[3]}</div></div></div>` +
+      // Sternenfall for this industry — only where enough profiles exist for a distribution (the
+      // component also refuses below 10, this just avoids shipping an empty section)
+      (stars.filter((x) => x[5] === br.key).length >= 10
+        ? `<link href="${P}sternenfall.css" rel="stylesheet"/><div class="card static"><h2>${lang === 'de' ? 'Wie viel der Note hängt an den entfernten Bewertungen?' : 'How much of the rating rests on the removed reviews?'}</h2>` +
+          `<div class="sfall" id="sternenfall" data-branch="${esc(br.key)}" data-label="${esc(brLbl)}" data-lang="${lang}"></div></div>` +
+          `<script src="${P}stars.js"></script><script src="${P}sternenfall.js"></script>`
+        : '') +
       (list.length ? `<div class="card"><h2>${S.listH}</h2>${brandTable(list, lang)}</div>` : '') +
       disclaimer(lang, P) + `<p style="font-size:13px;color:var(--ink-3)"><a href="${S.backHref}">${S.back}</a></p>`;
-    fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, altHref: alt, altCanonical: BASE + pub((lang === 'de' ? 'en/' : '') + 'branche/' + sg), jsonld: breadcrumbLd([{ t: 'aidos', abs: lang === 'de' ? '' : 'en/' }, { t: brLbl, abs: rel }]), body }));
+    const ogImage = stars.filter((x) => x[5] === br.key).length >= 10 ? `og/sternenfall-${sg}${lang === 'en' ? '-en' : ''}.png` : 'og.png';
+    fs.writeFileSync(new URL(rel, OUT), shell({ lang, title, desc, canonical, ogImage, altHref: alt, altCanonical: BASE + pub((lang === 'de' ? 'en/' : '') + 'branche/' + sg), jsonld: breadcrumbLd([{ t: 'aidos', abs: lang === 'de' ? '' : 'en/' }, { t: brLbl, abs: rel }]), body }));
     urls.push({ loc: canonical, removed: br.removed });
   }
 }
@@ -574,6 +587,10 @@ fs.writeFileSync(new URL('robots.txt', OUT), `User-agent: *\nAllow: /\nSitemap: 
 // client-side search index + brandKey→page map (consumed by index.html lookup + listing.html cards)
 lookup.sort((a, b) => b.s - a.s);
 fs.writeFileSync(new URL('lookup.js', OUT), 'window.AIDOS_LOOKUP = ' + JSON.stringify(lookup) + ';\n');
+// Sternenfall (homepage + industry pages): one row per listed profile — displayed rating, the cautious
+// estimate with the removed reviews (the same est_high the profile pages quote), open-ended flag,
+// name, city, industry. Only nameable profiles, exactly the set data.js already publishes.
+fs.writeFileSync(new URL('stars.js', OUT), 'window.AIDOS_STARS = ' + JSON.stringify(stars) + ';\n');
 fs.writeFileSync(new URL('pagemap.js', OUT), 'window.AIDOS_PAGES = ' + JSON.stringify(pageMap) + ';\n');
 
 console.log(`pages: ${brands.size} companies ×2 languages (${skipped} below naming threshold → aggregates only), ${agg.branches.length} branches, ${agg.cities.filter((c) => c.n >= 3).length} cities | sitemap: ${urls.length + staticPages.length} URLs | lookup index: ${lookup.length}`);

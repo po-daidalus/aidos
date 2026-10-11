@@ -18,7 +18,7 @@ const OUT = new URL('dashboard/', ROOT);
 const OUT_DIR = OUT.pathname;
 
 // Everything whose content changes between builds and is referenced from HTML.
-const ASSETS = ['aggregates.js', 'data.js', 'lookup.js', 'pagemap.js', 'articles.js', 'series.js', 'branch-icons.js', 'site.css', 'pages.css'];
+const ASSETS = ['aggregates.js', 'data.js', 'lookup.js', 'pagemap.js', 'articles.js', 'series.js', 'branch-icons.js', 'site.css', 'pages.css', 'stars.js', 'sternenfall.js', 'sternenfall.css'];
 
 const hashes = {};
 for (const a of ASSETS) {

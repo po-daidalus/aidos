@@ -139,6 +139,7 @@ node pipeline/content.mjs --llm      # Monatsreport (Fable 5, zahlenverifiziert)
 node pipeline/og-image.mjs           # Social-Card mit den neuen Zahlen
 node pipeline/fetch-logos.mjs        # VOR pages.mjs
 node pipeline/pages.mjs              # stempelt am Ende automatisch Content-Hashes auf alle Assets
+node pipeline/og-sternenfall.mjs     # Share-Bilder Sternenfall (Startseite + Branchen), NACH pages.mjs (liest stars.js)
 npx wrangler pages deploy dashboard --project-name=aidos --branch=preview --commit-dirty=true
 ```
 

@@ -14,15 +14,18 @@
   <meta property="og:description" content="Evaluation of Google's DSA removal notices in Germany. For more transparency in Google reviews." />
   <meta property="og:url" content="https://aidos.tech/en/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta property="og:image" content="https://aidos.tech/og.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://aidos.tech/og/sternenfall-en.png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link href="../fonts/fonts.css" rel="stylesheet" />
+  <link href="../sternenfall.css?v=a3a0367f" rel="stylesheet" />
   <link href="../site.css?v=6f73fca3" rel="stylesheet" />
   <style>
     /* hero: der Bewertungs-Check */
+    .sf-hero h1 { font-size: clamp(32px, 5vw, 54px); max-width: 24ch; text-wrap: balance; }
+    .sf-hero .deck { max-width: 62ch; margin-bottom: 30px; }
     .check-hero { max-width: 780px; }
     .check-hero h1 { font-size: clamp(34px, 5.4vw, 58px); }
-    .check-box { max-width: 680px; margin-top: 26px; padding: 15px 18px; box-shadow: var(--shadow); }
+    .check-box { max-width: 680px; margin-top: 8px; padding: 15px 18px; box-shadow: var(--shadow); }
     .check-box input { font-size: 18px; }
     .check-ex { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0 4px; font-size: 13px; color: var(--ink-3); }
     .check-ex button { font: 500 12.5px var(--sans); padding: 4px 11px; border: 1px solid var(--rule-2); border-radius: 16px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
@@ -146,11 +149,17 @@
 
   <div class="wrap">
     <!-- HERO: the rating check -->
-    <section class="check-hero">
-      <div class="kicker">The rating check</div>
-      <h1>What is behind a Google rating?</h1>
+    <section class="sf-hero">
+      <div class="kicker">Transparency in Google reviews</div>
+      <h1>On Google, most of them shine. Underneath, it looks different.</h1>
       <span class="motif"><b></b><i></i></span>
-      <p class="deck">Since April 2026, Google shows on German profiles how many reviews were removed following defamation complaints – tucked away in the reviews tab. aidos calculates how much that lifts the displayed rating.</p>
+      <p class="deck">Since April 2026, Google shows on German profiles how many reviews were removed following defamation complaints – tucked away in the reviews tab. aidos puts them back into the rating.</p>
+      <div class="sfall" id="sternenfall" data-lang="en"></div>
+    </section>
+
+    <!-- CHECK: one business -->
+    <section class="check-hero">
+      <div class="sec-head"><h2>And one particular business?</h2><span class="hint">Enter a name or paste a Google Maps link</span></div>
       <div class="lookup-box check-box"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" /></svg><input id="lk" placeholder="Enter a business or a Google Maps link" autocomplete="off" aria-label="Search a business" /></div>
       <div class="check-ex" id="checkEx"></div>
       <div id="vcard"></div>
@@ -235,6 +244,8 @@
   <script src="../aggregates.js?v=0a971352"></script>
   <script src="../lookup.js?v=c91aca2b"></script>
   <script src="../branch-icons.js?v=38883451"></script>
+  <script src="../stars.js?v=da5c6667"></script>
+  <script src="../sternenfall.js?v=e7b69580"></script>
   <script>
     const A = window.AIDOS_AGG || { totals: {}, branches: [], cities: [], trend: {} };
     const T = A.totals || {};

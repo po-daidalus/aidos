@@ -33,7 +33,7 @@ node pipeline/split-run.mjs <export.json>       # one file per city
 node pipeline/ingest.mjs <file> --city=<Stadt> [--no-checks for panel runs]
 node pipeline/aggregate.mjs && node pipeline/build.mjs && node pipeline/measure-star-mix.mjs
 node pipeline/content.mjs --llm                 # monthly report; needs ANTHROPIC_API_KEY
-node pipeline/og-image.mjs && node pipeline/fetch-logos.mjs && node pipeline/pages.mjs
+node pipeline/og-image.mjs && node pipeline/fetch-logos.mjs && node pipeline/pages.mjs && node pipeline/og-sternenfall.mjs
 node pipeline/traffic.mjs                       # tracker-free visitor numbers from Cloudflare
 ```
 
